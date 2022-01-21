@@ -122,6 +122,46 @@
           }
         }
       }
+    },
+    "mds-library": {
+      "projectType": "library",
+      "root": "projects/mds-library",
+      "sourceRoot": "projects/mds-library/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/mds-library/tsconfig.lib.json",
+            "project": "projects/mds-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mds-library/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mds-library/src/test.ts",
+            "tsConfig": "projects/mds-library/tsconfig.spec.json",
+            "karmaConfig": "projects/mds-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mds-library/tsconfig.lib.json",
+              "projects/mds-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "mds-lib"
