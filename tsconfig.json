@@ -9,9 +9,9 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "paths": {
-      "mds-library": [
-        "node_modules/mds-library/mds-library",
-        "node_modules/mds-library"
+      "medes-ui": [
+        "node_modules/medes-ui/medes-ui",
+        "node_modules/medes-ui"
       ]
     },
     "moduleResolution": "node",
