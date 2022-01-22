@@ -65,6 +65,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "port": 4600,
             "browserTarget": "mds-lib:build"
           },
           "configurations": {
