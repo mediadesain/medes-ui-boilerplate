@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MdsFilterCheckboxModule, MdsPipesModule } from 'medes-ui';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,9 +10,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    MdsFilterCheckboxModule,
-    MdsPipesModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

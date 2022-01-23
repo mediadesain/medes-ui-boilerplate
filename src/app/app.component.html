@@ -1,29 +1,24 @@
-
-<router-outlet></router-outlet>
-
-<mds-filter-checkbox
-  class="d-flex flex-column"
-  [titlegroup]="'Filter by'"
-  [closegroup]="'✕'"
-  [classgroup]="'mb-3'"
-  [reset]="'Reset All'"
-  [filterData]="sampledata"
-  [filterBy]="['category','type']"
-  [filterSelected]="filteritems"
->
-</mds-filter-checkbox>
-<hr/>
-
-Filtered:
-<pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json)=='{}'">No Data Found</pre>
-<pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json)!='{}'">Filtered data not found</pre>
-<ul *ngIf="(sampledata|filter:filteritems).length > 0">
-  <li *ngFor="let item of (sampledata|filter:filteritems)">{{item.type}} - {{item.category}}</li>
-</ul> 
-
-<hr/>
-Data:
-<pre>{{sampledata|json}}</pre>
-<br/>
-Selected:
-<pre>{{filteritems|json}}</pre>
+<nav>Navbar</nav>
+<content>
+  <aside>
+    <div class="aside-menu" *ngFor="let i of [0,1,2,3,4,5,6,7]">
+      <b>Category {{i+1}}:</b>
+      <ul>
+          <li><a href="">List of Sub 1</a></li>
+          <li><a href="">List of Sub 2</a></li>
+          <li><a href="">List of Sub 3</a></li>
+      </ul>
+    </div>
+  </aside>
+  <article>
+    <div class="container">
+      <main>
+        <div><router-outlet></router-outlet></div>
+      </main>
+      <footer>
+        <small>Copyright by Mediadesain</small><br/>
+        <a href="https://github.com/mediadesain/medes-ui"><i class="fab fa-github"></i></a> &nbsp; <a href="https://www.npmjs.com/package/medes-ui"><i class="fab fa-npm"></i></a>
+      </footer>
+    </div>
+  </article>
+</content>

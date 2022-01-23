@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/mds-lib'),
+      dir: require('path').join(__dirname, './coverage/medes-ui-boilerplate'),
       subdir: '.',
       reporters: [
         { type: 'html' },
