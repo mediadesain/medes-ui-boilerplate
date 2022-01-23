@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-filter-checkbox',
   templateUrl: './filter-checkbox.component.html',
@@ -8,9 +6,7 @@ import { Router } from '@angular/router';
 })
 export class FilterCheckboxComponent implements OnInit {
 
-  constructor(
-    public router: Router
-  ) {}
+  constructor() {}
 
   ngOnInit(): void {
   }
@@ -34,13 +30,10 @@ componentdemo = `<mds-filter-checkbox
     {category: 'eastern food', type:'drink'},
     {category: 'western food', type:'snack'}
   ];
-  
+  keys = ['category','type'];
   filteritems = {
     category:[ 'eastern food', 'western food'],
     type:['food', 'drink']
   }
 
-  reset(filter){
-    this.router.navigate([], { queryParams: {} })
-  }
 }

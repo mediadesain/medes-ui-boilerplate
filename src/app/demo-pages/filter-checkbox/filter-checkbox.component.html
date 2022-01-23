@@ -8,7 +8,7 @@
         <b>Component Demo:</b>
         <mds-filter-checkbox
             [filterData]="sampledata"
-            [filterBy]="['category','type']"
+            [filterBy]="keys"
             [filterSelected]="filteritems"
         >
         </mds-filter-checkbox>
@@ -29,7 +29,9 @@
         <small><mds-hightlight-prism [code]="'sampledata = '+(sampledata|json)" language="javascript"></mds-hightlight-prism></small>
     </div>
     <div style="width: 100%;margin-right: 10px;">
-        Selected:
+        Filter Keys:
+        <small><mds-hightlight-prism [code]="'keys = '+(keys|json)" language="javascript"></mds-hightlight-prism></small>
+        Key values:
         <small><mds-hightlight-prism [code]="'filteritems = '+(filteritems|json)" language="javascript"></mds-hightlight-prism></small>
     </div>
     <div style="width: 100%;">
