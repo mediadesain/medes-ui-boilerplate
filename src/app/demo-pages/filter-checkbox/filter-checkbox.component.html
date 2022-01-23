@@ -1,0 +1,66 @@
+<h1>Filter Checkbox</h1>
+<p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<hr/>
+<h2>Demo</h2>
+
+<div style="display: flex;">
+    <div style="width: 30%;margin-right: 10px;">
+        <b>Component Demo:</b>
+        <mds-filter-checkbox
+            [filterData]="sampledata"
+            [filterBy]="['category','type']"
+            [filterSelected]="filteritems"
+        >
+        </mds-filter-checkbox>
+    </div>
+    <div style="width: 100%;">
+        <b>Multiple Filter Demo:</b>
+        <pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json)=='{}'">No Data Found</pre>
+        <pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json)!='{}'">Filtered data not found</pre>
+            <ul *ngIf="(sampledata|filter:filteritems).length > 0">
+            <li *ngFor="let item of (sampledata|filter:filteritems)">{{item.type}} - {{item.category}}</li>
+        </ul> 
+    </div>
+</div>
+<hr/>
+<div style="display: flex;">
+    <div style="width: 100%;margin-right: 10px;">
+        Data Original:
+        <small><mds-hightlight-prism [code]="'sampledata = '+(sampledata|json)" language="javascript"></mds-hightlight-prism></small>
+    </div>
+    <div style="width: 100%;margin-right: 10px;">
+        Selected:
+        <small><mds-hightlight-prism [code]="'filteritems = '+(filteritems|json)" language="javascript"></mds-hightlight-prism></small>
+    </div>
+    <div style="width: 100%;">
+        Output Data:
+        <small><mds-hightlight-prism [code]="(sampledata|filter:filteritems)|json" language="javascript"></mds-hightlight-prism></small>
+    </div>
+</div>
+<hr/>
+
+<h2>Component Details</h2>
+<b>Component</b>
+<small><mds-hightlight-prism [code]="componentdemo" language="javascript"></mds-hightlight-prism></small>
+<b>Properties</b>
+<table>
+    <tr>
+        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th>
+    </tr>
+    <tr *ngFor="let item of [
+        {'attribute':'classgroup', 'type':'string', 'default':'', 'description':'Classes of group'},
+        {'attribute':'titlegroup', 'type':'string', 'default':'Filter by', 'description':'Prefix of label text of group'},
+        {'attribute':'resetgroup', 'type':'string', 'default':'✕', 'description':'Content of reset group filter'},
+        {'attribute':'reset', 'type':'string', 'default':'Reset All', 'description':'Content of reset all group'},
+        {'attribute':'filterData*', 'type':'array', 'default':'', 'description':'Sample data for create multiple filter checkbox'},
+        {'attribute':'filterBy*', 'type':'string of array', 'default':'', 'description':'Listing of key object to filter'},
+        {'attribute':'filterSelected*', 'type':'object', 'default':'', 'description':'List of selected filter'}
+    ]">
+        <td mds-th-title="Attribute">{{item.attribute}}</td>
+        <td mds-th-title="Data Type">{{item.type}}</td>
+        <td mds-th-title="Default">{{item.default}}</td>
+        <td mds-th-title="Description">{{item.description}}</td>
+    </tr>
+    </table>
+<hr/>
+

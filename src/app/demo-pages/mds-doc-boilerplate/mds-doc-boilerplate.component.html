@@ -24,17 +24,17 @@
 <h2>Highlight</h2>
 <p>Section intro goes here. Sampple Code <code class="command">npm install mds-ui</code> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
 <b>HTML</b>
-<div [innerHTML]="samplehtml"></div>
+<small><mds-hightlight-prism [code]="samplehtml" language="html"></mds-hightlight-prism></small>
 <b>CSS</b>
-<div [innerHTML]="samplescss"></div>
+<small><mds-hightlight-prism [code]="samplescss" language="css"></mds-hightlight-prism></small>
 <b>JavaScript</b>
-<div [innerHTML]="samplejs"></div>
+<small><mds-hightlight-prism [code]="samplejs" language="javascript"></mds-hightlight-prism></small>
 <b>TypeScript</b>
-<div [innerHTML]="samplets"></div>
+<small><mds-hightlight-prism [code]="samplets" language="typescript"></mds-hightlight-prism></small>
 <hr/>
 <h2>Table</h2>
 <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
-<table class="ng-scope">
+<table>
     <tr>
         <th>Title 1</th><th>Title 2</th><th>Title 3</th>
     </tr>
@@ -45,30 +45,3 @@
     </tr>
     </table>
 <hr/>
-
-<mds-filter-checkbox
-  class="d-flex flex-column"
-  [titlegroup]="'Filter by'"
-  [closegroup]="'✕'"
-  [classgroup]="'mb-3'"
-  [reset]="'Reset All'"
-  [filterData]="sampledata"
-  [filterBy]="['category','type']"
-  [filterSelected]="filteritems"
->
-</mds-filter-checkbox>
-<hr/>
-
-Filtered:
-<pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json)=='{}'">No Data Found</pre>
-<pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json)!='{}'">Filtered data not found</pre>
-<ul *ngIf="(sampledata|filter:filteritems).length > 0">
-  <li *ngFor="let item of (sampledata|filter:filteritems)">{{item.type}} - {{item.category}}</li>
-</ul> 
-
-<hr/>
-Data:
-<pre>{{sampledata|json}}</pre>
-<br/>
-Selected:
-<pre>{{filteritems|json}}</pre>

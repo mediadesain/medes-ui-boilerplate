@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { FilterCheckboxRoutingModule } from './filter-checkbox-routing.module';
 import { FilterCheckboxComponent } from './filter-checkbox.component';
-import { MdsFilterCheckboxModule, MdsPipesModule } from 'medes-ui';
+
+
+import { MdsFilterCheckboxModule, MdsHightlightPrismModule, MdsPipesModule } from 'medes-ui';
 
 
 @NgModule({
@@ -14,7 +16,8 @@ import { MdsFilterCheckboxModule, MdsPipesModule } from 'medes-ui';
     CommonModule,
     FilterCheckboxRoutingModule,
     MdsFilterCheckboxModule,
-    MdsPipesModule
+    MdsPipesModule,
+    MdsHightlightPrismModule
   ]
 })
 export class FilterCheckboxModule { }

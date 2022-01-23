@@ -1,24 +1,10 @@
-<nav>Navbar</nav>
+<app-navbar></app-navbar>
 <content>
-  <aside>
-    <div class="aside-menu" *ngFor="let i of [0,1,2,3,4,5,6,7]">
-      <b>Category {{i+1}}:</b>
-      <ul>
-          <li><a href="">List of Sub 1</a></li>
-          <li><a href="">List of Sub 2</a></li>
-          <li><a href="">List of Sub 3</a></li>
-      </ul>
-    </div>
-  </aside>
+  <app-aside></app-aside>
   <article>
     <div class="container">
-      <main>
-        <div><router-outlet></router-outlet></div>
-      </main>
-      <footer>
-        <small>Copyright by Mediadesain</small><br/>
-        <a href="https://github.com/mediadesain/medes-ui"><i class="fab fa-github"></i></a> &nbsp; <a href="https://www.npmjs.com/package/medes-ui"><i class="fab fa-npm"></i></a>
-      </footer>
+      <main><div><router-outlet></router-outlet></div></main>
+      <app-footer></app-footer>
     </div>
   </article>
 </content>

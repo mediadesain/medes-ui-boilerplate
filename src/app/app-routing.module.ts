@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '**', redirectTo: 'filter-checkbox'},
-  { path: 'filter-checkbox', loadChildren: () => import('./filter-checkbox/filter-checkbox.module').then(m => m.FilterCheckboxModule) }
+  { path: 'filter-checkbox', loadChildren: () => import('./demo-pages/filter-checkbox/filter-checkbox.module').then(m => m.FilterCheckboxModule) },
+  { path: 'doc-boilerplate', loadChildren: () => import('./demo-pages/mds-doc-boilerplate/mds-doc-boilerplate.module').then(m => m.MdsDocBoilerplateModule) },
+  { path: '**', redirectTo: 'filter-checkbox'}
 
 ];
 
