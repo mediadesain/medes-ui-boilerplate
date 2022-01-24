@@ -6,12 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterCheckboxComponent implements OnInit {
 
-  constructor() {}
-
-  ngOnInit(): void {
-  }
-
-componentdemo = `<mds-filter-checkbox
+  componentdemo = `<mds-filter-checkbox
   class="d-flex flex-column"
   [titlegroup]="'Filter by'"
   [classgroup]="'mb-3'"
@@ -21,19 +16,25 @@ componentdemo = `<mds-filter-checkbox
   [filterBy]="['category','type']"
   [filterSelected]="filteritems"
 >
-</mds-filter-checkbox>`
+</mds-filter-checkbox>`;
 
-  sampledata = [
-    {category: 'eastern food', type:'food'},
-    {category: 'western food', type:'drink'},
-    {category: 'middle east food', type:'snack'},
-    {category: 'eastern food', type:'drink'},
-    {category: 'western food', type:'snack'}
+  sampledata: any = [
+    { category: 'eastern food', type: 'food' },
+    { category: 'western food', type: 'drink' },
+    { category: 'middle east food', type: 'snack' },
+    { category: 'eastern food', type: 'drink' },
+    { category: 'western food', type: 'snack' }
   ];
-  keys = ['category','type'];
-  filteritems = {
-    category:[ 'eastern food', 'western food'],
-    type:['food', 'drink']
+
+  keys: string[] = ['category', 'type'];
+
+  filteritems: any = {
+    category: ['eastern food', 'western food'],
+    type: ['food', 'drink']
+  };
+  constructor() {}
+
+  ngOnInit(): void {
   }
 
 }

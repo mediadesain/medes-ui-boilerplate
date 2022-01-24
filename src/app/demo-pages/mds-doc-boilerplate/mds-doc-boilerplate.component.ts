@@ -7,17 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MdsDocBoilerplateComponent implements OnInit {
 
-  samplehtml: string = `<div class="group">
+samplehtml = `<div class="group">
   <span>Content</span>
-</div>`
-samplescss: string = `.body{
+</div>`;
+samplescss = `.body{
   background: #f9f9f9;
   color: #ddd
 }`;
-samplejs: string = `function GetData(values){
+samplejs = `function GetData(values){
   console.log(values);
 }`;
-samplets: string = `import { Component, OnInit } from '@angular/core';
+samplets = `import { Component, OnInit } from '@angular/core';
 import { HighlightService } from '../shared/utils/highlight.service';
 
 @Component({
