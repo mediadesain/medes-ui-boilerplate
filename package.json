@@ -1,9 +1,9 @@
 {
-  "name": "mds-lib",
+  "name": "medes-ui-boilerplate",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng lint && ng serve",
     "build": "ng build",
     "publish:lib": "ng build medes-ui --prod && cd dist/medes-ui && npm publish",
     "test": "ng test",
@@ -20,7 +20,9 @@
     "@angular/platform-browser": "~11.2.11",
     "@angular/platform-browser-dynamic": "~11.2.11",
     "@angular/router": "~11.2.11",
-    "medes-ui": "0.0.1-beta.1",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "medes-ui": "0.0.1-beta.2",
+    "prismjs": "^1.26.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

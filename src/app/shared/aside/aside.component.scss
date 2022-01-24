@@ -1,0 +1,11 @@
+.list-group {
+    font-size: smaller;
+    b {color: #484849;}
+    ul {list-style-type: none; margin: 10px 5px 15px; padding: 0; }
+    li {
+        padding: 0 10px; margin: 5px 0; border-radius: 6px;
+        a {color: #5d6778;}
+    }
+    li.active {background: rgb(139 197 63 / 10%);}
+    li.active a {color: #8bc53f;}
+}

@@ -1,29 +1,10 @@
-
-<router-outlet></router-outlet>
-
-<mds-filter-checkbox
-  class="d-flex flex-column"
-  [titlegroup]="'Filter by'"
-  [closegroup]="'✕'"
-  [classgroup]="'mb-3'"
-  [reset]="'Reset All'"
-  [filterData]="sampledata"
-  [filterBy]="['category','type']"
-  [filterSelected]="filteritems"
->
-</mds-filter-checkbox>
-<hr/>
-
-Filtered:
-<pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json)=='{}'">No Data Found</pre>
-<pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json)!='{}'">Filtered data not found</pre>
-<ul *ngIf="(sampledata|filter:filteritems).length > 0">
-  <li *ngFor="let item of (sampledata|filter:filteritems)">{{item.type}} - {{item.category}}</li>
-</ul> 
-
-<hr/>
-Data:
-<pre>{{sampledata|json}}</pre>
-<br/>
-Selected:
-<pre>{{filteritems|json}}</pre>
+<app-navbar></app-navbar>
+<content>
+  <app-aside></app-aside>
+  <article>
+    <div class="container">
+      <main><div><router-outlet></router-outlet></div></main>
+      <app-footer></app-footer>
+    </div>
+  </article>
+</content>
