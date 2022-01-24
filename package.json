@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng lint && ng serve",
     "build": "ng build",
     "publish:lib": "ng build medes-ui --prod && cd dist/medes-ui && npm publish",
     "test": "ng test",
