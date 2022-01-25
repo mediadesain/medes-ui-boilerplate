@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 @Component({
-  selector: 'app-filter-checkbox',
+  selector: 'medes-filter-checkbox',
   templateUrl: './filter-checkbox.component.html',
   styleUrls: ['./filter-checkbox.component.scss']
 })
