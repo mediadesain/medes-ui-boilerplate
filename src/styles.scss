@@ -17,7 +17,7 @@ medes-navbar {
     a {color: #5d6778;}
 }
 content {
-    display: flex; justify-content: space-between; width: 100%; height: calc(100% - 59.19px); padding-top: 59.19px;
+    display: flex; justify-content: space-between; width: 100%; height: calc(100% - 54.8px); padding-top: 54.8px;
     medes-aside {transition: 0.7s ease-in-out; min-width: calc(300px - 50px);background-color: #fff; overflow-y: scroll;z-index: 2;}
     article {
         width: calc(100% - 300px);z-index: 1;
@@ -35,7 +35,7 @@ content {
         .toggle {display: block;}
         img {margin-right: unset;}
     }
-    medes-aside { position: absolute; height: calc(100% - 59.19px - 50px); margin-left: -100%; }
+    medes-aside { position: absolute; height: calc(100% - 54.8px - 50px); margin-left: -100%; }
     article {width: 100% !important; filter: blur(0);}
     article::before {transition: .5s ease-in-out;content: '';background-color: #000;opacity: 0; z-index: 1;}
     content.active {
