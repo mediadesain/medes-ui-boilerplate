@@ -2,16 +2,18 @@
 <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
 <hr/>
 <h2>Demo</h2>
-
+{{filteritems|json}}
 <div style="display: flex;">
     <div style="width: 30%;margin-right: 10px;">
         <b>Component Demo:</b>
+        {{filteritems|json}}
         <mds-filter-checkbox
             [filterData]="sampledata"
             [filterBy]="keys"
-            [filterSelected]="filteritems"
+            [(filterSelected)]="filteritems"
         >
         </mds-filter-checkbox>
+        <mds-filter-drpopdown [(filterBy)]="filteritems"></mds-filter-drpopdown>
     </div>
     <div style="width: 100%;">
         <b>Multiple Filter Demo:</b>
