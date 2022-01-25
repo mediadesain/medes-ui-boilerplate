@@ -1,8 +1,7 @@
-<div class="list-group" *ngFor="let i of [0,1,2,3,4,5,6,7]">
-    <b>Category {{i+1}}:</b>
+<div class="list-group" *ngFor="let group of menu">
+    <b>Category {{group.title}}:</b>
     <ul>
-        <li class="active"><a href="">List of Sub 1</a></li>
-        <li><a href="">List of Sub 2</a></li>
-        <li><a href="">List of Sub 3</a></li>
+        <li class="active"><a href="">Demo Active</a></li>
+        <li *ngFor="let link of group.links"><a [href]="link.url">{{link.text}}</a></li>
     </ul>
 </div>
