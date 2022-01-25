@@ -5,10 +5,8 @@ import { FilterCheckboxRoutingModule } from './filter-checkbox-routing.module';
 import { FilterCheckboxComponent } from './filter-checkbox.component';
 
 
-// import { MdsFilterCheckboxModule, MdsHightlightPrismModule, MdsPipesModule } from 'medes-ui';
-import { MdsFilterCheckboxModule, MdsHightlightPrismModule, MdsPipesModule } from 'projects/medes-ui/src/public-api';
-
-import { MdsFilterDrpopdownModule } from 'src/app/test/mds-filter-drpopdown/mds-filter-drpopdown.module';
+// import { MdsFilterCheckboxModule, MdsFilterDrpopdownModule, MdsHightlightPrismModule, MdsPipesModule } from 'medes-ui';
+import { MdsFilterCheckboxModule, MdsFilterModule, MdsHightlightPrismModule, MdsPipesModule } from 'projects/medes-ui/src/public-api';
 
 
 @NgModule({
@@ -21,7 +19,7 @@ import { MdsFilterDrpopdownModule } from 'src/app/test/mds-filter-drpopdown/mds-
     MdsFilterCheckboxModule,
     MdsPipesModule,
     MdsHightlightPrismModule,
-    MdsFilterDrpopdownModule
+    MdsFilterModule
   ]
 })
 export class FilterCheckboxModule { }

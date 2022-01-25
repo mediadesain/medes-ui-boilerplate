@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-mds-doc-boilerplate',
+  selector: 'medes-doc-boilerplate',
   templateUrl: './mds-doc-boilerplate.component.html',
   styleUrls: ['./mds-doc-boilerplate.component.scss']
 })
@@ -21,7 +21,7 @@ samplets = `import { Component, OnInit } from '@angular/core';
 import { HighlightService } from '../shared/utils/highlight.service';
 
 @Component({
-  selector: 'mds-library',
+  selector: 'medes-library',
   templateUrl: './mds-library.component.html',
   styleUrls: ['./mds-library.component.scss']
 })

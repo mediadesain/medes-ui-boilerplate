@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 @Component({
-  selector: 'app-filter-checkbox',
+  selector: 'medes-filter-checkbox',
   templateUrl: './filter-checkbox.component.html',
   styleUrls: ['./filter-checkbox.component.scss']
 })
@@ -28,10 +28,8 @@ export class FilterCheckboxComponent implements OnInit {
 
   keys: string[] = ['category', 'type'];
 
-  filteritems: any = {
-    category: ['eastern food', 'western food'],
-    type: ['food', 'drink']
-  };
+  filteritems: {[key: string]: string[]} = {};
+
   constructor() {}
 
   ngOnInit(): void {
