@@ -66,6 +66,6 @@ table th:first-child, table th:nth-child(2) {width: 25%;}
     th {display: block;}
     tr {display: block;border: 1px solid #f9f9f9;margin-bottom:15px;}
     td {display: block;border: none; border-bottom: 1px solid #eee; position: relative; white-space: normal; text-align:left;}
-    td:before {content: attr(medes-th-title); font-weight: bold; width: 100%; display: flex;}
+    td:before {content: attr(mds-th-title); font-weight: bold; width: 100%; display: flex;}
 }
   
