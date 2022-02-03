@@ -11,7 +11,6 @@ const routes: Routes = [
     loadChildren: () => import('./demo-pages/mds-doc-boilerplate/mds-doc-boilerplate.module').then(m => m.MdsDocBoilerplateModule)
   },
   { path: '**', redirectTo: 'filter-checkbox'}
-
 ];
 
 @NgModule({

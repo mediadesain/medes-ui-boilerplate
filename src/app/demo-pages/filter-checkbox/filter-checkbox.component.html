@@ -29,7 +29,24 @@
 <hr/>
 
 
-<div style="display: flex;">
+<div class="grid">
+    <div class="g-l-30">
+        Data Original:
+        <small><mds-hightlight-prism [code]="'sampledata = '+(sampledata|json)" language="javascript"></mds-hightlight-prism></small>
+    </div>
+    <div class="g-l-30">
+        Filter Keys:
+        <small><mds-hightlight-prism [code]="'keys = '+(keys|json)" language="javascript"></mds-hightlight-prism></small>
+        Key values:
+        <small><mds-hightlight-prism [code]="'filteritems = '+(filteritems|json)" language="javascript"></mds-hightlight-prism></small>
+    </div>
+    <div class="g-l-40">
+        Output Data:
+        <small><mds-hightlight-prism [code]="(sampledata|filter:filteritems)|json" language="javascript"></mds-hightlight-prism></small>
+    </div>
+</div>
+
+<!-- <div style="display: flex;">
     <div style="width: 100%;margin-right: 10px;">
         Data Original:
         <small><mds-hightlight-prism [code]="'sampledata = '+(sampledata|json)" language="javascript"></mds-hightlight-prism></small>
@@ -44,7 +61,7 @@
         Output Data:
         <small><mds-hightlight-prism [code]="(sampledata|filter:filteritems)|json" language="javascript"></mds-hightlight-prism></small>
     </div>
-</div>
+</div> -->
 <hr/>
 
 <h2>Component Details</h2>
@@ -69,6 +86,13 @@
         <td mds-th-title="Default">{{item.default}}</td>
         <td mds-th-title="Description">{{item.description}}</td>
     </tr>
-    </table>
+</table>
+
+    <div class="grid">
+        <div class="g-50 g-l-25">1</div>
+        <div class="g-50 g-l-75">2</div>
+        <div class="g-50">3</div>
+        <div class="g-50">4</div>
+    </div>
 <hr/>
 

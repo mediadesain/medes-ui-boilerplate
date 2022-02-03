@@ -1,5 +1,5 @@
 <div class="list-group" *ngFor="let group of menu">
-    <b>Category {{group.title}}:</b>
+    <b>{{group.title}}:</b>
     <ul>
         <li class="active"><a href="">Demo Active</a></li>
         <li *ngFor="let link of group.links"><a [href]="link.url">{{link.text}}</a></li>
