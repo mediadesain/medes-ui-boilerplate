@@ -8,25 +8,26 @@ import { Component, OnInit } from '@angular/core';
 export class AsideComponent implements OnInit {
   menu: any[] = [
     {
-      title: 'Introduction',
+      title: 'MedesUI',
       links: [
-        {text: 'What', url: '/'},
-        {text: 'How to Install', url: '/'},
-        {text: 'List Sub 3', url: '/'}
+        {text: 'Introduction', url: '#'},
+        {text: 'How to Install', url: '#'}
       ]
     }, {
       title: 'Components',
       links: [
-        {text: 'Multiple Filter Checkbox', url: '/'},
-        {text: 'PrismJs Highlight', url: '/'}
+        {text: 'Doc Boilerplate', url: '/doc-boilerplate'},
+        {text: 'Multiple Filter Checkbox', url: '/filter-checkbox'},
+        {text: 'PrismJs Highlight', url: '#'}
       ]
     }, {
       title: 'Utilities',
       links: [
-        {text: 'String', url: '/'},
-        {text: 'Integer', url: '/'},
-        {text: 'Object', url: '/'},
-        {text: 'Array', url: '/'}
+        {text: 'String', url: '#'},
+        {text: 'Integer', url: '#'},
+        {text: 'Object', url: '#'},
+        {text: 'Array', url: '#'},
+        {text: 'Date', url: '#'}
       ]
     }
   ];
