@@ -31,7 +31,7 @@ importmodule = `import { MdsFilterCheckboxModule } from 'medes-ui';
     { category: 'western food', type: 'drink' },
     { category: 'middle east food', type: 'snack' },
     { category: 'eastern food', type: 'drink' },
-    { category: 'western food', type: 'snack' }
+    { category: 'western food', type: 'snack,food,branch' }
   ];
 
   keys: string[] = ['category', 'type'];
