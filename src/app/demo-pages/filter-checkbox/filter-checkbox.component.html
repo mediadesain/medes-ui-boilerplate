@@ -1,5 +1,34 @@
 <h1>Multiple Filter Checkbox</h1>
 <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+
+<hr/>
+
+<h2>Component Details</h2>
+<b>Import module</b>
+<small><mds-hightlight-prism [code]="importmodule" language="javascript"></mds-hightlight-prism></small>
+<b>Component</b>
+<small><mds-hightlight-prism [code]="componentdemo" language="javascript"></mds-hightlight-prism></small>
+<b>Properties</b>
+<table>
+    <tr>
+        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th>
+    </tr>
+    <tr *ngFor="let item of [
+        {'attribute':'classgroup', 'type':'string', 'default':'', 'description':'Classes of group'},
+        {'attribute':'titlegroup', 'type':'string', 'default':'Filter by', 'description':'Prefix of label text of group'},
+        {'attribute':'resetgroup', 'type':'string', 'default':'✕', 'description':'Content of reset group filter'},
+        {'attribute':'reset', 'type':'string', 'default':'Reset All', 'description':'Content of reset all group'},
+        {'attribute':'filterData*', 'type':'array', 'default':'', 'description':'Sample data for create multiple filter checkbox'},
+        {'attribute':'filterBy*', 'type':'Array of string values', 'default':'', 'description':'Listing of object keys/properties to filter'},
+        {'attribute':'filterSelected*', 'type':'object', 'default':'', 'description':'List of selected filter'}
+    ]">
+        <td mds-th-title="Attribute">{{item.attribute}}</td>
+        <td mds-th-title="Data Type">{{item.type}}</td>
+        <td mds-th-title="Default">{{item.default}}</td>
+        <td mds-th-title="Description">{{item.description}}</td>
+    </tr>
+</table>
+
 <hr/>
 <h2>Demo</h2>
 <div style="display: flex;">
@@ -23,10 +52,10 @@
 </div>
 
 <hr/>
-<mds-filter-drpopdown [filterData]="sampledata" [filterBy]="['type']" [(filterSelected)]="filteritems"></mds-filter-drpopdown>
+<!-- <mds-filter-drpopdown [filterData]="sampledata" [filterBy]="['type']" [(filterSelected)]="filteritems"></mds-filter-drpopdown>
 <br/>
 <mds-filter-reset [(filterBy)]="filteritems"></mds-filter-reset>
-<hr/>
+<hr/> -->
 
 
 <div class="grid">
@@ -62,29 +91,4 @@
         <small><mds-hightlight-prism [code]="(sampledata|filter:filteritems)|json" language="javascript"></mds-hightlight-prism></small>
     </div>
 </div> -->
-<hr/>
-
-<h2>Component Details</h2>
-<b>Component</b>
-<small><mds-hightlight-prism [code]="componentdemo" language="javascript"></mds-hightlight-prism></small>
-<b>Properties</b>
-<table>
-    <tr>
-        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th>
-    </tr>
-    <tr *ngFor="let item of [
-        {'attribute':'classgroup', 'type':'string', 'default':'', 'description':'Classes of group'},
-        {'attribute':'titlegroup', 'type':'string', 'default':'Filter by', 'description':'Prefix of label text of group'},
-        {'attribute':'resetgroup', 'type':'string', 'default':'✕', 'description':'Content of reset group filter'},
-        {'attribute':'reset', 'type':'string', 'default':'Reset All', 'description':'Content of reset all group'},
-        {'attribute':'filterData*', 'type':'array', 'default':'', 'description':'Sample data for create multiple filter checkbox'},
-        {'attribute':'filterBy*', 'type':'Array of string values', 'default':'', 'description':'Listing of object keys/properties to filter'},
-        {'attribute':'filterSelected*', 'type':'object', 'default':'', 'description':'List of selected filter'}
-    ]">
-        <td mds-th-title="Attribute">{{item.attribute}}</td>
-        <td mds-th-title="Data Type">{{item.type}}</td>
-        <td mds-th-title="Default">{{item.default}}</td>
-        <td mds-th-title="Description">{{item.description}}</td>
-    </tr>
-</table>
 

@@ -10,24 +10,24 @@ export class AsideComponent implements OnInit {
     {
       title: 'MedesUI',
       links: [
-        {text: 'Introduction', url: '#'},
-        {text: 'How to Install', url: '#'}
+        {text: 'Introduction', url: '/introduction'},
+        {text: 'How to Install', url: '/how-to-install'}
       ]
     }, {
       title: 'Components',
       links: [
         {text: 'Doc Boilerplate', url: '/doc-boilerplate'},
         {text: 'Multiple Filter Checkbox', url: '/filter-checkbox'},
-        {text: 'PrismJs Highlight', url: '#'}
+        {text: 'PrismJs Highlight', url: '/prismjs-highlight'}
       ]
     }, {
       title: 'Utilities',
       links: [
-        {text: 'String', url: '#'},
-        {text: 'Integer', url: '#'},
-        {text: 'Object', url: '#'},
-        {text: 'Array', url: '#'},
-        {text: 'Date', url: '#'}
+        {text: 'String', url: '/string-utils'},
+        {text: 'Integer', url: '/number-utils'},
+        {text: 'Object', url: '/object-utils'},
+        {text: 'Array', url: '/array-utils'},
+        {text: 'Date', url: '/date-utils'}
       ]
     }
   ];
