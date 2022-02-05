@@ -6,6 +6,7 @@
     "start": "ng lint && ng serve",
     "build": "ng build",
     "publish:lib": "ng build medes-ui --prod && cd dist/medes-ui && npm publish",
+    "build:lib": "ng build medes-ui --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
