@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-prismjs-highlight',
+  selector: 'medes-prismjs-highlight',
   templateUrl: './prismjs-highlight.component.html',
   styleUrls: ['./prismjs-highlight.component.scss']
 })
@@ -13,7 +13,7 @@ export class PrismjsHighlightComponent implements OnInit {
     MdsHightlightPrismModule
   ]
 })`;
-importcompnent = `<mds-hightlight-prism [code]="importmodule" language="ts"></mds-hightlight-prism>`
+importcompnent = `<mds-hightlight-prism [code]="importmodule" language="ts"></mds-hightlight-prism>`;
 
   constructor() { }
 

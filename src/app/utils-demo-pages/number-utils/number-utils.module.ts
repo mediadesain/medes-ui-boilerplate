@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NumberUtilsRoutingModule } from './number-utils-routing.module';
 import { NumberUtilsComponent } from './number-utils.component';
+import { MdsHightlightPrismModule } from 'medes-ui';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { NumberUtilsComponent } from './number-utils.component';
   ],
   imports: [
     CommonModule,
-    NumberUtilsRoutingModule
+    NumberUtilsRoutingModule,
+    MdsHightlightPrismModule
   ]
 })
 export class NumberUtilsModule { }

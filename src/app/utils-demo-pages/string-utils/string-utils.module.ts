@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { StringUtilsRoutingModule } from './string-utils-routing.module';
 import { StringUtilsComponent } from './string-utils.component';
+import { MdsHightlightPrismModule } from 'medes-ui';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { StringUtilsComponent } from './string-utils.component';
   ],
   imports: [
     CommonModule,
-    StringUtilsRoutingModule
+    StringUtilsRoutingModule,
+    MdsHightlightPrismModule
   ]
 })
 export class StringUtilsModule { }

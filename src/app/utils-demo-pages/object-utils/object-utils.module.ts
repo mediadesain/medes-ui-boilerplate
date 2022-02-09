@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ObjectUtilsRoutingModule } from './object-utils-routing.module';
 import { ObjectUtilsComponent } from './object-utils.component';
+import { MdsHightlightPrismModule } from 'medes-ui';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ObjectUtilsComponent } from './object-utils.component';
   ],
   imports: [
     CommonModule,
-    ObjectUtilsRoutingModule
+    ObjectUtilsRoutingModule,
+    MdsHightlightPrismModule
   ]
 })
 export class ObjectUtilsModule { }

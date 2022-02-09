@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-how-to-install',
+  selector: 'medes-how-to-install',
   templateUrl: './how-to-install.component.html',
   styleUrls: ['./how-to-install.component.scss']
 })

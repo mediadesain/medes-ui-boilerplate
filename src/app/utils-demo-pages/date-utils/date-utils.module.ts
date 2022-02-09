@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DateUtilsRoutingModule } from './date-utils-routing.module';
 import { DateUtilsComponent } from './date-utils.component';
+import { MdsHightlightPrismModule } from 'medes-ui';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { DateUtilsComponent } from './date-utils.component';
   ],
   imports: [
     CommonModule,
-    DateUtilsRoutingModule
+    DateUtilsRoutingModule,
+    MdsHightlightPrismModule
   ]
 })
 export class DateUtilsModule { }

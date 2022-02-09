@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MdsArrayUtils } from 'dist/medes-ui/public-api';
 
 @Component({
-  selector: 'app-aray-utils',
+  selector: 'medes-aray-utils',
   templateUrl: './aray-utils.component.html',
   styleUrls: ['./aray-utils.component.scss']
 })
 export class ArayUtilsComponent implements OnInit {
+import: string = `import { MdsArrayUtils } from 'medes-ui';`;
 
   constructor() { }
 

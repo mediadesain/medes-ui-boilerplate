@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MdsDateUtils } from 'medes-ui';
 
 @Component({
-  selector: 'app-date-utils',
+  selector: 'medes-date-utils',
   templateUrl: './date-utils.component.html',
   styleUrls: ['./date-utils.component.scss']
 })
 export class DateUtilsComponent implements OnInit {
+import: string = `import { MdsDateUtils } from 'medes-ui';`;
 
   constructor() { }
 
