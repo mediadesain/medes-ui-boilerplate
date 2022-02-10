@@ -18,20 +18,26 @@ export class FilterCheckboxComponent implements OnInit {
 >
 </mds-filter-checkbox>`;
 
+importmodule = `import { MdsFilterCheckboxModule } from 'medes-ui';
+
+@NgModule({
+  declarations: [ ... ],
+  imports: [
+    MdsFilterCheckboxModule
+  ]
+})`;
   sampledata: any = [
     { category: 'eastern food', type: 'food' },
     { category: 'western food', type: 'drink' },
     { category: 'middle east food', type: 'snack' },
     { category: 'eastern food', type: 'drink' },
-    { category: 'western food', type: 'snack' }
+    { category: 'western food', type: 'snack,food,branch' }
   ];
 
   keys: string[] = ['category', 'type'];
 
-  filteritems: any = {
-    category: ['eastern food', 'western food'],
-    type: ['food', 'drink']
-  };
+  filteritems: {[key: string]: string[]} = {};
+
   constructor() {}
 
   ngOnInit(): void {

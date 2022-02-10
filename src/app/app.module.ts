@@ -16,7 +16,7 @@ import { AsideComponent } from './shared/aside/aside.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -5,7 +5,8 @@ import { FilterCheckboxRoutingModule } from './filter-checkbox-routing.module';
 import { FilterCheckboxComponent } from './filter-checkbox.component';
 
 
-import { MdsFilterCheckboxModule, MdsHightlightPrismModule, MdsPipesModule } from 'medes-ui';
+import { MdsFilterCheckboxModule, MdsHightlightPrismModule, MdsPipesModule } from 'projects/medes-ui/src/public-api';
+// import { MdsFilterCheckboxModule, MdsHightlightPrismModule, MdsPipesModule } from 'medes-ui';
 
 
 @NgModule({
