@@ -21,9 +21,6 @@ MdsStringUtils.getYoutubeThumbnail('https://www.youtube.com/watch?v=L8Zs8WnLerw'
   constructor() { }
 
   ngOnInit(): void {
-    console.log(
-      MdsStringUtils.convertToSlug('This Url url $string & have symbol@#%'),
-    )
   }
 
 }
