@@ -7,7 +7,7 @@ import { MdsDateUtils } from 'medes-ui';
   styleUrls: ['./date-utils.component.scss']
 })
 export class DateUtilsComponent implements OnInit {
-import: string = `import { MdsDateUtils } from 'medes-ui';`;
+import = `import { MdsDateUtils } from 'medes-ui';`;
 
   constructor() { }
 

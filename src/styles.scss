@@ -56,6 +56,7 @@ table td {border: 0;padding: 10px 15px;text-align: left;vertical-align: top;colo
 table tr:nth-of-type(even) td {background-color: #f6f8f9;}
 table td:first-child {border-right: 0;}
 table th:first-child, table th:nth-child(2) {width: 25%;}
+table ul {margin: 0;}
 
 @media (max-width: 747px){
     table, thead, tbody {display: block;}

@@ -2,12 +2,25 @@
 <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
 <p>string-utils works!</p>
 <small><mds-hightlight-prism [code]="import" language="typescript"></mds-hightlight-prism></small>
-MdsStringUtils.lowerCase()
-MdsStringUtils.upperCase()
-MdsStringUtils.titleCase()
-MdsStringUtils.pascalCase()
-MdsStringUtils.randomCharacter()
-MdsStringUtils.convertToSlug()
-MdsStringUtils.getYoutubeID()
-MdsStringUtils.getYoutubeEmbed()
-MdsStringUtils.getYoutubeThumbnail()
+<small><mds-hightlight-prism [code]="demo" language="typescript"></mds-hightlight-prism></small>
+
+<table>
+    <tr>
+        <th>Function and data Type</th><th>Sample Value</th><th>Description</th>
+    </tr>
+    <tr *ngFor="let item of [
+        {'attribute':'lowerCase( string )', 'value':'<ul><li>This Is String</li></ul>', 'description':'Set string to Lower Case'},
+        {'attribute':'upperCase( string )', 'value':'<ul><li>this is string</li></ul>', 'description':'Set string to Upper Case'},
+        {'attribute':'titleCase( string )', 'value':'<ul><li>this is string</li></ul>', 'description':'Set string to Title Case'},
+        {'attribute':'pascalCase( string )', 'value':'<ul><li>this is string</li></ul>', 'description':'Set string to Pascal Case'},
+        {'attribute':'randomCharacter( number )', 'value':'<ul><li>20</li></ul>', 'description':'Create string of random character from total count'},
+        {'attribute':'convertToSlug( string )', 'value':'<ul><li>This Url url $string & have symbol@#%</li></ul>', 'description':'Convert string to slug url'},
+        {'attribute':'getYoutubeID( string )', 'value':'<ul><li>https://www.youtube.com/watch?v=L8Zs8WnLerw</li></ul>', 'description':'Get Youtube ID Content from video url'},
+        {'attribute':'getYoutubeEmbed( string )', 'value':'<ul><li>https://www.youtube.com/watch?v=L8Zs8WnLerw</li></ul>', 'description':'Get embed url from video url'},
+        {'attribute':'getYoutubeThumbnail( string, string )', 'value':'<ul><li>https://www.youtube.com/watch?v=L8Zs8WnLerw</li><li>Option: 0 | 1 | 2 | 3 | default | sd1 | sd2 | sd3 | sddefault | mq1 | mq2 | mq3 | mqdefault | hq1 | hq2 | hq3 | <b>hqdefault</b> | hq720 | maxres1 | maxres2 | maxres3 | maxresdefault</li></ul>', 'description':'Get image thumbnail from video url with custom size'}
+    ]">
+        <td mds-th-title="Function">{{item.attribute}}</td>
+        <td mds-th-title="Sample Value"><span [innerHTML]="item.value"></span></td>
+        <td mds-th-title="Description">{{item.description}}</td>
+    </tr>
+</table>

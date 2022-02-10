@@ -7,7 +7,7 @@ import { MdsNumberUtils } from 'medes-ui';
   styleUrls: ['./number-utils.component.scss']
 })
 export class NumberUtilsComponent implements OnInit {
-import: string = `import { MdsNumberUtils } from 'medes-ui';`;
+import = `import { MdsNumberUtils } from 'medes-ui';`;
   constructor() { }
 
   ngOnInit(): void {

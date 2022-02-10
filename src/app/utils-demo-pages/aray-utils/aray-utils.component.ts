@@ -7,7 +7,7 @@ import { MdsArrayUtils } from 'dist/medes-ui/public-api';
   styleUrls: ['./aray-utils.component.scss']
 })
 export class ArayUtilsComponent implements OnInit {
-import: string = `import { MdsArrayUtils } from 'medes-ui';`;
+import = `import { MdsArrayUtils } from 'medes-ui';`;
 
   constructor() { }
 

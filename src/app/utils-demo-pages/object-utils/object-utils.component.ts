@@ -7,7 +7,7 @@ import { MdsObjectUtils } from 'medes-ui';
   styleUrls: ['./object-utils.component.scss']
 })
 export class ObjectUtilsComponent implements OnInit {
-  import: string = `import { MdsObjectUtils } from 'medes-ui';`;
+  import = `import { MdsObjectUtils } from 'medes-ui';`;
   constructor() { }
 
   ngOnInit(): void {
