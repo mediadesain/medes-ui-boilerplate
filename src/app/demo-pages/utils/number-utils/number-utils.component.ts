@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MdsNumberUtils } from 'medes-ui';
+// import { MdsNumberUtils } from 'medes-ui';
+import { MdsNumberUtils } from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'medes-number-utils',
@@ -8,10 +9,12 @@ import { MdsNumberUtils } from 'medes-ui';
 })
 export class NumberUtilsComponent implements OnInit {
 import = `import { MdsNumberUtils } from 'medes-ui';`;
+demo = `MdsNumberUtils.shortNumber(15320, ['','rb','jt','mil','tr']); // output 15k
+MdsNumberUtils.toCurrency(15320, 'IDR', 2); // output Rp 15.320,00`;
   constructor() { }
 
   ngOnInit(): void {
-
+    console.log(MdsNumberUtils.shortNumber(15320, ['rb','jt','m','t']))
   }
 
 }
