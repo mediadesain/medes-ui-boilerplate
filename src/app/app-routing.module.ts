@@ -41,6 +41,7 @@ const routes: Routes = [
     path: 'date-utils',
     loadChildren: () => import('./demo-pages/utils/date-utils/date-utils.module').then(m => m.DateUtilsModule)
   },
+  { path: 'pipe', loadChildren: () => import('./demo-pages/pipe/pipe.module').then(m => m.PipeModule) },
   {
     path: '**', redirectTo: 'filter-checkbox'
   }
