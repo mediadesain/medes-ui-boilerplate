@@ -7,11 +7,18 @@ import { MdsObjectUtils } from 'medes-ui';
   styleUrls: ['./object-utils.component.scss']
 })
 export class ObjectUtilsComponent implements OnInit {
-  import = `import { MdsObjectUtils } from 'medes-ui';`;
+import = `import { MdsObjectUtils } from 'medes-ui';`;
+demo = `const object = {
+  "firstname": "Jhon",
+  "lastname": "",
+  "gender": null,
+  "city": undefined
+};
+MdsObjectUtils.removeKeysIfEmpty(object); // output {"firstname":"Jhon"}`;
   constructor() { }
 
   ngOnInit(): void {
-
+    console.log(MdsObjectUtils.removeKeysIfEmpty({"firstname":"Jhon","lastname":"","gender":null,"city": undefined}))
   }
 
 }
