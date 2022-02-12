@@ -13,7 +13,7 @@ export class PrismjsHighlightComponent implements OnInit {
     MdsHightlightPrismModule
   ]
 })`;
-importcompnent = `<mds-hightlight-prism [code]="importmodule" language="ts"></mds-hightlight-prism>`;
+importcompnent = `<mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism>`;
 
   constructor() { }
 
