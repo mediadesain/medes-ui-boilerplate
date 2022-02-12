@@ -14,7 +14,6 @@ MdsNumberUtils.toCurrency(15320, 'IDR', 2); // output Rp 15.320,00`;
   constructor() { }
 
   ngOnInit(): void {
-    console.log(MdsNumberUtils.shortNumber(15320, ['rb','jt','m','t']))
   }
 
 }
