@@ -1,11 +1,33 @@
 <h1>Array Utils</h1>
 <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
-<p>aray-utils works!</p>
-<small><mds-hightlight-prism [code]="import" language="typescript"></mds-hightlight-prism></small>
+<hr/>
 
-MdsArrayUtils.countUniqueValues()
-MdsArrayUtils.filterMultiple()
-MdsArrayUtils.groupValues()
-MdsArrayUtils.sumValues()
-MdsArrayUtils.arrayTolistObject()
+<b>Import MdsObjectUtils:</b>
+<small><mds-hightlight-prism [code]="import" language="typescript"></mds-hightlight-prism></small>
+<br/>
+
+<b>Object utils details:</b>
+<table>
+    <tr>
+        <th>Function and data Type</th><th>Detail Value</th><th>Description</th>
+    </tr>
+    <tr *ngFor="let item of [
+        {'attribute':'countUniqueValues( <b>array</b> )', 'value':'array of string', 'description':'Count unique value inside string of array'},
+        {'attribute':'sumValues( <b>array</b> )', 'value':'array of number', 'description':'Sum all number inside of array'},
+        {'attribute':'filterMultiple( <b>array</b>, <b>string</b>, <b>array</b> )', 'value':'<ul><li>array</li><li>string</li><li>array of string</li></ul>', 'description':'<ul><li>Sample data list</li><li>String of Key/prop to show on filter list</li><li>Values will show base on key/prop.</li></ul>'},
+        {'attribute':'groupValues( <b>array</b>, <b>string</b> )', 'value':'<ul><li>array</li><li>string</li></ul>', 'description':'<ul><li>Sample data list</li><li>String of Key/prop to make it as key.</li></ul>'},
+        {'attribute':'arrayTolistObject( <b>array</b>, <b>string</b> )', 'value':'<ul><li>array</li><li>string</li></ul>', 'description':'<ul><li>Sample data list</li><li>String of Key/prop to make it as Object Key.</li></ul>'}
+    ]">
+        <td mds-th-title="Function"><span [innerHTML]="item.attribute"></span></td>
+        <td mds-th-title="Detail Value"><span [innerHTML]="item.value"></span></td>
+        <td mds-th-title="Description"><span [innerHTML]="item.description"></span></td>
+    </tr>
+</table>
+<small>
+    <b>Notes:</b><br/><i>? = Is optional value, if no value will use default value.</i>
+</small>
+<hr/>
+
+<b>Output:</b>
+<small><mds-hightlight-prism [code]="demo" language="typescript"></mds-hightlight-prism></small>
 
