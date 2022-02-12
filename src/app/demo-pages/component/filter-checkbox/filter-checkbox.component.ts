@@ -42,11 +42,10 @@ importmodule = `import { MdsFilterCheckboxModule } from 'medes-ui';
     { category: 'eastern food', type: 'drink', country: 'unknow' },
     { category: 'western food', type: 'snack,food,branch', country: 'unknow' }
   ];
-  // Filter category prop/key 'country' only have one value which is 'unknow', filter list will not shwoing 
-  keys: string[] = ['category', 'type','country'];
+  // Filter category prop/key 'country' only have one value which is 'unknow', filter list will not shwoing
+  keys: string[] = ['category', 'type', 'country'];
   // Filter key/prop selected
-  filteritems: {[key: string]: string[]} = {};
-
+  filteritems: { [key: string]: string[] } = {};
 
 samplecomponent = `export class MyComponent implements OnInit {
 ...
@@ -55,7 +54,7 @@ samplecomponent = `export class MyComponent implements OnInit {
   keys: string[] = ${JSON.stringify(this.keys)};
   filteritems: {[key: string]: string[]} = ${JSON.stringify(this.filteritems)};
 ...
-}`
+}`;
 
   constructor() {}
 
