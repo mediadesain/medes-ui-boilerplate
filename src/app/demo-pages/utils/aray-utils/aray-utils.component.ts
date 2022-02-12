@@ -24,7 +24,7 @@ data = [
   { "manufucture": "kia", "model": "optima", "year": "2012" }
 ]
 
-MdsArrayUtils.filterMultiple(this.data, 'manufucture', ['ford','audi']);
+MdsArrayUtils.filterMultiple(this.data, manufucture, ['ford','audi']);
 /* output
 [
   {manufucture: 'audi', model: 'r8', year: '2012'}
@@ -33,7 +33,7 @@ MdsArrayUtils.filterMultiple(this.data, 'manufucture', ['ford','audi']);
   {manufucture: 'ford', model: 'fusion', year: '2015'}
 ]*/
 
-MdsArrayUtils.groupValues(this.data, 'manufucture');
+MdsArrayUtils.groupValues(this.data, manufucture);
 /* output
 {
   audi: [
@@ -46,7 +46,7 @@ MdsArrayUtils.groupValues(this.data, 'manufucture');
   ]
 }*/
 
-MdsArrayUtils.arrayTolistObject(this.data, 'manufucture');
+MdsArrayUtils.arrayTolistObject(this.data, manufucture);
 /* output
 {
   audi: {manufucture: 'audi', model: 'rs5', year: '2013'}
@@ -56,12 +56,12 @@ MdsArrayUtils.arrayTolistObject(this.data, 'manufucture');
 
 
 data = [
-  { "manufucture": "audi", "model": "r8", "year": "2012" },
-  { "manufucture": "audi", "model": "rs5", "year": "2013" },
-  { "manufucture": "ford", "model": "mustang", "year": "2012" },
-  { "manufucture": "ford", "model": "fusion", "year": "2015" },
-  { "manufucture": "kia", "model": "optima", "year": "2012" }
-]
+  { manufucture: 'audi', model: 'r8', year: '2012' },
+  { manufucture: 'audi', model: 'rs5', year: '2013' },
+  { manufucture: 'ford', model: 'mustang', year: '2012' },
+  { manufucture: 'ford', model: 'fusion', year: '2015' },
+  { manufucture: 'kia', model: 'optima', year: '2012' }
+];
 
   constructor() { }
 

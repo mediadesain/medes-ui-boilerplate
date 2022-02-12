@@ -19,7 +19,6 @@ MdsObjectUtils.removeKeysIfEmpty(object); // output {"firstname":"Jhon"}`;
   constructor() { }
 
   ngOnInit(): void {
-    console.log(MdsObjectUtils.removeKeysIfEmpty({"firstname":"Jhon","lastname":"","gender":null,"city": undefined}))
   }
 
 }

@@ -9,7 +9,8 @@ import { MdsDateUtils } from 'projects/medes-ui/src/public-api';
 })
 export class DateUtilsComponent implements OnInit {
 import = `import { MdsDateUtils } from 'medes-ui';`;
-demo = `MdsDateUtils.untilNow(1644684102000, ['tahun','bulan','hari','jam','menit','detik'], 'lalu') // output ${MdsDateUtils.untilNow(1644684102000, ['tahun','bulan','hari','jam','menit','detik'], 'lalu')}`;
+demo = `MdsDateUtils.untilNow(1644684102000, ['tahun','bulan','hari','jam','menit','detik'], 'lalu')
+// output ${MdsDateUtils.untilNow(1644684102000, ['tahun', 'bulan', 'hari', 'jam', 'menit', 'detik'], 'lalu')}`;
 
   constructor() { }
 
