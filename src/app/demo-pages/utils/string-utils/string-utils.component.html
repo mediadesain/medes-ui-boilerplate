@@ -11,19 +11,19 @@
         <th>Function and data Type</th><th>Sample Value</th><th>Description</th>
     </tr>
     <tr *ngFor="let item of [
-        {'attribute':'lowerCase( string )', 'value':'<ul><li>This Is String</li></ul>', 'description':'Set string to Lower Case'},
-        {'attribute':'upperCase( string )', 'value':'<ul><li>this is string</li></ul>', 'description':'Set string to Upper Case'},
-        {'attribute':'titleCase( string )', 'value':'<ul><li>this is string</li></ul>', 'description':'Set string to Title Case'},
-        {'attribute':'pascalCase( string )', 'value':'<ul><li>this is string</li></ul>', 'description':'Set string to Pascal Case'},
-        {'attribute':'randomCharacter( number )', 'value':'<ul><li>20</li></ul>', 'description':'Create string of random character from total count'},
-        {'attribute':'convertToSlug( string )', 'value':'<ul><li>This Url url $string & have symbol@#%</li></ul>', 'description':'Convert string to slug url'},
-        {'attribute':'getYoutubeID( string )', 'value':'<ul><li>https://www.youtube.com/watch?v=L8Zs8WnLerw</li></ul>', 'description':'Get Youtube ID Content from video url'},
-        {'attribute':'getYoutubeEmbed( string )', 'value':'<ul><li>https://www.youtube.com/watch?v=L8Zs8WnLerw</li></ul>', 'description':'Get embed url from video url'},
-        {'attribute':'getYoutubeThumbnail( string, string )', 'value':'<ul><li>https://www.youtube.com/watch?v=L8Zs8WnLerw</li><li>Option: 0 | 1 | 2 | 3 | default | sd1 | sd2 | sd3 | sddefault | mq1 | mq2 | mq3 | mqdefault | hq1 | hq2 | hq3 | <b>hqdefault</b> | hq720 | maxres1 | maxres2 | maxres3 | maxresdefault</li></ul>', 'description':'Get image thumbnail from video url with custom size'}
+        {'attribute':'lowerCase( string )', 'value':'<ul><li>This Is String</li></ul>', 'description':'<ul><li>Sample string to Lower Case</li></ul>'},
+        {'attribute':'upperCase( string )', 'value':'<ul><li>this is string</li></ul>', 'description':'<ul><li>Sample string to Upper Case</li></ul>'},
+        {'attribute':'titleCase( string )', 'value':'<ul><li>this is string</li></ul>', 'description':'<ul><li>Sample string to Title Case</li></ul>'},
+        {'attribute':'pascalCase( string )', 'value':'<ul><li>this is string</li></ul>', 'description':'<ul><li>Sample string to Pascal Case</li></ul>'},
+        {'attribute':'randomCharacter( number )', 'value':'<ul><li>20</li></ul>', 'description':'<ul><li>Total character to create randomstring</li></ul>'},
+        {'attribute':'convertToSlug( string )', 'value':'<ul><li>This Url url $string & have symbol@#%</li></ul>', 'description':'<ul><li>Sample string to convert as slug url</li></ul>'},
+        {'attribute':'getYoutubeID( string )', 'value':'<ul><li>https://www.youtube.com/watch?v=L8Zs8WnLerw</li></ul>', 'description':'<ul><li>Youtube url</li></ul>'},
+        {'attribute':'getYoutubeEmbed( string )', 'value':'<ul><li>https://www.youtube.com/watch?v=L8Zs8WnLerw</li></ul>', 'description':'<ul><li>Youtube url</li></ul>'},
+        {'attribute':'getYoutubeThumbnail( string, string )', 'value':'<ul><li>https://www.youtube.com/watch?v=L8Zs8WnLerw</li><li>Option: 0 | 1 | 2 | 3 | default | sd1 | sd2 | sd3 | sddefault | mq1 | mq2 | mq3 | mqdefault | hq1 | hq2 | hq3 | <b>hqdefault</b> | hq720 | maxres1 | maxres2 | maxres3 | maxresdefault</li></ul>', 'description':'<ul><li>Youtube url</li><li>Size url</li></ul>'}
     ]">
         <td mds-th-title="Function">{{item.attribute}}</td>
         <td mds-th-title="Sample Value"><span [innerHTML]="item.value"></span></td>
-        <td mds-th-title="Description">{{item.description}}</td>
+        <td mds-th-title="Description"><span [innerHTML]="item.description"></span></td>
     </tr>
 </table>
 <br/>
