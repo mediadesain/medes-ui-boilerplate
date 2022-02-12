@@ -1,5 +1,6 @@
 <h1>Number Utils</h1>
 <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<hr/>
 
 <b>Import MdsNumberUtils:</b>
 <small><mds-hightlight-prism [code]="import" language="typescript"></mds-hightlight-prism></small>
@@ -11,12 +12,12 @@
         <th>Function and data Type</th><th>Sample Value</th><th>Description</th>
     </tr>
     <tr *ngFor="let item of [
-        {'attribute':'shortNumber( number, array? )', 'value':'<ul><li>15320</li><li>Custom: rb,jt,m,t</li></ul>', 'description':'Short number with initial example 15k, by default: k, m, b,t.'},
-        {'attribute':'toCurrency( number, string, string , number? )', 'value':'<ul><li>15320</li><li>Option: IDR | JYP | EUR | USD</li><li>2</li></ul>', 'description':'Set Number as currency and set decimal.'},
+        {'attribute':'shortNumber( number, array? )', 'value':'<ul><li>15320</li><li>Custom: rb,jt,m,t</li></ul>', 'description':'<ul><li>Number will sorting</li><li>Sample custom prefix, by fefault is k, m, b,t</li></ul>'},
+        {'attribute':'toCurrency( number, string, string , number? )', 'value':'<ul><li>15320</li><li>Option: IDR | JYP | EUR | USD</li><li>2</li></ul>', 'description':'<ul><li>Number will sorting</li><li>Type Currency</li><li>Set decimal</li></ul>'},
     ]">
         <td mds-th-title="Function">{{item.attribute}}</td>
         <td mds-th-title="Sample Value"><span [innerHTML]="item.value"></span></td>
-        <td mds-th-title="Description">{{item.description}}</td>
+        <td mds-th-title="Description"><span [innerHTML]="item.description"></span></td>
     </tr>
 </table>
 <br/>
