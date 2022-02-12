@@ -14,11 +14,6 @@ demo = `MdsDateUtils.untilNow(1644684102000, ['tahun','bulan','hari','jam','meni
   constructor() { }
 
   ngOnInit(): void {
-    const test = 24*60*60*1000;
-    const date = new Date();
-    console.log(
-      MdsDateUtils.untilNow(1644684102000, ['tahun','bulan','hari','jam','menit','detik'], 'lalu')
-    )
   }
 
 }
