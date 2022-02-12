@@ -12,8 +12,8 @@
         <th>Function and data Type</th><th>Sample Value</th><th>Description</th>
     </tr>
     <tr *ngFor="let item of [
-        {'attribute':'shortNumber( <b>number</b>, <b>array?</b> )', 'value':'<ul><li>15320</li><li>Custom: rb,jt,m,t</li></ul>', 'description':'<ul><li>Number will sorting</li><li>Sample custom prefix, by fefault is k, m, b,t</li></ul>'},
-        {'attribute':'toCurrency( <b>number</b>, <b>string</b>, <b>number?</b> )', 'value':'<ul><li>15320</li><li>Option: IDR | JYP | EUR | USD</li><li>2</li></ul>', 'description':'<ul><li>Number will sorting</li><li>Type Currency</li><li>Set decimal</li></ul>'},
+        {'attribute':'shortNumber( <b>number</b>, <b>array?</b> )', 'value':'<ul><li>15320</li><li>Default: k, m, b,t<br/>Custom: rb,jt,m,t</li></ul>', 'description':'<ul><li>Number will sorting</li><li>Sample custom prefix.</li></ul>'},
+        {'attribute':'toCurrency( <b>number</b>, <b>string</b>, <b>number?</b> )', 'value':'<ul><li>15320</li><li>Option:<br/><i>IDR | JYP | EUR | USD<i></li><li>2</li></ul>', 'description':'<ul><li>Number will sorting</li><li>Type Currency</li><li>Set decimal</li></ul>'},
     ]">
         <td mds-th-title="Function"><span [innerHTML]="item.attribute"></span></td>
         <td mds-th-title="Sample Value"><span [innerHTML]="item.value"></span></td>
@@ -21,7 +21,7 @@
     </tr>
 </table>
 <small>
-    <b>Notes:</b><br/><i>? = Is optional value</i>
+    <b>Notes:</b><br/><i>? = Is optional value, if no value will use default value.</i>
 </small>
 <hr/>
 
