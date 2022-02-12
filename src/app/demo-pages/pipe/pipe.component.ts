@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-pipe',
+  selector: 'medes-pipe',
   templateUrl: './pipe.component.html',
   styleUrls: ['./pipe.component.scss']
 })
