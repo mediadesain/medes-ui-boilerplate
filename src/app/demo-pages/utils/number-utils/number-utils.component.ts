@@ -9,7 +9,10 @@ import { MdsNumberUtils } from 'projects/medes-ui/src/public-api';
 })
 export class NumberUtilsComponent implements OnInit {
 import = `import { MdsNumberUtils } from 'medes-ui';`;
-demo = `MdsNumberUtils.shortNumber(15320, ['rb','jt','mil','tr']); // output 15rb
+demo = `MdsNumberUtils.shortNumber(15320); // output 15k
+MdsNumberUtils.shortNumber(15320, ['rb','jt','mil','tr']); // output 15rb
+
+MdsNumberUtils.toCurrency(15320, 'USD'); // output $15,320
 MdsNumberUtils.toCurrency(15320, 'IDR', 2); // output Rp 15.320,00`;
   constructor() { }
 
