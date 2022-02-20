@@ -1,3 +1,4 @@
+<medes-alert-deprecated [version]="'v0.0.5'"></medes-alert-deprecated>
 <h1>Multiple Filter Checkbox</h1>
 <p>Multiple filter checkbox component is automatically generate HTML Element filterlist as checkbox base on sampledata. Put sample data, key to filter and selected filter object. Put selected filter object to *ngFor loop to filter pipe from medes-ui.</p>
 <hr/>
@@ -27,7 +28,7 @@
         <b>Multiple Filter Demo:</b>
         <pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json)=='{}'">No Data Found</pre>
         <pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json)!='{}'">Filtered data not found</pre>
-            <ul *ngIf="(sampledata|filter:filteritems).length > 0">
+        <ul *ngIf="(sampledata|filter:filteritems).length > 0">
             <li *ngFor="let item of (sampledata|filter:filteritems)">{{item.type}} - {{item.category}}</li>
         </ul>
     </div>

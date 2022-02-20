@@ -1,0 +1,51 @@
+<medes-alert-soon [version]="'v.0.0.3'"></medes-alert-soon>
+<h1>Medes Filter Components</h1>
+<p>Multiple filter checkbox components is automatically generate HTML Element filtergroup base on sampledata. There are 3 categoires:</p>
+<ul>
+    <li>Filter Checkbox Component <i><small>&lt;mds-filter-checkbox ... &gt;&lt;/mds-filter-checkbox&gt;</small></i></li>
+    <li>Filter Swatch Component <i><small>&lt;mds-filter-swatch ... &gt;&lt;/mds-filter-swatch&gt;</small></i></li>
+    <li>Reset Filter Component <i><small>&lt;mds-filter-reset ... &gt;&lt;/mds-filter-reset&gt;</small></i></li>
+</ul>
+<p>Put sample data, key to filter and selected filter object. Put selected filter object to *ngFor loop to filter pipe from medes-ui.</p>
+<hr/>
+<h2>Demo</h2>
+<div class="grid">
+    <div class="g-l-30">
+        <mds-filter-checkbox
+            [titlegroup]="'Filter by'"
+            [filterData]="sampledata"
+            [filterBy]="['gender','category']"
+            [filterSelected]="selected"
+            [reset]="'✕'"
+            [hideCounter]="false"
+        ></mds-filter-checkbox>
+        <mds-filter-swatch
+            [titlegroup]="'Filter by Color'"
+            [filterData]="sampledata"
+            [filterSelected]="selected"
+            [swatchMapping]="colormap"
+        ></mds-filter-swatch>
+        <mds-filter-checkbox
+            [filterData]="sampledata"
+            [filterBy]="['brand']"
+            [filterSelected]="selected"
+            [hideCounter]="false"
+        ></mds-filter-checkbox>
+        <mds-filter-reset [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset>
+        <pre>{{selected|json}}</pre>
+    </div>
+    <div class="g-l-70">
+        <pre *ngIf="(sampledata|filter:selected).length === 0 && (selected|json)=='{}'">No Data Found</pre>
+        <pre *ngIf="(sampledata|filter:selected).length === 0 && (selected|json)!='{}'">Filtered data not found</pre>
+        <ul>
+            <li *ngFor="let item of (sampledata|filter:selected)">
+                {{item.name}} - {{item.brand}} - {{item.category}} <small>({{item.color}})</small>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr/>
+
+<h2>How to Use</h2>
+<b>Import Module</b>
+<small><mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism></small>

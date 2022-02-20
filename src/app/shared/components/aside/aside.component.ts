@@ -11,13 +11,21 @@ export class AsideComponent implements OnInit {
       title: 'MedesUI',
       links: [
         {text: 'Introduction', url: '/introduction'},
-        {text: 'How to Install', url: '/how-to-install'}
+        {text: 'How to Install', url: '/how-to-install'},
+        {text: 'UI Boilerplate', url: '/doc-boilerplate'},
       ]
     }, {
-      title: 'Components',
+      title: 'Filter Components',
       links: [
-        {text: 'Doc Boilerplate', url: '/doc-boilerplate'},
-        {text: 'Multiple Filter Checkbox', url: '/filter-checkbox'},
+        {text: 'Intro', url: '/filter-components'},
+        {text: 'Checkboxes Filter', url: '/filter-components/checkboxes'},
+        {text: 'Swatch Filter', url: '/filter-components/swatch'},
+        {text: 'Reset Filter', url: '/filter-components/reset'}
+      ]
+    }, {
+      title: 'Others',
+      links: [
+        {text: 'Multiple Filter Checkbox (Deprecated)', url: '/filter-checkbox'},
         {text: 'PrismJs Highlight', url: '/prismjs-highlight'}
       ]
     }, {

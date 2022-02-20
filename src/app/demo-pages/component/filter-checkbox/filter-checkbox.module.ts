@@ -6,12 +6,14 @@ import { FilterCheckboxComponent } from './filter-checkbox.component';
 
 
 import { MdsFilterCheckboxModule, MdsHightlightPrismModule, MdsPipesModule } from 'projects/medes-ui/src/public-api';
+import { AlertDeprecatedComponent } from 'src/app/shared/components/alert-deprecated/alert-deprecated.component';
 // import { MdsFilterCheckboxModule, MdsHightlightPrismModule, MdsPipesModule } from 'medes-ui';
 
 
 @NgModule({
   declarations: [
-    FilterCheckboxComponent
+    FilterCheckboxComponent,
+    AlertDeprecatedComponent
   ],
   imports: [
     CommonModule,
