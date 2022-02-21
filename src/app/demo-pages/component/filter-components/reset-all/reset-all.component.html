@@ -1,3 +1,14 @@
+<medes-alert-soon [version]="'v.0.0.3'"></medes-alert-soon>
 <h1>Reset Filter Components</h1>
-<b>HTML</b>
-<small><mds-hightlight-prism [code]="componentdemo" language="html"></mds-hightlight-prism></small>
+
+<h3>Filter Reset Component</h3>
+<div class="grid">
+    <div class="g-l-70">
+        <b>HTML</b>
+        <small><mds-hightlight-prism [code]="componentdemo" language="html"></mds-hightlight-prism></small>
+    </div>
+    <div class="g-l-30">
+        <b>Output</b>
+        <mds-filter-reset [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset>
+    </div>
+</div>

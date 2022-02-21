@@ -1,6 +1,7 @@
 <div class="list-group" *ngFor="let group of menu">
     <b>{{group.title}}:</b>
     <ul>
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngFor="let link of group.links"><a [routerLink]="link.url">{{link.text}}</a></li>
+        <!--[routerLinkActiveOptions]="{exact: true}"-->
+        <li routerLinkActive="active" *ngFor="let link of group.links"><a [routerLink]="link.url">{{link.text}}</a></li>
     </ul>
 </div>

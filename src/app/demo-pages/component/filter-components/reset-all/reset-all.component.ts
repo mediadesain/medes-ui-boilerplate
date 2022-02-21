@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reset-all.component.scss']
 })
 export class ResetAllComponent implements OnInit {
-componentdemo = `<!-- Filter Reset All Component -->
+  selected = { 'category': ['shoes']};
+
+componentdemo = `<!-- Reset Filter Component -->
 <mds-filter-reset [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset>`;
   constructor() { }
 

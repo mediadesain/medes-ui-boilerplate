@@ -94,7 +94,7 @@ export class SampleProductsData {
           "color": "brown",
           "gender": "women",
           "id": "62122871ed30be6e9244151c",
-          "picture": "https://picsum.photos/400?image=359",
+          "picture": "https://picsum.photos/400?image=353",
           "price": 165.846,
           "name": "Watkins Mcfadden"
         },
@@ -264,7 +264,7 @@ export class SampleProductsData {
           "color": "gold",
           "gender": "women",
           "id": "6212287160dbf7120014bd54",
-          "picture": "https://picsum.photos/400?image=207",
+          "picture": "https://picsum.photos/400?image=227",
           "price": 234.562,
           "name": "Walter Briggs"
         },

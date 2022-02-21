@@ -12,6 +12,7 @@ import { ResetAllComponent } from './reset-all/reset-all.component';
 // import { MdsHightlightPrismModule } from 'projects/medes-ui/src/public-api';
 import { MdsHightlightPrismModule } from 'medes-ui';
 import { AlertSoonComponent } from 'src/app/shared/components/alert-soon/alert-soon.component';
+import { DemoComponent } from './demo/demo.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AlertSoonComponent } from 'src/app/shared/components/alert-soon/alert-s
     CheckboxesComponent,
     SwatchComponent,
     ResetAllComponent,
-    AlertSoonComponent
+    AlertSoonComponent,
+    DemoComponent
   ],
   imports: [
     CommonModule,

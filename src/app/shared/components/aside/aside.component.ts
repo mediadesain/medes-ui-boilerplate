@@ -17,10 +17,11 @@ export class AsideComponent implements OnInit {
     }, {
       title: 'Filter Components',
       links: [
-        {text: 'Intro', url: '/filter-components'},
+        {text: 'Intro', url: '/filter-components/intro'},
         {text: 'Checkboxes Filter', url: '/filter-components/checkboxes'},
         {text: 'Swatch Filter', url: '/filter-components/swatch'},
-        {text: 'Reset Filter', url: '/filter-components/reset'}
+        {text: 'Reset Filter', url: '/filter-components/reset'},
+        {text: 'Demo', url: '/filter-components/demo'}
       ]
     }, {
       title: 'Others',
