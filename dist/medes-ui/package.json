@@ -1,0 +1,35 @@
+{
+  "name": "medes-ui",
+  "version": "0.0.3-beta.1",
+  "description": "library",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mediadesain/medes-ui-boilerplate"
+  },
+  "keywords": [
+    "angular",
+    "javascript",
+    "library"
+  ],
+  "author": "mediadesain",
+  "bugs": {
+    "url": "https://github.com/mediadesain/medes-ui-boilerplate/issues"
+  },
+  "homepage": "https://doc.mediadesain.com/",
+  "peerDependencies": {
+    "@angular/common": "^11.2.14",
+    "@angular/core": "^11.2.14"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "main": "bundles/medes-ui.umd.js",
+  "module": "fesm2015/medes-ui.js",
+  "es2015": "fesm2015/medes-ui.js",
+  "esm2015": "esm2015/medes-ui.js",
+  "fesm2015": "fesm2015/medes-ui.js",
+  "typings": "medes-ui.d.ts",
+  "metadata": "medes-ui.metadata.json",
+  "sideEffects": false
+}
