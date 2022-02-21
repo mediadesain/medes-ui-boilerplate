@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import { MdsDateUtils } from 'medes-ui';
-import { MdsDateUtils } from 'projects/medes-ui/src/public-api';
+
+import { MdsDateUtils } from 'medes-ui';
+// import { MdsDateUtils } from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'medes-date-utils',

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SampleProductsData } from 'src/app/shared/constant/proucts';
-
+import { SampleProductsData } from 'src/app/shared/constant/products';
 @Component({
   selector: 'medes-checkboxes',
   templateUrl: './checkboxes.component.html',
@@ -9,7 +8,7 @@ import { SampleProductsData } from 'src/app/shared/constant/proucts';
 export class CheckboxesComponent implements OnInit {
   sampledata: any[] = [];
   selected: {[key: string]: string[]} = {};
-  keys: string[] = ['gender','category']
+  keys: string[] = ['gender', 'category'];
 
 samplecomponent = `export class MyComponent implements OnInit {
 ...

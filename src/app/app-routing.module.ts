@@ -43,7 +43,10 @@ const routes: Routes = [
   },
   { path: 'pipe', loadChildren: () => import('./demo-pages/pipe/pipe.module').then(m => m.PipeModule) },
   { path: 'testing', loadChildren: () => import('./demo-pages/testing/testing.module').then(m => m.TestingModule) },
-  { path: 'filter-components', loadChildren: () => import('./demo-pages/component/filter-components/filter-components.module').then(m => m.FilterComponentsModule) },
+  {
+    path: 'filter-components',
+    loadChildren: () => import('./demo-pages/component/filter-components/filter-components.module').then(m => m.FilterComponentsModule)
+  },
   {
     path: '**', redirectTo: 'filter-checkbox'
   }

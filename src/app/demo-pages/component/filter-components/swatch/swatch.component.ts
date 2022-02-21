@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SampleProductsData } from 'src/app/shared/constant/proucts';
-
+import { SampleProductsData } from 'src/app/shared/constant/products';
 @Component({
   selector: 'medes-swatch',
   templateUrl: './swatch.component.html',
@@ -16,7 +15,7 @@ export class SwatchComponent implements OnInit {
     black: '#000000',
     purple: '#6a66bb',
     gold: '#b6ab66'
-  }
+  };
 
 samplecomponent = `export class MyComponent implements OnInit {
 ...
@@ -38,7 +37,6 @@ samplecomponent = `export class MyComponent implements OnInit {
   };
 ...
 }`;
-  
 componentdemo = `<!-- Filter Swatch Component -->
 <mds-filter-swatch
   [titlegroup]="'Filter by Color'"

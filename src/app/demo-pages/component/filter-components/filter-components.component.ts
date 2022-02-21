@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SampleProductsData } from 'src/app/shared/constant/proucts';
+import { SampleProductsData } from 'src/app/shared/constant/products';
 
 @Component({
   selector: 'medes-filter-components',
@@ -16,7 +16,7 @@ export class FilterComponentsComponent implements OnInit {
       black: '#000000',
       purple: '#6a66bb',
       gold: '#b6ab66'
-  }
+  };
 
 components = `<!-- Filter Checkboxes Component - Multiple Group -->
 <mds-filter-checkbox

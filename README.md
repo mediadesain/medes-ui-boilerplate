@@ -6,6 +6,8 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 - Install Mediadesain UI - Library `npm i medes-ui`.
 - Install with spesific version `npm i medes-ui@0.0.1`.
 - Import component libs or utils to use.
+> If this boilerplate not working after `npm install` that mean UI itself is using beta version module. Copy beta version `dis/medes-ui` to `node_modules` folder and try npm start to runing boilerplate.
+
 ### Others Dependencies need to install.
 - Install PrismJs `npm i prismjs` & import css theme prismjs.
 ## Release Version

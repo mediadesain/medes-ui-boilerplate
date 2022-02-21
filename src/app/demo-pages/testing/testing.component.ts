@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SampleProductsData } from 'src/app/shared/constant/proucts';
+import { SampleProductsData } from 'src/app/shared/constant/products';
 
 @Component({
   selector: 'medes-testing',
@@ -9,7 +9,6 @@ import { SampleProductsData } from 'src/app/shared/constant/proucts';
 export class TestingComponent implements OnInit {
   selected = {};
   sampledata = [];
-  
   colormap = {
       'blue-sky': '#66ccdd',
       maroon: '#bb6a66',
@@ -17,7 +16,7 @@ export class TestingComponent implements OnInit {
       black: '#000000',
       purple: '#6a66bb',
       gold: '#b6ab66'
-  }
+  };
 
   constructor() { }
 
