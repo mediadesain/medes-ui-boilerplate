@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import { MdsObjectUtils } from 'medes-ui';
-import { MdsObjectUtils } from 'projects/medes-ui/src/public-api';
+
+import { MdsObjectUtils } from 'medes-ui';
+// import { MdsObjectUtils } from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'medes-object-utils',

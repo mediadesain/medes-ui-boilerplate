@@ -3,12 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { FilterCheckboxRoutingModule } from './filter-checkbox-routing.module';
 import { FilterCheckboxComponent } from './filter-checkbox.component';
-
-
-import { MdsFilterCheckboxModule, MdsHightlightPrismModule, MdsPipesModule } from 'projects/medes-ui/src/public-api';
 import { AlertDeprecatedComponent } from 'src/app/shared/components/alert-deprecated/alert-deprecated.component';
-// import { MdsFilterCheckboxModule, MdsHightlightPrismModule, MdsPipesModule } from 'medes-ui';
 
+import { MdsFilterCheckboxModule, MdsHightlightPrismModule, MdsPipesModule } from 'medes-ui';
+// import { MdsFilterCheckboxModule, MdsHightlightPrismModule, MdsPipesModule } from 'projects/medes-ui/src/public-api';
 
 @NgModule({
   declarations: [

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'medes-checkboxes',
   templateUrl: './checkboxes.component.html',
