@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 @Component({
   selector: 'medes-navbar',
   templateUrl: './navbar.component.html',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   isActive = true;
-  constructor() { }
+  constructor(
+    private router: Router
+  ) {
+    this.router.events.pipe(
+      filter( e => e instanceof NavigationEnd)
+    ).subscribe( (navEnd: NavigationEnd) => {
+      this.isActive = true;
+    });
+  }
 
   ngOnInit(): void {
   }
