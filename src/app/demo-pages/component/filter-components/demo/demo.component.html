@@ -37,7 +37,7 @@
             <small *ngIf="(sampledata|filter:selected).length === 0 && (selected|json)!='{}'">Filtered data not found</small>
         </div>
         <div class="grid">
-            <div class="g-l-25" *ngFor="let item of (sampledata|filter:selected)">
+            <div class="g-50 g-l-25" *ngFor="let item of (sampledata|filter:selected)">
                 <img [src]="item.picture" [alt]="item.name" style="max-width: 100%;">
                 <small>{{item.brand|titlecase}} - {{item.category|titlecase}}</small><br/>
                 <b>{{item.name}}</b><br/>
