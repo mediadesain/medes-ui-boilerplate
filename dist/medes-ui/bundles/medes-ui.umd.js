@@ -586,7 +586,7 @@
                 });
                 prop = prop.replace('_', '');
                 // Construct Checkbox label & value
-                var getAllValue = _this.filterData.map(function (item) { return item[prop].includes(',') ? item[prop].split(',') : item[prop]; }).flat();
+                var getAllValue = _this.filterData.map(function (item) { return item[prop].split(','); }).flat();
                 var value = MdsArrayUtils.countUniqueValues(getAllValue);
                 var label = Object.keys(value);
                 var counter = Object.values(value);
@@ -704,8 +704,9 @@
         };
         FilterSwatchComponent.prototype.construcFilterSwatch = function () {
             var e_1, _a;
+            var _this = this;
             // Construct Checkbox label & value
-            var getAllValue = this.filterData.map(function (item) { return item.color.includes(',') ? item.color.split(',') : item.color; }).flat();
+            var getAllValue = this.filterData.map(function (item) { return item[_this.filterBy].split(','); }).flat();
             getAllValue = __spread(new Set(getAllValue));
             var checkswatch = [];
             var _loop_1 = function (val) {
@@ -716,19 +717,19 @@
                     checked: false
                 };
                 this_1.activeroute.queryParams.subscribe(function (param) {
-                    if (param.color) {
-                        var isArray = param.color.includes(',');
-                        var checkArrOrStr = isArray ? param.color.split(',') : [param.color];
+                    if (param[_this.filterBy]) {
+                        var isArray = param[_this.filterBy].includes(',');
+                        var checkArrOrStr = isArray ? param[_this.filterBy].split(',') : [param[_this.filterBy]];
                         var isInclude = checkArrOrStr.map(function (item) { return item === obj.url; }).includes(true);
                         obj.checked = isInclude ? true : false;
                     }
                 });
                 checkswatch.push(obj);
                 this_1.filterswatchgroup = checkswatch;
-                this_1.filterSelected.color = this_1.filterswatchgroup.filter(function (item) { return item.checked; }).map(function (item) { return item.url; });
-                this_1.filterSelectedUrl.color = this_1.filterswatchgroup.filter(function (item) { return item.checked; }).map(function (item) { return item.label; });
-                if (this_1.filterSelected.color.length === 0) {
-                    delete this_1.filterSelected.color;
+                this_1.filterSelected[this_1.filterBy] = this_1.filterswatchgroup.filter(function (item) { return item.checked; }).map(function (item) { return item.url; });
+                this_1.filterSelectedUrl[this_1.filterBy] = this_1.filterswatchgroup.filter(function (item) { return item.checked; }).map(function (item) { return item.label; });
+                if (this_1.filterSelected[this_1.filterBy].length === 0) {
+                    delete this_1.filterSelected[this_1.filterBy];
                 }
             };
             var this_1 = this;
@@ -749,35 +750,35 @@
         };
         FilterSwatchComponent.prototype.clickCheckbox = function (select) {
             // ----- IF URL PARAMETER EMPTY ----- //
-            if (!this.filterSelected.color || !this.filterSelectedUrl.color) {
-                this.filterSelected.color = [];
-                this.filterSelectedUrl.color = [];
+            if (!this.filterSelected[this.filterBy] || !this.filterSelectedUrl[this.filterBy]) {
+                this.filterSelected[this.filterBy] = [];
+                this.filterSelectedUrl[this.filterBy] = [];
             }
             this.router.navigate([], {
                 queryParams: { color: select.url },
                 queryParamsHandling: 'merge'
             });
             // ----- IF URL PARAMETER EXSIEST ----- //
-            var idx = this.filterSelected.color.indexOf(select.label);
+            var idx = this.filterSelected[this.filterBy].indexOf(select.label);
             if (idx > -1) {
-                this.filterSelected.color.splice(idx, 1);
-                this.filterSelectedUrl.color.splice(idx, 1);
+                this.filterSelected[this.filterBy].splice(idx, 1);
+                this.filterSelectedUrl[this.filterBy].splice(idx, 1);
                 // Delete property if value/s empty
-                if (this.filterSelected.color.length === 0 || this.filterSelectedUrl.color.length === 0) {
-                    delete this.filterSelected.color;
-                    delete this.filterSelectedUrl.color;
+                if (this.filterSelected[this.filterBy].length === 0 || this.filterSelectedUrl[this.filterBy].length === 0) {
+                    delete this.filterSelected[this.filterBy];
+                    delete this.filterSelectedUrl[this.filterBy];
                 }
                 // Remove to url queryParam
                 this.router.navigate([], {
-                    queryParams: { color: this.filterSelectedUrl.color ? this.filterSelectedUrl.color.join() : null },
+                    queryParams: { color: this.filterSelectedUrl[this.filterBy] ? this.filterSelectedUrl[this.filterBy].join() : null },
                     queryParamsHandling: 'merge'
                 });
             }
             else {
-                this.filterSelected.color.push(select.label);
-                this.filterSelectedUrl.color.push(select.url);
+                this.filterSelected[this.filterBy].push(select.label);
+                this.filterSelectedUrl[this.filterBy].push(select.url);
                 this.router.navigate([], {
-                    queryParams: { color: this.filterSelectedUrl.color.join() },
+                    queryParams: { color: this.filterSelectedUrl[this.filterBy].join() },
                     queryParamsHandling: 'merge'
                 });
             }
@@ -787,7 +788,7 @@
     FilterSwatchComponent.decorators = [
         { type: core.Component, args: [{
                     selector: 'mds-filter-swatch',
-                    template: "<div>{{titlegroup ? titlegroup : 'Color'}}</div>\n<div class=\"swatch\">\n    <div *ngFor=\"let item of filterswatchgroup; let i=index\" class=\"round\">\n        <input type=\"checkbox\" [id]=\"'checkbox'+i\" [checked]=\"item.checked\" (change)=\"clickCheckbox(item); item.checked=!item.checked\"/>\n        <label [for]=\"'checkbox'+i\" [style.background-color]=\"item.color\"></label>\n        <div [ngStyle]=\"{'border': item.checked ? '1px solid #fff' : '1px solid #ddd'}\" style=\"border-radius: 50%; width: 28px; height: 28px; position: absolute; top: 0; left: 0;\"></div>\n    </div>\n</div>",
+                    template: "<div>{{titlegroup ? titlegroup : 'Color'}}</div>\n<div class=\"swatch\">\n    <div *ngFor=\"let item of filterswatchgroup; let i=index\" class=\"round\">\n        <input type=\"checkbox\" [id]=\"'checkbox'+i\" [checked]=\"item.checked\" (change)=\"clickCheckbox(item); item.checked=!item.checked\"/>\n        <label [for]=\"'checkbox'+i\" [style.background-color]=\"item.color\"></label>\n        <div [ngStyle]=\"{'border': item.checked ? '1px solid #ddd' : '1px solid #fff'}\" style=\"border-radius: 50%; width: 28px; height: 28px; position: absolute; top: 0; left: 0;\"></div>\n    </div>\n</div>",
                     styles: [".swatch{display:flex;flex-wrap:wrap;margin-bottom:1em}.round{position:relative;width:30px;height:30px;margin-right:5px;margin-bottom:5px}.round label{border:1px solid #ccc;border-radius:50%;cursor:pointer;height:28px;left:0;position:absolute;top:0;width:28px}.round input[type=checkbox]{visibility:hidden;width:30px;height:30px;margin:0;padding:0}.round label:after{border:2px solid #fff;border-top:none;border-right:none;content:\"\";height:6px;left:7px;opacity:0;position:absolute;z-index:2;top:8px;transform:rotate(-45deg);width:12px;transition:.2s ease-in-out}.round input[type=checkbox]:checked+label:after{opacity:1}"]
                 },] }
     ];
@@ -797,6 +798,7 @@
     ]; };
     FilterSwatchComponent.propDecorators = {
         filterData: [{ type: core.Input }],
+        filterBy: [{ type: core.Input }],
         filterSelected: [{ type: core.Input }],
         titlegroup: [{ type: core.Input }],
         swatchMapping: [{ type: core.Input }]

@@ -245,7 +245,7 @@ class FilterCheckboxComponent {
             });
             prop = prop.replace('_', '');
             // Construct Checkbox label & value
-            const getAllValue = this.filterData.map((item) => item[prop].includes(',') ? item[prop].split(',') : item[prop]).flat();
+            const getAllValue = this.filterData.map((item) => item[prop].split(',')).flat();
             const value = MdsArrayUtils.countUniqueValues(getAllValue);
             const label = Object.keys(value);
             const counter = Object.values(value);
@@ -357,7 +357,7 @@ class FilterSwatchComponent {
     }
     construcFilterSwatch() {
         // Construct Checkbox label & value
-        let getAllValue = this.filterData.map((item) => item.color.includes(',') ? item.color.split(',') : item.color).flat();
+        let getAllValue = this.filterData.map((item) => item[this.filterBy].split(',')).flat();
         getAllValue = [...new Set(getAllValue)];
         const checkswatch = [];
         // for (let i = 0; i < getAllValue.length; i++){
@@ -369,53 +369,53 @@ class FilterSwatchComponent {
                 checked: false
             };
             this.activeroute.queryParams.subscribe(param => {
-                if (param.color) {
-                    const isArray = param.color.includes(',');
-                    const checkArrOrStr = isArray ? param.color.split(',') : [param.color];
+                if (param[this.filterBy]) {
+                    const isArray = param[this.filterBy].includes(',');
+                    const checkArrOrStr = isArray ? param[this.filterBy].split(',') : [param[this.filterBy]];
                     const isInclude = checkArrOrStr.map((item) => item === obj.url).includes(true);
                     obj.checked = isInclude ? true : false;
                 }
             });
             checkswatch.push(obj);
             this.filterswatchgroup = checkswatch;
-            this.filterSelected.color = this.filterswatchgroup.filter(item => item.checked).map(item => item.url);
-            this.filterSelectedUrl.color = this.filterswatchgroup.filter(item => item.checked).map(item => item.label);
-            if (this.filterSelected.color.length === 0) {
-                delete this.filterSelected.color;
+            this.filterSelected[this.filterBy] = this.filterswatchgroup.filter(item => item.checked).map(item => item.url);
+            this.filterSelectedUrl[this.filterBy] = this.filterswatchgroup.filter(item => item.checked).map(item => item.label);
+            if (this.filterSelected[this.filterBy].length === 0) {
+                delete this.filterSelected[this.filterBy];
             }
         }
     }
     clickCheckbox(select) {
         // ----- IF URL PARAMETER EMPTY ----- //
-        if (!this.filterSelected.color || !this.filterSelectedUrl.color) {
-            this.filterSelected.color = [];
-            this.filterSelectedUrl.color = [];
+        if (!this.filterSelected[this.filterBy] || !this.filterSelectedUrl[this.filterBy]) {
+            this.filterSelected[this.filterBy] = [];
+            this.filterSelectedUrl[this.filterBy] = [];
         }
         this.router.navigate([], {
             queryParams: { color: select.url },
             queryParamsHandling: 'merge'
         });
         // ----- IF URL PARAMETER EXSIEST ----- //
-        const idx = this.filterSelected.color.indexOf(select.label);
+        const idx = this.filterSelected[this.filterBy].indexOf(select.label);
         if (idx > -1) {
-            this.filterSelected.color.splice(idx, 1);
-            this.filterSelectedUrl.color.splice(idx, 1);
+            this.filterSelected[this.filterBy].splice(idx, 1);
+            this.filterSelectedUrl[this.filterBy].splice(idx, 1);
             // Delete property if value/s empty
-            if (this.filterSelected.color.length === 0 || this.filterSelectedUrl.color.length === 0) {
-                delete this.filterSelected.color;
-                delete this.filterSelectedUrl.color;
+            if (this.filterSelected[this.filterBy].length === 0 || this.filterSelectedUrl[this.filterBy].length === 0) {
+                delete this.filterSelected[this.filterBy];
+                delete this.filterSelectedUrl[this.filterBy];
             }
             // Remove to url queryParam
             this.router.navigate([], {
-                queryParams: { color: this.filterSelectedUrl.color ? this.filterSelectedUrl.color.join() : null },
+                queryParams: { color: this.filterSelectedUrl[this.filterBy] ? this.filterSelectedUrl[this.filterBy].join() : null },
                 queryParamsHandling: 'merge'
             });
         }
         else {
-            this.filterSelected.color.push(select.label);
-            this.filterSelectedUrl.color.push(select.url);
+            this.filterSelected[this.filterBy].push(select.label);
+            this.filterSelectedUrl[this.filterBy].push(select.url);
             this.router.navigate([], {
-                queryParams: { color: this.filterSelectedUrl.color.join() },
+                queryParams: { color: this.filterSelectedUrl[this.filterBy].join() },
                 queryParamsHandling: 'merge'
             });
         }
@@ -424,7 +424,7 @@ class FilterSwatchComponent {
 FilterSwatchComponent.decorators = [
     { type: Component, args: [{
                 selector: 'mds-filter-swatch',
-                template: "<div>{{titlegroup ? titlegroup : 'Color'}}</div>\n<div class=\"swatch\">\n    <div *ngFor=\"let item of filterswatchgroup; let i=index\" class=\"round\">\n        <input type=\"checkbox\" [id]=\"'checkbox'+i\" [checked]=\"item.checked\" (change)=\"clickCheckbox(item); item.checked=!item.checked\"/>\n        <label [for]=\"'checkbox'+i\" [style.background-color]=\"item.color\"></label>\n        <div [ngStyle]=\"{'border': item.checked ? '1px solid #fff' : '1px solid #ddd'}\" style=\"border-radius: 50%; width: 28px; height: 28px; position: absolute; top: 0; left: 0;\"></div>\n    </div>\n</div>",
+                template: "<div>{{titlegroup ? titlegroup : 'Color'}}</div>\n<div class=\"swatch\">\n    <div *ngFor=\"let item of filterswatchgroup; let i=index\" class=\"round\">\n        <input type=\"checkbox\" [id]=\"'checkbox'+i\" [checked]=\"item.checked\" (change)=\"clickCheckbox(item); item.checked=!item.checked\"/>\n        <label [for]=\"'checkbox'+i\" [style.background-color]=\"item.color\"></label>\n        <div [ngStyle]=\"{'border': item.checked ? '1px solid #ddd' : '1px solid #fff'}\" style=\"border-radius: 50%; width: 28px; height: 28px; position: absolute; top: 0; left: 0;\"></div>\n    </div>\n</div>",
                 styles: [".swatch{display:flex;flex-wrap:wrap;margin-bottom:1em}.round{position:relative;width:30px;height:30px;margin-right:5px;margin-bottom:5px}.round label{border:1px solid #ccc;border-radius:50%;cursor:pointer;height:28px;left:0;position:absolute;top:0;width:28px}.round input[type=checkbox]{visibility:hidden;width:30px;height:30px;margin:0;padding:0}.round label:after{border:2px solid #fff;border-top:none;border-right:none;content:\"\";height:6px;left:7px;opacity:0;position:absolute;z-index:2;top:8px;transform:rotate(-45deg);width:12px;transition:.2s ease-in-out}.round input[type=checkbox]:checked+label:after{opacity:1}"]
             },] }
 ];
@@ -434,6 +434,7 @@ FilterSwatchComponent.ctorParameters = () => [
 ];
 FilterSwatchComponent.propDecorators = {
     filterData: [{ type: Input }],
+    filterBy: [{ type: Input }],
     filterSelected: [{ type: Input }],
     titlegroup: [{ type: Input }],
     swatchMapping: [{ type: Input }]

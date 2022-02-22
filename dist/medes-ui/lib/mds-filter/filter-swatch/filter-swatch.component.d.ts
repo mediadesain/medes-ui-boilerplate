@@ -10,6 +10,7 @@ export declare class FilterSwatchComponent implements OnInit, OnChanges {
     private activeroute;
     private router;
     filterData: any;
+    filterBy: string;
     filterSelected: {
         color: any[];
     };
