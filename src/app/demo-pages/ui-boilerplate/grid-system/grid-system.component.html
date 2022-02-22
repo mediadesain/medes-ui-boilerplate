@@ -1,0 +1,80 @@
+<h1>Grid System</h1>
+
+<h2>Overview</h2>
+<div class="mds-grid sample">
+    <div class="g-50 g-l-25">1</div>
+    <div class="g-50 g-l-75">2</div>
+    <div class="g-l-50">3</div>
+    <div class="g-l-50">4</div>
+    <div class="g-m-50 g-l-25">5</div>
+    <div class="g-m-50 g-l-25">6</div>
+    <div class="g-m-50 g-l-25">7</div>
+    <div class="g-m-50 g-l-25">8</div>
+</div>
+<hr/>
+
+<h2>Row</h2>
+<b>Preview</b>
+<div style="height: 300px; border: 1px dashed #ddd;">
+    <div [class]="'mds-grid '+ horizontalLayout.value +' '+verticalLayout.value+' sample'">
+        <div class="g-50 g-l-25">1</div>
+        <div class="g-50 g-l-75">2</div>
+        <div class="g-l-50">3</div>
+        <div class="g-l-50">4</div>
+        <div class="g-m-50 g-l-25">5</div>
+        <div class="g-m-50 g-l-25">6</div>
+    </div>
+</div>
+
+
+<b>Generator</b>
+<select #horizontalLayout="ngModel" ngModel="grid-horizontal-center">
+    <option>grid-horizontal-start</option>
+    <option>grid-horizontal-center</option>
+    <option>grid-horizontal-end</option>
+    <option>grid-horizontal-around</option>
+    <option>grid-horizontal-between</option>
+</select>
+
+<select #verticalLayout="ngModel" ngModel="grid-vertical-middle">
+    <option>grid-vertical-top</option>
+    <option>grid-vertical-middle</option>
+    <option>grid-vertical-bottom</option>
+    <option>grid-vertical-around</option>
+    <option>grid-vertical-between</option>
+    <option>grid-vertical-fullfill</option>
+</select>
+<small><mds-hightlight-prism [code]="'<div class=\'mds-grid '+horizontalLayout.value+' '+verticalLayout.value+'\'>
+    <!-- Columns Goes Here-->
+</div>'" language="html"></mds-hightlight-prism></small>
+<hr/>
+
+<h2>Columns</h2>
+<small><mds-hightlight-prism [code]="'<!-- Grid Start -->
+    <div class=\'g-50 g-l-25\'>1</div>
+    <div class=\'g-50 g-l-75\'>2</div>
+    <div class=\'g-l-50\'>3</div>
+    <div class=\'g-l-50\'>4</div>
+    <div class=\'g-m-50 g-l-25\'>5</div>
+    <div class=\'g-m-50 g-l-25\'>6</div>
+<!-- Grid End -->'" language="html"></mds-hightlight-prism></small>
+<hr/>
+<br/>
+<h2>Demo</h2>
+<div [class]="'mds-grid '+ horizontalLayout.value +' '+verticalLayout.value">
+    <div class="g-50 g-l-25" *ngFor="let item of sampledata|slice:0:7">
+        <!-- Image with MedesUI Image Loader Element-->
+        <div class="mds-img-loader square">
+            <img [src]="item.picture" [alt]="item.name">
+        </div>
+        <small>{{item.brand|titlecase}} - {{item.category|titlecase}}</small><br/>
+        <b>{{item.name}}</b>
+    </div>
+</div>
+Row & Columns use look like this
+<small><mds-hightlight-prism [code]="'<div class=\'mds-grid '+horizontalLayout.value+' '+verticalLayout.value+'\'>
+    <div *ngFor=\'let item of items\' class=\'g-50 g-l-25\'>
+        ...
+    </div>
+</div>'" language="html"></mds-hightlight-prism></small>
+

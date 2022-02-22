@@ -4,12 +4,11 @@ import { MdsDateUtils } from 'projects/medes-ui/src/lib/utils';
 // import { MdsDateUtils } from 'medes-ui';
 
 @Component({
-  selector: 'medes-doc-boilerplate',
-  templateUrl: './mds-doc-boilerplate.component.html',
-  styleUrls: ['./mds-doc-boilerplate.component.scss']
+  selector: 'medes-ui-boilerplate',
+  templateUrl: './ui-boilerplate.component.html',
+  styleUrls: ['./ui-boilerplate.component.scss']
 })
 export class MdsDocBoilerplateComponent implements OnInit {
-
 samplehtml = `<div class="group">
   <span>Content</span>
 </div>`;

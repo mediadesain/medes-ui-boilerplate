@@ -1,6 +1,6 @@
 <medes-alert-soon [version]="'v.0.0.3'"></medes-alert-soon>
 <h1>Demo - Medes Filter Components</h1>
-<div class="grid">
+<div class="mds-grid">
     <div class="g-l-30">
         <!-- Filter Checkboxes Component - Multiple Group -->
         <mds-filter-checkbox
@@ -16,6 +16,7 @@
         <mds-filter-swatch
             [titlegroup]="'Filter by Color'"
             [filterData]="sampledata"
+            [filterBy]="key"
             [filterSelected]="selected"
             [swatchMapping]="colormap"
         ></mds-filter-swatch>
@@ -36,9 +37,12 @@
             <small *ngIf="(sampledata|filter:selected).length === 0 && (selected|json)=='{}'">No Data Found</small>
             <small *ngIf="(sampledata|filter:selected).length === 0 && (selected|json)!='{}'">Filtered data not found</small>
         </div>
-        <div class="grid">
+        <div class="mds-grid">
             <div class="g-50 g-l-25" *ngFor="let item of (sampledata|filter:selected)">
-                <img [src]="item.picture" [alt]="item.name" style="max-width: 100%;">
+                <!-- Image with MedesUI Image Loader Element-->
+                <div class="mds-img-loader square">
+                    <img [src]="item.picture" [alt]="item.name">
+                </div>
                 <small>{{item.brand|titlecase}} - {{item.category|titlecase}}</small><br/>
                 <b>{{item.name}}</b><br/>
                 <small>({{item.color}})</small>

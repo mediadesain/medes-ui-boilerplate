@@ -10,7 +10,7 @@
 <hr/>
 <h2>Overview Components of Medes Filter</h2>
 <b>Construct Filter Grup by sampledata & prop/key</b>
-<div class="grid">
+<div class="mds-grid">
     <div class="g-l-30">
         <!-- Filter Checkboxes Component - Multiple Group -->
         <mds-filter-checkbox
@@ -27,6 +27,7 @@
             [titlegroup]="'Filter by Color'"
             [filterData]="sampledata"
             [filterSelected]="selected"
+            [filterBy]="['color']"
             [swatchMapping]="colormap"
         ></mds-filter-swatch>
         

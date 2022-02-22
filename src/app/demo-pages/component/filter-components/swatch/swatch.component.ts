@@ -7,6 +7,7 @@ import { SampleProductsData } from 'src/app/shared/constant/products';
 })
 export class SwatchComponent implements OnInit {
   sampledata: any[] = [];
+  key = 'color';
   selected: {[key: string]: string[]} = {};
   colormap: {[key: string]: string} = {
     'blue-sky': '#66ccdd',
@@ -26,6 +27,7 @@ samplecomponent = `export class MyComponent implements OnInit {
     { "brand": "puma", "category": "tshirt", "color": "blue sky", "gender": "men", "id": "62122871b37e4c94421a90b9", "picture": "https://picsum.photos/400?image=665", "price": 1879.761, "name": "Mamie Ballard" },
     ...
   ]; // Full data https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/proucts.ts
+  key: string = 'color';
   selected: {[key: string]: string[]} = ${JSON.stringify(this.selected)};
   colormap: {[key: string]: string} = {
     'blue-sky': '#66ccdd',
@@ -41,6 +43,7 @@ componentdemo = `<!-- Filter Swatch Component -->
 <mds-filter-swatch
   [titlegroup]="'Filter by Color'"
   [filterData]="sampledata"
+  [filterBy]="key"
   [filterSelected]="selected"
   [swatchMapping]="colormap"
 ></mds-filter-swatch>`;

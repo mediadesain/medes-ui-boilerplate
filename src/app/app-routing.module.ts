@@ -7,8 +7,8 @@ const routes: Routes = [
     loadChildren: () => import('./demo-pages/component/filter-checkbox/filter-checkbox.module').then(m => m.FilterCheckboxModule)
   },
   {
-    path: 'doc-boilerplate',
-    loadChildren: () => import('./demo-pages/component/mds-doc-boilerplate/mds-doc-boilerplate.module').then(m => m.MdsDocBoilerplateModule)
+    path: 'ui-boilerplate',
+    loadChildren: () => import('./demo-pages/ui-boilerplate/ui-boilerplate.module').then(m => m.MdsDocBoilerplateModule)
   },
   {
     path: 'prismjs-highlight',
@@ -48,7 +48,7 @@ const routes: Routes = [
     loadChildren: () => import('./demo-pages/component/filter-components/filter-components.module').then(m => m.FilterComponentsModule)
   },
   {
-    path: '**', redirectTo: 'filter-checkbox'
+    path: '**', redirectTo: 'how-to-install'
   }
 ];
 

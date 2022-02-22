@@ -7,8 +7,9 @@ import { SampleProductsData } from 'src/app/shared/constant/products';
   styleUrls: ['./demo.component.scss']
 })
 export class DemoComponent implements OnInit {
-  selected = {};
   sampledata = [];
+  key = 'color';
+  selected = {};
   colormap = {
       'blue-sky': '#66ccdd',
       maroon: '#bb6a66',

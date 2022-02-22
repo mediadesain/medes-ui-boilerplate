@@ -7,8 +7,9 @@ import { SampleProductsData } from 'src/app/shared/constant/products';
   styleUrls: ['./filter-components.component.scss']
 })
 export class FilterComponentsComponent implements OnInit {
-  selected = {};
   sampledata = [];
+  selected = {};
+  key = 'color';
   colormap = {
       'blue-sky': '#66ccdd',
       maroon: '#bb6a66',
@@ -32,6 +33,7 @@ components = `<!-- Filter Checkboxes Component - Multiple Group -->
 <mds-filter-swatch
   [titlegroup]="'Filter by Color'"
   [filterData]="sampledata"
+  [filterBy]="key"
   [filterSelected]="selected"
   [swatchMapping]="colormap"
 ></mds-filter-swatch>

@@ -11,8 +11,14 @@ export class AsideComponent implements OnInit {
       title: 'MedesUI',
       links: [
         {text: 'Introduction', url: '/introduction'},
-        {text: 'How to Install', url: '/how-to-install'},
-        {text: 'UI Boilerplate', url: '/doc-boilerplate'},
+        {text: 'How to Install', url: '/how-to-install'}
+      ]
+    }, {
+      title: 'UI Element - Boilerplate',
+      links: [
+        {text: 'Basic Elements', url: '/ui-boilerplate/basic-elements'},
+        {text: 'Image Loader', url: '/ui-boilerplate/image-loader'},
+        {text: 'Grid System', url: '/ui-boilerplate/grid-system'},
       ]
     }, {
       title: 'Filter Components',

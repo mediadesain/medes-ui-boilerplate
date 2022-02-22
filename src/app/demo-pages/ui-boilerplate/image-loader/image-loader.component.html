@@ -1,0 +1,53 @@
+<h1>Image Loader</h1>
+
+<h2>Overview</h2>
+<div class="mds-grid">
+    <div class="g-50 g-m-20">
+        <div class="mds-img-loader square">
+            <img src="https://i.picsum.photos/id/702/400/400.jpg?hmac=Ni6iVGeZM9aTOYnUaLmRwGdPi25Gh9v_RXKomm9CCpY" alt="">
+        </div>
+    </div>
+    <div class="g-50 g-m-20">
+        <div class="mds-img-loader landscape">
+            <img src="https://i.picsum.photos/id/665/400/400.jpg?hmac=E-mBt6yWfEFHnKP_ceiO26M6MQscKZfDOS5CSadrDn8" alt="">
+        </div>
+    </div>
+    <div class="g-50 g-m-20">
+        <div class="mds-img-loader portrait">
+            <img src="https://i.picsum.photos/id/569/400/400.jpg?hmac=0368dlLxTi-z0EUtYL5CdzjSMBPWRnbpCHf-L--rF5A" alt="">
+        </div>
+    </div>
+    <div class="g-50 g-m-20">
+        <div class="mds-img-loader circle">
+            <img src="https://i.picsum.photos/id/28/400/400.jpg?hmac=GimN6n4shCH8in5xKYxsTe8Tv0pwayxzLr9BkZB-P80" alt="">
+        </div>
+    </div>
+    <div class="g-50 g-m-20">
+        <div class="mds-img-loader square">
+            <img src="" alt="">
+        </div>
+    </div>
+</div>
+<hr/>
+
+<div class="mds-grid">
+    <div class="g-m-30">
+        <b>Prevew</b>
+        <div class="mds-img-loader {{loaderStyle.value}}">
+            <img [src]="image.value" alt="">
+        </div>
+    </div>
+    <div class="g-m-70">
+        <b>Generator</b><br/>
+        <input type="text" #image="ngModel" ngModel="https://i.picsum.photos/id/28/400/400.jpg?hmac=GimN6n4shCH8in5xKYxsTe8Tv0pwayxzLr9BkZB-P80">
+        <select name="test" #loaderStyle="ngModel" ngModel="circle">
+            <option>circle</option>
+            <option>square</option>
+            <option>landscape</option>
+        </select>
+        <small><mds-hightlight-prism [code]="'<div class=\'mds-img-loader '+loaderStyle.value+'\'>
+    <img src=\''+image.value+'\' />
+</div>'" language="html"></mds-hightlight-prism></small>
+    </div>
+</div>
+<hr/>
