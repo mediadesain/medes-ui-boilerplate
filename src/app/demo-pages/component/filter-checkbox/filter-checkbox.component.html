@@ -1,15 +1,15 @@
-<medes-alert-deprecated [version]="'v0.0.5'"></medes-alert-deprecated>
+<medes-alert-deprecated [version]="'v0.0.5'" [alternative]="'/filter-components/intro'"></medes-alert-deprecated>
 <h1>Multiple Filter Checkbox</h1>
 <p>Multiple filter checkbox component is automatically generate HTML Element filterlist as checkbox base on sampledata. Put sample data, key to filter and selected filter object. Put selected filter object to *ngFor loop to filter pipe from medes-ui.</p>
 <hr/>
 
 <h2>Component Details</h2>
 <b>Import module</b>
-<small><mds-hightlight-prism [code]="importmodule" language="javascript"></mds-hightlight-prism></small>
+<mds-hightlight-prism [code]="importmodule" language="javascript"></mds-hightlight-prism>
 <b>Component</b>
-<small><mds-hightlight-prism [code]="samplecomponent" language="typescript"></mds-hightlight-prism></small>
+<mds-hightlight-prism [code]="samplecomponent" language="typescript"></mds-hightlight-prism>
 <b>HTML</b>
-<small><mds-hightlight-prism [code]="componentdemo" language="html"></mds-hightlight-prism></small>
+<mds-hightlight-prism [code]="componentdemo" language="html"></mds-hightlight-prism>
 <i>*Put <b>filteritem</b> variable to filter pipe from medes-ui.</i>
 <hr/>
 
@@ -44,34 +44,34 @@
 <div class="mds-grid">
     <div class="g-l-30">
         Data Original:
-        <small><mds-hightlight-prism [code]="'sampledata = '+(sampledata|json)" language="javascript"></mds-hightlight-prism></small>
+        <mds-hightlight-prism [code]="'sampledata = '+(sampledata|json)" language="javascript"></mds-hightlight-prism>
     </div>
     <div class="g-l-30">
         Filter Keys:
-        <small><mds-hightlight-prism [code]="'keys = '+(keys|json)" language="javascript"></mds-hightlight-prism></small>
+        <mds-hightlight-prism [code]="'keys = '+(keys|json)" language="javascript"></mds-hightlight-prism>
         Key values:
-        <small><mds-hightlight-prism [code]="'filteritems = '+(filteritems|json)" language="javascript"></mds-hightlight-prism></small>
+        <mds-hightlight-prism [code]="'filteritems = '+(filteritems|json)" language="javascript"></mds-hightlight-prism>
     </div>
     <div class="g-l-40">
         Output Data:
-        <small><mds-hightlight-prism [code]="(sampledata|filter:filteritems)|json" language="javascript"></mds-hightlight-prism></small>
+        <mds-hightlight-prism [code]="(sampledata|filter:filteritems)|json" language="javascript"></mds-hightlight-prism>
     </div>
 </div>
 
 <!-- <div style="display: flex;">
     <div style="width: 100%;margin-right: 10px;">
         Data Original:
-        <small><mds-hightlight-prism [code]="'sampledata = '+(sampledata|json)" language="javascript"></mds-hightlight-prism></small>
+        <mds-hightlight-prism [code]="'sampledata = '+(sampledata|json)" language="javascript"></mds-hightlight-prism>
     </div>
     <div style="width: 100%;margin-right: 10px;">
         Filter Keys:
-        <small><mds-hightlight-prism [code]="'keys = '+(keys|json)" language="javascript"></mds-hightlight-prism></small>
+        <mds-hightlight-prism [code]="'keys = '+(keys|json)" language="javascript"></mds-hightlight-prism>
         Key values:
-        <small><mds-hightlight-prism [code]="'filteritems = '+(filteritems|json)" language="javascript"></mds-hightlight-prism></small>
+        <mds-hightlight-prism [code]="'filteritems = '+(filteritems|json)" language="javascript"></mds-hightlight-prism>
     </div>
     <div style="width: 100%;">
         Output Data:
-        <small><mds-hightlight-prism [code]="(sampledata|filter:filteritems)|json" language="javascript"></mds-hightlight-prism></small>
+        <mds-hightlight-prism [code]="(sampledata|filter:filteritems)|json" language="javascript"></mds-hightlight-prism>
     </div>
 </div> -->
 

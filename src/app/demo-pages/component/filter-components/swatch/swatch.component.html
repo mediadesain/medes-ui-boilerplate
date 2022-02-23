@@ -4,11 +4,11 @@
 <div class="mds-grid">
     <div class="g-l-12">
         <b>Component</b>
-        <small><mds-hightlight-prism [code]="samplecomponent" language="typescript"></mds-hightlight-prism></small>
+        <mds-hightlight-prism [code]="samplecomponent" language="typescript"></mds-hightlight-prism>
     </div>
     <div class="g-l-70">
         <b>HTML</b>
-        <small><mds-hightlight-prism [code]="componentdemo" language="html"></mds-hightlight-prism></small>
+        <mds-hightlight-prism [code]="componentdemo" language="html"></mds-hightlight-prism>
     </div>
     <div class="g-l-30">
         <b>Output</b>
@@ -18,6 +18,8 @@
             [filterBy]="key"
             [filterSelected]="selected"
             [swatchMapping]="colormap"
+            [swatchSize]="20"
+            [swatchRadius]="5"
         ></mds-filter-swatch>
     </div>
 </div>
@@ -29,10 +31,12 @@
     </tr>
     <tr *ngFor="let item of [
         {'attribute':'titlegroup', 'type':'String', 'default':'Color', 'description':'Label text of swatch filter group'},
-        {'attribute':'filterData*', 'type':'Array', 'default':'~', 'description':'Sample data for create swatch filter'},
-        {'attribute':'filterBy*', 'type':'String', 'default':'~', 'description':'Key/properties to filter'},
-        {'attribute':'filterSelected*', 'type':'Object', 'default':'~', 'description':'List of selected filter'},
-        {'attribute':'swatchMapping*', 'type':'Object of key values', 'default':'~', 'description':'Listing of key/prop and color hex value'}
+        {'attribute':'filterData*', 'type':'Array', 'default':'∞', 'description':'Sample data for create swatch filter'},
+        {'attribute':'filterBy*', 'type':'String', 'default':'∞', 'description':'Key/properties to filter'},
+        {'attribute':'filterSelected*', 'type':'Object', 'default':'∞', 'description':'List of selected filter'},
+        {'attribute':'swatchMapping*', 'type':'Object of key values', 'default':'∞', 'description':'Listing of key/prop and color hex value'},
+        {'attribute':'swatchSize', 'type':'Number', 'default':'30', 'description':'Size of weight & height'},
+        {'attribute':'swatchRadius', 'type':'Number', 'default':'0', 'description':'Border radius size'}
     ]">
         <td mds-th-title="Attribute">{{item.attribute}}</td>
         <td mds-th-title="Data Type">{{item.type}}</td>

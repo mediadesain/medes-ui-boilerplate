@@ -10,8 +10,9 @@ export class AsideComponent implements OnInit {
     {
       title: 'MedesUI',
       links: [
-        {text: 'Introduction', url: '/introduction'},
-        {text: 'How to Install', url: '/how-to-install'}
+        {text: 'Introduction', url: '/introduction/info'},
+        {text: 'How to Install', url: '/introduction/how-to-install'},
+        {text: 'Color Scheme', url: '/introduction/color-scheme'}
       ]
     }, {
       title: 'UI Element - Boilerplate',
@@ -32,8 +33,12 @@ export class AsideComponent implements OnInit {
     }, {
       title: 'Others',
       links: [
-        {text: 'Multiple Filter Checkbox (Deprecated)', url: '/filter-checkbox'},
         {text: 'PrismJs Highlight', url: '/prismjs-highlight'}
+      ]
+    }, {
+      title: 'Deprecated',
+      links: [
+        {text: 'Multiple Filter Checkbox', url: '/filter-checkbox'}
       ]
     }, {
       title: 'Utilities',

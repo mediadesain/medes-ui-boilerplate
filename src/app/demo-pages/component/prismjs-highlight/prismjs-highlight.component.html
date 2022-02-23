@@ -4,9 +4,9 @@
 <hr/>
 
 <b>Module</b>
-<small><mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism></small>
+<mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism>
 <b>HTML Component</b>
-<small><mds-hightlight-prism [code]="importcompnent" language="html"></mds-hightlight-prism></small>
+<mds-hightlight-prism [code]="importcompnent" language="html"></mds-hightlight-prism>
 <b>Properties</b>
 <table>
     <tr>
@@ -14,11 +14,11 @@
     </tr>
     <tr *ngFor="let item of [
         {'attribute':'code*', 'type':'string', 'default':'', 'description':'Code to hightlight'},
-        {'attribute':'language*', 'type':'string', 'default':'', 'description':'Language type example html, css, js, ts etc'}
+        {'attribute':'language*', 'type':'Spesific String, options are:<br/><i>\'html\' | \'markup\' | \'javascript\' | \'typescript\' | \'java\' | \'css\' | \'sass\' | \'scss\' | \'ruby\' | \'swift\' | \'sql\' | \'python\'</i> ', 'default':'', 'description':'Language type to show as prevew code'}
     ]">
         <td mds-th-title="Attribute">{{item.attribute}}</td>
-        <td mds-th-title="Data Type">{{item.type}}</td>
-        <td mds-th-title="Default">{{item.default}}</td>
+        <td mds-th-title="Data Type"><span [innerHTML]="item.type"></span></td>
+        <td mds-th-title="Default"><span [innerHTML]="item.default"></span></td>
         <td mds-th-title="Description">{{item.description}}</td>
     </tr>
 </table>

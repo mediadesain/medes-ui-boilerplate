@@ -22,13 +22,15 @@
             [hideCounter]="false"
         ></mds-filter-checkbox>
 
-        <!-- Filter Swatch Component - Multiple Group -->
+        <!-- Filter Swatch Component -->
         <mds-filter-swatch
             [titlegroup]="'Filter by Color'"
             [filterData]="sampledata"
             [filterSelected]="selected"
             [filterBy]="['color']"
             [swatchMapping]="colormap"
+            [swatchSize]="30"
+            [swatchRadius]="25"
         ></mds-filter-swatch>
         
         <!-- Filter Checkboxes Component - Single Group -->
@@ -43,28 +45,21 @@
         <mds-filter-reset [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset>
     </div>
     <div class="g-l-70">
-        <small><mds-hightlight-prism [code]="components" language="html"></mds-hightlight-prism></small>
-        <!-- <pre *ngIf="(sampledata|filter:selected).length === 0 && (selected|json)=='{}'">No Data Found</pre>
-        <pre *ngIf="(sampledata|filter:selected).length === 0 && (selected|json)!='{}'">Filtered data not found</pre>
-        <ul>
-            <li *ngFor="let item of (sampledata|filter:selected)">
-                {{item.name}} - {{item.brand}} - {{item.category}} <small>({{item.color}})</small>
-            </li>
-        </ul> -->
+        <mds-hightlight-prism [code]="components" language="html"></mds-hightlight-prism>
     </div>
     <div class="g-l-12">
-        <i>Variable <b>sampledata</b> values is <a href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/proucts.ts">constant/proucts.ts</a>.</i>
+        <i>Variable <b>sampledata</b> values is <a href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts">constant/proucts.ts</a>.</i>
     </div>
 </div>
 
 
 <b>Output</b>
-<small><mds-hightlight-prism [code]="'// Output filter Object
+<mds-hightlight-prism [code]="'// Output filter Object
 selected ='+(selected|json)+'
-// Output data values will use for filering on loop item (*ngFor) use filter pipe'" language="javascript"></mds-hightlight-prism></small>
+// Output data values will use for filering on loop item (*ngFor) use filter pipe'" language="javascript"></mds-hightlight-prism>
 <hr/>
 
 <h2>How to Use</h2>
 <h3>Import Medes Filter Module</h3>
-<small><mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism></small>
+<mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism>
 <br/>

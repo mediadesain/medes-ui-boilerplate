@@ -29,14 +29,17 @@ components = `<!-- Filter Checkboxes Component - Multiple Group -->
   [hideCounter]="false"
 ></mds-filter-checkbox>
 
-<!-- Filter Swatch Component - Multiple Group -->
+<!-- Filter Swatch Component -->
 <mds-filter-swatch
   [titlegroup]="'Filter by Color'"
   [filterData]="sampledata"
   [filterBy]="key"
   [filterSelected]="selected"
   [swatchMapping]="colormap"
+  [swatchSize]="30"
+  [swatchRadius]="25"
 ></mds-filter-swatch>
+
 <!-- Filter Checkboxes Component - Single Group -->
 <mds-filter-checkbox
   [filterData]="sampledata"

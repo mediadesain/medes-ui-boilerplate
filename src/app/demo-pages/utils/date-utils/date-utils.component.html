@@ -3,22 +3,22 @@
 <hr/>
 
 <b>Import MdsNumberUtils:</b>
-<small><mds-hightlight-prism [code]="import" language="typescript"></mds-hightlight-prism></small>
+<mds-hightlight-prism [code]="import" language="typescript"></mds-hightlight-prism>
 <br/>
 
 <b>Object utils details:</b>
 <table>
     <tr>
-        <th>Function and data Type</th><th>Detail Value</th><th>Default Value</th><th>Description</th>
+        <th>Function and data Type</th><th>Data Type</th><th>Default Value</th><th>Description</th>
     </tr>
     <tr *ngFor="let item of [{
         'attribute':'untilNow( <b>number</b>, <b>array?</b>, <b>string?</b> )',
         'value':'<ul><li>number*</li><li>array of string</li><li>string</li></ul>',
-        'default':'<ul><li>~</li><li>[\'year\', \'month\', \'day\', \'hour\', \'minute\', \'second\']</li><li>\'ago\'</li></ul>',
+        'default':'<ul><li>∞</li><li>[\'year\', \'month\', \'day\', \'hour\', \'minute\', \'second\']</li><li>\'ago\'</li></ul>',
         'description':'<ul><li>Sample data timestamp</li><li>String of times.</li><li>Prefix</li></ul>'
     }]">
         <td mds-th-title="Function"><span [innerHTML]="item.attribute"></span></td>
-        <td mds-th-title="Detail Value"><span [innerHTML]="item.value"></span></td>
+        <td mds-th-title="Data Type"><span [innerHTML]="item.value"></span></td>
         <td mds-th-title="Default Value"><span [innerHTML]="item.default"></span></td>
         <td mds-th-title="Description"><span [innerHTML]="item.description"></span></td>
     </tr>
@@ -29,5 +29,5 @@
 <hr/>
 
 <b>Output:</b>
-<small><mds-hightlight-prism [code]="demo" language="typescript"></mds-hightlight-prism></small>
+<mds-hightlight-prism [code]="demo" language="typescript"></mds-hightlight-prism>
 

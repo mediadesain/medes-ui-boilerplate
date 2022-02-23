@@ -15,10 +15,6 @@ const routes: Routes = [
     loadChildren: () => import('./demo-pages/component/prismjs-highlight/prismjs-highlight.module').then(m => m.PrismjsHighlightModule)
   },
   {
-    path: 'how-to-install',
-    loadChildren: () => import('./demo-pages/intro/how-to-install/how-to-install.module').then(m => m.HowToInstallModule)
-  },
-  {
     path: 'introduction',
     loadChildren: () => import('./demo-pages/intro/introduction/introduction.module').then(m => m.IntroductionModule)},
   {
@@ -48,7 +44,7 @@ const routes: Routes = [
     loadChildren: () => import('./demo-pages/component/filter-components/filter-components.module').then(m => m.FilterComponentsModule)
   },
   {
-    path: '**', redirectTo: 'how-to-install'
+    path: '**', redirectTo: 'introduction/how-to-install'
   }
 ];
 

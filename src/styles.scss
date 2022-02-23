@@ -1,18 +1,32 @@
-
 /*-- MedesUI --*/
 // @import "../projects/medes-ui/assets/scss/medes-ui.scss";
+// @import "../projects/medes-ui/assets/scss/variables.scss";
 @import "~medes-ui/assets/scss/medes-ui.scss";
+@import "~medes-ui/assets/scss/variables.scss";
 @import "~prismjs/themes/prism-okaidia";
 
 /*-- Side Menu Toggle Layout --*/
 medes-root {display: flex; flex-direction: column; height: 100%;}
-medes-navbar, navbar {width: calc(100% - 30px); background-color: #ffffff; padding: 7px 15px 7px; box-shadow: 0 0 20px rgb(0 0 0 / 10%); position: fixed; z-index: 10;display: flex; flex-direction: row; align-items: center; justify-content: space-between; font-size: x-large;}
+medes-navbar, navbar {width: calc(100% - 30px); background-color: var(--body-bg-b); padding: 7px 15px 7px; box-shadow: 0 0 20px rgb(0 0 0 / 10%); position: fixed; z-index: 10;display: flex; flex-direction: row; align-items: center; justify-content: space-between; font-size: x-large;}
 medes-navbar .toggle, navbar .toggle {display: none; width: 20px;}
-medes-navbar img, navbar img {height: 35px;margin-right: auto;}
-medes-navbar a, navbar a {color: #5d6778;}
+medes-navbar .logo, navbar .logo {height: 35px;width: 163.72px;background-image: url('./assets/images/medes-ui.png'); background-size: contain;}
+medes-navbar a, navbar a {color: var(--body-txt-b);}
 content {
     display: flex; justify-content: space-between; width: 100%; height: calc(100% - 54.8px); padding-top: 54.8px;
-    medes-aside, aside {transition: 0.7s ease-in-out; min-width: calc(300px - 50px);background-color: #fff; overflow-y: scroll;z-index: 2;}
+    medes-aside, aside {
+        transition: 0.7s ease-in-out; min-width: calc(300px - 50px); overflow-y: scroll;z-index: 2; background-color: var(--body-bg-a);
+        .list-group {
+            font-size: smaller;
+            b {color: var(--body-txt-b);}
+            ul {list-style-type: none; margin: 10px 5px 15px; padding: 0; }
+            li {
+                padding: 0 10px; margin: 5px 0; border-radius: 6px;
+                a {color: var(--body-txt-a);}
+            }
+            li.active {background: rgb(139 197 63 / 10%);}
+            li.active a {color: var(--swatch-a);}
+        }
+    }
     article {
         width: calc(100% - 300px);z-index: 1;
         .container {
@@ -23,6 +37,7 @@ content {
     }
     medes-aside, aside, main {padding: 25px;}
 }
+
 
 @media (max-width: 747px){
     medes-navbar, navbar {
@@ -36,4 +51,8 @@ content {
         medes-aside, aside {margin-left: 0;}
         article::before {width: 100%; height: 100%; position: absolute; opacity: 0.1;}
     }
+}
+
+@media (prefers-color-scheme: dark) {
+    medes-navbar .logo, navbar .logo {background-image: url('./assets/images/medes-ui-dark.png');}
 }
