@@ -1,6 +1,6 @@
 {
   "name": "medes-ui",
-  "version": "0.0.3-beta.2",
+  "version": "0.0.3-beta.3",
   "description": "library",
   "license": "MIT",
   "repository": {
@@ -10,6 +10,7 @@
   "keywords": [
     "angular",
     "javascript",
+    "typescript",
     "library"
   ],
   "author": "mediadesain",
