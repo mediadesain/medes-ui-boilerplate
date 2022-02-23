@@ -21,6 +21,8 @@ export declare class FilterSwatchComponent implements OnInit, OnChanges {
     swatchMapping: {
         [key: string]: string;
     };
+    swatchSize: number;
+    swatchRadius: number;
     filterswatchgroup: SwatchCheckBoxModelInterface[];
     constructor(activeroute: ActivatedRoute, router: Router);
     ngOnInit(): void;

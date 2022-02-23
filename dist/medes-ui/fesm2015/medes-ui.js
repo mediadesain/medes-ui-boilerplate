@@ -2,14 +2,17 @@ import { EventEmitter, Component, Input, Output, NgModule, ViewChild, Pipe } fro
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { highlightElement } from 'prismjs';
-import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-markup';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-java';
-import 'prismjs/components/prism-markup';
 import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-css';
 import 'prismjs/components/prism-sass';
 import 'prismjs/components/prism-scss';
 import 'prismjs/components/prism-ruby';
+import 'prismjs/components/prism-swift';
+import 'prismjs/components/prism-sql';
+import 'prismjs/components/prism-python';
 import { DomSanitizer } from '@angular/platform-browser';
 
 class MdsFilterResetComponent {
@@ -350,6 +353,8 @@ class FilterSwatchComponent {
         this.filterswatchgroup = [];
     }
     ngOnInit() {
+        this.swatchSize = this.swatchSize || 30;
+        this.swatchRadius = this.swatchRadius || 0;
         this.construcFilterSwatch();
     }
     ngOnChanges(changes) {
@@ -424,8 +429,8 @@ class FilterSwatchComponent {
 FilterSwatchComponent.decorators = [
     { type: Component, args: [{
                 selector: 'mds-filter-swatch',
-                template: "<div>{{titlegroup ? titlegroup : 'Color'}}</div>\n<div class=\"swatch\">\n    <div *ngFor=\"let item of filterswatchgroup; let i=index\" class=\"round\">\n        <input type=\"checkbox\" [id]=\"'checkbox'+i\" [checked]=\"item.checked\" (change)=\"clickCheckbox(item); item.checked=!item.checked\"/>\n        <label [for]=\"'checkbox'+i\" [style.background-color]=\"item.color\"></label>\n        <div [ngStyle]=\"{'border': item.checked ? '1px solid #ddd' : '1px solid #fff'}\" style=\"border-radius: 50%; width: 28px; height: 28px; position: absolute; top: 0; left: 0;\"></div>\n    </div>\n</div>",
-                styles: [".swatch{display:flex;flex-wrap:wrap;margin-bottom:1em}.round{position:relative;width:30px;height:30px;margin-right:5px;margin-bottom:5px}.round label{border:1px solid #ccc;border-radius:50%;cursor:pointer;height:28px;left:0;position:absolute;top:0;width:28px}.round input[type=checkbox]{visibility:hidden;width:30px;height:30px;margin:0;padding:0}.round label:after{border:2px solid #fff;border-top:none;border-right:none;content:\"\";height:6px;left:7px;opacity:0;position:absolute;z-index:2;top:8px;transform:rotate(-45deg);width:12px;transition:.2s ease-in-out}.round input[type=checkbox]:checked+label:after{opacity:1}"]
+                template: "<div>{{titlegroup ? titlegroup : 'Color'}}</div>\n<div class=\"swatch\">\n    <div *ngFor=\"let item of filterswatchgroup; let i=index\" class=\"item\">\n        <input type=\"checkbox\" [id]=\"'checkbox'+i\" [ngStyle]=\"{'width': swatchSize+'px', 'height': swatchSize+'px'}\" [checked]=\"item.checked\" (change)=\"clickCheckbox(item); item.checked=!item.checked\"/>\n        <label [for]=\"'checkbox'+i\" [ngStyle]=\"{'border-radius': swatchRadius+'px', 'background-color': item.color, 'width': swatchSize+'px', 'height': swatchSize+'px'}\">\n            <svg [ngStyle]=\"{'opacity': item.checked ? 1 : 0}\" xmlns=\"http://www.w3.org/2000/svg\"  viewBox=\"0 0 24 24\">\n                <path fill=\"#fff\" filter=\"drop-shadow(0px 2px 1px rgba(0, 0, 0, .2))\" d=\"M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z\"/>\n            </svg>\n        </label>\n        <div class=\"active-outline\" [ngStyle]=\"{'border': item.checked ? '1px solid #ddd' : '1px solid #fff', 'width': 1+swatchSize+'px', 'height': 1+swatchSize+'px', 'border-radius': swatchRadius+'px'}\"></div>\n    </div>\n</div>\n\n",
+                styles: [".swatch{display:flex;flex-wrap:wrap;margin-bottom:1em}.item{position:relative;margin-right:5px;margin-bottom:5px}.item label{border:1px solid #ccc;cursor:pointer;position:absolute;z-index:3;top:0;left:0}.item label svg{transition:.2s ease-in-out;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}.item input[type=checkbox]{visibility:hidden;margin:0;padding:0}.item input[type=checkbox]:checked+label:after{opacity:1}.active-outline{position:absolute;top:0;left:0}"]
             },] }
 ];
 FilterSwatchComponent.ctorParameters = () => [
@@ -437,7 +442,9 @@ FilterSwatchComponent.propDecorators = {
     filterBy: [{ type: Input }],
     filterSelected: [{ type: Input }],
     titlegroup: [{ type: Input }],
-    swatchMapping: [{ type: Input }]
+    swatchMapping: [{ type: Input }],
+    swatchSize: [{ type: Input }],
+    swatchRadius: [{ type: Input }]
 };
 
 class MdsFilterModule {
@@ -479,7 +486,7 @@ MdsHightlightPrismComponent.decorators = [
     { type: Component, args: [{
                 selector: 'mds-hightlight-prism',
                 template: "<pre *ngIf=\"language\" class=\"language-{{ language }}\">\n<code #codeContent class=\"language-{{ language }}\">{{code}}</code>\n</pre>",
-                styles: [""]
+                styles: ["pre{font-size:small}"]
             },] }
 ];
 MdsHightlightPrismComponent.ctorParameters = () => [];

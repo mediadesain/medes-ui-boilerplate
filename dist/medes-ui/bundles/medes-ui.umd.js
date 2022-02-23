@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('@angular/router'), require('prismjs'), require('prismjs/components/prism-css'), require('prismjs/components/prism-javascript'), require('prismjs/components/prism-java'), require('prismjs/components/prism-markup'), require('prismjs/components/prism-typescript'), require('prismjs/components/prism-sass'), require('prismjs/components/prism-scss'), require('prismjs/components/prism-ruby'), require('@angular/platform-browser')) :
-    typeof define === 'function' && define.amd ? define('medes-ui', ['exports', '@angular/core', '@angular/common', '@angular/router', 'prismjs', 'prismjs/components/prism-css', 'prismjs/components/prism-javascript', 'prismjs/components/prism-java', 'prismjs/components/prism-markup', 'prismjs/components/prism-typescript', 'prismjs/components/prism-sass', 'prismjs/components/prism-scss', 'prismjs/components/prism-ruby', '@angular/platform-browser'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['medes-ui'] = {}, global.ng.core, global.ng.common, global.ng.router, global.Prism, null, null, null, null, null, null, null, null, global.ng.platformBrowser));
-}(this, (function (exports, core, common, router, Prism, prismCss, prismJavascript, prismJava, prismMarkup, prismTypescript, prismSass, prismScss, prismRuby, platformBrowser) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('@angular/router'), require('prismjs'), require('prismjs/components/prism-markup'), require('prismjs/components/prism-javascript'), require('prismjs/components/prism-java'), require('prismjs/components/prism-typescript'), require('prismjs/components/prism-css'), require('prismjs/components/prism-sass'), require('prismjs/components/prism-scss'), require('prismjs/components/prism-ruby'), require('prismjs/components/prism-swift'), require('prismjs/components/prism-sql'), require('prismjs/components/prism-python'), require('@angular/platform-browser')) :
+    typeof define === 'function' && define.amd ? define('medes-ui', ['exports', '@angular/core', '@angular/common', '@angular/router', 'prismjs', 'prismjs/components/prism-markup', 'prismjs/components/prism-javascript', 'prismjs/components/prism-java', 'prismjs/components/prism-typescript', 'prismjs/components/prism-css', 'prismjs/components/prism-sass', 'prismjs/components/prism-scss', 'prismjs/components/prism-ruby', 'prismjs/components/prism-swift', 'prismjs/components/prism-sql', 'prismjs/components/prism-python', '@angular/platform-browser'], factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global['medes-ui'] = {}, global.ng.core, global.ng.common, global.ng.router, global.Prism, null, null, null, null, null, null, null, null, null, null, null, global.ng.platformBrowser));
+}(this, (function (exports, core, common, router, Prism, prismMarkup, prismJavascript, prismJava, prismTypescript, prismCss, prismSass, prismScss, prismRuby, prismSwift, prismSql, prismPython, platformBrowser) { 'use strict';
 
     var MdsFilterResetComponent = /** @class */ (function () {
         function MdsFilterResetComponent(router) {
@@ -697,6 +697,8 @@
             this.filterswatchgroup = [];
         }
         FilterSwatchComponent.prototype.ngOnInit = function () {
+            this.swatchSize = this.swatchSize || 30;
+            this.swatchRadius = this.swatchRadius || 0;
             this.construcFilterSwatch();
         };
         FilterSwatchComponent.prototype.ngOnChanges = function (changes) {
@@ -788,8 +790,8 @@
     FilterSwatchComponent.decorators = [
         { type: core.Component, args: [{
                     selector: 'mds-filter-swatch',
-                    template: "<div>{{titlegroup ? titlegroup : 'Color'}}</div>\n<div class=\"swatch\">\n    <div *ngFor=\"let item of filterswatchgroup; let i=index\" class=\"round\">\n        <input type=\"checkbox\" [id]=\"'checkbox'+i\" [checked]=\"item.checked\" (change)=\"clickCheckbox(item); item.checked=!item.checked\"/>\n        <label [for]=\"'checkbox'+i\" [style.background-color]=\"item.color\"></label>\n        <div [ngStyle]=\"{'border': item.checked ? '1px solid #ddd' : '1px solid #fff'}\" style=\"border-radius: 50%; width: 28px; height: 28px; position: absolute; top: 0; left: 0;\"></div>\n    </div>\n</div>",
-                    styles: [".swatch{display:flex;flex-wrap:wrap;margin-bottom:1em}.round{position:relative;width:30px;height:30px;margin-right:5px;margin-bottom:5px}.round label{border:1px solid #ccc;border-radius:50%;cursor:pointer;height:28px;left:0;position:absolute;top:0;width:28px}.round input[type=checkbox]{visibility:hidden;width:30px;height:30px;margin:0;padding:0}.round label:after{border:2px solid #fff;border-top:none;border-right:none;content:\"\";height:6px;left:7px;opacity:0;position:absolute;z-index:2;top:8px;transform:rotate(-45deg);width:12px;transition:.2s ease-in-out}.round input[type=checkbox]:checked+label:after{opacity:1}"]
+                    template: "<div>{{titlegroup ? titlegroup : 'Color'}}</div>\n<div class=\"swatch\">\n    <div *ngFor=\"let item of filterswatchgroup; let i=index\" class=\"item\">\n        <input type=\"checkbox\" [id]=\"'checkbox'+i\" [ngStyle]=\"{'width': swatchSize+'px', 'height': swatchSize+'px'}\" [checked]=\"item.checked\" (change)=\"clickCheckbox(item); item.checked=!item.checked\"/>\n        <label [for]=\"'checkbox'+i\" [ngStyle]=\"{'border-radius': swatchRadius+'px', 'background-color': item.color, 'width': swatchSize+'px', 'height': swatchSize+'px'}\">\n            <svg [ngStyle]=\"{'opacity': item.checked ? 1 : 0}\" xmlns=\"http://www.w3.org/2000/svg\"  viewBox=\"0 0 24 24\">\n                <path fill=\"#fff\" filter=\"drop-shadow(0px 2px 1px rgba(0, 0, 0, .2))\" d=\"M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z\"/>\n            </svg>\n        </label>\n        <div class=\"active-outline\" [ngStyle]=\"{'border': item.checked ? '1px solid #ddd' : '1px solid #fff', 'width': 1+swatchSize+'px', 'height': 1+swatchSize+'px', 'border-radius': swatchRadius+'px'}\"></div>\n    </div>\n</div>\n\n",
+                    styles: [".swatch{display:flex;flex-wrap:wrap;margin-bottom:1em}.item{position:relative;margin-right:5px;margin-bottom:5px}.item label{border:1px solid #ccc;cursor:pointer;position:absolute;z-index:3;top:0;left:0}.item label svg{transition:.2s ease-in-out;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}.item input[type=checkbox]{visibility:hidden;margin:0;padding:0}.item input[type=checkbox]:checked+label:after{opacity:1}.active-outline{position:absolute;top:0;left:0}"]
                 },] }
     ];
     FilterSwatchComponent.ctorParameters = function () { return [
@@ -801,7 +803,9 @@
         filterBy: [{ type: core.Input }],
         filterSelected: [{ type: core.Input }],
         titlegroup: [{ type: core.Input }],
-        swatchMapping: [{ type: core.Input }]
+        swatchMapping: [{ type: core.Input }],
+        swatchSize: [{ type: core.Input }],
+        swatchRadius: [{ type: core.Input }]
     };
 
     var MdsFilterModule = /** @class */ (function () {
@@ -848,7 +852,7 @@
         { type: core.Component, args: [{
                     selector: 'mds-hightlight-prism',
                     template: "<pre *ngIf=\"language\" class=\"language-{{ language }}\">\n<code #codeContent class=\"language-{{ language }}\">{{code}}</code>\n</pre>",
-                    styles: [""]
+                    styles: ["pre{font-size:small}"]
                 },] }
     ];
     MdsHightlightPrismComponent.ctorParameters = function () { return []; };
