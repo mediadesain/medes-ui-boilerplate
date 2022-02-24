@@ -1,3 +1,7 @@
+### 0.0.3 - beta.4
+- Rename variable.scss to ui-colorscheme.scss
+- Finalize Colorscheme variables
+- Fix styling for filter swatch component
 ### 0.0.3 - beta.3
 - Multiple Filter Checkbox - Will delete soon 0.0.5
 - Medes Filter Module - New verision of Multiple Filter Checkbox and spelltable per group

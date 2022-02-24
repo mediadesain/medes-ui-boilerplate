@@ -1,1 +1,116 @@
-<p>color-scheme works!</p>
+<h1>Color Scheme and Theming</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<hr/>
+
+<h3>Variable</h3>
+<div class="mds-grid">
+    <div class="g-50 g-m-25">
+        <div style="color: var(--body-txt); border: 1px solid #ccc;">Sample Color</div>
+        --body-txt
+    </div>
+    <div class="g-50 g-m-25">
+        <div style="color: var(--body-txt-darker); border: 1px solid #ccc">Sample Color</div>
+        --body-txt-darker
+    </div>
+</div>
+
+<b>Swatch A</b>
+<div class="mds-grid">
+    <div class="g-50 g-m-25">
+        <div style="width: 50px;height: 50px;background: var(--swatch-a-lighter);"></div>
+        --swatch-a-lighter
+    </div>
+    <div class="g-50 g-m-25">
+        <div style="width: 50px;height: 50px;background: var(--swatch-a);"></div>
+        --swatch-a
+    </div>
+    <div class="g-50 g-m-25">
+        <div style="width: 50px;height: 50px;background: var(--swatch-a-darker);"></div>
+        --swatch-a-darker
+    </div>
+    <div class="g-50 g-m-25">
+        <div _ngcontent-mia-c20="" style="position: relative;width: 50px;height: 50px;background: var(--swatch-a-darker);color: var(--swatch-a-negative);">
+            <span style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">Txt</span>
+        </div>
+        --swatch-a-negative
+    </div>
+</div>
+<b>Swatch B</b>
+<div class="mds-grid">
+    <div class="g-50 g-m-25">
+        <div style="width: 50px;height: 50px;background: var(--swatch-b-lighter);"></div>
+        --swatch-b-lighter
+    </div>
+    <div class="g-50 g-m-25">
+        <div style="width: 50px;height: 50px;background: var(--swatch-b);"></div>
+        --swatch-b
+    </div>
+    <div class="g-50 g-m-25">
+        <div style="width: 50px;height: 50px;background: var(--swatch-b-darker);"></div>
+        --swatch-b-darker
+    </div>
+    <div class="g-50 g-m-25">
+        <div _ngcontent-mia-c20="" style="position: relative;width: 50px;height: 50px;background: var(--swatch-b-darker);">
+            <span style="color: var(--swatch-b-negative);position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">Txt</span>
+        </div>
+        --swatch-b-negative
+    </div>
+</div>
+<hr/>
+
+<h3>Implementation</h3>
+<div class="mds-grid">
+    <div class="g-30">
+        <b>Preview</b>
+        <div style='background: var(--swatch-a); color: var(--swatch-a-negative);'>
+            <p>Sample Text</p>
+        </div>
+    </div>
+    <div class="g-70">
+        <b>Code</b>
+        <mds-hightlight-prism [code]="'<div style=\'background: var(--swatch-a); color: var(--swatch-a-negative)\'>
+    <p>Sample Text</p>
+</div>'" language="html"></mds-hightlight-prism>
+    </div>
+</div>
+
+<b>ui-colorscheme.scss</b>
+<mds-hightlight-prism [code]="'// Medes Theming & Color Swatch. For more info, please see:
+// http://doc.mediadesain.com/introduction/color-scheme
+
+/** MedesUI Stylesheet Color Swatch Variables **/
+/*-- Light Mode --*/
+:root {
+    --body-bg: #f9f9f9;
+    --body-bg-lighter: #ffffff;
+    --body-txt: #5d6778;
+    --body-txt-darker: #484849;
+    /*-- Color Swatch --*/
+    --swatch-a-lighter: #97cb52;
+    --swatch-a: #8bc53f;
+    --swatch-a-darker: #7cb530;
+    --swatch-a-negative: #ffffff;
+    --swatch-b-lighter: #fdc930;
+    --swatch-b: #ffc107;
+    --swatch-b-darker: #ecb305;
+    --swatch-b-negative: #ffffff;
+}
+
+/*-- Dark Mode --*/
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-bg: #1c1c1c;
+        --body-bg-lighter: #121212;
+        --body-txt: #cecece;
+        --body-txt-darker: #f9f9f9;
+        /*-- Color Swatch --*/
+        --swatch-a-lighter: #97cb52;
+        --swatch-a: #8bc53f;
+        --swatch-a-darker: #7cb530;
+        --swatch-a-negative: #ffffff;
+        --swatch-b-lighter: #fdc930;
+        --swatch-b: #ffc107;
+        --swatch-b-darker: #ecb305;
+        --swatch-b-negative: #ffffff;
+    }
+}'" language="scss"></mds-hightlight-prism>
