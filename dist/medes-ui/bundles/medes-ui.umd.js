@@ -852,7 +852,7 @@
         { type: core.Component, args: [{
                     selector: 'mds-hightlight-prism',
                     template: "<pre *ngIf=\"language\" class=\"language-{{ language }}\">\n<code #codeContent class=\"language-{{ language }}\">{{code}}</code>\n</pre>",
-                    styles: ["pre{font-size:small}"]
+                    styles: ["pre{font-size:small;margin:0}"]
                 },] }
     ];
     MdsHightlightPrismComponent.ctorParameters = function () { return []; };

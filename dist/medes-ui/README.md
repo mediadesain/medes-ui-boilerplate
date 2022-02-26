@@ -10,6 +10,10 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 - Install PrismJs `npm i prismjs` & import css theme prismjs.
 ## Release Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
+
+### 0.0.3
+- Multiple Filter Checkbox (Deprecated) - Will delete soon 0.0.5
+- Medes Filter Module (New verision of Multiple Filter Checkbox)
 ### 0.0.2
 - Update Utilites
 ### 0.0.1
