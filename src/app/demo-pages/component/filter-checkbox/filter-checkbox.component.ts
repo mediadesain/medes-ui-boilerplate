@@ -8,7 +8,7 @@ export class FilterCheckboxComponent implements OnInit {
 
 componentdemo = `<!-- Multiple Filter Component -->
 <mds-filter-checkbox
-  class="d-flex flex-column"
+  class="d-flex flex-vertical"
   [titlegroup]="'Filter by'"
   [classgroup]="'mb-3'"
   [resetgroup]="'✕'"

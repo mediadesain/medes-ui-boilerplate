@@ -1,5 +1,5 @@
 <medes-alert-soon [version]="'v.0.0.3'"></medes-alert-soon>
-<h1>Demo - Medes Filter Components</h1>
+<h1 class="margin-b-1">Demo - Medes Filter Components</h1>
 <div class="mds-grid">
     <div class="g-l-30">
         <!-- Filter Checkboxes Component - Multiple Group -->
@@ -38,7 +38,7 @@
             <small *ngIf="(sampledata|filter:selected).length === 0 && (selected|json)!='{}'">Filtered data not found</small>
         </div>
         <div class="mds-grid">
-            <div class="g-50 g-l-25" *ngFor="let item of (sampledata|filter:selected)">
+            <div class="g-s-50 g-l-25" *ngFor="let item of (sampledata|filter:selected)">
                 <!-- Image with MedesUI Image Loader Element-->
                 <div class="mds-img-loader square">
                     <img [src]="item.picture" [alt]="item.name">

@@ -1,58 +1,14 @@
 /*-- MedesUI --*/
-// @import "../projects/medes-ui/assets/scss/medes-ui.scss";
-// @import "../projects/medes-ui/assets/scss/variables.scss";
-@import "~medes-ui/assets/scss/medes-ui.scss";
-@import "~medes-ui/assets/scss/ui-colorscheme.scss";
+// @import "../projects/medes-ui/assets/scss/medes-ui";
+// @import "../projects/medes-ui/assets/scss/ui-colorscheme";
+// @import "../projects/medes-ui/assets/scss/layouts/documentation";
+@import "~medes-ui/assets/scss/medes-ui";
+@import "~medes-ui/assets/scss/ui-colorscheme";
+@import "~medes-ui/assets/scss/layouts/documentation";
 @import "~prismjs/themes/prism-okaidia.min";
 
-/*-- Side Menu Toggle Layout --*/
-medes-root {display: flex; flex-direction: column; height: 100%;}
-medes-navbar, navbar {width: calc(100% - 30px); background-color: var(--body-bg-lighter); padding: 7px 15px 7px; box-shadow: 0 0 20px rgb(0 0 0 / 10%); position: fixed; z-index: 10;display: flex; flex-direction: row; align-items: center; justify-content: space-between; font-size: x-large;}
-medes-navbar .toggle, navbar .toggle {display: none; width: 20px;}
-medes-navbar .logo, navbar .logo {height: 35px;width: 163.72px;background-image: url('./assets/images/medes-ui.png'); background-size: contain;}
-medes-navbar a, navbar a {color: var(--body-txt-darker);}
-content {
-    display: flex; justify-content: space-between; width: 100%; height: calc(100% - 54.8px); padding-top: 54.8px;
-    medes-aside, aside {
-        transition: 0.7s ease-in-out; min-width: calc(300px - 50px); overflow-y: scroll;z-index: 2; background-color: var(--body-bg);
-        .list-group {
-            font-size: smaller;
-            b {color: var(--body-txt-darker);}
-            ul {list-style-type: none; margin: 10px 5px 15px; padding: 0; }
-            li {
-                padding: 0 10px; margin: 5px 0; border-radius: 6px;
-                a {color: var(--body-txt-a);}
-            }
-            li.active {background: rgb(139 197 63 / 10%);}
-            li.active a {color: var(--swatch-a);}
-        }
-    }
-    article {
-        width: calc(100% - 300px);z-index: 1;
-        .container {
-            height: 100%; margin: 0 auto; display: flex; flex-direction: column; justify-content: space-between;overflow-y: scroll;
-            main .main {max-width: 1200px; margin: 0 auto;}
-            medes-footer {margin-top: auto;padding: 50px;text-align: center;}
-        }
-    }
-    medes-aside, aside, main {padding: 25px;}
-}
-
-
-@media (max-width: 747px){
-    medes-navbar, navbar {
-        .toggle {display: block;}
-        img {margin-right: unset;}
-    }
-    medes-aside, aside { position: absolute; height: calc(100% - 54.8px - 50px); margin-left: -100%; }
-    article {width: 100% !important; filter: blur(0);}
-    article::before {transition: .5s ease-in-out;content: '';background-color: #000;opacity: 0; z-index: 1;}
-    content.active {
-        medes-aside, aside {margin-left: 0;}
-        // article::before {width: 100%; height: 90%; position: absolute; opacity: 0.1;}
-    }
-}
-
+/*-- Custom Style--*/
+navbar .logo, medes-navbar .logo { background-image: url('./assets/images/medes-ui.png'); }
 @media (prefers-color-scheme: dark) {
-    medes-navbar .logo, navbar .logo {background-image: url('./assets/images/medes-ui-dark.png');}
+    medes-navbar .logo { background-image: url('./assets/images/medes-ui-dark.png'); }
 }

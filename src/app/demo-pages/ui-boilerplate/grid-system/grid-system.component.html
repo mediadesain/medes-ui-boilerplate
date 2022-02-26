@@ -1,68 +1,160 @@
 <h1>Grid System</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<hr/>
 
-<h2>Overview</h2>
+<h2 class="padding-b-1">Overview</h2>
 <div class="mds-grid sample">
-    <div class="g-50 g-l-25">1</div>
-    <div class="g-50 g-l-75">2</div>
+    <div class="g-s-50 g-l-25">1</div>
+    <div class="g-s-50 g-l-75">2</div>
     <div class="g-l-50">3</div>
     <div class="g-l-50">4</div>
-    <div class="g-m-50 g-l-25">5</div>
-    <div class="g-m-50 g-l-25">6</div>
-    <div class="g-m-50 g-l-25">7</div>
-    <div class="g-m-50 g-l-25">8</div>
+    <div class="g-l-25 g-m-50 g-s-25">5</div>
+    <div class="g-l-25 g-m-50 g-s-25">6</div>
+    <div class="g-l-25 g-m-50 g-s-25">7</div>
+    <div class="g-l-25 g-m-50 g-s-25">8</div>
 </div>
 <hr/>
 
-<h2>Row</h2>
 <b>Preview</b>
-<div style="height: 300px; border: 1px dashed #ddd;">
+<div style="height: 300px; border: 1px dashed rgb(100 100 100 / 40%);">
     <div [class]="'mds-grid '+ horizontalLayout.value +' '+verticalLayout.value+' sample'">
-        <div class="g-50 g-l-25">1</div>
-        <div class="g-50 g-l-75">2</div>
-        <div class="g-l-50">3</div>
-        <div class="g-l-50">4</div>
-        <div class="g-m-50 g-l-25">5</div>
-        <div class="g-m-50 g-l-25">6</div>
+        <div class="{{item1.value}}{{itemmed1.value === 'unset' ? '' : ' '+itemmed1.value}}{{itemsm1.value === 'unset' ? '' : ' '+itemsm1.value}}">1</div>
+        <div class="{{item2.value}}{{itemmed2.value === 'unset' ? '' : ' '+itemmed2.value}}{{itemsm2.value === 'unset' ? '' : ' '+itemsm2.value}}">2</div>
+        <div class="{{item3.value}}{{itemmed3.value === 'unset' ? '' : ' '+itemmed3.value}}{{itemsm3.value === 'unset' ? '' : ' '+itemsm3.value}}">3</div>
+        <div class="{{item4.value}}{{itemmed4.value === 'unset' ? '' : ' '+itemmed4.value}}{{itemsm4.value === 'unset' ? '' : ' '+itemsm4.value}}">4</div>
+        <div class="{{item5.value}}{{itemmed5.value === 'unset' ? '' : ' '+itemmed5.value}}{{itemsm5.value === 'unset' ? '' : ' '+itemsm5.value}}">5</div>
+        <div class="{{item6.value}}{{itemmed6.value === 'unset' ? '' : ' '+itemmed6.value}}{{itemsm6.value === 'unset' ? '' : ' '+itemsm6.value}}">6</div>
     </div>
 </div>
 
 
-<b>Generator</b>
-<select #horizontalLayout="ngModel" ngModel="grid-horizontal-center">
-    <option>grid-horizontal-start</option>
-    <option>grid-horizontal-center</option>
-    <option>grid-horizontal-end</option>
-    <option>grid-horizontal-around</option>
-    <option>grid-horizontal-between</option>
-</select>
-
-<select #verticalLayout="ngModel" ngModel="grid-vertical-middle">
-    <option>grid-vertical-top</option>
-    <option>grid-vertical-middle</option>
-    <option>grid-vertical-bottom</option>
-    <option>grid-vertical-around</option>
-    <option>grid-vertical-between</option>
-    <option>grid-vertical-fullfill</option>
-</select>
-<mds-hightlight-prism [code]="'<div class=\'mds-grid '+horizontalLayout.value+' '+verticalLayout.value+'\'>
-    <!-- Columns Goes Here-->
+<div class="mds-grid">
+    <div class="g-m-70">
+        <b>Grid Wrapper & Grid Items</b>
+        <mds-hightlight-prism [code]="'<!-- Grid Wrapper -->
+<div class=\'mds-grid '+horizontalLayout.value+' '+verticalLayout.value+'\'>
+    <!-- Grid Items Here-->
+    <div class=\''+(item1.value)+(itemmed1.value==='unset'?'':' '+itemmed1.value)+(itemsm1.value==='unset'?'':' '+itemsm1.value)+'\'>1</div>
+    <div class=\''+item2.value+'\'>2</div>
+    <div class=\''+item3.value+'\'>3</div>
+    <div class=\''+item4.value+'\'>4</div>
+    <div class=\''+item5.value+'\'>5</div>
+    <div class=\''+item6.value+'\'>6</div>
+    ... <!-- Repeat Grid Items Here-->
 </div>'" language="html"></mds-hightlight-prism>
-<hr/>
-
-<h2>Columns</h2>
-<mds-hightlight-prism [code]="'<!-- Grid Start -->
-    <div class=\'g-50 g-l-25\'>1</div>
-    <div class=\'g-50 g-l-75\'>2</div>
-    <div class=\'g-l-50\'>3</div>
-    <div class=\'g-l-50\'>4</div>
-    <div class=\'g-m-50 g-l-25\'>5</div>
-    <div class=\'g-m-50 g-l-25\'>6</div>
-<!-- Grid End -->'" language="html"></mds-hightlight-prism>
+    </div>
+    <div class="g-m-30">
+        <b>Generator</b>
+        <div class="flex-vertical margin-b-1">
+            <select #horizontalLayout="ngModel" ngModel="horizontal-center">
+                <option>horizontal-left</option>
+                <option>horizontal-center</option>
+                <option>horizontal-right</option>
+                <option>horizontal-around</option>
+                <option>horizontal-between</option>
+            </select>
+            <select #verticalLayout="ngModel" ngModel="vertical-middle">
+                <option>vertical-top</option>
+                <option>vertical-middle</option>
+                <option>vertical-bottom</option>
+                <option>vertical-around</option>
+                <option>vertical-between</option>
+                <option>vertical-fullfill</option>
+            </select>
+        </div>
+        <div class="flex-vertical margin-b-1">
+            <select #screen="ngModel" ngModel="large screen">
+                <option *ngFor="let item of ['large screen', 'medium screen', 'small screen']">{{item}}</option>
+            </select>
+            <div [hidden]="screen.value !== 'large screen'">
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 1</small>
+                    <select #item1="ngModel" ngModel="g-l-50"><option *ngFor="let item of gridlarge">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 2</small>
+                    <select #item2="ngModel" ngModel="g-l-50"><option *ngFor="let item of gridlarge">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 3</small>
+                    <select #item3="ngModel" ngModel="g-l-50"><option *ngFor="let item of gridlarge">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 4</small>
+                    <select #item4="ngModel" ngModel="g-l-25"><option *ngFor="let item of gridlarge">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 5</small>
+                    <select #item5="ngModel" ngModel="g-l-25"><option *ngFor="let item of gridlarge">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 6</small>
+                    <select #item6="ngModel" ngModel="g-l-50"><option *ngFor="let item of gridlarge">{{item}}</option></select>
+                </div>
+            </div>
+            <div [hidden]="screen.value !== 'medium screen'">
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 1</small>
+                    <select #itemmed1="ngModel" ngModel="g-m-25">
+                        <option *ngFor="let item of gridmedium">{{item}}</option>
+                    </select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 2</small>
+                    <select #itemmed2="ngModel" ngModel="g-m-75"><option *ngFor="let item of gridmedium">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 3</small>
+                    <select #itemmed3="ngModel" ngModel="unset"><option *ngFor="let item of gridmedium">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 4</small>
+                    <select #itemmed4="ngModel" ngModel="g-m-50"><option *ngFor="let item of gridmedium">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 5</small>
+                    <select #itemmed5="ngModel" ngModel="g-m-25"><option *ngFor="let item of gridmedium">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 6</small>
+                    <select #itemmed6="ngModel" ngModel="g-m-25"><option *ngFor="let item of gridmedium">{{item}}</option></select>
+                </div>
+            </div>
+            <div [hidden]="screen.value !== 'small screen'">
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 1</small>
+                    <select #itemsm1="ngModel" ngModel="unset"><option *ngFor="let item of gridsmall">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 2</small>
+                    <select #itemsm2="ngModel" ngModel="unset"><option *ngFor="let item of gridsmall">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 3</small>
+                    <select #itemsm3="ngModel" ngModel="g-s-50"><option *ngFor="let item of gridsmall">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 4</small>
+                    <select #itemsm4="ngModel" ngModel="g-s-50"><option *ngFor="let item of gridsmall">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 5</small>
+                    <select #itemsm5="ngModel" ngModel="unset"><option *ngFor="let item of gridsmall">{{item}}</option></select>
+                </div>
+                <div class="flex-horizontal horizontal-between">
+                    <small>Item 6</small>
+                    <select #itemsm6="ngModel" ngModel="g-s-50"><option *ngFor="let item of gridsmall">{{item}}</option></select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <hr/>
 <br/>
+
 <h2>Demo</h2>
-<div [class]="'mds-grid '+ horizontalLayout.value +' '+verticalLayout.value">
-    <div class="g-50 g-l-25" *ngFor="let item of sampledata|slice:0:7">
+<div [class]="'mds-grid '+ horizontalLayout.value +' '+ verticalLayout.value +' margin-vertical-1'">
+    <div class="g-s-50 g-m-25" *ngFor="let item of sampledata|slice:0:7">
         <!-- Image with MedesUI Image Loader Element-->
         <div class="mds-img-loader square">
             <img [src]="item.picture" [alt]="item.name">
@@ -73,7 +165,7 @@
 </div>
 Row & Columns use look like this
 <mds-hightlight-prism [code]="'<div class=\'mds-grid '+horizontalLayout.value+' '+verticalLayout.value+'\'>
-    <div *ngFor=\'let item of items\' class=\'g-50 g-l-25\'>
+    <div *ngFor=\'let item of items\' class=\'g-s-50 g-m-25\'>
         ...
     </div>
 </div>'" language="html"></mds-hightlight-prism>

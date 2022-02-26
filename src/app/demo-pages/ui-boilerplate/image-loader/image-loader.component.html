@@ -1,7 +1,9 @@
 <h1>Image Loader</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<br/>
 
 <h2>Overview</h2>
-<div class="mds-grid">
+<div class="mds-grid margin-vertical-1">
     <div class="g-50 g-m-20">
         <div class="mds-img-loader square">
             <img src="https://i.picsum.photos/id/702/400/400.jpg?hmac=Ni6iVGeZM9aTOYnUaLmRwGdPi25Gh9v_RXKomm9CCpY" alt="">
@@ -39,12 +41,14 @@
     </div>
     <div class="g-m-70">
         <b>Generator</b><br/>
-        <input type="text" #image="ngModel" ngModel="https://i.picsum.photos/id/28/400/400.jpg?hmac=GimN6n4shCH8in5xKYxsTe8Tv0pwayxzLr9BkZB-P80">
-        <select name="test" #loaderStyle="ngModel" ngModel="circle">
-            <option>circle</option>
-            <option>square</option>
-            <option>landscape</option>
-        </select>
+        <div class="flex-horizontal">
+            <input class="fullfill-horizontal" type="text" #image="ngModel" ngModel="https://i.picsum.photos/id/28/400/400.jpg?hmac=GimN6n4shCH8in5xKYxsTe8Tv0pwayxzLr9BkZB-P80">
+            <select name="test" #loaderStyle="ngModel" ngModel="circle">
+                <option>circle</option>
+                <option>square</option>
+                <option>landscape</option>
+            </select>
+        </div>
         <mds-hightlight-prism [code]="'<div class=\'mds-img-loader '+loaderStyle.value+'\'>
     <img src=\''+image.value+'\' />
 </div>'" language="html"></mds-hightlight-prism>
