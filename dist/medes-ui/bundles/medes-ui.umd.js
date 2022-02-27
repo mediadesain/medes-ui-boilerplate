@@ -557,6 +557,32 @@
         return 'https://i.ytimg.com/vi/' + id + '/' + size + '.jpg';
     };
 
+    // @dynamic
+    var MdsColorUtils = /** @class */ (function () {
+        function MdsColorUtils() {
+        }
+        return MdsColorUtils;
+    }());
+    MdsColorUtils.rgbToHex = function (rgb) { return '#' + rgb.map(function (x) {
+        var hex = x.toString(16);
+        return hex.length === 1 ? '0' + hex : hex;
+    }).join(''); };
+    MdsColorUtils.hexToRgba = function (hex, opacity) {
+        opacity = opacity > 1 ? opacity = 1 : opacity;
+        var rgba = 'rgba(' + (hex = hex.replace('#', ''))
+            .match(new RegExp('(.{' + hex.length / 3 + '})', 'g'))
+            .map(function (l) { return parseInt(hex.length % 2 ? l + l : l, 16); })
+            .concat(isFinite(opacity) ? opacity : 1).join(',') + ')';
+        return rgba;
+    };
+    MdsColorUtils.addDarkLight = function (color, amount) {
+        var coloradjust = '#' + color.replace(/^#/, '')
+            .replace(/../g, function (clr) { return ('0' + Math.min(255, Math.max(0, parseInt(clr, 16) + amount))
+            .toString(16))
+            .substr(-2); });
+        return coloradjust;
+    };
+
     var FilterCheckboxComponent = /** @class */ (function () {
         function FilterCheckboxComponent(router, activeroute) {
             this.router = router;
@@ -1164,6 +1190,7 @@
     exports.FilterPipe = FilterPipe;
     exports.FilterSwatchComponent = FilterSwatchComponent;
     exports.MdsArrayUtils = MdsArrayUtils;
+    exports.MdsColorUtils = MdsColorUtils;
     exports.MdsDateUtils = MdsDateUtils;
     exports.MdsFilterCheckboxComponent = MdsFilterCheckboxComponent;
     exports.MdsFilterCheckboxModule = MdsFilterCheckboxModule;

@@ -220,6 +220,29 @@ MdsStringUtils.getYoutubeThumbnail = (url, size) => {
     return 'https://i.ytimg.com/vi/' + id + '/' + size + '.jpg';
 };
 
+// @dynamic
+class MdsColorUtils {
+}
+MdsColorUtils.rgbToHex = (rgb) => '#' + rgb.map((x) => {
+    const hex = x.toString(16);
+    return hex.length === 1 ? '0' + hex : hex;
+}).join('');
+MdsColorUtils.hexToRgba = (hex, opacity) => {
+    opacity = opacity > 1 ? opacity = 1 : opacity;
+    const rgba = 'rgba(' + (hex = hex.replace('#', ''))
+        .match(new RegExp('(.{' + hex.length / 3 + '})', 'g'))
+        .map((l) => parseInt(hex.length % 2 ? l + l : l, 16))
+        .concat(isFinite(opacity) ? opacity : 1).join(',') + ')';
+    return rgba;
+};
+MdsColorUtils.addDarkLight = (color, amount) => {
+    const coloradjust = '#' + color.replace(/^#/, '')
+        .replace(/../g, clr => ('0' + Math.min(255, Math.max(0, parseInt(clr, 16) + amount))
+        .toString(16))
+        .substr(-2));
+    return coloradjust;
+};
+
 class FilterCheckboxComponent {
     constructor(router, activeroute) {
         this.router = router;
@@ -770,5 +793,5 @@ MdsFilterCheckboxModule.decorators = [
  * Generated bundle index. Do not edit.
  */
 
-export { FilterCheckboxComponent, FilterPipe, FilterSwatchComponent, MdsArrayUtils, MdsDateUtils, MdsFilterCheckboxComponent, MdsFilterCheckboxModule, MdsFilterModule, MdsFilterResetComponent, MdsHightlightPrismComponent, MdsHightlightPrismModule, MdsNumberUtils, MdsObjectUtils, MdsPipesModule, MdsStringUtils, SafeUrlPipe, SearchPipe };
+export { FilterCheckboxComponent, FilterPipe, FilterSwatchComponent, MdsArrayUtils, MdsColorUtils, MdsDateUtils, MdsFilterCheckboxComponent, MdsFilterCheckboxModule, MdsFilterModule, MdsFilterResetComponent, MdsHightlightPrismComponent, MdsHightlightPrismModule, MdsNumberUtils, MdsObjectUtils, MdsPipesModule, MdsStringUtils, SafeUrlPipe, SearchPipe };
 //# sourceMappingURL=medes-ui.js.map
