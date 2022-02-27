@@ -1,4 +1,6 @@
-
+### 0.0.3 - beta.6
+- Add Color Utils
+- Fix Table Style
 ### 0.0.3 - beta.5
 - Add generator styke variable
 - Finalize grid system
@@ -13,7 +15,7 @@
 - Medes Filter Module (Color swatch) - Support custom size and shape
 - MedesUI Stylesheet bundled to medes-ui module
 - Color scheme for thaming Feature
-### 0.0.2 - 220213
+### 0.0.2 - (Release - 220213)
 - Multiple Filter Checkbox - Remove log
 - Multiple Filter Checkbox - Dont show filter category if value of prop/key only have one value.
 - MdsNumberUtils - shortNumber() Support custom suffixes

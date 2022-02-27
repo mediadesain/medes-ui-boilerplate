@@ -10,7 +10,7 @@ export class AsideComponent implements OnInit {
     {
       title: 'MedesUI',
       links: [
-        {text: 'Introduction', url: '/introduction/info'},
+        // {text: 'Introduction', url: '/introduction/info'},
         {text: 'How to Install', url: '/introduction/how-to-install'},
         {text: 'Color Scheme', url: '/introduction/color-scheme'}
       ]
@@ -43,11 +43,12 @@ export class AsideComponent implements OnInit {
     }, {
       title: 'Utilities',
       links: [
-        {text: 'String', url: '/string-utils'},
-        {text: 'Integer', url: '/number-utils'},
-        {text: 'Object', url: '/object-utils'},
-        {text: 'Array', url: '/array-utils'},
-        {text: 'Date', url: '/date-utils'}
+        {text: 'String', url: '/utils/string'},
+        {text: 'Integer', url: '/utils/number'},
+        {text: 'Object', url: '/utils/object'},
+        {text: 'Array', url: '/utils/array'},
+        {text: 'Date', url: '/utils/date'},
+        {text: 'Color', url: '/utils/color'}
       ]
     }
   ];

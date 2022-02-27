@@ -10,8 +10,11 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 
 ### Others Dependencies need to install.
 - Install PrismJs `npm i prismjs` & import css theme prismjs.
-## Release Version
+
+## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
+## 0.0.3 - Beta Version
+- [Here](https://github.com/mediadesain/medes-ui-boilerplate/tree/main/dist/medes-ui)
 ### 0.0.2
 - Update Utilites
 ### 0.0.1

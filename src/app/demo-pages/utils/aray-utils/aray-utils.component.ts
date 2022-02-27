@@ -8,7 +8,7 @@ import { MdsArrayUtils } from 'medes-ui';
   templateUrl: './aray-utils.component.html',
   styleUrls: ['./aray-utils.component.scss']
 })
-export class ArayUtilsComponent implements OnInit {
+export class ArrayUtilsComponent implements OnInit {
 import = `import { MdsArrayUtils } from 'medes-ui';`;
 demo = `MdsArrayUtils.countUniqueValues(["Web","Web","Web","Web","iOS","iOS","Android","Android","Android"])
 // output {Web: 4, iOS: 2, Android: 3}

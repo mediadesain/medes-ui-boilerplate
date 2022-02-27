@@ -12,14 +12,14 @@
             <li>Import <i>medes-ui.scss</i> stylesheet on main <i>styles.scss</i>.
                 <mds-hightlight-prism [code]="'/*-- MedesUI --*/
 @import \'~medes-ui/assets/scss/medes-ui.scss\';
-@import \'~medes-ui/assets/scss/ui-colorscheme\'; // Or possible to create custom your own color scheme'" language="scss"></mds-hightlight-prism>
+@import \'~medes-ui/assets/scss/ui-colorscheme.scss\'; // Or possible to create custom your own color scheme'" language="scss"></mds-hightlight-prism>
             </li>
             <li>Or import to <i>angular.json</i>.
                 <mds-hightlight-prism [code]="'...
 \'styles\': [
     \'src/styles.scss\',
     \'./node_modules/medes-ui/assets/scss/medes-ui.scss\',
-    \'./node_modules/medes-ui/assets/scss/ui-colorscheme\'
+    \'./node_modules/medes-ui/assets/scss/ui-colorscheme.scss\'
 ],
 ...'" language="javascript"></mds-hightlight-prism>
             </li>
