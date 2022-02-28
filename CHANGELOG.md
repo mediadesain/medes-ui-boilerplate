@@ -1,3 +1,12 @@
+### 0.0.3 - (Release - 220228)
+- Multiple Filter Checkbox - Will delete soon 0.0.5 and replace with new Filter Components
+- Filter Components (Checkbox, Color Swatch, Reset Button)
+- New UI Elements Added (Table, Blockquotes)
+- Style Box model Utils
+- Color Scheme & Generator Feature
+### 0.0.3 - beta.7
+- Add Blockquotes
+- Release preparation
 ### 0.0.3 - beta.6
 - Add Color Utils
 - Fix Table Style

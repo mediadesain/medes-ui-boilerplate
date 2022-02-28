@@ -9,7 +9,7 @@ export class ResetAllComponent implements OnInit {
   selected = { category: ['shoes'] };
 
 componentdemo = `<!-- Reset Filter Component -->
-<mds-filter-reset [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset>`;
+<mds-filter-reset [class]="'btn btn-primary'" [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset>`;
   constructor() { }
 
   ngOnInit(): void {
