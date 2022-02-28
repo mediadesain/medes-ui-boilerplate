@@ -4,6 +4,7 @@ import { SelectedFilterInterface } from '../mds-filter.interface';
 export declare class MdsFilterResetComponent implements OnInit {
     private router;
     content: any;
+    class: string;
     filterSelected: SelectedFilterInterface;
     filterSelectedChange: EventEmitter<any>;
     constructor(router: Router);
