@@ -762,7 +762,6 @@
             };
             var this_1 = this;
             try {
-                // for (let i = 0; i < getAllValue.length; i++){
                 for (var getAllValue_1 = __values(getAllValue), getAllValue_1_1 = getAllValue_1.next(); !getAllValue_1_1.done; getAllValue_1_1 = getAllValue_1.next()) {
                     var val = getAllValue_1_1.value;
                     _loop_1(val);

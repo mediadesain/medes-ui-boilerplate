@@ -13,8 +13,12 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
+### 0.0.3 - beta.7
+- Add Blockquotes
+- Release preparation
 ### 0.0.3 - beta.6
 - Add Color Utils
+- Fix Table Style
 ### 0.0.3 - beta.5
 - Add generator styke variable
 - Finalize grid system

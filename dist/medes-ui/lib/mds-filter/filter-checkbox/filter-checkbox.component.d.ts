@@ -1,22 +1,13 @@
 import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-interface CheckBoxModelInterface {
-    checked: boolean;
-    label: string;
-    counter: number;
-    url: string;
-}
+import { SelectedFilterInterface, CheckBoxModelInterface } from '../mds-filter.interface';
 export declare class FilterCheckboxComponent implements OnInit, OnChanges {
     private router;
     private activeroute;
     filterData: any;
     filterBy: string[];
-    filterSelected: {
-        [key: string]: string[];
-    };
-    filterSelectedUrl: {
-        [key: string]: string[];
-    };
+    filterSelected: SelectedFilterInterface;
+    filterSelectedUrl: SelectedFilterInterface;
     titlegroup: string | undefined;
     reset: string | undefined;
     hideCounter: boolean;
@@ -30,4 +21,3 @@ export declare class FilterCheckboxComponent implements OnInit, OnChanges {
     clickCheckbox(select: CheckBoxModelInterface, prop: string): void;
     resetFilter(select: CheckBoxModelInterface, prop: string): any;
 }
-export {};

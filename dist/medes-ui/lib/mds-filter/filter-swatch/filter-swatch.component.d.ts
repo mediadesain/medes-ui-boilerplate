@@ -1,22 +1,13 @@
 import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-interface SwatchCheckBoxModelInterface {
-    checked: boolean;
-    color: string;
-    label: string;
-    url: string;
-}
+import { SwatchCheckBoxModelInterface, SelectedFilterInterface } from '../mds-filter.interface';
 export declare class FilterSwatchComponent implements OnInit, OnChanges {
     private activeroute;
     private router;
     filterData: any;
     filterBy: string;
-    filterSelected: {
-        color: any[];
-    };
-    filterSelectedUrl: {
-        [key: string]: string[];
-    };
+    filterSelected: SelectedFilterInterface;
+    filterSelectedUrl: SelectedFilterInterface;
     titlegroup: string | undefined;
     swatchMapping: {
         [key: string]: string;
@@ -30,4 +21,3 @@ export declare class FilterSwatchComponent implements OnInit, OnChanges {
     construcFilterSwatch(): void;
     clickCheckbox(select: SwatchCheckBoxModelInterface): void;
 }
-export {};

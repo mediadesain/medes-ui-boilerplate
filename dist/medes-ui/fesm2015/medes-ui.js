@@ -388,7 +388,6 @@ class FilterSwatchComponent {
         let getAllValue = this.filterData.map((item) => item[this.filterBy].split(',')).flat();
         getAllValue = [...new Set(getAllValue)];
         const checkswatch = [];
-        // for (let i = 0; i < getAllValue.length; i++){
         for (const val of getAllValue) {
             const obj = {
                 label: val,
