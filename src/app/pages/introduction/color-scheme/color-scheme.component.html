@@ -16,23 +16,23 @@
 
 <b>Swatch A</b>
 <div class="mds-grid">
-    <div class="g-s-50 g-m-20">
+    <div class="g-m-20 g-s-50">
         <div style="width: 50px;height: 50px;background: var(--swatch-a-transculant);"></div>
         <small>--swatch-a-transculant</small>
     </div>
-    <div class="g-s-50 g-m-20">
+    <div class="g-m-20 g-s-50">
         <div style="width: 50px;height: 50px;background: var(--swatch-a-lighter);"></div>
         <small>--swatch-a-lighter</small>
     </div>
-    <div class="g-s-50 g-m-20">
+    <div class="g-m-20 g-s-50">
         <div style="width: 50px;height: 50px;background: var(--swatch-a);"></div>
         <small>--swatch-a</small>
     </div>
-    <div class="g-s-50 g-m-20">
+    <div class="g-m-20 g-s-50">
         <div style="width: 50px;height: 50px;background: var(--swatch-a-darker);"></div>
         <small>--swatch-a-darker</small>
     </div>
-    <div class="g-s-50 g-m-20">
+    <div class="g-m-20 g-s-50">
         <div style="position: relative;width: 50px;height: 50px;background: var(--swatch-a-darker);color: var(--swatch-a-contrast);">
             <b style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">TxT</b>
         </div>
@@ -41,23 +41,23 @@
 </div>
 <b>Swatch B</b>
 <div class="mds-grid">
-    <div class="g-s-50 g-m-20">
+    <div class="g-m-20 g-s-50">
         <div style="width: 50px;height: 50px;background: var(--swatch-b-transculant);"></div>
         <small>--swatch-b-transculant</small>
     </div>
-    <div class="g-s-50 g-m-20">
+    <div class="g-m-20 g-s-50">
         <div style="width: 50px;height: 50px;background: var(--swatch-b-lighter);"></div>
         <small>--swatch-b-lighter</small>
     </div>
-    <div class="g-s-50 g-m-20">
+    <div class="g-m-20 g-s-50">
         <div style="width: 50px;height: 50px;background: var(--swatch-b);"></div>
         <small>--swatch-b</small>
     </div>
-    <div class="g-s-50 g-m-20">
+    <div class="g-m-20 g-s-50">
         <div style="width: 50px;height: 50px;background: var(--swatch-b-darker);"></div>
         <small>--swatch-b-darker</small>
     </div>
-    <div class="g-s-50 g-m-20">
+    <div class="g-m-20 g-s-50">
         <div style="position: relative;width: 50px;height: 50px;background: var(--swatch-b-darker);">
             <b style="color: var(--swatch-b-contrast);position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">TxT</b>
         </div>
@@ -141,7 +141,7 @@ http://doc.mediadesain.com/introduction/color-scheme */
 </form>
 <b *ngIf="name">{{name|titlecase}}</b>
 <div *ngIf="generate" class="mds-grid">
-    <div class="g-s-50 g-m-20" *ngFor="let item of generate">
+    <div class="g-m-20 g-s-50" *ngFor="let item of generate">
         <div style="position: relative;width: 50px;height: 50px;" [style.background]="item.value">
             <b *ngIf="item.color" [style.color]="item.color" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">TxT</b>
         </div>

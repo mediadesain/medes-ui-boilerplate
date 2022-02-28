@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UtilsRoutingModule } from './utils-routing.module';
+import { DemoUtilsRoutingModule } from './demo-utils-routing.module';
 
 import { StringUtilsComponent } from './string-utils/string-utils.component';
 import { NumberUtilsComponent } from './number-utils/number-utils.component';
@@ -25,8 +25,8 @@ import { MdsHightlightPrismModule } from 'medes-ui';
   ],
   imports: [
     CommonModule,
-    UtilsRoutingModule,
+    DemoUtilsRoutingModule,
     MdsHightlightPrismModule
   ]
 })
-export class UtilsModule { }
+export class DemoUtilsModule { }

@@ -40,15 +40,6 @@ export class MdsLibraryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(
-    //   MdsObjectUtils.removeKeysIfEmpty({'asd':'','zxc':null, 'zzzz': undefined,'key':'have value'}),
-    //   MdsNumberUtils.shortNumber(1512220),
-    //   MdsNumberUtils.toCurrency(1512220, 'id-ID', 'IDR' , 2),
-    //   MdsStringUtils.getYoutubeID('https://www.youtube.com/watch?v=Ob-lW5HQoAI'),
-    //   MdsStringUtils.getYoutubeEmbed('https://www.youtube.com/watch?v=Ob-lW5HQoAI'),
-    //   MdsStringUtils.getYoutubeThumbnail('https://www.youtube.com/watch?v=Ob-lW5HQoAI')
-    // )
-    console.log('test util', MdsDateUtils.untilNow(1641230210000));
   }
 
 }

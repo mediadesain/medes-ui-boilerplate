@@ -18,8 +18,8 @@ export class AsideComponent implements OnInit {
       title: 'UI Element - Boilerplate',
       links: [
         {text: 'Basic Elements', url: '/ui-boilerplate/basic-elements'},
-        {text: 'Image Loader', url: '/ui-boilerplate/image-loader'},
         {text: 'Grid System', url: '/ui-boilerplate/grid-system'},
+        {text: 'Image Loader', url: '/ui-boilerplate/image-loader'}
       ]
     }, {
       title: 'Filter Components',
