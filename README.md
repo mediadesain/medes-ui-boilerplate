@@ -13,7 +13,7 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
-## 0.0.3 - Beta Version
+### 0.0.3 - Beta Version
 - [Here](https://github.com/mediadesain/medes-ui-boilerplate/tree/main/dist/medes-ui)
 ### 0.0.2
 - Update Utilites
