@@ -5,6 +5,12 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 ### MedesUI Lib Install
 - Install Mediadesain UI - Library `npm i medes-ui`.
 - Install with spesific version `npm i medes-ui@0.0.1`.
+- Import `medes-ui` Stylesheet
+```
+/*-- MedesUI --*/
+@import '~medes-ui/assets/scss/medes-ui.scss';
+@import '~medes-ui/assets/scss/ui-colorscheme.scss'; // Or possible to create custom your own color scheme
+```
 - Import component libs or utils to use.
 > If this boilerplate not working after `npm install` that mean UI itself is using beta version module. Copy beta version `dis/medes-ui` to `node_modules` folder and try npm start to runing boilerplate.
 
@@ -13,9 +19,10 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
-### 0.0.4-beta.1 - Beta Version
+### 0.0.5-beta.1 - Beta Version
 - [Here](https://github.com/mediadesain/medes-ui-boilerplate/tree/main/dist/medes-ui)
-
+### 0.0.4 - (030328)
+- Bugfix Filter Checkbox & Filter Checkbox Style
 ### 0.0.3 - (220228)
 - Multiple Filter Checkbox - Will delete soon 0.0.5 and replace with new Filter Components
 - Filter Components (Checkbox, Color Swatch, Reset Button)

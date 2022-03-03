@@ -31,7 +31,7 @@ export class SampleProductsData {
         {
           brand: 'puma',
           category: 'accesoriss',
-          color: 'purple,brown',
+          color: 'purple,brown', // Sample multiple data with string -> makesure split with (,)
           gender: 'women',
           id: '621228716682ceb404a69e75',
           picture: 'https://picsum.photos/400?image=702',
@@ -40,7 +40,7 @@ export class SampleProductsData {
         },
         {
           brand: 'puma',
-          category: 'tshirt',
+          category: ['tshirt', 'accesoriss'], // Sample multiple data with array
           color: 'blue sky',
           gender: 'men',
           id: '62122871b37e4c94421a90b9',
