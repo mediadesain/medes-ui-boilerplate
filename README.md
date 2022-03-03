@@ -13,9 +13,10 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
-### 0.0.4-beta.1 - Beta Version
+### 0.0.5-beta.1 - Beta Version
 - [Here](https://github.com/mediadesain/medes-ui-boilerplate/tree/main/dist/medes-ui)
-
+### 0.0.4 - (030328)
+- Bugfix Filter Checkbox & Filter Checkbox Style
 ### 0.0.3 - (220228)
 - Multiple Filter Checkbox - Will delete soon 0.0.5 and replace with new Filter Components
 - Filter Components (Checkbox, Color Swatch, Reset Button)

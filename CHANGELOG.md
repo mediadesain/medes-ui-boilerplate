@@ -1,3 +1,5 @@
+### 0.0.4 - (Release - 030328)
+- Bugfix Filter Checkbox & Filter Checkbox Style
 ### 0.0.3 - (Release - 220228)
 - Multiple Filter Checkbox - Will delete soon 0.0.5 and replace with new Filter Components
 - Filter Components (Checkbox, Color Swatch, Reset Button)
