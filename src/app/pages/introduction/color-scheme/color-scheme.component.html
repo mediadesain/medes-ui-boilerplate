@@ -2,7 +2,7 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
 <hr/>
 
-<h3 class="margin-b-1">Variable</h3>
+<h3 class="margin-b-1">Bundle Variable</h3>
 <div class="mds-grid">
     <div class="g-s-50 g-m-25 txt-center">
         <div style="color: var(--body-txt);"><b>Sample Color</b></div>
@@ -82,6 +82,8 @@
     </div>
 </div>
 
+<h3>Installation Custom Color Scheme</h3>
+<p>For custom color scheme no need import file <b>ui-colorscheme.scss</b> on <a routerLink="/introduction/how-to-install">installation step</a>. Create new stylesheet file and put on your folder, for example <b>src/assets/style/ui-colorscheme.scss</b>. And put these color swatch variable code to the file. And customize your own color scheme and we provide color generator below.</p>
 <b>ui-colorscheme.scss</b>
 <mds-hightlight-prism [code]="'/* Medes Theming & Color Swatch Variables
 For more info, visit link below:
@@ -132,7 +134,7 @@ http://doc.mediadesain.com/introduction/color-scheme */
 }'" language="scss"></mds-hightlight-prism>
 <hr>
 
-<h3 class="margin-vertical-1 margin-t-2">Additinal Color Swatch</h3>
+<h3 class="margin-vertical-1">Additinal Color Swatch Variable</h3>
 <form #submition="ngForm" (ngSubmit)="generated(submition.value)">
     <div class="flex-horizontal margin-b-1">
         <input type="text" #swatchName="ngModel" name="name" ngModel="swatch-c">
@@ -154,3 +156,8 @@ http://doc.mediadesain.com/introduction/color-scheme */
     <mds-hightlight-prism [code]="output" language="scss"></mds-hightlight-prism>
     <small><i>Copy custom swatch variable to <b>ui-colorscheme.scss</b></i></small>
 </div>
+
+<h3 class="margin-vertical-1">Include Custom Color Scheme</h3>
+<mds-hightlight-prism [code]="'/*-- MedesUI --*/
+@import \'~medes-ui/assets/scss/medes-ui.scss\';
+@import \'./assets/style/ui-colorscheme.scss\'; // Here is your custom your own color scheme'" language="scss"></mds-hightlight-prism>
