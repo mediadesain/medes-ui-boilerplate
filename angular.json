@@ -107,16 +107,13 @@
             "scripts": []
           }
         },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "medes-ui-boilerplate:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "medes-ui-boilerplate:serve:production"
-            }
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
@@ -146,9 +143,21 @@
             "tsConfig": "projects/medes-ui/tsconfig.spec.json",
             "karmaConfig": "projects/medes-ui/karma.conf.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/medes-ui/**/*.ts",
+              "projects/medes-ui/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "medes-ui-boilerplate"
+  "defaultProject": "medes-ui-boilerplate",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
