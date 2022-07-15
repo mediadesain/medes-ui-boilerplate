@@ -6,7 +6,16 @@ import { SampleProductsData } from 'src/app/shared/constant/products';
   styleUrls: ['./swatch.component.scss']
 })
 export class SwatchComponent implements OnInit {
-  sampledata: any[] = [];
+  sampledata: {
+    brand: string,
+    category: string | string[],
+    color: string,
+    gender: string,
+    id: string,
+    picture: string,
+    price: number,
+    name: string
+  }[];
   key = 'color';
   selected: {[key: string]: string[]} = {};
   colormap: {[key: string]: string} = {
@@ -49,8 +58,6 @@ componentdemo = `<!-- Filter Swatch Component -->
   [swatchSize]="30"
   [swatchRadius]="25"
 ></mds-filter-swatch>`;
-
-  constructor() { }
 
   ngOnInit(): void {
     this.sampledata = SampleProductsData.data;

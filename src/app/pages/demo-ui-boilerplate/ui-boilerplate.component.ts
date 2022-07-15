@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { MdsDateUtils } from 'projects/medes-ui/src/lib/utils';
+// import { MdsDateUtils } from 'projects/medes-ui/src/lib/utils';
 // import { MdsDateUtils } from 'medes-ui';
 
 @Component({
@@ -8,7 +8,7 @@ import { MdsDateUtils } from 'projects/medes-ui/src/lib/utils';
   templateUrl: './ui-boilerplate.component.html',
   styleUrls: ['./ui-boilerplate.component.scss']
 })
-export class MdsDocBoilerplateComponent implements OnInit {
+export class MdsDocBoilerplateComponent {
 samplehtml = `<div class="group">
   <span>Content</span>
 </div>`;
@@ -37,9 +37,7 @@ export class MdsLibraryComponent implements OnInit {
     ...
   }
 }`;
-  constructor() { }
+  // constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

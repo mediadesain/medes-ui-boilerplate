@@ -18,7 +18,7 @@ export class TestingComponent implements OnInit {
       gold: '#b6ab66'
   };
 
-  constructor() { }
+  // constructor() { }
 
   ngOnInit(): void {
     this.sampledata = SampleProductsData.data;

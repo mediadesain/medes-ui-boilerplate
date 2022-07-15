@@ -26,8 +26,8 @@
     </div>
     <div style="width: 100%;">
         <b>Multiple Filter Demo:</b>
-        <pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json)=='{}'">No Data Found</pre>
-        <pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json)!='{}'">Filtered data not found</pre>
+        <pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json) === '{}'">No Data Found</pre>
+        <pre *ngIf="(sampledata|filter:filteritems).length === 0 && (filteritems|json) !== '{}'">Filtered data not found</pre>
         <ul *ngIf="(sampledata|filter:filteritems).length > 0">
             <li *ngFor="let item of (sampledata|filter:filteritems)">{{item.type}} - {{item.category}}</li>
         </ul>

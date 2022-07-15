@@ -59,8 +59,6 @@ importmodule = `import { MdsFilterModule } from 'medes-ui';
   ]
 })`;
 
-  constructor() { }
-
   ngOnInit(): void {
     this.sampledata = SampleProductsData.data;
   }

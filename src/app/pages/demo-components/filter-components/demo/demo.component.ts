@@ -19,8 +19,6 @@ export class DemoComponent implements OnInit {
       gold: '#b6ab66'
   };
 
-  constructor() { }
-
   ngOnInit(): void {
     this.sampledata = SampleProductsData.data;
   }

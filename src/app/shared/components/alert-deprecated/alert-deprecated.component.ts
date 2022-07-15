@@ -8,9 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AlertDeprecatedComponent implements OnInit {
 @Input() version: string;
 @Input() alternative: string;
-  constructor() { }
+  // constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

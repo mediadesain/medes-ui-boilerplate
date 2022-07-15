@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 @Component({
   selector: 'medes-filter-checkbox',
   templateUrl: './filter-checkbox.component.html',
   styleUrls: ['./filter-checkbox.component.scss']
 })
-export class FilterCheckboxComponent implements OnInit {
+export class FilterCheckboxComponent {
 
 componentdemo = `<!-- Multiple Filter Component -->
 <mds-filter-checkbox
@@ -35,7 +35,7 @@ importmodule = `import { MdsFilterCheckboxModule } from 'medes-ui';
   ]
 })`;
   // Sample Data
-  sampledata: any = [
+  sampledata: {category: string, type: string, country: string}[] = [
     { category: 'eastern food', type: 'food', country: 'unknow' },
     { category: 'western food', type: 'drink', country: 'unknow' },
     { category: 'middle east food', type: 'snack', country: 'unknow' },
@@ -50,15 +50,10 @@ importmodule = `import { MdsFilterCheckboxModule } from 'medes-ui';
 samplecomponent = `export class MyComponent implements OnInit {
 ...
   // Sample datas, keys to filter and filter selected
-  sampledata: any[] = ${JSON.stringify(this.sampledata)}
+  sampledata: {category: string, type: string, country: string}[] = ${JSON.stringify(this.sampledata)}
   keys: string[] = ${JSON.stringify(this.keys)};
   filteritems: {[key: string]: string[]} = ${JSON.stringify(this.filteritems)};
 ...
 }`;
-
-  constructor() {}
-
-  ngOnInit(): void {
-  }
 
 }

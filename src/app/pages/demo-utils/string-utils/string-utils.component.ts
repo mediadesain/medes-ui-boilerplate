@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { MdsStringUtils } from 'medes-ui';
+// import { MdsStringUtils } from 'medes-ui';
 // import { MdsStringUtils } from 'projects/medes-ui/src/public-api';
 
 @Component({
@@ -8,7 +8,7 @@ import { MdsStringUtils } from 'medes-ui';
   templateUrl: './string-utils.component.html',
   styleUrls: ['./string-utils.component.scss']
 })
-export class StringUtilsComponent implements OnInit {
+export class StringUtilsComponent {
 import = `import { MdsStringUtils } from 'medes-ui';`;
 demo = `MdsStringUtils.lowerCase('This Is String') // output this is string
 MdsStringUtils.upperCase('this is string') // output THIS IS STRING
@@ -20,9 +20,7 @@ MdsStringUtils.getYoutubeID('https://www.youtube.com/watch?v=L8Zs8WnLerw') // ou
 MdsStringUtils.getYoutubeEmbed('https://www.youtube.com/watch?v=L8Zs8WnLerw') // output https://www.youtube.com/embed/L8Zs8WnLerw
 MdsStringUtils.getYoutubeThumbnail('https://www.youtube.com/watch?v=L8Zs8WnLerw', 'maxresdefault') // output https://i.ytimg.com/vi/L8Zs8WnLerw/maxresdefault.jpg`;
 
-  constructor() { }
+  // constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

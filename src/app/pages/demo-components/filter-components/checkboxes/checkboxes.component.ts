@@ -6,7 +6,16 @@ import { SampleProductsData } from 'src/app/shared/constant/products';
   styleUrls: ['./checkboxes.component.scss']
 })
 export class CheckboxesComponent implements OnInit {
-  sampledata: any[] = [];
+  sampledata: {
+    brand: string,
+    category: string | string[],
+    color: string,
+    gender: string,
+    id: string,
+    picture: string,
+    price: number,
+    name: string
+  }[];
   selected: {[key: string]: string[]} = {};
   keys: string[] = ['gender', 'category'];
 
@@ -32,8 +41,6 @@ componentdemo = `<!-- Filter Checkboxes Component -->
   [reset]="'✕'"
   [hideCounter]="false"
 ></mds-filter-checkbox>`;
-
-  constructor() { }
 
   ngOnInit(): void {
     this.sampledata = SampleProductsData.data;

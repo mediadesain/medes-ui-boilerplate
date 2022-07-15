@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 @Component({
@@ -6,7 +6,7 @@ import { filter } from 'rxjs/operators';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   isActive = true;
   constructor(
     private router: Router
@@ -18,10 +18,8 @@ export class NavbarComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
 
-  toggleAside(): any {
+  toggleAside(): void {
     const asideelement = document.getElementsByTagName('content')[0];
     if (this.isActive) {
       asideelement.classList.add('active');

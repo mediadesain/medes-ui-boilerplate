@@ -7,9 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AlertSoonComponent implements OnInit {
   @Input() version: string;
-  constructor() { }
+  // constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

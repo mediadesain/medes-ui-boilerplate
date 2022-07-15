@@ -7,9 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageLoaderComponent implements OnInit {
 
-  constructor() { }
+  // constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }
