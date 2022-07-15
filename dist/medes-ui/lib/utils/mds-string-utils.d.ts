@@ -9,3 +9,4 @@ export declare class MdsStringUtils {
     static getYoutubeEmbed: (url: string) => string;
     static getYoutubeThumbnail: (url: string, size?: string) => string;
 }
+//# sourceMappingURL=mds-string-utils.d.ts.map

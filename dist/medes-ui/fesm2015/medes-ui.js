@@ -1,7 +1,9 @@
+import * as i0 from '@angular/core';
 import { EventEmitter, Component, Input, Output, NgModule, ViewChild, Pipe } from '@angular/core';
+import * as i2 from '@angular/common';
 import { CommonModule } from '@angular/common';
-import { Router, ActivatedRoute } from '@angular/router';
-import { highlightElement } from 'prismjs';
+import * as i1 from '@angular/router';
+import * as Prism from 'prismjs';
 import 'prismjs/components/prism-markup';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-java';
@@ -13,37 +15,56 @@ import 'prismjs/components/prism-ruby';
 import 'prismjs/components/prism-swift';
 import 'prismjs/components/prism-sql';
 import 'prismjs/components/prism-python';
-import { DomSanitizer } from '@angular/platform-browser';
+import * as i1$1 from '@angular/platform-browser';
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 class MdsFilterResetComponent {
     constructor(router) {
         this.router = router;
         this.filterSelectedChange = new EventEmitter();
     }
     ngOnInit() {
+        console.log('ngOninit');
     }
     reset() {
         this.filterSelectedChange.emit({});
         this.router.navigate([]);
     }
 }
-MdsFilterResetComponent.decorators = [
-    { type: Component, args: [{
+MdsFilterResetComponent.ɵfac = function MdsFilterResetComponent_Factory(t) { return new (t || MdsFilterResetComponent)(i0.ɵɵdirectiveInject(i1.Router)); };
+MdsFilterResetComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: MdsFilterResetComponent, selectors: [["mds-filter-reset"]], inputs: { content: "content", class: "class", filterSelected: "filterSelected" }, outputs: { filterSelectedChange: "filterSelectedChange" }, decls: 4, vars: 5, consts: [[1, "filter-group"], [2, "width", "100%", 3, "ngClass", "disabled", "click"]], template: function MdsFilterResetComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "div", 0);
+        i0.ɵɵelementStart(1, "button", 1);
+        i0.ɵɵlistener("click", function MdsFilterResetComponent_Template_button_click_1_listener() { return ctx.reset(); });
+        i0.ɵɵpipe(2, "json");
+        i0.ɵɵtext(3);
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementEnd();
+    } if (rf & 2) {
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("ngClass", ctx.class && ctx.class)("disabled", i0.ɵɵpipeBind1(2, 3, ctx.filterSelected) === "{}");
+        i0.ɵɵadvance(2);
+        i0.ɵɵtextInterpolate(ctx.content);
+    } }, directives: [i2.NgClass], pipes: [i2.JsonPipe], styles: [""] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MdsFilterResetComponent, [{
+        type: Component,
+        args: [{
                 selector: 'mds-filter-reset',
-                template: "<div class=\"filter-group\">\n    <button (click)=\"reset()\" [ngClass]=\"class && class\" [disabled]=\"(filterSelected|json) === '{}'\" style=\"width: 100%;\">{{content}}</button>\n</div>",
-                styles: [""]
-            },] }
-];
-MdsFilterResetComponent.ctorParameters = () => [
-    { type: Router }
-];
-MdsFilterResetComponent.propDecorators = {
-    content: [{ type: Input }],
-    class: [{ type: Input }],
-    filterSelected: [{ type: Input }],
-    filterSelectedChange: [{ type: Output }]
-};
+                templateUrl: './filter-reset.component.html',
+                styleUrls: ['./filter-reset.component.css']
+            }]
+    }], function () { return [{ type: i1.Router }]; }, { content: [{
+            type: Input
+        }], class: [{
+            type: Input
+        }], filterSelected: [{
+            type: Input
+        }], filterSelectedChange: [{
+            type: Output
+        }] }); })();
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // @dynamic
 class MdsArrayUtils {
 }
@@ -122,6 +143,7 @@ class MdsDateUtils {
     }
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // @dynamic
 class MdsNumberUtils {
 }
@@ -142,6 +164,8 @@ MdsNumberUtils.toCurrency = (money, code, decimal) => {
     return new Intl.NumberFormat(format, { style: 'currency', currency: code, minimumFractionDigits: decimal }).format(money);
 };
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // @dynamic
 class MdsObjectUtils {
 }
@@ -221,6 +245,8 @@ MdsStringUtils.getYoutubeThumbnail = (url, size) => {
     return 'https://i.ytimg.com/vi/' + id + '/' + size + '.jpg';
 };
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 // @dynamic
 class MdsColorUtils {
 }
@@ -244,6 +270,100 @@ MdsColorUtils.addDarkLight = (color, amount) => {
     return coloradjust;
 };
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+function FilterCheckboxComponent_div_0_ng_container_1_ng_container_3_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementContainerStart(0);
+    i0.ɵɵtext(1);
+    i0.ɵɵelementContainerEnd();
+} if (rf & 2) {
+    const ctx_r3 = i0.ɵɵnextContext(3);
+    i0.ɵɵadvance(1);
+    i0.ɵɵtextInterpolate(ctx_r3.titlegroup + " ");
+} }
+function FilterCheckboxComponent_div_0_ng_container_1_a_6_Template(rf, ctx) { if (rf & 1) {
+    const _r7 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "a", 7);
+    i0.ɵɵlistener("click", function FilterCheckboxComponent_div_0_ng_container_1_a_6_Template_a_click_0_listener() { i0.ɵɵrestoreView(_r7); const prop_r1 = i0.ɵɵnextContext(2).$implicit; const ctx_r6 = i0.ɵɵnextContext(); return ctx_r6.resetFilter(ctx_r6.filtergroup, prop_r1); });
+    i0.ɵɵelement(1, "span", 8);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r4 = i0.ɵɵnextContext(3);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("innerHTML", ctx_r4.reset ? ctx_r4.reset : "\u2715", i0.ɵɵsanitizeHtml);
+} }
+function FilterCheckboxComponent_div_0_ng_container_1_div_7_div_6_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 14);
+    i0.ɵɵelementStart(1, "small");
+    i0.ɵɵtext(2);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const itm_r9 = i0.ɵɵnextContext().$implicit;
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate1("(", itm_r9.counter, ")");
+} }
+function FilterCheckboxComponent_div_0_ng_container_1_div_7_Template(rf, ctx) { if (rf & 1) {
+    const _r14 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 9);
+    i0.ɵɵelementStart(1, "div", 10);
+    i0.ɵɵelementStart(2, "input", 11);
+    i0.ɵɵlistener("change", function FilterCheckboxComponent_div_0_ng_container_1_div_7_Template_input_change_2_listener() { const restoredCtx = i0.ɵɵrestoreView(_r14); const itm_r9 = restoredCtx.$implicit; const prop_r1 = i0.ɵɵnextContext(2).$implicit; const ctx_r13 = i0.ɵɵnextContext(); return ctx_r13.clickCheckbox(itm_r9, prop_r1); });
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(3, "label", 12);
+    i0.ɵɵtext(4);
+    i0.ɵɵpipe(5, "titlecase");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementEnd();
+    i0.ɵɵtemplate(6, FilterCheckboxComponent_div_0_ng_container_1_div_7_div_6_Template, 3, 1, "div", 13);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const itm_r9 = ctx.$implicit;
+    const i_r10 = ctx.index;
+    const prop_r1 = i0.ɵɵnextContext(2).$implicit;
+    const ctx_r5 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("id", prop_r1 + i_r10)("checked", itm_r9.checked);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("for", prop_r1 + i_r10);
+    i0.ɵɵadvance(1);
+    i0.ɵɵtextInterpolate(i0.ɵɵpipeBind1(5, 5, itm_r9.label));
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("ngIf", !ctx_r5.hideCounter);
+} }
+function FilterCheckboxComponent_div_0_ng_container_1_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementContainerStart(0);
+    i0.ɵɵelementStart(1, "div", 3);
+    i0.ɵɵelementStart(2, "div", 4);
+    i0.ɵɵtemplate(3, FilterCheckboxComponent_div_0_ng_container_1_ng_container_3_Template, 2, 1, "ng-container", 2);
+    i0.ɵɵtext(4);
+    i0.ɵɵpipe(5, "titlecase");
+    i0.ɵɵelementEnd();
+    i0.ɵɵtemplate(6, FilterCheckboxComponent_div_0_ng_container_1_a_6_Template, 2, 1, "a", 5);
+    i0.ɵɵelementEnd();
+    i0.ɵɵtemplate(7, FilterCheckboxComponent_div_0_ng_container_1_div_7_Template, 7, 7, "div", 6);
+    i0.ɵɵelementContainerEnd();
+} if (rf & 2) {
+    const prop_r1 = i0.ɵɵnextContext().$implicit;
+    const ctx_r2 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(3);
+    i0.ɵɵproperty("ngIf", ctx_r2.titlegroup);
+    i0.ɵɵadvance(1);
+    i0.ɵɵtextInterpolate1("", i0.ɵɵpipeBind1(5, 4, prop_r1), " ");
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("ngIf", ctx_r2.filterSelected[prop_r1]);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngForOf", ctx_r2.filtergroup[prop_r1]);
+} }
+function FilterCheckboxComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "div", 1);
+    i0.ɵɵtemplate(1, FilterCheckboxComponent_div_0_ng_container_1_Template, 8, 6, "ng-container", 2);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const prop_r1 = ctx.$implicit;
+    const ctx_r0 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngIf", ctx_r0.filtergroup[prop_r1].length > 1);
+} }
 class FilterCheckboxComponent {
     constructor(router, activeroute) {
         this.router = router;
@@ -349,26 +469,66 @@ class FilterCheckboxComponent {
         });
     }
 }
-FilterCheckboxComponent.decorators = [
-    { type: Component, args: [{
+FilterCheckboxComponent.ɵfac = function FilterCheckboxComponent_Factory(t) { return new (t || FilterCheckboxComponent)(i0.ɵɵdirectiveInject(i1.Router), i0.ɵɵdirectiveInject(i1.ActivatedRoute)); };
+FilterCheckboxComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: FilterCheckboxComponent, selectors: [["mds-filter-checkbox"]], inputs: { filterData: "filterData", filterBy: "filterBy", filterSelected: "filterSelected", titlegroup: "titlegroup", reset: "reset", hideCounter: "hideCounter" }, features: [i0.ɵɵNgOnChangesFeature], decls: 1, vars: 1, consts: [["class", "filter-checkbox margin-b-1", 4, "ngFor", "ngForOf"], [1, "filter-checkbox", "margin-b-1"], [4, "ngIf"], [1, "group-title", "flex-horizontal", "horizontal-between"], [1, "title-label"], ["class", "title-close", "href", "javascript:void(0)", 3, "click", 4, "ngIf"], ["class", "group-checkbox flex-horizontal horizontal-between", 4, "ngFor", "ngForOf"], ["href", "javascript:void(0)", 1, "title-close", 3, "click"], [3, "innerHTML"], [1, "group-checkbox", "flex-horizontal", "horizontal-between"], [1, "checkbox-label"], ["type", "checkbox", 3, "id", "checked", "change"], [3, "for"], ["class", "checkbox-counter", 4, "ngIf"], [1, "checkbox-counter"]], template: function FilterCheckboxComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵtemplate(0, FilterCheckboxComponent_div_0_Template, 2, 1, "div", 0);
+    } if (rf & 2) {
+        i0.ɵɵproperty("ngForOf", ctx.filterBy);
+    } }, directives: [i2.NgForOf, i2.NgIf], pipes: [i2.TitleCasePipe], styles: [""] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(FilterCheckboxComponent, [{
+        type: Component,
+        args: [{
                 selector: 'mds-filter-checkbox',
-                template: "<!-- Filter Group -->\n<div *ngFor=\"let prop of filterBy\" class=\"filter-checkbox margin-b-1\">\n    <ng-container *ngIf=\"filtergroup[prop].length > 1\">\n        <!-- Title Group -->\n        <div class=\"group-title flex-horizontal horizontal-between\">\n            <div class=\"title-label\">\n                <ng-container *ngIf=\"titlegroup\">{{titlegroup+' '}}</ng-container>{{prop|titlecase}}\n            </div>\n            <a class=\"title-close\" *ngIf=\"filterSelected[prop]\" href=\"javascript:void(0)\" (click)=\"resetFilter(filtergroup, prop)\">\n                <span [innerHTML]=\"reset ? reset : '\u2715'\"></span>\n            </a>\n        </div>\n        <!-- Checkbox + Label -->\n        <div class=\"group-checkbox flex-horizontal horizontal-between\" *ngFor=\"let itm of filtergroup[prop];let i=index\">\n            <div class=\"checkbox-label\">\n                <input [id]=\"prop+i\" type=\"checkbox\" [checked]=\"itm.checked\" (change)=\"clickCheckbox(itm, prop)\"/>\n                <label [for]=\"prop+i\">{{itm.label|titlecase}}</label>\n            </div>\n            <div class=\"checkbox-counter\" *ngIf=\"!hideCounter\">\n                <small>({{itm.counter}})</small>\n            </div>\n        </div>\n    </ng-container>\n</div>",
-                styles: [""]
-            },] }
-];
-FilterCheckboxComponent.ctorParameters = () => [
-    { type: Router },
-    { type: ActivatedRoute }
-];
-FilterCheckboxComponent.propDecorators = {
-    filterData: [{ type: Input }],
-    filterBy: [{ type: Input }],
-    filterSelected: [{ type: Input }],
-    titlegroup: [{ type: Input }],
-    reset: [{ type: Input }],
-    hideCounter: [{ type: Input }]
-};
+                templateUrl: './filter-checkbox.component.html',
+                styleUrls: ['./filter-checkbox.component.css']
+            }]
+    }], function () { return [{ type: i1.Router }, { type: i1.ActivatedRoute }]; }, { filterData: [{
+            type: Input
+        }], filterBy: [{
+            type: Input
+        }], filterSelected: [{
+            type: Input
+        }], titlegroup: [{
+            type: Input
+        }], reset: [{
+            type: Input
+        }], hideCounter: [{
+            type: Input
+        }] }); })();
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const _c0$1 = function (a0, a1) { return { "width": a0, "height": a1 }; };
+const _c1 = function (a0, a1, a2, a3) { return { "border-radius": a0, "background-color": a1, "width": a2, "height": a3 }; };
+const _c2 = function (a0) { return { "opacity": a0 }; };
+const _c3 = function (a0, a1, a2, a3) { return { "border": a0, "width": a1, "height": a2, "border-radius": a3 }; };
+function FilterSwatchComponent_div_3_Template(rf, ctx) { if (rf & 1) {
+    const _r4 = i0.ɵɵgetCurrentView();
+    i0.ɵɵelementStart(0, "div", 2);
+    i0.ɵɵelementStart(1, "input", 3);
+    i0.ɵɵlistener("change", function FilterSwatchComponent_div_3_Template_input_change_1_listener() { const restoredCtx = i0.ɵɵrestoreView(_r4); const item_r1 = restoredCtx.$implicit; const ctx_r3 = i0.ɵɵnextContext(); ctx_r3.clickCheckbox(item_r1); return item_r1.checked = !item_r1.checked; });
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(2, "label", 4);
+    i0.ɵɵnamespaceSVG();
+    i0.ɵɵelementStart(3, "svg", 5);
+    i0.ɵɵelement(4, "path", 6);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementEnd();
+    i0.ɵɵnamespaceHTML();
+    i0.ɵɵelement(5, "div", 7);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const item_r1 = ctx.$implicit;
+    const i_r2 = ctx.index;
+    const ctx_r0 = i0.ɵɵnextContext();
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("id", "checkbox" + i_r2)("ngStyle", i0.ɵɵpureFunction2(7, _c0$1, ctx_r0.swatchSize + "px", ctx_r0.swatchSize + "px"))("checked", item_r1.checked);
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("for", "checkbox" + i_r2)("ngStyle", i0.ɵɵpureFunction4(10, _c1, ctx_r0.swatchRadius + "px", item_r1.color, ctx_r0.swatchSize + "px", ctx_r0.swatchSize + "px"));
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("ngStyle", i0.ɵɵpureFunction1(15, _c2, item_r1.checked ? 1 : 0));
+    i0.ɵɵadvance(2);
+    i0.ɵɵproperty("ngStyle", i0.ɵɵpureFunction4(17, _c3, item_r1.checked ? "1px solid #ddd" : "1px solid #fff", ctx_r0.swatchSize + "px", ctx_r0.swatchSize + "px", ctx_r0.swatchRadius + "px"));
+} }
 class FilterSwatchComponent {
     constructor(activeroute, router) {
         this.activeroute = activeroute;
@@ -449,31 +609,53 @@ class FilterSwatchComponent {
         }
     }
 }
-FilterSwatchComponent.decorators = [
-    { type: Component, args: [{
+FilterSwatchComponent.ɵfac = function FilterSwatchComponent_Factory(t) { return new (t || FilterSwatchComponent)(i0.ɵɵdirectiveInject(i1.ActivatedRoute), i0.ɵɵdirectiveInject(i1.Router)); };
+FilterSwatchComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: FilterSwatchComponent, selectors: [["mds-filter-swatch"]], inputs: { filterData: "filterData", filterBy: "filterBy", filterSelected: "filterSelected", titlegroup: "titlegroup", swatchMapping: "swatchMapping", swatchSize: "swatchSize", swatchRadius: "swatchRadius" }, features: [i0.ɵɵNgOnChangesFeature], decls: 4, vars: 2, consts: [[1, "filter-swatch"], ["class", "item", 4, "ngFor", "ngForOf"], [1, "item"], ["type", "checkbox", 3, "id", "ngStyle", "checked", "change"], [3, "for", "ngStyle"], ["xmlns", "http://www.w3.org/2000/svg", "viewBox", "0 0 24 24", 3, "ngStyle"], ["fill", "#fff", "filter", "drop-shadow(0px 2px 1px rgba(0, 0, 0, .2))", "d", "M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"], [1, "active", 3, "ngStyle"]], template: function FilterSwatchComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵelementStart(0, "div");
+        i0.ɵɵtext(1);
+        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(2, "div", 0);
+        i0.ɵɵtemplate(3, FilterSwatchComponent_div_3_Template, 6, 22, "div", 1);
+        i0.ɵɵelementEnd();
+    } if (rf & 2) {
+        i0.ɵɵadvance(1);
+        i0.ɵɵtextInterpolate(ctx.titlegroup ? ctx.titlegroup : "Color");
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("ngForOf", ctx.filterswatchgroup);
+    } }, directives: [i2.NgForOf, i2.NgStyle], styles: [""] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(FilterSwatchComponent, [{
+        type: Component,
+        args: [{
                 selector: 'mds-filter-swatch',
-                template: "<div>{{titlegroup ? titlegroup : 'Color'}}</div>\n<div class=\"filter-swatch\">\n    <div *ngFor=\"let item of filterswatchgroup; let i=index\" class=\"item\">\n        <input type=\"checkbox\" [id]=\"'checkbox'+i\" [ngStyle]=\"{'width': swatchSize+'px', 'height': swatchSize+'px'}\" [checked]=\"item.checked\" (change)=\"clickCheckbox(item); item.checked=!item.checked\"/>\n        <label [for]=\"'checkbox'+i\" [ngStyle]=\"{'border-radius': swatchRadius+'px', 'background-color': item.color, 'width': swatchSize+'px', 'height': swatchSize+'px'}\">\n            <svg [ngStyle]=\"{'opacity': item.checked ? 1 : 0}\" xmlns=\"http://www.w3.org/2000/svg\"  viewBox=\"0 0 24 24\">\n                <path fill=\"#fff\" filter=\"drop-shadow(0px 2px 1px rgba(0, 0, 0, .2))\" d=\"M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z\"/>\n            </svg>\n        </label>\n        <div class=\"active\" [ngStyle]=\"{'border': item.checked ? '1px solid #ddd' : '1px solid #fff', 'width': swatchSize+'px', 'height': swatchSize+'px', 'border-radius': swatchRadius+'px'}\"></div>\n    </div>\n</div>\n\n",
-                styles: [""]
-            },] }
-];
-FilterSwatchComponent.ctorParameters = () => [
-    { type: ActivatedRoute },
-    { type: Router }
-];
-FilterSwatchComponent.propDecorators = {
-    filterData: [{ type: Input }],
-    filterBy: [{ type: Input }],
-    filterSelected: [{ type: Input }],
-    titlegroup: [{ type: Input }],
-    swatchMapping: [{ type: Input }],
-    swatchSize: [{ type: Input }],
-    swatchRadius: [{ type: Input }]
-};
+                templateUrl: './filter-swatch.component.html',
+                styleUrls: ['./filter-swatch.component.css']
+            }]
+    }], function () { return [{ type: i1.ActivatedRoute }, { type: i1.Router }]; }, { filterData: [{
+            type: Input
+        }], filterBy: [{
+            type: Input
+        }], filterSelected: [{
+            type: Input
+        }], titlegroup: [{
+            type: Input
+        }], swatchMapping: [{
+            type: Input
+        }], swatchSize: [{
+            type: Input
+        }], swatchRadius: [{
+            type: Input
+        }] }); })();
 
 class MdsFilterModule {
 }
-MdsFilterModule.decorators = [
-    { type: NgModule, args: [{
+MdsFilterModule.ɵfac = function MdsFilterModule_Factory(t) { return new (t || MdsFilterModule)(); };
+MdsFilterModule.ɵmod = /*@__PURE__*/ i0.ɵɵdefineNgModule({ type: MdsFilterModule });
+MdsFilterModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ imports: [[
+            CommonModule
+        ]] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MdsFilterModule, [{
+        type: NgModule,
+        args: [{
                 declarations: [
                     MdsFilterResetComponent,
                     FilterCheckboxComponent,
@@ -487,42 +669,83 @@ MdsFilterModule.decorators = [
                     FilterCheckboxComponent,
                     FilterSwatchComponent
                 ]
-            },] }
-];
+            }]
+    }], null, null); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(MdsFilterModule, { declarations: [MdsFilterResetComponent,
+        FilterCheckboxComponent,
+        FilterSwatchComponent], imports: [CommonModule], exports: [MdsFilterResetComponent,
+        FilterCheckboxComponent,
+        FilterSwatchComponent] }); })();
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const _c0 = ["codeContent"];
+function MdsHightlightPrismComponent_pre_0_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "pre");
+    i0.ɵɵelementStart(1, "code", null, 1);
+    i0.ɵɵtext(3);
+    i0.ɵɵelementEnd();
+    i0.ɵɵtext(4, "\n");
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r0 = i0.ɵɵnextContext();
+    i0.ɵɵclassMapInterpolate1("language-", ctx_r0.language, "");
+    i0.ɵɵadvance(1);
+    i0.ɵɵclassMapInterpolate1("language-", ctx_r0.language, "");
+    i0.ɵɵadvance(2);
+    i0.ɵɵtextInterpolate(ctx_r0.code);
+} }
 class MdsHightlightPrismComponent {
-    constructor() { }
+    // // constructor() { }
     ngAfterViewInit() {
-        highlightElement(this.codeContent.nativeElement);
+        Prism.highlightElement(this.codeContent.nativeElement);
     }
     ngOnChanges(changes) {
         var _a;
         if (changes === null || changes === void 0 ? void 0 : changes.code) {
             if ((_a = this.codeContent) === null || _a === void 0 ? void 0 : _a.nativeElement) {
                 this.codeContent.nativeElement.textContent = this.code;
-                highlightElement(this.codeContent.nativeElement);
+                Prism.highlightElement(this.codeContent.nativeElement);
             }
         }
     }
 }
-MdsHightlightPrismComponent.decorators = [
-    { type: Component, args: [{
+MdsHightlightPrismComponent.ɵfac = function MdsHightlightPrismComponent_Factory(t) { return new (t || MdsHightlightPrismComponent)(); };
+MdsHightlightPrismComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: MdsHightlightPrismComponent, selectors: [["mds-hightlight-prism"]], viewQuery: function MdsHightlightPrismComponent_Query(rf, ctx) { if (rf & 1) {
+        i0.ɵɵviewQuery(_c0, 5);
+    } if (rf & 2) {
+        let _t;
+        i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.codeContent = _t.first);
+    } }, inputs: { code: "code", language: "language" }, features: [i0.ɵɵNgOnChangesFeature], decls: 1, vars: 1, consts: [[3, "class", 4, "ngIf"], ["codeContent", ""]], template: function MdsHightlightPrismComponent_Template(rf, ctx) { if (rf & 1) {
+        i0.ɵɵtemplate(0, MdsHightlightPrismComponent_pre_0_Template, 5, 7, "pre", 0);
+    } if (rf & 2) {
+        i0.ɵɵproperty("ngIf", ctx.language);
+    } }, directives: [i2.NgIf], styles: ["pre[_ngcontent-%COMP%]{font-size:small;margin:0}"] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MdsHightlightPrismComponent, [{
+        type: Component,
+        args: [{
                 selector: 'mds-hightlight-prism',
-                template: "<pre *ngIf=\"language\" class=\"language-{{ language }}\">\n<code #codeContent class=\"language-{{ language }}\">{{code}}</code>\n</pre>",
-                styles: ["pre{font-size:small;margin:0}"]
-            },] }
-];
-MdsHightlightPrismComponent.ctorParameters = () => [];
-MdsHightlightPrismComponent.propDecorators = {
-    codeContent: [{ type: ViewChild, args: ['codeContent',] }],
-    code: [{ type: Input }],
-    language: [{ type: Input }]
-};
+                templateUrl: './mds-hightlight-prism.component.html',
+                styleUrls: ['./mds-hightlight-prism.component.scss']
+            }]
+    }], null, { codeContent: [{
+            type: ViewChild,
+            args: ['codeContent']
+        }], code: [{
+            type: Input
+        }], language: [{
+            type: Input
+        }] }); })();
 
 class MdsHightlightPrismModule {
 }
-MdsHightlightPrismModule.decorators = [
-    { type: NgModule, args: [{
+MdsHightlightPrismModule.ɵfac = function MdsHightlightPrismModule_Factory(t) { return new (t || MdsHightlightPrismModule)(); };
+MdsHightlightPrismModule.ɵmod = /*@__PURE__*/ i0.ɵɵdefineNgModule({ type: MdsHightlightPrismModule });
+MdsHightlightPrismModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ imports: [[
+            CommonModule
+        ]] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MdsHightlightPrismModule, [{
+        type: NgModule,
+        args: [{
                 declarations: [
                     MdsHightlightPrismComponent
                 ],
@@ -530,9 +753,11 @@ MdsHightlightPrismModule.decorators = [
                     CommonModule
                 ],
                 exports: [MdsHightlightPrismComponent]
-            },] }
-];
+            }]
+    }], null, null); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(MdsHightlightPrismModule, { declarations: [MdsHightlightPrismComponent], imports: [CommonModule], exports: [MdsHightlightPrismComponent] }); })();
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 class FilterPipe {
     transform(items, filter) {
         if (!items) {
@@ -557,36 +782,17 @@ class FilterPipe {
         return items;
     }
 }
-FilterPipe.decorators = [
-    { type: Pipe, args: [{
+FilterPipe.ɵfac = function FilterPipe_Factory(t) { return new (t || FilterPipe)(); };
+FilterPipe.ɵpipe = /*@__PURE__*/ i0.ɵɵdefinePipe({ name: "filter", type: FilterPipe, pure: false });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(FilterPipe, [{
+        type: Pipe,
+        args: [{
                 name: 'filter',
                 pure: false
-            },] }
-];
-/* Document Filter Pipe Summarized by MediaDesain
-  Items is loop of array item and filter is item will show. Makesure format filter like this example
-  const items = [
-    {category:'A', type:'food'},
-    {category:'B', type:'drink'},
-    {category:'C', type:'snack'},
-    {category:'A', type:'drink'},
-    {category:'B', type:'snack'}
-  ]
-  const filteritems = {
-    category:['A','B'],
-    type:['food', 'drink']
-  }
-  <ul>
-    <li *ngFor="let item of (items|filter:filteritems)"> ... </li>
-  </ul>
+            }]
+    }], null, null); })();
 
-  Output [
-    {category:'A', type:'food'},
-    {category:'B', type:'drink'},
-    {category:'A', type:'drink'}
-  ]
-*/
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 class SafeUrlPipe {
     constructor(sanitizer) {
         this.sanitizer = sanitizer;
@@ -595,15 +801,16 @@ class SafeUrlPipe {
         return this.sanitizer.bypassSecurityTrustResourceUrl(url);
     }
 }
-SafeUrlPipe.decorators = [
-    { type: Pipe, args: [{
+SafeUrlPipe.ɵfac = function SafeUrlPipe_Factory(t) { return new (t || SafeUrlPipe)(i0.ɵɵdirectiveInject(i1$1.DomSanitizer, 16)); };
+SafeUrlPipe.ɵpipe = /*@__PURE__*/ i0.ɵɵdefinePipe({ name: "safeurl", type: SafeUrlPipe, pure: true });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(SafeUrlPipe, [{
+        type: Pipe,
+        args: [{
                 name: 'safeurl'
-            },] }
-];
-SafeUrlPipe.ctorParameters = () => [
-    { type: DomSanitizer }
-];
+            }]
+    }], function () { return [{ type: i1$1.DomSanitizer }]; }, null); })();
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 class SearchPipe {
     transform(items, search) {
         if (items && search.keyword !== undefined) {
@@ -612,17 +819,24 @@ class SearchPipe {
         }
     }
 }
-SearchPipe.decorators = [
-    { type: Pipe, args: [{
+SearchPipe.ɵfac = function SearchPipe_Factory(t) { return new (t || SearchPipe)(); };
+SearchPipe.ɵpipe = /*@__PURE__*/ i0.ɵɵdefinePipe({ name: "search", type: SearchPipe, pure: false });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(SearchPipe, [{
+        type: Pipe,
+        args: [{
                 name: 'search',
                 pure: false
-            },] }
-];
+            }]
+    }], null, null); })();
 
 class MdsPipesModule {
 }
-MdsPipesModule.decorators = [
-    { type: NgModule, args: [{
+MdsPipesModule.ɵfac = function MdsPipesModule_Factory(t) { return new (t || MdsPipesModule)(); };
+MdsPipesModule.ɵmod = /*@__PURE__*/ i0.ɵɵdefineNgModule({ type: MdsPipesModule });
+MdsPipesModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ imports: [[CommonModule]] });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MdsPipesModule, [{
+        type: NgModule,
+        args: [{
                 declarations: [
                     FilterPipe,
                     SafeUrlPipe,
@@ -634,164 +848,23 @@ MdsPipesModule.decorators = [
                     SafeUrlPipe,
                     SearchPipe
                 ]
-            },] }
-];
-
-class MdsFilterCheckboxComponent {
-    constructor(router, activeroute) {
-        this.router = router;
-        this.activeroute = activeroute;
-        this.filterList = {};
-        this.filterSelectedUrl = {};
-    }
-    ngOnInit() {
-        this.filterToCheckbox();
-    }
-    filterToCheckbox() {
-        if (!this.filterBy) {
-            return;
-        }
-        this.filterBy.forEach((prop) => {
-            // Create Filter Model
-            if (!this.filterData) {
-                return;
-            }
-            const getAllValue = this.filterData.map((item) => item[prop].includes(',') ? item[prop].split(',') : item[prop]);
-            getAllValue.forEach((values, key) => {
-                if (Array.isArray(values)) {
-                    values.forEach(value => {
-                        if (getAllValue.indexOf(value) === -1) {
-                            getAllValue.push(value);
-                        }
-                    });
-                    getAllValue.splice(key, 1);
-                }
-            });
-            const listval = [...new Set(getAllValue.flat())];
-            const convertcheckbox = [];
-            listval.forEach((val) => {
-                if (val) {
-                    const obj = {};
-                    obj.text = val;
-                    obj.value = MdsStringUtils.convertToSlug(val);
-                    if (!obj.ischecked) {
-                        obj.ischecked = false;
-                    }
-                    this.activeroute.queryParams.subscribe(param => {
-                        if (param[prop]) {
-                            const isArray = param[prop].includes(',');
-                            const checkArrOrStr = isArray ? param[prop].split(',') : [param[prop]];
-                            const isInclude = checkArrOrStr.map((item) => item === obj.value).includes(true);
-                            obj.ischecked = isInclude ? true : false;
-                        }
-                    });
-                    convertcheckbox.push(obj);
-                }
-            });
-            this.filterList[prop] = convertcheckbox;
-            // Selected Filter Model
-            setTimeout(() => {
-                this.filterSelected[prop] = this.filterList[prop].filter((a) => a.ischecked).map((a) => a.text);
-                this.filterSelectedUrl[prop] = this.filterList[prop].filter((a) => a.ischecked).map((a) => a.value);
-                if (this.filterSelected[prop].length === 0) {
-                    delete this.filterSelected[prop];
-                }
-            }, 500);
-        });
-    }
-    checkBoxFilter(filterSelected, filterSelectedUrl, prop, select) {
-        // ----- IF URL PARAMETER EMPTY ----- //
-        if (!filterSelected[prop] || !filterSelectedUrl[prop]) {
-            filterSelected[prop] = [];
-            filterSelectedUrl[prop] = [];
-        }
-        this.router.navigate([], {
-            queryParams: { [prop]: select.value },
-            queryParamsHandling: 'merge'
-        });
-        // ----- IF URL PARAMETER EXSIEST ----- //
-        const idx = filterSelected[prop].indexOf(select.text);
-        if (idx > -1) {
-            // Remove param value/s
-            filterSelected[prop].splice(idx, 1);
-            filterSelectedUrl[prop].splice(idx, 1);
-            // Delete property if value/s empty
-            if (filterSelected[prop].length === 0 || filterSelectedUrl[prop].length === 0) {
-                delete filterSelected[prop];
-                delete filterSelectedUrl[prop];
-            }
-            // Remove to url queryParam
-            this.router.navigate([], {
-                queryParams: { [prop]: filterSelectedUrl[prop] ? filterSelectedUrl[prop].join() : null },
-                queryParamsHandling: 'merge'
-            });
-        }
-        else {
-            // Add property value/s
-            filterSelected[prop].push(select.text);
-            filterSelectedUrl[prop].push(select.value);
-            // Add to url queryParam
-            this.router.navigate([], {
-                queryParams: { [prop]: filterSelectedUrl[prop].join() },
-                queryParamsHandling: 'merge'
-            });
-        }
-    }
-    resetFilter(filter, filterSelected, prop) {
-        filter[prop].forEach((a) => a.ischecked = false);
-        delete filterSelected[prop];
-        this.router.navigate([], {
-            queryParams: { [prop]: null },
-            queryParamsHandling: 'merge'
-        });
-    }
-    resetAll(filter, filterSelected, props) {
-        props.forEach((prop) => {
-            filter[prop].forEach((a) => a.ischecked = false);
-            delete filterSelected[prop];
-            this.router.navigate([], { queryParams: {} });
-        });
-    }
-}
-MdsFilterCheckboxComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'mds-filter-checkbox',
-                template: "<div *ngIf=\"!filterBy\">No Filter Key</div>\n<div *ngIf=\"!filterData\">No Filter Data Found</div>\n\n<ng-container *ngIf=\"filterBy && filterData\">\n    <div *ngFor=\"let prop of filterBy\" [class]=\"classgroup\">\n        <div class=\"filter-header\" *ngIf=\"filterList[prop].length > 1\">\n            {{titlegroup ? titlegroup : 'Filter by'}} {{prop.replace('_','')|titlecase}}\n            <a *ngIf=\"filterSelected[prop]\" href=\"javascript:void(0)\" (click)=\"resetFilter(filterList,filterSelected,prop)\">\n                <span [innerHTML]=\"resetgroup ? resetgroup : '\u2715'\"></span>\n            </a>\n        </div>\n        <div class=\"filter-content\" *ngIf=\"filterList[prop].length === 0\">Key not found</div>\n        <div class=\"filter-content\" *ngIf=\"filterList[prop].length > 1\">\n            <div class=\"form-check\" *ngFor=\"let filter of filterList[prop]; let i = index\">\n                <input class=\"form-check-input\"\n                    [id]=\"prop+i\"\n                    type=\"checkbox\"\n                    [value]=\"filter.value\"\n                    [checked]=\"filter.ischecked\"\n                    (change)=\"checkBoxFilter(filterSelected, filterSelectedUrl, prop, filter);filter.ischecked = !filter.ischecked;\"\n                >\n                <label class=\"form-check-label\" [for]=\"prop+i\">{{filter.text|titlecase}}</label>\n            </div>\n        </div>\n    </div>\n    <div>\n        <button class=\"btn btn-primary\" *ngIf=\"(filterSelected|json) != '{}'\" (click)=\"resetAll(filterList,filterSelected, filterBy)\">{{reset ? reset : 'Reset All'}}</button>\n    </div>\n</ng-container>",
-                styles: [""]
-            },] }
-];
-MdsFilterCheckboxComponent.ctorParameters = () => [
-    { type: Router },
-    { type: ActivatedRoute }
-];
-MdsFilterCheckboxComponent.propDecorators = {
-    classgroup: [{ type: Input }],
-    titlegroup: [{ type: Input }],
-    resetgroup: [{ type: Input }],
-    reset: [{ type: Input }],
-    filterData: [{ type: Input }],
-    filterBy: [{ type: Input }],
-    filterSelected: [{ type: Input }]
-};
-
-class MdsFilterCheckboxModule {
-}
-MdsFilterCheckboxModule.decorators = [
-    { type: NgModule, args: [{
-                declarations: [MdsFilterCheckboxComponent],
-                imports: [CommonModule],
-                providers: [],
-                exports: [MdsFilterCheckboxComponent]
-            },] }
-];
+            }]
+    }], null, null); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(MdsPipesModule, { declarations: [FilterPipe,
+        SafeUrlPipe,
+        SearchPipe], imports: [CommonModule], exports: [FilterPipe,
+        SafeUrlPipe,
+        SearchPipe] }); })();
 
 /*
  * Export all of module medes-ui
  */
+// Deprecated Soon
+// export * from './lib/mds-filter-checkbox/mds-filter-checkbox.module'; // v.0.0.5
 
 /**
  * Generated bundle index. Do not edit.
  */
 
-export { FilterCheckboxComponent, FilterPipe, FilterSwatchComponent, MdsArrayUtils, MdsColorUtils, MdsDateUtils, MdsFilterCheckboxComponent, MdsFilterCheckboxModule, MdsFilterModule, MdsFilterResetComponent, MdsHightlightPrismComponent, MdsHightlightPrismModule, MdsNumberUtils, MdsObjectUtils, MdsPipesModule, MdsStringUtils, SafeUrlPipe, SearchPipe };
+export { FilterCheckboxComponent, FilterPipe, FilterSwatchComponent, MdsArrayUtils, MdsColorUtils, MdsDateUtils, MdsFilterModule, MdsFilterResetComponent, MdsHightlightPrismComponent, MdsHightlightPrismModule, MdsNumberUtils, MdsObjectUtils, MdsPipesModule, MdsStringUtils, SafeUrlPipe, SearchPipe };
 //# sourceMappingURL=medes-ui.js.map
