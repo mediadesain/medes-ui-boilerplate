@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "medes",
+      "prefix": "mds",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -108,15 +108,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
             ]
           }
         },
@@ -161,19 +157,19 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/medes-ui/tsconfig.lib.json",
-              "projects/medes-ui/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/medes-ui/**/*.ts",
+              "projects/medes-ui/**/*.html"
             ]
           }
         }
       }
     }
   },
-  "defaultProject": "medes-ui-boilerplate"
+  "defaultProject": "medes-ui-boilerplate",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

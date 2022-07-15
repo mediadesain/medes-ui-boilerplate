@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 
 @Component({
-  selector: 'medes-demo',
+  selector: 'mds-demo',
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.scss']
 })
@@ -18,8 +18,6 @@ export class DemoComponent implements OnInit {
       purple: '#6a66bb',
       gold: '#b6ab66'
   };
-
-  constructor() { }
 
   ngOnInit(): void {
     this.sampledata = SampleProductsData.data;

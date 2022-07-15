@@ -1,22 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MdsColorUtils } from 'medes-ui';
 // import { MdsColorUtils } from 'projects/medes-ui/src/lib/utils/mds-color-utils';
 
 @Component({
-  selector: 'medes-color-scheme',
+  selector: 'mds-color-scheme',
   templateUrl: './color-scheme.component.html',
   styleUrls: ['./color-scheme.component.scss']
 })
-export class ColorSchemeComponent implements OnInit {
+export class ColorSchemeComponent {
   name: string;
   generate: {key: string; value: string, color?: string}[] = [];
   output: string;
-  constructor() { }
+  // constructor() { }
 
-  ngOnInit(): void {
-  }
 
-  generated(submitValue: any): void{
+  generated(submitValue: {name: string; color: string; 'color-contrast': string}): void{
     this.name = submitValue.name;
     this.generate = [
         {

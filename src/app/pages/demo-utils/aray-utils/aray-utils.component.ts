@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { MdsArrayUtils } from 'medes-ui';
+// import { MdsArrayUtils } from 'medes-ui';
 // import { MdsArrayUtils } from 'projects/medes-ui/src/public-api';
 
 @Component({
-  selector: 'medes-aray-utils',
+  selector: 'mds-aray-utils',
   templateUrl: './aray-utils.component.html',
   styleUrls: ['./aray-utils.component.scss']
 })
-export class ArrayUtilsComponent implements OnInit {
+export class ArrayUtilsComponent {
 import = `import { MdsArrayUtils } from 'medes-ui';`;
 demo = `MdsArrayUtils.countUniqueValues(["Web","Web","Web","Web","iOS","iOS","Android","Android","Android"])
 // output {Web: 4, iOS: 2, Android: 3}
@@ -64,9 +64,7 @@ data = [
   { manufucture: 'kia', model: 'optima', year: '2012' }
 ];
 
-  constructor() { }
+  // constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

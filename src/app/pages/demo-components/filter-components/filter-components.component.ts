@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 
 @Component({
-  selector: 'medes-filter-components',
+  selector: 'mds-filter-components',
   templateUrl: './filter-components.component.html',
   styleUrls: ['./filter-components.component.scss']
 })
@@ -58,8 +58,6 @@ importmodule = `import { MdsFilterModule } from 'medes-ui';
     MdsFilterModule
   ]
 })`;
-
-  constructor() { }
 
   ngOnInit(): void {
     this.sampledata = SampleProductsData.data;

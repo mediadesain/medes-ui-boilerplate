@@ -4,9 +4,9 @@ import { CommonModule } from '@angular/common';
 import { TestingRoutingModule } from './testing-routing.module';
 import { TestingComponent } from './testing.component';
 
-// import { MdsFilterCheckboxModule, MdsPipesModule } from 'medes-ui';
-// import { MdsFilterCheckboxModule, MdsPipesModule } from 'dist/medes-ui/public-api';
-import { MdsFilterCheckboxModule, MdsPipesModule } from 'projects/medes-ui/src/public-api';
+// import { MdsPipesModule } from 'medes-ui';
+// import { MdsPipesModule } from 'dist/medes-ui/public-api';
+import { MdsPipesModule } from 'projects/medes-ui/src/public-api';
 @NgModule({
   declarations: [
     TestingComponent
@@ -14,7 +14,6 @@ import { MdsFilterCheckboxModule, MdsPipesModule } from 'projects/medes-ui/src/p
   imports: [
     CommonModule,
     TestingRoutingModule,
-    MdsFilterCheckboxModule,
     MdsPipesModule
   ]
 })

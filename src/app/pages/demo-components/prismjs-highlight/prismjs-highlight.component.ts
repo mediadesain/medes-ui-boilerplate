@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'medes-prismjs-highlight',
+  selector: 'mds-prismjs-highlight',
   templateUrl: './prismjs-highlight.component.html',
   styleUrls: ['./prismjs-highlight.component.scss']
 })
-export class PrismjsHighlightComponent implements OnInit {
+export class PrismjsHighlightComponent {
   importmodule = `import { MdsHightlightPrismModule } from 'medes-ui';
 @NgModule({
   declarations: [ ... ],
@@ -15,9 +15,7 @@ export class PrismjsHighlightComponent implements OnInit {
 })`;
 importcompnent = `<mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism>`;
 
-  constructor() { }
+  // constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

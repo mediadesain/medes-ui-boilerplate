@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { MdsObjectUtils } from 'medes-ui';
+// import { MdsObjectUtils } from 'medes-ui';
 // import { MdsObjectUtils } from 'projects/medes-ui/src/public-api';
 
 @Component({
-  selector: 'medes-object-utils',
+  selector: 'mds-object-utils',
   templateUrl: './object-utils.component.html',
   styleUrls: ['./object-utils.component.scss']
 })
-export class ObjectUtilsComponent implements OnInit {
+export class ObjectUtilsComponent {
 import = `import { MdsObjectUtils } from 'medes-ui';`;
 demo = `const object = {
   "firstname": "Jhon",
@@ -17,9 +17,7 @@ demo = `const object = {
   "city": undefined
 };
 MdsObjectUtils.removeKeysIfEmpty(object); // output {"firstname":"Jhon"}`;
-  constructor() { }
+  // constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }
