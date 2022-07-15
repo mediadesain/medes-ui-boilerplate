@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'medes-image-loader',
+  selector: 'mds-image-loader',
   templateUrl: './image-loader.component.html',
   styleUrls: ['./image-loader.component.scss']
 })
-export class ImageLoaderComponent implements OnInit {
+export class ImageLoaderComponent {
 
   // constructor() { }
 

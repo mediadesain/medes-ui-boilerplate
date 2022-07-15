@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 // import { MdsNumberUtils} from 'projects/medes-ui/src/public-api';
 
 @Component({
-  selector: 'medes-number-utils',
+  selector: 'mds-number-utils',
   templateUrl: './number-utils.component.html',
   styleUrls: ['./number-utils.component.scss']
 })

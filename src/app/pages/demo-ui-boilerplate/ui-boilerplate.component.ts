@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 // import { MdsDateUtils } from 'medes-ui';
 
 @Component({
-  selector: 'medes-ui-boilerplate',
+  selector: 'mds-ui-boilerplate',
   templateUrl: './ui-boilerplate.component.html',
   styleUrls: ['./ui-boilerplate.component.scss']
 })
@@ -23,7 +23,7 @@ samplets = `import { Component, OnInit } from '@angular/core';
 import { HighlightService } from '../shared/utils/highlight.service';
 
 @Component({
-  selector: 'medes-library',
+  selector: 'mds-library',
   templateUrl: './mds-library.component.html',
   styleUrls: ['./mds-library.component.scss']
 })

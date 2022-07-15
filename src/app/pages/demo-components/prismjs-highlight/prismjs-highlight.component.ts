@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'medes-prismjs-highlight',
+  selector: 'mds-prismjs-highlight',
   templateUrl: './prismjs-highlight.component.html',
   styleUrls: ['./prismjs-highlight.component.scss']
 })

@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 // import { MdsColorUtils } from 'dist/medes-ui/lib/utils/mds-color-utils';
 
 @Component({
-  selector: 'medes-utils',
+  selector: 'mds-utils',
   templateUrl: './color-utils.component.html',
   styleUrls: ['./color-utils.component.scss']
 })

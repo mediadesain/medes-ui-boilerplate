@@ -3,7 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
-  selector: 'medes-root',
+  selector: 'mds-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

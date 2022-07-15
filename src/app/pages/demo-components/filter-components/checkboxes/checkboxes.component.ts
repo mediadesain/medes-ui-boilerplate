@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 @Component({
-  selector: 'medes-checkboxes',
+  selector: 'mds-checkboxes',
   templateUrl: './checkboxes.component.html',
   styleUrls: ['./checkboxes.component.scss']
 })

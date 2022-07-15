@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'medes-alert-soon',
+  selector: 'mds-alert-soon',
   templateUrl: './alert-soon.component.html',
   styleUrls: ['./alert-soon.component.scss']
 })
-export class AlertSoonComponent implements OnInit {
+export class AlertSoonComponent {
   @Input() version: string;
   // constructor() { }
 

@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 // import { MdsArrayUtils } from 'projects/medes-ui/src/public-api';
 
 @Component({
-  selector: 'medes-aray-utils',
+  selector: 'mds-aray-utils',
   templateUrl: './aray-utils.component.html',
   styleUrls: ['./aray-utils.component.scss']
 })

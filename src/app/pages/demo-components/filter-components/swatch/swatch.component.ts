@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 @Component({
-  selector: 'medes-swatch',
+  selector: 'mds-swatch',
   templateUrl: './swatch.component.html',
   styleUrls: ['./swatch.component.scss']
 })

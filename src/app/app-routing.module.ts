@@ -14,9 +14,6 @@ const routes: Routes = [
   },
   { path: 'pipe', loadChildren: () => import('./pages/demo-pipe/pipe.module').then(m => m.PipeModule) },
   {
-    path: 'filter-checkbox',
-    loadChildren: () => import('./pages/demo-components/filter-checkbox/filter-checkbox.module').then(m => m.FilterCheckboxModule)
-  }, {
     path: 'prismjs-highlight',
     loadChildren: () => import('./pages/demo-components/prismjs-highlight/prismjs-highlight.module').then(m => m.PrismjsHighlightModule)
   },

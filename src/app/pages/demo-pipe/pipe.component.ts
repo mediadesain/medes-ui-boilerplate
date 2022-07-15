@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'medes-pipe',
+  selector: 'mds-pipe',
   templateUrl: './pipe.component.html',
   styleUrls: ['./pipe.component.scss']
 })
-export class PipeComponent implements OnInit {
+export class PipeComponent {
 
   // constructor() { }
 

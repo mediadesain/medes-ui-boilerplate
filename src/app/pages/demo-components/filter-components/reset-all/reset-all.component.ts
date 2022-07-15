@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'medes-reset-all',
+  selector: 'mds-reset-all',
   templateUrl: './reset-all.component.html',
   styleUrls: ['./reset-all.component.scss']
 })

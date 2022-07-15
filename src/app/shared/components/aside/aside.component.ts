@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'medes-aside',
+  selector: 'mds-aside',
   templateUrl: './aside.component.html',
   styleUrls: ['./aside.component.scss']
 })

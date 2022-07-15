@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 
 @Component({
-  selector: 'medes-demo',
+  selector: 'mds-demo',
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.scss']
 })

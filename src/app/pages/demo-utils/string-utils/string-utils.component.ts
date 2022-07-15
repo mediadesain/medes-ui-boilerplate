@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 // import { MdsStringUtils } from 'projects/medes-ui/src/public-api';
 
 @Component({
-  selector: 'medes-string-utils',
+  selector: 'mds-string-utils',
   templateUrl: './string-utils.component.html',
   styleUrls: ['./string-utils.component.scss']
 })

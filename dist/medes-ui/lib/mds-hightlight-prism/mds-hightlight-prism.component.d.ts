@@ -11,11 +11,14 @@ import 'prismjs/components/prism-ruby';
 import 'prismjs/components/prism-swift';
 import 'prismjs/components/prism-sql';
 import 'prismjs/components/prism-python';
+import * as i0 from "@angular/core";
 export declare class MdsHightlightPrismComponent implements AfterViewInit, OnChanges {
     codeContent: ElementRef;
     code?: string;
     language?: string;
-    constructor();
     ngAfterViewInit(): any;
     ngOnChanges(changes: any): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<MdsHightlightPrismComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MdsHightlightPrismComponent, "mds-hightlight-prism", never, { "code": "code"; "language": "language"; }, {}, never, never>;
 }
+//# sourceMappingURL=mds-hightlight-prism.component.d.ts.map

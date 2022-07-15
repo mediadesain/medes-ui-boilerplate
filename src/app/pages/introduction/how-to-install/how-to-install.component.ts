@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'medes-how-to-install',
+  selector: 'mds-how-to-install',
   templateUrl: './how-to-install.component.html',
   styleUrls: ['./how-to-install.component.scss']
 })
-export class HowToInstallComponent implements OnInit {
+export class HowToInstallComponent {
 
   // constructor() { }
 

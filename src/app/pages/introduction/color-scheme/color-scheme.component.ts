@@ -3,7 +3,7 @@ import { MdsColorUtils } from 'medes-ui';
 // import { MdsColorUtils } from 'projects/medes-ui/src/lib/utils/mds-color-utils';
 
 @Component({
-  selector: 'medes-color-scheme',
+  selector: 'mds-color-scheme',
   templateUrl: './color-scheme.component.html',
   styleUrls: ['./color-scheme.component.scss']
 })

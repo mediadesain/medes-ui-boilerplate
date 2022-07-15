@@ -1,14 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'medes-alert-deprecated',
+  selector: 'mds-alert-deprecated',
   templateUrl: './alert-deprecated.component.html',
   styleUrls: ['./alert-deprecated.component.scss']
 })
-export class AlertDeprecatedComponent implements OnInit {
+export class AlertDeprecatedComponent {
 @Input() version: string;
 @Input() alternative: string;
   // constructor() { }
-
-
 }

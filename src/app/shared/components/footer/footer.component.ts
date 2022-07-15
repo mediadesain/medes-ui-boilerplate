@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'medes-footer',
+  selector: 'mds-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })

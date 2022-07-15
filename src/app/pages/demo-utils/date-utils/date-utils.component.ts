@@ -4,7 +4,7 @@ import { MdsDateUtils } from 'medes-ui';
 // import { MdsDateUtils } from 'projects/medes-ui/src/public-api';
 
 @Component({
-  selector: 'medes-date-utils',
+  selector: 'mds-date-utils',
   templateUrl: './date-utils.component.html',
   styleUrls: ['./date-utils.component.scss']
 })
