@@ -35,12 +35,7 @@ export class AsideComponent {
       links: [
         {text: 'PrismJs Highlight', url: '/prismjs-highlight'}
       ]
-    }, {
-      title: 'Deprecated',
-      links: [
-        {text: 'Multiple Filter Checkbox', url: '/filter-checkbox'}
-      ]
-    }, {
+    },{
       title: 'Utilities',
       links: [
         {text: 'String', url: '/utils/string'},

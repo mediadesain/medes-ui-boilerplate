@@ -1,7 +1,11 @@
-### 0.0.4 - (Release - 030328)
+### 13.0.0 - (Release - 231023)
+- Upgrade library to Angular 13
+- Multiple Filter Checkbox Removed, upgrade to Filter Components
+- Support angular 13
+### 0.0.4 - (Release - 220303)
 - Bugfix Filter Checkbox & Filter Checkbox Style
 ### 0.0.3 - (Release - 220228)
-- Multiple Filter Checkbox - Will delete soon 0.0.5 and replace with new Filter Components
+- Multiple Filter Checkbox - Will delete soon (13.0.0) and replace with new Filter Components
 - Filter Components (Checkbox, Color Swatch, Reset Button)
 - New UI Elements Added (Table, Blockquotes)
 - Style Box model Utils
