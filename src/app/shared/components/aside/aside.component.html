@@ -2,7 +2,7 @@
     <b>{{group.title}}:</b>
     <ul>
         <!--[routerLinkActiveOptions]="{exact: true}"-->
-        <li routerLinkActive="active" *ngFor="let link of group.links"><a [routerLink]="link.url">{{link.text}}</a></li>
+        <li routerLinkActive="active" *ngFor="let link of group.links"><a [routerLink]="link.url" [innerHTML]="link.text"></a></li>
     </ul>
 </div>
 <div class="list-group">

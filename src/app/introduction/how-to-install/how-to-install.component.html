@@ -1,0 +1,50 @@
+<h1>How to Install</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<hr/>
+<h3>Follow these step to install MedesUI Library on your project.</h3>
+<ol>
+    <li>Make sure <a href="https://nodejs.org/" target="_blank">node.js</a> installed on your computer.</li>
+    <li>Select or cd project want to instal the library. Run on terminal/cmd <code class="command">npm install medes-ui</code>.
+    </li>
+    <li>Import medes-ui Stylesheet by following these steps:
+        <ul>
+            <li>Import <i>medes-ui.scss</i> stylesheet on main <i>styles.scss</i>.
+                <mds-hightlight-prism [code]="'/*-- MedesUI --*/
+@import \'node_modules/medes-ui/assets/scss/medes-ui.scss\';
+@import \'node_modules/medes-ui/assets/scss/ui-colorscheme.scss\'; // Or possible to create custom your own color scheme'" language="scss"></mds-hightlight-prism>
+            </li>
+            <li>Or import to <i>angular.json</i>.
+                <mds-hightlight-prism [code]="'...
+\'styles\': [
+    \'src/styles.scss\',
+    \'./node_modules/medes-ui/assets/scss/medes-ui.scss\',
+    \'./node_modules/medes-ui/assets/scss/ui-colorscheme.scss\'
+],
+...'" language="javascript"></mds-hightlight-prism>
+            </li>
+        </ul>
+        <blockquote class="info margin-vertical-1">
+            <i>Documentation For creating your own color scheme <a routerLink="/introduction/color-scheme">click here</a>.</i>
+        </blockquote>
+    </li>
+    <li>Import modules, components or utils to use.</li>
+    <li>Run with <code class="command">ng serve</code> or <code class="command">npm start</code></li>
+</ol>
+<hr/>
+
+<h3>Another Dependencies required to install</h3>
+<ul>
+    <li>
+        Install PrismJs, <code class="command">npm i prismj</code> and import stylesheet by following step similar with importing <i>medes-ui.scss</i>. More info visi official site <a href="https://prismjs.com/" target="_blank">here</a>.
+        <mds-hightlight-prism [code]="'/*-- Select options for prismjs stylesheet --*/
+@import \'node_modules/prismjs/themes/prism-okaidia.min\';
+// @import \'node_modules/prismjs/themes/prism-coy\';
+// @import \'node_modules/prismjs/themes/prism-coy.min\';
+// @import \'node_modules/prismjs/themes/prism-dark.min\';
+// @import \'node_modules/prismjs/themes/prism-funky.min\';
+// @import \'node_modules/prismjs/themes/prism-solarizedlight.min\';
+// @import \'node_modules/prismjs/themes/prism-tomorrow.min\';
+// @import \'node_modules/prismjs/themes/prism-twilight.min\';
+// @import \'node_modules/prismjs/themes/prism.min\';'" language="scss"></mds-hightlight-prism>
+</li>
+</ul>

@@ -1,3 +1,8 @@
+### 14.0.0 - beta.1
+- Upgrade library to Angular 14
+- Support angular 14
+- Standalone Component supported
+- Medes Pipe docummentation added
 ### 13.0.0 - (Release - 231023)
 - Upgrade library to Angular 13
 - Multiple Filter Checkbox Removed, upgrade to Filter Components
