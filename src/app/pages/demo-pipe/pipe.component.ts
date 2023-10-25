@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './pipe.component.html',
   styleUrls: ['./pipe.component.scss']
 })
-export class PipeComponent {
+export class IntroPipeComponent {
 
   // constructor() { }
 

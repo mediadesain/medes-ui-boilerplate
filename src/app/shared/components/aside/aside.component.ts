@@ -28,12 +28,19 @@ export class AsideComponent {
         {text: 'Checkboxes Filter', url: '/filter-components/checkboxes'},
         {text: 'Swatch Filter', url: '/filter-components/swatch'},
         {text: 'Reset Filter', url: '/filter-components/reset'},
-        {text: 'Demo', url: '/filter-components/demo'}
+        {text: '<i class="fas fa-external-link-alt"></i> Demo', url: '/filter-components/demo'}
       ]
     }, {
-      title: 'Others',
+      title: 'Other Components',
       links: [
         {text: 'PrismJs Highlight', url: '/prismjs-highlight'}
+      ]
+    },{
+      title: 'Pipes',
+      links: [
+        {text: 'Filter', url: '/pipe/filter'},
+        {text: 'Search', url: '/pipe/search'},
+        {text: 'Safe Url', url: '/pipe/safeurl'}
       ]
     },{
       title: 'Utilities',

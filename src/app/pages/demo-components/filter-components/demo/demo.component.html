@@ -33,11 +33,11 @@
     </div>
     <div class="g-l-70">
         <div style="text-align: center;">
-            <small *ngIf="(sampledata|filter:selected).length === 0 && (selected|json) ==='{}'">No Data Found</small>
-            <small *ngIf="(sampledata|filter:selected).length === 0 && (selected|json) !=='{}'">Filtered data not found</small>
+            <small *ngIf="(sampledata|mdsFilter:selected).length === 0 && (selected|json) ==='{}'">No Data Found</small>
+            <small *ngIf="(sampledata|mdsFilter:selected).length === 0 && (selected|json) !=='{}'">Filtered data not found</small>
         </div>
         <div class="mds-grid">
-            <div class="g-s-50 g-l-25" *ngFor="let item of (sampledata|filter:selected)">
+            <div class="g-s-50 g-l-25" *ngFor="let item of (sampledata|mdsFilter:selected)">
                 <!-- Image with MedesUI Image Loader Element-->
                 <div class="mds-img-loader square">
                     <img [src]="item.picture" [alt]="item.name">
