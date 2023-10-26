@@ -12,6 +12,10 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
+### 13.0.1 - (231026)
+- Renaming pipe
+- Update documentation for Pipe
+- Publish lib 13.0.1
 ### 13.0.0 - (231023)
 - Upgrade library to Angular 13
 - Multiple Filter Checkbox Removed, upgrade to Filter Components

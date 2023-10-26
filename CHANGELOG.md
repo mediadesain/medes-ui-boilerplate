@@ -1,3 +1,7 @@
+### 13.0.1 - (Release - 231026)
+- Renaming pipe
+- Update documentation for Pipe
+- Publish lib 13.0.1
 ### 13.0.0 - (Release - 231023)
 - Upgrade library to Angular 13
 - Multiple Filter Checkbox Removed, upgrade to Filter Components
