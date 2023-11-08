@@ -8,20 +8,35 @@
 </ul>
 <p>Put sample data, key to filter and selected filter object. Put selected filter object to *ngFor loop to <a [routerLink]="'/pipe/filter'">filter pipe</a> from medes-ui.</p>
 <hr/>
-<h2 class="margin-b-1">Overview Components of Medes Filter</h2>
-<div class="mds-grid">
+
+<h2 class="margin-t-1">Installation</h2>
+<p>Import Medes Filter Module</p>
+<mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism>
+<hr/>
+
+<h2>Overview of Medes Filter Components</h2>
+<p>Sample all of filter components:</p>
+
+<p><b>Checkbox Component</b></p>
+<div class="mds-grid margin-b-0">
     <div class="g-l-30">
-        <!-- Filter Checkboxes Component - Multiple Group -->
         <mds-filter-checkbox
             [titlegroup]="'Filter by'"
             [filterData]="sampledata"
-            [filterBy]="['gender','category']"
+            [filterBy]="['category']"
             [filterSelected]="selected"
             [reset]="'✕'"
             [hideCounter]="false"
         ></mds-filter-checkbox>
+    </div>
+    <div class="g-l-70"><mds-hightlight-prism [code]="checkboxComponent" language="html"></mds-hightlight-prism></div>
+    <div class="g-l-12"><a routerLink="/filter-components/checkboxes">More Info</a></div>
+</div>
+<hr/>
 
-        <!-- Filter Swatch Component -->
+<p><b>Swatch Component</b></p>
+<div class="mds-grid margin-b-0">
+    <div class="g-l-30">
         <mds-filter-swatch
             [titlegroup]="'Filter by Color'"
             [filterData]="sampledata"
@@ -31,33 +46,23 @@
             [swatchSize]="30"
             [swatchRadius]="25"
         ></mds-filter-swatch>
-        
-        <!-- Filter Checkboxes Component - Single Group -->
-        <mds-filter-checkbox
-            [filterData]="sampledata"
-            [filterBy]="['brand']"
-            [filterSelected]="selected"
-            [hideCounter]="false"
-        ></mds-filter-checkbox>
-
-        <!-- Reset Filter Component -->
-        <mds-filter-reset [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset>
     </div>
-    <div class="g-l-70">
-        <mds-hightlight-prism [code]="components" language="html"></mds-hightlight-prism>
-    </div>
-    <div class="g-l-12">
-        <i>Variable <b>sampledata</b> values is <a href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts">constant/proucts.ts</a>.</i>
-    </div>
+    <div class="g-l-70"><mds-hightlight-prism [code]="swatchComponent" language="html"></mds-hightlight-prism></div>
+    <div class="g-l-12"><a routerLink="/filter-components/swatch">More Info</a></div>
 </div>
-
-
-<b>Output</b>
-<mds-hightlight-prism [code]="'// Output filter Object
-selected ='+(selected|json)+'
-// Output use for filering on loop item with filter pipe (*ngFor=\'let data of sampledata|filter:selected\')'" language="javascript"></mds-hightlight-prism>
 <hr/>
 
-<h2 class="margin-vertical-1">Import Medes Filter Module</h2>
-<mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism>
-<br/>
+<p><b>Reset Component</b></p>
+<div class="mds-grid">
+    <div class="g-l-30"><mds-filter-reset [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset></div>
+    <div class="g-l-70"><mds-hightlight-prism [code]="resetComponent" language="html"></mds-hightlight-prism></div>
+    <div class="g-l-12"><a routerLink="/filter-components/reset">More Info</a></div>
+</div>
+
+<p><i>Variable <b>sampledata</b> values is <a href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts">constant/proucts.ts</a>.</i></p>
+
+<p><b>Output:</b></p>
+<mds-hightlight-prism [code]="'// Output filter Object
+selected ='+(selected|json)+'
+// Output use for filering on loop item with filter pipe (*ngFor=\'let data of sampledata|mdsFilter:selected\')'" language="javascript"></mds-hightlight-prism>
+

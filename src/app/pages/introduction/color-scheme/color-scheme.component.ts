@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MdsColorUtils } from 'medes-ui';
+/*-- Medes Team Only --*/
 // import { MdsColorUtils } from 'projects/medes-ui/src/lib/utils/mds-color-utils';
 
 @Component({

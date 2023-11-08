@@ -30,13 +30,13 @@
         <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th>
     </tr>
     <tr *ngFor="let item of [
-        {'attribute':'titlegroup', 'type':'String', 'default':'Color', 'description':'Label text of swatch filter group'},
-        {'attribute':'filterData*', 'type':'Array', 'default':'∞', 'description':'Sample data for create swatch filter'},
-        {'attribute':'filterBy*', 'type':'String', 'default':'∞', 'description':'Key/properties to filter'},
-        {'attribute':'filterSelected*', 'type':'Object', 'default':'∞', 'description':'List of selected filter'},
-        {'attribute':'swatchMapping*', 'type':'Object of key values', 'default':'∞', 'description':'Listing of key/prop and color hex value'},
-        {'attribute':'swatchSize', 'type':'Number', 'default':'30', 'description':'Size of weight & height'},
-        {'attribute':'swatchRadius', 'type':'Number', 'default':'0', 'description':'Border radius size'}
+        {'attribute':'filterData', 'type':'Array', 'default':'∞', 'description':'Sample data for create swatch filter'},
+        {'attribute':'filterBy', 'type':'String', 'default':'∞', 'description':'Key/properties to filter'},
+        {'attribute':'filterSelected', 'type':'Object', 'default':'∞', 'description':'List of selected filter'},
+        {'attribute':'swatchMapping', 'type':'Object of key values', 'default':'∞', 'description':'Listing of key/prop and color hex value'},
+        {'attribute':'titlegroup?', 'type':'String', 'default':'Color', 'description':'Label text of swatch filter group'},
+        {'attribute':'swatchSize?', 'type':'Number', 'default':'30', 'description':'Size of weight & height'},
+        {'attribute':'swatchRadius?', 'type':'Number', 'default':'0', 'description':'Border radius size'}
     ]">
         <td mds-th-title="Attribute">{{item.attribute}}</td>
         <td mds-th-title="Data Type">{{item.type}}</td>
@@ -44,3 +44,8 @@
         <td mds-th-title="Description">{{item.description}}</td>
     </tr>
 </table>
+<small>
+    <b>Notes:</b>
+    <br/><i>? = Is optional value, if no value will use default value.</i>
+    <br/><i>∞ = Anything base on type</i>
+</small>

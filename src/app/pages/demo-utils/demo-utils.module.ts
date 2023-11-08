@@ -11,6 +11,7 @@ import { DateUtilsComponent } from './date-utils/date-utils.component';
 import { ColorUtilsComponent } from './color-utils/color-utils.component';
 
 import { MdsHightlightPrismModule } from 'medes-ui';
+/*-- Medes Team Only --*/
 // import { MdsHightlightPrismModule } from 'projects/medes-ui/src/public-api';
 
 

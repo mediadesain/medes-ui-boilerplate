@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 
-// import { MdsStringUtils } from 'medes-ui';
-// import { MdsStringUtils } from 'projects/medes-ui/src/public-api';
-
 @Component({
   selector: 'mds-string-utils',
   templateUrl: './string-utils.component.html',

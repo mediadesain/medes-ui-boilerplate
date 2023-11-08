@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 
-// import { MdsDateUtils } from 'projects/medes-ui/src/lib/utils';
-// import { MdsDateUtils } from 'medes-ui';
-
 @Component({
   selector: 'mds-ui-boilerplate',
   templateUrl: './ui-boilerplate.component.html',

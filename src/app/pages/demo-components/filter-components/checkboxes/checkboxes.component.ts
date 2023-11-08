@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SampleProductsData } from 'src/app/shared/constant/products';
+
 @Component({
   selector: 'mds-checkboxes',
   templateUrl: './checkboxes.component.html',
   styleUrls: ['./checkboxes.component.scss']
 })
+
 export class CheckboxesComponent implements OnInit {
   sampledata: {
     brand: string,

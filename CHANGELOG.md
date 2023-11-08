@@ -1,3 +1,7 @@
+### 13.0.2 (Release - 231108)
+- Add & Update documentation for Layout Utils, Grid System, Modal
+- Medes Modal Component
+- Publish lib 13.0.2
 ### 13.0.1 - (Release - 231026)
 - Renaming pipe
 - Update documentation for Pipe

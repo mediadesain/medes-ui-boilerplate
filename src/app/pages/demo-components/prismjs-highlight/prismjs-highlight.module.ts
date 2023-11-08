@@ -5,6 +5,7 @@ import { PrismjsHighlightRoutingModule } from './prismjs-highlight-routing.modul
 import { PrismjsHighlightComponent } from './prismjs-highlight.component';
 
 import { MdsHightlightPrismModule } from 'medes-ui';
+/*-- Medes Team Only --*/
 // import { MdsHightlightPrismModule } from 'projects/medes-ui/src/public-api';
 
 @NgModule({

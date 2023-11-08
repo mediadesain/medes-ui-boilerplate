@@ -13,10 +13,10 @@
     <div class="g-l-30">
         <b>Preview</b>
         <mds-filter-checkbox
-            [titlegroup]="'Filter by'"
             [filterData]="sampledata"
             [filterBy]="keys"
             [filterSelected]="selected"
+            [titlegroup]="'Filter by'"
             [reset]="'✕'"
             [hideCounter]="false"
         ></mds-filter-checkbox>
@@ -29,12 +29,12 @@
         <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th>
     </tr>
     <tr *ngFor="let item of [
-        {'attribute':'titlegroup', 'type':'String', 'default':'Filter by', 'description':'Prefix of label text of group'},
-        {'attribute':'filterData*', 'type':'Array', 'default':'∞', 'description':'Sample data for create multiple filter checkbox'},
-        {'attribute':'filterBy*', 'type':'Array of String values', 'default':'∞', 'description':'Listing of object keys/properties to filter'},
-        {'attribute':'filterSelected*', 'type':'Object', 'default':'∞', 'description':'List of selected filter'},
-        {'attribute':'reset', 'type':'String', 'default':'✕', 'description':'Content of reset group filter, html readeable.'},
-        {'attribute':'hideCounter', 'type':'Boolean', 'default':'false', 'description':'Show/hide counter item. Or delete the attribute by default will showing'}
+        {'attribute':'filterData', 'type':'Array', 'default':'∞', 'description':'Sample data for create multiple filter checkbox'},
+        {'attribute':'filterBy', 'type':'Array of String values', 'default':'∞', 'description':'Listing of object keys/properties to filter'},
+        {'attribute':'filterSelected', 'type':'Object', 'default':'∞', 'description':'List of selected filter'},
+        {'attribute':'titlegroup?', 'type':'String', 'default':'Filter by', 'description':'Prefix of label text of group'},
+        {'attribute':'reset?', 'type':'String', 'default':'✕', 'description':'Content of reset group filter, html readeable.'},
+        {'attribute':'hideCounter?', 'type':'Boolean', 'default':'false', 'description':'Show/hide counter item. Or delete the attribute by default will showing'}
     ]">
         <td mds-th-title="Attribute">{{item.attribute}}</td>
         <td mds-th-title="Data Type">{{item.type}}</td>
@@ -42,3 +42,8 @@
         <td mds-th-title="Description">{{item.description}}</td>
     </tr>
 </table>
+<small>
+    <b>Notes:</b>
+    <br/><i>? = Is optional value, if no value will use default value.</i>
+    <br/><i>∞ = Anything base on type</i>
+</small>

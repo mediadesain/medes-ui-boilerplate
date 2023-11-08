@@ -12,17 +12,20 @@ const routes: Routes = [
     path: 'filter-components',
     loadChildren: () => import('./pages/demo-components/filter-components/filter-components.module').then(m => m.FilterComponentsModule)
   },
+  {
+    path: 'modal-component', loadChildren: () => import('./pages/demo-components/modal-component/modal-component.module').then(m => m.ModalComponentModule)
+  },
   { path: 'pipe', loadChildren: () => import('./pages/demo-pipe/pipe.module').then(m => m.PipeModule) },
   {
     path: 'prismjs-highlight',
     loadChildren: () => import('./pages/demo-components/prismjs-highlight/prismjs-highlight.module').then(m => m.PrismjsHighlightModule)
   },
   {
-    path: 'utils', loadChildren: () => import('./pages/demo-utils/demo-utils.module').then(m => m.DemoUtilsModule) },
+    path: 'utils', loadChildren: () => import('./pages/demo-utils/demo-utils.module').then(m => m.DemoUtilsModule)
+  },
   {
     path: '**', redirectTo: 'introduction/how-to-install'
-  },
-  { path: 'testing', loadChildren: () => import('./testing/testing.module').then(m => m.TestingModule) }
+  }
 ];
 
 @NgModule({

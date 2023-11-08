@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { MdsDateUtils } from 'medes-ui';
+/*-- Medes Team Only --*/
 // import { MdsDateUtils } from 'projects/medes-ui/src/public-api';
 
 @Component({
