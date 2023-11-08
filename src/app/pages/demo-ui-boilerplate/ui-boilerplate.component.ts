@@ -1,9 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { MdsHightlightPrismModule } from 'medes-ui';
 
 @Component({
   selector: 'mds-ui-boilerplate',
   templateUrl: './ui-boilerplate.component.html',
-  styleUrls: ['./ui-boilerplate.component.scss']
+  styleUrls: ['./ui-boilerplate.component.scss'],
+  standalone: true,
+  imports: [RouterModule, MdsHightlightPrismModule, CommonModule]
 })
 export class MdsDocBoilerplateComponent {
 samplehtml = `<div class="group">

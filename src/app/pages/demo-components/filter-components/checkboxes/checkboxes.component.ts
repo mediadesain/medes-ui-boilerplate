@@ -1,10 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MdsFilterCheckboxComponent, MdsHightlightPrismModule } from 'medes-ui';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 
 @Component({
   selector: 'mds-checkboxes',
   templateUrl: './checkboxes.component.html',
-  styleUrls: ['./checkboxes.component.scss']
+  styleUrls: ['./checkboxes.component.scss'],
+  standalone: true,
+  imports: [CommonModule, MdsHightlightPrismModule, MdsFilterCheckboxComponent]
 })
 
 export class CheckboxesComponent implements OnInit {

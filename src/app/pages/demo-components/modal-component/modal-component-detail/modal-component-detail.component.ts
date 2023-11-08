@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { MdsModalService } from 'medes-ui';
+import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'medes-ui';
+/*-- Medes Team Only --*/
+// import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-modal-component-detail',
   templateUrl: './modal-component-detail.component.html',
-  styleUrls: ['./modal-component-detail.component.scss']
+  styleUrls: ['./modal-component-detail.component.scss'],
+  standalone: true,
+  imports: [MdsHightlightPrismModule, MdsModalModule]
 })
 export class ModalComponentDetailComponent implements OnInit {
 html = `<!-- Button Modal -->

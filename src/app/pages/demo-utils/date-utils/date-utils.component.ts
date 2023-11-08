@@ -1,13 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
-import { MdsDateUtils } from 'medes-ui';
+import { MdsDateUtils, MdsHightlightPrismModule } from 'medes-ui';
 /*-- Medes Team Only --*/
-// import { MdsDateUtils } from 'projects/medes-ui/src/public-api';
+// import { MdsDateUtils, MdsHightlightPrismModule } from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-date-utils',
   templateUrl: './date-utils.component.html',
-  styleUrls: ['./date-utils.component.scss']
+  styleUrls: ['./date-utils.component.scss'],
+  standalone: true,
+  imports: [CommonModule, MdsHightlightPrismModule]
 })
 export class DateUtilsComponent {
 import = `import { MdsDateUtils } from 'medes-ui';`;

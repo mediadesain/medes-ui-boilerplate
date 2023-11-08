@@ -1,3 +1,7 @@
+### 14.0.0 - beta.1
+- Upgrade library to Angular 14
+- Support angular 14
+- Standalone Component supported
 ### 13.0.2 (Release - 231108)
 - Add & Update documentation for Layout Utils, Grid System, Modal
 - Medes Modal Component

@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { MdsFilterResetComponent, MdsHightlightPrismModule } from 'medes-ui';
 
 @Component({
   selector: 'mds-reset-all',
   templateUrl: './reset-all.component.html',
-  styleUrls: ['./reset-all.component.scss']
+  styleUrls: ['./reset-all.component.scss'],
+  standalone: true,
+  imports: [MdsHightlightPrismModule, MdsFilterResetComponent]
 })
 export class ResetAllComponent {
   selected = { category: ['shoes'] };

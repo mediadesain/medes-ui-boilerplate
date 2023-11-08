@@ -1,9 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MdsFilterSwatchComponent, MdsHightlightPrismModule } from 'medes-ui';
 import { SampleProductsData } from 'src/app/shared/constant/products';
+
 @Component({
   selector: 'mds-swatch',
   templateUrl: './swatch.component.html',
-  styleUrls: ['./swatch.component.scss']
+  styleUrls: ['./swatch.component.scss'],
+  standalone: true,
+  imports: [CommonModule, MdsHightlightPrismModule, MdsFilterSwatchComponent]
 })
 export class SwatchComponent implements OnInit {
   sampledata: {
