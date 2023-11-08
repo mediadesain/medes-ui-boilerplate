@@ -1,0 +1,42 @@
+<h1>Number Utils</h1>
+<p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<hr/>
+
+<b>Import MdsNumberUtils:</b>
+<mds-hightlight-prism [code]="import" language="typescript"></mds-hightlight-prism>
+<br/>
+
+<b>Number utils details:</b>
+<table class="mds-table">
+    <tr>
+        <th>Function and data Type</th><th>Data Type</th><th>Default Value</th><th>Description</th>
+    </tr>
+    <tr *ngFor="let item of [
+        {
+            'attribute':'shortNumber( <b>number</b>, <b>array?</b> )',
+            'value':'<ul><li>number</li><li>Array of String</li></ul>',
+            'default':'<ul><li>∞</li><li>[\'k\', \'m\', \'b\', \'t\']</li></ul>',
+            'description':'<ul><li>Number will sorting</li><li>Sample custom prefix.</li></ul>'
+        },
+        {
+            'attribute':'toCurrency( <b>number</b>, <b>string</b>, <b>number?</b> )',
+            'value':'<ul><li>number</li><li>string of option:<br/><i>IDR | JYP | EUR | USD</i></li><li>number</li></ul>',
+            'default':'<ul><li>∞</li><li>\'USD\'</li><li>∞</li></ul>',
+            'description':'<ul><li>Number will sorting</li><li>Type Currency</li><li>Set decimal</li></ul>'
+        },
+    ]">
+        <td mds-th-title="Function"><span [innerHTML]="item.attribute"></span></td>
+        <td mds-th-title="Sample Value"><span [innerHTML]="item.value"></span></td>
+        <td mds-th-title="Default Value"><span [innerHTML]="item.default"></span></td>
+        <td mds-th-title="Description"><span [innerHTML]="item.description"></span></td>
+    </tr>
+</table>
+<small>
+    <b>Notes:</b>
+    <br/><i>? = Is optional value, if no value will use default value.</i>
+    <br/><i>∞ = Anything base on type</i>
+</small>
+<hr/>
+
+<b>Output:</b>
+<mds-hightlight-prism [code]="demo" language="typescript"></mds-hightlight-prism>

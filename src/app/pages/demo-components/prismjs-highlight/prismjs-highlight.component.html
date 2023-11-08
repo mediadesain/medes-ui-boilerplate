@@ -1,0 +1,24 @@
+<h1>PrismJs Highlight</h1>
+<p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+
+<hr/>
+
+<b>Module</b>
+<mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism>
+<b>HTML Component</b>
+<mds-hightlight-prism [code]="importcompnent" language="html"></mds-hightlight-prism>
+<b>Properties</b>
+<table class="mds-table">
+    <tr>
+        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th>
+    </tr>
+    <tr *ngFor="let item of [
+        {'attribute':'code', 'type':'string', 'default':'', 'description':'Code to hightlight'},
+        {'attribute':'language', 'type':'Spesific String, options are:<br/><i>\'html\' | \'markup\' | \'javascript\' | \'typescript\' | \'java\' | \'css\' | \'sass\' | \'scss\' | \'ruby\' | \'swift\' | \'sql\' | \'python\'</i> ', 'default':'', 'description':'Language type to show as prevew code'}
+    ]">
+        <td mds-th-title="Attribute">{{item.attribute}}</td>
+        <td mds-th-title="Data Type"><span [innerHTML]="item.type"></span></td>
+        <td mds-th-title="Default"><span [innerHTML]="item.default"></span></td>
+        <td mds-th-title="Description">{{item.description}}</td>
+    </tr>
+</table>

@@ -1,0 +1,128 @@
+<h1>Layout Utils</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<hr/>
+
+<h3>Layouting</h3>
+<br/>
+<b>Preview:</b>
+<div style="border: 1px dashed rgb(100 100 100 / 40%); height: 300px;">
+    <div class="bg-content {{setDirection.value}} {{setHAligh.value}} {{setVAligh.value}}"
+        [ngClass]="{'fullfill-horizontal': horizontalFull.value, 'fullfill-vertical': verticalFull.value}">
+        <div class="bg-content padding-horizontal-1 margin-1">1</div>
+        <div class="bg-content padding-horizontal-1 margin-1">2</div>
+        <div class="bg-content padding-horizontal-1 margin-1">3</div>
+        <div class="bg-content padding-horizontal-1 margin-1">4</div>
+    </div>
+</div>
+
+<div class="mds-grid">
+    <div class="g-m-40">
+        <b class="margin-b-1">Customize:</b><br/>
+        <div class="fullfill-horizontal flex-horizontal justify-between">
+            <div>
+                <input type="checkbox" #horizontalFull="ngModel" ngModel="true"/> Full Width
+            </div>
+            <div>
+                <input type="checkbox" #verticalFull="ngModel" ngModel="true"/> Full Height
+            </div>
+        </div>
+
+        <div class="fullfill-horizontal flex-horizontal justify-between">
+            <span>Item Justify</span>
+            <select #setDirection="ngModel" ngModel="flex-horizontal">
+                <option *ngFor="let item of flexDirection" [value]="item.value">{{item.label}}</option>
+            </select>
+        </div>
+
+        <div class="fullfill-horizontal flex-horizontal justify-between">
+            <span>Item Align</span>
+            <select #setHAligh="ngModel" ngModel="justify-between">
+                <option *ngFor="let item of justifyItems" [value]="item.value">{{item.label}}</option>
+            </select>
+        </div>
+
+        <div class="fullfill-horizontal flex-horizontal justify-between">
+            <span>Item direction</span>
+            <select #setVAligh="ngModel" ngModel="align-middle">
+                <option *ngFor="let item of alignItems" [value]="item.value">{{item.label}}</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="g-m-60"> 
+        <b class="margin-b-1">Code Preview:</b>
+<mds-hightlight-prism [code]="'<div class=\'bg-content '+ (horizontalFull.value ? ' fullfill-horizontal ' : '') + (verticalFull.value ? ' fullfill-vertical ' : '') + setDirection.value +' '+ setHAligh.value +' '+ setVAligh.value +'\'>
+    <div class=\'bg-content padding-horizontal-1 margin-1\'>1</div>
+    <div class=\'bg-content padding-horizontal-1 margin-1\'>2</div>
+    <div class=\'bg-content padding-horizontal-1 margin-1\'>3</div>
+    <div class=\'bg-content padding-horizontal-1 margin-1\'>4</div>
+</div>'" language="html"></mds-hightlight-prism>
+        <small><i>Note: Posible to use multiple classes name, on this case only use 5 clases</i></small>
+    </div>
+</div>
+
+<h4 class="margin-t-1">Layout classes list</h4>
+<table class="mds-table margin-b-1">
+    <tr><th>Class name</th><th>Description</th></tr>
+    <tr>
+        <td mds-th-title="Class name">.fullfill-horizontal</td>
+        <td mds-th-title="Description">Horizontal full width base on container size</td>
+    </tr>
+    <tr>
+        <td mds-th-title="Class name">.fullfill-vertical</td>
+        <td mds-th-title="Description">Vertical full height base on container size</td>
+    </tr>
+    <tr *ngFor="let item of flexDirection">
+        <td mds-th-title="Class name">.{{item.value}}</td>
+        <td mds-th-title="Description">{{item.label}}</td>
+    </tr>
+    <tr *ngFor="let item of justifyItems">
+        <td mds-th-title="Class name">.{{item.value}}</td>
+        <td mds-th-title="Description">{{item.label}}</td>
+    </tr>
+    <tr *ngFor="let item of alignItems">
+        <td mds-th-title="Class name">.{{item.value}}</td>
+        <td mds-th-title="Description">{{item.label}}</td>
+    </tr>
+</table>
+
+<hr class="margin-b-2">
+
+<h3>Box Model margin & padding Generator</h3>
+<br/>
+<b>Preview:</b>
+<div class="margin-b-1" style="border: 1px dashed rgb(100 100 100 / 40%);">
+    <div [class]="'txt-transculant '+paddingUtil.value +' '+ marginUtil.value" class="bg-content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit.
+    </div>
+</div>
+
+<div class="mds-grid">
+    <div class="g-m-30">
+        <b class="margin-b-1">Customize:</b>
+        <div class="fullfill-herizontal flex-horizontal">
+            <select #paddingUtil="ngModel" ngModel="padding-horizontal-1">
+                <option *ngFor="let item of paddingOptions" [value]="item.value">{{item.label}}</option>
+            </select>
+            <select #marginUtil="ngModel" ngModel="margin-1">
+                <option *ngFor="let item of marginOptions" [value]="item.value">{{item.label}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="g-m-70">
+        <b class="margin-b-1">Code Preview:</b>
+<mds-hightlight-prism [code]="'<div class=\'txt-transculant '+paddingUtil.value+' '+marginUtil.value+'\'>
+    <div style=\'background: var(--swatch-a-transculant);\'>Layout Utils</div>
+</div>'" language="html"></mds-hightlight-prism>
+        <small><i>Note: Posible to use multiple classes name, on this case only use 2 clases</i></small>
+    </div>
+</div>
+
+<h4 class="margin-t-1">Box model margin & padding classes list</h4>
+<table class="mds-table margin-b-1">
+    <tr><th>Class name</th><th>Description</th></tr>
+    <tr *ngFor="let item of paddingOptions">
+        <td mds-th-title="Class name">.{{item.value}}</td>
+        <td mds-th-title="Description">{{item.label}}</td>
+    </tr>
+</table>

@@ -1,0 +1,118 @@
+<h1>Boilerplate Medes Doc</h1>
+<p>Clone repository to get source code <a href="https://github.com/mediadesain/medes-ui-boilerplate">here</a>.</p>
+<hr/>
+
+<h2>Paragraph</h2>
+<p>Section <b>intro</b> goes here. <a href="">Lorem ipsum</a> dolor sit amet, <i>consectetur adipiscing</i> elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<hr/>
+
+<h2>List</h2>
+<p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+
+<div class="mds-grid">
+    <div class="g-m-50">
+        <b>Unordered List Examples:</b>
+        <ul>
+            <li>Download lorem ipsum dolor sit amet.</li>
+            <li>Click ipsum faucibus venenatis.</li>
+            <li>Configure fermentum malesuada nunc.</li>
+            <li>Deploy donec non ante libero.</li>
+        </ul>
+    </div>
+    <div class="g-m-50">
+        <b>Ordered List Examples:</b>
+        <ol>
+            <li>Download lorem ipsum dolor sit amet.</li>
+            <li>Click ipsum faucibus venenatis.</li>
+            <li>Configure fermentum malesuada nunc.</li>
+            <li>Deploy donec non ante libero.</li>
+        </ol>
+    </div>
+</div>
+<hr/>
+
+<h2>Grid System</h2>
+<div class="mds-grid sample margin-t-1">
+    <div class="g-s-50 g-l-25">1</div>
+    <div class="g-s-50 g-l-75">2</div>
+    <div class="g-l-50">3</div>
+    <div class="g-l-50">4</div>
+    <div class="g-l-25 g-m-50 g-s-25">5</div>
+    <div class="g-l-25 g-m-50 g-s-25">6</div>
+    <div class="g-l-25 g-m-50 g-s-25">7</div>
+    <div class="g-l-25 g-m-50 g-s-25">8</div>
+</div>
+<a routerLink="/ui-boilerplate/grid-system">More info</a>
+<hr/>
+
+<h2>Highlight</h2>
+<p>Section intro goes here. Sampple Code <code class="command">npm install medes-ui</code> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate.</p>
+<blockquote class="margin-vertical-1">Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit.</blockquote>
+<blockquote class="success margin-b-1">Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit.</blockquote>
+<blockquote class="warning margin-b-1">Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit.</blockquote>
+<blockquote class="danger margin-b-1">Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit.</blockquote>
+<blockquote class="info margin-b-1">Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit.</blockquote>
+<hr/>
+
+<h2>Responsive Table</h2>
+<p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<table class="mds-table">
+    <tr>
+        <th>Title 1</th><th>Title 2</th><th>Title 3</th>
+    </tr>
+    <tr *ngFor="let i of [0,1,2,3,4]">
+        <td mds-th-title="Title 1">Content 1</td>
+        <td mds-th-title="Title 2">Content 2</td>
+        <td mds-th-title="Title 3">Content 3</td>
+    </tr>
+    </table>
+<hr/>
+
+<h2>Code Highlight</h2>
+<div class="mds-grid">
+    <div class="g-l-50">
+        <b>HTML</b>
+        <mds-hightlight-prism [code]="samplehtml" language="html"></mds-hightlight-prism>
+        <b>CSS</b>
+        <mds-hightlight-prism [code]="samplescss" language="css"></mds-hightlight-prism>
+        <b>JavaScript</b>
+        <mds-hightlight-prism [code]="samplejs" language="javascript"></mds-hightlight-prism>
+    </div>
+    <div class="g-l-50">
+        <b>TypeScript</b>
+        <mds-hightlight-prism [code]="samplets" language="typescript"></mds-hightlight-prism>
+    </div>
+</div>
+<hr/>
+
+<h2>Image Loader</h2>
+<div class="mds-grid margin-t-1">
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader square">
+            <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+        </div>
+    </div>
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader landscape">
+            <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+        </div>
+    </div>
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader portrait">
+            <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+        </div>
+    </div>
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader circle">
+            <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+        </div>
+    </div>
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader square">
+            <img src="" alt="">
+        </div>
+        <small><i>*Sample no image</i></small>
+    </div>
+</div>
+<a routerLink="/ui-boilerplate/image-loader">More info</a>
+<hr/>

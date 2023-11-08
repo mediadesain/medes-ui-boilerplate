@@ -2,7 +2,14 @@
 - Upgrade library to Angular 14
 - Support angular 14
 - Standalone Component supported
-- Medes Pipe docummentation added
+### 13.0.2 (Release - 231108)
+- Add & Update documentation for Layout Utils, Grid System, Modal
+- Medes Modal Component
+- Publish lib 13.0.2
+### 13.0.1 - (Release - 231026)
+- Renaming pipe
+- Update documentation for Pipe
+- Publish lib 13.0.1
 ### 13.0.0 - (Release - 231023)
 - Upgrade library to Angular 13
 - Multiple Filter Checkbox Removed, upgrade to Filter Components

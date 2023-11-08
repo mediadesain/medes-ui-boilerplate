@@ -1,0 +1,56 @@
+<h1>Medes Modal Component</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis.</p>
+<hr/>
+
+<div class="mds-grid">
+    <div class="g-m-50">
+        <b>Component</b>
+        <mds-hightlight-prism [code]="component" language="typescript"></mds-hightlight-prism>
+    </div>
+    <div class="g-m-50">
+        <b>HTML</b>
+        <mds-hightlight-prism [code]="html" language="html"></mds-hightlight-prism>
+    </div>
+    <div class="g-m-100">
+        <b>Output</b><br/>
+        <!-- Button Modal -->
+        <button (click)="openModal('my-modal-1')">Open Simple Modal</button>
+        <!-- Simple Sample Modal -->
+        <mds-modal id="my-modal-1" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
+            <div class="padding-1">
+                <h3 class="padding-b-1">Simple Modal Sample</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nec dui sit amet sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean massa augue, varius nec velit et, fermentum eleifend purus. Integer porta eros et risus mattis ultricies. Phasellus enim neque, finibus sed tempor at, pretium nec nulla. Pellentesque eget gravida lorem. Cras non volutpat urna. Phasellus nec quam mattis, euismod turpis ac, pulvinar enim. Proin lacinia felis nulla, ut convallis felis lacinia eget. Duis sed consectetur dui, eu dictum elit. Donec ut suscipit diam. Vestibulum nec ex a arcu rutrum vulputate ut eu lacus.</p>
+                <p>Curabitur sem sapien, vestibulum non tincidunt semper, ullamcorper a ante. Morbi tempor sem nec facilisis efficitur. Nam vel quam malesuada, dignissim leo id, eleifend tortor. Etiam in rutrum elit.</p>
+                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
+            </div>
+        </mds-modal>
+    </div>
+</div>
+
+<hr/>
+
+<b>Properties</b>
+<table class="mds-table">
+    <tr>
+        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th>
+    </tr>
+    <tr *ngFor="let item of [
+        {'attribute':'id', 'type':'string', 'default':'∞', 'description':'id modal is required for identify which modal to trigger'},
+        {'attribute':'modalWidth?', 'type':'string of option: <i>\'small\'|\'medium\'|\'large\'|\'fullscreen\'</i> or number', 'default':'\'medium\'', 'description':'Width of modal by default is medium (700px) but posible with custom width. If set as \'fullscreen\' wil set height & width fullscreen'},
+        {'attribute':'marginTop?', 'type':'number', 'default':'44', 'description':'Padding top modal'},
+        {'attribute':'marginBottom?', 'type':'number', 'default':'44', 'description':'Padding bottom modal'},
+        {'attribute':'borderRadius?', 'type':'number', 'default':'5', 'description':'Border radius size'},
+        {'attribute':'hideCloseButton?', 'type':'boolean', 'default':'false', 'description':'Visibility of close button'},
+        {'attribute':'disableCloseBackdrop?', 'type':'boolean', 'default':'false', 'description':'Disable closing modal if clicking backdrop'},
+    ]">
+        <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
+        <td mds-th-title="Data Type" [innerHTML]="item.type"></td>
+        <td mds-th-title="Default" [innerHTML]="item.default"></td>
+        <td mds-th-title="Description" [innerHTML]="item.description"></td>
+    </tr>
+</table>
+<small>
+    <b>Notes:</b>
+    <br/><i>? = Is optional value, if no value will use default value.</i>
+    <br/><i>∞ = Anything base on type</i>
+</small>

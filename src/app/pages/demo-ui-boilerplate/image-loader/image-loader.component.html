@@ -1,0 +1,58 @@
+<h1>Image Loader</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<br/>
+
+<h2>Overview</h2>
+<div class="mds-grid margin-vertical-1">
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader square">
+            <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+        </div>
+    </div>
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader landscape">
+            <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+        </div>
+    </div>
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader portrait">
+            <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+        </div>
+    </div>
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader circle">
+            <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+        </div>
+    </div>
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader square">
+            <img src="" alt="">
+        </div>
+        <small><i>*Sample no image</i></small>
+    </div>
+</div>
+<hr/>
+
+<div class="mds-grid">
+    <div class="g-m-30">
+        <b>Prevew</b>
+        <div class="mds-img-loader {{loaderStyle.value}}">
+            <img [src]="image.value" alt="">
+        </div>
+    </div>
+    <div class="g-m-70">
+        <b>Generator</b><br/>
+        <div class="flex-horizontal">
+            <input class="fullfill-horizontal" type="text" #image="ngModel" ngModel="https://www.mediadesain.com/assets/images/elements/office.jpg">
+            <select name="test" #loaderStyle="ngModel" ngModel="circle">
+                <option>circle</option>
+                <option>square</option>
+                <option>landscape</option>
+            </select>
+        </div>
+        <mds-hightlight-prism [code]="'<div class=\'mds-img-loader '+loaderStyle.value+'\'>
+    <img src=\''+image.value+'\' />
+</div>'" language="html"></mds-hightlight-prism>
+    </div>
+</div>
+<hr/>

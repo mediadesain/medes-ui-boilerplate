@@ -18,6 +18,7 @@ export class AsideComponent {
       title: 'UI Element - Boilerplate',
       links: [
         {text: 'Basic Elements', url: '/ui-boilerplate/basic-elements'},
+        {text: 'Layout Utils', url: '/ui-boilerplate/layout-utils'},
         {text: 'Grid System', url: '/ui-boilerplate/grid-system'},
         {text: 'Image Loader', url: '/ui-boilerplate/image-loader'}
       ]
@@ -29,6 +30,13 @@ export class AsideComponent {
         {text: 'Swatch Filter', url: '/filter-components/swatch'},
         {text: 'Reset Filter', url: '/filter-components/reset'},
         {text: '<i class="fas fa-external-link-alt"></i> Demo', url: '/filter-components/demo'}
+      ]
+    }, {
+      title: 'Modal Components',
+      links: [
+        {text: 'Intro', url: 'modal-component/intro'},
+        {text: 'Modal Component', url: 'modal-component/detail'},
+        {text: '<i class="fas fa-external-link-alt"></i> Demo', url: 'modal-component/demo'},
       ]
     }, {
       title: 'Other Components',
