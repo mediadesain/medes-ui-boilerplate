@@ -1,4 +1,4 @@
-### 14.0.0 - beta.1
+### 14.0.0 - (Release - 231109)
 - Upgrade library to Angular 14
 - Support angular 14
 - Standalone Component supported
