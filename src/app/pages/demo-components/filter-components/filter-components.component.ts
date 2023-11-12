@@ -24,7 +24,8 @@ export class FilterComponentsComponent implements OnInit {
       gold: '#b6ab66'
   };
 
-checkboxComponent = `<!-- Filter Checkboxes Component - Multiple Group -->
+checkboxComponent = `
+<!-- Filter Checkboxes Component - Multiple Group -->
 <mds-filter-checkbox
   [titlegroup]="'Filter by'"
   [filterData]="sampledata"
@@ -34,7 +35,8 @@ checkboxComponent = `<!-- Filter Checkboxes Component - Multiple Group -->
   [hideCounter]="false"
 ></mds-filter-checkbox>`;
 
-swatchComponent = `<!-- Filter Swatch Component -->
+swatchComponent = `
+<!-- Filter Swatch Component -->
 <mds-filter-swatch
   [titlegroup]="'Filter by Color'"
   [filterData]="sampledata"
@@ -45,11 +47,13 @@ swatchComponent = `<!-- Filter Swatch Component -->
   [swatchRadius]="25"
 ></mds-filter-swatch>`;
 
-resetComponent = `<!-- Reset Filter Component -->
+resetComponent = `
+<!-- Reset Filter Component -->
 <mds-filter-reset [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset>`;
 
 
-importmodule = `import { MdsFilterModule } from 'medes-ui';
+importmodule = `
+import { MdsFilterModule } from 'medes-ui';
 
 @NgModule({
   declarations: [ ... ],

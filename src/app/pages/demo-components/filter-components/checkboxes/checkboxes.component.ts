@@ -25,7 +25,8 @@ export class CheckboxesComponent implements OnInit {
   selected: {[key: string]: string[]} = {};
   keys: string[] = ['gender', 'category'];
 
-samplecomponent = `export class MyComponent implements OnInit {
+samplecomponent = `
+export class MyComponent implements OnInit {
 ...
   // Sample datas, keys to filter and filter selected
   sampledata: any[] = [
@@ -38,7 +39,8 @@ samplecomponent = `export class MyComponent implements OnInit {
   keys: string[] = ['gender','category'];
 ...
 }`;
-componentdemo = `<!-- Filter Checkboxes Component -->
+componentdemo = `
+<!-- Filter Checkboxes Component -->
 <mds-filter-checkbox
   [titlegroup]="'Filter by'"
   [filterData]="sampledata"

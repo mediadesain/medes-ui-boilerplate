@@ -32,7 +32,8 @@ export class SwatchComponent implements OnInit {
     gold: '#b6ab66'
   };
 
-samplecomponent = `export class MyComponent implements OnInit {
+samplecomponent = `
+export class MyComponent implements OnInit {
 ...
   // Sample datas, keys to filter and filter selected
   sampledata: any[] = [
@@ -53,7 +54,8 @@ samplecomponent = `export class MyComponent implements OnInit {
   };
 ...
 }`;
-componentdemo = `<!-- Filter Swatch Component -->
+componentdemo = `
+<!-- Filter Swatch Component -->
 <mds-filter-swatch
   [titlegroup]="'Filter by Color'"
   [filterData]="sampledata"

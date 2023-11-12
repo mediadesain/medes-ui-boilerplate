@@ -5,7 +5,7 @@
 <div class="mds-grid">
     <!-- SIDEBAR CONTENT -->
     <div class="g-l-30">
-        <input #name="ngModel" ngModel placeholder="Search Name" style="width: 100%; margin-bottom: 1em;" />
+        <input #name="ngModel" [ngModelOptions]="{ updateOn: 'submit' }" ngModel placeholder="Search Name" style="width: 100%; margin-bottom: 1em;" />
         <!-- Demo Filter Checkboxes Component - Multiple Group -->
         <mds-filter-checkbox
             [titlegroup]="'Filter by'"

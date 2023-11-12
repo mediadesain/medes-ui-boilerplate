@@ -1,10 +1,16 @@
+### 14.0.1 - (Release - 231112)
+- Fix Modes Modal Component styling
+- Filter Reset Component content is customizable
+- Code higlight prismjs height is customizable
+- Update documentation to flexbox & scroll top when routing
+- Make medes-ui-boilerplate documentaton able to run for source code porpose, hide medes-ui lib only for medes team
 ### 14.0.0 - (Release - 231109)
 - Upgrade library to Angular 14
 - Support angular 14
 - Standalone Component supported
 ### 13.0.2 (Release - 231108)
 - Add & Update documentation for Layout Utils, Grid System, Modal
-- Medes Modal Component
+- Medes Modal Component (beta)
 - Publish lib 13.0.2
 ### 13.0.1 - (Release - 231026)
 - Renaming pipe

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'medes-ui';
 /*-- Medes Team Only --*/
 // import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'projects/medes-ui/src/public-api';
@@ -9,12 +10,13 @@ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'medes
   templateUrl: './modal-component.component.html',
   styleUrls: ['./modal-component.component.scss'],
   standalone: true,
-  imports: [MdsHightlightPrismModule, MdsModalModule]
+  imports: [RouterModule, MdsHightlightPrismModule, MdsModalModule]
 })
 
 export class ModalComponent {
 
-html = `<button (click)="openModal('my-modal-1')">Open Simple Modal</button>
+html = `
+<button (click)="openModal('my-modal-1')">Open Simple Modal</button>
 
 <mds-modal
   id="my-modal-1"
@@ -26,7 +28,8 @@ html = `<button (click)="openModal('my-modal-1')">Open Simple Modal</button>
   ...
 </mds-modal>`;
 
-importmodule = `import { MdsModalModule } from 'medes-ui';
+importmodule = `
+import { MdsModalModule } from 'medes-ui';
 
 @NgModule({
   declarations: [ ... ],
