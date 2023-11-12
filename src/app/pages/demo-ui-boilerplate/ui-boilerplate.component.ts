@@ -11,17 +11,21 @@ import { MdsHightlightPrismModule } from 'medes-ui';
   imports: [RouterModule, MdsHightlightPrismModule, CommonModule]
 })
 export class MdsDocBoilerplateComponent {
-samplehtml = `<div class="group">
+samplehtml = `
+<div class="group">
   <span>Content</span>
 </div>`;
-samplescss = `.body{
+samplescss = `
+.body{
   background: #f9f9f9;
   color: #ddd
 }`;
-samplejs = `function GetData(values){
+samplejs = `
+function GetData(values){
   console.log(values);
 }`;
-samplets = `import { Component, OnInit } from '@angular/core';
+samplets = `
+import { Component, OnInit } from '@angular/core';
 import { HighlightService } from '../shared/utils/highlight.service';
 
 @Component({

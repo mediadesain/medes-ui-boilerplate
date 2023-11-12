@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'medes-ui';
@@ -9,7 +10,7 @@ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'medes
   templateUrl: './demo-modal.component.html',
   styleUrls: ['./demo-modal.component.scss'],
   standalone: true,
-  imports: [FormsModule, MdsHightlightPrismModule, MdsModalModule]
+  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule]
 })
 export class DemoModalComponent implements OnInit {
   bodyText: string;

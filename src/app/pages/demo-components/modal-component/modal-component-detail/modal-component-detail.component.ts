@@ -12,7 +12,8 @@ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'medes
   imports: [CommonModule, MdsHightlightPrismModule, MdsModalModule]
 })
 export class ModalComponentDetailComponent implements OnInit {
-html = `<!-- Button Modal -->
+html = `
+<!-- Button Modal -->
 <button (click)="openModal('my-modal-1')">Open Simple Modal</button>
 <!-- Simple Sample Modal -->
 <mds-modal id="my-modal-1" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
@@ -23,7 +24,8 @@ html = `<!-- Button Modal -->
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
     </div>
 </mds-modal>`;
-component = `import { MdsModalService } from 'medes-ui'; // import modal service
+component = `
+import { MdsModalService } from 'medes-ui'; // import modal service
 
 export class MyComponent {
 

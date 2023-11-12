@@ -10,8 +10,10 @@ import { MdsHightlightPrismModule } from 'medes-ui';
   imports: [CommonModule, MdsHightlightPrismModule]
 })
 export class ObjectUtilsComponent {
-import = `import { MdsObjectUtils } from 'medes-ui';`;
-demo = `const object = {
+import = `
+import { MdsObjectUtils } from 'medes-ui';`;
+demo = `
+const object = {
   "firstname": "Jhon",
   "lastname": "",
   "gender": null,

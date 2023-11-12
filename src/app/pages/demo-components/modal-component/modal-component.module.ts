@@ -4,7 +4,7 @@ import { ModalComponentRoutingModule } from './modal-component-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MdsModalModule, MdsHightlightPrismModule, MdsModalService } from 'medes-ui';
 /*-- Medes Team Only --*/
-// import { MdsModalModule, MdsHightlightPrismModule } from 'projects/medes-ui/src/public-api';
+// import { MdsModalModule, MdsHightlightPrismModule, MdsModalService } from 'projects/medes-ui/src/public-api';
 
 @NgModule({
   declarations: [],

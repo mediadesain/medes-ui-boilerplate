@@ -12,8 +12,10 @@ import { MdsDateUtils, MdsHightlightPrismModule } from 'medes-ui';
   imports: [CommonModule, MdsHightlightPrismModule]
 })
 export class DateUtilsComponent {
-import = `import { MdsDateUtils } from 'medes-ui';`;
-demo = `MdsDateUtils.untilNow(1644684102000); // output ${MdsDateUtils.untilNow(1644684102000)}
+import = `
+import { MdsDateUtils } from 'medes-ui';`;
+demo = `
+MdsDateUtils.untilNow(1644684102000); // output ${MdsDateUtils.untilNow(1644684102000)}
 MdsDateUtils.untilNow(1644684102000, ['tahun','bulan','hari','jam','menit','detik'], 'lalu'); // output ${MdsDateUtils.untilNow(1644684102000, ['tahun', 'bulan', 'hari', 'jam', 'menit', 'detik'], 'lalu')}`;
 
 
