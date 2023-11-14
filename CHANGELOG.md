@@ -1,3 +1,9 @@
+### 14.0.2 - (Release - 231114)
+- Fix Close Button Modal styling on fullscreen mode
+- Add getMinMax() funtion to MdsNumberUtils, for searching min & max values from array of numbers
+- Versioning now is documented
+### 13.0.3 (Patch - 231114)
+- Patch medes-ui lib 13.0.2 (include for changes 14.0.0 - 14.0.1)
 ### 14.0.1 - (Release - 231112)
 - Fix Modes Modal Component styling
 - Filter Reset Component content is customizable
