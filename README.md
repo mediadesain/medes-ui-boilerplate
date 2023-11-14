@@ -12,6 +12,12 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
+### 14.0.2 - (Release - 231114)
+- Fix Close Button Modal styling on fullscreen mode
+- Add getMinMax() funtion to MdsNumberUtils, for searching min & max values from array of numbers
+- Versioning now is documented
+### 13.0.3 (Patch - 231114)
+- Patch medes-ui lib 13.0.2 (include for changes 14.0.0 - 14.0.1)
 ### 14.0.1 - (Release - 231112)
 - Fix Modes Modal Component styling
 - Filter Reset Component content is customizable

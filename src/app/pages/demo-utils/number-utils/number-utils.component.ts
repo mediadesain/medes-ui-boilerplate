@@ -17,8 +17,10 @@ MdsNumberUtils.shortNumber(15320); // output 15k
 MdsNumberUtils.shortNumber(15320, ['rb','jt','mil','tr']); // output 15rb
 
 MdsNumberUtils.toCurrency(15320, 'USD'); // output $15,320
-MdsNumberUtils.toCurrency(15320, 'IDR', 2); // output Rp 15.320,00`;
-  // constructor() { }
+MdsNumberUtils.toCurrency(15320, 'IDR', 2); // output Rp 15.320,00
+
+MdsNumberUtils.getMinMax([3321,6410,1200,567,38,90,404]) // output {min: 38, max: 6410}`;
+    // constructor() { }
 
 
 }

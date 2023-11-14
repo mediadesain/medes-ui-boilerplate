@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DemoPrismjsHighlightComponent } from './pages/demo-components/prismjs-highlight/prismjs-highlight.component';
+import { VersioningComponent } from './shared/components/versioning/versioning.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,11 @@ const routes: Routes = [
     component: DemoPrismjsHighlightComponent
   },
   {
-    path: 'utils', loadChildren: () => import('./pages/demo-utils/demo-utils.module').then(m => m.DemoUtilsModule) },
+    path: 'utils', loadChildren: () => import('./pages/demo-utils/demo-utils.module').then(m => m.DemoUtilsModule)
+  },{
+    path: 'versioning',
+    component: VersioningComponent
+  },
   {
     path: '**', redirectTo: 'introduction/how-to-install'
   }
