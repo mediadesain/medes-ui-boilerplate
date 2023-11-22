@@ -1,3 +1,7 @@
+### X.X.X - (Next Release)
+- New Component - Filter Range Slider
+- Component Enhancement - Reset Filter able to reset new filter range slider
+- New Pipe - filter data base on min & max value
 ### 13.0.4 (Patch - 231114)
 - Patch medes-ui lib 13.0.4 (include for changes 14.0.2)
 ### 14.0.2 - (Release - 231114)

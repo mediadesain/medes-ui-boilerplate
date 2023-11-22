@@ -16,8 +16,19 @@ Sample data:
   }
 ]
 */
+
+export interface ProductDataModel {
+    brand: string,
+    category: string | string[];
+    color: string;
+    gender: string;
+    id: string;
+    picture: string;
+    price: number
+    name: string;
+}
 export class SampleProductsData {
-    static data = [
+    static data: ProductDataModel[] = [
         {
           brand: 'puma',
           category: 'tshirt',

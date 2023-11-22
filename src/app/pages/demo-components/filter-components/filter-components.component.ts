@@ -2,6 +2,8 @@ import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MdsFilterCheckboxComponent, MdsFilterResetComponent, MdsFilterSwatchComponent, MdsHightlightPrismModule } from 'medes-ui';
+import { MdsFilterRangeSliderComponent } from 'projects/medes-ui/src/lib/mds-filter/filter-range-slider/filter-range-slider.component';
+import { SelectedFilterSliderInterface } from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 
 @Component({
@@ -9,7 +11,7 @@ import { SampleProductsData } from 'src/app/shared/constant/products';
   templateUrl: './filter-components.component.html',
   styleUrls: ['./filter-components.component.scss'],
   standalone: true,
-  imports: [RouterModule, JsonPipe,MdsHightlightPrismModule, MdsFilterCheckboxComponent, MdsFilterSwatchComponent, MdsFilterResetComponent]
+  imports: [RouterModule, JsonPipe,MdsHightlightPrismModule, MdsFilterCheckboxComponent, MdsFilterSwatchComponent, MdsFilterRangeSliderComponent, MdsFilterResetComponent]
 })
 export class FilterComponentsComponent implements OnInit {
   sampledata = [];
@@ -22,6 +24,12 @@ export class FilterComponentsComponent implements OnInit {
       black: '#000000',
       purple: '#6a66bb',
       gold: '#b6ab66'
+  };
+  filterRangeSelected: SelectedFilterSliderInterface = {
+    min: 20,
+    max: 100,
+    start: 25,
+    end: 50
   };
 
 checkboxComponent = `
@@ -46,6 +54,17 @@ swatchComponent = `
   [swatchSize]="30"
   [swatchRadius]="25"
 ></mds-filter-swatch>`;
+
+rangeSliderComponent = `
+<!-- Demo Filter Range Slider Component -->
+<mds-filter-range-slider
+  [label]="'Filter by something'"
+  [min]="20"
+  [max]="100"
+  [start]="25"
+  [end]="40"
+  [disabled]="false"
+></mds-filter-range-slider>`;
 
 resetComponent = `
 <!-- Reset Filter Component -->

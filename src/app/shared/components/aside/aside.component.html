@@ -2,7 +2,10 @@
     <b>{{group.title}}:</b>
     <ul>
         <!--[routerLinkActiveOptions]="{exact: true}"-->
-        <li routerLinkActive="active" *ngFor="let link of group.links" (click)="resetScroll()"><a [routerLink]="link.url" [innerHTML]="link.text"></a></li>
+        <li routerLinkActive="active" *ngFor="let link of group.links" (click)="resetScroll()">
+            <a [routerLink]="link.url" [innerHTML]="link.text"></a>
+            <span *ngIf="link.isNew" class="new-beadge">New</span>
+        </li>
     </ul>
 </div>
 <div class="list-group">

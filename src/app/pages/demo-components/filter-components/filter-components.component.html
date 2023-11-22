@@ -30,7 +30,7 @@
         ></mds-filter-checkbox>
     </div>
     <div class="g-l-70"><mds-hightlight-prism [code]="checkboxComponent" language="html"></mds-hightlight-prism></div>
-    <div class="g-l-12"><a routerLink="/filter-components/checkboxes">More Info</a></div>
+    <div class="g-l-12"><small><a routerLink="/filter-components/checkboxes">More Info</a></small></div>
 </div>
 <hr/>
 
@@ -48,7 +48,24 @@
         ></mds-filter-swatch>
     </div>
     <div class="g-l-70"><mds-hightlight-prism [code]="swatchComponent" language="html"></mds-hightlight-prism></div>
-    <div class="g-l-12"><a routerLink="/filter-components/swatch">More Info</a></div>
+    <div class="g-l-12"><small><a routerLink="/filter-components/swatch">More Info</a></small></div>
+</div>
+<hr/>
+
+<p><b>Range Slider Component</b></p>
+<div class="mds-grid margin-b-0">
+    <div class="g-l-30">
+        <mds-filter-range-slider
+            [label]="'Filter by something'"
+            [min]="filterRangeSelected.min"
+            [max]="filterRangeSelected.max"
+            [start]="filterRangeSelected.start"
+            [end]="filterRangeSelected.end"
+            [disabled]="false"
+        ></mds-filter-range-slider>
+    </div>
+    <div class="g-l-70"><mds-hightlight-prism [code]="rangeSliderComponent" language="html"></mds-hightlight-prism></div>
+    <div class="g-l-12"><small><a routerLink="/filter-components/range-slider">More Info</a></small></div>
 </div>
 <hr/>
 
@@ -56,7 +73,7 @@
 <div class="mds-grid">
     <div class="g-l-30"><mds-filter-reset [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset></div>
     <div class="g-l-70"><mds-hightlight-prism [code]="resetComponent" language="html"></mds-hightlight-prism></div>
-    <div class="g-l-12"><a routerLink="/filter-components/reset">More Info</a></div>
+    <div class="g-l-12"><small><a routerLink="/filter-components/reset">More Info</a></small></div>
 </div>
 
 <p><i>Variable <b>sampledata</b> values is <a href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts">constant/proucts.ts</a>.</i></p>

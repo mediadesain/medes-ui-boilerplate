@@ -14,6 +14,10 @@ export class ResetAllComponent {
 
 componentdemo = `
 <!-- Reset Filter Component -->
-<mds-filter-reset [class]="'btn btn-primary'" [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset>`;
+<mds-filter-reset [class]="'btn btn-primary'"
+  [content]="'Reset All'"
+  [(filterSelected)]="selected"
+  [(filterRangeSelected)]="rangeSelected"
+></mds-filter-reset>`;
 
 }

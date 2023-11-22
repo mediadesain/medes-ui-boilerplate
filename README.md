@@ -12,6 +12,12 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
+### X.X.X - (Next Release)
+- New Component - Filter Range Slider
+- Component Enhancement - Reset Filter able to reset new filter range slider
+- New Pipe - filter data base on min & max value
+### 13.0.4 (Patch - 231114)
+- Patch medes-ui lib 13.0.4 (include for changes 14.0.2)
 ### 14.0.2 - (Release - 231114)
 - Fix Close Button Modal styling on fullscreen mode
 - Add getMinMax() funtion to MdsNumberUtils, for searching min & max values from array of numbers
