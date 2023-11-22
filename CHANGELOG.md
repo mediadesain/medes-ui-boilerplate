@@ -1,3 +1,8 @@
+### Takedown & Republish library (Republish - 231122)
+- All medes-ui libraries version major version will be renamed put to minor
+- For example 13.0.1 will be changed to 1.13.1, if example version 14.0.2 will be 1.14.2
+### 13.0.4 (Patch - 231114)
+- Patch medes-ui lib 13.0.4 (include for changes 14.0.2)
 ### 14.0.2 - (Release - 231114)
 - Fix Close Button Modal styling on fullscreen mode
 - Add getMinMax() funtion to MdsNumberUtils, for searching min & max values from array of numbers
