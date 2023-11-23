@@ -77,7 +77,7 @@ import { MdsFilterModule } from 'medes-ui';
 @NgModule({
   declarations: [ ... ],
   imports: [
-    MdsFilterModule
+    MdsFilterModule  // Ignore importing module if using standalone component
   ]
 })
 

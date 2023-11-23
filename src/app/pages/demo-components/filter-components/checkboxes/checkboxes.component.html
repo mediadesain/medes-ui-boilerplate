@@ -3,19 +3,17 @@
 <hr/>
 
 <div class="mds-grid">
-    <div class="g-l-12">
+    <div class="g-l-70">
         <b>Component</b>
         <mds-hightlight-prism [code]="samplecomponent" language="typescript"></mds-hightlight-prism>
     </div>
-    <div class="g-l-70">
+    <div class="g-l-30">
         <b>HTML</b>
         <mds-hightlight-prism [code]="componentdemo" language="html"></mds-hightlight-prism>
-    </div>
-    <div class="g-l-30">
         <b>Preview</b>
         <mds-filter-checkbox
             [filterData]="sampledata"
-            [filterBy]="keys"
+            [filterBy]="peropKeys"
             [filterSelected]="selected"
             [titlegroup]="'Filter by'"
             [reset]="'✕'"
