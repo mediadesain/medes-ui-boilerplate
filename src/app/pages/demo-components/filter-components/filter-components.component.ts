@@ -1,17 +1,16 @@
 import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MdsFilterCheckboxComponent, MdsFilterResetComponent, MdsFilterSwatchComponent, MdsHightlightPrismModule } from 'medes-ui';
-import { MdsFilterRangeSliderComponent } from 'projects/medes-ui/src/lib/mds-filter/filter-range-slider/filter-range-slider.component';
-import { SelectedFilterSliderInterface } from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
 import { SampleProductsData } from 'src/app/shared/constant/products';
+import { MdsFilterCheckboxComponent, MdsFilterResetComponent, MdsFilterSwatchComponent, MdsHightlightPrismModule, MdsFilterRangeSliderComponent } from 'medes-ui';
+import { SelectedFilterSliderInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
 
 @Component({
   selector: 'mds-filter-components',
   templateUrl: './filter-components.component.html',
   styleUrls: ['./filter-components.component.scss'],
   standalone: true,
-  imports: [RouterModule, JsonPipe,MdsHightlightPrismModule, MdsFilterCheckboxComponent, MdsFilterSwatchComponent, MdsFilterRangeSliderComponent, MdsFilterResetComponent]
+  imports: [RouterModule, JsonPipe, MdsHightlightPrismModule, MdsFilterCheckboxComponent, MdsFilterSwatchComponent, MdsFilterRangeSliderComponent, MdsFilterResetComponent]
 })
 export class FilterComponentsComponent implements OnInit {
   sampledata = [];
@@ -27,7 +26,7 @@ export class FilterComponentsComponent implements OnInit {
   };
   filterRangeSelected: SelectedFilterSliderInterface = {
     min: 20,
-    max: 100,
+    max: 120,
     start: 25,
     end: 50
   };
@@ -37,7 +36,7 @@ checkboxComponent = `
 <mds-filter-checkbox
   [titlegroup]="'Filter by'"
   [filterData]="sampledata"
-  [filterBy]="['gender','category']"
+  [filterBy]="['category']"
   [filterSelected]="selected"
   [reset]="'✕'"
   [hideCounter]="false"
@@ -68,7 +67,11 @@ rangeSliderComponent = `
 
 resetComponent = `
 <!-- Reset Filter Component -->
-<mds-filter-reset [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset>`;
+<mds-filter-reset
+  [content]="'Reset All'"
+  [(filterSelected)]="selected"
+  [(filterRangeSelected)]="filterRangeSelected">
+</mds-filter-reset>`;
 
 
 importmodule = `

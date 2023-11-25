@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsFilterCheckboxComponent, MdsHightlightPrismModule } from 'medes-ui';
 import { SelectedFilterInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
-import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
 
 @Component({
   selector: 'mds-checkboxes',
@@ -46,7 +46,7 @@ componentdemo = `
 <mds-filter-checkbox
   [titlegroup]="'Filter by'"
   [filterData]="sampledata"
-  [filterBy]="keys"
+  [filterBy]="peropKeys"
   [filterSelected]="selected"
   [reset]="'✕'"
   [hideCounter]="false"

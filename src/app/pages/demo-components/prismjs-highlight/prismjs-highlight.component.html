@@ -13,9 +13,9 @@
         <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th>Support Version</th>
     </tr>
     <tr *ngFor="let item of [
-        {attribute: 'code', type: 'string', default: '', description: 'Code to hightlight', version: 'medes-ui@13.0.0 >'},
-        {attribute: 'language', type: 'Spesific String, options are:<br/><i>\'html\' | \'markup\' | \'javascript\' | \'typescript\' | \'java\' | \'css\' | \'sass\' | \'scss\' | \'ruby\' | \'swift\' | \'sql\' | \'python\'</i> ', default: '', description: 'Language type to show as prevew code',version: 'medes-ui@13.0.0 >'},
-        {attribute: 'heightHighlight', type: 'number', default: '∞', description: 'Maximal height', version: 'medes-ui@14.0.1 >'}
+        {attribute: 'code', type: 'string', default: '', description: 'Code to hightlight', version: 'medes-ui@1.13.0 >'},
+        {attribute: 'language', type: 'Spesific String, options are:<br/><i>\'html\' | \'markup\' | \'javascript\' | \'typescript\' | \'java\' | \'css\' | \'sass\' | \'scss\' | \'ruby\' | \'swift\' | \'sql\' | \'python\'</i> ', default: '', description: 'Language type to show as prevew code',version: 'medes-ui@1.13.0 >'},
+        {attribute: 'heightHighlight', type: 'number', default: '∞', description: 'Maximal height', version: 'medes-ui@1.14.1 >'}
     ]">
         <td mds-th-title="Attribute">{{item.attribute}}</td>
         <td mds-th-title="Data Type"><span [innerHTML]="item.type"></span></td>
