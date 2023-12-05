@@ -9,7 +9,7 @@
     </div>
     <div class="g-l-30">
         <b>Output</b>
-        <mds-filter-reset [class]="'btn btn-primary'" [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset>
+        <mds-filter-reset [class]="'btn btn-primary'" [content]="'Reset All'" [(filterSelected)]="filterSelected" [(filterRangeSelected)]="filterRangeSelected"></mds-filter-reset>
     </div>
 </div>
 
@@ -19,7 +19,8 @@
         <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th>Support Version</th>
     </tr>
     <tr *ngFor="let item of [
-        {attribute: 'filterSelected', type: 'Array', default: '∞', description: 'Sample data for create swatch filter', version: 'medes-ui@1.13.0 >'},
+        {attribute: 'filterSelected?', type: 'Object of SelectedFilterInterface', default: '∞', description: 'Filter data selected', version: 'medes-ui@1.13.0 >'},
+        {attribute: 'filterRangeSelected?', type: 'Object of SelectedFilterSliderInterface', default: '∞', description: 'Filter range data selected', version: 'medes-ui@1.14.3 >'},
         {attribute: 'class?', type: 'String', default: '∞', description: 'Classes list for button', version: 'medes-ui@1.13.0 >'},
         {attribute: 'content?', type: 'String', default: '\'Reset Filter\'', description: 'Label content for reset button', version: 'medes-ui@1.14.1 >'}
     ]">

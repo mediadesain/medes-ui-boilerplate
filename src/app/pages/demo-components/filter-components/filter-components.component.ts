@@ -1,15 +1,16 @@
 import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MdsFilterCheckboxComponent, MdsFilterResetComponent, MdsFilterSwatchComponent, MdsHightlightPrismModule } from 'medes-ui';
 import { SampleProductsData } from 'src/app/shared/constant/products';
+import { MdsFilterCheckboxComponent, MdsFilterResetComponent, MdsFilterSwatchComponent, MdsHightlightPrismModule, MdsFilterRangeSliderComponent } from 'medes-ui';
+import { SelectedFilterSliderInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
 
 @Component({
   selector: 'mds-filter-components',
   templateUrl: './filter-components.component.html',
   styleUrls: ['./filter-components.component.scss'],
   standalone: true,
-  imports: [RouterModule, JsonPipe,MdsHightlightPrismModule, MdsFilterCheckboxComponent, MdsFilterSwatchComponent, MdsFilterResetComponent]
+  imports: [RouterModule, JsonPipe, MdsHightlightPrismModule, MdsFilterCheckboxComponent, MdsFilterSwatchComponent, MdsFilterRangeSliderComponent, MdsFilterResetComponent]
 })
 export class FilterComponentsComponent implements OnInit {
   sampledata = [];
@@ -23,13 +24,19 @@ export class FilterComponentsComponent implements OnInit {
       purple: '#6a66bb',
       gold: '#b6ab66'
   };
+  filterRangeSelected: SelectedFilterSliderInterface = {
+    min: 20,
+    max: 120,
+    start: 25,
+    end: 50
+  };
 
 checkboxComponent = `
 <!-- Filter Checkboxes Component - Multiple Group -->
 <mds-filter-checkbox
   [titlegroup]="'Filter by'"
   [filterData]="sampledata"
-  [filterBy]="['gender','category']"
+  [filterBy]="['category']"
   [filterSelected]="selected"
   [reset]="'✕'"
   [hideCounter]="false"
@@ -47,9 +54,24 @@ swatchComponent = `
   [swatchRadius]="25"
 ></mds-filter-swatch>`;
 
+rangeSliderComponent = `
+<!-- Demo Filter Range Slider Component -->
+<mds-filter-range-slider
+  [label]="'Filter by something'"
+  [min]="20"
+  [max]="100"
+  [start]="25"
+  [end]="40"
+  [disabled]="false"
+></mds-filter-range-slider>`;
+
 resetComponent = `
 <!-- Reset Filter Component -->
-<mds-filter-reset [content]="'Reset All'" [(filterSelected)]="selected"></mds-filter-reset>`;
+<mds-filter-reset
+  [content]="'Reset All'"
+  [(filterSelected)]="selected"
+  [(filterRangeSelected)]="filterRangeSelected">
+</mds-filter-reset>`;
 
 
 importmodule = `
@@ -58,7 +80,7 @@ import { MdsFilterModule } from 'medes-ui';
 @NgModule({
   declarations: [ ... ],
   imports: [
-    MdsFilterModule
+    MdsFilterModule  // Ignore importing module if using standalone component
   ]
 })
 

@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MdsFilterSwatchComponent, MdsHightlightPrismModule } from 'medes-ui';
-import { SampleProductsData } from 'src/app/shared/constant/products';
+import { SelectedFilterInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
+import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
 
 @Component({
   selector: 'mds-swatch',
@@ -11,18 +12,9 @@ import { SampleProductsData } from 'src/app/shared/constant/products';
   imports: [CommonModule, MdsHightlightPrismModule, MdsFilterSwatchComponent]
 })
 export class SwatchComponent implements OnInit {
-  sampledata: {
-    brand: string,
-    category: string | string[],
-    color: string,
-    gender: string,
-    id: string,
-    picture: string,
-    price: number,
-    name: string
-  }[];
-  key = 'color';
-  selected: {[key: string]: string[]} = {};
+  sampledata: ProductDataModel[];
+  selected: SelectedFilterInterface = {};
+  peropKey = 'color';
   colormap: {[key: string]: string} = {
     'blue-sky': '#66ccdd',
     maroon: '#bb6a66',
@@ -33,17 +25,27 @@ export class SwatchComponent implements OnInit {
   };
 
 samplecomponent = `
-export class MyComponent implements OnInit {
+import { MdsFilterSwatchComponent } from 'medes-ui';
+
+@Component({
+  selector: 'mds-my-component',
+  templateUrl: './mds-my-component.component.html',
+  styleUrls: ['./mds-my-component.component.scss'],
+  standalone: true,
+  imports: [MdsFilterSwatchComponent] // import here if standalone component is true
+})
+
+export class MyComponent {
 ...
   // Sample datas, keys to filter and filter selected
-  sampledata: any[] = [
+  sampledata: ProductDataModel[] = [
     { "brand": "puma", "category": "tshirt", "color": "brown", "gender": "unisex", "id": "62122871cb242f1f01d916f9", "picture": "https://picsum.photos/400?image=172", "price": 1851.141, "name": "Herminia Ray" },
     { "brand": "puma", "category": "accesoriss", "color": "purple,brown", "gender": "women", "id": "621228716682ceb404a69e75", "picture": "https://picsum.photos/400?image=702", "price": 1513.896, "name": "Brittany Neal" },
     { "brand": "puma", "category": "tshirt", "color": "blue sky", "gender": "men", "id": "62122871b37e4c94421a90b9", "picture": "https://picsum.photos/400?image=665", "price": 1879.761, "name": "Mamie Ballard" },
     ...
   ]; // Full data https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts
-  key: string = 'color';
-  selected: {[key: string]: string[]} = ${JSON.stringify(this.selected)};
+  peropKey: string = 'color';
+  selected: SelectedFilterInterface = ${JSON.stringify(this.selected)};
   colormap: {[key: string]: string} = {
     'blue-sky': '#66ccdd',
     maroon: '#bb6a66',
@@ -59,7 +61,7 @@ componentdemo = `
 <mds-filter-swatch
   [titlegroup]="'Filter by Color'"
   [filterData]="sampledata"
-  [filterBy]="key"
+  [filterBy]="peropKey"
   [filterSelected]="selected"
   [swatchMapping]="colormap"
   [swatchSize]="30"
