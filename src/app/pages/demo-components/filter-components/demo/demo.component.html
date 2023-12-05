@@ -8,9 +8,17 @@
         <input #name="ngModel" [ngModelOptions]="{updateOn:'change'}" ngModel placeholder="Search Name" style="width: 100%; margin-bottom: 1em;" />
         <!-- Demo Filter Checkboxes Component - Multiple Group -->
         <mds-filter-checkbox
-            [titlegroup]="'Filter by'"
+            [titlegroup]="'Filter by Gender'"
             [filterData]="sampledata"
-            [filterBy]="['gender','category']"
+            [filterBy]="'gender'"
+            [filterSelected]="filterSelected"
+            [reset]="'✕'"
+            [hideCounter]="false"
+        ></mds-filter-checkbox>
+        <mds-filter-checkbox
+            [titlegroup]="'Filter by Category'"
+            [filterData]="sampledata"
+            [filterBy]="'category'"
             [filterSelected]="filterSelected"
             [reset]="'✕'"
             [hideCounter]="false"
@@ -36,8 +44,9 @@
         
         <!-- Demo Filter Checkboxes Component - Single Group -->
         <mds-filter-checkbox
+            [titlegroup]="'Filter by Brand'"
             [filterData]="sampledata"
-            [filterBy]="['brand']"
+            [filterBy]="'brand'"
             [filterSelected]="filterSelected"
             [hideCounter]="true"
         ></mds-filter-checkbox>

@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdsFilterRangeSliderComponent } from 'projects/medes-ui/src/lib/mds-filter/filter-range-slider/filter-range-slider.component';
-import { SelectedFilterSliderInterface } from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
-import { MdsHightlightPrismModule } from 'medes-ui';
+import { MdsFilterRangeSliderComponent, MdsHightlightPrismModule } from 'medes-ui';
+import { SelectedFilterSliderInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
 
 @Component({
   selector: 'mds-demo-filter-range-slider',

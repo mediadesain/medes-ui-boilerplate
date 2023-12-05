@@ -16,19 +16,19 @@
 <b>Properties</b>
 <table class="mds-table">
     <tr>
-        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th>Support Version</th>
+        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="min-width: 200px;">Support Version</th>
     </tr>
     <tr *ngFor="let item of [
         {attribute: 'filterSelected?', type: 'Object of SelectedFilterInterface', default: '∞', description: 'Filter data selected', version: 'medes-ui@1.13.0 >'},
-        {attribute: 'filterRangeSelected?', type: 'Object of SelectedFilterSliderInterface', default: '∞', description: 'Filter range data selected', version: 'medes-ui@1.14.3 >'},
+        {attribute: 'filterRangeSelected? <span class=\'new-beadge margin-l-1\'>New</span>', type: 'Object of SelectedFilterSliderInterface', default: '∞', description: 'Filter range data selected', version: 'medes-ui@1.14.3 >'},
         {attribute: 'class?', type: 'String', default: '∞', description: 'Classes list for button', version: 'medes-ui@1.13.0 >'},
         {attribute: 'content?', type: 'String', default: '\'Reset Filter\'', description: 'Label content for reset button', version: 'medes-ui@1.14.1 >'}
     ]">
-        <td mds-th-title="Attribute">{{item.attribute}}</td>
+        <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
         <td mds-th-title="Data Type">{{item.type}}</td>
         <td mds-th-title="Default">{{item.default}}</td>
         <td mds-th-title="Description">{{item.description}}</td>
-        <td mds-th-title="Support version">{{item.version}}</td>
+        <td mds-th-title="Support version" [innerHtml]="item.version"></td>
     </tr>
 </table>
 <small>

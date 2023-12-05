@@ -1,10 +1,10 @@
-<div class="list-group" *ngFor="let group of menu">
-    <b>{{group.title}}:</b>
+<div class="list-group" *ngFor="let group of menu; let i = index;">
+    <b>{{group.title}}</b> <small *ngIf="i === 0"> - (v.1.14.3)</small>
     <ul>
         <!--[routerLinkActiveOptions]="{exact: true}"-->
         <li routerLinkActive="active" *ngFor="let link of group.links" (click)="resetScroll()">
             <a [routerLink]="link.url" [innerHTML]="link.text"></a>
-            <span *ngIf="link.isNew" class="new-beadge">New</span>
+            <span *ngIf="link.isNew" class="new-beadge" style="float: right;">New</span>
         </li>
     </ul>
 </div>

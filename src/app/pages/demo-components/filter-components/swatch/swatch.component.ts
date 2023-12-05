@@ -37,7 +37,7 @@ import { MdsFilterSwatchComponent } from 'medes-ui';
 
 export class MyComponent {
 ...
-  // Sample datas, keys to filter and filter selected
+  // Sample datas, key to filter and filter selected
   sampledata: ProductDataModel[] = [
     { "brand": "puma", "category": "tshirt", "color": "brown", "gender": "unisex", "id": "62122871cb242f1f01d916f9", "picture": "https://picsum.photos/400?image=172", "price": 1851.141, "name": "Herminia Ray" },
     { "brand": "puma", "category": "accesoriss", "color": "purple,brown", "gender": "women", "id": "621228716682ceb404a69e75", "picture": "https://picsum.photos/400?image=702", "price": 1513.896, "name": "Brittany Neal" },

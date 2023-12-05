@@ -2,7 +2,7 @@ import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsFilterCheckboxComponent, MdsFilterResetComponent, MdsFilterSwatchComponent, MdsHightlightPrismModule, MdsFilterRangeSliderComponent } from 'medes-ui';
+import { MdsHightlightPrismModule, MdsFilterModule } from 'medes-ui';
 import { SelectedFilterSliderInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
 
 @Component({
@@ -10,12 +10,11 @@ import { SelectedFilterSliderInterface } from 'medes-ui/lib/mds-filter/mds-filte
   templateUrl: './filter-components.component.html',
   styleUrls: ['./filter-components.component.scss'],
   standalone: true,
-  imports: [RouterModule, JsonPipe, MdsHightlightPrismModule, MdsFilterCheckboxComponent, MdsFilterSwatchComponent, MdsFilterRangeSliderComponent, MdsFilterResetComponent]
+  imports: [RouterModule, JsonPipe, MdsHightlightPrismModule, MdsFilterModule]
 })
 export class FilterComponentsComponent implements OnInit {
   sampledata = [];
   selected = {};
-  key = 'color';
   colormap = {
       'blue-sky': '#66ccdd',
       maroon: '#bb6a66',
@@ -34,9 +33,9 @@ export class FilterComponentsComponent implements OnInit {
 checkboxComponent = `
 <!-- Filter Checkboxes Component - Multiple Group -->
 <mds-filter-checkbox
-  [titlegroup]="'Filter by'"
+  [titlegroup]="'Filter by Category'"
   [filterData]="sampledata"
-  [filterBy]="['category']"
+  [filterBy]="'category'"
   [filterSelected]="selected"
   [reset]="'✕'"
   [hideCounter]="false"
@@ -47,7 +46,7 @@ swatchComponent = `
 <mds-filter-swatch
   [titlegroup]="'Filter by Color'"
   [filterData]="sampledata"
-  [filterBy]="key"
+  [filterBy]="'color'"
   [filterSelected]="selected"
   [swatchMapping]="colormap"
   [swatchSize]="30"
@@ -60,8 +59,8 @@ rangeSliderComponent = `
   [label]="'Filter by something'"
   [min]="20"
   [max]="100"
-  [start]="25"
-  [end]="40"
+  [(start)]="25"
+  [(end)]="40"
   [disabled]="false"
 ></mds-filter-range-slider>`;
 

@@ -15,7 +15,7 @@ import { SelectedFilterInterface } from 'medes-ui/lib/mds-filter/mds-filter.inte
 export class CheckboxesComponent implements OnInit {
   sampledata: ProductDataModel[];
   selected: SelectedFilterInterface = {};
-  peropKeys: string[] = ['gender', 'category'];
+  peropKey: string = 'category';
 
 samplecomponent = `
 import { MdsFilterCheckboxComponent } from 'medes-ui';
@@ -30,23 +30,23 @@ import { MdsFilterCheckboxComponent } from 'medes-ui';
 
 export class MyComponent {
 ...
-  // Sample datas, keys to filter and filter selected
+  // Sample datas, key to filter and filter selected
   sampledata: ProductDataModel[] = [
     { "brand": "puma", "category": "tshirt", "color": "brown", "gender": "unisex", "id": "62122871cb242f1f01d916f9", "picture": "https://picsum.photos/400?image=172", "price": 1851.141, "name": "Herminia Ray" },
     { "brand": "puma", "category": "accesoriss", "color": "purple,brown", "gender": "women", "id": "621228716682ceb404a69e75", "picture": "https://picsum.photos/400?image=702", "price": 1513.896, "name": "Brittany Neal" },
     { "brand": "puma", "category": "tshirt", "color": "blue sky", "gender": "men", "id": "62122871b37e4c94421a90b9", "picture": "https://picsum.photos/400?image=665", "price": 1879.761, "name": "Mamie Ballard" },
     ...
   ]; // Full data https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts
-  selected: SelectedFilterInterface = ${JSON.stringify(this.selected)};
-  peropKeys: string[] = ['gender','category'];
+  selected: SelectedFilterInterface = {};
+  peropKey: string = 'category';
 ...
 }`;
 componentdemo = `
 <!-- Filter Checkboxes Component -->
 <mds-filter-checkbox
-  [titlegroup]="'Filter by'"
+  [titlegroup]="'Filter by Category'"
   [filterData]="sampledata"
-  [filterBy]="peropKeys"
+  [filterBy]="peropKey"
   [filterSelected]="selected"
   [reset]="'✕'"
   [hideCounter]="false"

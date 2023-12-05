@@ -26,7 +26,7 @@ export class AsideComponent {
       title: 'Filter Components',
       links: [
         {text: 'Intro', url: '/filter-components/intro'},
-        {text: 'Checkboxes Filter', url: '/filter-components/checkboxes'},
+        {text: 'Checkboxes Filter', url: '/filter-components/checkboxes', isNew: true},
         {text: 'Swatch Filter', url: '/filter-components/swatch'},
         {text: 'Range Slider', url: '/filter-components/range-slider', isNew: true},
         {text: 'Reset Filter', url: '/filter-components/reset', isNew: true},

@@ -1,3 +1,9 @@
+### 1.14.4 (Release - 231205)
+- New Component - Filter Range Slider
+- Component Enhancement - Checkbox Filter Component attribute filterBy only support single key/property (string) 
+- Component Enhancement - Reset Filter able to reset new filter range slider
+- Component Enhancement - Add error message if required value not setted
+- New Pipe - filter data base on min & max value
 ### 1.14.3-beta.1 - (Next Release)
 - New Component - Filter Range Slider
 - Component Enhancement - Reset Filter able to reset new filter range slider

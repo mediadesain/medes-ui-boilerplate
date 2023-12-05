@@ -4,7 +4,7 @@
 <ul>
     <li>Filter Checkbox Component <i><small>&lt;mds-filter-checkbox ... &gt;&lt;/mds-filter-checkbox&gt;</small></i></li>
     <li>Filter Swatch Component <i><small>&lt;mds-filter-swatch ... &gt;&lt;/mds-filter-swatch&gt;</small></i></li>
-    <li>Filter Range Slider Component <i><small>&lt;mds-filter-range-slider ... &gt;&lt;/mds-filter-range-slider&gt;</small></i></li>
+    <li>Filter Range Slider Component <i><small>&lt;mds-filter-range-slider ... &gt;&lt;/mds-filter-range-slider&gt;</small></i><span class="new-beadge margin-l-1">New</span></li>
     <li>Reset Filter Component <i><small>&lt;mds-filter-reset ... &gt;&lt;/mds-filter-reset&gt;</small></i></li>
 </ul>
 <p>Put sample data, key to filter and selected filter object. Put selected filter object to *ngFor loop to <a [routerLink]="'/pipe/filter'">filter pipe</a> from medes-ui.</p>
@@ -22,9 +22,9 @@
 <div class="mds-grid margin-b-0">
     <div class="g-l-30">
         <mds-filter-checkbox
-            [titlegroup]="'Filter by'"
+            [titlegroup]="'Filter by Category'"
             [filterData]="sampledata"
-            [filterBy]="['category']"
+            [filterBy]="'category'"
             [filterSelected]="selected"
             [reset]="'✕'"
             [hideCounter]="false"
@@ -42,7 +42,7 @@
             [titlegroup]="'Filter by Color'"
             [filterData]="sampledata"
             [filterSelected]="selected"
-            [filterBy]="['color']"
+            [filterBy]="'color'"
             [swatchMapping]="colormap"
             [swatchSize]="30"
             [swatchRadius]="25"
@@ -53,15 +53,15 @@
 </div>
 <hr/>
 
-<p><b>Range Slider Component</b></p>
+<p><b>Range Slider Component</b> <span class="new-beadge margin-l-1">New</span></p>
 <div class="mds-grid margin-b-0">
     <div class="g-l-30">
         <mds-filter-range-slider
             [label]="'Filter by something'"
             [min]="filterRangeSelected.min"
             [max]="filterRangeSelected.max"
-            [start]="filterRangeSelected.start"
-            [end]="filterRangeSelected.end"
+            [(start)]="filterRangeSelected.start"
+            [(end)]="filterRangeSelected.end"
             [disabled]="false"
         ></mds-filter-range-slider>
     </div>
@@ -83,5 +83,6 @@
 <mds-hightlight-prism [code]="'
 // Output filter Object
 selected ='+(selected|json)+'
-// Output use for filering on loop item with filter pipe (*ngFor=\'let data of sampledata|mdsFilter:selected\')'" language="javascript"></mds-hightlight-prism>
+filterRangeSelected ='+(filterRangeSelected|json)+'
+// Output is useable for filering data item with MdsFilter (*ngFor=\'let data of sampledata|mdsFilter:selected|mdsFilterRange:param\')'" language="javascript"></mds-hightlight-prism>
 

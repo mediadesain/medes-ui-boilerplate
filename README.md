@@ -17,6 +17,12 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
+### 1.14.4 (Release - 231205)
+- New Component - Filter Range Slider
+- Component Enhancement - Checkbox Filter Component attribute filterBy only support single key/property (string) 
+- Component Enhancement - Reset Filter able to reset new filter range slider
+- Component Enhancement - Add error message if required value not setted
+- New Pipe - filter data base on min & max value
 ### 1.14.3-beta.1 - (Next Release)
 - New Component - Filter Range Slider
 - Component Enhancement - Reset Filter able to reset new filter range slider

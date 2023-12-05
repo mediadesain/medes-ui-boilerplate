@@ -2,7 +2,40 @@
 <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
 
 <hr/>
-
+<ol>
+    <li>Import Prismjs stylesheets, choose one from these option:
+        <mds-hightlight-prism [code]="'
+/*-- Select options for prismjs stylesheet --*/
+@import \'node_modules/prismjs/themes/prism-okaidia.min\';
+// @import \'node_modules/prismjs/themes/prism-coy\';
+// @import \'node_modules/prismjs/themes/prism-coy.min\';
+// @import \'node_modules/prismjs/themes/prism-dark.min\';
+// @import \'node_modules/prismjs/themes/prism-funky.min\';
+// @import \'node_modules/prismjs/themes/prism-solarizedlight.min\';
+// @import \'node_modules/prismjs/themes/prism-tomorrow.min\';
+// @import \'node_modules/prismjs/themes/prism-twilight.min\';
+// @import \'node_modules/prismjs/themes/prism.min\';'" language="scss"></mds-hightlight-prism>
+    </li>
+    <li>
+        <ul>
+            <li>Import stylesheet on main <i>styles.scss</i>.
+                <mds-hightlight-prism [code]="'
+@import \'node_modules/prismjs/themes/prism-okaidia.min.css\';'" language="scss"></mds-hightlight-prism>
+            </li>
+            <li>Or import stylesheet to <i>angular.json</i>.
+                <mds-hightlight-prism [code]="'
+...
+\'styles\': [
+    \'src/styles.scss\',
+    \'./node_modules/medes-ui/assets/scss/medes-ui.scss\',
+    \'./node_modules/medes-ui/assets/scss/ui-colorscheme.scss\',
+    \'./node_modules/prismjs/themes/prism-okaidia.min.css\' // Put stylesheet here
+],
+...'" language="javascript"></mds-hightlight-prism>
+            </li>
+        </ul>
+    </li>
+</ol>
 <b>Module</b>
 <mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism>
 <b>HTML Component</b>
@@ -10,7 +43,7 @@
 <b>Properties</b>
 <table class="mds-table">
     <tr>
-        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th>Support Version</th>
+        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="min-width: 200px;">Support Version</th>
     </tr>
     <tr *ngFor="let item of [
         {attribute: 'code', type: 'string', default: '', description: 'Code to hightlight', version: 'medes-ui@1.13.0 >'},
