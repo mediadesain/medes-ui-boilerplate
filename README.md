@@ -17,6 +17,9 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
+### 1.13.6 - LTS (Patch - 241030)
+- Include changes medes-ui@1.14.4
+- LTS For 1.13 will be end utill 2024 year end
 ### 1.14.4 (Release - 231205)
 - New Component - Filter Range Slider
 - Component Enhancement - Checkbox Filter Component attribute filterBy only support single key/property (string) 

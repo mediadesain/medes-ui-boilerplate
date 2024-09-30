@@ -1,3 +1,6 @@
+### 1.13.6 - LTS (Patch - 241030)
+- Include changes medes-ui@1.14.4
+- LTS For 1.13 will be end utill 2024 year end
 ### 1.14.4 (Release - 231205)
 - New Component - Filter Range Slider
 - Component Enhancement - Checkbox Filter Component attribute filterBy only support single key/property (string) 
