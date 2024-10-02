@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'medes-ui';
-/*-- Medes Team Only --*/
-// import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'projects/medes-ui/src/public-api';
+/*-- Import medes-ui --*/ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'medes-ui';
+// /*-- Medes Team Only --*/ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'projects/medes-ui/src/public-api';
 
 
 @Component({

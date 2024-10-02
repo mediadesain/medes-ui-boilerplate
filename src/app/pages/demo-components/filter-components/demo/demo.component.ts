@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsNumberUtils } from 'medes-ui';
-import { SelectedFilterInterface, SelectedFilterSliderInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
-// Medes Team Only
-// import { MdsFilterModule, MdsHightlightPrismModule, MdsPipesModule, MdsNumberUtils } from 'projects/medes-ui/src/public-api';
-// import { SelectedFilterInterface, SelectedFilterSliderInterface } from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
+/*-- Import medes-ui --*/ import { MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsNumberUtils } from 'medes-ui';
+/*-- Import medes-ui --*/ import { SelectedFilterInterface, SelectedFilterSliderInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
+// /*-- Medes Team Only --*/ import { MdsFilterModule, MdsHightlightPrismModule, MdsPipesModule, MdsNumberUtils } from 'projects/medes-ui/src/public-api';
+// /*-- Medes Team Only --*/ import { SelectedFilterInterface, SelectedFilterSliderInterface } from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
 
 @Component({
   selector: 'mds-demo',

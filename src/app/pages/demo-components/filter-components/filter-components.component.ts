@@ -2,8 +2,10 @@ import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsHightlightPrismModule, MdsFilterModule } from 'medes-ui';
-import { SelectedFilterSliderInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
+/*-- Import medes-ui --*/ import { MdsHightlightPrismModule, MdsFilterModule } from 'medes-ui';
+/*-- Import medes-ui --*/ import { SelectedFilterSliderInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
+// /*-- Medes Team Only --*/ import { MdsFilterModule, MdsHightlightPrismModule } from 'projects/medes-ui/src/public-api';
+// /*-- Medes Team Only --*/ import { SelectedFilterSliderInterface } from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
 
 @Component({
   selector: 'mds-filter-components',

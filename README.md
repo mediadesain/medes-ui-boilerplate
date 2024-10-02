@@ -17,7 +17,10 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
-### 1.13.6 - LTS (Patch - 241030)
+### 1.15.0 (Release - 231002)
+- Update minor version to 15
+- Update medes-ui to Angular 15
+### 1.13.6 - LTS (Patch - 240930)
 - Include changes medes-ui@1.14.4
 - LTS For 1.13 will be end utill 2024 year end
 ### 1.14.4 (Release - 231205)
@@ -34,33 +37,3 @@ More detail about the changes writen on [changelog](https://github.com/mediadesa
 ### Takedown & Republish library (Republish - 231123)
 - All medes-ui libraries version major version will be renamed put to minor
 - For example 13.0.1 will be changed to 1.13.1, if example version 14.0.2 will be 1.14.2
-### 13.0.4 (Patch - 231114)
-- Patch medes-ui lib 13.0.4 (include for changes 14.0.2)
-### 14.0.2 - (Release - 231114)
-- Fix Close Button Modal styling on fullscreen mode
-- Add getMinMax() funtion to MdsNumberUtils, for searching min & max values from array of numbers
-- Versioning now is documented
-### 13.0.3 (Patch - 231114)
-- Patch medes-ui lib 13.0.2 (include for changes 14.0.0 - 14.0.1)
-### 14.0.1 - (Release - 231112)
-- Fix Modes Modal Component styling
-- Filter Reset Component content is customizable
-- Code higlight prismjs height is customizable
-- Update documentation to flexbox & scroll top when routing
-- Make medes-ui-boilerplate documentaton able to run for source code porpose, hide medes-ui lib only for medes team
-### 14.0.0 - (Release - 231109)
-- Upgrade library to Angular 14
-- Support angular 14
-- Standalone Component supported
-### 13.0.2 (Release - 231108)
-- Add & Update documentation for Layout Utils, Grid System, Modal
-- Medes Modal Component (beta)
-- Publish lib 13.0.2
-### 13.0.1 - (Release - 231026)
-- Renaming pipe
-- Update documentation for Pipe
-- Publish lib 13.0.1
-### 13.0.0 - (Release - 231023)
-- Upgrade library to Angular 13
-- Multiple Filter Checkbox Removed, upgrade to Filter Components
-- Support angular 13

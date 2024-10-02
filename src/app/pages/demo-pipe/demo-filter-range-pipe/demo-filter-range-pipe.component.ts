@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsFilterRangePipe, MdsHightlightPrismModule } from 'medes-ui';
+/*-- Import medes-ui --*/ import { MdsFilterRangePipe, MdsHightlightPrismModule } from 'medes-ui';
+// /*-- Medes Team Only --*/ import { MdsFilterRangePipe, MdsHightlightPrismModule } from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-filter-range-pipe',

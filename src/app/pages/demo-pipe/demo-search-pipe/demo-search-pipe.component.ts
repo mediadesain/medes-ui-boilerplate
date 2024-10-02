@@ -1,7 +1,8 @@
 import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { MdsHightlightPrismModule, MdsSearchPipe } from 'medes-ui';
 import { SampleProductsData } from 'src/app/shared/constant/products';
+/*-- Import medes-ui --*/ import { MdsHightlightPrismModule, MdsSearchPipe } from 'medes-ui';
+// /*-- Medes Team Only --*/ import { MdsHightlightPrismModule, MdsSearchPipe } from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-search-pipe',

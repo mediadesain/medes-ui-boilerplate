@@ -4,17 +4,25 @@
 
 
 <b>Supported Version:</b>
+<p class="margin-b-0">^x.x.x <i>(Major.Minor.Patch)</i></p>
+<ul class="margin-t-0">
+    <li>Major version is current version of MedesUI</li>
+    <li>Minor version is angular version used for this library</li>
+    <li>Patch version is related new update feature & bug fix</li>
+</ul>
 <table class="mds-table">
     <tr>
-        <th>Version</th><th>Status</th><th>Released</th>
+        <th>Version</th><th>Status</th><th>Released</th><th>End LTS</th>
     </tr>
     <tr *ngFor="let item of [
-        { version: '^1.14.3', status: 'Active', released: '2023-12-05' },
-        { version: '^1.13.4', status: 'LTS', released: '2023-11-22' },
+        { version: '^1.15.0', status: 'Active', released: '2024-10-02' },
+        { version: '^1.14.3', status: 'LTS', released: '2023-12-05', endReleased: '2024-12-31' },
+        { version: '^1.13.6', status: 'LTS', released: '2024-09-30', endReleased: '2024-12-31' },
     ]">
         <td mds-th-title="Version"><span [innerHTML]="item.version"></span></td>
         <td mds-th-title="Status"><span [innerHTML]="item.status"></span></td>
         <td mds-th-title="Released"><span [innerHTML]="item.released"></span></td>
+        <td mds-th-title="End LTS"><span [innerHTML]="item.endReleased"></span></td>
     </tr>
 </table>
 <small>medes-ui v.0.0.1 to v.0.0.3 are no longger supported</small>

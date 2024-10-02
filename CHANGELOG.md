@@ -1,4 +1,7 @@
-### 1.13.6 - LTS (Patch - 241030)
+### 1.15.0 (Release - 231002)
+- Update minor version to 15
+- Update medes-ui to Angular 15
+### 1.13.6 - LTS (Patch - 240930)
 - Include changes medes-ui@1.14.4
 - LTS For 1.13 will be end utill 2024 year end
 ### 1.14.4 (Release - 231205)

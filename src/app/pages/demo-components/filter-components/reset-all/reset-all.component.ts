@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { MdsFilterResetComponent, MdsHightlightPrismModule } from 'medes-ui';
-import { SelectedFilterInterface, SelectedFilterSliderInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
+/*-- Import medes-ui --*/ import { MdsFilterResetComponent, MdsHightlightPrismModule } from 'medes-ui';
+/*-- Import medes-ui --*/ import { SelectedFilterInterface, SelectedFilterSliderInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
+// /*-- Medes Team Only --*/ import { SelectedFilterInterface, SelectedFilterSliderInterface } from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
+// /*-- Medes Team Only --*/ import { MdsFilterResetComponent, MdsHightlightPrismModule } from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-reset-all',
