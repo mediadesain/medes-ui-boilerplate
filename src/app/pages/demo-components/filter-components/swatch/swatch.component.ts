@@ -26,6 +26,18 @@ export class SwatchComponent implements OnInit {
     gold: '#b6ab66'
   };
 
+  importmodule = `
+import { MdsFilterModule } from 'medes-ui';
+
+@NgModule({
+  declarations: [ ... ],
+  imports: [
+    MdsFilterModule  // Ignore importing module if using standalone component
+  ]
+})
+
+export class MyModule { }`;
+
 samplecomponent = `
 import { MdsFilterSwatchComponent } from 'medes-ui';
 

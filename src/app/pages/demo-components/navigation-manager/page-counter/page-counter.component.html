@@ -1,0 +1,61 @@
+<h1>Page Counter Component</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis.</p>
+<hr/>
+
+<h2 class="margin-b-1">Preview Page Navigation Component</h2>
+<div class="margin-b-2">
+    <!-- Demo Medes Page Counter Component -->
+    <small>Total Item </small>
+    <mds-page-counter [pageCountConfig]="[15, 30, 45, 60, 75]" [(pageNavConfig)]="pageNavConfig"></mds-page-counter>
+</div>
+
+<h2>Code</h2>
+<div class="mds-grid">
+    <div class="g-l-30">
+        <b>Module</b>
+        <mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism>
+    </div>
+    <div class="g-l-40">
+        <b>Component</b>
+        <mds-hightlight-prism [code]="samplecomponent" language="typescript"></mds-hightlight-prism>
+    </div>
+    <div class="g-l-30">
+        <b>HTML</b>
+        <mds-hightlight-prism [code]="componentdemo" language="html"></mds-hightlight-prism>
+    </div>
+</div>
+<p><i>Variable <b>data</b> values is <a href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts">constant/proucts.ts</a>.</i></p>
+
+<b>Properties</b>
+<table class="mds-table">
+    <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
+    <tr>
+        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="min-width: 200px;">Support Version</th>
+    </tr>
+    <tr *ngFor="let item of tableDescription">
+        <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
+        <td mds-th-title="Data Type">
+            <ng-container *ngIf="item.type === 'PageNavigationConfigInterface'">
+                <a (click)="openModal('my-modal-1')">{{item.type}}</a>
+            </ng-container>
+            <ng-container *ngIf="item.type !== 'PageNavigationConfigInterface'">
+                {{item.type}}
+            </ng-container>
+        </td>
+        <td mds-th-title="Default">{{item.default}}</td>
+        <td mds-th-title="Description">{{item.description}}</td>
+        <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+    </tr>
+</table>
+<small>
+    <b>Notes:</b>
+    <br/><i>? = Is optional value, if no value will use default value.</i>
+    <br/><i>∞ = Anything base on type</i>
+</small>
+
+<mds-modal id="my-modal-1" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
+    <div class="padding-1">
+        <h3 class="padding-b-1">Minimum Configuration</h3>
+        <mds-hightlight-prism [code]="condigInterface" language="typescript"></mds-hightlight-prism>
+    </div>
+</mds-modal>

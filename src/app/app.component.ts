@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -10,12 +11,15 @@ import { filter } from 'rxjs/operators';
 export class AppComponent {
 
   constructor(
-    private router: Router
+    public router: Router,
+    public location: Location
   ){
+    // Listen active Routing
     this.router.events.pipe(
       filter( e => e instanceof NavigationEnd)
     ).subscribe( (navEnd: NavigationEnd) => {
       document.getElementsByTagName('content')[0].classList.remove('active');
     });
   }
+  
 }

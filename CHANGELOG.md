@@ -1,3 +1,8 @@
+### 1.15.1 (Release - 250601)
+- New Services - Alert Service
+- New Object Util - isEqual()
+- New Angular Components - Page Navigation, Page Counter Component
+- Update documentation
 ### 1.15.0 (Release - 231002)
 - Update minor version to 15
 - Update medes-ui to Angular 15

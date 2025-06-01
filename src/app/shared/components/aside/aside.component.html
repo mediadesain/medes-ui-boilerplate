@@ -1,21 +1,29 @@
-<div class="list-group" *ngFor="let group of menu; let i = index;">
-    <b>{{group.title}}</b> <small *ngIf="i === 0"> - (v.1.15.0)</small>
-    <ul>
-        <!--[routerLinkActiveOptions]="{exact: true}"-->
-        <li routerLinkActive="active" *ngFor="let link of group.links" (click)="resetScroll()">
-            <a [routerLink]="link.url" [innerHTML]="link.text"></a>
-            <span *ngIf="link.isNew" class="new-beadge" style="float: right;">New</span>
-        </li>
-    </ul>
-</div>
+<ng-container *ngFor="let group of menu; let i = index;">
+    <div class="list-group">
+        <b (click)="showHide(group)">{{group.text}}</b> <small *ngIf="i === 0"> - (v.1.15.1)</small>
+        <ul [style.display]="group.isCollapsed ? 'none' : 'block'">
+            <!--[routerLinkActiveOptions]="{exact: true}"-->
+            <li *ngFor="let link of group.urls" (click)="resetScroll()">
+                <a routerLinkActive="active" [routerLink]="link.url" [innerHTML]="link.text"></a>
+                <span *ngIf="link.isNew" class="new-beadge" style="position: absolute;">New</span>
+                <ul class="child" *ngIf="link.urls">
+                    <li *ngFor="let childlink of link.urls">
+                        <a routerLinkActive="active" [routerLink]="childlink.url" [innerHTML]="childlink.text"></a>
+                        <span *ngIf="childlink.isNew" class="new-beadge" style="position: absolute;">New</span>
+                    </li>
+                </ul> 
+            </li>
+        </ul>
+    </div>
+</ng-container>
+
 <div class="list-group">
-    <b>Supported Version</b>
-    <small>
+    <b (click)="isCollapsedVersion = !isCollapsedVersion">Supported Version</b>
+    <small *ngIf="isCollapsedVersion">
         <ul>
             <li><a style="color: var(--swatch-a);" routerLink="/versioning">Versioning & Realeses</a></li>
-            <li><a style="color: var(--swatch-a);" target="_blank" href="https://www.npmjs.com/package/medes-ui"><i class="fas fa-external-link-alt"></i> v.1.15.0 <i>(Latest Release)</i></a></li>
+            <li><a style="color: var(--swatch-a);" target="_blank" href="https://www.npmjs.com/package/medes-ui"><i class="fas fa-external-link-alt"></i> v.1.15.1 <i>(Latest Release)</i></a></li>
             <li><a style="color: var(--swatch-a);" target="_blank" href="https://www.npmjs.com/package/medes-ui/v/1.14.3"><i class="fas fa-external-link-alt"></i> v.1.14.3 <i>(LTS)</i></a></li>
-            <li><a style="color: var(--swatch-a);" target="_blank" href="https://www.npmjs.com/package/medes-ui/v/1.13.6"><i class="fas fa-external-link-alt"></i> v.1.13.6 <i>(LTS)</i></a></li>
             <li><a style="color: var(--swatch-a);" target="_blank" href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md"><i class="fas fa-external-link-alt"></i> Changelog</a></li>
             <!-- <li><a style="color: var(--swatch-a);" target="_blank" href="https://github.com/mediadesain/medes-ui-boilerplate/tree/main/dist/medes-ui"><i class="fas fa-external-link-alt"></i> v0.0.4-beta.x <i>(Beta)</i></a></li> -->
         </ul>

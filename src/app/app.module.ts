@@ -24,4 +24,4 @@ import { VersioningComponent } from './shared/components/versioning/versioning.c
   bootstrap: [AppComponent],
   exports: []
 })
-export class AppModule { }
+export class AppModule {}

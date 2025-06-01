@@ -1,0 +1,12 @@
+.navigation {
+    display: flex;
+    scroll-behavior: smooth;
+    overflow-y: unset;
+    overflow-x: scroll;
+    text-align: center;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

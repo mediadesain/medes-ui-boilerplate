@@ -1,4 +1,4 @@
-<h1>Demo - Medes Filter Components</h1>
+<h1>Demo - Components, Pipes, Services</h1>
 <p>On this demo useing Medes Filter Components <i>(checkbox, swatch, range slider & reset components)</i>, Medes Pipe <i>(mdsFilter, mdsFilterRange, mdsSearch)</i>. Clone repository to get source code <a href="https://github.com/mediadesain/medes-ui-boilerplate">here</a>.</p>
 <hr/>
 
@@ -56,26 +56,34 @@
     </div>
     <!-- MAIN ITEMS CONTENT -->
     <div class="g-l-70">
+        <div class="fullfill-horizontal flex-horizontal justify-between margin-b-1">
+            <small>Total {{(sampledata|mdsFilter:filterSelected|mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected} |mdsSearch:{propertyKey:'name', keyword:name.value}).length}} item/s</small>
+            <div>
+                <small>Show Item </small>
+                <mds-page-counter [pageCountConfig]="[4, 8, 16, 24]" [(pageNavConfig)]="pageNavConfig"></mds-page-counter>
+            </div>
+        </div>
         <div style="text-align: center;">
             <small *ngIf="( sampledata
                 |mdsFilter:filterSelected
-                |mdsFilterRange: {propertyKey: 'price', range: {start: filterRangeSelected.start, end: filterRangeSelected.end}}
+                |mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected}
                 |mdsSearch:{propertyKey:'name', keyword:name.value} ).length === 0 && (filterSelected|json) ==='{}'">
                 No Data Found
             </small>
             <small *ngIf="( sampledata
                 |mdsFilter:filterSelected
-                |mdsFilterRange: {propertyKey: 'price', range: {start: filterRangeSelected.start, end: filterRangeSelected.end}}
+                |mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected}
                 |mdsSearch:{propertyKey:'name', keyword:name.value} ).length === 0 && (filterSelected|json) !=='{}'">
                 Filtered data not found
             </small>
         </div>
         <div class="mds-grid horizontal-center">
-            <!-- Demo Medes Pipes like mdsFilter, mdsFilterRange & mdsSearch Pipes-->
+            <!-- Demo Medes Pipes like mdsFilter, mdsFilterRange & mdsSearch Pipes -->
             <div class="g-s-50 g-m-30 g-l-25" *ngFor="let item of ( sampledata
                     |mdsFilter:filterSelected
-                    |mdsFilterRange: {propertyKey: 'price', range: {start: filterRangeSelected.start, end: filterRangeSelected.end}}
-                    |mdsSearch:{propertyKey:'name', keyword:name.value} )">
+                    |mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected}
+                    |mdsSearch:{propertyKey:'name', keyword:name.value}
+                    |slice: pageNavConfig.selectedRange?.start:pageNavConfig.selectedRange?.end )">
                 <div class="mds-img-loader square">
                     <img [src]="item.picture" [alt]="item.name">
                 </div>
@@ -84,6 +92,18 @@
                 <small>({{item.color}})</small><br/>
                 <small>{{item.price}}</small>
             </div>
+        </div>
+        <!-- Page Navigation Component -->
+        <div style="margin: auto;width: max-content;">
+            <ng-container *ngIf="(sampledata |mdsFilter:filterSelected |mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected} |mdsSearch:{propertyKey:'name', keyword:name.value}).length > 0">
+                <mds-page-navigation
+                    [data]="(
+                        sampledata |mdsFilter:filterSelected
+                        |mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected}
+                        |mdsSearch:{propertyKey:'name', keyword:name.value}
+                    )"
+                    [(pageNavConfig)]="pageNavConfig"></mds-page-navigation>
+            </ng-container>
         </div>
     </div>
 </div>
