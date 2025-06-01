@@ -58,7 +58,14 @@ export class MyComponent {
 }`;
 
 componentdemo = `
-<!-- Demo Medes Page Navigation Component -->
+Type Standard
+<div class="padding-b-1" style="text-align: center;">
+    <!-- Demo Medes Page Navigation Component - Type Standard -->
+    <mds-page-navigation [data]="data" [(pageNavConfig)]="pageNavConfigB"></mds-page-navigation>
+</div>
+
+<!-- Demo Medes Page Navigation Component - Type Pager -->
+Type Numbering
 <mds-page-navigation [data]="data" [(pageNavConfig)]="pageNavConfig"></mds-page-navigation>`;
 
 condigInterface = `
