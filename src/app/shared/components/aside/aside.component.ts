@@ -6,61 +6,81 @@ import { Component } from '@angular/core';
   styleUrls: ['./aside.component.scss']
 })
 export class AsideComponent {
-  menu: {title: string; links: {text: string; url: string, isNew?: boolean}[]}[] = [
+  isCollapsedVersion: boolean = false;
+  menu: ThreeMenuModel[] = [
     {
-      title: 'MedesUI',
-      links: [
-        // {text: 'Introduction', url: '/introduction/info'},
+      text: 'MedesUI',
+      urls: [
         {text: 'How to Install', url: '/introduction/how-to-install'},
         {text: 'Color Scheme', url: '/introduction/color-scheme'}
       ]
-    }, {
-      title: 'UI Element - Boilerplate',
-      links: [
-        {text: 'Basic Elements', url: '/ui-boilerplate/basic-elements'},
-        {text: 'Layout Utils', url: '/ui-boilerplate/layout-utils'},
-        {text: 'Grid System', url: '/ui-boilerplate/grid-system'},
-        {text: 'Image Loader', url: '/ui-boilerplate/image-loader'}
+    },
+    {
+      text: 'UI Element - Boilerplate',
+      urls: [
+        {text: 'Basic Elements', url: '/ui-elements/basic-elements'},
+        {text: 'Layout Utils', url: '/ui-elements/layout-utils'},
+        {text: 'Grid System', url: '/ui-elements/grid-system'},
+        {text: 'Image Loader', url: '/ui-elements/image-loader'}
       ]
-    }, {
-      title: 'Filter Components',
-      links: [
-        {text: 'Intro', url: '/filter-components/intro'},
-        {text: 'Checkboxes Filter', url: '/filter-components/checkboxes', isNew: true},
-        {text: 'Swatch Filter', url: '/filter-components/swatch'},
-        {text: 'Range Slider', url: '/filter-components/range-slider', isNew: true},
-        {text: 'Reset Filter', url: '/filter-components/reset', isNew: true},
-        {text: '<i class="fas fa-external-link-alt"></i> Demo', url: '/filter-components/demo'}
+    },
+    {
+      text: 'Services',
+      urls: [
+        {text: 'Alert', url: 'alert', isNew: true},
       ]
-    }, {
-      title: 'Modal Components',
-      links: [
-        {text: 'Intro', url: 'modal-component/intro'},
-        {text: 'Modal Component', url: 'modal-component/detail'},
-        {text: '<i class="fas fa-external-link-alt"></i> Demo', url: 'modal-component/demo'},
-      ]
-    }, {
-      title: 'Other Components',
-      links: [
-        {text: 'PrismJs Highlight', url: '/prismjs-highlight'}
-      ]
-    },{
-      title: 'Pipes',
-      links: [
-        {text: 'Filter', url: '/pipe/filter'},
-        {text: 'Filter by Range', url: '/pipe/filter-range', isNew: true},
-        {text: 'Search', url: '/pipe/search'},
-        {text: 'Safe Url', url: '/pipe/safeurl'}
-      ]
-    },{
-      title: 'Utilities',
-      links: [
+    },
+    {
+      text: 'Utilities',
+      urls: [
         {text: 'String', url: '/utils/string'},
         {text: 'Integer', url: '/utils/number'},
-        {text: 'Object', url: '/utils/object'},
+        {text: 'Object', url: '/utils/object', isNew: true},
         {text: 'Array', url: '/utils/array'},
         {text: 'Date', url: '/utils/date'},
         {text: 'Color', url: '/utils/color'}
+      ]
+    },
+    {
+      text: 'Angular Components & Utils',
+      urls: [
+        {
+          text: 'Modal',
+          url: 'modal-component'
+        },
+        {
+          text: 'Filter Components', url: '/filter-components/intro',
+          urls: [
+            {text: 'Checkboxes Filter', url: '/filter-components/checkboxes'},
+            {text: 'Swatch Filter', url: '/filter-components/swatch'},
+            {text: 'Range Slider', url: '/filter-components/range-slider'},
+            {text: 'Reset Filter', url: '/filter-components/reset'}
+          ]
+        },
+        {
+          text: 'Page Manager Components', url: '/navigation-manager/intro', isNew: true,
+          urls: [
+            {text: 'Page Navigation', url: '/navigation-manager/page-navigation', isNew: true},
+            {text: 'Page Counter', url: '/navigation-manager/page-counter', isNew: true}
+          ]
+        },
+        {
+          text: 'Other Components',
+          // url: '/ui-boilerplate/grid-system',
+          urls: [
+            {text: 'PrismJs Highlight', url: '/prismjs-highlight'}
+          ]
+        },
+        {
+          text: 'Pipes',
+          urls: [
+            {text: 'Filter', url: '/pipes/filter'},
+            {text: 'Filter by Range', url: '/pipes/filter-range'},
+            {text: 'Search', url: '/pipes/search'},
+            {text: 'Safe Url', url: '/pipes/safeurl'}
+          ]
+        },
+        {text: '<i class="fas fa-external-link-alt"></i> Demo', url: 'demo'}
       ]
     }
   ];
@@ -73,4 +93,16 @@ export class AsideComponent {
     });
   }
 
+  showHide(group: ThreeMenuModel): void {
+    group.isCollapsed = !group.isCollapsed;
+  }
+
+}
+
+export interface ThreeMenuModel {
+  text: string;
+  url?: string;
+  urls?: ThreeMenuModel[];
+  isNew?: boolean;
+  isCollapsed?: boolean;
 }

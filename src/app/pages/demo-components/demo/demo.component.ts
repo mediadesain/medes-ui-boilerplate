@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { AfterContentChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-/*-- Import medes-ui --*/ import { MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsNumberUtils } from 'medes-ui';
+/*-- Import medes-ui --*/ import { MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsNumberUtils, MdsPageManagerModule, PageNavigationConfigInterface, MdsPagerType } from 'medes-ui';
 /*-- Import medes-ui --*/ import { SelectedFilterInterface, SelectedFilterSliderInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
-// /*-- Medes Team Only --*/ import { MdsFilterModule, MdsHightlightPrismModule, MdsPipesModule, MdsNumberUtils } from 'projects/medes-ui/src/public-api';
+// /*-- Medes Team Only --*/ import { MdsFilterModule, MdsHightlightPrismModule, MdsPipesModule, MdsNumberUtils, MdsPageManagerModule, PageNavigationConfigInterface, MdsPagerType } from 'projects/medes-ui/src/public-api';
 // /*-- Medes Team Only --*/ import { SelectedFilterInterface, SelectedFilterSliderInterface } from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
 
 @Component({
@@ -12,9 +12,9 @@ import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/pr
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule]
+  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsPageManagerModule]
 })
-export class DemoComponent implements OnInit, AfterViewInit {
+export class DemoComponent implements OnInit, AfterContentChecked {
   sampledata: ProductDataModel[] = [];
   colormap = {
       'blue-sky': '#66ccdd',
@@ -28,6 +28,11 @@ export class DemoComponent implements OnInit, AfterViewInit {
   filterSelected: SelectedFilterInterface = {};
   filterRangeSelected: SelectedFilterSliderInterface;
 
+   pageNavConfig: PageNavigationConfigInterface = {
+      type: MdsPagerType.NUMBERING,
+      itemToShow: 8
+    }
+
   constructor(private cdr: ChangeDetectorRef){}
 
   ngOnInit(): void {
@@ -40,7 +45,7 @@ export class DemoComponent implements OnInit, AfterViewInit {
     }
     this.sampledata = SampleProductsData.data;
   }
-  ngAfterViewInit(): void {
+  ngAfterContentChecked(): void {
     this.cdr.detectChanges();
   }
 }

@@ -74,19 +74,6 @@ resetComponent = `
   [(filterRangeSelected)]="filterRangeSelected">
 </mds-filter-reset>`;
 
-
-importmodule = `
-import { MdsFilterModule } from 'medes-ui';
-
-@NgModule({
-  declarations: [ ... ],
-  imports: [
-    MdsFilterModule  // Ignore importing module if using standalone component
-  ]
-})
-
-export class MyModule { }`;
-
   ngOnInit(): void {
     this.sampledata = SampleProductsData.data;
   }

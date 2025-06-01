@@ -20,8 +20,19 @@ const object = {
   "gender": null,
   "city": undefined
 };
-MdsObjectUtils.removeKeysIfEmpty(object); // output {"firstname":"Jhon"}`;
-  // constructor() { }
+MdsObjectUtils.removeKeysIfEmpty(object); // output {"firstname":"Jhon"}
 
+const objectA = {
+  "firstname": "Jhon",
+  "lastname": "Doe",
+  "gender": "man"
+};
+const objectB = {
+  "firstname": "Alex",
+  "lastname": "Ben",
+  "gender": "man"
+};
+MdsObjectUtils.isEqual(objectA, objectB); // output false`;
+  constructor() { }
 
 }

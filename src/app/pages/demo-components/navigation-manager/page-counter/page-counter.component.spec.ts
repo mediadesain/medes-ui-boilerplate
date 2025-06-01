@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FilterComponentsComponent } from './filter-components.component';
+import { DemoPageCounterComponent } from './page-counter.component';
 
-describe('FilterComponentsComponent', () => {
-  let component: FilterComponentsComponent;
-  let fixture: ComponentFixture<FilterComponentsComponent>;
+describe('DemoPageCounterComponent', () => {
+  let component: DemoPageCounterComponent;
+  let fixture: ComponentFixture<DemoPageCounterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FilterComponentsComponent ]
+      declarations: [ DemoPageCounterComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FilterComponentsComponent);
+    fixture = TestBed.createComponent(DemoPageCounterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

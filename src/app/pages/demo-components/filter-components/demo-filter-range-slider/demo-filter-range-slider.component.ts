@@ -20,6 +20,18 @@ export class DemoFilterFilterRangeSliderComponent {
     end: 17000
   };
 
+  importmodule = `
+import { MdsFilterModule } from 'medes-ui';
+
+@NgModule({
+  declarations: [ ... ],
+  imports: [
+    MdsFilterModule  // Ignore importing module if using standalone component
+  ]
+})
+
+export class MyModule { }`;
+
   samplecomponent = `
 import { MdsFilterRangeSliderComponent } from 'medes-ui';
 
@@ -32,14 +44,14 @@ import { MdsFilterRangeSliderComponent } from 'medes-ui';
 })
 
 export class MyComponent {
-...
+  ...
   filterRangeSelected: SelectedFilterSliderInterface = {
     min: ${this.filterRangeSelected.min},
     max: ${this.filterRangeSelected.max},
     start: ${this.filterRangeSelected.start},
     end: ${this.filterRangeSelected.end}
   };
-...
+  ...
 }`;
 componenthtml = `
 <!-- Filter range slider -->

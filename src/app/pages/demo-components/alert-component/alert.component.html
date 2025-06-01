@@ -1,0 +1,33 @@
+<h1>Medes Alert Service</h1>
+<p>Clone repository to get source code <a href="https://github.com/mediadesain/medes-ui-boilerplate">here</a>.</p>
+<hr/>
+
+<b>Sample Alerts:</b>
+<div class="margin-b-2">
+    <button (click)="trigger()">Click Alert default</button>
+    <button (click)="triggerSuccess()">Click Alert Sucess</button>
+    <button (click)="triggerError()">Click Alert Error</button>
+    <button (click)="triggerWarning()">Click Alert warning</button>
+    <button (click)="triggerInfo()">Click Alert info</button>
+</div>
+
+<b>Generator:</b>
+<div class="margin-b-2">
+    <input type="text" [(ngModel)]="data">
+    <input type="number" [(ngModel)]="timeToHide">
+    <select name="test" [(ngModel)]="alertType">
+        <option value="standard">STANDARD</option>
+        <option value="success">SUCCESS</option>
+        <option value="error">ERROR</option>
+        <option value="alert">ALERT</option>
+        <option value="info">INFO</option>
+    </select>
+    <input type="checkbox" [(ngModel)]="isShowIcon"> Show Icon<br/>
+
+    <button (click)="preview()">Overview & Generate Code</button>
+</div>
+
+<b>Code:</b>
+<mds-hightlight-prism [code]="callClass" language="javascript"></mds-hightlight-prism>
+
+<blockquote class="warning margin-t-2">Support Version: v.1.15.1 ></blockquote>

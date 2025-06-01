@@ -1,7 +1,7 @@
-> # This is beta version.
+<!-- > # This is beta version.
 > - Documentation not published yet
 > - Clone [medes-ui-boilerplate repository](https://github.com/mediadesain/medes-ui-boilerplate/tree/feature/filter-slider) for documentation & check whats new
-> - Checkout `feature/filter-slider branch`
+> - Checkout `feature/filter-slider branch` -->
 
 # Mediadesain UI Library - Boilerplate
 This UI library was created & used by Mediadesain Team and open for public. Demo and preview medes-ui. For more detail about documentation visit official site [here](https://doc.mediadesain.com/).

@@ -18,6 +18,18 @@ export class CheckboxesComponent implements OnInit {
   sampledata: ProductDataModel[];
   selected: SelectedFilterInterface = {};
   peropKey: string = 'category';
+  
+  importmodule = `
+import { MdsFilterModule } from 'medes-ui';
+
+@NgModule({
+  declarations: [ ... ],
+  imports: [
+    MdsFilterModule  // Ignore importing module if using standalone component
+  ]
+})
+
+export class MyModule { }`;
 
 samplecomponent = `
 import { MdsFilterCheckboxComponent } from 'medes-ui';
@@ -31,7 +43,7 @@ import { MdsFilterCheckboxComponent } from 'medes-ui';
 })
 
 export class MyComponent {
-...
+  ...
   // Sample datas, key to filter and filter selected
   sampledata: ProductDataModel[] = [
     { "brand": "puma", "category": "tshirt", "color": "brown", "gender": "unisex", "id": "62122871cb242f1f01d916f9", "picture": "https://picsum.photos/400?image=172", "price": 1851.141, "name": "Herminia Ray" },
@@ -41,7 +53,7 @@ export class MyComponent {
   ]; // Full data https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts
   selected: SelectedFilterInterface = {};
   peropKey: string = 'category';
-...
+  ...
 }`;
 componentdemo = `
 <!-- Filter Checkboxes Component -->
