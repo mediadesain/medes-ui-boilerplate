@@ -11,6 +11,36 @@ export class ColorSchemeComponent {
   name: string;
   generate: {key: string; value: string, color?: string}[] = [];
   output: string;
+
+  importCss = `
+/*-- MedesUI --*/
+@import \'../node_modules/medes-ui/assets/scss/medes-ui.scss\';
+@import \'../node_modules/medes-ui/assets/scss/ui-colorscheme.scss\';
+// Add your own custom color scheme - https://doc.mediadesain.com/introduction/color-scheme
+
+/*-- Light Mode --*/
+:root {
+  /* Custom Color Swatch */
+  /*-- swatch-c --*/
+  --swatch-c-transculant: rgba(244,206,16,0.3);
+  --swatch-c-lighter: #ffec2e;
+  --swatch-c: #f4ce10;
+  --swatch-c-darker: #d6b000;
+  --swatch-c-contrast: #f4ce10;
+}
+
+/*-- Dark Mode --*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    /*- Custom Color Swatch -*/
+    /*-- swatch-c --*/
+    --swatch-c-transculant: rgba(244,206,16,0.3);
+    --swatch-c-lighter: #ffec2e;
+    --swatch-c: #f4ce10;
+    --swatch-c-darker: #d6b000;
+    --swatch-c-contrast: #f4ce10;
+  }
+}`;
   // constructor() { }
 
 
@@ -35,7 +65,8 @@ export class ColorSchemeComponent {
           color: submitValue['color-contrast']
         }
     ];
-    this.output = `/*-- ` + submitValue.name + ` --*/\n` +
+    this.output = `
+/*-- ` + submitValue.name + ` --*/\n` +
     this.generate[0].key + `: ` + this.generate[0].value + `;\n` +
     this.generate[1].key + `: ` + this.generate[1].value + `;\n` +
     this.generate[2].key + `: ` + this.generate[2].value + `;\n` +

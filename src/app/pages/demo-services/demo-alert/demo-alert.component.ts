@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
 // /*-- Medes Team Only --*/ import { MdsAlertConfig, MdsAlertService, MdsAlertType, MdsHightlightPrismModule } from 'projects/medes-ui/src/public-api';
 
 @Component({
-  selector: 'mds-alert',
-  templateUrl: './alert.component.html',
-  styleUrls: ['./alert.component.scss'],
+  selector: 'mds-demo-alert',
+  templateUrl: './demo-alert.component.html',
+  styleUrls: ['./demo-alert.component.scss'],
   standalone: true,
   imports: [CommonModule, FormsModule, MdsHightlightPrismModule]
 })

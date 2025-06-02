@@ -60,7 +60,7 @@ export class MyComponent {
 componentdemo = `
 <!-- Demo Medes Page Navigation Component -->
 <small>Total Item </small>
-<mds-page-navigation [data]="data" [(pageNavConfig)]="pageNavConfig"></mds-page-navigation>`;
+<mds-page-navigation [data]="data" [(pageNavConfig)]="pageNavConfig" style="background: unset; color: #fff; border: 0;"></mds-page-navigation>`;
 
 condigInterface = `
 pageNavConfig: PageNavigationConfigInterface = {
@@ -73,15 +73,17 @@ MdsPagerType {
   NUMBERING = 'numbering',
 }`;
 
-tableDescription = [
-  {attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: 'medes-ui@1.15.1 >'},
-  {attribute: 'pageNavConfig',type: 'PageNavigationConfigInterface', default: '∞', description: 'Configuration of Page Navigation Component', version: 'medes-ui@1.15.1 >'}
-]
+  tableDescription = [
+    {attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: 'medes-ui@1.15.1 >'},
+    {attribute: 'pageNavConfig',type: 'PageNavigationConfigInterface', default: '∞', description: 'Configuration of Page Navigation Component', version: 'medes-ui@1.15.1 >'},
+    {attribute: 'class?',type: 'string', default: '∞', description: 'Put your custom class styling', version: 'medes-ui@1.15.1 >'},
+    {attribute: 'style?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: 'medes-ui@1.15.1 >'}
+  ]
 
-constructor(public mdsModalService: MdsModalService) {}
+  constructor(public mdsModalService: MdsModalService) {}
 
-openModal(id: string): void {
-  this.mdsModalService.trigger(id);
-}
+  openModal(id: string): void {
+    this.mdsModalService.trigger(id);
+  }
 
 }

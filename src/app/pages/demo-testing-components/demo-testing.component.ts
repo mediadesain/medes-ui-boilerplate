@@ -3,6 +3,7 @@ import { AfterContentChecked, AfterViewInit, ChangeDetectorRef, Component, Eleme
 import { FormsModule } from '@angular/forms';
 
 /*-- Import medes-ui --*/ import { MdsPageManagerModule, MdsPagerType, PageNavigationConfigInterface } from 'medes-ui';
+// /*-- Medes Team Only --*/ import { MdsPageManagerModule, MdsPagerType, PageNavigationConfigInterface } from 'projects/medes-ui/src/public-api';
 
 
 // import { MdsInputModule } from 'projects/medes-ui/src/lib/mds-input/mds-input.module';
