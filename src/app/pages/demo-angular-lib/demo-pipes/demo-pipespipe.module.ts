@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { PipeRoutingModule } from './pipe-routing.module';
+import { PipeRoutingModule } from './demo-pipe-routing.module';
 
 @NgModule({
   declarations: [],

@@ -1,3 +1,7 @@
+### 1.15.2 (Release - 250601)
+- Enhancement Services - Alert Service now is responsive
+- New Array Util - exportToCsv()
+- Update documentation
 ### 1.15.1 (Release - 250601)
 - New Services - Alert Service
 - New Object Util - isEqual()

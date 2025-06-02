@@ -1,5 +1,5 @@
 <h1>How to Install</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<p>Instalation step.</p>
 <hr/>
 <h3>Follow these step to install MedesUI Library on your project.</h3>
 <ol>
@@ -8,27 +8,11 @@
     <li>Import all of medes-ui stylesheets by following these steps:
         <ul>
             <li>Import <i>medes-ui.scss</i> & <i>ui-colorscheme.scss</i> stylesheet on main <i>styles.scss</i>.
-                <mds-hightlight-prism [code]="'
-/*-- MedesUI --*/
-@import \'../node_modules/medes-ui/assets/scss/medes-ui.scss\';
-@import \'../node_modules/medes-ui/assets/scss/ui-colorscheme.scss\';
-// Add your own custom color scheme'" language="scss"></mds-hightlight-prism>
-            </li>
-            <li>Or  <i>medes-ui.scss</i> & <i>ui-colorscheme.scss</i> to <i>angular.json</i>.
-                <mds-hightlight-prism [code]="'
-...
-\'styles\': [
-    \'src/styles.scss\',
-    \'./node_modules/medes-ui/assets/scss/medes-ui.scss\',
-    \'./node_modules/medes-ui/assets/scss/ui-colorscheme.scss\'
-],
-...'" language="javascript"></mds-hightlight-prism>
+                <mds-hightlight-prism [code]="importCss" language="scss"></mds-hightlight-prism>
             </li>
         </ul>
         <blockquote class="info margin-vertical-1">
-            <i>Documentation For creating your own ui-colorscheme.scss <a routerLink="/introduction/color-scheme">click here</a>.</i>
+            <i>Documentation for creating your own color scheme <a routerLink="/introduction/color-scheme">click here</a>.</i>
         </blockquote>
     </li>
-    <li>Import modules, components or utils to use.</li>
-    <li>Run with <code class="command">ng serve</code> or <code class="command">npm start</code></li>
 </ol>

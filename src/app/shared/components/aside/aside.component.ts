@@ -27,7 +27,7 @@ export class AsideComponent {
     {
       text: 'Services',
       urls: [
-        {text: 'Alert', url: 'alert', isNew: true},
+        {text: 'Alert', url: '/services/alert', isNew: true},
       ]
     },
     {
@@ -36,7 +36,7 @@ export class AsideComponent {
         {text: 'String', url: '/utils/string'},
         {text: 'Integer', url: '/utils/number'},
         {text: 'Object', url: '/utils/object', isNew: true},
-        {text: 'Array', url: '/utils/array'},
+        {text: 'Array', url: '/utils/array', isNew: true},
         {text: 'Date', url: '/utils/date'},
         {text: 'Color', url: '/utils/color'}
       ]
@@ -46,41 +46,41 @@ export class AsideComponent {
       urls: [
         {
           text: 'Modal',
-          url: 'modal-component'
+          url: 'angular-lib/modal-component'
         },
         {
-          text: 'Filter Components', url: '/filter-components/intro',
+          text: 'Filter Components', url: 'angular-lib/filter-components/intro',
           urls: [
-            {text: 'Checkboxes Filter', url: '/filter-components/checkboxes'},
-            {text: 'Swatch Filter', url: '/filter-components/swatch'},
-            {text: 'Range Slider', url: '/filter-components/range-slider'},
-            {text: 'Reset Filter', url: '/filter-components/reset'}
+            {text: 'Checkboxes Filter', url: 'angular-lib/filter-components/checkboxes'},
+            {text: 'Swatch Filter', url: 'angular-lib/filter-components/swatch'},
+            {text: 'Range Slider', url: 'angular-lib/filter-components/range-slider'},
+            {text: 'Reset Filter', url: 'angular-lib/filter-components/reset'}
           ]
         },
         {
-          text: 'Page Manager Components', url: '/navigation-manager/intro', isNew: true,
+          text: 'Page Manager Components', url: 'angular-lib/navigation-manager/intro', isNew: true,
           urls: [
-            {text: 'Page Navigation', url: '/navigation-manager/page-navigation', isNew: true},
-            {text: 'Page Counter', url: '/navigation-manager/page-counter', isNew: true}
+            {text: 'Page Navigation', url: 'angular-lib/navigation-manager/page-navigation', isNew: true},
+            {text: 'Page Counter', url: 'angular-lib/navigation-manager/page-counter', isNew: true}
           ]
         },
         {
           text: 'Other Components',
           // url: '/ui-boilerplate/grid-system',
           urls: [
-            {text: 'PrismJs Highlight', url: '/prismjs-highlight'}
+            {text: 'PrismJs Highlight', url: 'angular-lib/prismjs-highlight'}
           ]
         },
         {
           text: 'Pipes',
           urls: [
-            {text: 'Filter', url: '/pipes/filter'},
-            {text: 'Filter by Range', url: '/pipes/filter-range'},
-            {text: 'Search', url: '/pipes/search'},
-            {text: 'Safe Url', url: '/pipes/safeurl'}
+            {text: 'Filter', url: 'angular-lib/pipes/filter'},
+            {text: 'Filter by Range', url: 'angular-lib/pipes/filter-range'},
+            {text: 'Search', url: 'angular-lib/pipes/search'},
+            {text: 'Safe Url', url: 'angular-lib/pipes/safeurl'}
           ]
         },
-        {text: '<i class="fas fa-external-link-alt"></i> Demo', url: 'demo'}
+        {text: '<i class="fas fa-external-link-alt"></i> Demo', url: 'angular-lib/demo'}
       ]
     }
   ];

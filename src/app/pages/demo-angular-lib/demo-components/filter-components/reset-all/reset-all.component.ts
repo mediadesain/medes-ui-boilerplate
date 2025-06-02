@@ -10,7 +10,8 @@ import { Component } from '@angular/core';
   templateUrl: './reset-all.component.html',
   styleUrls: ['./reset-all.component.scss'],
   standalone: true,
-  imports: [CommonModule, MdsHightlightPrismModule, MdsModalModule, MdsFilterResetComponent]
+  imports: [CommonModule, MdsHightlightPrismModule, MdsModalModule, MdsFilterResetComponent],
+  providers: [MdsModalService]
 })
 export class ResetAllComponent {
   filterSelected: SelectedFilterInterface = {};
@@ -49,7 +50,7 @@ export interface SelectedFilterSliderInterface {
     {attribute: 'content?', type: 'String', default: `'Reset Filter'`, description: 'Label content for reset button', version: 'medes-ui@1.14.1 >'}
   ]
 
-  constructor(private mdsModalService: MdsModalService) {}
+  constructor(public mdsModalService: MdsModalService) {}
 
   openModal(id: string): void {
     this.mdsModalService.trigger(id);

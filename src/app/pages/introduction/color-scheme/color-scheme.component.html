@@ -1,5 +1,5 @@
 <h1>Color Scheme and Theming</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<p>Add your own color scheme.</p>
 <hr/>
 
 <h3 class="margin-b-1">Bundle Variable</h3>
@@ -83,64 +83,17 @@
     </div>
 </div>
 
-<h3>Installation Custom Color Scheme</h3>
-<p>For custom color scheme no need import file <b>ui-colorscheme.scss</b> on <a routerLink="/introduction/how-to-install">installation step</a>. Create new stylesheet file and put on your folder, for example <b>src/assets/style/ui-colorscheme.scss</b>. And put these color swatch variable code to the file. And Customize your own color scheme and we provide color generator below.</p>
-<b>ui-colorscheme.scss</b>
-<mds-hightlight-prism [code]="'
-/* Medes Theming & Color Swatch Variables
-For more info, visit link below:
-http://doc.mediadesain.com/introduction/color-scheme */
-
-/*-- Light Mode --*/
-:root {
-    --body-bg-lighter: #fefefe;
-    --body-bg: #ffffff;
-    --body-bg-darker: #ffffff;
-    --body-txt: #5d6778;
-    --body-txt-darker: #484849;
-    /*- Default Color Swatch -*/
-    --swatch-a-transculant: rgb(139 197 63 / 30%);
-    --swatch-a-lighter: #97cb52;
-    --swatch-a: #8bc53f;
-    --swatch-a-darker: #7cb530;
-    --swatch-a-contrast: #ffffff;
-    --swatch-b-transculant: rgba(253, 202, 48, 30%);
-    --swatch-b-lighter: #fdc930;
-    --swatch-b: #ffc107;
-    --swatch-b-darker: #ecb305;
-    --swatch-b-contrast: #ffffff;
-    /* Custom Color Swatch */
-}
-
-/*-- Dark Mode --*/
-@media (prefers-color-scheme: dark) {
-    :root {
-        --body-bg-lighter: #1c1c1c;
-        --body-bg: #181818;
-        --body-bg-darker: #121212;
-        --body-txt: #cecece;
-        --body-txt-darker: #f9f9f9;
-        /*- Default Color Swatch -*/
-        --swatch-a-transculant: rgb(139 197 63 / 10%);
-        --swatch-a-lighter: #97cb52;
-        --swatch-a: #8bc53f;
-        --swatch-a-darker: #7cb530;
-        --swatch-a-contrast: #ffffff;
-        --swatch-b-transculant: rgba(253, 202, 48, 20%);
-        --swatch-b-lighter: #fdc930;
-        --swatch-b: #ffc107;
-        --swatch-b-darker: #ecb305;
-        --swatch-b-contrast: #ffffff;
-        /*- Custom Color Swatch -*/
-    }
-}'" language="scss"></mds-hightlight-prism>
+<h3>Add Custom Color Scheme</h3>
+<p>For adding custom color scheme make sure already import <b>medes-ui.scssa</b> & <b>ui-colorscheme.scss</b> to main style.scss as per <a routerLink="/introduction/how-to-install">installation step</a>. Open the <b>style.scss</b> itself. Then Customize your own color scheme and we provide color generator below. And put these color swatch variable code on light & dark mode.</p>
+<b>style.scss</b>
+<mds-hightlight-prism [code]="importCss" language="scss"></mds-hightlight-prism>
 <hr>
 
 <h3 class="margin-horizontal-start1">Additinal Color Swatch Variable</h3>
 <form #submition="ngForm" (ngSubmit)="generated(submition.value)">
     <div class="flex-horizontal margin-b-1">
-        <input type="text" #swatchName="ngModel" name="name" ngModel="swatch-c">
-        <input type="color" #swatchMain="ngModel" name="color" ngModel="#8bc53f">
+        <input type="text" #swatchName="ngModel" name="name" ngModel="swatch-d">
+        <input type="color" #swatchMain="ngModel" name="color" ngModel="#3898ff">
         <input type="color" #swatchMainContrast="ngModel" name="color-contrast" ngModel="#ffffff">
         <button type="submit">Generate</button>
     </div>
@@ -156,11 +109,5 @@ http://doc.mediadesain.com/introduction/color-scheme */
 </div>
 <div *ngIf="output">
     <mds-hightlight-prism [code]="output" language="scss"></mds-hightlight-prism>
-    <small><i>Copy custom swatch variable to <b>ui-colorscheme.scss</b></i></small>
+    <small><i>Copy custom swatch variable to main <b>style.scss</b> on light & dark mode</i></small>
 </div>
-
-<h3 class="margin-horizontal-start1">Include Custom Color Scheme</h3>
-<mds-hightlight-prism [code]="'
-/*-- MedesUI --*/
-@import \'node_modules/medes-ui/assets/scss/medes-ui.scss\';
-@import \'./assets/style/ui-colorscheme.scss\'; // Here is your custom your own color scheme'" language="scss"></mds-hightlight-prism>

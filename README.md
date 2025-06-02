@@ -3,7 +3,7 @@
 > - Clone [medes-ui-boilerplate repository](https://github.com/mediadesain/medes-ui-boilerplate/tree/feature/filter-slider) for documentation & check whats new
 > - Checkout `feature/filter-slider branch` -->
 
-# Mediadesain UI Library - Boilerplate
+# Mediadesain UI Library
 This UI library was created & used by Mediadesain Team and open for public. Demo and preview medes-ui. For more detail about documentation visit official site [here](https://doc.mediadesain.com/).
 
 ## How to Install & Use
@@ -19,11 +19,11 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
-### 1.15.1 (Release - 250601)
-- New Services - Alert Service
-- New Object Util - isEqual()
-- New Angular Components - Page Navigation, Page Counter Component
-- Update documentation
-### 1.15.0 (Release - 231002)
+### 1.15.x (Release - 250603)
 - Update minor version to 15
 - Update medes-ui to Angular 15
+- New Services - Alert Service
+- New Object Util - isEqual()
+- New Array Util - exportToCsv()
+- New Angular Components - Page Navigation, Page Counter Component
+- Update documentation
