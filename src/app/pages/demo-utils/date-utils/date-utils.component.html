@@ -9,7 +9,7 @@
 <b>Date utils details:</b>
 <table class="mds-table">
     <tr>
-        <th>Function and data Type</th><th>Data Type</th><th>Default Value</th><th>Description</th><th style="min-width: 200px;">Support Version</th>
+        <th>Function</th><th>Data Type</th><th>Default Value</th><th>Description</th><th style="min-width: 200px;">Support Version</th>
     </tr>
     <tr *ngFor="let item of [{
         attribute: 'untilNow( <b>number</b>, <b>array?</b>, <b>string?</b> )',
@@ -18,17 +18,17 @@
         description: '<ul><li>Sample data timestamp</li><li>String of times.</li><li>Prefix</li></ul>',
         version: 'medes-ui@0.0.1 >'
     }]">
-        <td mds-th-title="Function"><span [innerHTML]="item.attribute"></span></td>
-        <td mds-th-title="Data Type"><span [innerHTML]="item.value"></span></td>
-        <td mds-th-title="Default Value"><span [innerHTML]="item.default"></span></td>
-        <td mds-th-title="Description"><span [innerHTML]="item.description"></span></td>
-        <td mds-th-title="Support Version"><span [innerHTML]="item.version"></span></td>
+        <td mds-th-title="Function" [innerHTML]="item.attribute"></td>
+        <td mds-th-title="Data Type" [innerHTML]="item.value"></td>
+        <td mds-th-title="Default Value" [innerHTML]="item.default"></td>
+        <td mds-th-title="Description" [innerHTML]="item.description"></td>
+        <td mds-th-title="Support Version" [innerHTML]="item.version"></td>
     </tr>
 </table>
 <small>
     <b>Notes:</b>
     <br/><i>? = Is optional value, if no value will use default value.</i>
-    <br/><i>∞ = Anything base on type</i>
+    <br/><i>∞ = No default valye, put anything base on type</i>
 </small>
 <hr/>
 

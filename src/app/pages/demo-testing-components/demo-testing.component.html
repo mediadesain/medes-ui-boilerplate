@@ -2,41 +2,10 @@
 <p>Clone repository to get source code <a href="https://github.com/mediadesain/medes-ui-boilerplate">here</a>.</p>
 <hr/>
 
-<!-- <mds-input-number class="form-control" placeholder="input age" [(value)]="testValue"></mds-input-number> -->
-<hr/>
-
-
-
-<p><b>Sample Data</b></p>
-<div class="mds-grid padding-b-1">
-    <div class="g-s-50 g-m-30 g-l-20" *ngFor="let item of data | slice: pageNavConfig.selectedRange?.start:pageNavConfig.selectedRange?.end">
-        {{item}}
-    </div>
-</div>
-
-<div class="flex-horizontal fullfill-horizontal justify-between">
-    <div>
-        <p><b>Page Navigation Component</b></p>
-        <!-- Demo Medes Page Navigation Component -->
-        <mds-page-navigation [data]="data" [(pageNavConfig)]="pageNavConfig"></mds-page-navigation>
-    </div>
-    <div>
-        <div>
-            <p><b>Page Counter Component</b></p>
-            <small>Total Item </small>
-            <!-- Demo Medes Page Counter Component -->
-            <mds-page-counter [pageCountConfig]="[15, 30, 45, 60, 75]" [(pageNavConfig)]="pageNavConfig"></mds-page-counter>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<pre>
-{{pageNavConfig|json}}
-</pre>
+<!-- <mds-toggle-button [(checked)]="isActive"></mds-toggle-button> - {{isActive}}
+<br/>
+<mds-input-number class="form-control" [(value)]="testValue"></mds-input-number> - {{testValue}}
+<hr/> -->
 
 
 

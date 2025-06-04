@@ -39,25 +39,21 @@
 <mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism>
 <b>HTML Component</b>
 <mds-hightlight-prism [code]="importcompnent" language="html"></mds-hightlight-prism>
+
 <b>Properties</b>
 <table class="mds-table">
+    <!-- Table Header -->
     <tr>
-        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="min-width: 200px;">Support Version</th>
+        <th *ngFor="let row of tableHeader; let i = index" [style.width.px]="i === tableHeader.length - 1 && '200'">{{row.title}}</th>
     </tr>
-    <tr *ngFor="let item of [
-        {attribute: 'code', type: 'string', default: '', description: 'Code to hightlight', version: 'medes-ui@1.13.0 >'},
-        {attribute: 'language', type: 'Spesific string, options are:<br/><i>\'html\' | \'markup\' | \'javascript\' | \'typescript\' | \'java\' | \'css\' | \'sass\' | \'scss\' | \'ruby\' | \'swift\' | \'sql\' | \'python\'</i> ', default: '', description: 'Language type to show as prevew code',version: 'medes-ui@1.13.0 >'},
-        {attribute: 'heightHighlight', type: 'number', default: '∞', description: 'Maximal height', version: 'medes-ui@1.14.1 >'}
-    ]">
-        <td mds-th-title="Attribute">{{item.attribute}}</td>
-        <td mds-th-title="Data Type"><span [innerHTML]="item.type"></span></td>
-        <td mds-th-title="Default"><span [innerHTML]="item.default"></span></td>
-        <td mds-th-title="Description">{{item.description}}</td>
-        <td mds-th-title="Support Version">{{item.version}}</td>
+    <!-- Table Content -->
+    <tr *ngFor="let item of tableContent">
+        <td *ngFor="let row of tableHeader" [attr.mds-th-title]="row.title" [innerHTML]="item[row.prop]"></td>
     </tr>
 </table>
+
 <small>
     <b>Notes:</b>
     <br/><i>? = Is optional value, if no value will use default value.</i>
-    <br/><i>∞ = Anything base on type</i>
+    <br/><i>∞ = No default valye, put anything base on type</i>
 </small>

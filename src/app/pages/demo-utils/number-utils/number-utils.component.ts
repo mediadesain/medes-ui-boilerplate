@@ -11,6 +11,38 @@ import { Component } from '@angular/core';
   imports: [CommonModule, MdsHightlightPrismModule]
 })
 export class NumberUtilsComponent {
+  tableHeader = [
+    {prop: 'attribute', title: 'Function'},
+    {prop: 'value', title: 'Data Type'},
+    {prop: 'default', title: 'Default Value'},
+    {prop: 'description', title: 'Description'},
+    {prop: 'version', title: 'Support Version'}
+  ];
+
+  tableContent = [
+    {
+      attribute: 'shortNumber( <b>number</b>, <b>array?</b> )',
+      'value':'<ul><li>number</li><li>Array of string</li></ul>',
+      default: '<ul><li>∞</li><li>[\'k\', \'m\', \'b\', \'t\']</li></ul>',
+      description: '<ul><li>Number will sorting</li><li>Sample custom prefix.</li></ul>',
+      version: 'medes-ui@0.0.1 >'
+    },
+    {
+      attribute: 'toCurrency( <b>number</b>, <b>string</b>, <b>number?</b> )',
+      'value':'<ul><li>number</li><li>string of option:<br/><i>IDR | JYP | EUR | USD</i></li><li>number</li></ul>',
+      default: '<ul><li>∞</li><li>\'USD\'</li><li>∞</li></ul>',
+      description: '<ul><li>Number will sorting</li><li>Type Currency</li><li>Set decimal</li></ul>',
+      version: 'medes-ui@0.0.1 >'
+    },
+    {
+      attribute: 'getMinMax( <b>number[]</b> )',
+      'value': 'Array of number',
+      default: '∞',
+      description: 'Array of number and will find the min max value',
+      version: 'medes-ui@1.14.2 >'
+    }
+  ];
+
 import = `
 import { MdsNumberUtils } from 'medes-ui';`;
 demo = `

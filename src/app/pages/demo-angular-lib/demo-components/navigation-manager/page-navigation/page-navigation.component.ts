@@ -79,7 +79,7 @@ MdsPagerType {
   NUMBERING = 'numbering',
 }`;
 
-  tableDescription = [
+  tableContent = [
     {attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: 'medes-ui@1.15.1 >'},
     {attribute: 'pageNavConfig',type: 'PageNavigationConfigInterface', default: '∞', description: 'Configuration of Page Navigation Component', version: 'medes-ui@1.15.1 >'}
   ]
