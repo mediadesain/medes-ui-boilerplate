@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-/*-- Import medes-ui --*/ import { MdsFilterCheckboxComponent, MdsHightlightPrismModule } from 'medes-ui';
-/*-- Import medes-ui --*/ import { SelectedFilterInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
-// /*-- Medes Team Only --*/ import { MdsFilterCheckboxComponent, MdsHightlightPrismModule } from 'projects/medes-ui/src/public-api';
-// /*-- Medes Team Only --*/ import { SelectedFilterInterface } from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
+import { MdsFilterCheckboxComponent, MdsHightlightPrismModule }
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { SelectedFilterInterface }
+/*-public-mode-*/ from 'medes-ui/lib/mds-filter/mds-filter.interface';
+//*-dev-mode-*/ from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
 
 @Component({
   selector: 'mds-checkboxes',

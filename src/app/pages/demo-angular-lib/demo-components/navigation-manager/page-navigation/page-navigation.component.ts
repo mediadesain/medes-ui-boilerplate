@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { SampleProductsData } from 'src/app/shared/constant/products';
-/*-- Import medes-ui --*/ import { MdsHightlightPrismModule, MdsPageManagerModule, MdsModalService, MdsModalModule, MdsPagerType, PageNavigationConfigInterface } from 'medes-ui';
-// /*-- Medes Team Only --*/ import { MdsHightlightPrismModule, MdsPageManagerModule, MdsModalService, MdsModalModule, MdsPagerType, PageNavigationConfigInterface } from 'projects/medes-ui/src/public-api';
+import { MdsHightlightPrismModule, MdsPageManagerModule, MdsModalService, MdsModalModule, MdsPagerType, PageNavigationConfigInterface }
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 
 @Component({

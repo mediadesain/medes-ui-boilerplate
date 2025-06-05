@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-/*-- Import medes-ui --*/ import { MdsFilterRangeSliderComponent, MdsHightlightPrismModule } from 'medes-ui';
-/*-- Import medes-ui --*/ import { SelectedFilterSliderInterface } from 'medes-ui/lib/mds-filter/mds-filter.interface';
-// /*-- Medes Team Only --*/ import { MdsFilterRangeSliderComponent, MdsHightlightPrismModule } from 'projects/medes-ui/src/public-api';
-// /*-- Medes Team Only --*/ import { SelectedFilterSliderInterface } from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
+import { MdsFilterRangeSliderComponent, MdsHightlightPrismModule }
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { SelectedFilterSliderInterface }
+/*-public-mode-*/ from 'medes-ui/lib/mds-filter/mds-filter.interface';
+//*-dev-mode-*/ from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
 
 @Component({
   selector: 'mds-demo-filter-range-slider',

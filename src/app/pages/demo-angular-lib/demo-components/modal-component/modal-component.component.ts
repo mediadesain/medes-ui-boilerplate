@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DemoModalComponent } from './demo-modal/demo-modal.component';
-/*-- Import medes-ui --*/ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'medes-ui';
-// /*-- Medes Team Only --*/ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'projects/medes-ui/src/public-api';
+import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 
 @Component({

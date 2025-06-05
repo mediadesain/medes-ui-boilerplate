@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-/*-- Import medes-ui --*/ import { MdsDateUtils, MdsHightlightPrismModule } from 'medes-ui';
-// /*-- Medes Team Only --*/ import { MdsDateUtils, MdsHightlightPrismModule } from 'projects/medes-ui/src/public-api';
+import { MdsDateUtils, MdsHightlightPrismModule }
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-date-utils',

@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-/*-- Import medes-ui --*/ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'medes-ui';
-// /*-- Medes Team Only --*/ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService } from 'projects/medes-ui/src/public-api';
+import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-modal',

@@ -1,14 +1,14 @@
 /*-- MedesUI --*/
-/*-- Import medes-ui --*/ @import "../node_modules/medes-ui/assets/scss/medes-ui";
-/*-- Import medes-ui --*/ @import "../node_modules/medes-ui/assets/scss/ui-colorscheme";
-// /*-- Medes Team Only --*/ @import "../projects/medes-ui/assets/scss/medes-ui";
-// /*-- Medes Team Only --*/ @import "../projects/medes-ui/assets/scss/ui-colorscheme";
+/*-public-mode-*/ @import "../node_modules/medes-ui/assets/scss/medes-ui";
+/*-public-mode-*/ @import "../node_modules/medes-ui/assets/scss/ui-colorscheme";
+//*-dev-mode-*/ @import "../projects/medes-ui/assets/scss/medes-ui";
+//*-dev-mode-*/ @import "../projects/medes-ui/assets/scss/ui-colorscheme";
 
 @import "../node_modules/prismjs/themes/prism-okaidia.min";
 
 /*-- Custom Style for Documentation--*/
-/*-- Import medes-ui --*/ @import "../node_modules/medes-ui/assets/scss/layouts/documentation";
-// /*-- Medes Team Only --*/ @import "../projects/medes-ui/assets/scss/layouts/documentation";
+/*-public-mode-*/ @import "../node_modules/medes-ui/assets/scss/layouts/documentation";
+//*-dev-mode-*/ @import "../projects/medes-ui/assets/scss/layouts/documentation";
 navbar .logo, mds-navbar .logo { background-image: url('./assets/images/medes-ui.png'); }
 @media (prefers-color-scheme: dark) {
     mds-navbar .logo { background-image: url('./assets/images/medes-ui-dark.png'); }

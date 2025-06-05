@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-/*-- Import medes-ui --*/ import { MdsArrayUtils, MdsHightlightPrismModule } from 'medes-ui';
-// /*-- Medes Team Only --*/ import { MdsArrayUtils, MdsHightlightPrismModule } from 'projects/medes-ui/src/public-api';
+import { MdsArrayUtils, MdsHightlightPrismModule }
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-aray-utils',
