@@ -1,19 +1,18 @@
 import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsHightlightPrismModule, MdsPageManagerModule, PageNavigationConfigInterface, MdsPagerType, MdsFormModule }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsHightlightPrismModule, MdsFormModule }
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
-  selector: 'mds-demo-form-components',
-  templateUrl: './form-components.component.html',
-  styleUrls: ['./form-components.component.scss'],
+  selector: 'mds-demo-form-component',
+  templateUrl: './form-component.component.html',
+  styleUrls: ['./form-component.component.scss'],
   standalone: true,
   imports: [CommonModule, RouterModule, MdsHightlightPrismModule, MdsFormModule]
 })
-export class DemoFormComponents implements AfterContentChecked {
+export class DemoFormComponent implements AfterContentChecked {
 isActive: boolean = true;
 price: number = 1549999.999
 

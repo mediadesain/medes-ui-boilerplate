@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsHightlightPrismModule, MdsFilterModule }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 import { SelectedFilterSliderInterface }
-//*-public-mode-*/ from 'medes-ui/lib/mds-filter/mds-filter.interface';
-/*-dev-mode-*/ from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
+/*-public-mode-*/ from 'medes-ui/lib/mds-filter/mds-filter.interface';
+//*-dev-mode-*/ from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
 
 @Component({
   selector: 'mds-filter-components',

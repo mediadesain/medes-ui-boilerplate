@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { AfterContentChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-//*-public-mode-*/ import { MdsPageManagerModule, MdsPagerType, PageNavigationConfigInterface } from 'medes-ui';
-/*-dev-mode-*/ import { MdsFormModel, MdsFormModule, MdsToggleType } from 'projects/medes-ui/src/public-api';
+/*-public-mode-*/ import { MdsFormModel, MdsFormModule, MdsToggleType } from 'medes-ui';
+//*-dev-mode-*/ import { MdsFormModel, MdsFormModule, MdsToggleType } from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-testing',

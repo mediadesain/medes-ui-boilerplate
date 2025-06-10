@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng lint medes-ui-boilerplate && ng serve medes-ui-boilerplate --port 4600",
-    "build": "ng build medes-ui-boilerplate",
-    "build:prod": "ng build --configuration production",
+    "build": "ng build medes-ui-boilerplate --configuration production",
     "build:lib": "rm -rf node_modules/medes-ui && ng build medes-ui --configuration production && cp -R dist/medes-ui node_modules/",
     "publish:lib": "ng build medes-ui --configuration production && cd dist/medes-ui && npm publish --tag latest",
     "publishbeta:lib": "ng build medes-ui --configuration production && cd dist/medes-ui && npm publish --tag beta",
@@ -23,7 +22,7 @@
     "@angular/platform-browser-dynamic": "^15.2.10",
     "@angular/router": "^15.2.10",
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "medes-ui": "1.15.2",
+    "medes-ui": "1.15.3",
     "prismjs": "^1.29.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

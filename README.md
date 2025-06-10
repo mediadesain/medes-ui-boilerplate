@@ -10,9 +10,10 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 ### MedesUI Lib Install
 - Install Mediadesain UI - Library `npm i medes-ui`.
 - Install with spesific version `npm i medes-ui@0.0.1`.
-- Import Stying
-- Import JavaScript/Typescript Utils on Library
+- Import Stying.
+- Import JavaScript/Typescript Utils on Library.
 - Import Angular lib modules, component or utils to use.
+- To run demo page `npm run start`.
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
