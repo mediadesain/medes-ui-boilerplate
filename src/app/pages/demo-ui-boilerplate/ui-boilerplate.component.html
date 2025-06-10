@@ -6,11 +6,102 @@
 <p>Section <b>intro</b> goes here. <a href="">Lorem ipsum</a> dolor sit amet, <i>consectetur adipiscing</i> elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
 <hr/>
 
+<h2>Transculant Text</h2>
+<p class="txt-transculant">Sample transculant/elipsis text with <b>.txt-transculant</b> class. Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>  
+<hr/>
+
+<h2>Background Colors</h2>
+<div class="mds-grid">
+    <div class="g-m-25 g-s-50">
+        <div class="surface-box bg-lighter"><!-- <b>TxT</b> --></div>
+        <small>.bg-lighter</small>
+    </div>
+    <div class="g-m-25 g-s-50">
+        <div class="surface-box bg"><!-- <b>TxT</b> --></div>
+        <small>.bg</small>
+    </div>
+    <div class="g-m-25 g-s-50">
+        <div class="surface-box bg-darker"><!-- <b>TxT</b> --></div>
+        <small>.bg-darker</small>
+    </div>
+    <div class="g-m-25 g-s-50">
+        <div class="surface-box bg-negative"><!-- <b>TxT</b> --></div>
+        <small>.bg-negative</small>
+    </div>
+    <div class="g-m-25 g-s-50">
+        <div class="surface-box bg-swatch-a"><!-- <b>TxT</b> --></div>
+        <small>.bg-swatch-a</small>
+    </div>
+    <div class="g-m-25 g-s-50">
+        <div class="surface-box bg-swatch-b"><!-- <b>TxT</b> --></div>
+        <small>.bg-swatch-b</small>
+    </div>
+    <div class="g-m-25 g-s-50">
+        <div class="surface-box bg-swatch-c"><!-- <b>TxT</b> --></div>
+        <small>.bg-swatch-c</small>
+    </div>
+</div>
+<hr/>
+
+<h2>Text Colors</h2>
+<div class="flex-horizontal fullfill-horizontal flex-nowarp">
+    <div class="fullfill-horizontal">
+        <p>Base Color</p>
+        <ul>
+            <li>Text withhout any class <i>(default body color)</i></li>
+            <li class="txt-darker">Text with .txt-darker class <i>(h1-h5 use this color)</i></li>
+            <li class="txt-lighter">Text with .txt-lighter class</li>
+            <li class="txt-negative">Text with .txt-negative class</li>
+        </ul>
+    </div>
+    <div class="fullfill-horizontal">
+        <p>Color Scheme</p>
+        <ul>
+            <li class="txt-swatch-a">Text with .txt-swatch-a class</li>
+            <li class="txt-swatch-b">Text with .txt-swatch-b class</li>
+            <li class="txt-swatch-c">Text with .txt-swatch-c class</li>
+            <li>Add your custom scheme color, <a routerLink="/introduction/color-scheme">step here</a></li>
+        </ul>
+    </div>
+</div>
+<hr/>
+
+<h2>Buttons</h2>
+<div class="flex-horizontal fullfill-horizontal flex-nowarp">
+    <div class="fullfill-horizontal">
+        <p>Normal</p>
+        <ul>
+            <li><button class="btn-swatch-reset" onclick="alert('Button clicked')">Reset Swatch</button> - <small>.btn-swatch-reset</small></li>
+            <li><button onclick="alert('Button clicked')">Default</button> - <small>default no class</small></li>
+            <li><button class="btn-swatch-negative" onclick="alert('Button clicked')">Negative</button> - <small>.btn-swatch-negative</small></li>
+            <li><button class="btn-swatch-a" onclick="alert('Button clicked')">Swatch A</button> - <small>.btn-swatch-a</small></li>
+            <li><button class="btn-swatch-b" onclick="alert('Button clicked')">Swatch B</button> - <small>.btn-swatch-b</small></li>
+            <li><button class="btn-swatch-c" onclick="alert('Button clicked')">Swatch C (additional)</button> - <small>.btn-swatch-c</small></li>
+        </ul>
+        
+    </div>
+    <div class="fullfill-horizontal">
+        <p>Disabled</p>
+        <ul>
+            <li><button class="btn-swatch-reset" onclick="alert('Button clicked')"disabled>Reset Swatch</button> - <small>.btn-swatch-reset</small></li>
+            <li><button onclick="alert('Button clicked')" disabled>Default</button> - <small>(default no class)</small></li>
+            <li><button class="btn-swatch-negative" onclick="alert('Button clicked')" disabled>Negative</button> - <small>.btn-swatch-negative</small></li>
+            <li><button class="btn-swatch-a" onclick="alert('Button clicked')" disabled>Swatch A</button> - <small>.btn-swatch-a</small></li>
+            <li><button class="btn-swatch-b" onclick="alert('Button clicked')" disabled>Swatch B</button> - <small>.btn-swatch-b</small></li>
+            <li><button class="btn-swatch-c" onclick="alert('Button clicked')" disabled>Swatch C (additional)</button> - <small>.btn-swatch-c</small></li>
+        </ul>
+    </div>
+</div>
+<div class="fullfill-horizontal">
+    <button class="btn-swatch-a" disabled><div class="loader"></div> Loading</button> - <span class="loader"></span><small> (Sample loading button)</small><br/>
+    Add your custom scheme color, <a routerLink="/introduction/color-scheme">step here</a>
+</div>
+<hr/>
+
 <h2>List</h2>
 <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
-
-<div class="mds-grid">
-    <div class="g-m-50">
+<div class="flex-horizontal fullfill-horizontal flex-nowarp">
+    <div class="fullfill-horizontal">
         <b>Unordered List Examples:</b>
         <ul>
             <li>Download lorem ipsum dolor sit amet.</li>
@@ -19,7 +110,7 @@
             <li>Deploy donec non ante libero.</li>
         </ul>
     </div>
-    <div class="g-m-50">
+    <div class="fullfill-horizontal">
         <b>Ordered List Examples:</b>
         <ol>
             <li>Download lorem ipsum dolor sit amet.</li>
@@ -54,6 +145,59 @@
 <blockquote class="info margin-b-1">Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit.</blockquote>
 <hr/>
 
+<h2>Form</h2>
+<form autocomplete="off" style="max-width: 700px; margin: 0 auto;">
+    <div class="x-100 flex-vertical">
+        <div class="x-100 flex-horizontal flex-nowarp">
+            <div class="x-100 margin-b-1 margin-r-1">
+                <label class="txt-darker">First Name</label>
+                <input class="x-100" type="text" placeholder="John" name="firstName" /> 
+            </div>
+            <div class="x-100 margin-b-1">
+                <label class="txt-darker">Last Name</label>
+                <input class="x-100" type="text" placeholder="Doe" name="lastName"/>
+            </div>
+        </div>
+        <div class="p-relative x-100 margin-b-1">
+            <label class="required txt-darker invalid">Company</label>
+            <input class="x-100 invalid" type="text" placeholder="Google Inc" name="company" />
+            <small class="txt-negative"><i>This field is required</i></small>
+        </div>
+        <div class="x-100 margin-b-1">
+            <label class="txt-darker">Sample Disable</label>
+            <input class="x-100" type="text" placeholder="Sample disabled" disabled/>
+        </div>
+        <div class="x-100 flex-horizontal flex-nowarp">
+            <div class="x-100 margin-b-1 margin-r-1">
+                <label class="txt-darker">Last Name</label>
+                <select class="x-100" name="gender" >
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+            <div class="x-100 margin-b-1">
+                <label class="txt-darker">Status</label>
+                <select class="x-100" name="status" disabled>
+                    <option>Single</option>
+                    <option>Marriage</option>
+                    <option>Divorce</option>
+                </select>
+            </div>
+        </div>
+        <div class="x-100 margin-b-1">
+            <label class="required txt-darker">Message</label>
+            <textarea class="x-100" placeholder="Type your message here" name="comment" required></textarea>
+            <input class="x-100" id="aggrement" type="checkbox" name="aggree" required/> <label for="aggrement"> Im aggree with term and condition</label>
+        </div>
+        <div class="margin-b-1 flex-horizontal justify-between">
+            <button class="btn-swatch-negative" type="reset">Reset</button>
+            <input id="aggrement" type="color" value="#00FF00"/>
+            <button class="btn-swatch-a" type="submit">Submit</button>
+        </div>
+    </div>
+</form>
+<hr/>
+
 <h2>Responsive Table</h2>
 <p>This table below is responsive. Try resize browser view to small width or open on smartphone the table will responsive.</p>
 <table class="mds-table">
@@ -80,7 +224,7 @@
     </div>
     <div class="g-l-50">
         <b>TypeScript</b>
-        <mds-hightlight-prism [code]="samplets" language="typescript"></mds-hightlight-prism>
+        <mds-hightlight-prism [code]="samplets" language="javascript"></mds-hightlight-prism>
     </div>
 </div>
 <a routerLink="/prismjs-highlight">More info</a>

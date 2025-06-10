@@ -1,0 +1,42 @@
+<h1>Medes Form Components</h1>
+<p>Addtional form field & advance form. There are 2 categoires:</p>
+<ul>
+    <li>Toggle Component <i><small>&lt;mds-toggle-button ... &gt;&lt;/mds-toggle-button&gt;</small></i></li>
+    <li>Input Number Component <i><small>&lt;mds-input-number ... &gt;&lt;/mds-input-number&gt;</small></i></li>
+</ul>
+<p>Put sample data & configuration to component.</p>
+<hr/>
+
+<h2 class="margin-b-1">Overview of Medes Form Components</h2>
+
+<p>Sample all of Form components:</p>
+
+<p><b>Toggle Component</b></p>
+<div class="mds-grid">
+    <div class="g-l-30">
+        <!-- Medes Toggle Component -->
+        <mds-toggle-button [(value)]="isActive"></mds-toggle-button>
+    </div>
+    <div class="g-l-70"><mds-hightlight-prism [code]="pageNavigationComponent" language="html"></mds-hightlight-prism></div>
+    <div class="g-l-12"><small><a routerLink="/angular-lib/form-components/toggle">More Info</a></small></div>
+</div>
+<hr/>
+
+<p><b>Input Number Component </b> <small><i>(Having masking sparator)</i></small></p>
+<div class="mds-grid">
+    <div class="g-l-30">
+        <div class="flex-vertical">
+            <div class="flex-vertical margin-b-1">
+                <label>Data Binding: </label>{{price}}
+            </div>
+            <!-- Medes Input Component -->
+            <div class="flex-vertical">
+                <label>Component </label>
+                <mds-input-number [(value)]="price"></mds-input-number>
+            </div>
+        </div>
+    </div>
+    <div class="g-l-70"><mds-hightlight-prism [code]="pageCounterComponent" language="html"></mds-hightlight-prism></div>
+    <div class="g-l-12"><small><a routerLink="/angular-lib/form-components/input-number">More Info</a></small></div>
+</div>
+<hr/>

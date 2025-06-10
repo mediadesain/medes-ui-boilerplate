@@ -1,87 +1,75 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
+import { htmlCode, interfaceCode } from './page-counter-preview-code';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsHightlightPrismModule, MdsModalModule, MdsModalService, MdsPageManagerModule, MdsPagerType, PageNavigationConfigInterface }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-page-counter',
   templateUrl: './page-counter.component.html',
   styleUrls: ['./page-counter.component.scss'],
   standalone: true,
-  imports: [CommonModule, MdsHightlightPrismModule, MdsModalModule, MdsPageManagerModule]
+  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsPageManagerModule]
 })
 export class DemoPageCounterComponent {
+  // data
   data: string[] = SampleProductsData.userNames;
+  // pageCountConfig
+  toShowOptions: number[] = [10, 20, 30, 40, 50, 60];
+  // pageNavConfig
   pageNavConfig: PageNavigationConfigInterface = {
     type: MdsPagerType.NUMBERING,
-    itemToShow: 15,
-    // selectedPage: 1,
-    // selectedRange: {
-      //   start: 0,
-      //   end: 0
-    // }
+    itemToShow: 20
   }
 
-importmodule = `
-import { NgModule } from '@angular/core';
-import { MdsPageManagerModule } from 'medes-ui';
+  // Code Viewer
+  importModuleCode: string;
+  componentCode: string;
+  htmlCode: string;
+  interfaceCode: string;
 
-@NgModule({
-  declarations: [ ... ],
-  imports: [
-    MdsPageManagerModule
-  ]
-})
-
-export class MyModule { }`;
-
-samplecomponent = `
-import { Component } from '@angular/core';
-import { MdsFilterRangeSliderComponent } from 'medes-ui';
-import { SampleProductsData } from 'src/app/shared/constant/products';
-
-@Component({
-  selector: 'mds-my-component',
-  templateUrl: './mds-my-component.component.html',
-  styleUrls: ['./mds-my-component.component.scss']
-})
-
-export class MyComponent {
-  ...
-  data: string[] = SampleProductsData.userNames;
-  pageNavConfig: PageNavigationConfigInterface = {
-    type: MdsPagerType.NUMBERING,
-    itemToShow: 15
-  }
-  ...
-}`;
-
-componentdemo = `
-<!-- Demo Medes Page Navigation Component -->
-<small>Total Item </small>
-<mds-page-navigation [data]="data" [(pageNavConfig)]="pageNavConfig" style="background: unset; color: #fff; border: 0;"></mds-page-navigation>`;
-
-condigInterface = `
-pageNavConfig: PageNavigationConfigInterface = {
-  type: MdsPagerType; // Required, Pager style/type will use normal or pagination
-  itemToShow?: number; // Optional (default value is 10). Total item to show
-}
-  
-MdsPagerType {
-  STANDARD = 'standard',
-  NUMBERING = 'numbering',
-}`;
-
+  // Properties Detail
   tableContent = [
     {attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: 'medes-ui@1.15.1 >'},
     {attribute: 'pageNavConfig',type: 'PageNavigationConfigInterface', default: '∞', description: 'Configuration of Page Navigation Component', version: 'medes-ui@1.15.1 >'},
-    {attribute: 'class?',type: 'string', default: '∞', description: 'Put your custom class styling', version: 'medes-ui@1.15.1 >'},
-    {attribute: 'style?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: 'medes-ui@1.15.1 >'}
-  ]
+    {attribute: 'customClass?',type: 'string', default: '∞', description: 'Put your custom class styling', version: 'medes-ui@1.15.1 >'},
+    {attribute: 'customStyle?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: 'medes-ui@1.15.1 >'}
+  ];
 
-  constructor(public mdsModalService: MdsModalService) {}
+  constructor(public mdsModalService: MdsModalService, private cdr: ChangeDetectorRef) {
+    this.importModuleCode = constructImportModuleCode('MdsPageManagerModule');
+    this.componentCode = this.reGenerateCode();
+    this.htmlCode = htmlCode;
+    this.interfaceCode = interfaceCode;
+  }
+
+  ngAfterContentChecked(): void {
+    this.cdr.detectChanges();
+  }
+  
+  reGenerateCode(): string {
+    const importMdsUi = 'PageNavigationConfigInterface, MdsPagerType';
+    const valuesComponent = `// pageCountConfig
+  toShowOptions: number[] = [${this.toShowOptions}];
+  
+  // pageNavConfig
+  pageNavConfig: PageNavigationConfigInterface = {
+    type: MdsPagerType.NUMBERING,
+    itemToShow: ${this.pageNavConfig.itemToShow}
+  }`
+    return constructComponentCode(importMdsUi, valuesComponent)
+  }
+
+  updateTotal($event: number){
+    const newConfig = Object.assign({}, this.pageNavConfig);
+    newConfig.itemToShow = $event;
+    this.pageNavConfig = newConfig;
+    this.componentCode = this.reGenerateCode();
+  }
 
   openModal(id: string): void {
     this.mdsModalService.trigger(id);

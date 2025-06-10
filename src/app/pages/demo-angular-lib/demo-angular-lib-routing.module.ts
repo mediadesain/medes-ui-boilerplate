@@ -7,11 +7,15 @@ import { DemoPrismjsHighlightComponent } from './demo-components/prismjs-highlig
 const routes: Routes = [
   { path: '', redirectTo: 'demo', pathMatch: 'full' },
   {
-    path: 'modal-component', loadChildren: () => import('./demo-components/modal-component/modal-component.module').then(m => m.ModalComponentModule)
+    path: 'modal-component', loadChildren: () => import('./demo-components/modal-component/modal-component.module').then(m => m.DemoModalComponentModule)
+  },
+  {
+    path: 'form-components',
+    loadChildren: () => import('./demo-components/form-components/form-components.module').then(m => m.DemoFormComponentsModule)
   },
   {
     path: 'filter-components',
-    loadChildren: () => import('./demo-components/filter-components/filter-components.module').then(m => m.FilterComponentsModule)
+    loadChildren: () => import('./demo-components/filter-components/filter-components.module').then(m => m.DemoFilterComponentsModule)
   },
   {
     path: 'navigation-manager',

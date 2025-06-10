@@ -84,9 +84,11 @@
 </div>
 
 <h3>Add Custom Color Scheme</h3>
-<p>For adding custom color scheme make sure already import <b>medes-ui.scssa</b> & <b>ui-colorscheme.scss</b> to main style.scss as per <a routerLink="/introduction/how-to-install">installation step</a>. Open the <b>style.scss</b> itself. Then Customize your own color scheme and we provide color generator below. And put these color swatch variable code on light & dark mode.</p>
+<p>For adding custom color scheme make sure already import <b>medes-ui.scssa</b> & <b>ui-colorscheme.scss</b> to main style.scss as per <a routerLink="/introduction/how-to-install">installation step</a>. Open the <b>style.scss</b> itself. Add new styling file example <b>custom-color.scss</b> / <b>custom-color.css</b> on <i>./assets/style/custom-scheme.scss</i>. Then Customize your own color scheme and we provide color generator below. And put these color swatch variable code on light & dark mode.</p>
 <b>style.scss</b>
 <mds-hightlight-prism [code]="importCss" language="scss"></mds-hightlight-prism>
+<b>custom-color.scss</b>
+<mds-hightlight-prism [code]="customSchemeCss" language="scss"></mds-hightlight-prism>
 <hr>
 
 <h3 class="margin-horizontal-start1">Additinal Color Swatch Variable</h3>
@@ -94,7 +96,7 @@
     <div class="flex-horizontal margin-b-1">
         <input type="text" #swatchName="ngModel" name="name" ngModel="swatch-d">
         <input type="color" #swatchMain="ngModel" name="color" ngModel="#3898ff">
-        <input type="color" #swatchMainContrast="ngModel" name="color-contrast" ngModel="#ffffff">
+        <input type="color" #swatchMainContrast="ngModel" name="colorContrast" ngModel="#ffffff">
         <button type="submit">Generate</button>
     </div>
 </form>
@@ -109,5 +111,5 @@
 </div>
 <div *ngIf="output">
     <mds-hightlight-prism [code]="output" language="scss"></mds-hightlight-prism>
-    <small><i>Copy custom swatch variable to main <b>style.scss</b> on light & dark mode</i></small>
+    <small><i>Copy custom swatch variables & classes to your custom style in sample case below <b>custom-color.scss</b>. Make sure on light & dark mode</i>.</small>
 </div>

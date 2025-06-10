@@ -5,11 +5,11 @@
 <div class="mds-grid">
     <div class="g-l-70">
         <b>HTML</b>
-        <mds-hightlight-prism [code]="componentdemo" language="html"></mds-hightlight-prism>
+        <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
     </div>
     <div class="g-l-30">
         <b>Output</b>
-        <mds-filter-reset [class]="'btn btn-primary'" [content]="'Reset All'" [(filterSelected)]="filterSelected" [(filterRangeSelected)]="filterRangeSelected"></mds-filter-reset>
+        <mds-filter-reset [class]="'btn-swatch-a'" [content]="'Reset All'" [(filterSelected)]="filterSelected" [(filterRangeSelected)]="filterRangeSelected"></mds-filter-reset>
     </div>
 </div>
 
@@ -40,21 +40,21 @@
 <small>
     <b>Notes:</b>
     <br/><i>? = Is optional value, if no value will use default value.</i>
-    <br/><i>∞ = No default valye, put anything base on type</i>
+    <br/><i>∞ = No default value, put anything base on type</i>
 </small>
 
 
 <mds-modal id="SelectedFilterInterface" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
     <div class="padding-1">
-        <h3 class="padding-b-1">Minimum Configuration</h3>
-        <mds-hightlight-prism [code]="selectedFilterInterface" language="typescript"></mds-hightlight-prism>
+        <h3 class="padding-b-1">Interface Detail</h3>
+        <mds-hightlight-prism [code]="selectedFilterInterface" language="javascript"></mds-hightlight-prism>
     </div>
 </mds-modal>
 
 <mds-modal id="SelectedFilterSliderInterface" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
     <div class="padding-1">
-        <h3 class="padding-b-1">Minimum Configuration</h3>
-        <mds-hightlight-prism [code]="selectedFilterSliderInterface" language="typescript"></mds-hightlight-prism>
+        <h3 class="padding-b-1">Interface Detail</h3>
+        <mds-hightlight-prism [code]="selectedFilterSliderInterface" language="javascript"></mds-hightlight-prism>
     </div>
 </mds-modal>
 

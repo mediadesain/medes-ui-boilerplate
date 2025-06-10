@@ -1,20 +1,22 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { MdsFilterRangeSliderComponent, MdsHightlightPrismModule }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 import { SelectedFilterSliderInterface }
-/*-public-mode-*/ from 'medes-ui/lib/mds-filter/mds-filter.interface';
-//*-dev-mode-*/ from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
+//*-public-mode-*/ from 'medes-ui/lib/mds-filter/mds-filter.interface';
+/*-dev-mode-*/ from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
 
 @Component({
   selector: 'mds-demo-filter-range-slider',
   templateUrl: './demo-filter-range-slider.component.html',
   styleUrls: ['./demo-filter-range-slider.component.scss'],
   standalone: true,
-  imports: [CommonModule, MdsHightlightPrismModule, MdsFilterRangeSliderComponent]
+  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsFilterRangeSliderComponent]
 })
 export class DemoFilterFilterRangeSliderComponent {
+  //----- Required -----
   filterRangeSelected: SelectedFilterSliderInterface = {
     min: 1250,
     max: 19500,
@@ -22,7 +24,12 @@ export class DemoFilterFilterRangeSliderComponent {
     end: 17000
   };
 
-  importmodule = `
+  //----- Optional Configuration -----
+  label: string = 'Filter by price';
+  resetElement: string = '<b>✕</b>';
+  isDisabled: boolean = false;
+
+  importModuleCode = `
 import { MdsFilterModule } from 'medes-ui';
 
 @NgModule({
@@ -34,7 +41,7 @@ import { MdsFilterModule } from 'medes-ui';
 
 export class MyModule { }`;
 
-  samplecomponent = `
+  componentCode = `
 import { MdsFilterRangeSliderComponent } from 'medes-ui';
 
 @Component({
@@ -47,37 +54,32 @@ import { MdsFilterRangeSliderComponent } from 'medes-ui';
 
 export class MyComponent {
   ...
+  //----- Required -----
   filterRangeSelected: SelectedFilterSliderInterface = {
-    min: ${this.filterRangeSelected.min},
-    max: ${this.filterRangeSelected.max},
-    start: ${this.filterRangeSelected.start},
-    end: ${this.filterRangeSelected.end}
+    min: 1250,
+    max: 19500,
+    start: 6000,
+    end: 17000
   };
+
+  //----- Optional Configuration -----
+  label: string = 'Filter by price';
+  resetElement: string = '<b>✕</b>';
+  isDisabled: boolean = false;
   ...
 }`;
 componenthtml = `
 <!-- Filter range slider -->
 <mds-filter-range-slider
-  [label]="'Filter by price'"
-  [min]="filterRangeSelected.min"
-  [max]="filterRangeSelected.max"
   [(start)]="filterRangeSelected.start"
   [(end)]="filterRangeSelected.end"
-  [reset]="'<b>✕</b>'">
+  [min]="filterRangeSelected.min"
+  [max]="filterRangeSelected.max"
+  [label]="label" 
+  [reset]="resetElement"
+  [disabled]="isDisabled">
 </mds-filter-range-slider>
-<small><i>Output: {{filterRangeSelected.start}} - {{filterRangeSelected.end}}</i></small>
-
-<hr/>
-
-<!-- Filter range slider disabled -->
-<mds-filter-range-slider
-  [label]="'Filter by something <i>(disabled)</i>'"
-  [min]="20"
-  [max]="100"
-  [start]="25"
-  [end]="40"
-  [disabled]="true">
-</mds-filter-range-slider>`;
+<small><i>Output: {{filterRangeSelected.start}} - {{filterRangeSelected.end}}</i></small>`;
 
   constructor() {}
 

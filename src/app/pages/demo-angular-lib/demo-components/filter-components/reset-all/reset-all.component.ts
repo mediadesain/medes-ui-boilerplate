@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MdsFilterResetComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService }
-/*-public-mode-*/  from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+//*-public-mode-*/  from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 import { SelectedFilterInterface, SelectedFilterSliderInterface }
-/*-public-mode-*/  from 'medes-ui/lib/mds-filter/mds-filter.interface';
-//*-dev-mode-*/ from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
+//*-public-mode-*/  from 'medes-ui/lib/mds-filter/mds-filter.interface';
+/*-dev-mode-*/ from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
 
 @Component({
   selector: 'mds-reset-all',
@@ -24,7 +24,7 @@ export class ResetAllComponent {
     end: 2000
   }
 
-componentdemo = `
+htmlCode = `
 <!-- Reset Filter Component -->
 <mds-filter-reset [class]="'btn btn-primary'"
   [content]="'Reset All'"

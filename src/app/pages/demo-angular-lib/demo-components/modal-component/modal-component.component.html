@@ -10,7 +10,7 @@
 <h2>Generator</h2>
 <div class="margin-b-2">
     <!-- Button Modal -->
-    <button (click)="openModal('my-modal-1')">Overview Modal</button> <i> (Generator Soon)</i>
+    <button class="btn-swatch-a" (click)="openModal('my-modal-1')">Overview Modal</button> <i> (Generator Soon)</i>
     <!-- Simple Sample Modal -->
     <mds-modal id="my-modal-1" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
         <div class="padding-1">
@@ -25,11 +25,11 @@
 <div class="mds-grid">
     <div class="g-m-30">
         <b>Module</b>
-        <mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism>
+        <mds-hightlight-prism [code]="importModuleCode" language="javascript"></mds-hightlight-prism>
     </div>
     <div class="g-m-40">
         <b>Component</b>
-        <mds-hightlight-prism [code]="component" language="typescript"></mds-hightlight-prism>
+        <mds-hightlight-prism [code]="component" language="javascript"></mds-hightlight-prism>
     </div>
     <div class="g-m-30">
         <b>HTML</b>
@@ -63,5 +63,5 @@
 <small>
     <b>Notes:</b>
     <br/><i>? = Is optional value, if no value will use default value.</i>
-    <br/><i>∞ = No default valye, put anything base on type</i>
+    <br/><i>∞ = No default value, put anything base on type</i>
 </small>

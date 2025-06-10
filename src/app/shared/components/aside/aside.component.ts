@@ -49,6 +49,13 @@ export class AsideComponent {
           url: 'angular-lib/modal-component'
         },
         {
+          text: 'Form Components', url: 'angular-lib/form-components/intro', isNew: true,
+          urls: [
+            {text: 'Toggle', url: 'angular-lib/form-components/toggle', isNew: true},
+            {text: 'Number', url: 'angular-lib/form-components/input-number', isNew: true}
+          ]
+        },
+        {
           text: 'Filter Components', url: 'angular-lib/filter-components/intro',
           urls: [
             {text: 'Checkboxes Filter', url: 'angular-lib/filter-components/checkboxes'},

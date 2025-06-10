@@ -4,7 +4,7 @@
 
 <div class="mds-grid">
     <!-- SIDEBAR CONTENT -->
-    <div class="g-l-30">
+    <div class="g-l-25">
         <input #name="ngModel" [ngModelOptions]="{updateOn:'change'}" ngModel placeholder="Search Name" style="width: 100%; margin-bottom: 1em;" />
         <!-- Demo Filter Checkboxes Component - Multiple Group -->
         <mds-filter-checkbox
@@ -55,14 +55,17 @@
         <mds-filter-reset [content]="'Reset All'" [(filterSelected)]="filterSelected" [(filterRangeSelected)]="filterRangeSelected"></mds-filter-reset>
     </div>
     <!-- MAIN ITEMS CONTENT -->
-    <div class="g-l-70">
-        <div class="fullfill-horizontal flex-horizontal justify-between margin-b-1">
+    <div class="g-l-75">
+        <!-- Item Counter -->
+        <div class="fullfill-horizontal flex-horizontal justify-between align-middle">
             <small>Total {{(sampledata|mdsFilter:filterSelected|mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected} |mdsSearch:{propertyKey:'name', keyword:name.value}).length}} item/s</small>
             <div>
                 <small>Show Item </small>
                 <mds-page-counter [pageCountConfig]="[4, 8, 16, 24]" [(pageNavConfig)]="pageNavConfig"></mds-page-counter>
             </div>
         </div>
+
+        <!-- Filtering Message -->
         <div style="text-align: center;">
             <small *ngIf="( sampledata
                 |mdsFilter:filterSelected
@@ -77,6 +80,8 @@
                 Filtered data not found
             </small>
         </div>
+
+        <!-- Main items list -->
         <div class="mds-grid horizontal-center">
             <!-- Demo Medes Pipes like mdsFilter, mdsFilterRange & mdsSearch Pipes -->
             <div class="g-s-50 g-m-30 g-l-25" *ngFor="let item of ( sampledata
@@ -93,6 +98,7 @@
                 <small>{{item.price}}</small>
             </div>
         </div>
+        
         <!-- Page Navigation Component -->
         <div style="margin: auto;width: max-content;">
             <ng-container *ngIf="(sampledata |mdsFilter:filterSelected |mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected} |mdsSearch:{propertyKey:'name', keyword:name.value}).length > 0">

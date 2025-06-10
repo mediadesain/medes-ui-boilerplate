@@ -1,12 +1,12 @@
-<p class="padding-t-1">This text is editiable via modal 1:</p>
-<p>{{bodyText}}</p>
-<button (click)="openModal('custom-modal-1')">Open Modal 1 - Data Binding</button>
-<button (click)="openModal('custom-modal-2')">Open Modal 2 - Modal Customizing</button>
-<button (click)="openModal('custom-modal-3')">Open Modal 3 - Modal with long content</button>
-<button (click)="openModal('custom-modal-4')">Open Modal 4 - Custom Close Button & Backdorup unclosable</button>
-<button (click)="openModal('custom-modal-5')">Open Modal 5 - Modal with header & footer</button>
-<button (click)="openModal('custom-modal-6')">Open Modal 6 - Modal fullscreen with header & footer</button>
-<button (click)="openModal('id-not-exist')">Open Modal 7 - No modal id - error log added on console</button>
+<p class="margin-t-1">This text is editiable via modal 1:</p>
+<blockquote class="margin-b-1">{{bodyText}}</blockquote>
+<button class="margin-r-1 margin-b-1" (click)="openModal('custom-modal-1')">Open Modal 1 - Data Binding</button>
+<button class="margin-r-1 margin-b-1" (click)="openModal('custom-modal-2')">Open Modal 2 - Modal Customizing</button>
+<button class="margin-r-1 margin-b-1" (click)="openModal('custom-modal-3')">Open Modal 3 - Modal with long content</button>
+<button class="margin-r-1 margin-b-1" (click)="openModal('custom-modal-4')">Open Modal 4 - Custom Close Button & Backdorup unclosable</button>
+<button class="margin-r-1 margin-b-1" (click)="openModal('custom-modal-5')">Open Modal 5 - Modal with header & footer</button>
+<button class="margin-r-1 margin-b-1" (click)="openModal('custom-modal-6')">Open Modal 6 - Modal fullscreen with header & footer</button>
+<button class="margin-r-1 margin-b-1" (click)="openModal('id-not-exist')">Open Modal 7 - No modal id - error log added on console</button>
 <br/>
 
 <!-- Modal with data binding changes -->
@@ -101,9 +101,9 @@
             <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nec dui sit amet sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean massa augue, varius nec velit et, fermentum eleifend purus. Integer porta eros et risus mattis ultricies. Phasellus enim neque, finibus sed tempor at, pretium nec nulla. Pellentesque eget gravida lorem. Cras non volutpat urna. Phasellus nec quam mattis, euismod turpis ac, pulvinar enim. Proin lacinia felis nulla, ut convallis felis lacinia eget. Duis sed consectetur dui, eu dictum elit. Donec ut suscipit diam. Vestibulum nec ex a arcu rutrum vulputate ut eu lacus. Curabitur sem sapien, vestibulum non tincidunt semper, ullamcorper a ante. Morbi tempor sem nec facilisis efficitur. Nam vel quam malesuada, dignissim leo id, eleifend tortor. Etiam in rutrum elit.</p>
         </div>
-        <div class="fullfill-horizontal flex-horizontal justify-between" style="box-shadow: rgb(129 129 129 / 7%) 0px -5px 20px;border-top: rgb(129 129 129 / 20%) solid 1px;">
-            <a class="padding-1" href="javascript:void(0)" (click)="openModal('custom-modal-6')">Cancel</a>
-            <a class="padding-1" href="javascript:void(0)" (click)="openModal('custom-modal-6')">Save</a>
+        <div class="fullfill-horizontal flex-horizontal justify-between padding-1" style="box-shadow: rgb(129 129 129 / 7%) 0px -5px 20px;border-top: rgb(129 129 129 / 20%) solid 1px;">
+            <button class="btn-swatch-reset" (click)="openModal('custom-modal-6');">Cancel</button>
+            <button class="btn-swatch-a" (click)="openModal('custom-modal-6')">Save</button>
         </div>
     </div>
 </mds-modal>

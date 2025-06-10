@@ -2,29 +2,48 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis.</p>
 <hr/>
 
-<h2>Preview Filter Checkbox Component</h2>
-<mds-filter-checkbox
-    [filterData]="sampledata"
-    [filterBy]="peropKey"
-    [filterSelected]="selected"
-    [titlegroup]="'Filter by Category'"
-    [reset]="'✕'"
-    [hideCounter]="false"
-></mds-filter-checkbox>
 
-<h2>Code</h2>
+<h2 class="margin-b-1">Preview & Generate Component Configuration</h2>
+<div class="mds-grid">
+    <div class="g-m-30">
+        <h3>Preview:</h3>
+        <!-- Medes Toggle Component -->
+        <mds-filter-checkbox
+            [filterData]="sampledata"
+            [filterBy]="peropKey"
+            [filterSelected]="selected"
+            [titlegroup]="label"
+            [reset]="resetElement"
+            [hideCounter]="isHideCounter"
+        ></mds-filter-checkbox>
+    </div>
+    <div class="g-m-70">
+        <h3>Conifguration:</h3>
+        <div>
+            <input type="text" placeholder="Property key on data" [ngClass]="{'invalid': peropKey.length === 0}" [(ngModel)]="peropKey"/>
+            <small class="txt-lighter margin-l-1">Type others property on array. ex type: brand, color, gender etc</small>
+            <br/>
+            <input type="text" placeholder="Default: Filter by (titlegroup)" [(ngModel)]="label"/>
+            <input type="text" placeholder="html element (reset)" [(ngModel)]="resetElement"/>
+            <button (click)="isHideCounter=!isHideCounter">Show/Hide Counter</button>
+        </div>
+    </div>
+</div>
+
+
+<h3>Code</h3>
 <div class="mds-grid">
     <div class="g-l-30">
         <b>Module</b>
-        <mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism>
+        <mds-hightlight-prism [code]="importModuleCode" language="javascript"></mds-hightlight-prism>
     </div>
     <div class="g-l-40">
         <b>Component</b>
-        <mds-hightlight-prism [code]="samplecomponent" language="typescript"></mds-hightlight-prism>
+        <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
     </div>
     <div class="g-l-30">
         <b>HTML</b>
-        <mds-hightlight-prism [code]="componentdemo" language="html"></mds-hightlight-prism>
+        <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
     
     </div>
 </div>
@@ -54,5 +73,5 @@
 <small>
     <b>Notes:</b>
     <br/><i>? = Is optional value, if no value will use default value.</i>
-    <br/><i>∞ = No default valye, put anything base on type</i>
+    <br/><i>∞ = No default value, put anything base on type</i>
 </small>

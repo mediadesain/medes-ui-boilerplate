@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ModalComponentRoutingModule } from './modal-component-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MdsModalModule, MdsHightlightPrismModule, MdsModalService }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @NgModule({
   declarations: [],
@@ -17,4 +17,4 @@ import { MdsModalModule, MdsHightlightPrismModule, MdsModalService }
   ],
   providers: [MdsModalService]
 })
-export class ModalComponentModule { }
+export class DemoModalComponentModule { }

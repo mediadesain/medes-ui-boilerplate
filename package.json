@@ -1,6 +1,6 @@
 {
   "name": "medes-ui-boilerplate",
-  "version": "1.15.2",
+  "version": "1.15.3",
   "scripts": {
     "ng": "ng",
     "start": "ng lint medes-ui-boilerplate && ng serve medes-ui-boilerplate --port 4600",

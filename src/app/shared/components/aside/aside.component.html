@@ -8,7 +8,7 @@
                 <span *ngIf="link.isNew" class="new-beadge" style="position: absolute;">New</span>
                 <ul class="child" *ngIf="link.urls">
                     <li *ngFor="let childlink of link.urls">
-                        <a routerLinkActive="active" [routerLink]="childlink.url" [innerHTML]="childlink.text"></a>
+                        <a routerLinkActive="active" [routerLink]="childlink.url" [routerLinkActiveOptions]="{ exact: false }" [innerHTML]="childlink.text"></a>
                         <span *ngIf="childlink.isNew" class="new-beadge" style="position: absolute;">New</span>
                     </li>
                 </ul> 

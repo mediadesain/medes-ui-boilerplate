@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-modal',
@@ -17,7 +17,7 @@ export class DemoModalComponent implements OnInit {
   constructor(private mdsModalService: MdsModalService) {}
 
   ngOnInit(): void {
-    this.bodyText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.';
+    this.bodyText = 'Hello edit me on Open Modal 1 - Data Binding';
   }
 
   openModal(id: string): void {

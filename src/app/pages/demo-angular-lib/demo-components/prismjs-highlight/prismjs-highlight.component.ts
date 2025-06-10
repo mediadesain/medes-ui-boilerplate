@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MdsHightlightPrismModule }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-prismjs-highlight',
@@ -26,7 +26,7 @@ export class DemoPrismjsHighlightComponent {
     {attribute: 'heightHighlight?', value: 'number', default: '∞', description: 'Maximal height', version: 'medes-ui@1.14.1 >'}
   ];
 
-  importmodule = `
+  importModuleCode = `
 import { MdsHightlightPrismModule } from 'medes-ui';
 
 @NgModule({
@@ -36,7 +36,7 @@ import { MdsHightlightPrismModule } from 'medes-ui';
   ]
 })`;
 importcompnent = `
-<mds-hightlight-prism [code]="importmodule" language="typescript" [heightHighlight]="500"></mds-hightlight-prism>`;
+<mds-hightlight-prism [code]="importModuleCode" language="javascript" [heightHighlight]="500"></mds-hightlight-prism>`;
 
   // constructor() { }
 

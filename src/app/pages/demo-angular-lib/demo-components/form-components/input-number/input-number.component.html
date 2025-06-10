@@ -1,0 +1,79 @@
+<h1>Input Number Component</h1>
+<p>Advance version of input number. On this component having masking with with thousand separator and decimal & the value still number.</p>
+<hr/>
+
+<h2 class="margin-b-1">Preview & Generate Component Configuration</h2>
+<div class="mds-grid">
+    <div class="g-m-50">
+        <h3>Preview:</h3>
+        <!-- Medes Input Component -->
+        <mds-input-number [class]="myClass" [(value)]="price" [model]="mdsFormModel"></mds-input-number>
+        <p>Value: {{price}}</p>
+    </div>
+    <div class="g-m-50">
+        <h3>Conifguration:</h3>
+        <div>
+            <input type="text" placeholder="ex type: txt-negative" [(ngModel)]="myClass" (ngModelChange)="componentCode = this.reGenerateCode()"/>
+            <select [(ngModel)]="mdsFormModel.configs.mdsInputNumber.totalDecimal" (ngModelChange)="componentCode = this.reGenerateCode()">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <button class="btn-swatch-a" (click)="mdsFormModel.configs.mdsInputNumber.isDisabled = !mdsFormModel.configs.mdsInputNumber.isDisabled; componentCode = this.reGenerateCode()">Enable/Disable</button>
+        </div>
+        <i>Type any class is written on global parent style.scss</i>
+    </div>
+</div>
+
+<h3>Code Generate</h3>
+<div class="mds-grid">
+    <div class="g-l-30">
+        <b>Module</b>
+        <mds-hightlight-prism [code]="importModuleCode" language="javascript"></mds-hightlight-prism>
+    </div>
+    <div class="g-l-40">
+        <b>Component</b>
+        <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
+    </div>
+    <div class="g-l-30">
+        <b>HTML</b>
+        <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
+    </div>
+</div>
+
+<b>Properties</b>
+<table class="mds-table">
+    <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
+    <tr>
+        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="min-width: 200px;">Support Version</th>
+    </tr>
+    <tr *ngFor="let item of tableContent">
+        <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
+        <td mds-th-title="Data Type">
+            <ng-container *ngIf="item.type === 'MdsFormModel'">
+                <a (click)="openModal('my-modal-1')">{{item.type}}</a>
+            </ng-container>
+            <ng-container *ngIf="item.type !== 'MdsFormModel'">
+                {{item.type}}
+            </ng-container>
+        </td>
+        <td mds-th-title="Default">{{item.default}}</td>
+        <td mds-th-title="Description">{{item.description}}</td>
+        <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+    </tr>
+</table>
+<small>
+    <b>Notes:</b>
+    <br/><i>? = Is optional value, if no value will use default value.</i>
+    <br/><i>∞ = No default value, put anything base on type</i>
+</small>
+
+<mds-modal id="my-modal-1" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
+    <div class="padding-1">
+        <h3 class="padding-b-1">Interface Detail</h3>
+        <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
+    </div>
+</mds-modal>

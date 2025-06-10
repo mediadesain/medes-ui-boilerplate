@@ -2,31 +2,46 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis.</p>
 <hr/>
 
-<h2 class="margin-b-1">Preview Page Navigation Component</h2>
-<div class="margin-b-2">
-    Type Standard
-    <div class="padding-b-1" style="text-align: center;">
-        <!-- Demo Medes Page Navigation Component - Type Standard -->
-        <mds-page-navigation [data]="data" [(pageNavConfig)]="pageNavConfigB"></mds-page-navigation>
+<h2 class="margin-b-1">Preview & Generate Component Configuration</h2>
+<div class="mds-grid">
+    <div class="g-m-100">
+        <h3>Sample Data</h3>
+        <div class="mds-grid padding-vertical-1">
+            <div class="g-s-50 g-m-30 g-l-20" *ngFor="let item of data | slice: pageNavConfig.selectedRange?.start:pageNavConfig.selectedRange?.end">
+                {{item}}
+            </div>
+        </div>
     </div>
-    <!-- Demo Medes Page Navigation Component - Type Pager -->
-    Type Numbering
-    <mds-page-navigation [data]="data" [(pageNavConfig)]="pageNavConfig"></mds-page-navigation>
+    <div class="g-m-50">
+        <h3>Preview:</h3>
+        <!-- Demo Medes Page Navigation Component - Type Pager -->
+        <mds-page-navigation [data]="data" [(pageNavConfig)]="pageNavConfig"></mds-page-navigation>
+    </div>
+    <div class="g-m-50">
+        <h3>Conifguration:</h3>
+        <div>
+            <select [(ngModel)]="pageNavConfig.type" (ngModelChange)="componentCode = this.reGenerateCode()">
+                <option>numbering</option>
+                <option>standard</option>
+            </select>
+            <input type="number" [ngModel]="pageNavConfig.itemToShow" (ngModelChange)="updateTotal($event)"/>
+        </div>
+    </div>
 </div>
 
 <h2>Code</h2>
 <div class="mds-grid">
     <div class="g-l-30">
         <b>Module</b>
-        <mds-hightlight-prism [code]="importmodule" language="typescript"></mds-hightlight-prism>
+        <mds-hightlight-prism [code]="importModuleCode" language="javascript"></mds-hightlight-prism>
     </div>
     <div class="g-l-40">
         <b>Component</b>
-        <mds-hightlight-prism [code]="samplecomponent" language="typescript"></mds-hightlight-prism>
+        <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
     </div>
     <div class="g-l-30">
         <b>HTML</b>
-        <mds-hightlight-prism [code]="componentdemo" language="html"></mds-hightlight-prism>
+        <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
     </div>
 </div>
 <p><i>Variable <b>data</b> values is <a href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts">constant/proucts.ts</a>.</i></p>
@@ -55,12 +70,12 @@
 <small>
     <b>Notes:</b>
     <br/><i>? = Is optional value, if no value will use default value.</i>
-    <br/><i>∞ = No default valye, put anything base on type</i>
+    <br/><i>∞ = No default value, put anything base on type</i>
 </small>
 
 <mds-modal id="my-modal-1" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
     <div class="padding-1">
-        <h3 class="padding-b-1">Minimum Configuration</h3>
-        <mds-hightlight-prism [code]="condigInterface" language="typescript"></mds-hightlight-prism>
+        <h3 class="padding-b-1">Interface Detail</h3>
+        <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
     </div>
 </mds-modal>

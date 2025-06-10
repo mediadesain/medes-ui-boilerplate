@@ -5,4 +5,4 @@ import { FilterComponentsRoutingModule } from './filter-components-routing.modul
   declarations: [],
   imports: [FilterComponentsRoutingModule]
 })
-export class FilterComponentsModule { }
+export class DemoFilterComponentsModule { }

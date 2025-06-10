@@ -1,3 +1,11 @@
+### 1.16.0 (Soon)
+
+### 1.15.3 (Release - 250610)
+- New Component (Angular) - Numeric input
+- New Component (Angular) - Toggle
+- Reset Basic Form styling
+- New Styling - Input, Select, Texarea, Button styling
+- Update documentation
 ### 1.15.2 (Release - 250601)
 - Enhancement Services - Alert Service now is responsive
 - New Array Util - exportToCsv()
@@ -5,7 +13,7 @@
 ### 1.15.1 (Release - 250601)
 - New Services - Alert Service
 - New Object Util - isEqual()
-- New Angular Components - Page Navigation, Page Counter Component
+- New Component (Angular) - Page Navigation, Page Counter Component
 - Update documentation
 ### 1.15.0 (Release - 231002)
 - Update minor version to 15

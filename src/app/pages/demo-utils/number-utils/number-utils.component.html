@@ -3,14 +3,14 @@
 <hr/>
 
 <b>Import MdsNumberUtils:</b>
-<mds-hightlight-prism [code]="import" language="typescript"></mds-hightlight-prism>
+<mds-hightlight-prism [code]="import" language="javascript"></mds-hightlight-prism>
 <br/>
 
 <b>Number utils details:</b>
 <table class="mds-table">
     <!-- Table Header -->
     <tr>
-        <th *ngFor="let row of tableHeader; let i = index" [style.width.px]="i === tableHeader.length - 1 && '200'">{{row.title}}</th>
+        <th *ngFor="let row of tableHeader; let i = index" [style.width.%]="i === 1 ? '15' : '' || i === tableHeader.length - 1 ? '15' : ''" [title]="row.title">{{row.title}}</th>
     </tr>
     <!-- Table Content -->
     <tr *ngFor="let item of tableContent">
@@ -21,9 +21,9 @@
 <small>
     <b>Notes:</b>
     <br/><i>? = Is optional value, if no value will use default value.</i>
-    <br/><i>∞ = No default valye, put anything base on type</i>
+    <br/><i>∞ = No default value, put anything base on type</i>
 </small>
 <hr/>
 
 <b>Output:</b>
-<mds-hightlight-prism [code]="demo" language="typescript"></mds-hightlight-prism>
+<mds-hightlight-prism [code]="demo" language="javascript"></mds-hightlight-prism>
