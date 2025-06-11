@@ -1,5 +1,6 @@
-### 1.16.0 (Soon)
-
+### 1.16.0 (Release - 250612)
+- Upgrade Angular Lib to Angular 16, no new feature still same with last version 1.15.3
+- Update documentation
 ### 1.15.3 (Release - 250610)
 - New Component (Angular) - Numeric input
 - New Component (Angular) - Toggle

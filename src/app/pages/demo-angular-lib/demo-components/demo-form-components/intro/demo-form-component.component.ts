@@ -13,9 +13,12 @@ import { MdsHightlightPrismModule, MdsFormModule }
   imports: [CommonModule, RouterModule, MdsHightlightPrismModule, MdsFormModule]
 })
 export class DemoFormComponent implements AfterContentChecked {
-isActive: boolean = true;
-price: number = 1549999.999
-
+  isActive: boolean;
+  price: number;
+  constructor(private cdr: ChangeDetectorRef){
+    this.isActive = true;
+    this.price = 1549999.999
+  }
 pageNavigationComponent = `
 <!-- Medes Toggle Component -->
 <mds-toggle-button [(value)]="isActive"></mds-toggle-button>`;
@@ -30,8 +33,6 @@ pageCounterComponent = `
         <mds-input-number [(value)]="price"></mds-input-number>
     </div>
 </div>`;
-
-  constructor(private cdr: ChangeDetectorRef){}
 
   ngAfterContentChecked(): void {
     this.cdr.detectChanges();

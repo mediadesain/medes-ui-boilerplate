@@ -45,7 +45,7 @@ export class DevTestingComponent implements AfterViewInit, AfterContentChecked, 
     // Testing Listening sroll resize
     this.listenBox.nativeElement.addEventListener('scroll', this.onscrollChange );
     this.resizeObserver = new ResizeObserver(entries => {
-      for (let entry of entries) {
+      for (const entry of entries) {
         console.log('Resize changes:', entry);
         // console.log('Resize changes:', entry.target.clientWidth < entry.target.scrollWidth);
       }

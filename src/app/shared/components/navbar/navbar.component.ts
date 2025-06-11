@@ -13,7 +13,7 @@ export class NavbarComponent {
   ) {
     this.router.events.pipe(
       filter( e => e instanceof NavigationEnd)
-    ).subscribe( (navEnd: NavigationEnd) => {
+    ).subscribe( (/*navEnd: NavigationEnd*/) => {
       this.isActive = true;
     });
   }

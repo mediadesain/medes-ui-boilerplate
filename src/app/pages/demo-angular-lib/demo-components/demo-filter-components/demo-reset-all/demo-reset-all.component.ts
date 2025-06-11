@@ -13,12 +13,17 @@ import { MdsFilterResetComponent, MdsHightlightPrismModule, MdsModalModule, MdsM
   providers: [MdsModalService]
 })
 export class DemoResetAllComponent {
-  filterSelected: SelectedFilterInterface = {};
-  filterRangeSelected: SelectedFilterSliderInterface = {
-    min: 0,
-    max: 2500,
-    start: 100,
-    end: 2000
+  filterSelected: SelectedFilterInterface;
+  filterRangeSelected: SelectedFilterSliderInterface;
+
+  constructor(public mdsModalService: MdsModalService) {
+    this.filterSelected = {};
+    this.filterRangeSelected = {
+      min: 0,
+      max: 2500,
+      start: 100,
+      end: 2000
+    }
   }
 
 htmlCode = `
@@ -29,12 +34,12 @@ htmlCode = `
   [(filterRangeSelected)]="filterRangeSelected"
 ></mds-filter-reset>`;
 
-selectedFilterInterface: string = `
+selectedFilterInterface = `
 export interface SelectedFilterInterface {
     [key: string]: string[];
 }`;
 
-selectedFilterSliderInterface: string = `
+selectedFilterSliderInterface = `
 export interface SelectedFilterSliderInterface {
     start: number;
     end: number
@@ -48,8 +53,6 @@ export interface SelectedFilterSliderInterface {
     {attribute: 'class?', type: 'String', default: '∞', description: 'Classes list for button', version: 'medes-ui@1.13.0 >'},
     {attribute: 'content?', type: 'String', default: `'Reset Filter'`, description: 'Label content for reset button', version: 'medes-ui@1.14.1 >'}
   ]
-
-  constructor(public mdsModalService: MdsModalService) {}
 
   openModal(id: string): void {
     this.mdsModalService.trigger(id);

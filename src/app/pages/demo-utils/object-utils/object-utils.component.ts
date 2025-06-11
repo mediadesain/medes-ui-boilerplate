@@ -58,6 +58,5 @@ const objectB = {
   "gender": "man"
 };
 MdsObjectUtils.isEqual(objectA, objectB); // output false`;
-  constructor() { }
 
 }
