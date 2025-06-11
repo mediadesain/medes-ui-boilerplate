@@ -90,7 +90,6 @@ export class DemoLayoutUtilsComponent {
     {label: 'Align End', value: 'align-end'},
     {label: 'Align Arround', value: 'align-around'},
     {label: 'Align Between', value: 'align-between'}
-  ]
-  constructor() {}
+  ];
 
 }

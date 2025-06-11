@@ -17,7 +17,7 @@ export class AppComponent {
     // Listen active Routing
     this.router.events.pipe(
       filter( e => e instanceof NavigationEnd)
-    ).subscribe( (navEnd: NavigationEnd) => {
+    ).subscribe( (/*navEnd: NavigationEnd*/) => {
       document.getElementsByTagName('content')[0].classList.remove('active');
     });
   }

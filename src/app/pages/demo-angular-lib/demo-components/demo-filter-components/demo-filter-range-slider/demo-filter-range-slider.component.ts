@@ -14,17 +14,24 @@ import { MdsFilterRangeSliderComponent, MdsHightlightPrismModule, SelectedFilter
 })
 export class DemoFilterRangeSliderComponent {
   //----- Required -----
-  filterRangeSelected: SelectedFilterSliderInterface = {
-    min: 1250,
-    max: 19500,
-    start: 6000,
-    end: 17000
-  };
+  filterRangeSelected: SelectedFilterSliderInterface;
 
   //----- Optional Configuration -----
-  label: string = 'Filter by price';
-  resetElement: string = '<b>✕</b>';
-  isDisabled: boolean = false;
+  label: string;
+  resetElement: string;
+  isDisabled: boolean;
+
+  constructor(){
+    this.filterRangeSelected = {
+      min: 1250,
+      max: 19500,
+      start: 6000,
+      end: 17000
+    };
+    this.label = 'Filter by price';
+    this.resetElement = '<b>✕</b>';
+    this.isDisabled = false;
+  }
 
   importModuleCode = `
 import { MdsFilterModule } from 'medes-ui';
@@ -77,7 +84,5 @@ componenthtml = `
   [disabled]="isDisabled">
 </mds-filter-range-slider>
 <small><i>Output: {{filterRangeSelected.start}} - {{filterRangeSelected.end}}</i></small>`;
-
-  constructor() {}
 
 }

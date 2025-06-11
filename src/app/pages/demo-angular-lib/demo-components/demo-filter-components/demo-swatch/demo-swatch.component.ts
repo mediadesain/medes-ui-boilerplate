@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsFilterSwatchComponent, MdsHightlightPrismModule, SelectedFilterInterface }
@@ -13,28 +13,34 @@ import { MdsFilterSwatchComponent, MdsHightlightPrismModule, SelectedFilterInter
   standalone: true,
   imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsFilterSwatchComponent]
 })
-export class DemoSwatchComponent implements OnInit {
+export class DemoSwatchComponent {
   //----- Required -----
   // filterData
   sampledata: ProductDataModel[];
   // filterBy
-  peropKey: string = 'color';
+  peropKey: string;
   // filterSelected
   selected: SelectedFilterInterface = {};
   // swatchMapping
-  colormap: {[key: string]: string} = {
-    'blue-sky': '#66ccdd',
-    'maroon': '#bb6a66',
-    'brown': '#6b6a6b',
-    'black': '#000000',
-    'purple': '#6a66bb',
-    'gold': '#b6ab66'
-  };
+  colormap: {[key: string]: string};
 
   //----- Optional Configuration -----
   label: string; // titlegroup by default Color
   totalSize: number; // swatchSize by default 30
   totalRadius: number; // swatchRadius by default 0
+
+  constructor(){
+    this.sampledata = SampleProductsData.data;
+    this.peropKey = 'color';
+    this.colormap = {
+      'blue-sky': '#66ccdd',
+      'maroon': '#bb6a66',
+      'brown': '#6b6a6b',
+      'black': '#000000',
+      'purple': '#6a66bb',
+      'gold': '#b6ab66'
+    };
+  }
 
   importModuleCode = `
 import { MdsFilterModule } from 'medes-ui';
@@ -95,9 +101,5 @@ htmlCode = `
   [swatchSize]="totalSize"
   [swatchRadius]="totalRadius"
 ></mds-filter-swatch>`;
-
-  ngOnInit(): void {
-    this.sampledata = SampleProductsData.data;
-  }
 
 }

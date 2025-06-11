@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsFilterRangePipe, MdsHightlightPrismModule }
@@ -12,13 +12,11 @@ import { MdsFilterRangePipe, MdsHightlightPrismModule }
   templateUrl: './demo-filter-range-pipe.component.html',
   styleUrls: ['./demo-filter-range-pipe.component.scss']
 })
-export class DemoFilterRangePipeComponent implements OnInit {
+export class DemoFilterRangePipeComponent {
   item: ProductDataModel[];
   params: {propertyKey: string, range: {start: number, end: number}};
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
     this.params = {
       propertyKey: 'price',
       range: { start: 500, end: 1000 }
