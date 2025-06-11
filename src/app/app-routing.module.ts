@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { VersioningComponent } from './shared/components/versioning/versioning.component';
-import { DemoTestingComponent } from './pages/demo-testing-components/demo-testing.component';
+import { DevTestingComponent } from './pages/dev-testing-components/dev-testing.component';
 
 const routes: Routes = [
   {
@@ -9,7 +9,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/introduction/introduction.module').then(m => m.IntroductionModule),
   }, {
     path: 'ui-elements',
-    loadChildren: () => import('./pages/demo-ui-boilerplate/ui-boilerplate.module').then(m => m.MdsDocBoilerplateModule)
+    loadChildren: () => import('./pages/demo-ui-elements/demo-ui-elements.module').then(m => m.DemoUiElementsModule)
   },
   {
     path: 'services',
@@ -27,8 +27,8 @@ const routes: Routes = [
     component: VersioningComponent
   },
   {
-    path: 'testing',
-    component: DemoTestingComponent
+    path: 'dev',
+    component: DevTestingComponent
   },
   {
     path: '**', redirectTo: 'introduction/how-to-install'

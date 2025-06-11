@@ -2,12 +2,9 @@ import { CommonModule } from '@angular/common';
 import { AfterContentChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsNumberUtils, MdsPageManagerModule, PageNavigationConfigInterface, MdsPagerType }
+import { MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsNumberUtils, MdsPageManagerModule, PageNavigationConfigInterface, MdsPagerType, SelectedFilterInterface, SelectedFilterSliderInterface }
 /*-public-mode-*/ from 'medes-ui';
 //*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
-import { SelectedFilterInterface, SelectedFilterSliderInterface }
-/*-public-mode-*/ from 'medes-ui/lib/mds-filter/mds-filter.interface';
-//*-dev-mode-*/ from 'projects/medes-ui/src/lib/mds-filter/mds-filter.interface';
 
 @Component({
   selector: 'mds-demo',
