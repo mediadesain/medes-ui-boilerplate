@@ -102,8 +102,6 @@ MdsArrayUtils.exportToCsv('my-file-name', sampleDataExport)
     { manufucture: 'kia', model: 'optima', year: '2012' }
   ];
 
-  constructor() {}
-
   downloadCsv(): void {
     const sampleDataExport = [
       ['name', 'age', 'gender'],

@@ -13,13 +13,17 @@ import { MdsAlertConfig, MdsAlertService, MdsAlertType, MdsHightlightPrismModule
   imports: [CommonModule, FormsModule, MdsHightlightPrismModule]
 })
 export class DemoAlertComponent {
-  data: string = 'Data has been saved sucessfully';
-  alertType: string = 'success';
-  timeToHide: number = 3000;
-  isShowIcon: boolean = true;
+  data: string;
+  alertType: string;
+  timeToHide: number;
+  isShowIcon: boolean;
   callClass: string;
 
   constructor(){
+    this.data = 'Data has been saved sucessfully';
+    this.alertType = 'success';
+    this.timeToHide = 3000;
+    this.isShowIcon = true;
     this.callClass = this.constructCode();
   }
 

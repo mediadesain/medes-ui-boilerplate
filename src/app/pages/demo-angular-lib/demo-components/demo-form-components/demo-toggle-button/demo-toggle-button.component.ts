@@ -17,17 +17,9 @@ import { MdsHightlightPrismModule, MdsModalService, MdsModalModule, MdsFormModul
 })
 export class DemoToggleButtonComponent {
   // value
-  isActive: boolean = true;
+  isActive: boolean;
   // model
-  mdsFormModel: MdsFormModel = {
-    configs: {
-      mdsToggle: {
-        type: MdsToggleType.CLASIC,
-        color: 'swatch-a',
-        // isDisabled: true
-      }
-    }
-  }
+  mdsFormModel: MdsFormModel;
 
   // Code Viewer
   importModuleCode: string;
@@ -43,6 +35,18 @@ export class DemoToggleButtonComponent {
   ]
 
   constructor(public mdsModalService: MdsModalService) {
+    // value
+    this.isActive = true;
+    // model
+    this.mdsFormModel = {
+      configs: {
+        mdsToggle: {
+          type: MdsToggleType.CLASIC,
+          color: 'swatch-a',
+          // isDisabled: true
+        }
+      }
+    }
     this.importModuleCode = constructImportModuleCode('MdsFormModule');
     this.componentCode = this.reGenerateCode();
     this.htmlCode = htmlCode;

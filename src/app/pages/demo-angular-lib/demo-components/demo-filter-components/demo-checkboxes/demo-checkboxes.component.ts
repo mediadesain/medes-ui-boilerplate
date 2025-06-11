@@ -16,14 +16,23 @@ import { MdsFilterCheckboxComponent, MdsHightlightPrismModule, SelectedFilterInt
 
 export class DemoCheckboxesComponent {
   // Required
-  sampledata: ProductDataModel[] = SampleProductsData.data; // filterData
-  peropKey: string = 'category'; // filterBy
-  selected: SelectedFilterInterface = {}; // filterSelected
+  sampledata: ProductDataModel[]; // filterData
+  peropKey: string; // filterBy
+  selected: SelectedFilterInterface; // filterSelected
 
   // Optional Configuration
-  label: string = 'Filter by Category'; // titlegroup
-  resetElement: string = '✕' // reset
-  isHideCounter: boolean = false; // hideCounter
+  label: string; // titlegroup
+  resetElement: string; // reset
+  isHideCounter: boolean; // hideCounter
+
+  constructor(){
+    this.sampledata = SampleProductsData.data;
+    this.peropKey = 'category';
+    this.selected = {};
+    this.label = 'Filter by Category';
+    this.resetElement = '✕';
+    this.isHideCounter = false;
+  }
   
   importModuleCode = `
 import { MdsFilterModule } from 'medes-ui';

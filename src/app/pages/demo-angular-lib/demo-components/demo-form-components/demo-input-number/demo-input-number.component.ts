@@ -18,18 +18,11 @@ import { FormsModule } from '@angular/forms';
 export class DemoInputNumberComponent {
   
   // value
-  price: number = 23750000.64646;
+  price: number;
   // customClass
-  myClass: string = '';
+  myClass: string;
   // model
-  mdsFormModel: MdsFormModel = {
-    configs: {
-      mdsInputNumber: {
-        totalDecimal: 2
-        // isDisabled: true
-      }
-    }
-  }
+  mdsFormModel: MdsFormModel;
 
   // Code Viewer
   importModuleCode: string;
@@ -46,6 +39,16 @@ export class DemoInputNumberComponent {
   ]
 
   constructor(public mdsModalService: MdsModalService) {
+    this.price = 23750000.64646;
+    this.myClass = '';
+    this.mdsFormModel = {
+      configs: {
+        mdsInputNumber: {
+          totalDecimal: 2
+          // isDisabled: true
+        }
+      }
+    }
     this.importModuleCode = constructImportModuleCode('MdsFormModule');
     this.componentCode = this.reGenerateCode();
     this.htmlCode = htmlCode;
