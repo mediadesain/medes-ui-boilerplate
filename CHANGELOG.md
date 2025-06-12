@@ -1,3 +1,6 @@
+### 1.17.x (Release - 250613)
+- Upgrade Angular Lib to Angular 17, no new feature still same with last version 1.16.0, 1.15.3
+- Update documentation
 ### 1.16.0 (Release - 250612)
 - Upgrade Angular Lib to Angular 16, no new feature still same with last version 1.15.3
 - Update documentation
