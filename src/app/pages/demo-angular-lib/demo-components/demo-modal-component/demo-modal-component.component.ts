@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { DemoModalChildComponent } from './demo-modal-child/demo-modal-child.component';
 import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
 /*-public-mode-*/ from 'medes-ui';
-import { DemoModalChildComponent } from './demo-modal-child/demo-modal-child.component';
 //*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 
