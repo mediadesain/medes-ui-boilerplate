@@ -1,6 +1,6 @@
 export const htmlCode = `
 <!-- Medes Input Component -->
-<mds-input-number [class]="myClass" [(value)]="price" [model]="mdsFormModel"></mds-input-number>
+<mds-input-number [customClass]="myClass" [(value)]="price" [model]="mdsFormModel"></mds-input-number>
 <p>Value: {{price}}</p>`;
 
 
