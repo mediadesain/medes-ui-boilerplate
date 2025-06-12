@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { DemoModalChildComponent } from './demo-modal-child/demo-modal-child.component';
 import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
 /*-public-mode-*/ from 'medes-ui';
 //*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
@@ -11,7 +12,7 @@ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
   templateUrl: './demo-modal-component.component.html',
   styleUrls: ['./demo-modal-component.component.scss'],
   standalone: true,
-  imports: [CommonModule, RouterModule, MdsHightlightPrismModule, MdsModalModule]
+  imports: [CommonModule, RouterModule, MdsHightlightPrismModule, MdsModalModule, DemoModalChildComponent]
 })
 
 export class DemoModalComponent {
