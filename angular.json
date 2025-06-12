@@ -79,18 +79,18 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "port": 4600,
-            "browserTarget": "medes-ui-boilerplate:build"
+            "buildTarget": "medes-ui-boilerplate:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "medes-ui-boilerplate:build:production"
+              "buildTarget": "medes-ui-boilerplate:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "medes-ui-boilerplate:build"
+            "buildTarget": "medes-ui-boilerplate:build"
           }
         },
         "test": {
