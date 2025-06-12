@@ -1,6 +1,6 @@
-> # This is beta version
+<!-- > # This is beta version
 > - medes-ui package not published yet
-> - This branch is still on development only mediadesain team able to run
+> - This branch is still on development only mediadesain team able to run -->
 
 # Mediadesain UI Library
 This UI library was created & used by Mediadesain Team and open for public. Demo and preview medes-ui. For more detail about documentation visit official site [here](https://doc.mediadesain.com/).
