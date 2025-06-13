@@ -7,10 +7,10 @@
 <br/>
 
 <b>Color utils details:</b>
-<table class="mds-table">
+<table class="table-properties mds-table">
     <!-- Table Header -->
     <tr>
-        <th *ngFor="let row of tableHeader; let i = index" [style.width.%]="i === 1 ? '15' : '' || i === tableHeader.length - 1 ? '15' : ''" [title]="row.title">{{row.title}}</th>
+        <th *ngFor="let row of tableHeader; let i = index" [style.width.%]="i === 1 ? '15' : '' || i === tableHeader.length - 1 ? '20' : ''" [title]="row.title">{{row.title}}</th>
     </tr>
     <!-- Table Content -->
     <tr *ngFor="let item of tableContent">
