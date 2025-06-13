@@ -49,19 +49,18 @@
 </div>
 
 <b>Properties</b>
-<table class="mds-table">
+<table class="table-properties mds-table">
     <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
     <tr>
-        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="min-width: 200px;">Support Version</th>
+        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="width: 20%">Support Version</th>
     </tr>
     <tr *ngFor="let item of [
-        {attribute: 'filterData', type: 'Array<any>', default: '∞', description: 'Sample data for create multiple filter checkbox', version: 'medes-ui@1.13.0 >'},
-        {attribute: 'filterBy', type: 'string', default: '∞', description: 'Newer version only support string value, value is property/key', version: 'medes-ui@1.14.3 >'},
-        {attribute: 'filterBy <i>(Old version)</i>', type: 'Array of string', default: '∞', description: 'Listing of object keys/properties to filter', version: 'medes-ui@1.13.0 > medes-ui@1.14.2'},
-        {attribute: 'filterSelected', type: 'Object', default: '∞', description: 'List of selected filter', version: 'medes-ui@1.13.0 >'},
-        {attribute: 'titlegroup?', type: 'string', default: 'Filter by', description: 'Prefix of label text of group', version: 'medes-ui@1.13.0 >'},
-        {attribute: 'reset?', type: 'string', default: '✕', description: 'Content of reset group filter, html readeable.', version: 'medes-ui@1.13.0 >'},
-        {attribute: 'hideCounter?', type: 'boolean', default: 'false', description: 'Show/hide counter item. Or delete the attribute by default will showing', version: 'medes-ui@1.13.0 >'}
+        {attribute: 'filterData', type: 'Array<any>', default: '∞', description: 'Sample data for create multiple filter checkbox', version: 'medes-ui@1.13.0 > Latest version'},
+        {attribute: 'filterBy', type: 'string', default: '∞', description: 'Newer version only support string value, value is property/key', version: 'medes-ui@1.14.3 > Latest version'},
+        {attribute: 'filterSelected', type: 'Object', default: '∞', description: 'List of selected filter', version: 'medes-ui@1.13.0 > Latest version'},
+        {attribute: 'titlegroup?', type: 'string', default: 'Filter by', description: 'Prefix of label text of group', version: 'medes-ui@1.13.0 > Latest version'},
+        {attribute: 'reset?', type: 'string', default: '✕', description: 'Content of reset group filter, html readeable.', version: 'medes-ui@1.13.0 > Latest version'},
+        {attribute: 'hideCounter?', type: 'boolean', default: 'false', description: 'Show/hide counter item. Or delete the attribute by default will showing', version: 'medes-ui@1.13.0 > Latest version'}
     ]">
         <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
         <td mds-th-title="Data Type">{{item.type}}</td>

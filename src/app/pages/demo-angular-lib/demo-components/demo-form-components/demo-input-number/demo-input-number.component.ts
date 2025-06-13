@@ -18,18 +18,11 @@ import { FormsModule } from '@angular/forms';
 export class DemoInputNumberComponent {
   
   // value
-  price: number = 23750000.64646;
+  price: number;
   // customClass
-  myClass: string = '';
+  myClass: string;
   // model
-  mdsFormModel: MdsFormModel = {
-    configs: {
-      mdsInputNumber: {
-        totalDecimal: 2
-        // isDisabled: true
-      }
-    }
-  }
+  mdsFormModel: MdsFormModel;
 
   // Code Viewer
   importModuleCode: string;
@@ -39,13 +32,23 @@ export class DemoInputNumberComponent {
 
   // Properties Detail
   tableContent = [
-    {attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: 'medes-ui@1.15.3 >'},
-    {attribute: 'customClass?', type: 'string', default: '∞', description: 'Put classes to for styling component', version: 'medes-ui@1.15.3 >'},
-    {attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: 'medes-ui@1.15.3 >'},
-    {attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.15.3 >'}
+    {attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: 'medes-ui@1.15.3 > Latest version'},
+    {attribute: 'customClass?', type: 'string', default: '∞', description: 'Put classes to for styling component', version: 'medes-ui@1.15.3 > Latest version'},
+    {attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: 'medes-ui@1.15.3 > Latest version'},
+    {attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.15.3 > Latest version'}
   ]
 
   constructor(public mdsModalService: MdsModalService) {
+    this.price = 23750000.64646;
+    this.myClass = '';
+    this.mdsFormModel = {
+      configs: {
+        mdsInputNumber: {
+          totalDecimal: 2
+          // isDisabled: true
+        }
+      }
+    }
     this.importModuleCode = constructImportModuleCode('MdsFormModule');
     this.componentCode = this.reGenerateCode();
     this.htmlCode = htmlCode;

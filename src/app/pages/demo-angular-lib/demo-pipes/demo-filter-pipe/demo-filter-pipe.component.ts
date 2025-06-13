@@ -1,5 +1,5 @@
 import { JsonPipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsFilterPipe, MdsHightlightPrismModule }
 /*-public-mode-*/ from 'medes-ui';
@@ -12,16 +12,14 @@ import { MdsFilterPipe, MdsHightlightPrismModule }
   standalone: true,
   imports: [MdsHightlightPrismModule, JsonPipe, MdsFilterPipe]
 })
-export class DemoFilterPipeComponent implements OnInit {
+export class DemoFilterPipeComponent {
   item = [];
   params = {
     brand: ['nike', 'puma'],
     category: ['bag'],
     gender: ['women']
   }
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
     this.item = SampleProductsData.data;
   }
 }
