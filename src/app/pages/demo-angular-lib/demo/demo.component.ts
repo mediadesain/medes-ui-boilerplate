@@ -3,8 +3,8 @@ import { AfterContentChecked, ChangeDetectorRef, Component, OnInit } from '@angu
 import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsNumberUtils, MdsPageManagerModule, PageNavigationConfigInterface, MdsPagerType, SelectedFilterInterface, SelectedFilterSliderInterface }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo',

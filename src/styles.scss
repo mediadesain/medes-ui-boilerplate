@@ -1,8 +1,8 @@
 /*-- MedesUI --*/
-//*-public-mode-*/ @import "../node_modules/medes-ui/assets/scss/medes-ui";
-//*-public-mode-*/ @import "../node_modules/medes-ui/assets/scss/ui-colorscheme";
-/*-dev-mode-*/ @import "../projects/medes-ui/assets/scss/medes-ui";
-/*-dev-mode-*/ @import "../projects/medes-ui/assets/scss/ui-colorscheme";
+/*-public-mode-*/ @import "../node_modules/medes-ui/assets/scss/medes-ui";
+/*-public-mode-*/ @import "../node_modules/medes-ui/assets/scss/ui-colorscheme";
+//*-dev-mode-*/ @import "../projects/medes-ui/assets/scss/medes-ui";
+//*-dev-mode-*/ @import "../projects/medes-ui/assets/scss/ui-colorscheme";
 // Add your own custom color scheme - https://doc.mediadesain.com/introduction/color-scheme
 @import "./assets/style/custom-scheme.scss"; // Custom color scheme
 
@@ -16,8 +16,8 @@
 
 
 /*-- Custom Style for Documentation--*/
-//*-public-mode-*/ @import "../node_modules/medes-ui/assets/scss/layouts/documentation";
-/*-dev-mode-*/ @import "../projects/medes-ui/assets/scss/layouts/documentation";
+/*-public-mode-*/ @import "../node_modules/medes-ui/assets/scss/layouts/documentation";
+//*-dev-mode-*/ @import "../projects/medes-ui/assets/scss/layouts/documentation";
 navbar .logo, mds-navbar .logo { background-image: url('./assets/images/medes-ui.png'); }
 @media (prefers-color-scheme: dark) {
     mds-navbar .logo { background-image: url('./assets/images/medes-ui-dark.png'); }

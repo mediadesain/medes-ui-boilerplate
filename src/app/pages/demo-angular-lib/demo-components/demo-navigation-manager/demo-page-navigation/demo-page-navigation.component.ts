@@ -5,8 +5,8 @@ import { constructComponentCode, constructImportModuleCode } from 'src/app/share
 import { htmlCode, interfaceCode } from './page-navigation-preview-code';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsHightlightPrismModule, MdsPageManagerModule, MdsModalService, MdsModalModule, MdsPagerType, PageNavigationConfigInterface }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 
 @Component({

@@ -5,8 +5,8 @@ import { constructComponentCode, constructImportModuleCode } from 'src/app/share
 import { htmlCode, interfaceCode } from './page-counter-preview-code';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsHightlightPrismModule, MdsModalModule, MdsModalService, MdsPageManagerModule, MdsPagerType, PageNavigationConfigInterface }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-page-counter',
