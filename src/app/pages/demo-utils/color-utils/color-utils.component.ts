@@ -21,9 +21,9 @@ export class ColorUtilsComponent {
   ];
 
   tableContent = [
-    {attribute: 'rgbToHex( <b>Array</b> )', 'value':'<ul><li>Array of number</li></ul>', 'default': '∞', description: '<ul><li>Sample number of r, g, b.</li></ul>', version: 'medes-ui@0.0.3 >'},
-    {attribute: 'hexToRgba( <b>string</b>, <b>number?</b> )', 'value':'<ul><li>string</li><li>number</li></ul>', 'default': '<ul><li>∞</li><li>1</li></ul>', description: '<ul><li>Sample hex color</li><li>Opacity range between 0 - 1</li></ul>', version: 'medes-ui@0.0.3 >'},
-    {attribute: 'addDarkLight( <b>string</b>, <b>number</b> )', 'value':'<ul><li>string</li><li>number</li></ul>', 'default': '<ul><li>∞</li><li>∞</li></ul>', description: '<ul><li>Sample string to Title Case</li><li>Add positif number for lighter or negative for brighter color</li></ul>', version: 'medes-ui@0.0.3 >'}
+    {attribute: 'rgbToHex( <b>Array</b> )', 'value':'Array&lt;number&gt;', 'default': '∞', description: '<ul><li>Sample number of r, g, b.</li></ul>', version: 'medes-ui@0.0.3 > Latest version'},
+    {attribute: 'hexToRgba( <b>string</b>, <b>number?</b> )', 'value':'<ul><li>string</li><li>number</li></ul>', 'default': '<ul><li>∞</li><li>1</li></ul>', description: '<ul><li>Sample hex color</li><li>Opacity range between 0 - 1</li></ul>', version: 'medes-ui@0.0.3 > Latest version'},
+    {attribute: 'addDarkLight( <b>string</b>, <b>number</b> )', 'value':'<ul><li>string</li><li>number</li></ul>', 'default': '<ul><li>∞</li><li>∞</li></ul>', description: '<ul><li>Sample string to Title Case</li><li>Add positif number for lighter or negative for brighter color</li></ul>', version: 'medes-ui@0.0.3 > Latest version'}
   ];
 
   import = `
