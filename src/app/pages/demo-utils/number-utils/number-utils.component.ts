@@ -22,25 +22,25 @@ export class NumberUtilsComponent {
 
   tableContent = [
     {
-      attribute: 'shortNumber( <b>number</b>, <b>array?</b> )',
-      'value':'<ul><li>number</li><li>Array of string</li></ul>',
+      attribute: 'shortNumber( <b>number</b>, <b>Array?</b> )',
+      'value':'<ul><li>number</li><li>Array&lt;string&gt;</li></ul>',
       default: '<ul><li>∞</li><li>[\'k\', \'m\', \'b\', \'t\']</li></ul>',
       description: '<ul><li>Number will sorting</li><li>Sample custom prefix.</li></ul>',
-      version: 'medes-ui@0.0.1 >'
+      version: 'medes-ui@0.0.1 > Latest version'
     },
     {
       attribute: 'toCurrency( <b>number</b>, <b>string</b>, <b>number?</b> )',
       'value':'<ul><li>number</li><li>string of option:<br/><i>IDR | JYP | EUR | USD</i></li><li>number</li></ul>',
       default: '<ul><li>∞</li><li>\'USD\'</li><li>∞</li></ul>',
       description: '<ul><li>Number will sorting</li><li>Type Currency</li><li>Set decimal</li></ul>',
-      version: 'medes-ui@0.0.1 >'
+      version: 'medes-ui@0.0.1 > Latest version'
     },
     {
       attribute: 'getMinMax( <b>number[]</b> )',
-      'value': 'Array of number',
+      'value': 'Array&lt;number&gt;',
       default: '∞',
       description: 'Array of number and will find the min max value',
-      version: 'medes-ui@1.14.2 >'
+      version: 'medes-ui@1.14.2 > Latest version'
     }
   ];
 
