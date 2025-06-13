@@ -16,6 +16,6 @@ This UI library was created & used by Mediadesain Team and open for public. Demo
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
-### 1.17.x (Release - 250613)
+### 1.17.1 (Release - 250613)
 - Upgrade Angular Lib to Angular 17, no new feature still same with last version 1.16.0, 1.15.3
 - Update documentation

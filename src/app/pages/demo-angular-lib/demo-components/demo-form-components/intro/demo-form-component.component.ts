@@ -2,8 +2,8 @@ import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MdsHightlightPrismModule, MdsFormModule }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-form-component',
