@@ -57,3 +57,28 @@
     </div>
 </div>
 <hr/>
+
+<div class="mds-grid">
+    <div class="g-m-30">
+        <b>Prevew</b>
+        @if (isLoading) {
+            <div>
+                <div class="mds-img-loader landscape"></div>
+                <div class="mds-txt-loader"></div>
+                <div class="mds-txt-loader"></div>
+                <div class="mds-txt-loader" style="width: 85%;"></div>
+            </div>
+        } @else {
+            <div>
+                <div class="mds-img-loader landscape">
+                    <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+                </div>
+                <p>Lorem ipsum dolor sit amet in, consectetur am amet adipiscing elit. Lorem ipsum dolor sit amet, consectetur amet adipiscing.</p>
+            </div>
+        }
+    </div>
+    <div class="g-m-70">
+        <b>Generator</b><br/>
+        <button class="btn-swatch-a" (click)="reload()">Reload</button>
+    </div>
+</div>

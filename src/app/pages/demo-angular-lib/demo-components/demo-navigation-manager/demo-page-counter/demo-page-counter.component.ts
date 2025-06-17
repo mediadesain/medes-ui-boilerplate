@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
 import { htmlCode, interfaceCode } from './page-counter-preview-code';
 import { SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsHightlightPrismModule, MdsModalModule, MdsModalService, MdsPageManagerModule, MdsPagerType, PageNavigationConfigInterface }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsHightlightPrismModule, MdsModalModule,  MdsModalService,  MdsPageManagerModule, PageNavigationManagerModel }
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-page-counter',
@@ -18,12 +18,15 @@ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService, MdsPageManag
 export class DemoPageCounterComponent implements AfterContentChecked {
   // data
   data: string[] = SampleProductsData.userNames;
-  // pageCountConfig
-  toShowOptions: number[] = [10, 20, 30, 40, 50, 60];
-  // pageNavConfig
-  pageNavConfig: PageNavigationConfigInterface = {
-    type: MdsPagerType.NUMBERING,
-    itemToShow: 20
+  // model
+  pageNavConfig: PageNavigationManagerModel = {
+    configs: {
+      itemToShow: 20,
+      // pageCounter Configuration
+      pageCounter: {
+        options: [10, 20, 30, 40, 50, 60]
+      }
+    }
   }
 
   // Code Viewer
@@ -33,11 +36,15 @@ export class DemoPageCounterComponent implements AfterContentChecked {
   interfaceCode: string;
 
   // Properties Detail
+  showDeprecated = false;
   tableContent = [
-    {attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: 'medes-ui@1.15.1 > Latest version'},
-    {attribute: 'pageNavConfig',type: 'PageNavigationConfigInterface', default: '∞', description: 'Configuration of Page Navigation Component', version: 'medes-ui@1.15.1 > Latest version'},
+    {attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Configuration of Page Navigation Component', version: 'medes-ui@1.18.0 > Latest version'},
     {attribute: 'customClass?',type: 'string', default: '∞', description: 'Put your custom class styling', version: 'medes-ui@1.15.1 > Latest version'},
     {attribute: 'customStyle?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: 'medes-ui@1.15.1 > Latest version'}
+  ];
+  tableContentDeprecated = [
+    {attribute: 'pageNavConfig',type: 'PageNavigationModel', default: '∞', description: 'Configuration of Page Navigation Component, on newer version has been moved to main model', version: 'medes-ui@1.15.1 > medes-ui@1.17.1'},
+    {attribute: 'pageCountConfig',type: 'Array<number>', default: '∞', description: 'Removed, on newer version has been merge to model > page counter configuration options', version: 'medes-ui@1.15.1 > medes-ui@1.17.1'}
   ];
 
   constructor(public mdsModalService: MdsModalService, private cdr: ChangeDetectorRef) {
@@ -52,21 +59,23 @@ export class DemoPageCounterComponent implements AfterContentChecked {
   }
   
   reGenerateCode(): string {
-    const importMdsUi = 'PageNavigationConfigInterface, MdsPagerType';
-    const valuesComponent = `// pageCountConfig
-  toShowOptions: number[] = [${this.toShowOptions}];
-  
-  // pageNavConfig
-  pageNavConfig: PageNavigationConfigInterface = {
-    type: MdsPagerType.NUMBERING,
-    itemToShow: ${this.pageNavConfig.itemToShow}
+    const importMdsUi = 'PageNavigationModel, MdsPagerType';
+    const valuesComponent = `// model
+  pageNavConfig: PageNavigationManagerModel = {
+    configs: {
+      itemToShow: ${this.pageNavConfig.configs.itemToShow},
+      // pageCounter Configuration
+      pageCounter: {
+        options: [${this.pageNavConfig.configs.pageCounter.options}]
+      }
+    }
   }`
     return constructComponentCode(importMdsUi, valuesComponent)
   }
 
   updateTotal($event: number): void {
     const newConfig = Object.assign({}, this.pageNavConfig);
-    newConfig.itemToShow = $event;
+    newConfig.configs.itemToShow = $event;
     this.pageNavConfig = newConfig;
     this.componentCode = this.reGenerateCode();
   }

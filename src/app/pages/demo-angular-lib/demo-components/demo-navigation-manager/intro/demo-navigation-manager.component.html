@@ -1,5 +1,5 @@
 <h1>Medes Navigation Manager Components</h1>
-<p>Use page navigation manager component for paging items & set how many items will shown on the page. There are 2 categoires:</p>
+<p>Use page navigation manager components for paging items & set how many items will shown on the page. There are 2 categoires:</p>
 <ul>
     <li>Filter Page Navigation Component <i><small>&lt;mds-page-navigation ... &gt;&lt;/mds-page-navigation&gt;</small></i></li>
     <li>Filter Page Counter Component <i><small>&lt;mds-page-counter ... &gt;&lt;/mds-page-counter&gt;</small></i></li>
@@ -10,7 +10,7 @@
 <h2 class="margin-b-1">Overview of Medes Navigation Manager Components</h2>
 <p><b>Sample Data</b></p>
 <div class="mds-grid padding-b-1">
-    <div class="g-s-50 g-m-30 g-l-20" *ngFor="let item of data | slice: pageNavConfig.selectedRange?.start:pageNavConfig.selectedRange?.end">
+    <div class="g-s-50 g-m-30 g-l-20" *ngFor="let item of data | slice: pageNavModel.data?.selectedRange.start:pageNavModel.data?.selectedRange.end">
         {{item}}
     </div>
 </div>
@@ -21,7 +21,7 @@
 <div class="mds-grid">
     <div class="g-l-30">
         <!-- Demo Medes Page Navigation Component -->
-        <mds-page-navigation [data]="data" [(pageNavConfig)]="pageNavConfig"></mds-page-navigation>
+        <mds-page-navigation [data]="data" [model]="pageNavModel"></mds-page-navigation>
     </div>
     <div class="g-l-70"><mds-hightlight-prism [code]="pageNavigationComponent" language="html"></mds-hightlight-prism></div>
     <div class="g-l-12"><small><a routerLink="/angular-lib/navigation-manager/page-navigation">More Info</a></small></div>
@@ -33,7 +33,7 @@
     <div class="g-l-30">
         <!-- Demo Medes Page Counter Component -->
         <small>Total Item </small>
-        <mds-page-counter [pageCountConfig]="[15, 30, 45, 60, 75]" [(pageNavConfig)]="pageNavConfig"></mds-page-counter>
+        <mds-page-counter [(model)]="pageNavModel"></mds-page-counter>
     </div>
     <div class="g-l-70"><mds-hightlight-prism [code]="pageCounterComponent" language="html"></mds-hightlight-prism></div>
     <div class="g-l-12"><small><a routerLink="/angular-lib/navigation-manager/page-counter">More Info</a></small></div>

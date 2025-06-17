@@ -2,9 +2,9 @@ import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsHightlightPrismModule, MdsPageManagerModule, PageNavigationConfigInterface, MdsPagerType }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsHightlightPrismModule, MdsPageManagerModule, PageNavigationManagerModel }
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-navigation-manager',
@@ -17,20 +17,23 @@ export class DemoNavigationManagerComponent implements AfterContentChecked {
 
 pageNavigationComponent = `
 <!-- Medes Page Navigation Component -->
-<mds-page-navigation [data]="data" [(pageNavConfig)]="pageNavConfig"></mds-page-navigation>`;
+<mds-page-navigation [data]="data" [model]="pageNavModel"></mds-page-navigation>`;
 pageCounterComponent = `
 <!-- Medes Page Counter Component -->
-<mds-page-counter [pageCountConfig]="[15, 30, 45, 60, 75]" [(pageNavConfig)]="pageNavConfig"></mds-page-counter>`;
+<mds-page-counter [(model)]="pageNavModel"></mds-page-counter>`;
 
   data: string[] = SampleProductsData.userNames;
-  pageNavConfig: PageNavigationConfigInterface = {
-    type: MdsPagerType.NUMBERING,
-    itemToShow: 15
-    // selectedPage: 1,
-    // selectedRange: {
-      //   start: 0,
-      //   end: 0
-    // }
+  pageNavModel: PageNavigationManagerModel = {
+    configs: {
+      itemToShow: 15,
+      pageNavigation: {
+        // type: 'numbering',
+        // color: 'swatch-a'
+      },
+      pageCounter: {
+        options: [15, 30, 45, 60, 75],
+      }
+    }
   }
 
   constructor(private cdr: ChangeDetectorRef){}

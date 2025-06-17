@@ -7,7 +7,8 @@ import { DemoPrismjsHighlightComponent } from './demo-components/demo-prismjs-hi
 const routes: Routes = [
   { path: '', redirectTo: 'demo', pathMatch: 'full' },
   {
-    path: 'modal-component', loadChildren: () => import('./demo-components/demo-modal-component/demo-modal-component.module').then(m => m.DemoModalComponentModule)
+    path: 'modal-component',
+    loadComponent: () => import('./demo-components/demo-modal-component/demo-modal-component.component').then(c => c.DemoModalComponent)
   },
   {
     path: 'form-components',
@@ -23,12 +24,12 @@ const routes: Routes = [
   },
   {
     path: 'prismjs-highlight',
-    component: DemoPrismjsHighlightComponent
+    loadComponent: () => import('./demo-components/demo-prismjs-highlight/demo-prismjs-highlight.component').then(c => c.DemoPrismjsHighlightComponent)
   },
   { path: 'pipes', loadChildren: () => import('./demo-pipes/demo-pipes.module').then(m => m.DemoPipesModule) },
   {
     path: 'demo',
-    component: DemoComponent
+    loadComponent: () => import('./demo/demo.component').then(c => c.DemoComponent)
   },
 ];
 

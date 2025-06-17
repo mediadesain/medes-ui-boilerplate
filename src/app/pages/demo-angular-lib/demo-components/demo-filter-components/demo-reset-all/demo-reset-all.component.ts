@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { MdsFilterResetComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService, SelectedFilterInterface, SelectedFilterSliderInterface }
-/*-public-mode-*/  from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsFilterResetComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService}
+//*-public-mode-*/  from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-reset-all',
@@ -13,17 +13,17 @@ import { MdsFilterResetComponent, MdsHightlightPrismModule, MdsModalModule, MdsM
   providers: [MdsModalService]
 })
 export class DemoResetAllComponent {
-  filterSelected: SelectedFilterInterface;
-  filterRangeSelected: SelectedFilterSliderInterface;
+  // filterSelected: SelectedFilterInterface;
+  // filterRangeSelected: SelectedFilterSliderInterface;
 
   constructor(public mdsModalService: MdsModalService) {
-    this.filterSelected = {};
-    this.filterRangeSelected = {
-      min: 0,
-      max: 2500,
-      start: 100,
-      end: 2000
-    }
+    // this.filterSelected = {};
+    // this.filterRangeSelected = {
+    //   min: 0,
+    //   max: 2500,
+    //   start: 100,
+    //   end: 2000
+    // }
   }
 
 htmlCode = `

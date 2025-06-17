@@ -7,7 +7,7 @@
     <div class="g-m-30">
         <h3>Preview:</h3>
         <!-- Filter range slider -->
-        <mds-filter-range-slider
+        <!-- <mds-filter-range-slider
             [(start)]="filterRangeSelected.start"
             [(end)]="filterRangeSelected.end"
             [min]="filterRangeSelected.min"
@@ -15,8 +15,8 @@
             [label]="label" 
             [reset]="resetElement"
             [disabled]="isDisabled">
-        </mds-filter-range-slider>
-        <small><i>Output: {{filterRangeSelected.start}} - {{filterRangeSelected.end}}</i></small>
+        </mds-filter-range-slider> -->
+        <!-- <small><i>Output: {{filterRangeSelected.start}} - {{filterRangeSelected.end}}</i></small> -->
     </div>
     <div class="g-m-70">
         <h3>Conifguration:</h3>
@@ -52,9 +52,9 @@
 
 
 
-<table class="table-properties mds-table">
+<table class="table-properties mds-table table-swatch-a">
     <tr>
-        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="width: 20%">Support Version</th>
+        <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
     <tr *ngFor="let item of [
         {attribute: 'start', type: 'number', default: '∞', description: 'Starting point of range selection. If selected start range less than min value will be set as min value', version: 'medes-ui@1.14.3 > Latest version'},

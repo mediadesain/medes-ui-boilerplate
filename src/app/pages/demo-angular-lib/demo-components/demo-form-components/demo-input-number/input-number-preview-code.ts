@@ -7,12 +7,10 @@ export const htmlCode = `
 export const interfaceCode = `
 export interface MdsFormModel {
   configs: {
-    ...
-    // Input Number Configuration (MdsInputNumberConfigModel)
     mdsInputNumber?: {
-      totalDecimal?: number; // total decimal to use
-      isDisabled?: boolean; // disable on enable field
-    }
-    ...
+      totalDecimal?: number;
+      isDisabled?: boolean;
+    };
+    mdsToggle?: {...};
   }
 }`;

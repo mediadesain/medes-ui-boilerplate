@@ -31,7 +31,7 @@ export class AsideComponent {
       {
         text: 'Services',
         urls: [
-          {text: 'Alert', url: '/services/alert', isNew: true},
+          {text: 'Alert', url: '/services/alert'},
         ]
       },
       {
@@ -39,8 +39,8 @@ export class AsideComponent {
         urls: [
           {text: 'String', url: '/utils/string'},
           {text: 'Integer', url: '/utils/number'},
-          {text: 'Object', url: '/utils/object', isNew: true},
-          {text: 'Array', url: '/utils/array', isNew: true},
+          {text: 'Object', url: '/utils/object'},
+          {text: 'Array', url: '/utils/array'},
           {text: 'Date', url: '/utils/date'},
           {text: 'Color', url: '/utils/color'}
         ]
@@ -50,13 +50,14 @@ export class AsideComponent {
         urls: [
           {
             text: 'Modal',
-            url: 'angular-lib/modal-component'
+            url: 'angular-lib/modal-component',
+            isNew: true
           },
           {
-            text: 'Form Components', url: 'angular-lib/form-components/intro', isNew: true,
+            text: 'Form Components', url: 'angular-lib/form-components/intro',
             urls: [
-              {text: 'Toggle', url: 'angular-lib/form-components/toggle', isNew: true},
-              {text: 'Number', url: 'angular-lib/form-components/input-number', isNew: true}
+              {text: 'Toggle', url: 'angular-lib/form-components/toggle'},
+              {text: 'Number', url: 'angular-lib/form-components/input-number'}
             ]
           },
           {

@@ -27,8 +27,6 @@ import { ${importMdsUi} } from 'medes-ui';
 })
 
 export class MyComponent {
-  ...
   ${valuesComponent}
-  ...
 }`;
 }

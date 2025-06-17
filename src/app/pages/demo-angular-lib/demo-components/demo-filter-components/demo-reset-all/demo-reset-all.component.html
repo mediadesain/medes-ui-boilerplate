@@ -9,15 +9,15 @@
     </div>
     <div class="g-l-30">
         <b>Output</b>
-        <mds-filter-reset [class]="'btn-swatch-a'" [content]="'Reset All'" [(filterSelected)]="filterSelected" [(filterRangeSelected)]="filterRangeSelected"></mds-filter-reset>
+        <!-- <mds-filter-reset [class]="'btn-swatch-a'" [content]="'Reset All'" [(filterSelected)]="filterSelected" [(filterRangeSelected)]="filterRangeSelected"></mds-filter-reset> -->
     </div>
 </div>
 
 <b>Properties</b>
-<table class="table-properties mds-table">
+<table class="table-properties mds-table table-swatch-a">
     <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
     <tr>
-        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="width: 20%">Support Version</th>
+        <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
     <tr *ngFor="let item of tableContent">
         <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
@@ -44,15 +44,15 @@
 </small>
 
 
-<mds-modal id="SelectedFilterInterface" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
-    <div class="padding-1">
+<mds-modal id="SelectedFilterInterface">
+    <div class="modal-body padding-1">
         <h3 class="padding-b-1">Interface Detail</h3>
         <mds-hightlight-prism [code]="selectedFilterInterface" language="javascript"></mds-hightlight-prism>
     </div>
 </mds-modal>
 
-<mds-modal id="SelectedFilterSliderInterface" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
-    <div class="padding-1">
+<mds-modal id="SelectedFilterSliderInterface">
+    <div class="modal-body padding-1">
         <h3 class="padding-b-1">Interface Detail</h3>
         <mds-hightlight-prism [code]="selectedFilterSliderInterface" language="javascript"></mds-hightlight-prism>
     </div>

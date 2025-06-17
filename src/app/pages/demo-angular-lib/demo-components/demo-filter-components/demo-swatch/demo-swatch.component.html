@@ -7,7 +7,7 @@
     <div class="g-m-30">
         <h3>Preview:</h3>
         <!-- Medes Filter Swatch Component -->
-        <mds-filter-swatch
+        <!-- <mds-filter-swatch
             [filterData]="sampledata"
             [filterBy]="peropKey"
             [filterSelected]="selected"
@@ -15,7 +15,7 @@
             [titlegroup]="label"
             [swatchSize]="totalSize"
             [swatchRadius]="totalRadius"
-        ></mds-filter-swatch>
+        ></mds-filter-swatch> -->
     </div>
     <div class="g-m-70">
         <h3>Conifguration:</h3>
@@ -48,9 +48,9 @@
 </div>
 
 <b>Properties</b>
-<table class="table-properties mds-table">
+<table class="table-properties mds-table table-swatch-a">
     <tr>
-        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="width: 20%">Support Version</th>
+        <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
     <tr *ngFor="let item of [
         {attribute: 'filterData', type: 'Array<any>', default: '∞', description: 'Sample data for create swatch filter', version: 'medes-ui@1.13.0 > Latest version'},

@@ -7,21 +7,57 @@
     <mds-demo-modal-child></mds-demo-modal-child>
 </div>
 
-<h2>Generator</h2>
-<div class="margin-b-2">
-    <!-- Button Modal -->
-    <button class="btn-swatch-a" (click)="openModal('my-modal-1')">Overview Modal</button> <i> (Generator Soon)</i>
-    <!-- Simple Sample Modal -->
-    <mds-modal id="my-modal-1" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
-        <div class="padding-1">
-            <h3 class="padding-b-1">Simple Modal Sample</h3>
-            <p>Curabitur sem sapien, vestibulum non tincidunt semper, ullamcorper a ante. Morbi tempor sem nec facilisis efficitur. Nam vel quam malesuada, dignissim leo id, eleifend tortor. Etiam in rutrum elit.</p>
-            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
+<h2 class="margin-b-1">Preview & Generate Component Configuration</h2>
+<div class="mds-grid">
+    <div class="g-m-30">
+        <h3>Preview:</h3>
+        <!-- Button Modal -->
+        <button class="btn-swatch-a" (click)="openModal('demo-modal-1')">Overview Modal</button>
+        <!-- Medes Modal Component -->
+        <mds-modal id="demo-modal-1" [model]="mdsModalModelConfig">
+            <!-- Header -->
+            <div class="modal-header" [style.display]="showHeaderFooter ? 'flex' : 'none'">
+                <h4 class="txt-transculant">A Tall Custom Modal!</h4>
+            </div>
+            <!-- Body -->
+            <div class="modal-body padding-1 padding-b-0">
+                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
+                <div style="max-width: 700px; margin: 0 auto;">
+                    <img src="https://www.mediadesain.com/assets/images/elements/office.jpg"/>
+                </div>
+                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
+                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
+            </div>
+            <!-- Footer -->
+            <div class="modal-footer fullfill-horizontal flex-horizontal justify-between" [style.display]="showHeaderFooter ? 'flex' : 'none'">
+                <button class="btn-swatch-reset" (click)="openModal('demo-modal-1');">Cancel</button>
+                <button class="btn-swatch-a" (click)="openModal('demo-modal-1')">Save</button>
+            </div>
+        </mds-modal>
+    </div>
+    <div class="g-m-70">
+        <h3>Conifguration:</h3>
+        <div>
+            <select [(ngModel)]="mdsModalModelConfig.configs.modalWidth" (ngModelChange)="this.reGenerateCode()">
+                <option>small</option>
+                <option>medium</option>
+                <option>large</option>
+                <option>fullscreen</option>
+            </select>
+            @if (mdsModalModelConfig.configs.modalWidth !== 'fullscreen') {
+                <input type="checkbox" [(ngModel)]="mdsModalModelConfig.configs.scrollInTheModal" (ngModelChange)="this.reGenerateCode()"> Scrollable inside Modal
+                <input type="number" [(ngModel)]="mdsModalModelConfig.configs.marginVertical" max="100" (ngModelChange)="this.reGenerateCode()"/>
+            }
+            <input type="checkbox" [(ngModel)]="mdsModalModelConfig.configs.hideCloseButton" (ngModelChange)="this.reGenerateCode()"> Hide Close Buton
+            <input type="number" [(ngModel)]="mdsModalModelConfig.configs.borderRadius" max="40" (ngModelChange)="this.reGenerateCode()"/>
+            <input type="checkbox" [(ngModel)]="mdsModalModelConfig.configs.disableCloseBackdrop" (ngModelChange)="this.reGenerateCode()"> Disable closing click backdroup
+            <input type="checkbox" [(ngModel)]="showHeaderFooter" (ngModelChange)="this.reGenerateCode()"> Show/hide header footer
         </div>
-    </mds-modal>
+    </div>
 </div>
 
-<h2>Code</h2>
+
+<h3>Code Generate:</h3>
 <div class="mds-grid">
     <div class="g-m-30">
         <b>Module</b>
@@ -29,39 +65,63 @@
     </div>
     <div class="g-m-40">
         <b>Component</b>
-        <mds-hightlight-prism [code]="component" language="javascript"></mds-hightlight-prism>
+        <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
     </div>
     <div class="g-m-30">
         <b>HTML</b>
-        <mds-hightlight-prism [code]="html" language="html"></mds-hightlight-prism>
+        <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
     </div>
 </div>
 
 <hr/>
 
 <b>Properties</b>
-<table class="table-properties mds-table">
+<table class="table-properties mds-table table-swatch-a">
     <tr>
-        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="width: 20%">Support Version</th>
+        <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
-    <tr *ngFor="let item of [
-        {attribute: 'id', type: 'string', default: '∞', description: 'id modal is required for identify which modal to trigger', version: 'medes-ui@1.14.0 > Latest version'},
-        {attribute: 'modalWidth?', type: 'string of option: <i>\'small\'|\'medium\'|\'large\'|\'fullscreen\'</i> or number', default: '\'medium\'', description: 'Width of modal by default is medium (700px) but posible with custom width. If set as \'fullscreen\' wil set height & width fullscreen', version: 'medes-ui@1.14.0 > Latest version'},
-        {attribute: 'marginTop?', type: 'number', default: '44', description: 'Padding top modal', version: 'medes-ui@1.14.0 > Latest version'},
-        {attribute: 'marginBottom?', type: 'number', default: '44', description: 'Padding bottom modal', version: 'medes-ui@1.14.0 > Latest version'},
-        {attribute: 'borderRadius?', type: 'number', default: '5', description: 'Border radius size', version: 'medes-ui@1.14.0 > Latest version'},
-        {attribute: 'hideCloseButton?', type: 'boolean', default: 'false', description: 'Visibility of close button', version: 'medes-ui@1.14.0 > Latest version'},
-        {attribute: 'disableCloseBackdrop?', type: 'boolean', default: 'false', description: 'Disable closing modal if clicking backdrop', version: 'medes-ui@1.14.0 > Latest version'},
-    ]">
+    <tr *ngFor="let item of tableContent">
         <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
-        <td mds-th-title="Data Type" [innerHTML]="item.type"></td>
+        <td mds-th-title="Data Type">
+            <ng-container *ngIf="item.type === 'MdsModalModel'">
+                <a (click)="openModal('my-modal-1')">{{item.type}}</a>
+            </ng-container>
+            <ng-container *ngIf="item.type !== 'MdsModalModel'">
+                {{item.type}}
+            </ng-container>
+        </td>
         <td mds-th-title="Default" [innerHTML]="item.default"></td>
         <td mds-th-title="Description" [innerHTML]="item.description"></td>
         <td mds-th-title="Support Version" [innerHTML]="item.version"></td>
     </tr>
 </table>
+<a href="javascript:void(0)" (click)="showDeprecated = !showDeprecated">{{!showDeprecated ? 'Show' : 'Hide'}} deprecated</a>
+@if (showDeprecated) {
+    <table class="table-properties mds-table">
+        <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
+        <tr>
+            <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
+        </tr>
+        <tr *ngFor="let item of tableContentDeprecated">
+            <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
+            <td mds-th-title="Data Type" [innerHTML]="item.type"></td>
+            <td mds-th-title="Default">{{item.default}}</td>
+            <td mds-th-title="Description">{{item.description}}</td>
+            <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+        </tr>
+    </table>
+}
+<br/><br/>
+
 <small>
     <b>Notes:</b>
     <br/><i>? = Is optional value, if no value will use default value.</i>
     <br/><i>∞ = No default value, put anything base on type</i>
 </small>
+
+<mds-modal id="my-modal-1">
+    <div class="modal-body padding-1">
+        <h3 class="padding-b-1">Interface Detail</h3>
+        <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
+    </div>
+</mds-modal>

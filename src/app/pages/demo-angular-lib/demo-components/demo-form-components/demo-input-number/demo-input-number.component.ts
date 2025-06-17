@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
 import { htmlCode, interfaceCode } from './input-number-preview-code';
 import { MdsHightlightPrismModule, MdsModalService, MdsModalModule, MdsFormModule, MdsFormModel }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 import { FormsModule } from '@angular/forms';
 
 
@@ -33,9 +33,9 @@ export class DemoInputNumberComponent {
   // Properties Detail
   tableContent = [
     {attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: 'medes-ui@1.15.3 > Latest version'},
+    {attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.15.3 > Latest version'},
     {attribute: 'customClass?', type: 'string', default: '∞', description: 'Put classes to for styling component', version: 'medes-ui@1.15.3 > Latest version'},
-    {attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: 'medes-ui@1.15.3 > Latest version'},
-    {attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.15.3 > Latest version'}
+    {attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: 'medes-ui@1.15.3 > Latest version'}
   ]
 
   constructor(public mdsModalService: MdsModalService) {

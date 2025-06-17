@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsFilterCheckboxComponent, MdsHightlightPrismModule, SelectedFilterInterface }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsFilterCheckboxComponent, MdsHightlightPrismModule }
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-checkboxes',
@@ -18,7 +18,7 @@ export class DemoCheckboxesComponent {
   // Required
   sampledata: ProductDataModel[]; // filterData
   peropKey: string; // filterBy
-  selected: SelectedFilterInterface; // filterSelected
+  // selected: SelectedFilterInterface; // filterSelected
 
   // Optional Configuration
   label: string; // titlegroup
@@ -28,7 +28,7 @@ export class DemoCheckboxesComponent {
   constructor(){
     this.sampledata = SampleProductsData.data;
     this.peropKey = 'category';
-    this.selected = {};
+    // this.selected = {};
     this.label = 'Filter by Category';
     this.resetElement = '✕';
     this.isHideCounter = false;

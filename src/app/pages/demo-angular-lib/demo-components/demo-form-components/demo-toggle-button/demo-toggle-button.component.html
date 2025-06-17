@@ -28,7 +28,7 @@
     </div>
 </div>
 
-<h3>Code Generate</h3>
+<h3>Code Generate:</h3>
 <div class="mds-grid">
     <div class="g-l-30">
         <b>Module</b>
@@ -45,10 +45,10 @@
 </div>
 
 <b>Properties</b>
-<table class="table-properties mds-table">
+<table class="table-properties mds-table table-swatch-a">
     <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
     <tr>
-        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="width: 20%">Support Version</th>
+        <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
     <tr *ngFor="let item of tableContent">
         <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
@@ -71,8 +71,8 @@
     <br/><i>∞ = No default value, put anything base on type</i>
 </small>
 
-<mds-modal id="my-modal-1" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
-    <div class="padding-1">
+<mds-modal id="my-modal-1">
+    <div class="modal-body padding-1">
         <h3 class="padding-b-1">Interface Detail</h3>
         <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
     </div>

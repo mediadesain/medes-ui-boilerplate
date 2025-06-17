@@ -7,18 +7,11 @@ export const htmlCode = `
 export const interfaceCode = `
 export interface MdsFormModel {
   configs: {
-    ...
-    // Toggle Configuration (MdsToggleConfigModel)
-    mdsToggle?: {
-      type?: MdsToggleType | string; // Toggle style to use, by default is modern
-      color?: string; // Color swatch to use
-      isDisabled?: boolean; // disable on enable toggle
+    mdsInputNumber?: {...};
+    mdsToggle?:  {
+      type?: 'modern' | 'clasic';
+      color?: string;
+      isDisabled?: boolean;
     }
-    ...
   }
-}
-
-export const enum MdsToggleType {
-  MODERN = 'modern',
-  CLASIC = 'clasic',
-}`;
+};`;

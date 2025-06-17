@@ -1,6 +1,6 @@
 <ng-container *ngFor="let group of menu; let i = index;">
     <div class="list-group">
-        <b (click)="showHide(group)">{{group.text}}</b> <small *ngIf="i === 0"> - (v.1.17.1)</small>
+        <b (click)="showHide(group)">{{group.text}}</b> <small *ngIf="i === 0"> - (v.1.18.0-refactor.1)</small>
         <ul [style.display]="group.isCollapsed ? 'none' : 'block'">
             <!--[routerLinkActiveOptions]="{exact: true}"-->
             <li *ngFor="let link of group.urls" (click)="resetScroll()">

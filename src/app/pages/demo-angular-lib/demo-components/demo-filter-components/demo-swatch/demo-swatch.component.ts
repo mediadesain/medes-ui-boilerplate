@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsFilterSwatchComponent, MdsHightlightPrismModule, SelectedFilterInterface }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsFilterSwatchComponent, MdsHightlightPrismModule }
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-swatch',
@@ -20,7 +20,7 @@ export class DemoSwatchComponent {
   // filterBy
   peropKey: string;
   // filterSelected
-  selected: SelectedFilterInterface = {};
+  // selected: SelectedFilterInterface = {};
   // swatchMapping
   colormap: {[key: string]: string};
 

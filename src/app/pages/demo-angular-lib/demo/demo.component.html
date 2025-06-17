@@ -6,89 +6,55 @@
     <!-- SIDEBAR CONTENT -->
     <div class="g-l-25">
         <input #name="ngModel" [ngModelOptions]="{updateOn:'change'}" ngModel placeholder="Search Name" style="width: 100%; margin-bottom: 1em;" />
-        <!-- Demo Filter Checkboxes Component - Multiple Group -->
-        <mds-filter-checkbox
-            [titlegroup]="'Filter by Gender'"
-            [filterData]="sampledata"
-            [filterBy]="'gender'"
-            [filterSelected]="filterSelected"
-            [reset]="'✕'"
-            [hideCounter]="false"
-        ></mds-filter-checkbox>
-        <mds-filter-checkbox
-            [titlegroup]="'Filter by Category'"
-            [filterData]="sampledata"
-            [filterBy]="'category'"
-            [filterSelected]="filterSelected"
-            [reset]="'✕'"
-            [hideCounter]="false"
-        ></mds-filter-checkbox>
-
+        <!-- Demo Filter Checkboxes Component -->
+        <mds-filter-checkbox id="gender" [data]="data" [model]="mdsFilterModel"></mds-filter-checkbox>
+        <mds-filter-checkbox id="category" [data]="data" [model]="mdsFilterModel"></mds-filter-checkbox>
         <!-- Demo Filter Range Slider Component -->
-        <mds-filter-range-slider
-            [label]="'Filter by price'"
-            [min]="filterRangeSelected.min"
-            [max]="filterRangeSelected.max"
-            [(start)]="filterRangeSelected.start"
-            [(end)]="filterRangeSelected.end">
-        </mds-filter-range-slider>
-
+        <mds-filter-range-slider [model]="mdsFilterModel"></mds-filter-range-slider>
         <!-- Demo Filter Swatch Component -->
-        <mds-filter-swatch
-            [titlegroup]="'Filter by Color'"
-            [filterData]="sampledata"
-            [filterBy]="'color'"
-            [filterSelected]="filterSelected"
-            [swatchMapping]="colormap"
-        ></mds-filter-swatch>
-        
-        <!-- Demo Filter Checkboxes Component - Single Group -->
-        <mds-filter-checkbox
-            [titlegroup]="'Filter by Brand'"
-            [filterData]="sampledata"
-            [filterBy]="'brand'"
-            [filterSelected]="filterSelected"
-            [hideCounter]="true"
-        ></mds-filter-checkbox>
-
+        <mds-filter-swatch id="color" [data]="data" [model]="mdsFilterModel"></mds-filter-swatch>
+        <!-- Demo Filter Checkboxes Component -->
+        <mds-filter-checkbox id="brand" [model]="mdsFilterModel" [data]="data"></mds-filter-checkbox>
         <!-- Demo Reset Filter Component -->
-        <mds-filter-reset [content]="'Reset All'" [(filterSelected)]="filterSelected" [(filterRangeSelected)]="filterRangeSelected"></mds-filter-reset>
+        <mds-filter-reset customClass="btn-swatch-a" [(model)]="mdsFilterModel">Reset All</mds-filter-reset>
+        <pre>{{mdsFilterModel|json}}</pre>
     </div>
     <!-- MAIN ITEMS CONTENT -->
     <div class="g-l-75">
         <!-- Item Counter -->
         <div class="fullfill-horizontal flex-horizontal justify-between align-middle">
-            <small>Total {{(sampledata|mdsFilter:filterSelected|mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected} |mdsSearch:{propertyKey:'name', keyword:name.value}).length}} item/s</small>
+            <small>Total {{(data|mdsFilter:mdsFilterModel.data.filterSelected|mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange} |mdsSearch:{propertyKey:'name', keyword:name.value}).length}} item/s</small>
             <div>
                 <small>Show Item </small>
-                <mds-page-counter [pageCountConfig]="[4, 8, 16, 24]" [(pageNavConfig)]="pageNavConfig"></mds-page-counter>
+                <!-- Demo Page Counter Component -->
+                <mds-page-counter [(model)]="pageNavConfig"></mds-page-counter>
             </div>
         </div>
 
-        <!-- Filtering Message -->
+        <!-- Filtering Message Element -->
         <div style="text-align: center;">
-            <small *ngIf="( sampledata
-                |mdsFilter:filterSelected
-                |mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected}
-                |mdsSearch:{propertyKey:'name', keyword:name.value} ).length === 0 && (filterSelected|json) ==='{}'">
-                No Data Found
-            </small>
-            <small *ngIf="( sampledata
-                |mdsFilter:filterSelected
-                |mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected}
-                |mdsSearch:{propertyKey:'name', keyword:name.value} ).length === 0 && (filterSelected|json) !=='{}'">
-                Filtered data not found
-            </small>
+            @if ( ( data
+                |mdsFilter:mdsFilterModel.data.filterSelected
+                |mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange}
+                |mdsSearch:{propertyKey:'name', keyword:name.value} ).length === 0 && (mdsFilterModel.data.filterSelected|json) ==='{}' ) {
+                <small>No Data Found</small>
+            }
+            @if ( ( data
+                |mdsFilter:mdsFilterModel.data.filterSelected
+                |mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange}
+                |mdsSearch:{propertyKey:'name', keyword:name.value} ).length === 0 && (mdsFilterModel.data.filterSelected|json) !=='{}'){
+                <small>Filtered data not found</small>
+            }
         </div>
 
-        <!-- Main items list -->
+        <!-- Content Element -->
         <div class="mds-grid horizontal-center">
             <!-- Demo Medes Pipes like mdsFilter, mdsFilterRange & mdsSearch Pipes -->
-            <div class="g-s-50 g-m-30 g-l-25" *ngFor="let item of ( sampledata
-                    |mdsFilter:filterSelected
-                    |mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected}
-                    |mdsSearch:{propertyKey:'name', keyword:name.value}
-                    |slice: pageNavConfig.selectedRange?.start:pageNavConfig.selectedRange?.end )">
+            <div class="g-s-50 g-m-30 g-l-25" *ngFor="let item of ( data
+                |mdsFilter:mdsFilterModel.data.filterSelected
+                |mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange}
+                |mdsSearch:{propertyKey:'name', keyword:name.value}
+                |slice: pageNavConfig.data?.selectedRange.start:pageNavConfig.data?.selectedRange.end )">
                 <div class="mds-img-loader square">
                     <img [src]="item.picture" [alt]="item.name">
                 </div>
@@ -99,17 +65,19 @@
             </div>
         </div>
         
-        <!-- Page Navigation Component -->
+        <!-- Pager Element -->
         <div style="margin: auto;width: max-content;">
-            <ng-container *ngIf="(sampledata |mdsFilter:filterSelected |mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected} |mdsSearch:{propertyKey:'name', keyword:name.value}).length > 0">
+            @if ((data |mdsFilter:mdsFilterModel.data.filterSelected |mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange} |mdsSearch:{propertyKey:'name', keyword:name.value}).length > 0) {
+                <!-- Demo Page Navigation Component -->
                 <mds-page-navigation
                     [data]="(
-                        sampledata |mdsFilter:filterSelected
-                        |mdsFilterRange: {propertyKey: 'price', range: filterRangeSelected}
+                        data |mdsFilter:mdsFilterModel.data.filterSelected
+                        |mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange}
                         |mdsSearch:{propertyKey:'name', keyword:name.value}
                     )"
-                    [(pageNavConfig)]="pageNavConfig"></mds-page-navigation>
-            </ng-container>
+                    [(model)]="pageNavConfig">
+                </mds-page-navigation>
+            }
         </div>
     </div>
 </div>
