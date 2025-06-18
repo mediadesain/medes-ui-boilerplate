@@ -36,6 +36,7 @@ export class DemoPageCounterComponent implements AfterContentChecked {
   tableContent = [
     {attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: 'medes-ui@1.15.1 > Latest version'},
     {attribute: 'pageNavConfig',type: 'PageNavigationConfigInterface', default: '∞', description: 'Configuration of Page Navigation Component', version: 'medes-ui@1.15.1 > Latest version'},
+    {attribute: 'pageCountConfig?',type: 'Array<string>', default: '∞', description: 'Total count options', version: 'medes-ui@1.15.1 > Latest version'},
     {attribute: 'customClass?',type: 'string', default: '∞', description: 'Put your custom class styling', version: 'medes-ui@1.15.1 > Latest version'},
     {attribute: 'customStyle?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: 'medes-ui@1.15.1 > Latest version'}
   ];
