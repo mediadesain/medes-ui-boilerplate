@@ -32,7 +32,6 @@ export class DemoPageNavigationComponent implements AfterContentChecked {
   }
 
   // Code Viewer
-  importModuleCode: string;
   componentCode: string;
   htmlCode: string;
   interfaceCode: string;
@@ -41,14 +40,13 @@ export class DemoPageNavigationComponent implements AfterContentChecked {
   showDeprecated = false;
   tableContent = [
     {attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: 'medes-ui@1.18.0 > Latest version'},
-    {attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Configuration of Page Navigation Component', version: 'medes-ui@1.18.0 > Latest version'}
+    {attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0 > Latest version'}
   ];
   tableContentDeprecated = [
     {attribute: 'pageNavConfig',type: 'PageNavigationModel', default: '∞', description: 'Configuration of Page Navigation Component, on newer version has been replaced with model', version: 'medes-ui@1.15.1 > medes-ui@1.17.1'}
   ]
 
   constructor(public mdsModalService: MdsModalService, private cdr: ChangeDetectorRef) {
-    this.importModuleCode = constructImportModuleCode('MdsPageManagerModule');
     this.componentCode = this.reGenerateCode();
     this.htmlCode = htmlCode;
     this.interfaceCode = interfaceCode;

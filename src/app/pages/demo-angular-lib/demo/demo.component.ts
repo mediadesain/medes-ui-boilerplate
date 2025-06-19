@@ -66,7 +66,7 @@ export class DemoComponent implements OnInit, AfterContentChecked {
           }
         },
         rangeSlider: {
-          mySliderA: {
+          price: {
             label: 'Filter by Price',
             // resetElement: 'reset',
             min: 0,

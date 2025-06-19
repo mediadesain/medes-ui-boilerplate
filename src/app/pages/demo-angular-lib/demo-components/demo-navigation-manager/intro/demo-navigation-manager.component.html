@@ -39,3 +39,16 @@
     <div class="g-l-12"><small><a routerLink="/angular-lib/navigation-manager/page-counter">More Info</a></small></div>
 </div>
 <hr/>
+
+<p><b>Output:</b></p>
+<mds-hightlight-prism [code]="'
+// Output filter data Object
+this.pageNavModel.data = {
+    selectedRange: {
+        start: '+(pageNavModel.data?.selectedRange.start)+',
+        end: '+(pageNavModel.data?.selectedRange.end)+'
+    }
+}
+// Output data is useable for filering data item with MdsFilter like (*ngFor=\'let data of data | mdsFilterRange:param\')'" language="javascript"></mds-hightlight-prism>
+
+Demo - Components, Pipes, Services <a routerLink="/angular-lib/demo">here</a>

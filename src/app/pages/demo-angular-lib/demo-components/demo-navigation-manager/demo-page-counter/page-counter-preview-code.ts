@@ -1,7 +1,7 @@
 export const htmlCode = `
-<!-- Medes Page Counter Component -->
+<!-- Demo Medes Page Counter Component -->
 <small>Total Item </small>
-<mds-page-counter [model]="pageNavConfig" [customStyle]="'background: unset; color: #fff;'"></mds-page-counter>`;
+<mds-page-counter [(model)]="pageNavConfig" [customStyle]="'border-radius: 7px;'"></mds-page-counter>`;
 
 
 export const interfaceCode = `

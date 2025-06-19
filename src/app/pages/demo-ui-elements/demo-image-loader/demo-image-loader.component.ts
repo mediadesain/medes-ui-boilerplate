@@ -12,7 +12,7 @@ import { MdsHightlightPrismModule }
   imports: [MdsHightlightPrismModule, FormsModule]
 })
 export class DemoImageLoaderComponent {
-  isLoading: boolean = true;
+  isLoading = true;
   
   constructor() {
     this.loaded();

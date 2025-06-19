@@ -59,15 +59,11 @@
 
 <h3>Code Generate:</h3>
 <div class="mds-grid">
-    <div class="g-m-30">
-        <b>Module</b>
-        <mds-hightlight-prism [code]="importModuleCode" language="javascript"></mds-hightlight-prism>
-    </div>
-    <div class="g-m-40">
+    <div class="g-m-50">
         <b>Component</b>
         <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
     </div>
-    <div class="g-m-30">
+    <div class="g-m-50">
         <b>HTML</b>
         <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
     </div>
@@ -95,7 +91,9 @@
         <td mds-th-title="Support Version" [innerHTML]="item.version"></td>
     </tr>
 </table>
+<small>
 <a href="javascript:void(0)" (click)="showDeprecated = !showDeprecated">{{!showDeprecated ? 'Show' : 'Hide'}} deprecated</a>
+</small>
 @if (showDeprecated) {
     <table class="table-properties mds-table">
         <!--<span class=\'new-beadge margin-l-1\'>New</span>-->

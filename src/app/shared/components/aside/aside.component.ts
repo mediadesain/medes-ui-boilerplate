@@ -10,7 +10,7 @@ export class AsideComponent {
   menu: ThreeMenuModel[];
   
   constructor() {
-    this.isCollapsedVersion = false;
+    this.isCollapsedVersion = true;
     this.menu = [
       {
         text: 'MedesUI',
@@ -63,14 +63,14 @@ export class AsideComponent {
           {
             text: 'Filter Components', url: 'angular-lib/filter-components/intro',
             urls: [
-              {text: 'Checkboxes Filter', url: 'angular-lib/filter-components/checkboxes'},
-              {text: 'Swatch Filter', url: 'angular-lib/filter-components/swatch'},
-              {text: 'Range Slider', url: 'angular-lib/filter-components/range-slider'},
-              {text: 'Reset Filter', url: 'angular-lib/filter-components/reset'}
+              {text: 'Checkboxes Filter', url: 'angular-lib/filter-components/checkboxes', isNew: true},
+              {text: 'Swatch Filter', url: 'angular-lib/filter-components/swatch', isNew: true},
+              {text: 'Range Slider', url: 'angular-lib/filter-components/range-slider', isNew: true},
+              {text: 'Reset Filter', url: 'angular-lib/filter-components/reset', isNew: true}
             ]
           },
           {
-            text: 'Page Manager Components', url: 'angular-lib/navigation-manager/intro', isNew: true,
+            text: 'Page Manager Components', url: 'angular-lib/navigation-manager/intro',
             urls: [
               {text: 'Page Navigation', url: 'angular-lib/navigation-manager/page-navigation', isNew: true},
               {text: 'Page Counter', url: 'angular-lib/navigation-manager/page-counter', isNew: true}

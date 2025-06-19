@@ -6,26 +6,20 @@
 <div class="mds-grid">
     <div class="g-m-30">
         <h3>Preview:</h3>
-        <!-- Medes Filter Swatch Component -->
-        <!-- <mds-filter-swatch
-            [filterData]="sampledata"
-            [filterBy]="peropKey"
-            [filterSelected]="selected"
-            [swatchMapping]="colormap"
-            [titlegroup]="label"
-            [swatchSize]="totalSize"
-            [swatchRadius]="totalRadius"
-        ></mds-filter-swatch> -->
+        <!-- Filter Swatch Component -->
+        <mds-filter-swatch id="color" [data]="sampledata" [model]="mdsFilterModel"></mds-filter-swatch>
+        <small><i>Output Value: {{mdsFilterModel.data.filterSelected|json}}</i></small>
     </div>
     <div class="g-m-70">
         <h3>Conifguration:</h3>
         <div>
-            <input type="text" placeholder="Property key on data" [ngClass]="{'invalid': peropKey.length === 0}" [(ngModel)]="peropKey"/>
+            <input type="text" placeholder="Property key on data" [ngClass]="{'invalid': mdsFilterModel.configs.swatchBox.color.property.length === 0}" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.property"/>
             <small class="txt-lighter margin-l-1">Type color property on array. ex type: color, colour, warna</small>
             <br/>
-            <input type="text" placeholder="Default: Color (titlegroup)" [(ngModel)]="label"/>
-            <input type="number" placeholder="Default: 30 (swatchSize)" [(ngModel)]="totalSize"/>
-            <input type="number" placeholder="Default: 25 (swatchRadius)" [(ngModel)]="totalRadius"/>
+            <input type="text" placeholder="Default: Color" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.label"/>
+            <input type="number" placeholder="Default: 30" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.swatchSize"/>
+            <input type="number" placeholder="Default: 25" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.swatchRadius"/>
+            <input type="text" placeholder="html element" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.resetElement"/>
         </div>
     </div>
 </div>
@@ -33,43 +27,74 @@
 
 <h3>Code</h3>
 <div class="mds-grid">
-    <div class="g-l-30">
-        <b>Module</b>
-        <mds-hightlight-prism [code]="importModuleCode" language="javascript"></mds-hightlight-prism>
-    </div>
-    <div class="g-l-40">
+    <div class="g-l-50">
         <b>Component</b>
         <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
     </div>
-    <div class="g-l-30">
+    <div class="g-l-50">
         <b>HTML</b>
         <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
     </div>
 </div>
+<p><i>Variable <b>sampledata</b> values is <a href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts">constant/proucts.ts</a>.</i></p>
+<br/>
 
 <b>Properties</b>
 <table class="table-properties mds-table table-swatch-a">
+    <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
     <tr>
         <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
-    <tr *ngFor="let item of [
-        {attribute: 'filterData', type: 'Array<any>', default: '∞', description: 'Sample data for create swatch filter', version: 'medes-ui@1.13.0 > Latest version'},
-        {attribute: 'filterBy', type: 'string', default: '∞', description: 'Key/properties to filter', version: 'medes-ui@1.13.0 > Latest version'},
-        {attribute: 'filterSelected', type: 'SelectedFilterInterface', default: '∞', description: 'List of selected filter', version: 'medes-ui@1.13.0 > Latest version'},
-        {attribute: 'swatchMapping', type: 'Object of key values', default: '∞', description: 'Listing of key/prop and color hex value', version: 'medes-ui@1.13.0 > Latest version'},
-        {attribute: 'titlegroup?', type: 'string', default: 'Color', description: 'Label text of swatch filter group', version: 'medes-ui@1.13.0 > Latest version'},
-        {attribute: 'swatchSize?', type: 'number', default: '30', description: 'Size of weight & height', version: 'medes-ui@1.13.0 > Latest version'},
-        {attribute: 'swatchRadius?', type: 'number', default: '0', description: 'Border radius size', version: 'medes-ui@1.13.0 > Latest version'}
-    ]">
-        <td mds-th-title="Attribute">{{item.attribute}}</td>
-        <td mds-th-title="Data Type">{{item.type}}</td>
+    <tr *ngFor="let item of tableContent">
+        <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
+        <td mds-th-title="Data Type">
+            @if (item.type === 'MdsFilterModel') {
+                <a (click)="openModal('my-modal-1')">{{item.type}}</a>
+            } @else {
+                {{item.type}}
+            }
+        </td>
         <td mds-th-title="Default">{{item.default}}</td>
         <td mds-th-title="Description">{{item.description}}</td>
-        <td mds-th-title="Support Version">{{item.version}}</td>
+        <td mds-th-title="Support version" [innerHtml]="item.version"></td>
     </tr>
 </table>
+<small>
+<a href="javascript:void(0)" (click)="showDeprecated = !showDeprecated">{{!showDeprecated ? 'Show' : 'Hide'}} deprecated</a>
+</small>
+@if (showDeprecated) {
+    <table class="table-properties mds-table">
+        <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
+        <tr>
+            <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
+        </tr>
+        <tr *ngFor="let item of tableContentDeprecated">
+            <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
+            <td mds-th-title="Data Type">
+                @if (item.type === 'SelectedFilterInterface') {
+                    <strike>{{item.type}}</strike>
+                } @else {
+                    {{item.type}}
+                }
+            </td>
+            <td mds-th-title="Default">{{item.default}}</td>
+            <td mds-th-title="Description">{{item.description}}</td>
+            <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+        </tr>
+    </table>
+}
+<br/><br/>
+
 <small>
     <b>Notes:</b>
     <br/><i>? = Is optional value, if no value will use default value.</i>
     <br/><i>∞ = No default value, put anything base on type</i>
 </small>
+
+<mds-modal id="my-modal-1">
+    <div class="modal-body padding-1">
+        <h3 class="padding-b-1">Interface Detail</h3>
+        <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
+        <button class="btn-swatch-a" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
+    </div>
+</mds-modal>

@@ -21,12 +21,13 @@ import { Component } from '@angular/core';
 import { ${importMdsUi} } from 'medes-ui';
 
 @Component({
-  selector: 'mds-my-component',
-  templateUrl: './mds-my-component.component.html',
-  styleUrls: ['./mds-my-component.component.scss']
+  selector: 'mds-app',
+  templateUrl: './mds-app.component.html',
+  styleUrls: ['./mds-app.component.scss'],
+  standalone: true
 })
 
-export class MyComponent {
+export class MdsAppComponent {
   ${valuesComponent}
 }`;
 }

@@ -16,7 +16,7 @@
         <h3>Preview:</h3>
         <!-- Demo Medes Page Counter Component -->
         <small>Total Item </small>
-        <mds-page-counter [(model)]="pageNavConfig" [customStyle]="'background: unset; color: #fff;'"></mds-page-counter>
+        <mds-page-counter [(model)]="pageNavConfig" [customStyle]="'border-radius: 7px;'"></mds-page-counter>
     </div>
     <div class="g-m-50">
         <h3>Conifguration:</h3>
@@ -37,15 +37,11 @@
 
 <h2>Code</h2>
 <div class="mds-grid">
-    <div class="g-l-30">
-        <b>Module</b>
-        <mds-hightlight-prism [code]="importModuleCode" language="javascript"></mds-hightlight-prism>
-    </div>
-    <div class="g-l-40">
+    <div class="g-l-50">
         <b>Component</b>
         <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
     </div>
-    <div class="g-l-30">
+    <div class="g-l-50">
         <b>HTML</b>
         <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
     </div>
@@ -71,7 +67,9 @@
         <td mds-th-title="Support version" [innerHtml]="item.version"></td>
     </tr>
 </table>
+<small>
 <a href="javascript:void(0)" (click)="showDeprecated = !showDeprecated">{{!showDeprecated ? 'Show' : 'Hide'}} deprecated</a>
+</small>
 @if (showDeprecated) {
     <table class="table-properties mds-table">
         <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
@@ -81,8 +79,8 @@
         <tr *ngFor="let item of tableContentDeprecated">
             <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
             <td mds-th-title="Data Type">
-                @if (item.type === 'PageNavigationManagerModel') {
-                    <a (click)="openModal('my-modal-1')">{{item.type}}</a>
+                @if (item.type === 'PageNavigationModel') {
+                    <strike>{{item.type}}</strike>
                 } @else {
                     {{item.type}}
                 }

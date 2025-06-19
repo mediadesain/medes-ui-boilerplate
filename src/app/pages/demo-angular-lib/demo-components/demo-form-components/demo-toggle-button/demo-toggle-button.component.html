@@ -8,7 +8,8 @@
         <h3>Preview:</h3>
         <!-- Medes Toggle Component -->
         <mds-toggle-button [(value)]="isActive" [model]="mdsFormModel"></mds-toggle-button>
-        <p>Value: {{isActive}}</p>
+        <br/>
+        <small><i>Value: {{isActive}}</i></small>
     </div>
     <div class="g-m-50">
         <h3>Conifguration:</h3>
@@ -30,15 +31,11 @@
 
 <h3>Code Generate:</h3>
 <div class="mds-grid">
-    <div class="g-l-30">
-        <b>Module</b>
-        <mds-hightlight-prism [code]="importModuleCode" language="javascript"></mds-hightlight-prism>
-    </div>
-    <div class="g-l-40">
+    <div class="g-l-50">
         <b>Component</b>
         <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
     </div>
-    <div class="g-l-30">
+    <div class="g-l-50">
         <b>HTML</b>
         <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
     </div>

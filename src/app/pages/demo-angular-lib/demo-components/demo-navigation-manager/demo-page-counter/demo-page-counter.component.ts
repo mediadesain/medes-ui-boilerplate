@@ -38,7 +38,7 @@ export class DemoPageCounterComponent implements AfterContentChecked {
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Configuration of Page Navigation Component', version: 'medes-ui@1.18.0 > Latest version'},
+    {attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0 > Latest version'},
     {attribute: 'customClass?',type: 'string', default: '∞', description: 'Put your custom class styling', version: 'medes-ui@1.15.1 > Latest version'},
     {attribute: 'customStyle?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: 'medes-ui@1.15.1 > Latest version'}
   ];

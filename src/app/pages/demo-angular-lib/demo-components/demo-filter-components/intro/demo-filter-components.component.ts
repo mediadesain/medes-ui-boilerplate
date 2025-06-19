@@ -14,12 +14,12 @@ import { MdsHightlightPrismModule, MdsFilterModule, MdsFilterModel, MdsNumberUti
   imports: [RouterModule, JsonPipe, MdsHightlightPrismModule, MdsFilterModule]
 })
 export class DemoFilterComponentsComponent implements OnInit {
-  data: ProductDataModel[];
+  sampledata: ProductDataModel[];
   mdsFilterModel: MdsFilterModel;
 
 checkboxComponent = `
 <!-- Filter Checkboxes Component -->
-<mds-filter-checkbox id="category" [data]="data" [model]="mdsFilterModel"></mds-filter-checkbox>`;
+<mds-filter-checkbox id="by-category" [data]="data" [model]="mdsFilterModel"></mds-filter-checkbox>`;
 
 swatchComponent = `
 <!-- Filter Swatch Component -->
@@ -35,15 +35,15 @@ resetComponent = `
 
   ngOnInit(): void {
     // Sample Data
-    this.data = SampleProductsData.data;
+    this.sampledata = SampleProductsData.data;
     // Filter Model
     const getAvailableMinMaxNumber = MdsNumberUtils.getMinMax(SampleProductsData.data.map(item => item.price)); // utils to get min max
     this.mdsFilterModel = {
       configs: {
         checkBox: {
-          category : {
+          'by-category' : {
             property: 'category',
-            label: 'Filter by Brand'
+            label: 'Filter by Categories'
           },
         },
         swatchBox: {
@@ -63,20 +63,15 @@ resetComponent = `
           }
         },
         rangeSlider: {
-          mySliderA: {
+          price: {
             label: 'Filter by Price',
             min: 0,
             max: 2500,
           }
         }
-      },
-      data: {
-        filterRange: {
-          start: getAvailableMinMaxNumber.min,
-          end: getAvailableMinMaxNumber.max
-        }
       }
     }
+    
   }
 
 }

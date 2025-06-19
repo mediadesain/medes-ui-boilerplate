@@ -25,7 +25,6 @@ export class DemoInputNumberComponent {
   mdsFormModel: MdsFormModel;
 
   // Code Viewer
-  importModuleCode: string;
   componentCode: string;
   htmlCode: string;
   interfaceCode: string;
@@ -35,6 +34,7 @@ export class DemoInputNumberComponent {
     {attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: 'medes-ui@1.15.3 > Latest version'},
     {attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.15.3 > Latest version'},
     {attribute: 'customClass?', type: 'string', default: '∞', description: 'Put classes to for styling component', version: 'medes-ui@1.15.3 > Latest version'},
+    {attribute: 'placeholder?', type: 'string', default: '0', description: 'Placeholder for field itself', version: 'medes-ui@1.15.3 > Latest version'},
     {attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: 'medes-ui@1.15.3 > Latest version'}
   ]
 
@@ -49,7 +49,6 @@ export class DemoInputNumberComponent {
         }
       }
     }
-    this.importModuleCode = constructImportModuleCode('MdsFormModule');
     this.componentCode = this.reGenerateCode();
     this.htmlCode = htmlCode;
     this.interfaceCode = interfaceCode;

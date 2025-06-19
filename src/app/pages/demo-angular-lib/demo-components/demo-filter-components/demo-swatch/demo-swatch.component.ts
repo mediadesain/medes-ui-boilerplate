@@ -2,7 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsFilterSwatchComponent, MdsHightlightPrismModule }
+import { FilterModelCode } from '../demo-filter-data-model-code';
+import { MdsFilterModel, MdsFilterSwatchComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService }
 //*-public-mode-*/ from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
@@ -11,95 +12,114 @@ import { MdsFilterSwatchComponent, MdsHightlightPrismModule }
   templateUrl: './demo-swatch.component.html',
   styleUrls: ['./demo-swatch.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsFilterSwatchComponent]
+  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsFilterSwatchComponent]
 })
 export class DemoSwatchComponent {
-  //----- Required -----
-  // filterData
+  // data
   sampledata: ProductDataModel[];
-  // filterBy
-  peropKey: string;
-  // filterSelected
-  // selected: SelectedFilterInterface = {};
-  // swatchMapping
-  colormap: {[key: string]: string};
+  // model
+  mdsFilterModel: MdsFilterModel;
 
-  //----- Optional Configuration -----
-  label: string; // titlegroup by default Color
-  totalSize: number; // swatchSize by default 30
-  totalRadius: number; // swatchRadius by default 0
+  // Code Viewer
+  showFullInterfaceCode = false;
+  interfaceCode: string;
 
-  constructor(){
+  // Properties Detail
+  showDeprecated = false;
+  tableContent = [
+    {attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: 'medes-ui@1.18.0 > Latest version'},
+    {attribute: 'data', type: 'Array<any>', default: '∞', description: 'Sample data for create multiple filter checkbox', version: 'medes-ui@1.18.0 > Latest version'},
+    {attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0 > Latest version'}
+  ]
+  tableContentDeprecated = [
+    {attribute: 'filterData', type: 'Array<any>', default: '∞', description: 'Sample data for create swatch filter', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {attribute: 'filterBy', type: 'string', default: '∞', description: 'Key/properties to filter', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {attribute: 'filterSelected', type: 'SelectedFilterInterface', default: '∞', description: 'List of selected filter', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {attribute: 'swatchMapping', type: 'Object of key values', default: '∞', description: 'Listing of key/prop and color hex value', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {attribute: 'titlegroup?', type: 'string', default: 'Color', description: 'Label text of swatch filter group', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {attribute: 'swatchSize?', type: 'number', default: '30', description: 'Size of weight & height', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {attribute: 'swatchRadius?', type: 'number', default: '0', description: 'Border radius size', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'}
+  ];
+
+  constructor(public mdsModalService: MdsModalService){
+    // data
     this.sampledata = SampleProductsData.data;
-    this.peropKey = 'color';
-    this.colormap = {
-      'blue-sky': '#66ccdd',
-      'maroon': '#bb6a66',
-      'brown': '#6b6a6b',
-      'black': '#000000',
-      'purple': '#6a66bb',
-      'gold': '#b6ab66'
-    };
+    // model
+    this.mdsFilterModel = {
+      configs: {
+        swatchBox: {
+          color: {
+            property: 'color',
+            label: 'Filter by Color',
+            colorMap: {
+              'blue-sky': '#66ccdd',
+              'maroon': '#bb6a66',
+              'brown': '#6b6a6b',
+              'black': '#000000',
+              'purple': '#6a66bb',
+              'gold': '#b6ab66'
+            },
+            swatchSize: 30,
+            swatchRadius: 5
+          }
+        }
+      }
+    }
+    this.interfaceCode = FilterModelCode.geModel('swatchBox');
+  }
+  
+  openModal(id: string): void {
+    this.mdsModalService.trigger(id);
   }
 
-  importModuleCode = `
-import { MdsFilterModule } from 'medes-ui';
-
-@NgModule({
-  declarations: [ ... ],
-  imports: [
-    MdsFilterModule  // Ignore importing module if using standalone component
-  ]
-})
-
-export class MyModule { }`;
+  expandCollapseModel(): void {
+    if (this.showFullInterfaceCode) {
+      this.interfaceCode = FilterModelCode.geModel('swatchBox');
+      this.showFullInterfaceCode = false;
+    } else {
+      this.interfaceCode = FilterModelCode.geModel('all');
+      this.showFullInterfaceCode = true;
+    }
+  }
 
 componentCode = `
 import { MdsFilterSwatchComponent } from 'medes-ui';
 
 @Component({
-  selector: 'mds-my-component',
-  templateUrl: './mds-my-component.component.html',
-  styleUrls: ['./mds-my-component.component.scss'],
+  selector: 'mds-app',
+  templateUrl: './mds-app.component.html',
+  styleUrls: ['./mds-app.component.scss'],
   standalone: true,
   imports: [MdsFilterSwatchComponent] // import here if standalone component is true
 })
 
-export class MyComponent {
-...
-  //----- Required -----
-  // filterData
-  sampledata: ProductDataModel[];
-  // filterBy
-  peropKey: string = 'color';
-  // filterSelected
-  selected: SelectedFilterInterface = {};
-  // swatchMapping
-  colormap: {[key: string]: string} = {
-    'blue-sky': '#66ccdd',
-    'maroon': '#bb6a66',
-    'brown': '#6b6a6b',
-    'black': '#000000',
-    'purple': '#6a66bb',
-    'gold': '#b6ab66'
-  };
-
-  //----- Optional Configuration -----
-  label: string; // titlegroup by default Color
-  totalSize: number; // swatchSize by default 30
-  totalRadius: number; // swatchRadius by default 0
-...
+export class MdsAppComponent {
+  // data
+  sampledata: ProductDataModel[] = SampleProductsData.data;
+  // model
+  mdsFilterModel: MdsFilterModel = {
+    configs: {
+      swatchBox: {
+        color: { // Filter component id
+          property: 'color', // property on ProductDataModel Object
+          label: 'Filter by Color',
+          colorMap: {
+            'blue-sky': '#66ccdd',
+            'maroon': '#bb6a66',
+            'brown': '#6b6a6b',
+            'black': '#000000',
+            'purple': '#6a66bb',
+            'gold': '#b6ab66'
+          },
+          swatchSize: 30,
+          swatchRadius: 5
+        }
+      }
+    }
+  }
 }`;
 htmlCode = `
-<!-- Medes Filter Swatch Component -->
-<mds-filter-swatch
-  [filterData]="sampledata"
-  [filterBy]="peropKey"
-  [filterSelected]="selected"
-  [swatchMapping]="colormap"
-  [titlegroup]="label"
-  [swatchSize]="totalSize"
-  [swatchRadius]="totalRadius"
-></mds-filter-swatch>`;
+<!-- Filter Swatch Component -->
+<mds-filter-swatch id="color" [data]="sampledata" [model]="mdsFilterModel"></mds-filter-swatch>`;
 
 }

@@ -4,9 +4,8 @@ import { CommonModule } from '@angular/common';
 import { DemoModalChildComponent } from './demo-modal-child/demo-modal-child.component';
 import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
 import { htmlCode, htmlCode2, interfaceCode } from './modal-component-preview-code';
-import { MdsModalModel } from 'projects/medes-ui/src/lib/angular/components/mds-modal/mds-modal.model';
 import { FormsModule } from '@angular/forms';
-import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
+import { MdsHightlightPrismModule, MdsModalModel, MdsModalModule, MdsModalService }
 //*-public-mode-*/ from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
@@ -33,7 +32,6 @@ export class DemoModalComponent {
   }
 
   // Code Viewer
-  importModuleCode: string;
   componentCode: string;
   htmlCode: string;
   interfaceCode: string;
@@ -54,7 +52,6 @@ export class DemoModalComponent {
   ];
 
   constructor(public mdsModalService: MdsModalService) {
-    this.importModuleCode = constructImportModuleCode('MdsModalModule');
     this.reGenerateCode();
     this.interfaceCode = interfaceCode;
   }
@@ -62,7 +59,7 @@ export class DemoModalComponent {
   reGenerateCode(): void {
     this.htmlCode = this.showHeaderFooter ? htmlCode : htmlCode2;
 
-    const importMdsUi = 'MdsModalModel, MdsModalService';
+    const importMdsUi = 'MdsModalModule, MdsModalModel, MdsModalService';
     const valuesComponent = `// model
   mdsModalModelConfig: MdsModalModel = {
     configs: {
