@@ -2,8 +2,9 @@ import { CommonModule } from '@angular/common';
 import { AfterContentChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-/*-public-mode-*/ import { MdsFormModel, MdsFormModule, MdsToggleType } from 'medes-ui';
-//*-dev-mode-*/ import { MdsFormModel, MdsFormModule, MdsToggleType } from 'projects/medes-ui/src/public-api';
+ import { MdsFormModel, MdsFormModule }
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-dev-testing',
@@ -25,7 +26,7 @@ export class DevTestingComponent implements AfterViewInit, AfterContentChecked, 
         isDisabled: false
       },
       mdsToggle: {
-        type: MdsToggleType.CLASIC,
+        type: 'clasic',
         color: 'swatch-c',
         isDisabled: true
       }

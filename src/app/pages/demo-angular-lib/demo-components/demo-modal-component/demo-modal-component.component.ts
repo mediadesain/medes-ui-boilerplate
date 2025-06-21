@@ -2,9 +2,12 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DemoModalChildComponent } from './demo-modal-child/demo-modal-child.component';
-import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
+import { htmlCode, htmlCode2, interfaceCode } from './modal-component-preview-code';
+import { FormsModule } from '@angular/forms';
+import { MdsHightlightPrismModule, MdsModalModel, MdsModalModule, MdsModalService }
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 
 @Component({
@@ -12,48 +15,73 @@ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
   templateUrl: './demo-modal-component.component.html',
   styleUrls: ['./demo-modal-component.component.scss'],
   standalone: true,
-  imports: [CommonModule, RouterModule, MdsHightlightPrismModule, MdsModalModule, DemoModalChildComponent]
+  imports: [CommonModule, FormsModule, RouterModule, MdsHightlightPrismModule, MdsModalModule, DemoModalChildComponent]
 })
 
 export class DemoModalComponent {
-  importModuleCode = `
-import { MdsModalModule } from 'medes-ui';
+  showHeaderFooter = true;
+  mdsModalModelConfig: MdsModalModel = {
+    configs: {
+      modalWidth: 'medium',
+      scrollInTheModal: false,
+      marginVertical: 50,
+      borderRadius: 3,
+      hideCloseButton: false,
+      disableCloseBackdrop: false
+    }
+  }
 
-@NgModule({
-  declarations: [ ... ],
-  imports: [
-    MdsModalModule
-  ]
-})
+  // Code Viewer
+  componentCode: string;
+  htmlCode: string;
+  interfaceCode: string;
 
-export class MyModule { }`;
-  component = `
-import { MdsModalService } from 'medes-ui'; // import modal service
+  // Properties Detail
+  showDeprecated = false;
+  tableContent = [
+    {attribute: 'id', type: 'string', default: '∞', description: 'id modal is required for identify which modal to trigger', version: 'medes-ui@1.18.0 > Latest version'},
+    {attribute: 'model?', type: 'MdsModalModel', default: '∞', description: 'Modal configuratuin', version: 'medes-ui@1.18.0 > Latest version'}
+  ];
+  tableContentDeprecated = [
+    {attribute: 'modalWidth?', type: 'string of option: <i>\'small\' | \'medium\' | \'large\' | \'fullscreen\'</i> or number', default: '\'medium\'', description: 'Width of modal by default is medium (700px) but posible with custom width. If set as \'fullscreen\' wil set height & width fullscreen', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
+    {attribute: 'marginTop?', type: 'number', default: '44', description: 'Padding top modal', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
+    {attribute: 'marginBottom?', type: 'number', default: '44', description: 'Padding bottom modal', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
+    {attribute: 'borderRadius?', type: 'number', default: '5', description: 'Border radius size', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
+    {attribute: 'hideCloseButton?', type: 'boolean', default: 'false', description: 'Visibility of close button', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
+    {attribute: 'disableCloseBackdrop?', type: 'boolean', default: 'false', description: 'Disable closing modal if clicking backdrop', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
+  ];
 
-export class MyComponent {
+  constructor(public mdsModalService: MdsModalService) {
+    this.reGenerateCode();
+  }
 
-  constructor(public mdsModalService: MdsModalService) {}
-
-  openModal(): void {
-    this.mdsModalService.trigger(id);
-  }:
-}`;
-  html = `
-<!-- Button Modal -->
-<button (click)="openModal('my-modal-1')">Open Simple Modal</button>
-<!-- Simple Sample Modal -->
-<mds-modal id="my-modal-1" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
-    <div class="padding-1">
-        <h3 class="padding-b-1">Simple Modal Sample</h3>
-        <p>Curabitur sem sapien, vestibulum non tincidunt semper, ullamcorper a ante. Morbi tempor sem nec facilisis efficitur. Nam vel quam malesuada, dignissim leo id, eleifend tortor. Etiam in rutrum elit.</p>
-        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
-    </div>
-</mds-modal>`;
-  
-  constructor(public mdsModalService: MdsModalService) {}
-  
   openModal(id: string): void {
     this.mdsModalService.trigger(id);
+  }
+
+  reGenerateCode(): void {
+
+    const importMdsUi = 'MdsModalModule, MdsModalModel, MdsModalService';
+    const valuesComponent = `// model
+  mdsModalModelConfig: MdsModalModel = {
+    configs: {
+      modalWidth: '${this.mdsModalModelConfig.configs.modalWidth}',
+      scrollInTheModal: ${this.mdsModalModelConfig.configs.scrollInTheModal},
+      marginVertical: ${this.mdsModalModelConfig.configs.marginVertical},
+      borderRadius: ${this.mdsModalModelConfig.configs.borderRadius},
+      hideCloseButton: ${this.mdsModalModelConfig.configs.hideCloseButton},
+      disableCloseBackdrop: ${this.mdsModalModelConfig.configs.disableCloseBackdrop}
+    }
+  }
+  
+  constructor(public mdsModalService: MdsModalService) {}
+
+  openModal(id: string): void {
+    this.mdsModalService.trigger(id);
+  }`
+    this.componentCode = constructComponentCode(importMdsUi, valuesComponent);
+    this.htmlCode = this.showHeaderFooter ? htmlCode : htmlCode2;
+    this.interfaceCode = interfaceCode;
   }
   
 }

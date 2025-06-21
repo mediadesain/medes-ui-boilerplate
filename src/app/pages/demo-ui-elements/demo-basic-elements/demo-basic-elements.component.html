@@ -1,5 +1,5 @@
 <h1>Boilerplate Medes Doc</h1>
-<p>Clone repository to get source code <a href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/pages/demo-ui-boilerplate/ui-boilerplate.component.html" target="_blank">here</a>.</p>
+<p>Clone repository to get source code <a href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/pages/demo-ui-elements/demo-basic-elements/demo-basic-elements.component.html" target="_blank">here</a>.</p>
 <hr/>
 
 <h2>Paragraph</h2>
@@ -93,7 +93,7 @@
     </div>
 </div>
 <div class="fullfill-horizontal">
-    <button class="btn-swatch-a" disabled><div class="loader"></div> Loading</button> - <span class="loader"></span><small> (Sample loading button)</small><br/>
+    <button class="btn-swatch-a" disabled><div class="loader"></div> Loading</button> - <small> (Sample loading button)</small><br/>
     Add your custom scheme color, <a routerLink="/introduction/color-scheme">step here</a>
 </div>
 <hr/>
@@ -133,7 +133,7 @@
     <div class="g-l-25 g-m-50 g-s-25">7</div>
     <div class="g-l-25 g-m-50 g-s-25">8</div>
 </div>
-<a routerLink="/ui-boilerplate/grid-system">More info</a>
+<a routerLink="/ui-elements/grid-system">More info</a>
 <hr/>
 
 <h2>Highlight</h2>
@@ -204,12 +204,40 @@
     <tr>
         <th>Title 1</th><th>Title 2</th><th>Title 3</th>
     </tr>
-    <tr *ngFor="let i of [0,1,2,3,4]">
-        <td mds-th-title="Title 1">Content 1</td>
-        <td mds-th-title="Title 2">Content 2</td>
-        <td mds-th-title="Title 3">Content 3</td>
+    @for (item of [0,1,2]; track $index) {
+        <tr>
+            <td mds-th-title="Title 1">Content 1</td>
+            <td mds-th-title="Title 2">Content 2</td>
+            <td mds-th-title="Title 3">Content 3</td>
+        </tr>
+    }
+</table>
+<br/>
+<table class="mds-table table-swatch-a">
+    <tr>
+        <th>Title 1</th><th>Title 2</th><th>Title 3</th>
     </tr>
-    </table>
+    @for (item of [0,1,2]; track $index) {
+        <tr>
+            <td mds-th-title="Title 1">Content 1</td>
+            <td mds-th-title="Title 2">Content 2</td>
+            <td mds-th-title="Title 3">Content 3</td>
+        </tr>
+    }
+</table>
+<br/>
+<table class="mds-table table-swatch-b">
+    <tr>
+        <th>Title 1</th><th>Title 2</th><th>Title 3</th>
+    </tr>
+    @for (item of [0,1,2]; track $index) {
+        <tr>
+            <td mds-th-title="Title 1">Content 1</td>
+            <td mds-th-title="Title 2">Content 2</td>
+            <td mds-th-title="Title 3">Content 3</td>
+        </tr>
+    }
+</table>
 <hr/>
 
 <h2>Code Highlight</h2>
@@ -227,7 +255,7 @@
         <mds-hightlight-prism [code]="samplets" language="javascript"></mds-hightlight-prism>
     </div>
 </div>
-<a routerLink="/prismjs-highlight">More info</a>
+<a routerLink="/angular-lib/prismjs-highlight">More info</a>
 <hr/>
 
 <h2>Image Loader</h2>
@@ -259,5 +287,5 @@
         <small><i>*Sample no image</i></small>
     </div>
 </div>
-<a routerLink="/ui-boilerplate/image-loader">More info</a>
+<a routerLink="/ui-elements/image-loader">More info</a>
 <hr/>

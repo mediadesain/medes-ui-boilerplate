@@ -30,21 +30,27 @@
         <div class="fullfill-horizontal flex-horizontal justify-between">
             <span>Item Justify</span>
             <select #setDirection="ngModel" ngModel="flex-horizontal">
-                <option *ngFor="let item of flexDirection" [value]="item.value">{{item.label}}</option>
+                @for (item of flexDirection; track $index) {
+                    <option [value]="item.value">{{item.label}}</option>
+                }
             </select>
         </div>
 
         <div class="fullfill-horizontal flex-horizontal justify-between">
             <span>Item Align</span>
             <select #setHAligh="ngModel" ngModel="justify-between">
-                <option *ngFor="let item of justifyItems" [value]="item.value">{{item.label}}</option>
+                @for (item of justifyItems; track $index) {
+                    <option [value]="item.value">{{item.label}}</option>
+                }
             </select>
         </div>
 
         <div class="fullfill-horizontal flex-horizontal justify-between">
             <span>Item direction</span>
             <select #setVAligh="ngModel" ngModel="align-middle">
-                <option *ngFor="let item of alignItems" [value]="item.value">{{item.label}}</option>
+                @for (item of alignItems; track $index) {
+                    <option [value]="item.value">{{item.label}}</option>
+                }
             </select>
         </div>
     </div>
@@ -73,18 +79,24 @@
         <td mds-th-title="Class name">.fullfill-vertical</td>
         <td mds-th-title="Description">Vertical full height base on container size</td>
     </tr>
-    <tr *ngFor="let item of flexDirection">
-        <td mds-th-title="Class name">.{{item.value}}</td>
-        <td mds-th-title="Description">{{item.label}}</td>
-    </tr>
-    <tr *ngFor="let item of justifyItems">
-        <td mds-th-title="Class name">.{{item.value}}</td>
-        <td mds-th-title="Description">{{item.label}}</td>
-    </tr>
-    <tr *ngFor="let item of alignItems">
-        <td mds-th-title="Class name">.{{item.value}}</td>
-        <td mds-th-title="Description">{{item.label}}</td>
-    </tr>
+    @for (item of flexDirection; track $index) {
+        <tr>
+            <td mds-th-title="Class name">.{{item.value}}</td>
+            <td mds-th-title="Description">{{item.label}}</td>
+        </tr>
+    }
+    @for (item of justifyItems; track $index) {
+        <tr>
+            <td mds-th-title="Class name">.{{item.value}}</td>
+            <td mds-th-title="Description">{{item.label}}</td>
+        </tr>
+    }
+    @for (item of alignItems; track $index) {
+        <tr>
+            <td mds-th-title="Class name">.{{item.value}}</td>
+            <td mds-th-title="Description">{{item.label}}</td>
+        </tr>
+    }
 </table>
 
 <hr class="margin-b-2">
@@ -103,10 +115,14 @@
         <b class="margin-b-1">Customize:</b>
         <div class="fullfill-herizontal flex-horizontal">
             <select #paddingUtil="ngModel" ngModel="padding-horizontal-1">
-                <option *ngFor="let item of paddingOptions" [value]="item.value">{{item.label}}</option>
+                @for (item of paddingOptions; track $index) {
+                    <option [value]="item.value">{{item.label}}</option>
+                }
             </select>
             <select #marginUtil="ngModel" ngModel="margin-1">
-                <option *ngFor="let item of marginOptions" [value]="item.value">{{item.label}}</option>
+                @for (item of marginOptions; track $index) {
+                    <option [value]="item.value">{{item.label}}</option>
+                }
             </select>
         </div>
     </div>
@@ -123,8 +139,10 @@
 <h4 class="margin-t-1">Box model margin & padding classes list</h4>
 <table class="mds-table table-swatch-a margin-b-1">
     <tr><th>Class name</th><th>Description</th></tr>
-    <tr *ngFor="let item of paddingOptions">
-        <td mds-th-title="Class name">.{{item.value}}</td>
-        <td mds-th-title="Description">{{item.label}}</td>
-    </tr>
+    @for (item of paddingOptions; track $index) {
+        <tr>
+            <td mds-th-title="Class name">.{{item.value}}</td>
+            <td mds-th-title="Description">{{item.label}}</td>
+        </tr>
+    }
 </table>

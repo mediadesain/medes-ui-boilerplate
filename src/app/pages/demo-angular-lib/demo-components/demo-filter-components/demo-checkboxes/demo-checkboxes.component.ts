@@ -2,92 +2,114 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsFilterCheckboxComponent, MdsHightlightPrismModule, SelectedFilterInterface }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsFilterModelCode } from '../demo-filter-data-model-code';
+import { MdsFilterCheckboxComponent, MdsFilterModel, MdsHightlightPrismModule, MdsModalModule, MdsModalService }
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-checkboxes',
   templateUrl: './demo-checkboxes.component.html',
   styleUrls: ['./demo-checkboxes.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsFilterCheckboxComponent]
+  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsFilterCheckboxComponent]
 })
 
 export class DemoCheckboxesComponent {
-  // Required
-  sampledata: ProductDataModel[]; // filterData
-  peropKey: string; // filterBy
-  selected: SelectedFilterInterface; // filterSelected
-
-  // Optional Configuration
-  label: string; // titlegroup
-  resetElement: string; // reset
-  isHideCounter: boolean; // hideCounter
-
-  constructor(){
-    this.sampledata = SampleProductsData.data;
-    this.peropKey = 'category';
-    this.selected = {};
-    this.label = 'Filter by Category';
-    this.resetElement = '✕';
-    this.isHideCounter = false;
-  }
+  // data
+  sampledata: ProductDataModel[];
+  // model
+  mdsFilterModel: MdsFilterModel;
   
-  importModuleCode = `
-import { MdsFilterModule } from 'medes-ui';
+  // Code Viewer
+  showFullInterfaceCode = false;
+  interfaceCode: string;
 
-@NgModule({
-  declarations: [ ... ],
-  imports: [
-    MdsFilterModule  // Ignore importing module if using standalone component
+  // Properties Detail
+  showDeprecated = false;
+  tableContent = [
+    {attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: 'medes-ui@1.18.0 > Latest version'},
+    {attribute: 'data', type: 'Array<any>', default: '∞', description: 'Sample data for create multiple filter checkbox', version: 'medes-ui@1.18.0 > Latest version'},
+    {attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0 > Latest version'}
   ]
-})
+  tableContentDeprecated = [
+    {attribute: 'filterData', type: 'Array<any>', default: '∞', description: 'Sample data for create multiple filter checkbox. On newer renamed to data', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {attribute: 'filterBy', type: 'string', default: '∞', description: 'Newer version only support string value, value is property/key', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
+    {attribute: 'filterSelected', type: 'Object', default: '∞', description: 'List of selected filter', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {attribute: 'titlegroup?', type: 'string', default: 'Filter by', description: 'Prefix of label text of group', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {attribute: 'reset?', type: 'string', default: '✕', description: 'Content of reset group filter, html readeable.', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {attribute: 'hideCounter?', type: 'boolean', default: 'false', description: 'Show/hide counter item. Or delete the attribute by default will showing', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'}
+  ];
 
-export class MyModule { }`;
+
+  constructor(public mdsModalService: MdsModalService){
+    // Sample Data
+    this.sampledata = SampleProductsData.data;
+    // Filter Model
+    this.mdsFilterModel = {
+      configs: {
+        checkBox: {
+          'by-category' : {
+            property: 'category',
+            label: 'Filter by Categories'
+          },
+        }
+      }
+    }
+    
+    this.interfaceCode = MdsFilterModelCode.geModel('checkBox');
+  }
+
+  openModal(id: string): void {
+    this.mdsModalService.trigger(id);
+  }
+
+  expandCollapseModel(): void {
+    if (this.showFullInterfaceCode) {
+      this.interfaceCode = MdsFilterModelCode.geModel('checkBox');
+      this.showFullInterfaceCode = false;
+    } else {
+      this.interfaceCode = MdsFilterModelCode.geModel('all');
+      this.showFullInterfaceCode = true;
+    }
+  }
+
+  updateProp(prop: string): void {
+    const newModel = Object.assign({}, this.mdsFilterModel);
+    this.mdsFilterModel = null;
+    newModel.configs.checkBox['by-category'].property = prop;
+    this.mdsFilterModel = newModel;
+  }
 
 componentCode = `
 import { MdsFilterCheckboxComponent } from 'medes-ui';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
 
 @Component({
-  selector: 'mds-my-component',
-  templateUrl: './mds-my-component.component.html',
-  styleUrls: ['./mds-my-component.component.scss'],
+  selector: 'mds-app',
+  templateUrl: './mds-app.component.html',
+  styleUrls: ['./mds-app.component.scss'],
   standalone: true,
   imports: [MdsFilterCheckboxComponent] // import here if standalone component is true
 })
 
-export class MyComponent {
-  ...
-  //----- Required -----
-  // filterData
-  sampledata: ProductDataModel[] = [
-    { "brand": "puma", "category": "tshirt", "color": "brown", "gender": "unisex", "id": "62122871cb242f1f01d916f9", "picture": "https://picsum.photos/400?image=172", "price": 1851.141, "name": "Herminia Ray" },
-    { "brand": "puma", "category": "accesoriss", "color": "purple,brown", "gender": "women", "id": "621228716682ceb404a69e75", "picture": "https://picsum.photos/400?image=702", "price": 1513.896, "name": "Brittany Neal" },
-    { "brand": "puma", "category": "tshirt", "color": "blue sky", "gender": "men", "id": "62122871b37e4c94421a90b9", "picture": "https://picsum.photos/400?image=665", "price": 1879.761, "name": "Mamie Ballard" },
-    ... //Full data https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts
-  ];
-  // filterBy
-  peropKey: string = 'category';
-  // filterSelected
-  selected: SelectedFilterInterface = {};
-
-  //----- Optional Configuration -----
-  label: string = 'Filter by Category'; // titlegroup
-  resetElement: string = '✕' // reset
-  isHideCounter: boolean = false; // hideCounter
-  ...
+export class MdsAppComponent {
+  // data
+  sampledata: ProductDataModel[] = SampleProductsData.data;
+  // model
+  mdsFilterModel: MdsFilterModel = {
+    configs: {
+      checkBox: {
+        'by-category' : { // Filter component id
+          property: 'category', // property on ProductDataModel Object
+          label: 'Filter by Categories'
+        },
+      }
+    }
+  }
 }`;
 htmlCode = `
 <!-- Filter Checkboxes Component -->
-<mds-filter-checkbox
-  [filterData]="sampledata"
-  [filterBy]="peropKey"
-  [filterSelected]="selected"
-  [titlegroup]="label"
-  [reset]="resetElement"
-  [hideCounter]="isHideCounter"
-></mds-filter-checkbox>`;
+<mds-filter-checkbox id="by-category" [data]="sampledata" [model]="mdsFilterModel"></mds-filter-checkbox>`;
 
 }

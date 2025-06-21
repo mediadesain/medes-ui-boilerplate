@@ -1,6 +1,6 @@
 {
   "name": "medes-ui-boilerplate",
-  "version": "1.17.1",
+  "version": "1.18.0-refactor.2",
   "scripts": {
     "ng": "ng",
     "start": "ng lint medes-ui-boilerplate && ng serve medes-ui-boilerplate --port 4600",
@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "^17.3.12",
     "@angular/router": "^17.3.12",
     "@fortawesome/fontawesome-free": "^6.7.2",
-    "medes-ui": "1.17.1",
+    "medes-ui": "1.18.0-refactor.2",
     "prismjs": "^1.29.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

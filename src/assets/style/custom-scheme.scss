@@ -27,4 +27,7 @@
 .btn-swatch-c {background: var(--swatch-c); color: var(--swatch-c-contrast);}
 .btn-swatch-c:hover {background: var(--swatch-c-lighter);}
 .btn-swatch-c:disabled, .btn-swatch-c[disabled] {background: var(--swatch-c-darker);}
+.numbering.swatch-c.active { color: var(--swatch-c-contrast); background: var(--swatch-c); }
+.numbering.swatch-c:hover { color: var(--swatch-c-contrast); background: var(--swatch-c); }
+
 // add more here

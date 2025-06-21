@@ -1,22 +1,14 @@
 <h1>Range Slider Components</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis.</p>
+<p>Filter data list object items with range slider.</p>
 <hr/>
 
 <h2 class="margin-b-1">Preview & Generate Component Configuration</h2>
 <div class="mds-grid">
     <div class="g-m-30">
         <h3>Preview:</h3>
-        <!-- Filter range slider -->
-        <mds-filter-range-slider
-            [(start)]="filterRangeSelected.start"
-            [(end)]="filterRangeSelected.end"
-            [min]="filterRangeSelected.min"
-            [max]="filterRangeSelected.max"
-            [label]="label" 
-            [reset]="resetElement"
-            [disabled]="isDisabled">
-        </mds-filter-range-slider>
-        <small><i>Output: {{filterRangeSelected.start}} - {{filterRangeSelected.end}}</i></small>
+        <!-- Filter Range Slider Component -->
+        <mds-filter-range-slider id="price" [model]="mdsFilterModel" [disabled]="isDisabled"></mds-filter-range-slider>
+        <small><i>Output: {{mdsFilterModel.data.filterRange.start}} - {{mdsFilterModel.data.filterRange.end}}</i></small>
     </div>
     <div class="g-m-70">
         <h3>Conifguration:</h3>
@@ -27,7 +19,6 @@
             <input type="text" placeholder="Default: Color (titlegroup)" [(ngModel)]="label"/>
             <input type="number" placeholder="Default: 30 (swatchSize)" [(ngModel)]="totalSize"/>
             <input type="number" placeholder="Default: 25 (swatchRadius)" [(ngModel)]="totalRadius"/> -->
-            <input type="text" placeholder="Default: Filter by Range (label)" [(ngModel)]="label"/>
             <button (click)="isDisabled=!isDisabled">Enable/Disable Slider</button>
         </div>
     </div>
@@ -35,45 +26,78 @@
 
 <h3>Code</h3>
 <div class="mds-grid">
-    <div class="g-l-30">
-        <b>Module</b>
-        <mds-hightlight-prism [code]="importModuleCode" language="javascript"></mds-hightlight-prism>
-    </div>
-    <div class="g-l-40">
+    <div class="g-l-50">
         <b>Component</b>
         <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
     </div>
-    <div class="g-l-30">
+    <div class="g-l-50">
         <b>HTML</b>
-        <mds-hightlight-prism [code]="componenthtml" language="html"></mds-hightlight-prism>
+        <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
     </div>
 </div>
 
 
 
-
+<b>Properties</b>
 <table class="table-properties mds-table table-swatch-a">
+    <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
     <tr>
-        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="width: 20%">Support Version</th>
+        <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
-    <tr *ngFor="let item of [
-        {attribute: 'start', type: 'number', default: '∞', description: 'Starting point of range selection. If selected start range less than min value will be set as min value', version: 'medes-ui@1.14.3 > Latest version'},
-        {attribute: 'end', type: 'number', default: '∞', description: 'End point of range selection. If selected end range more than max value will be set as max value', version: 'medes-ui@1.14.3 > Latest version'},
-        {attribute: 'min?', type: 'number', default: '0', description: 'Range Minimal', version: 'medes-ui@1.14.3 > Latest version'},
-        {attribute: 'max?', type: 'number', default: '1000', description: 'Range Miximal', version: 'medes-ui@1.14.3 > Latest version'},
-        {attribute: 'label?', type: 'string', default: '\'Filter by Range\'', description: 'Filter by range title', version: 'medes-ui@1.14.3 > Latest version'},
-        {attribute: 'reset?', type: 'string', default: '✕', description: 'Content of reset group filter, html readeable.', version: 'medes-ui@1.14.3 > Latest version'},
-        {attribute: 'disabled?', type: 'boolean', default: 'false', description: 'For disabling filter range slider', version: 'medes-ui@1.14.3 > Latest version'}
-    ]">
-        <td mds-th-title="Attribute">{{item.attribute}}</td>
-        <td mds-th-title="Data Type">{{item.type}}</td>
-        <td mds-th-title="Default">{{item.default}}</td>
-        <td mds-th-title="Description">{{item.description}}</td>
-        <td mds-th-title="Support version">{{item.version}}</td>
-    </tr>
+    @for (item of tableContent; track $index) {
+        <tr>
+            <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
+            <td mds-th-title="Data Type">
+                @if (item.type === 'MdsFilterModel') {
+                    <a (click)="openModal('my-modal-1')">{{item.type}}</a>
+                } @else {
+                    {{item.type}}
+                }
+            </td>
+            <td mds-th-title="Default">{{item.default}}</td>
+            <td mds-th-title="Description">{{item.description}}</td>
+            <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+        </tr>
+    }
 </table>
+<small>
+<a href="javascript:void(0)" (click)="showDeprecated = !showDeprecated">{{!showDeprecated ? 'Show' : 'Hide'}} deprecated</a>
+</small>
+@if (showDeprecated) {
+    <table class="table-properties mds-table">
+        <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
+        <tr>
+            <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
+        </tr>
+        @for (item of tableContentDeprecated; track $index) {
+            <tr>
+                <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
+                <td mds-th-title="Data Type">
+                    @if (item.type === 'model') {
+                        <strike>{{item.type}}</strike>
+                    } @else {
+                        {{item.type}}
+                    }
+                </td>
+                <td mds-th-title="Default">{{item.default}}</td>
+                <td mds-th-title="Description">{{item.description}}</td>
+                <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+            </tr>
+        }
+    </table>
+}
+<br/><br/>
+
 <small>
     <b>Notes:</b>
     <br/><i>? = Is optional value, if no value will use default value.</i>
     <br/><i>∞ = No default value, put anything base on type</i>
 </small>
+
+<mds-modal id="my-modal-1">
+    <div class="modal-body padding-1">
+        <h3 class="padding-b-1">Interface Detail</h3>
+        <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
+        <button class="btn-swatch-a" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
+    </div>
+</mds-modal>

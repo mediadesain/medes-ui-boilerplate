@@ -44,12 +44,18 @@
 <table class="table-properties mds-table table-swatch-a">
     <!-- Table Header -->
     <tr>
-        <th *ngFor="let row of tableHeader; let i = index" [style.width.%]="i === 1 ? '15' : '' || i === tableHeader.length - 1 ? '20' : ''" [title]="row.title">{{row.title}}</th>
+        @for (row of tableHeader; track row; let i = $index) {
+            <th [style.width.%]="i === 1 ? '15' : '' || i === tableHeader.length - 1 ? '20' : ''" [title]="row.title">{{row.title}}</th>
+        }
     </tr>
     <!-- Table Content -->
-    <tr *ngFor="let item of tableContent">
-        <td *ngFor="let row of tableHeader" [attr.mds-th-title]="row.title" [innerHTML]="item[row.prop]"></td>
-    </tr>
+    @for (item of tableContent; track $index) {
+        <tr>
+            @for (row of tableHeader; track $index) {
+                <td [attr.mds-th-title]="row.title" [innerHTML]="item[row.prop]"></td>
+            }
+        </tr>
+     }
 </table>
 
 <small>

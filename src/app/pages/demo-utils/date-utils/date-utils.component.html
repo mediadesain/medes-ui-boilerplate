@@ -1,5 +1,5 @@
 <h1>Date Utils</h1>
-<p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
+<p>Collection of utils helper for date.</p>
 <hr/>
 
 <b>Import MdsDateUtils:</b>
@@ -11,19 +11,21 @@
     <tr>
         <th>Function</th><th>Data Type</th><th>Default Value</th><th>Description</th><th style="min-width: 200px;">Support Version</th>
     </tr>
-    <tr *ngFor="let item of [{
+    @for (item of [{
         attribute: 'untilNow( <b>number</b>, <b>Array?</b>, <b>string?</b> )',
         'value':'<ul><li>number</li><li>Array&lt;string&gt;</li><li>string</li></ul>',
         default: '<ul><li>∞</li><li>[\'year\', \'month\', \'day\', \'hour\', \'minute\', \'second\']</li><li>\'ago\'</li></ul>',
         description: '<ul><li>Sample data timestamp</li><li>String of times.</li><li>Prefix</li></ul>',
         version: 'medes-ui@0.0.1 > Latest version'
-    }]">
-        <td mds-th-title="Function" [innerHTML]="item.attribute"></td>
-        <td mds-th-title="Data Type" [innerHTML]="item.value"></td>
-        <td mds-th-title="Default Value" [innerHTML]="item.default"></td>
-        <td mds-th-title="Description" [innerHTML]="item.description"></td>
-        <td mds-th-title="Support Version" [innerHTML]="item.version"></td>
-    </tr>
+    }]; track $index) {
+        <tr>
+            <td mds-th-title="Function" [innerHTML]="item.attribute"></td>
+            <td mds-th-title="Data Type" [innerHTML]="item.value"></td>
+            <td mds-th-title="Default Value" [innerHTML]="item.default"></td>
+            <td mds-th-title="Description" [innerHTML]="item.description"></td>
+            <td mds-th-title="Support Version" [innerHTML]="item.version"></td>
+        </tr>
+    }
 </table>
 <small>
     <b>Notes:</b>
