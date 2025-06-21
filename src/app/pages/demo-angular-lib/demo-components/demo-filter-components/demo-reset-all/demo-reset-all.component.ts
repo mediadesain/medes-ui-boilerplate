@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { MdsFilterModel, MdsFilterResetComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService}
 //*-public-mode-*/  from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
-import { FilterModelCode } from '../demo-filter-data-model-code';
+import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 
 @Component({
   selector: 'mds-demo-reset-all',
@@ -17,7 +17,7 @@ export class DemoResetAllComponent {
   mdsFilterModel: MdsFilterModel;
 
   // Code Viewer
-  showFullInterfaceCode = false;
+  showFullInterfaceCode: boolean;
   interfaceCode: string;
 
   // Properties Detail
@@ -37,19 +37,19 @@ export class DemoResetAllComponent {
     this.mdsFilterModel = {
       configs: {}
     }
-    this.interfaceCode = FilterModelCode.geModel('swatchBox');
+    this.interfaceCode = MdsFilterModelCode.geModel('resetFilter');
   }
-
+  
   openModal(id: string): void {
     this.mdsModalService.trigger(id);
   }
 
   expandCollapseModel(): void {
     if (this.showFullInterfaceCode) {
-      this.interfaceCode = FilterModelCode.geModel('swatchBox');
+      this.interfaceCode = MdsFilterModelCode.geModel('resetFilter');
       this.showFullInterfaceCode = false;
     } else {
-      this.interfaceCode = FilterModelCode.geModel('all');
+      this.interfaceCode = MdsFilterModelCode.geModel('all');
       this.showFullInterfaceCode = true;
     }
   }

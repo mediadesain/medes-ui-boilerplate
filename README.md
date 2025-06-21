@@ -11,6 +11,7 @@ More detail about the changes writen on [changelog](https://github.com/mediadesa
 - Refactor - Input model for Filter Components
 - Refactor - Input model for Page Navigation Manager Components
 - Refactor - reduce *ngIf usage and use @if
+- Refactor - reduce *ngFor usage and use @for
 - Recactor - reduce user ng-container
 - Enhancement - Modal Component Styling now having scrollable insde or full height 
 - Enhancement - Filter Color Swatch Components now resetable

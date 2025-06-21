@@ -5,7 +5,7 @@ import { MdsFilterModel, MdsFilterRangeSliderComponent, MdsHightlightPrismModule
 //*-public-mode-*/ from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 import { SampleProductsData } from 'src/app/shared/constant/products';
-import { FilterModelCode } from '../demo-filter-data-model-code';
+import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 
 @Component({
   selector: 'mds-demo-filter-range-slider',
@@ -53,7 +53,7 @@ export class DemoFilterRangeSliderComponent {
       }
     }
     this.isDisabled = false;
-    this.interfaceCode = FilterModelCode.geModel('rangeSlider');
+    this.interfaceCode = MdsFilterModelCode.geModel('rangeSlider');
   }
 
   openModal(id: string): void {
@@ -62,10 +62,10 @@ export class DemoFilterRangeSliderComponent {
 
   expandCollapseModel(): void {
     if (this.showFullInterfaceCode) {
-      this.interfaceCode = FilterModelCode.geModel('rangeSlider');
+      this.interfaceCode = MdsFilterModelCode.geModel('rangeSlider');
       this.showFullInterfaceCode = false;
     } else {
-      this.interfaceCode = FilterModelCode.geModel('all');
+      this.interfaceCode = MdsFilterModelCode.geModel('all');
       this.showFullInterfaceCode = true;
     }
   }
@@ -95,7 +95,7 @@ export class MdsAppComponent {
     }
   }
 }`;
-componenthtml = `
+htmlCode = `
 <!-- Filter Range Slider Component -->
 <mds-filter-range-slider id="price" [model]="mdsFilterModel" [disabled]="isDisabled"></mds-filter-range-slider>
 <small><i>Output: {{mdsFilterModel.data.filterRange.start}} - {{mdsFilterModel.data.filterRange.end}}</i></small>`;

@@ -4,6 +4,7 @@ import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core
 import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
 import { htmlCode, interfaceCode } from './page-navigation-preview-code';
 import { SampleProductsData } from 'src/app/shared/constant/products';
+import { PageNavigationManagerModelCode } from '../demo-page-navigation-manager-model-code';
 import { MdsHightlightPrismModule, MdsPageManagerModule, MdsModalService, MdsModalModule, PageNavigationManagerModel }
 //*-public-mode-*/ from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
@@ -32,6 +33,7 @@ export class DemoPageNavigationComponent implements AfterContentChecked {
   }
 
   // Code Viewer
+  showFullInterfaceCode: boolean;
   componentCode: string;
   htmlCode: string;
   interfaceCode: string;
@@ -49,7 +51,21 @@ export class DemoPageNavigationComponent implements AfterContentChecked {
   constructor(public mdsModalService: MdsModalService, private cdr: ChangeDetectorRef) {
     this.componentCode = this.reGenerateCode();
     this.htmlCode = htmlCode;
-    this.interfaceCode = interfaceCode;
+    this.interfaceCode = PageNavigationManagerModelCode.geModel('pageNavigation');
+  }
+    
+  openModal(id: string): void {
+    this.mdsModalService.trigger(id);
+  }
+
+  expandCollapseModel(): void {
+    if (this.showFullInterfaceCode) {
+      this.interfaceCode = PageNavigationManagerModelCode.geModel('pageNavigation');
+      this.showFullInterfaceCode = false;
+    } else {
+      this.interfaceCode = PageNavigationManagerModelCode.geModel('all');
+      this.showFullInterfaceCode = true;
+    }
   }
 
   ngAfterContentChecked(): void {
@@ -85,10 +101,5 @@ export class DemoPageNavigationComponent implements AfterContentChecked {
     this.pageNavModel = newConfig;
     this.componentCode = this.reGenerateCode();
   }
-
-  openModal(id: string): void {
-    this.mdsModalService.trigger(id);
-  }
-
 
 }

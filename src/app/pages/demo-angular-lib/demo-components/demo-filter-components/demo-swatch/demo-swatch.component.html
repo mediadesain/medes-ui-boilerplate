@@ -1,5 +1,5 @@
 <h1>Swatch Components</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis.</p>
+<p>Filtering swatch box list will generated base on sample data, get from property key on Object list & put colors base on collected list.</p>
 <hr/>
 
 <h2 class="margin-b-1">Preview & Generate Component Configuration</h2>
@@ -13,7 +13,7 @@
     <div class="g-m-70">
         <h3>Conifguration:</h3>
         <div>
-            <input type="text" placeholder="Property key on data" [ngClass]="{'invalid': mdsFilterModel.configs.swatchBox.color.property.length === 0}" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.property"/>
+            <input type="text" placeholder="Property key on data" [ngClass]="{'invalid': mdsFilterModel.configs.swatchBox.color.property.length === 0}" [ngModel]="mdsFilterModel.configs.swatchBox['color'].property" (ngModelChange)="updateProp($event)"/>
             <small class="txt-lighter margin-l-1">Type color property on array. ex type: color, colour, warna</small>
             <br/>
             <input type="text" placeholder="Default: Color" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.label"/>
@@ -45,19 +45,21 @@
     <tr>
         <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
-    <tr *ngFor="let item of tableContent">
-        <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
-        <td mds-th-title="Data Type">
-            @if (item.type === 'MdsFilterModel') {
-                <a (click)="openModal('my-modal-1')">{{item.type}}</a>
-            } @else {
-                {{item.type}}
-            }
-        </td>
-        <td mds-th-title="Default">{{item.default}}</td>
-        <td mds-th-title="Description">{{item.description}}</td>
-        <td mds-th-title="Support version" [innerHtml]="item.version"></td>
-    </tr>
+    @for (item of tableContent; track $index) {
+        <tr>
+            <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
+            <td mds-th-title="Data Type">
+                @if (item.type === 'MdsFilterModel') {
+                    <a (click)="openModal('my-modal-1')">{{item.type}}</a>
+                } @else {
+                    {{item.type}}
+                }
+            </td>
+            <td mds-th-title="Default">{{item.default}}</td>
+            <td mds-th-title="Description">{{item.description}}</td>
+            <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+        </tr>
+    }
 </table>
 <small>
 <a href="javascript:void(0)" (click)="showDeprecated = !showDeprecated">{{!showDeprecated ? 'Show' : 'Hide'}} deprecated</a>
@@ -68,19 +70,21 @@
         <tr>
             <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
         </tr>
-        <tr *ngFor="let item of tableContentDeprecated">
-            <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
-            <td mds-th-title="Data Type">
-                @if (item.type === 'SelectedFilterInterface') {
-                    <strike>{{item.type}}</strike>
-                } @else {
-                    {{item.type}}
-                }
-            </td>
-            <td mds-th-title="Default">{{item.default}}</td>
-            <td mds-th-title="Description">{{item.description}}</td>
-            <td mds-th-title="Support version" [innerHtml]="item.version"></td>
-        </tr>
+        @for (item of tableContentDeprecated; track $index) {
+            <tr>
+                <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
+                <td mds-th-title="Data Type">
+                    @if (item.type === 'SelectedFilterInterface') {
+                        <strike>{{item.type}}</strike>
+                    } @else {
+                        {{item.type}}
+                    }
+                </td>
+                <td mds-th-title="Default">{{item.default}}</td>
+                <td mds-th-title="Description">{{item.description}}</td>
+                <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+            </tr>
+        }
     </table>
 }
 <br/><br/>

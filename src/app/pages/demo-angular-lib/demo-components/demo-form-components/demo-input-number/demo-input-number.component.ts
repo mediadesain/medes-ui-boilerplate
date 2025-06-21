@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
-import { htmlCode, interfaceCode } from './input-number-preview-code';
+import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 import { MdsHightlightPrismModule, MdsModalService, MdsModalModule, MdsFormModule, MdsFormModel }
 //*-public-mode-*/ from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 import { FormsModule } from '@angular/forms';
+import { MdsFormModelCode } from '../demo-filter-data-model-code';
 
 
 @Component({
@@ -25,8 +25,8 @@ export class DemoInputNumberComponent {
   mdsFormModel: MdsFormModel;
 
   // Code Viewer
+  showFullInterfaceCode = false;
   componentCode: string;
-  htmlCode: string;
   interfaceCode: string;
 
   // Properties Detail
@@ -50,8 +50,21 @@ export class DemoInputNumberComponent {
       }
     }
     this.componentCode = this.reGenerateCode();
-    this.htmlCode = htmlCode;
-    this.interfaceCode = interfaceCode;
+    this.interfaceCode = MdsFormModelCode.geModel('mdsInputNumber');
+  }
+
+  expandCollapseModel(): void {
+    if (this.showFullInterfaceCode) {
+      this.interfaceCode = MdsFormModelCode.geModel('mdsInputNumber');
+      this.showFullInterfaceCode = false;
+    } else {
+      this.interfaceCode = MdsFormModelCode.geModel('all');
+      this.showFullInterfaceCode = true;
+    }
+  }
+
+  openModal(id: string): void {
+    this.mdsModalService.trigger(id);
   }
 
   reGenerateCode(): string {
@@ -70,9 +83,9 @@ export class DemoInputNumberComponent {
   }`
     return constructComponentCode(importMdsUi, valuesComponent)
   }
-  
-  openModal(id: string): void {
-    this.mdsModalService.trigger(id);
-  }
 
+  htmlCode = `
+<!-- Medes Input Component -->
+<mds-input-number [customClass]="myClass" [(value)]="price" [model]="mdsFormModel"></mds-input-number>
+<p>Value: {{price}}</p>`;
 }

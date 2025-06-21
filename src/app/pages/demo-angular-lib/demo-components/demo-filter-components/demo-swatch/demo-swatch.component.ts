@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-import { FilterModelCode } from '../demo-filter-data-model-code';
+import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 import { MdsFilterModel, MdsFilterSwatchComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService }
 //*-public-mode-*/ from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
@@ -65,7 +65,7 @@ export class DemoSwatchComponent {
         }
       }
     }
-    this.interfaceCode = FilterModelCode.geModel('swatchBox');
+    this.interfaceCode = MdsFilterModelCode.geModel('swatchBox');
   }
   
   openModal(id: string): void {
@@ -74,12 +74,19 @@ export class DemoSwatchComponent {
 
   expandCollapseModel(): void {
     if (this.showFullInterfaceCode) {
-      this.interfaceCode = FilterModelCode.geModel('swatchBox');
+      this.interfaceCode = MdsFilterModelCode.geModel('swatchBox');
       this.showFullInterfaceCode = false;
     } else {
-      this.interfaceCode = FilterModelCode.geModel('all');
+      this.interfaceCode = MdsFilterModelCode.geModel('all');
       this.showFullInterfaceCode = true;
     }
+  }
+
+  updateProp(prop: string): void {
+    const newModel = Object.assign({}, this.mdsFilterModel);
+    this.mdsFilterModel = null;
+    newModel.configs.swatchBox.color.property = prop;
+    this.mdsFilterModel = newModel;
   }
 
 componentCode = `

@@ -7,9 +7,9 @@
     <div class="g-m-100">
         <h3>Sample Data</h3>
         <div class="mds-grid padding-vertical-1">
-            <div class="g-s-50 g-m-30 g-l-20" *ngFor="let item of data | slice: pageNavModel.data?.selectedRange.start:pageNavModel.data?.selectedRange.end">
-                {{item}}
-            </div>
+            @for (item of data | slice: pageNavModel.data?.selectedRange.start:pageNavModel.data?.selectedRange.end; track $index) {
+                <div class="g-s-50 g-m-30 g-l-20">{{item}}</div>
+            }
         </div>
     </div>
     <div class="g-m-50">
@@ -54,19 +54,21 @@
     <tr>
         <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
-    <tr *ngFor="let item of tableContent">
-        <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
-        <td mds-th-title="Data Type">
-            @if (item.type === 'PageNavigationManagerModel') {
-                <a (click)="openModal('my-modal-1')">{{item.type}}</a>
-            } @else {
-                {{item.type}}
-            }
-        </td>
-        <td mds-th-title="Default">{{item.default}}</td>
-        <td mds-th-title="Description">{{item.description}}</td>
-        <td mds-th-title="Support version" [innerHtml]="item.version"></td>
-    </tr>
+    @for (item of tableContent; track $index) {
+        <tr>
+            <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
+            <td mds-th-title="Data Type">
+                @if (item.type === 'PageNavigationManagerModel') {
+                    <a (click)="openModal('my-modal-1')">{{item.type}}</a>
+                } @else {
+                    {{item.type}}
+                }
+            </td>
+            <td mds-th-title="Default">{{item.default}}</td>
+            <td mds-th-title="Description">{{item.description}}</td>
+            <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+        </tr>
+    }
 </table>
 <small>
 <a href="javascript:void(0)" (click)="showDeprecated = !showDeprecated">{{!showDeprecated ? 'Show' : 'Hide'}} deprecated</a>
@@ -77,19 +79,21 @@
         <tr>
             <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
         </tr>
-        <tr *ngFor="let item of tableContentDeprecated">
-            <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
-            <td mds-th-title="Data Type">
-                @if (item.type === 'PageNavigationModel') {
-                    <strike>{{item.type}}</strike>
-                } @else {
-                    {{item.type}}
-                }
-            </td>
-            <td mds-th-title="Default">{{item.default}}</td>
-            <td mds-th-title="Description">{{item.description}}</td>
-            <td mds-th-title="Support version" [innerHtml]="item.version"></td>
-        </tr>
+        @for (item of tableContentDeprecated; track $index) {
+            <tr>
+                <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
+                <td mds-th-title="Data Type">
+                    @if (item.type === 'PageNavigationModel') {
+                        <strike>{{item.type}}</strike>
+                    } @else {
+                        {{item.type}}
+                    }
+                </td>
+                <td mds-th-title="Default">{{item.default}}</td>
+                <td mds-th-title="Description">{{item.description}}</td>
+                <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+            </tr>
+        }
     </table>
 }
 <br/><br/>
@@ -104,5 +108,6 @@
     <div class="modal-body padding-1">
         <h3 class="padding-b-1">Interface Detail</h3>
         <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
+        <button class="btn-swatch-a" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
     </div>
 </mds-modal>

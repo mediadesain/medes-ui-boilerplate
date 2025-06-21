@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
-import { htmlCode, interfaceCode } from './page-counter-preview-code';
 import { SampleProductsData } from 'src/app/shared/constant/products';
+import { PageNavigationManagerModelCode } from '../demo-page-navigation-manager-model-code';
 import { MdsHightlightPrismModule, MdsModalModule,  MdsModalService,  MdsPageManagerModule, PageNavigationManagerModel }
 //*-public-mode-*/ from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
@@ -30,9 +30,9 @@ export class DemoPageCounterComponent implements AfterContentChecked {
   }
 
   // Code Viewer
+  showFullInterfaceCode: boolean;
   importModuleCode: string;
   componentCode: string;
-  htmlCode: string;
   interfaceCode: string;
 
   // Properties Detail
@@ -50,10 +50,22 @@ export class DemoPageCounterComponent implements AfterContentChecked {
   constructor(public mdsModalService: MdsModalService, private cdr: ChangeDetectorRef) {
     this.importModuleCode = constructImportModuleCode('MdsPageManagerModule');
     this.componentCode = this.reGenerateCode();
-    this.htmlCode = htmlCode;
-    this.interfaceCode = interfaceCode;
+    this.interfaceCode = PageNavigationManagerModelCode.geModel('pageCounter');
+  }
+    
+  openModal(id: string): void {
+    this.mdsModalService.trigger(id);
   }
 
+  expandCollapseModel(): void {
+    if (this.showFullInterfaceCode) {
+      this.interfaceCode = PageNavigationManagerModelCode.geModel('pageCounter');
+      this.showFullInterfaceCode = false;
+    } else {
+      this.interfaceCode = PageNavigationManagerModelCode.geModel('all');
+      this.showFullInterfaceCode = true;
+    }
+  }
   ngAfterContentChecked(): void {
     this.cdr.detectChanges();
   }
@@ -80,8 +92,9 @@ export class DemoPageCounterComponent implements AfterContentChecked {
     this.componentCode = this.reGenerateCode();
   }
 
-  openModal(id: string): void {
-    this.mdsModalService.trigger(id);
-  }
+htmlCode = `
+<!-- Demo Medes Page Counter Component -->
+<small>Total Item </small>
+<mds-page-counter [(model)]="pageNavConfig" [customStyle]="'border-radius: 7px;'"></mds-page-counter>`;
 
 }

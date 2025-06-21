@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
-import { htmlCode, interfaceCode } from './toggle-preview-code';
 import { MdsHightlightPrismModule, MdsModalService, MdsModalModule, MdsFormModule, MdsFormModel }
 //*-public-mode-*/ from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsFormModelCode } from '../demo-filter-data-model-code';
 
 
 @Component({
@@ -22,9 +22,9 @@ export class DemoToggleButtonComponent {
   mdsFormModel: MdsFormModel;
 
   // Code Viewer
+  showFullInterfaceCode = false;
   importModuleCode: string;
   componentCode: string;
-  htmlCode: string;
   interfaceCode: string;
 
   // Properties Detail
@@ -49,8 +49,21 @@ export class DemoToggleButtonComponent {
     }
     this.importModuleCode = constructImportModuleCode('MdsFormModule');
     this.componentCode = this.reGenerateCode();
-    this.htmlCode = htmlCode;
-    this.interfaceCode = interfaceCode;
+    this.interfaceCode = MdsFormModelCode.geModel('mdsToggle');
+  }
+
+  openModal(id: string): void {
+    this.mdsModalService.trigger(id);
+  }
+    
+  expandCollapseModel(): void {
+    if (this.showFullInterfaceCode) {
+      this.interfaceCode = MdsFormModelCode.geModel('mdsToggle');
+      this.showFullInterfaceCode = false;
+    } else {
+      this.interfaceCode = MdsFormModelCode.geModel('all');
+      this.showFullInterfaceCode = true;
+    }
   }
 
   reGenerateCode(): string {
@@ -67,9 +80,10 @@ export class DemoToggleButtonComponent {
   }`
     return constructComponentCode(importMdsUi, valuesComponent)
   }
-  
-  openModal(id: string): void {
-    this.mdsModalService.trigger(id);
-  }
+
+htmlCode = `
+<!-- Medes Toggle Component -->
+<mds-toggle-button [(value)]="isActive" [model]="mdsFormModel"></mds-toggle-button>
+<p>Value: {{isActive}}</p>`;
 
 }

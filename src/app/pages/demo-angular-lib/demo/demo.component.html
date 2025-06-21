@@ -1,5 +1,5 @@
 <h1>Demo - Components, Pipes, Services</h1>
-<p>On this demo useing Medes Filter Components <i>(checkbox, swatch, range slider & reset components)</i>, Medes Pipe <i>(mdsFilter, mdsFilterRange, mdsSearch)</i>. Clone repository to get source code <a href="https://github.com/mediadesain/medes-ui-boilerplate">here</a>.</p>
+<p>On this demo useing Medes Filter Components <i>(checkbox, swatch, range slider & reset components)</i>, Medes Pipe <i>(mdsFilter, mdsFilterRange, mdsSearch)</i>. Clone repository to get source code <a target="_blank" href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/pages/demo-angular-lib/demo/demo.component.ts">demo.component.ts</a> & <a target="_blank" href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/pages/demo-angular-lib/demo/demo.component.html">demo.component.html</a>.</p>
 <hr/>
 
 <div class="mds-grid">
@@ -17,13 +17,12 @@
         <mds-filter-checkbox id="brand" [model]="mdsFilterModel" [data]="data"></mds-filter-checkbox>
         <!-- Demo Reset Filter Component -->
         <mds-filter-reset customClass="btn-swatch-a" [(model)]="mdsFilterModel">Reset All</mds-filter-reset>
-        <pre>{{mdsFilterModel|json}}</pre>
     </div>
     <!-- MAIN ITEMS CONTENT -->
     <div class="g-l-75">
         <!-- Item Counter -->
         <div class="fullfill-horizontal flex-horizontal justify-between align-middle">
-            <small>Total {{(data|mdsFilter:mdsFilterModel.data.filterSelected|mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange} |mdsSearch:{propertyKey:'name', keyword:name.value}).length}} item/s</small>
+            <small>Total {{(data | mdsFilter:mdsFilterModel.data.filterSelected | mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange} | mdsSearch:{propertyKey:'name', keyword:name.value}).length}} item/s</small>
             <div>
                 <small>Show Item </small>
                 <!-- Demo Page Counter Component -->
@@ -34,15 +33,15 @@
         <!-- Filtering Message Element -->
         <div style="text-align: center;">
             @if ( ( data
-                |mdsFilter:mdsFilterModel.data.filterSelected
-                |mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange}
-                |mdsSearch:{propertyKey:'name', keyword:name.value} ).length === 0 && (mdsFilterModel.data.filterSelected|json) ==='{}' ) {
+                | mdsFilter:mdsFilterModel.data.filterSelected
+                | mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange}
+                | mdsSearch:{propertyKey:'name', keyword:name.value} ).length === 0 && (mdsFilterModel.data.filterSelected|json) ==='{}' ) {
                 <small>No Data Found</small>
             }
             @if ( ( data
-                |mdsFilter:mdsFilterModel.data.filterSelected
-                |mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange}
-                |mdsSearch:{propertyKey:'name', keyword:name.value} ).length === 0 && (mdsFilterModel.data.filterSelected|json) !=='{}'){
+                | mdsFilter:mdsFilterModel.data.filterSelected
+                | mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange}
+                | mdsSearch:{propertyKey:'name', keyword:name.value} ).length === 0 && (mdsFilterModel.data.filterSelected|json) !=='{}'){
                 <small>Filtered data not found</small>
             }
         </div>
@@ -50,30 +49,31 @@
         <!-- Content Element -->
         <div class="mds-grid horizontal-center">
             <!-- Demo Medes Pipes like mdsFilter, mdsFilterRange & mdsSearch Pipes -->
-            <div class="g-s-50 g-m-30 g-l-25" *ngFor="let item of ( data
-                |mdsFilter:mdsFilterModel.data.filterSelected
-                |mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange}
-                |mdsSearch:{propertyKey:'name', keyword:name.value}
-                |slice: pageNavConfig.data?.selectedRange.start:pageNavConfig.data?.selectedRange.end )">
-                <div class="mds-img-loader square">
-                    <img [src]="item.picture" [alt]="item.name">
+             @for (item of ( data | mdsFilter:mdsFilterModel.data.filterSelected
+                | mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange}
+                | mdsSearch:{propertyKey:'name', keyword:name.value}
+                | slice: pageNavConfig.data?.selectedRange.start:pageNavConfig.data?.selectedRange.end ); track $index) {
+                <div class="g-s-50 g-m-30 g-l-25">
+                    <div class="mds-img-loader square">
+                        <img [src]="item.picture" [alt]="item.name">
+                    </div>
+                    <small>{{item.brand | titlecase}} - {{item.category}}</small><br/>
+                    <b>{{item.name}}</b><br/>
+                    <small>({{item.color}})</small><br/>
+                    <small>{{item.price}}</small>
                 </div>
-                <small>{{item.brand|titlecase}} - {{item.category}}</small><br/>
-                <b>{{item.name}}</b><br/>
-                <small>({{item.color}})</small><br/>
-                <small>{{item.price}}</small>
-            </div>
+            }
         </div>
         
         <!-- Pager Element -->
         <div style="margin: auto;width: max-content;">
-            @if ((data |mdsFilter:mdsFilterModel.data.filterSelected |mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange} |mdsSearch:{propertyKey:'name', keyword:name.value}).length > 0) {
+            @if ((data |mdsFilter:mdsFilterModel.data.filterSelected | mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange} | mdsSearch:{propertyKey:'name', keyword:name.value}).length > 0) {
                 <!-- Demo Page Navigation Component -->
                 <mds-page-navigation
                     [data]="(
-                        data |mdsFilter:mdsFilterModel.data.filterSelected
-                        |mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange}
-                        |mdsSearch:{propertyKey:'name', keyword:name.value}
+                        data | mdsFilter:mdsFilterModel.data.filterSelected
+                        | mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange}
+                        | mdsSearch:{propertyKey:'name', keyword:name.value}
                     )"
                     [(model)]="pageNavConfig">
                 </mds-page-navigation>
@@ -81,3 +81,16 @@
         </div>
     </div>
 </div>
+
+<!-- <div class="mds-grid">
+    <div class="g-l-25">
+         <pre>{{mdsFilterModel|json}}</pre>
+    </div>
+    <div class="g-l-75">
+        <pre>{{(data | mdsFilter:mdsFilterModel.data.filterSelected
+                | mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange}
+                | mdsSearch:{propertyKey:'name', keyword:name.value}
+                | slice: pageNavConfig.data?.selectedRange.start:pageNavConfig.data?.selectedRange.end) | json}}
+        </pre>
+    </div>
+</div> -->

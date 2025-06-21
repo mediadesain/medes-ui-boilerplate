@@ -7,6 +7,7 @@ import { MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsNumberUti
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 
+
 @Component({
   selector: 'mds-demo',
   templateUrl: './demo.component.html',

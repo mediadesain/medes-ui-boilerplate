@@ -1,44 +1,40 @@
-export class FilterModelCode {
+export class MdsFilterModelCode {
 
-    static geModel(model: 'checkBox' | 'swatchBox' | 'rangeSlider' | 'all'): string {
-        let modelContent: string;
-        let outputModelContent: string = '';
+    static geModel(model: 'checkBox' | 'swatchBox' | 'rangeSlider' | 'resetFilter' | 'all'): string {
+        let modelContent = '';
+        let outputModelContent = '';
         if (model === 'checkBox') {
             modelContent = `checkBox?: {
             property: string;
             label?: string;
             resetElement?: string;
             hideCounter?: boolean;
-        },
-        swatchBox?: {...};
-        rangeSlider?: {...};`
+        };`
         } else if (model === 'swatchBox') {
-            modelContent = `checkBox?: {...},
-        swatchBox?: {
+            modelContent = `swatchBox?: {
             property: string;
             colorMap: Record<string, string>;
             label?: string;
             resetElement?: string;
             swatchSize?: number;
             swatchRadius?: number;
-        };
-        rangeSlider?: {...};`
+        };`
         } else if (model === 'rangeSlider') {
-            modelContent = `checkBox?: {...},
-        swatchBox?: {...};
-        rangeSlider?: {
+            modelContent = `rangeSlider?: {
             min: number;
             max: number;
             label?: string;
             resetElement?: string;
         };`
+        } else if (model === 'resetFilter') {
+            modelContent = ``
         } else {
             modelContent = `checkBox?: {
             property: string;
             label?: string;
             resetElement?: string;
             hideCounter?: boolean;
-        },
+        };
         swatchBox?: {
             property: string;
             colorMap: Record<string, string>;
@@ -58,14 +54,14 @@ export class FilterModelCode {
             outputModelContent = `
 // Output data
 interface MdsFilterDataModel {
-  data?: {
-      filterSelected?: Record<string, string[]>;
-      filterRange?: {
-          start: number;
-          end: number;
-          defaultStart?: number;
-          defaulEnd?: number;
-      }
+    data?: {
+        filterSelected?: Record<string, string[]>;
+        filterRange?: {
+            start: number;
+            end: number;
+            defaultStart?: number;
+            defaulEnd?: number;
+        };
     }
 }`
         }

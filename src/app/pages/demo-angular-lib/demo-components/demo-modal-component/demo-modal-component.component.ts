@@ -53,11 +53,13 @@ export class DemoModalComponent {
 
   constructor(public mdsModalService: MdsModalService) {
     this.reGenerateCode();
-    this.interfaceCode = interfaceCode;
+  }
+
+  openModal(id: string): void {
+    this.mdsModalService.trigger(id);
   }
 
   reGenerateCode(): void {
-    this.htmlCode = this.showHeaderFooter ? htmlCode : htmlCode2;
 
     const importMdsUi = 'MdsModalModule, MdsModalModel, MdsModalService';
     const valuesComponent = `// model
@@ -77,11 +79,9 @@ export class DemoModalComponent {
   openModal(id: string): void {
     this.mdsModalService.trigger(id);
   }`
-    this.componentCode = constructComponentCode(importMdsUi, valuesComponent)
-  }
-  
-  openModal(id: string): void {
-    this.mdsModalService.trigger(id);
+    this.componentCode = constructComponentCode(importMdsUi, valuesComponent);
+    this.htmlCode = this.showHeaderFooter ? htmlCode : htmlCode2;
+    this.interfaceCode = interfaceCode;
   }
   
 }

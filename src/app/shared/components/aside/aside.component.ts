@@ -25,7 +25,7 @@ export class AsideComponent {
           {text: 'Basic Elements', url: '/ui-elements/basic-elements'},
           {text: 'Layout Utils', url: '/ui-elements/layout-utils'},
           {text: 'Grid System', url: '/ui-elements/grid-system'},
-          {text: 'Image Loader', url: '/ui-elements/image-loader'}
+          {text: 'Loader', url: '/ui-elements/loader'}
         ]
       },
       {

@@ -100,16 +100,26 @@
         <button type="submit">Generate</button>
     </div>
 </form>
-<b *ngIf="name">{{name|titlecase}}</b>
-<div *ngIf="generate" class="mds-grid">
-    <div class="g-m-20 g-s-50" *ngFor="let item of generate">
-        <div style="position: relative;width: 50px;height: 50px;" [style.background]="item.value">
-            <b *ngIf="item.color" [style.color]="item.color" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">TxT</b>
-        </div>
-        <small>{{item.key}}</small>
+@if (name) {
+    <b>{{name|titlecase}}</b>
+}
+@if (generate) {
+    <div class="mds-grid">
+        @for (item of generate; track $index) {
+            <div class="g-m-20 g-s-50">
+                <div style="position: relative;width: 50px;height: 50px;" [style.background]="item.value">
+                    @if (item.color) {
+                        <b [style.color]="item.color" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">TxT</b>
+                    }
+                </div>
+                <small>{{item.key}}</small>
+            </div>
+        }
     </div>
-</div>
-<div *ngIf="output">
-    <mds-hightlight-prism [code]="output" language="scss"></mds-hightlight-prism>
-    <small><i>Copy custom swatch variables & classes to your custom style in sample case below <b>custom-color.scss</b>. Make sure on light & dark mode</i>.</small>
-</div>
+}
+@if (output) {
+    <div>
+        <mds-hightlight-prism [code]="output" language="scss"></mds-hightlight-prism>
+        <small><i>Copy custom swatch variables & classes to your custom style in sample case below <b>custom-color.scss</b>. Make sure on light & dark mode</i>.</small>
+    </div>
+}

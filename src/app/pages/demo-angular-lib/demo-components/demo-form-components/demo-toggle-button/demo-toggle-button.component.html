@@ -1,5 +1,5 @@
 <h1>Toggle Component</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis.</p>
+<p>Use toggle component for alternative use standard checkbox boolean.</p>
 <hr/>
 
 <h2 class="margin-b-1">Preview & Generate Component Configuration</h2>
@@ -47,20 +47,21 @@
     <tr>
         <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
-    <tr *ngFor="let item of tableContent">
-        <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
-        <td mds-th-title="Data Type">
-            <ng-container *ngIf="item.type === 'MdsFormModel'">
-                <a (click)="openModal('my-modal-1')">{{item.type}}</a>
-            </ng-container>
-            <ng-container *ngIf="item.type !== 'MdsFormModel'">
-                {{item.type}}
-            </ng-container>
-        </td>
-        <td mds-th-title="Default">{{item.default}}</td>
-        <td mds-th-title="Description">{{item.description}}</td>
-        <td mds-th-title="Support version" [innerHtml]="item.version"></td>
-    </tr>
+    @for (item of tableContent; track $index) {
+        <tr>
+            <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
+            <td mds-th-title="Data Type">
+                @if (item.type === 'MdsFormModel') {
+                    <a (click)="openModal('my-modal-1')">{{item.type}}</a>
+                } @else {
+                    {{item.type}}
+                }
+            </td>
+            <td mds-th-title="Default">{{item.default}}</td>
+            <td mds-th-title="Description">{{item.description}}</td>
+            <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+        </tr>
+    }
 </table>
 <small>
     <b>Notes:</b>
@@ -72,5 +73,6 @@
     <div class="modal-body padding-1">
         <h3 class="padding-b-1">Interface Detail</h3>
         <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
+        <button class="btn-swatch-a" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
     </div>
 </mds-modal>
