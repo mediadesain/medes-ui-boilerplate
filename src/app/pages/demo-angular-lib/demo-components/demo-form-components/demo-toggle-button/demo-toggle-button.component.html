@@ -2,7 +2,7 @@
 <p>Use toggle component for alternative use standard checkbox boolean.</p>
 <hr/>
 
-<h2 class="margin-b-1">Preview & Generate Component Configuration</h2>
+<h2 class="m-y-b-1">Preview & Generate Component Configuration</h2>
 <div class="mds-grid">
     <div class="g-m-50">
         <h3>Preview:</h3>
@@ -13,18 +13,31 @@
     </div>
     <div class="g-m-50">
         <h3>Conifguration:</h3>
-        <div>
-            <select [(ngModel)]="mdsFormModel.configs.mdsToggle.color" (ngModelChange)="componentCode = this.reGenerateCode()">
-                <option value="">Default</option>
-                <option>swatch-a</option>
-                <option>swatch-b</option>
-                <option>swatch-c</option>
-            </select>
-            <select [(ngModel)]="mdsFormModel.configs.mdsToggle.type" (ngModelChange)="componentCode = this.reGenerateCode()">
-                <option>clasic</option>
-                <option>modern</option>
-            </select>
-            <button class="btn-swatch-a" (click)="mdsFormModel?.configs.mdsToggle.isDisabled = !mdsFormModel.configs.mdsToggle.isDisabled; componentCode = this.reGenerateCode()">Enable/Disable</button>
+        <div class="x-100 flex-y">
+            <div class="x-100 flex-x flex-nowarp">
+                <div class="x-100 m-x-r-1">
+                    <label class="txt-darker">Type</label>
+                    <select class="x-100" [(ngModel)]="mdsFormModel.configs.mdsToggle.type" (ngModelChange)="componentCode = this.reGenerateCode()">
+                        <option>clasic</option>
+                        <option>modern</option>
+                    </select>
+                </div>
+                <div class="x-100 m-x-r-1">
+                    <label class="txt-darker">Color Sheme</label>
+                    <select class="x-100" [(ngModel)]="mdsFormModel.configs.mdsToggle.color" (ngModelChange)="componentCode = this.reGenerateCode()">
+                        <option value="">Default</option>
+                        <option>swatch-a</option>
+                        <option>swatch-b</option>
+                        <option>swatch-c</option>
+                    </select>
+                </div>
+                <div class="x-100">
+                    <label>Enable/Disable</label>
+                    <button class="btn-swatch-a x-100" (click)="mdsFormModel?.configs.mdsToggle.isDisabled = !mdsFormModel.configs.mdsToggle.isDisabled; componentCode = this.reGenerateCode()">
+                        {{mdsFormModel?.configs.mdsToggle.isDisabled ? 'Enable' : 'Disable'}}
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -43,7 +56,7 @@
 
 <b>Properties</b>
 <table class="table-properties mds-table table-swatch-a">
-    <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
+    <!--<span class=\'new-beadge m-x-l-1\'>New</span>-->
     <tr>
         <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
@@ -70,8 +83,8 @@
 </small>
 
 <mds-modal id="my-modal-1">
-    <div class="modal-body padding-1">
-        <h3 class="padding-b-1">Interface Detail</h3>
+    <div class="modal-body p-1">
+        <h3 class="p-y-b1">Interface Detail</h3>
         <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
         <button class="btn-swatch-a" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
     </div>

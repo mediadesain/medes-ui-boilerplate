@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
+import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 import { MdsHightlightPrismModule, MdsModalService, MdsModalModule, MdsFormModule, MdsFormModel }
 //*-public-mode-*/ from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
@@ -23,7 +23,6 @@ export class DemoToggleButtonComponent {
 
   // Code Viewer
   showFullInterfaceCode = false;
-  importModuleCode: string;
   componentCode: string;
   interfaceCode: string;
 
@@ -47,7 +46,6 @@ export class DemoToggleButtonComponent {
         }
       }
     }
-    this.importModuleCode = constructImportModuleCode('MdsFormModule');
     this.componentCode = this.reGenerateCode();
     this.interfaceCode = MdsFormModelCode.geModel('mdsToggle');
   }
@@ -67,7 +65,8 @@ export class DemoToggleButtonComponent {
   }
 
   reGenerateCode(): string {
-    const importMdsUi = 'MdsFormModel, MdsToggleType';
+    const importMdsUi = 'MdsFormModule, MdsFormModel';
+    const imports = 'MdsFormModule';
     const valuesComponent = `// value
   isActive: boolean = true;
   // model
@@ -78,7 +77,7 @@ export class DemoToggleButtonComponent {
       }
     }
   }`
-    return constructComponentCode(importMdsUi, valuesComponent)
+    return constructComponentCode(importMdsUi, imports, '', valuesComponent)
   }
 
 htmlCode = `

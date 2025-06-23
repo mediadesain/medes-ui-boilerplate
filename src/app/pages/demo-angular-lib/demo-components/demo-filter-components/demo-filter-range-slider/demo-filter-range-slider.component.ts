@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MdsFilterModel, MdsFilterRangeSliderComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService, MdsNumberUtils }
+import { MdsFilterModelCode } from '../demo-filter-data-model-code';
+import { MdsFilterModel, MdsFilterRangeSliderComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService }
 //*-public-mode-*/ from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
-import { SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsFilterModelCode } from '../demo-filter-data-model-code';
+import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 
 @Component({
   selector: 'mds-demo-filter-range-slider',
@@ -21,6 +21,7 @@ export class DemoFilterRangeSliderComponent {
 
   // Code Viewer
   showFullInterfaceCode = false;
+  componentCode: string;
   interfaceCode: string;
 
   // Properties Detail
@@ -53,12 +54,33 @@ export class DemoFilterRangeSliderComponent {
       }
     }
     this.isDisabled = false;
+    this.componentCode = this.reGenerateCode();
     this.interfaceCode = MdsFilterModelCode.geModel('rangeSlider');
   }
 
   openModal(id: string): void {
     this.mdsModalService.trigger(id);
   }
+
+  reGenerateCode(): string {
+      const importMdsUi = 'MdsFilterModule, MdsFilterModel';
+      const imports = 'MdsFilterModule';
+      const valuesComponent = `// data
+    sampledata: ProductDataModel[] = SampleProductsData.data;
+    // model
+    mdsFilterModel: MdsFilterModel = {
+      configs: {
+        rangeSlider: {
+          price: {
+            label: 'Filter by Price',
+            min: 0,
+            max: 2500,
+          }
+        }
+      }
+    }`
+      return constructComponentCode(importMdsUi, imports, '', valuesComponent)
+    }
 
   expandCollapseModel(): void {
     if (this.showFullInterfaceCode) {
@@ -70,31 +92,6 @@ export class DemoFilterRangeSliderComponent {
     }
   }
 
-  componentCode = `
-import { MdsFilterRangeSliderComponent } from 'medes-ui';
-
-@Component({
-  selector: 'mds-app',
-  templateUrl: './mds-app.component.html',
-  styleUrls: ['./mds-app.component.scss'],
-  standalone: true,
-  imports: [MdsFilterRangeSliderComponent] // import here if standalone component is true
-})
-
-export class MdsAppComponent {
-  // model
-  mdsFilterModel = {
-    configs: {
-      rangeSlider: {
-        price: { // Filter component id
-          label: 'Filter by Price',
-          min: 0,
-          max: 2500,
-        }
-      }
-    }
-  }
-}`;
 htmlCode = `
 <!-- Filter Range Slider Component -->
 <mds-filter-range-slider id="price" [model]="mdsFilterModel" [disabled]="isDisabled"></mds-filter-range-slider>

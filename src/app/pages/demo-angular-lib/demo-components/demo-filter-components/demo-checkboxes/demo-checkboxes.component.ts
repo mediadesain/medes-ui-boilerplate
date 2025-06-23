@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsFilterModelCode } from '../demo-filter-data-model-code';
+import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 import { MdsFilterCheckboxComponent, MdsFilterModel, MdsHightlightPrismModule, MdsModalModule, MdsModalService }
 //*-public-mode-*/ from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
@@ -23,6 +24,7 @@ export class DemoCheckboxesComponent {
   
   // Code Viewer
   showFullInterfaceCode = false;
+  componentCode: string;
   interfaceCode: string;
 
   // Properties Detail
@@ -56,7 +58,7 @@ export class DemoCheckboxesComponent {
         }
       }
     }
-    
+    this.componentCode = this.reGenerateCode();
     this.interfaceCode = MdsFilterModelCode.geModel('checkBox');
   }
 
@@ -73,28 +75,11 @@ export class DemoCheckboxesComponent {
       this.showFullInterfaceCode = true;
     }
   }
-
-  updateProp(prop: string): void {
-    const newModel = Object.assign({}, this.mdsFilterModel);
-    this.mdsFilterModel = null;
-    newModel.configs.checkBox['by-category'].property = prop;
-    this.mdsFilterModel = newModel;
-  }
-
-componentCode = `
-import { MdsFilterCheckboxComponent } from 'medes-ui';
-import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-
-@Component({
-  selector: 'mds-app',
-  templateUrl: './mds-app.component.html',
-  styleUrls: ['./mds-app.component.scss'],
-  standalone: true,
-  imports: [MdsFilterCheckboxComponent] // import here if standalone component is true
-})
-
-export class MdsAppComponent {
-  // data
+  
+  reGenerateCode(): string {
+    const importMdsUi = 'MdsFilterModule, MdsFilterModel';
+    const imports = 'MdsFilterModule';
+    const valuesComponent = `// data
   sampledata: ProductDataModel[] = SampleProductsData.data;
   // model
   mdsFilterModel: MdsFilterModel = {
@@ -106,8 +91,17 @@ export class MdsAppComponent {
         },
       }
     }
+  }`
+    return constructComponentCode(importMdsUi, imports, '', valuesComponent)
   }
-}`;
+
+  updateProp(prop: string): void {
+    const newModel = Object.assign({}, this.mdsFilterModel);
+    this.mdsFilterModel = null;
+    newModel.configs.checkBox['by-category'].property = prop;
+    this.mdsFilterModel = newModel;
+  }
+
 htmlCode = `
 <!-- Filter Checkboxes Component -->
 <mds-filter-checkbox id="by-category" [data]="sampledata" [model]="mdsFilterModel"></mds-filter-checkbox>`;

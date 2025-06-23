@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DemoComponent } from './demo/demo.component';
-import { DemoPrismjsHighlightComponent } from './demo-components/demo-prismjs-highlight/demo-prismjs-highlight.component';
 
 
 const routes: Routes = [

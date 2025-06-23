@@ -3,7 +3,7 @@
 <hr/>
 
 
-<h2 class="margin-b-1">Preview & Generate Component Configuration</h2>
+<h2 class="m-y-b-1">Preview & Generate Component Configuration</h2>
 <div class="mds-grid">
     <div class="g-m-30">
         <h3>Preview:</h3>
@@ -13,13 +13,35 @@
     </div>
     <div class="g-m-70">
         <h3>Conifguration:</h3>
-        <div>
-            <input type="text" placeholder="Property key on data" [ngClass]="{'invalid': mdsFilterModel.configs.checkBox['by-category'].property.length === 0}" [ngModel]="mdsFilterModel.configs.checkBox['by-category'].property" (ngModelChange)="updateProp($event)"/>
-            <small class="txt-lighter margin-l-1">Type others property on array. ex type: brand, color, gender etc</small>
-            <br/>
-            <input type="text" placeholder="Default: Filter by" [(ngModel)]="mdsFilterModel.configs.checkBox['by-category'].label"/>
-            <input type="text" placeholder="html element" [(ngModel)]="mdsFilterModel.configs.checkBox['by-category'].resetElement"/>
-            <button (click)="mdsFilterModel.configs.checkBox['by-category'].hideCounter = !mdsFilterModel.configs.checkBox['by-category'].hideCounter">Show/Hide Counter</button>
+        <div class="x-100 flex-y">
+            <div class="x-100 flex-x flex-nowarp">
+                <div class="x-100 m-x-r-1">
+                    <label class="required txt-darker">Property</label>
+                    <input type="text" class="x-100" placeholder="Property key on data" [ngClass]="{'invalid': mdsFilterModel.configs.checkBox['by-category'].property.length === 0}" [ngModel]="mdsFilterModel.configs.checkBox['by-category'].property" (ngModelChange)="updateProp($event)"/>
+                    @if (mdsFilterModel.configs.checkBox['by-category'].property.length === 0) {
+                        <small class="txt-negative">
+                            <i>This field is required</i>
+                        </small><br/>
+                    }
+                    <small class="txt-lighter">Type property on array. ex type: brand, color, gender etc</small>
+                </div>
+                <div class="x-100">
+                    <label class="txt-darker">Label</label>
+                    <input type="text" class="x-100" placeholder="Default: Filter by" [(ngModel)]="mdsFilterModel.configs.checkBox['by-category'].label"/>
+                </div>
+            </div>
+        </div>
+        <div class="x-100 flex-x flex-nowarp">
+            <div class="x-100 m-x-r-1">
+                <label class="txt-darker">Reset Html Element</label>
+                <input type="text" class="x-100" placeholder="html element" [(ngModel)]="mdsFilterModel.configs.checkBox['by-category'].resetElement"/>
+            </div>
+            <div class="x-100">
+                <label class="txt-darker">Show Hide Counter</label>
+                <button class="btn-swatch-a x-100" (click)="mdsFilterModel.configs.checkBox['by-category'].hideCounter = !mdsFilterModel.configs.checkBox['by-category'].hideCounter">
+                    {{mdsFilterModel.configs.checkBox['by-category'].hideCounter ? 'Show' :' Hide'}} Counter
+                </button>
+            </div>
         </div>
     </div>
 </div>
@@ -41,7 +63,7 @@
 
 <b>Properties</b>
 <table class="table-properties mds-table table-swatch-a">
-    <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
+    <!--<span class=\'new-beadge m-x-l-1\'>New</span>-->
     <tr>
         <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
@@ -66,7 +88,7 @@
 </small>
 @if (showDeprecated) {
     <table class="table-properties mds-table">
-        <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
+        <!--<span class=\'new-beadge m-x-l-1\'>New</span>-->
         <tr>
             <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
         </tr>
@@ -97,8 +119,8 @@
 
 
 <mds-modal id="my-modal-1">
-    <div class="modal-body padding-1">
-        <h3 class="padding-b-1">Interface Detail</h3>
+    <div class="modal-body p-1">
+        <h3 class="p-y-b1">Interface Detail</h3>
         <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
         <button class="btn-swatch-a" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
     </div>

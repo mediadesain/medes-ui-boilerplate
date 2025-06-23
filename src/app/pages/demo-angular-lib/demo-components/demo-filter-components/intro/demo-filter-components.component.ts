@@ -2,7 +2,7 @@ import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsHightlightPrismModule, MdsFilterModule, MdsFilterModel, MdsNumberUtils }
+import { MdsHightlightPrismModule, MdsFilterModule, MdsFilterModel }
 //*-public-mode-*/ from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
@@ -37,7 +37,6 @@ resetComponent = `
     // Sample Data
     this.sampledata = SampleProductsData.data;
     // Filter Model
-    const getAvailableMinMaxNumber = MdsNumberUtils.getMinMax(SampleProductsData.data.map(item => item.price)); // utils to get min max
     this.mdsFilterModel = {
       configs: {
         checkBox: {

@@ -6,6 +6,7 @@ import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 import { MdsFilterModel, MdsFilterSwatchComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService }
 //*-public-mode-*/ from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 
 @Component({
   selector: 'mds-demo-swatch',
@@ -22,6 +23,7 @@ export class DemoSwatchComponent {
 
   // Code Viewer
   showFullInterfaceCode = false;
+  componentCode: string;
   interfaceCode: string;
 
   // Properties Detail
@@ -65,6 +67,8 @@ export class DemoSwatchComponent {
         }
       }
     }
+    
+    this.componentCode = this.reGenerateCode();
     this.interfaceCode = MdsFilterModelCode.geModel('swatchBox');
   }
   
@@ -82,26 +86,10 @@ export class DemoSwatchComponent {
     }
   }
 
-  updateProp(prop: string): void {
-    const newModel = Object.assign({}, this.mdsFilterModel);
-    this.mdsFilterModel = null;
-    newModel.configs.swatchBox.color.property = prop;
-    this.mdsFilterModel = newModel;
-  }
-
-componentCode = `
-import { MdsFilterSwatchComponent } from 'medes-ui';
-
-@Component({
-  selector: 'mds-app',
-  templateUrl: './mds-app.component.html',
-  styleUrls: ['./mds-app.component.scss'],
-  standalone: true,
-  imports: [MdsFilterSwatchComponent] // import here if standalone component is true
-})
-
-export class MdsAppComponent {
-  // data
+  reGenerateCode(): string {
+    const importMdsUi = 'MdsFilterModule, MdsFilterModel';
+    const imports = 'MdsFilterModule';
+    const valuesComponent = `// data
   sampledata: ProductDataModel[] = SampleProductsData.data;
   // model
   mdsFilterModel: MdsFilterModel = {
@@ -123,8 +111,17 @@ export class MdsAppComponent {
         }
       }
     }
+  }`
+    return constructComponentCode(importMdsUi, imports, '', valuesComponent)
   }
-}`;
+
+  updateProp(prop: string): void {
+    const newModel = Object.assign({}, this.mdsFilterModel);
+    this.mdsFilterModel = null;
+    newModel.configs.swatchBox.color.property = prop;
+    this.mdsFilterModel = newModel;
+  }
+
 htmlCode = `
 <!-- Filter Swatch Component -->
 <mds-filter-swatch id="color" [data]="sampledata" [model]="mdsFilterModel"></mds-filter-swatch>`;

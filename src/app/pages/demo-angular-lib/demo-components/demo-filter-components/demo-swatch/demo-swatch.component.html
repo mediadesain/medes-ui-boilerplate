@@ -2,7 +2,7 @@
 <p>Filtering swatch box list will generated base on sample data, get from property key on Object list & put colors base on collected list.</p>
 <hr/>
 
-<h2 class="margin-b-1">Preview & Generate Component Configuration</h2>
+<h2 class="m-y-b-1">Preview & Generate Component Configuration</h2>
 <div class="mds-grid">
     <div class="g-m-30">
         <h3>Preview:</h3>
@@ -12,14 +12,36 @@
     </div>
     <div class="g-m-70">
         <h3>Conifguration:</h3>
-        <div>
-            <input type="text" placeholder="Property key on data" [ngClass]="{'invalid': mdsFilterModel.configs.swatchBox.color.property.length === 0}" [ngModel]="mdsFilterModel.configs.swatchBox['color'].property" (ngModelChange)="updateProp($event)"/>
-            <small class="txt-lighter margin-l-1">Type color property on array. ex type: color, colour, warna</small>
-            <br/>
-            <input type="text" placeholder="Default: Color" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.label"/>
-            <input type="number" placeholder="Default: 30" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.swatchSize"/>
-            <input type="number" placeholder="Default: 25" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.swatchRadius"/>
-            <input type="text" placeholder="html element" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.resetElement"/>
+
+        <div class="x-100 flex-x flex-nowarp">
+            <div class="x-100 m-x-r-1">
+                <label class="required txt-darker">Property</label>
+                <input class="x-100" type="text" placeholder="Property key on data" [ngClass]="{'invalid': mdsFilterModel.configs.swatchBox.color.property.length === 0}" [ngModel]="mdsFilterModel.configs.swatchBox['color'].property" (ngModelChange)="updateProp($event)"/>
+                @if (mdsFilterModel.configs.swatchBox.color.property.length === 0) {
+                    <small class="txt-negative">
+                        <i>This field is required</i>
+                    </small><br/>
+                }
+                <small class="txt-lighter">Type color property on array. ex type: color, colour, warna</small>
+            </div>
+            <div class="x-100">
+                <label class="txt-darker">Label</label>
+                <input class="x-100" type="text" placeholder="Default: Color" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.label"/>
+            </div>
+        </div>
+        <div class="x-100 flex-x flex-nowarp">
+            <div class="x-100 m-x-r-1">
+                <label class="txt-darker">Size</label>
+                <input class="x-100" type="number" placeholder="Default: 30" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.swatchSize"/>
+            </div>
+            <div class="x-100 m-x-r-1">
+                <label class="txt-darker">Border Radius</label>
+                <input class="x-100" type="number" placeholder="Default: 25" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.swatchRadius"/>
+            </div>
+            <div class="x-100">
+                <label class="txt-darker">Reset Html Element</label>
+                <input class="x-100" type="text" placeholder="html element" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.resetElement"/>
+            </div>
         </div>
     </div>
 </div>
@@ -41,7 +63,7 @@
 
 <b>Properties</b>
 <table class="table-properties mds-table table-swatch-a">
-    <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
+    <!--<span class=\'new-beadge m-x-l-1\'>New</span>-->
     <tr>
         <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
@@ -66,7 +88,7 @@
 </small>
 @if (showDeprecated) {
     <table class="table-properties mds-table">
-        <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
+        <!--<span class=\'new-beadge m-x-l-1\'>New</span>-->
         <tr>
             <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
         </tr>
@@ -96,8 +118,8 @@
 </small>
 
 <mds-modal id="my-modal-1">
-    <div class="modal-body padding-1">
-        <h3 class="padding-b-1">Interface Detail</h3>
+    <div class="modal-body p-1">
+        <h3 class="p-y-b1">Interface Detail</h3>
         <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
         <button class="btn-swatch-a" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
     </div>

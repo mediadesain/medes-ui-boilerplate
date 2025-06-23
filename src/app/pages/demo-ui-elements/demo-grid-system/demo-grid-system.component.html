@@ -2,7 +2,7 @@
 <p>Make beautiful grid layouting with our medes-ui style.</p>
 <hr/>
 
-<h2 class="padding-b-1">Overview</h2>
+<h2 class="p-y-b1">Overview</h2>
 <div class="mds-grid sample">
     <div class="g-s-50 g-l-25">1</div>
     <div class="g-s-50 g-l-75">2</div>
@@ -16,9 +16,9 @@
 <hr/>
 
 
-<h2 class="padding-b-1">Generator</h2>
+<h2 class="p-y-b1">Generator</h2>
 <b>Preview:</b>
-<div class="margin-b-1" style="height: 300px; border: 1px dashed rgb(100 100 100 / 40%);">
+<div class="m-y-b-1" style="height: 300px; border: 1px dashed rgb(100 100 100 / 40%);">
     <div [class]="'mds-grid '+ horizontalLayout.value +' '+verticalLayout.value+' sample'" style="height: 300px;">
         <div class="{{item1.value}}{{itemmed1.value === 'unset' ? '' : ' '+itemmed1.value}}{{itemsm1.value === 'unset' ? '' : ' '+itemsm1.value}}">1</div>
         <div class="{{item2.value}}{{itemmed2.value === 'unset' ? '' : ' '+itemmed2.value}}{{itemsm2.value === 'unset' ? '' : ' '+itemsm2.value}}">2</div>
@@ -33,7 +33,7 @@
 <div class="mds-grid">
     <div class="g-m-30">
         <b>Costumize:</b>
-        <div class="fullfill-horizontal flex-vertical margin-b-1">
+        <div class="x-100 flex-y m-y-b-1">
             <select #horizontalLayout="ngModel" ngModel="justify-center">
                 <option>justify-start</option>
                 <option>justify-center</option>
@@ -50,14 +50,14 @@
                 <option>vertical-fullfill</option>
             </select>
         </div>
-        <div class="fullfill-horizontal flex-vertical margin-b-1">
+        <div class="x-100 flex-y m-y-b-1">
             <select #screen="ngModel" ngModel="large screen">
                 @for (item of ['large screen', 'medium screen', 'small screen']; track $index) {
                     <option>{{item}}</option>
                 }
             </select>
             <div [hidden]="screen.value !== 'large screen'">
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 1</small>
                     <select #item1="ngModel" ngModel="g-l-50">
                         @for (item of gridlarge; track $index) {
@@ -65,7 +65,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 2</small>
                     <select #item2="ngModel" ngModel="g-l-50">
                         @for (item of gridlarge; track $index) {
@@ -73,7 +73,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 3</small>
                     <select #item3="ngModel" ngModel="g-l-50">
                         @for (item of gridlarge; track $index) {
@@ -81,7 +81,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 4</small>
                     <select #item4="ngModel" ngModel="g-l-25">
                         @for (item of gridlarge; track $index) {
@@ -89,7 +89,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 5</small>
                     <select #item5="ngModel" ngModel="g-l-25">
                         @for (item of gridlarge; track $index) {
@@ -97,7 +97,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 6</small>
                     <select #item6="ngModel" ngModel="g-l-50">
                         @for (item of gridlarge; track $index) {
@@ -107,7 +107,7 @@
                 </div>
             </div>
             <div [hidden]="screen.value !== 'medium screen'">
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 1</small>
                     <select #itemmed1="ngModel" ngModel="g-m-25">
                         @for (item of gridmedium; track $index) {
@@ -115,7 +115,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 2</small>
                     <select #itemmed2="ngModel" ngModel="g-m-75">
                         @for (item of gridmedium; track $index) {
@@ -123,7 +123,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 3</small>
                     <select #itemmed3="ngModel" ngModel="unset">
                         @for (item of gridmedium; track $index) {
@@ -131,7 +131,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 4</small>
                     <select #itemmed4="ngModel" ngModel="g-m-50">
                         @for (item of gridmedium; track $index) {
@@ -139,7 +139,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 5</small>
                     <select #itemmed5="ngModel" ngModel="g-m-25">
                         @for (item of gridmedium; track $index) {
@@ -147,7 +147,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 6</small>
                     <select #itemmed6="ngModel" ngModel="g-m-25">
                         @for (item of gridmedium; track $index) {
@@ -157,7 +157,7 @@
                 </div>
             </div>
             <div [hidden]="screen.value !== 'small screen'">
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 1</small>
                     <select #itemsm1="ngModel" ngModel="unset">
                         @for (item of gridsmall; track $index) {
@@ -165,7 +165,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 2</small>
                     <select #itemsm2="ngModel" ngModel="unset">
                         @for (item of gridsmall; track $index) {
@@ -173,7 +173,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 3</small>
                     <select #itemsm3="ngModel" ngModel="g-s-50">
                         @for (item of gridsmall; track $index) {
@@ -181,7 +181,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 4</small>
                     <select #itemsm4="ngModel" ngModel="g-s-50">
                         @for (item of gridsmall; track $index) {
@@ -189,7 +189,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 5</small>
                     <select #itemsm5="ngModel" ngModel="unset">
                         @for (item of gridsmall; track $index) {
@@ -197,7 +197,7 @@
                         }
                     </select>
                 </div>
-                <div class="fullfill-horizontal flex-horizontal justify-between">
+                <div class="x-100 flex-x justify-between">
                     <small>Item 6</small>
                     <select #itemsm6="ngModel" ngModel="g-s-50">
                         @for (item of gridsmall; track $index) {
@@ -226,8 +226,8 @@
     </div>
 </div>
 
-<h4 class="margin-t-1">Grid classes list</h4>
-<table class="mds-table table-swatch-a margin-b-1">
+<h4 class="m-y-t-1">Grid classes list</h4>
+<table class="mds-table table-swatch-a m-y-b-1">
     <tr><th>Class name</th><th>Description</th></tr>
     <tr>
         <td mds-th-title="Class name">.mds-grid</td>

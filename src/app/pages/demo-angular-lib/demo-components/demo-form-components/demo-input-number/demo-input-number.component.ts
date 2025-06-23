@@ -68,7 +68,8 @@ export class DemoInputNumberComponent {
   }
 
   reGenerateCode(): string {
-    const importMdsUi = 'MdsFormModel';
+    const importMdsUi = 'MdsFormModule, MdsFormModel';
+    const imports = 'MdsFormModule';
     const valuesComponent = `// value
   isActive: boolean = true;
   // customClass
@@ -81,7 +82,7 @@ export class DemoInputNumberComponent {
       }
     }
   }`
-    return constructComponentCode(importMdsUi, valuesComponent)
+    return constructComponentCode(importMdsUi, imports, '', valuesComponent)
   }
 
   htmlCode = `

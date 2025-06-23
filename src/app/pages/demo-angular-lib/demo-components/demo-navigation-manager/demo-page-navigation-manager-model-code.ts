@@ -5,7 +5,7 @@ export class PageNavigationManagerModelCode {
         let outputModelContent = '';
         if (model === 'pageNavigation') {
             modelContent = `itemToShow?: number;
-            pageNavigation?: {
+        pageNavigation?: {
             type?: 'standard' | 'numbering';
             color?: string;
         };`

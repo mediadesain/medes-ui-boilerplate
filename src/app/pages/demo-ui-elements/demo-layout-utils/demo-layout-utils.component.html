@@ -6,7 +6,7 @@
 <br/>
 <b>Preview:</b>
 <div style="border: 1px dashed rgb(100 100 100 / 40%); height: 300px;">
-    <div class="bg-content {{setDirection.value}} {{setHAligh.value}} {{setVAligh.value}}"
+    <div class="{{setDirection.value}} {{setHAligh.value}} {{setVAligh.value}} bg-content"
         [ngClass]="{'fullfill-horizontal': horizontalFull.value, 'fullfill-vertical': verticalFull.value}">
         <div class="bg-content padding-horizontal-1 margin-1">1</div>
         <div class="bg-content padding-horizontal-1 margin-1">2</div>
@@ -27,16 +27,16 @@
             </div>
         </div>
 
-        <div class="fullfill-horizontal flex-horizontal justify-between">
+        <div class="fullfill-horizontal flex-horizontal justify-between align-middle">
             <span>Item Justify</span>
             <select #setDirection="ngModel" ngModel="flex-horizontal">
                 @for (item of flexDirection; track $index) {
-                    <option [value]="item.value">{{item.label}}</option>
+                    <option [value]="item.deprecated">{{item.label}}</option>
                 }
             </select>
         </div>
 
-        <div class="fullfill-horizontal flex-horizontal justify-between">
+        <div class="fullfill-horizontal flex-horizontal justify-between align-middle">
             <span>Item Align</span>
             <select #setHAligh="ngModel" ngModel="justify-between">
                 @for (item of justifyItems; track $index) {
@@ -45,7 +45,7 @@
             </select>
         </div>
 
-        <div class="fullfill-horizontal flex-horizontal justify-between">
+        <div class="fullfill-horizontal flex-horizontal justify-between align-middle">
             <span>Item direction</span>
             <select #setVAligh="ngModel" ngModel="align-middle">
                 @for (item of alignItems; track $index) {
@@ -58,11 +58,11 @@
     <div class="g-m-60"> 
         <b class="margin-b-1">Code Preview:</b>
 <mds-hightlight-prism [code]="'
-<div class=\'bg-content '+ (horizontalFull.value ? ' fullfill-horizontal ' : '') + (verticalFull.value ? ' fullfill-vertical ' : '') + setDirection.value +' '+ setHAligh.value +' '+ setVAligh.value +'\'>
-    <div class=\'bg-content padding-horizontal-1 margin-1\'>1</div>
-    <div class=\'bg-content padding-horizontal-1 margin-1\'>2</div>
-    <div class=\'bg-content padding-horizontal-1 margin-1\'>3</div>
-    <div class=\'bg-content padding-horizontal-1 margin-1\'>4</div>
+<div class=\''+ (horizontalFull.value ? 'fullfill-horizontal ' : '') + (verticalFull.value ? 'fullfill-vertical '  : '') + setDirection.value +' '+ setHAligh.value +' '+ setVAligh.value + ' bg-content'+'\'>
+    <div class=\'padding-horizontal-1 margin-1 bg-content\'>1</div>
+    <div class=\'padding-horizontal-1 margin-1 bg-content\'>2</div>
+    <div class=\'padding-horizontal-1 margin-1 bg-content\'>3</div>
+    <div class=\'padding-horizontal-1 margin-1 bg-content\'>4</div>
 </div>'" language="html"></mds-hightlight-prism>
         <small><i>Note: Posible to use multiple classes name, on this case only use 5 clases</i></small>
     </div>
@@ -70,30 +70,35 @@
 
 <h4 class="margin-t-1">Layout classes list</h4>
 <table class="mds-table table-swatch-a margin-b-1">
-    <tr><th>Class name</th><th>Description</th></tr>
+    <tr><th>Class name (New)</th><th>Class name (Deprecared)</th><th>Description</th></tr>
     <tr>
-        <td mds-th-title="Class name">.fullfill-horizontal</td>
+        <td mds-th-title="Class name (New)">.x-100</td>
+        <td mds-th-title="Class name (Deprecared)">.fullfill-horizontal</td>
         <td mds-th-title="Description">Horizontal full width base on container size</td>
     </tr>
     <tr>
-        <td mds-th-title="Class name">.fullfill-vertical</td>
+        <td mds-th-title="Class name (New)">.y-100</td>
+        <td mds-th-title="Class name (Deprecared)">.fullfill-horizontal</td>
         <td mds-th-title="Description">Vertical full height base on container size</td>
     </tr>
     @for (item of flexDirection; track $index) {
         <tr>
-            <td mds-th-title="Class name">.{{item.value}}</td>
+            <td mds-th-title="Class name (New)">.{{item.value}}</td>
+            <td mds-th-title="Class name (Deprecared)">.{{item.deprecated}}</td>
             <td mds-th-title="Description">{{item.label}}</td>
         </tr>
     }
     @for (item of justifyItems; track $index) {
         <tr>
-            <td mds-th-title="Class name">.{{item.value}}</td>
+            <td mds-th-title="Class name (New)">.{{item.value}}</td>
+            <td mds-th-title="Class name (Deprecared)">.{{item.deprecated}}</td>
             <td mds-th-title="Description">{{item.label}}</td>
         </tr>
     }
     @for (item of alignItems; track $index) {
         <tr>
-            <td mds-th-title="Class name">.{{item.value}}</td>
+            <td mds-th-title="Class name (New)">.{{item.value}}</td>
+            <td mds-th-title="Class name (Deprecared)">.{{item.deprecated}}</td>
             <td mds-th-title="Description">{{item.label}}</td>
         </tr>
     }
@@ -116,12 +121,12 @@
         <div class="fullfill-herizontal flex-horizontal">
             <select #paddingUtil="ngModel" ngModel="padding-horizontal-1">
                 @for (item of paddingOptions; track $index) {
-                    <option [value]="item.value">{{item.label}}</option>
+                    <option [value]="item.deprecated">{{item.label}}</option>
                 }
             </select>
             <select #marginUtil="ngModel" ngModel="margin-1">
                 @for (item of marginOptions; track $index) {
-                    <option [value]="item.value">{{item.label}}</option>
+                    <option [value]="item.deprecated">{{item.label}}</option>
                 }
             </select>
         </div>
@@ -138,10 +143,18 @@
 
 <h4 class="margin-t-1">Box model margin & padding classes list</h4>
 <table class="mds-table table-swatch-a margin-b-1">
-    <tr><th>Class name</th><th>Description</th></tr>
+    <tr><th>Class name (New)</th><th>Class name (Deprecared)</th><th>Description</th></tr>
     @for (item of paddingOptions; track $index) {
         <tr>
-            <td mds-th-title="Class name">.{{item.value}}</td>
+            <td mds-th-title="Class name (New)">.{{item.value}}</td>
+            <td mds-th-title="Class name (Deprecared)">.{{item.deprecated}}</td>
+            <td mds-th-title="Description">{{item.label}}</td>
+        </tr>
+    }
+    @for (item of marginOptions; track $index) {
+        <tr>
+            <td mds-th-title="Class name (New)">.{{item.value}}</td>
+            <td mds-th-title="Class name (Deprecared)">.{{item.deprecated}}</td>
             <td mds-th-title="Description">{{item.label}}</td>
         </tr>
     }

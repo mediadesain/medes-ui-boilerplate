@@ -1,7 +1,7 @@
 > # This is beta version
 > - medes-ui package not published yet
 > - This branch is still on development only mediadesain team able to run
-> - Choose release branch to run. example: 1.15.3
+> - Choose release branch to run. example: 1.17.1
 
 ## Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
@@ -12,7 +12,8 @@ More detail about the changes writen on [changelog](https://github.com/mediadesa
 - Refactor - Input model for Page Navigation Manager Components
 - Refactor - reduce *ngIf usage and use @if
 - Refactor - reduce *ngFor usage and use @for
-- Recactor - reduce user ng-container
+- Refactor - reduce user ng-container
+- Refactor Stling - Refactor layot util styling, Current existing still exist will removed on next minor version update
 - Enhancement - Modal Component Styling now having scrollable insde or full height 
 - Enhancement - Filter Color Swatch Components now resetable
 - Enhancement - Page Navigation component color now aplicable with available color on color scheme

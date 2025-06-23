@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MdsFilterModelCode } from '../demo-filter-data-model-code';
+import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 import { MdsFilterModel, MdsFilterResetComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService}
 //*-public-mode-*/  from 'medes-ui';
 /*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
-import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 
 @Component({
   selector: 'mds-demo-reset-all',
@@ -18,6 +19,7 @@ export class DemoResetAllComponent {
 
   // Code Viewer
   showFullInterfaceCode: boolean;
+  componentCode: string;
   interfaceCode: string;
 
   // Properties Detail
@@ -37,6 +39,8 @@ export class DemoResetAllComponent {
     this.mdsFilterModel = {
       configs: {}
     }
+
+    this.componentCode = this.reGenerateCode();
     this.interfaceCode = MdsFilterModelCode.geModel('resetFilter');
   }
   
@@ -52,6 +56,25 @@ export class DemoResetAllComponent {
       this.interfaceCode = MdsFilterModelCode.geModel('all');
       this.showFullInterfaceCode = true;
     }
+  }
+
+  reGenerateCode(): string {
+    const importMdsUi = 'MdsFilterModule, MdsFilterModel';
+    const imports = 'MdsFilterModule';
+    const valuesComponent = `// data
+  sampledata: ProductDataModel[] = SampleProductsData.data;
+  // model
+  mdsFilterModel: MdsFilterModel = {
+    configs: {
+      checkBox: {
+        'by-category' : { // Filter component id
+          property: 'category', // property on ProductDataModel Object
+          label: 'Filter by Categories'
+        },
+      }
+    }
+  }`
+    return constructComponentCode(importMdsUi, imports, '', valuesComponent)
   }
   
 htmlCode = `

@@ -18,7 +18,7 @@ export const htmlCode = `
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
     </div>
     <!-- Footer -->
-    <div class="modal-footer fullfill-horizontal flex-horizontal justify-between">
+    <div class="modal-footer x-100 flex-x justify-between">
         <button class="btn-swatch-reset" (click)="openModal('demo-modal-1');">Cancel</button>
         <button class="btn-swatch-a" (click)="openModal('demo-modal-1')">Save</button>
     </div>

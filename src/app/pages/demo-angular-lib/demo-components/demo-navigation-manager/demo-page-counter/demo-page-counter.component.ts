@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
+import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { PageNavigationManagerModelCode } from '../demo-page-navigation-manager-model-code';
 import { MdsHightlightPrismModule, MdsModalModule,  MdsModalService,  MdsPageManagerModule, PageNavigationManagerModel }
@@ -31,7 +31,6 @@ export class DemoPageCounterComponent implements AfterContentChecked {
 
   // Code Viewer
   showFullInterfaceCode: boolean;
-  importModuleCode: string;
   componentCode: string;
   interfaceCode: string;
 
@@ -48,7 +47,6 @@ export class DemoPageCounterComponent implements AfterContentChecked {
   ];
 
   constructor(public mdsModalService: MdsModalService, private cdr: ChangeDetectorRef) {
-    this.importModuleCode = constructImportModuleCode('MdsPageManagerModule');
     this.componentCode = this.reGenerateCode();
     this.interfaceCode = PageNavigationManagerModelCode.geModel('pageCounter');
   }
@@ -71,7 +69,8 @@ export class DemoPageCounterComponent implements AfterContentChecked {
   }
   
   reGenerateCode(): string {
-    const importMdsUi = 'PageNavigationModel, MdsPagerType';
+    const importMdsUi = 'MdsPageManagerModule, PageNavigationModel';
+    const imports = 'MdsPageManagerModule';
     const valuesComponent = `// model
   pageNavConfig: PageNavigationManagerModel = {
     configs: {
@@ -82,7 +81,7 @@ export class DemoPageCounterComponent implements AfterContentChecked {
       }
     }
   }`
-    return constructComponentCode(importMdsUi, valuesComponent)
+    return constructComponentCode(importMdsUi, imports, '', valuesComponent)
   }
 
   updateTotal($event: number): void {

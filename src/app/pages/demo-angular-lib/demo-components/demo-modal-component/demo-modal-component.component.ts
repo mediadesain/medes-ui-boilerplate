@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DemoModalChildComponent } from './demo-modal-child/demo-modal-child.component';
-import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
+import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 import { htmlCode, htmlCode2, interfaceCode } from './modal-component-preview-code';
 import { FormsModule } from '@angular/forms';
 import { MdsHightlightPrismModule, MdsModalModel, MdsModalModule, MdsModalService }
@@ -60,8 +60,8 @@ export class DemoModalComponent {
   }
 
   reGenerateCode(): void {
-
     const importMdsUi = 'MdsModalModule, MdsModalModel, MdsModalService';
+    const imports = 'MdsModalModule';
     const valuesComponent = `// model
   mdsModalModelConfig: MdsModalModel = {
     configs: {
@@ -79,7 +79,7 @@ export class DemoModalComponent {
   openModal(id: string): void {
     this.mdsModalService.trigger(id);
   }`
-    this.componentCode = constructComponentCode(importMdsUi, valuesComponent);
+    this.componentCode = constructComponentCode(importMdsUi, imports, '', valuesComponent);
     this.htmlCode = this.showHeaderFooter ? htmlCode : htmlCode2;
     this.interfaceCode = interfaceCode;
   }

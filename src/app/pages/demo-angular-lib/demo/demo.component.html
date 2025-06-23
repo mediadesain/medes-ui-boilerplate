@@ -21,7 +21,7 @@
     <!-- MAIN ITEMS CONTENT -->
     <div class="g-l-75">
         <!-- Item Counter -->
-        <div class="fullfill-horizontal flex-horizontal justify-between align-middle">
+        <div class="x-100 flex-x justify-between align-middle">
             <small>Total {{(data | mdsFilter:mdsFilterModel.data.filterSelected | mdsFilterRange: {propertyKey: 'price', range: mdsFilterModel.data.filterRange} | mdsSearch:{propertyKey:'name', keyword:name.value}).length}} item/s</small>
             <div>
                 <small>Show Item </small>

@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core';
-import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
-import { htmlCode, interfaceCode } from './page-navigation-preview-code';
+import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
+import { htmlCode } from './page-navigation-preview-code';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { PageNavigationManagerModelCode } from '../demo-page-navigation-manager-model-code';
 import { MdsHightlightPrismModule, MdsPageManagerModule, MdsModalService, MdsModalModule, PageNavigationManagerModel }
@@ -73,7 +73,8 @@ export class DemoPageNavigationComponent implements AfterContentChecked {
   }
 
   reGenerateCode(): string {
-    const importMdsUi = 'PageNavigationModel, MdsPagerType';
+    const importMdsUi = 'MdsPageManagerModule, PageNavigationModel';
+    const imports = 'MdsPageManagerModule';
     const valuesComponent = `// data
   data: string[] = SampleProductsData.userNames;
   // model
@@ -87,7 +88,7 @@ export class DemoPageNavigationComponent implements AfterContentChecked {
       }
     }
   }`
-    return constructComponentCode(importMdsUi, valuesComponent)
+    return constructComponentCode(importMdsUi, imports, '', valuesComponent)
   }
   
   getInterfaceType(value: string): string {

@@ -28,22 +28,22 @@ Table: value, disabled, model
 
 <div class="mds-grid">
     <div class="g-l-50 g-s-100">
-        <div  class="margin-b-1">
+        <div  class="m-y-b-1">
             Binding Value: {{testValue}}
         </div>
-        <div class="margin-b-1">
+        <div class="m-y-b-1">
             Default <mds-input-number [(value)]="testValue"></mds-input-number>
         </div>
-        <div class="margin-b-1">
+        <div class="m-y-b-1">
             Disabled <mds-input-number [(value)]="testValue" disabled="true"></mds-input-number>
         </div>
-        <div class="margin-b-1">
+        <div class="m-y-b-1">
             Custom Style <mds-input-number [customClass]="'your-style'" [(value)]="testValue"></mds-input-number>
             <div><small><i>For <b>.your-style</b> class is written on global angular style style.scss</i></small></div>
         </div>     
     </div>
     <div class="g-l-50 g-s-100">
-        <div class="margin-b-1">
+        <div class="m-y-b-1">
             With custom Configuration <mds-input-number [(value)]="testValue" [model]="mdsFormModel"></mds-input-number>
         </div>
 
@@ -68,9 +68,9 @@ Table: value classNames disabled model
 
 
 <form #userUpdate="ngForm" autocomplete="off" (ngSubmit)="onUpdate(userUpdate.value)" style="max-width: 700px; margin: 0 auto;">
-    <div class="x-100 flex-vertical">
-        <div class="x-100 flex-horizontal flex-nowarp">
-            <div class="x-100 p-relative margin-b-1 margin-r-1">
+    <div class="x-100 flex-y">
+        <div class="x-100 flex-x flex-nowarp">
+            <div class="x-100 p-relative m-y-b-1 m-x-r-1">
                 <label class="required txt-darker" [ngClass]="{'invalid': name.errors?.required && name.dirty}">First Name</label>
                 <input class="x-100" [ngClass]="{'invalid': name.errors?.required && name.dirty}" type="text" placeholder="John" name="firstName" ngModel="" #name="ngModel" required /> 
                 @if (name.errors?.required && name.dirty) {
@@ -79,28 +79,28 @@ Table: value classNames disabled model
                     </small>
                 }
             </div>
-            <div class="x-100 margin-b-1">
+            <div class="x-100 m-y-b-1">
                 <label class="txt-darker">Last Name</label>
                 <input class="x-100" type="text" placeholder="Doe" name="lastName" ngModel/>
             </div>
         </div>
-        <div class="x-100 margin-b-1">
+        <div class="x-100 m-y-b-1">
             <label class="txt-darker">Company</label>
             <input class="x-100" type="text" placeholder="Google Inc" name="company" ngModel="Mediadesain"/>
         </div>
-        <div class="x-100 margin-b-1">
+        <div class="x-100 m-y-b-1">
             <label class="txt-darker">Sample Disable</label>
             <input class="x-100" type="text" placeholder="Sample disabled" name="disable" ngModel disabled/>
         </div>
-        <div class="x-100 flex-horizontal flex-nowarp">
-            <div class="x-100 margin-b-1 margin-r-1">
+        <div class="x-100 flex-x flex-nowarp">
+            <div class="x-100 m-y-b-1 m-x-r-1">
                 <label class="txt-darker">Last Name</label>
                 <select class="x-100" name="gender" ngModel="Male">
                     <option>Male</option>
                     <option>Female</option>
                 </select>
             </div>
-            <div class="x-100 margin-b-1">
+            <div class="x-100 m-y-b-1">
                 <label class="txt-darker">Status</label>
                 <select class="x-100" name="status" ngModel="Single" disabled>
                     <option>Single</option>
@@ -109,7 +109,7 @@ Table: value classNames disabled model
                 </select>
             </div>
         </div>
-        <div class="x-100 margin-b-1">
+        <div class="x-100 m-y-b-1">
             <label class="required txt-darker">Message</label>
             <textarea class="x-100" [ngClass]="{'invalid': msg.errors?.required && msg.dirty}" placeholder="Type your message here" name="comment" ngModel #msg="ngModel" required></textarea>
             <div>
@@ -121,7 +121,7 @@ Table: value classNames disabled model
             </div>
             <input class="x-100" id="aggrement" type="checkbox" name="aggree" #aggree="ngModel" ngModel required/> <label for="aggrement"> Im aggree with term and condition</label>
         </div>
-        <div class="margin-b-1 flex-horizontal justify-between">
+        <div class="m-y-b-1 flex-x justify-between">
             <button class="btn-swatch-negative" type="reset">Reset</button>
             <input id="aggrement" type="color"/>
             <button class="btn-swatch-a" type="submit" [disabled]="!userUpdate.form.valid ">Submit</button>
@@ -131,7 +131,7 @@ Table: value classNames disabled model
 
 
 
-<div class="fullfill-horizontal flex-horizontal justify-center align-middle" style="flex-wrap: unset;">
+<div class="x-100 flex-x justify-center align-middle" style="flex-wrap: unset;">
     <div #listenBox class="navigation">
         @for (item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]; track $index) {
             <button>{{item}}</button>

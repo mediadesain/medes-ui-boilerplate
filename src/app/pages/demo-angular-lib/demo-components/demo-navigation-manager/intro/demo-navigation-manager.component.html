@@ -7,9 +7,9 @@
 <p>Put sample data & configuration to component. Put configuration range start-end to splice array.</p>
 <hr/>
 
-<h2 class="margin-b-1">Overview of Medes Navigation Manager Components</h2>
+<h2 class="m-y-b-1">Overview of Medes Navigation Manager Components</h2>
 <p><b>Sample Data</b></p>
-<div class="mds-grid padding-b-1">
+<div class="mds-grid p-y-b1">
     @for (item of data | slice: pageNavModel.data?.selectedRange.start:pageNavModel.data?.selectedRange.end; track $index) {
         <div class="g-s-50 g-m-30 g-l-20">{{item}}</div>
     }
