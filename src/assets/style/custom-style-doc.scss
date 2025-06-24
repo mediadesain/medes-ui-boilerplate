@@ -9,6 +9,11 @@ navbar .logo, mds-navbar .logo { background-image: url('../images//medes-ui.png'
 .table-properties a {
     cursor: pointer;
 }
+
+.table-properties td.deprecated {
+    color: var(--body-txt-lighter);
+    text-decoration: line-through;
+}
 .table-properties td:nth-child(1) b {
     font-family: monospace;
     font-size: small;
@@ -19,4 +24,9 @@ navbar .logo, mds-navbar .logo { background-image: url('../images//medes-ui.png'
 }
 .table-properties td:nth-child(5) {
     font-size: 12px;
+}
+@media (max-width: 747px) {
+    .mds-table td:before {
+        font-family: "Open Sans", sans-serif;
+    }
 }

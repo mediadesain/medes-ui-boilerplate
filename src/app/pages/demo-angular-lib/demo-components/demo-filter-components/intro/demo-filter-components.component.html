@@ -1,29 +1,23 @@
 <!-- <mds-alert-soon [version]="'v.0.0.3'"></mds-alert-soon> -->
 <h1>Medes Filter Components</h1>
-<p>Multiple filter checkbox components is automatically generate HTML Element filter per group base on sampledata and props/keys & support url query param. There are 3 categoires:</p>
+<p>Multiple filter checkbox components is automatically generate HTML Element filter per group base on data and props/keys & support url query param. There are 3 categoires:</p>
 <ul>
     <li>Filter Checkbox Component <i><small>&lt;mds-filter-checkbox ... &gt;&lt;/mds-filter-checkbox&gt;</small></i></li>
     <li>Filter Swatch Component <i><small>&lt;mds-filter-swatch ... &gt;&lt;/mds-filter-swatch&gt;</small></i></li>
-    <li>Filter Range Slider Component <i><small>&lt;mds-filter-range-slider ... &gt;&lt;/mds-filter-range-slider&gt;</small></i></li><!--span class="new-beadge margin-l-1">New</!--span>-->
+    <li>Filter Range Slider Component <i><small>&lt;mds-filter-range-slider ... &gt;&lt;/mds-filter-range-slider&gt;</small></i></li><!--span class="new-beadge m-x-l-1">New</!--span>-->
     <li>Reset Filter Component <i><small>&lt;mds-filter-reset ... &gt;&lt;/mds-filter-reset&gt;</small></i></li>
 </ul>
-<p>Put sample data, key to filter and selected filter object. Put selected filter object to *ngFor loop to <a [routerLink]="'/pipe/filter'">filter pipe</a> from medes-ui.</p>
+<p>Put sample data, key to filter and selected filter object. Put selected filter object to *ngFor or &#64;for loop to <a [routerLink]="'/pipe/filter'">filter pipe</a> from medes-ui.</p>
 <hr/>
 
 <h2>Overview of Medes Filter Components</h2>
 <p>Sample all of filter components:</p>
 
 <p><b>Checkbox Component</b></p>
-<div class="mds-grid margin-b-0">
+<div class="mds-grid m-y-b-0">
     <div class="g-l-30">
-        <mds-filter-checkbox
-            [titlegroup]="'Filter by Category'"
-            [filterData]="sampledata"
-            [filterBy]="'category'"
-            [filterSelected]="selected"
-            [reset]="'✕'"
-            [hideCounter]="false"
-        ></mds-filter-checkbox>
+        <!-- Filter Checkboxes Component -->
+        <mds-filter-checkbox id="by-category" [data]="sampledata" [model]="mdsFilterModel"></mds-filter-checkbox>
     </div>
     <div class="g-l-70"><mds-hightlight-prism [code]="checkboxComponent" language="html"></mds-hightlight-prism></div>
     <div class="g-l-12"><small><a routerLink="/angular-lib/filter-components/checkboxes">More Info</a></small></div>
@@ -31,17 +25,10 @@
 <hr/>
 
 <p><b>Swatch Component</b></p>
-<div class="mds-grid margin-b-0">
+<div class="mds-grid m-y-b-0">
     <div class="g-l-30">
-        <mds-filter-swatch
-            [titlegroup]="'Filter by Color'"
-            [filterData]="sampledata"
-            [filterSelected]="selected"
-            [filterBy]="'color'"
-            [swatchMapping]="colormap"
-            [swatchSize]="30"
-            [swatchRadius]="25"
-        ></mds-filter-swatch>
+        <!-- Filter Swatch Component -->
+         <mds-filter-swatch id="color" [data]="sampledata" [model]="mdsFilterModel"></mds-filter-swatch>
     </div>
     <div class="g-l-70"><mds-hightlight-prism [code]="swatchComponent" language="html"></mds-hightlight-prism></div>
     <div class="g-l-12"><small><a routerLink="/angular-lib/filter-components/swatch">More Info</a></small></div>
@@ -49,16 +36,10 @@
 <hr/>
 
 <p><b>Range Slider Component</b></p>
-<div class="mds-grid margin-b-0">
+<div class="mds-grid m-y-b-0">
     <div class="g-l-30">
-        <mds-filter-range-slider
-            [label]="'Filter by something'"
-            [min]="filterRangeSelected.min"
-            [max]="filterRangeSelected.max"
-            [(start)]="filterRangeSelected.start"
-            [(end)]="filterRangeSelected.end"
-            [disabled]="false"
-        ></mds-filter-range-slider>
+        <!-- Demo Filter Range Slider Component -->
+        <mds-filter-range-slider id="price" [model]="mdsFilterModel"></mds-filter-range-slider>
     </div>
     <div class="g-l-70"><mds-hightlight-prism [code]="rangeSliderComponent" language="html"></mds-hightlight-prism></div>
     <div class="g-l-12"><small><a routerLink="/angular-lib/filter-components/range-slider">More Info</a></small></div>
@@ -67,18 +48,23 @@
 
 <p><b>Reset Component</b></p>
 <div class="mds-grid">
-    <div class="g-l-30"><mds-filter-reset [class]="'btn-swatch-a'" [content]="'Reset All'" [(filterSelected)]="selected" [(filterRangeSelected)]="filterRangeSelected"></mds-filter-reset></div>
+    <div class="g-l-30">
+        <!-- Reset Filter Component -->
+        <mds-filter-reset customClass="btn-swatch-a" [(model)]="mdsFilterModel">Reset All</mds-filter-reset>
+    </div>
     <div class="g-l-70"><mds-hightlight-prism [code]="resetComponent" language="html"></mds-hightlight-prism></div>
     <div class="g-l-12"><small><a routerLink="/angular-lib/filter-components/reset">More Info</a></small></div>
 </div>
-<hr/>
 
-<p><i>Variable <b>sampledata</b> values is <a href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts">constant/proucts.ts</a>.</i></p>
+<hr/>
 
 <p><b>Output:</b></p>
 <mds-hightlight-prism [code]="'
-// Output filter Object
-selected ='+(selected|json)+'
-filterRangeSelected ='+(filterRangeSelected|json)+'
-// Output is useable for filering data item with MdsFilter (*ngFor=\'let data of sampledata|mdsFilter:selected|mdsFilterRange:param\')'" language="javascript"></mds-hightlight-prism>
+// Output filter data Object
+this.mdsFilterModel.data = {
+filterRange: '+(mdsFilterModel.data.filterRange|json)+',
+filterSelected: '+(mdsFilterModel.data.filterSelected|json)+'
+}
+// Output data is useable for filering data item with MdsFilter like (*ngFor=\'let data of data | mdsFilter:selected\')'" language="javascript"></mds-hightlight-prism>
 
+Demo - Components, Pipes, Services <a routerLink="/angular-lib/demo">here</a>

@@ -2,7 +2,7 @@
 <p>Add your own color scheme.</p>
 <hr/>
 
-<h3 class="margin-b-1">Bundle Variable</h3>
+<h3 class="m-y-b-1">Bundle Variable</h3>
 <div class="mds-grid">
     <div class="g-s-50 g-m-25 txt-center">
         <div style="color: var(--body-txt);"><b>Sample Color</b></div>
@@ -66,7 +66,7 @@
 </div>
 <hr/>
 
-<h3 class="margin-b-1">Implementation</h3>
+<h3 class="m-y-b-1">Implementation</h3>
 <div class="mds-grid">
     <div class="g-l-30">
         <b>Preview</b>
@@ -93,23 +93,33 @@
 
 <h3 class="margin-horizontal-start1">Additinal Color Swatch Variable</h3>
 <form #submition="ngForm" (ngSubmit)="generated(submition.value)">
-    <div class="flex-horizontal margin-b-1">
+    <div class="flex-x m-y-b-1">
         <input type="text" #swatchName="ngModel" name="name" ngModel="swatch-d">
         <input type="color" #swatchMain="ngModel" name="color" ngModel="#3898ff">
         <input type="color" #swatchMainContrast="ngModel" name="colorContrast" ngModel="#ffffff">
         <button type="submit">Generate</button>
     </div>
 </form>
-<b *ngIf="name">{{name|titlecase}}</b>
-<div *ngIf="generate" class="mds-grid">
-    <div class="g-m-20 g-s-50" *ngFor="let item of generate">
-        <div style="position: relative;width: 50px;height: 50px;" [style.background]="item.value">
-            <b *ngIf="item.color" [style.color]="item.color" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">TxT</b>
-        </div>
-        <small>{{item.key}}</small>
+@if (name) {
+    <b>{{name|titlecase}}</b>
+}
+@if (generate) {
+    <div class="mds-grid">
+        @for (item of generate; track $index) {
+            <div class="g-m-20 g-s-50">
+                <div style="position: relative;width: 50px;height: 50px;" [style.background]="item.value">
+                    @if (item.color) {
+                        <b [style.color]="item.color" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">TxT</b>
+                    }
+                </div>
+                <small>{{item.key}}</small>
+            </div>
+        }
     </div>
-</div>
-<div *ngIf="output">
-    <mds-hightlight-prism [code]="output" language="scss"></mds-hightlight-prism>
-    <small><i>Copy custom swatch variables & classes to your custom style in sample case below <b>custom-color.scss</b>. Make sure on light & dark mode</i>.</small>
-</div>
+}
+@if (output) {
+    <div>
+        <mds-hightlight-prism [code]="output" language="scss"></mds-hightlight-prism>
+        <small><i>Copy custom swatch variables & classes to your custom style in sample case below <b>custom-color.scss</b>. Make sure on light & dark mode</i>.</small>
+    </div>
+}

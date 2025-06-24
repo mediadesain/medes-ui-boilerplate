@@ -1,0 +1,94 @@
+<h1>Loader</h1>
+<p>Loader element for image, text content with skeleton animation.</p>
+<hr/>
+
+<h2>Image Loader</h2>
+<div class="mds-grid m-y-1">
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader square">
+            <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+        </div>
+    </div>
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader landscape">
+            <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+        </div>
+    </div>
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader portrait">
+            <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+        </div>
+    </div>
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader circle">
+            <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+        </div>
+    </div>
+    <div class="g-m-20 g-s-50">
+        <div class="mds-img-loader square">
+            <img src="" alt="">
+        </div>
+        <small><i>*Sample no image</i></small>
+    </div>
+</div>
+<hr/>
+
+<div class="mds-grid">
+    <div class="g-m-30">
+        <b>Prevew</b>
+        <div class="mds-img-loader {{loaderStyle.value}}">
+            <img [src]="image.value" alt="">
+        </div>
+    </div>
+    <div class="g-m-70">
+        <b>Generator</b><br/>
+        <div class="mds-grid">
+            <div class="g-m-70">
+                <label class="txt-darker">Image Url</label>
+                <input class="x-100" type="text" #image="ngModel" ngModel="https://www.mediadesain.com/assets/images/elements/office.jpg">
+            </div>
+            <div class="g-m-30">
+                <label class="txt-darker">Shape</label>
+                    <select class="x-100" name="test" #loaderStyle="ngModel" ngModel="circle">
+                        <option>circle</option>
+                        <option>square</option>
+                        <option>landscape</option>
+                    </select>
+            </div>
+        </div>
+        
+        <mds-hightlight-prism [code]="'
+<div class=\'mds-img-loader '+loaderStyle.value+'\'>
+    <img src=\''+image.value+'\' />
+</div>'" language="html"></mds-hightlight-prism>
+    </div>
+</div>
+<hr/>
+
+<h2>Content Loader</h2>
+<div class="mds-grid">
+    <div class="g-m-30">
+        <b>Prevew</b>
+        @if (isLoading) {
+            <div>
+                <div class="mds-img-loader landscape"></div>
+                <div class="mds-txt-loader"></div>
+                <div class="mds-txt-loader"></div>
+                <div class="mds-txt-loader" style="width: 85%;"></div>
+            </div>
+        } @else {
+            <div>
+                <div class="mds-img-loader landscape">
+                    <img src="https://www.mediadesain.com/assets/images/elements/office.jpg" alt="">
+                </div>
+                <p>Lorem ipsum dolor sit amet in, consectetur am amet adipiscing elit. Lorem ipsum dolor sit amet, consectetur amet adipiscing.</p>
+            </div>
+        }
+    </div>
+    <div class="g-m-70">
+        <b>Generator</b><br/>
+        <button class="btn-swatch-a" (click)="reload()">Reload</button>
+    </div>
+</div>
+
+<span class="loader"></span> Loading

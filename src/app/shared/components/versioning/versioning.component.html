@@ -4,8 +4,8 @@
 
 
 <b>Supported Version:</b>
-<p class="margin-b-0">^x.x.x <i>(Major.Minor.Patch)</i></p>
-<ul class="margin-t-0">
+<p class="m-y-b-0">^x.x.x <i>(Major.Minor.Patch)</i></p>
+<ul class="m-y-t-0">
     <li>Major version is current version of MedesUI</li>
     <li>Minor version is angular version used for this library</li>
     <li>Patch version is related new update feature & bug fix</li>
@@ -15,16 +15,25 @@
         <th>Version</th><th>Status</th><th>Released</th><th>End LTS</th>
     </tr>
     <!--{ version: '^1.13.6', status: 'LTS', released: '2024-09-30', endReleased: '2024-12-31' }, -->
-    <tr *ngFor="let item of [
-        { version: '^1.17.1', status: 'Active', released: '2025-06-13', endReleased: '2025-09-30' },
+    @for (item of [
+        { version: '^1.18.0', status: 'Active', released: '2025-06-XX', endReleased: '-' },
+        { version: '^1.17.1', status: 'LTS', released: '2025-06-13', endReleased: '2025-09-30' },
         { version: '^1.16.0', status: 'LTS', released: '2025-06-12', endReleased: '2025-09-30' },
         { version: '^1.15.3', status: 'LTS', released: '2025-06-10', endReleased: '2025-06-30' },
         { version: '^1.14.3', status: 'Deprecated', released: '2023-12-05', endReleased: '2024-12-31' }
-    ]">
-        <td mds-th-title="Version" [innerHTML]="item.version"></td>
-        <td mds-th-title="Status" [innerHTML]="item.status"></td>
-        <td mds-th-title="Released" [innerHTML]="item.released"></td>
-        <td mds-th-title="End LTS" [innerHTML]="item.endReleased"></td>
-    </tr>
+    ]; track $index) {
+        <tr>
+            <td mds-th-title="Version" [innerHTML]="item.version"></td>
+            <td mds-th-title="Status" [innerHTML]="item.status"></td>
+            <td mds-th-title="Released" [innerHTML]="item.released"></td>
+            <td mds-th-title="End LTS" [innerHTML]="item.endReleased"></td>
+        </tr>
+    }
 </table>
 <small>medes-ui v.0.0.1 to v.0.0.3 are no longger supported</small>
+<hr/>
+
+<div>
+    <b>Need older version document?</b>
+    <p>For older documentation clone this repository, <a href="https://github.com/mediadesain/medes-ui-boilerplate">https://github.com/mediadesain/medes-ui-boilerplate</a> on <i>release/v.1.x.x</i> branch. For branch <i>development/feature-name</i> only accessable by medes team only.</p>
+</div>

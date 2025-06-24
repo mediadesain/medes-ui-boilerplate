@@ -53,6 +53,10 @@ export class ColorSchemeComponent {
 .btn-swatch-c {background: var(--swatch-c); color: var(--swatch-c-contrast);}
 .btn-swatch-c:hover {background: var(--swatch-c-lighter);}
 .btn-swatch-c:disabled, .btn-swatch-c[disabled] {background: var(--swatch-c-darker);}
+.table-swatch-c th {background: var(--swatch-c); color: var(--swatch-c-contrast);} 
+.table-swatch-c tr th:hover {background: var(--swatch-c-darker); cursor: default;}
+.numbering.swatch-c.active {color: var(--swatch-c-contrast); background: var(--swatch-c);}
+.numbering.swatch-c:hover {color: var(--swatch-c-contrast); background: var(--swatch-c);}
 // add more here`
   // constructor() { }
 
@@ -90,7 +94,11 @@ export class ColorSchemeComponent {
 .txt-${submitValue.name} {color: var(--${submitValue.name});}
 .btn-${submitValue.name} {background: var(--${submitValue.name}); color: var(--${submitValue.name}-contrast);}
 .btn-${submitValue.name}:hover {background: var(--${submitValue.name}-lighter);}
-.btn-${submitValue.name}:disabled, .btn-${submitValue.name}[disabled] {background: var(--${submitValue.name}-darker);}`;
+.btn-${submitValue.name}:disabled, .btn-${submitValue.name}[disabled] {background: var(--${submitValue.name}-darker);}
+.table-${submitValue.name} th {background: var(--${submitValue.name}); color: var(--${submitValue.name}-contrast);} 
+.table-${submitValue.name} tr th:hover {background: var(--${submitValue.name}-darker); cursor: default;}
+.numbering.${submitValue.name}.active { color: var(--${submitValue.name}-contrast); background: var(--${submitValue.name}); }
+.numbering.${submitValue.name}:hover { color: var(--${submitValue.name}-contrast); background: var(--${submitValue.name}); }`;
   }
 
 }

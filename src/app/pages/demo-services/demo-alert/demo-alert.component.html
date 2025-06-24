@@ -1,33 +1,48 @@
 <h1>Medes Alert Service</h1>
-<p>Clone repository to get source code <a href="https://github.com/mediadesain/medes-ui-boilerplate">here</a>.</p>
+<p>Service for alert notification, works for any popular library & framworks like React, Angular, Vue and others.</p>
 <hr/>
 
 <b>Sample Alerts:</b>
-<div class="margin-b-2">
-    <button class="margin-r-1" (click)="trigger()">Click Alert default</button>
-    <button class="margin-r-1" (click)="triggerSuccess()">Click Alert Sucess</button>
-    <button class="margin-r-1" (click)="triggerError()">Click Alert Error</button>
-    <button class="margin-r-1" (click)="triggerWarning()">Click Alert warning</button>
-    <button class="margin-r-1" (click)="triggerInfo()">Click Alert info</button>
+<div class="m-y-b-2">
+    <button class="m-x-r-1" (click)="trigger()">Click Alert default</button>
+    <button class="m-x-r-1" (click)="triggerSuccess()">Click Alert Sucess</button>
+    <button class="m-x-r-1" (click)="triggerError()">Click Alert Error</button>
+    <button class="m-x-r-1" (click)="triggerWarning()">Click Alert warning</button>
+    <button class="m-x-r-1" (click)="triggerInfo()">Click Alert info</button>
 </div>
 
-<b>Generator:</b>
-<div class="margin-b-2">
-    <input type="text" [(ngModel)]="data">
-    <input type="number" [(ngModel)]="timeToHide">
-    <select name="test" [(ngModel)]="alertType">
-        <option value="standard">STANDARD</option>
-        <option value="success">SUCCESS</option>
-        <option value="error">ERROR</option>
-        <option value="alert">ALERT</option>
-        <option value="info">INFO</option>
-    </select>
-    <input type="checkbox" [(ngModel)]="isShowIcon"> Show Icon<br/>
-
-    <button class="btn-swatch-a" (click)="preview()">Overview & Generate Code</button>
+<div class="mds-grid">
+    <div class="g-l-30">
+        <b>Preview:</b><br/>
+        <button class="btn-swatch-a" (click)="preview()">Overview Alert & Generate Code</button>
+    </div>
+    <div class="g-l-70">
+        <div class="x-100 flex-x flex-nowarp">
+            <div class="x-100 m-x-r-1">
+                <label class="txt-darker">Alert Type</label>
+                <select class="x-100" name="test" [(ngModel)]="alertType">
+                    <option value="standard">STANDARD</option>
+                    <option value="success">SUCCESS</option>
+                    <option value="error">ERROR</option>
+                    <option value="alert">ALERT</option>
+                    <option value="info">INFO</option>
+                </select>
+            </div>
+            <div class="x-100 m-x-r-1">
+                <label class="txt-darker">Content</label>
+                <input class="x-100" type="text" [(ngModel)]="data">
+            </div>
+            <div class="x-100">
+                <label class="txt-darker">Time</label>
+                <input class="x-100" type="number" [(ngModel)]="timeToHide">
+            </div>
+        </div>
+        <input type="checkbox" [(ngModel)]="isShowIcon"> Show Icon<br/>
+    </div>
 </div>
+
 
 <b>Code:</b>
 <mds-hightlight-prism [code]="callClass" language="javascript"></mds-hightlight-prism>
 
-<blockquote class="warning margin-t-2">Support Version: v.1.15.1  > Latest version</blockquote>
+<blockquote class="warning m-y-t-2">Support Version: v.1.15.1  > Latest version</blockquote>

@@ -1,45 +1,60 @@
 <h1>Page Navigation Component</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis.</p>
+<p>Parse list data it will be calculate automatically how much avail pager & set page navigation configuration itself.</p>
 <hr/>
 
-<h2 class="margin-b-1">Preview & Generate Component Configuration</h2>
+<h2 class="m-y-b-1">Preview & Generate Component Configuration</h2>
 <div class="mds-grid">
     <div class="g-m-100">
         <h3>Sample Data</h3>
-        <div class="mds-grid padding-vertical-1">
-            <div class="g-s-50 g-m-30 g-l-20" *ngFor="let item of data | slice: pageNavConfig.selectedRange?.start:pageNavConfig.selectedRange?.end">
-                {{item}}
-            </div>
+        <div class="mds-grid p-y-1">
+            @for (item of data | slice: pageNavModel.data?.selectedRange.start:pageNavModel.data?.selectedRange.end; track $index) {
+                <div class="g-s-50 g-m-30 g-l-20">{{item}}</div>
+            }
         </div>
     </div>
     <div class="g-m-50">
         <h3>Preview:</h3>
         <!-- Demo Medes Page Navigation Component - Type Pager -->
-        <mds-page-navigation [data]="data" [(pageNavConfig)]="pageNavConfig"></mds-page-navigation>
+        <mds-page-navigation [data]="data" [model]="pageNavModel"></mds-page-navigation>
+        <small><i>Output: {{pageNavModel.data.selectedRange.start}} - {{pageNavModel.data.selectedRange.end}}</i></small>
     </div>
     <div class="g-m-50">
         <h3>Conifguration:</h3>
-        <div>
-            <select [(ngModel)]="pageNavConfig.type" (ngModelChange)="componentCode = this.reGenerateCode()">
-                <option>numbering</option>
-                <option>standard</option>
-            </select>
-            <input type="number" [ngModel]="pageNavConfig.itemToShow" (ngModelChange)="updateTotal($event)"/>
+        <div class="x-100 flex-y">
+            <div class="x-100 flex-x flex-nowarp">
+                <div class="x-100 m-x-r-1">
+                    <label class="txt-darker">Type</label>
+                    <select class="x-100" [(ngModel)]="pageNavModel.configs.pageNavigation.type" (ngModelChange)="componentCode = this.reGenerateCode()">
+                        <option>numbering</option>
+                        <option>standard</option>
+                    </select>
+                </div>
+                @if (pageNavModel.configs.pageNavigation.type === 'numbering') {
+                    <div class="x-100 m-x-r-1">
+                        <label class="txt-darker">Color Sheme</label>
+                        <select class="x-100" [(ngModel)]="pageNavModel.configs.pageNavigation.color" (ngModelChange)="componentCode = this.reGenerateCode()">
+                            <option>swatch-a</option>
+                            <option>swatch-b</option>
+                            <option>swatch-c</option>
+                        </select>
+                    </div>
+                }
+                <div class="x-100">
+                    <label>Total item to show</label>
+                    <input type="number" class="x-100" [ngModel]="pageNavModel.configs.itemToShow" (ngModelChange)="updateTotal($event)"/>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <h2>Code</h2>
 <div class="mds-grid">
-    <div class="g-l-30">
-        <b>Module</b>
-        <mds-hightlight-prism [code]="importModuleCode" language="javascript"></mds-hightlight-prism>
-    </div>
-    <div class="g-l-40">
+    <div class="g-l-50">
         <b>Component</b>
         <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
     </div>
-    <div class="g-l-30">
+    <div class="g-l-50">
         <b>HTML</b>
         <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
     </div>
@@ -48,34 +63,66 @@
 
 <b>Properties</b>
 <table class="table-properties mds-table table-swatch-a">
-    <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
+    <!--<span class=\'new-beadge m-x-l-1\'>New</span>-->
     <tr>
-        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="width: 20%">Support Version</th>
+        <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
-    <tr *ngFor="let item of tableContent">
-        <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
-        <td mds-th-title="Data Type">
-            <ng-container *ngIf="item.type === 'PageNavigationConfigInterface'">
-                <a (click)="openModal('my-modal-1')">{{item.type}}</a>
-            </ng-container>
-            <ng-container *ngIf="item.type !== 'PageNavigationConfigInterface'">
-                {{item.type}}
-            </ng-container>
-        </td>
-        <td mds-th-title="Default">{{item.default}}</td>
-        <td mds-th-title="Description">{{item.description}}</td>
-        <td mds-th-title="Support version" [innerHtml]="item.version"></td>
-    </tr>
+    @for (item of tableContent; track $index) {
+        <tr>
+            <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
+            <td mds-th-title="Data Type">
+                @if (item.type === 'PageNavigationManagerModel') {
+                    <a (click)="openModal('my-modal-1')">{{item.type}}</a>
+                } @else {
+                    {{item.type}}
+                }
+            </td>
+            <td mds-th-title="Default">{{item.default}}</td>
+            <td mds-th-title="Description">{{item.description}}</td>
+            <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+        </tr>
+    }
 </table>
+<small>
+<a href="javascript:void(0)" (click)="showDeprecated = !showDeprecated">{{!showDeprecated ? 'Show' : 'Hide'}} deprecated</a>
+</small>
+@if (showDeprecated) {
+    <table class="table-properties mds-table">
+        <!--<span class=\'new-beadge m-x-l-1\'>New</span>-->
+        <tr>
+            <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
+        </tr>
+        @for (item of tableContentDeprecated; track $index) {
+            <tr>
+                <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
+                <td mds-th-title="Data Type">
+                    @if (item.type === 'PageNavigationModel') {
+                        <strike>{{item.type}}</strike>
+                    } @else {
+                        {{item.type}}
+                    }
+                </td>
+                <td mds-th-title="Default">{{item.default}}</td>
+                <td mds-th-title="Description">{{item.description}}</td>
+                <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+            </tr>
+        }
+    </table>
+}
+<br/><br/>
+
 <small>
     <b>Notes:</b>
     <br/><i>? = Is optional value, if no value will use default value.</i>
     <br/><i>∞ = No default value, put anything base on type</i>
 </small>
 
-<mds-modal id="my-modal-1" [modalWidth]="'medium'" [hideCloseButton]="false" [disableCloseBackdrop]="false">
-    <div class="padding-1">
-        <h3 class="padding-b-1">Interface Detail</h3>
-        <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
+<mds-modal id="my-modal-1">
+    <div class="modal-body p-1">
+        <h3 class="p-y-b1">Interface Detail</h3>
+        <div class="x-100">
+            <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
+            <button class="btn-swatch-a" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
+        </div>
     </div>
 </mds-modal>

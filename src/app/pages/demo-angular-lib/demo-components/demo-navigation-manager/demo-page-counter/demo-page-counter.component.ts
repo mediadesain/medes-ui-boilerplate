@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
-import { htmlCode, interfaceCode } from './page-counter-preview-code';
+import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 import { SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsHightlightPrismModule, MdsModalModule, MdsModalService, MdsPageManagerModule, MdsPagerType, PageNavigationConfigInterface }
+import { PageNavigationManagerModelCode } from '../demo-page-navigation-manager-model-code';
+import { MdsHightlightPrismModule, MdsModalModule,  MdsModalService,  MdsPageManagerModule, PageNavigationManagerModel }
 /*-public-mode-*/ from 'medes-ui';
 //*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
@@ -18,62 +18,82 @@ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService, MdsPageManag
 export class DemoPageCounterComponent implements AfterContentChecked {
   // data
   data: string[] = SampleProductsData.userNames;
-  // pageCountConfig
-  toShowOptions: number[] = [10, 20, 30, 40, 50, 60];
-  // pageNavConfig
-  pageNavConfig: PageNavigationConfigInterface = {
-    type: MdsPagerType.NUMBERING,
-    itemToShow: 20
+  // model
+  pageNavConfig: PageNavigationManagerModel = {
+    configs: {
+      itemToShow: 20,
+      // pageCounter Configuration
+      pageCounter: {
+        options: [10, 20, 30, 40, 50, 60]
+      }
+    }
   }
 
   // Code Viewer
-  importModuleCode: string;
+  showFullInterfaceCode: boolean;
   componentCode: string;
-  htmlCode: string;
   interfaceCode: string;
 
   // Properties Detail
+  showDeprecated = false;
   tableContent = [
-    {attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: 'medes-ui@1.15.1 > Latest version'},
-    {attribute: 'pageNavConfig',type: 'PageNavigationConfigInterface', default: '∞', description: 'Configuration of Page Navigation Component', version: 'medes-ui@1.15.1 > Latest version'},
-    {attribute: 'pageCountConfig?',type: 'Array<string>', default: '∞', description: 'Total count options', version: 'medes-ui@1.15.1 > Latest version'},
+    {attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0 > Latest version'},
     {attribute: 'customClass?',type: 'string', default: '∞', description: 'Put your custom class styling', version: 'medes-ui@1.15.1 > Latest version'},
     {attribute: 'customStyle?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: 'medes-ui@1.15.1 > Latest version'}
   ];
+  tableContentDeprecated = [
+    {attribute: 'pageNavConfig',type: 'PageNavigationModel', default: '∞', description: 'Configuration of Page Navigation Component, on newer version has been moved to main model', version: 'medes-ui@1.15.1 > medes-ui@1.17.1'},
+    {attribute: 'pageCountConfig',type: 'Array<number>', default: '∞', description: 'Removed, on newer version has been merge to model > page counter configuration options', version: 'medes-ui@1.15.1 > medes-ui@1.17.1'}
+  ];
 
   constructor(public mdsModalService: MdsModalService, private cdr: ChangeDetectorRef) {
-    this.importModuleCode = constructImportModuleCode('MdsPageManagerModule');
     this.componentCode = this.reGenerateCode();
-    this.htmlCode = htmlCode;
-    this.interfaceCode = interfaceCode;
+    this.interfaceCode = PageNavigationManagerModelCode.geModel('pageCounter');
+  }
+    
+  openModal(id: string): void {
+    this.mdsModalService.trigger(id);
   }
 
+  expandCollapseModel(): void {
+    if (this.showFullInterfaceCode) {
+      this.interfaceCode = PageNavigationManagerModelCode.geModel('pageCounter');
+      this.showFullInterfaceCode = false;
+    } else {
+      this.interfaceCode = PageNavigationManagerModelCode.geModel('all');
+      this.showFullInterfaceCode = true;
+    }
+  }
   ngAfterContentChecked(): void {
     this.cdr.detectChanges();
   }
   
   reGenerateCode(): string {
-    const importMdsUi = 'PageNavigationConfigInterface, MdsPagerType';
-    const valuesComponent = `// pageCountConfig
-  toShowOptions: number[] = [${this.toShowOptions}];
-  
-  // pageNavConfig
-  pageNavConfig: PageNavigationConfigInterface = {
-    type: MdsPagerType.NUMBERING,
-    itemToShow: ${this.pageNavConfig.itemToShow}
+    const importMdsUi = 'MdsPageManagerModule, PageNavigationModel';
+    const imports = 'MdsPageManagerModule';
+    const valuesComponent = `// model
+  pageNavConfig: PageNavigationManagerModel = {
+    configs: {
+      itemToShow: ${this.pageNavConfig.configs.itemToShow},
+      // pageCounter Configuration
+      pageCounter: {
+        options: [${this.pageNavConfig.configs.pageCounter.options}]
+      }
+    }
   }`
-    return constructComponentCode(importMdsUi, valuesComponent)
+    return constructComponentCode(importMdsUi, imports, '', valuesComponent)
   }
 
   updateTotal($event: number): void {
     const newConfig = Object.assign({}, this.pageNavConfig);
-    newConfig.itemToShow = $event;
+    newConfig.configs.itemToShow = $event;
     this.pageNavConfig = newConfig;
     this.componentCode = this.reGenerateCode();
   }
 
-  openModal(id: string): void {
-    this.mdsModalService.trigger(id);
-  }
+htmlCode = `
+<!-- Demo Medes Page Counter Component -->
+<small>Total Item </small>
+<mds-page-counter [(model)]="pageNavConfig" [customStyle]="'border-radius: 7px;'"></mds-page-counter>`;
 
 }

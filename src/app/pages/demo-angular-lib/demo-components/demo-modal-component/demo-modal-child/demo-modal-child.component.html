@@ -1,47 +1,50 @@
-<p class="margin-t-1">This text is editiable via modal 1:</p>
-<blockquote class="margin-b-1">{{bodyText}}</blockquote>
-<button class="margin-r-1 margin-b-1" (click)="openModal('custom-modal-1')">Open Modal 1 - Data Binding</button>
-<button class="margin-r-1 margin-b-1" (click)="openModal('custom-modal-2')">Open Modal 2 - Modal Customizing</button>
-<button class="margin-r-1 margin-b-1" (click)="openModal('custom-modal-3')">Open Modal 3 - Modal with long content</button>
-<button class="margin-r-1 margin-b-1" (click)="openModal('custom-modal-4')">Open Modal 4 - Custom Close Button & Backdorup unclosable</button>
-<button class="margin-r-1 margin-b-1" (click)="openModal('custom-modal-5')">Open Modal 5 - Modal with header & footer</button>
-<button class="margin-r-1 margin-b-1" (click)="openModal('custom-modal-6')">Open Modal 6 - Modal fullscreen with header & footer</button>
-<button class="margin-r-1 margin-b-1" (click)="openModal('id-not-exist')">Open Modal 7 - No modal id - error log added on console</button>
-<br/>
+<p class="m-y-t-1">This text is editiable via modal 1:</p>
+<blockquote class="m-y-b-1">{{bodyText}}</blockquote>
+<p><b>Modal body only</b></p>
+<button class="m-x-r-1 m-y-b-1 btn-swatch-a" (click)="openModal('custom-modal-1')">Open Modal 1 - Data Binding</button>
+<button class="m-x-r-1 m-y-b-1 btn-swatch-a" (click)="openModal('custom-modal-2')">Open Modal 2 - Modal Customizing</button>
+<button class="m-x-r-1 m-y-b-1 btn-swatch-a" (click)="openModal('custom-modal-3')">Open Modal 3 - Modal with long content</button>
+<button class="m-x-r-1 m-y-b-1 btn-swatch-a" (click)="openModal('custom-modal-4')">Open Modal 4 - Custom Close Button & Backdorup unclosable</button>
+<hr/>
+<p><b>Modal body with Header Footer</b></p>
+<button class="m-x-r-1 m-y-b-1 btn-swatch-b" (click)="openModal('custom-modal-5')">Open Modal 5 - Modal with header & footer</button>
+<button class="m-x-r-1 m-y-b-1 btn-swatch-b" (click)="openModal('custom-modal-6')">Open Modal 6 - Modal fullscreen with header & footer</button>
+<hr/>
+<p><b>Error modal</b></p>
+<button class="m-x-r-1 m-y-b-1 btn-swatch-negative" (click)="openModal('id-not-exist')">Open Modal 7 - No modal id - error log added on console</button>
+<hr/>
 
 <!-- Modal with data binding changes -->
-<mds-modal id="custom-modal-1" [modalWidth]="787">
-    <div class="padding-1">
-        <h3 class="padding-b-1">Modal with databinding changes</h3>
+ <!-- [modalWidth]="787" -->
+<mds-modal id="custom-modal-1">
+    <div class="modal-body p-1">
+        <h3 class="p-y-b1">Modal with databinding changes</h3>
         <p>Home page text:</p>
-        <div class="fullfill-horizontal flex-horizontal">
+        <div class="x-100 flex-x">
             <textarea type="text" [(ngModel)]="bodyText" style="width: 100%; height: 70px;"></textarea>
         </div>
     </div>
 </mds-modal>
 
 <!-- Modal size configuration -->
-<mds-modal id="custom-modal-2" [modalWidth]="changeSize.value" [marginTop]="marginTop.value" [marginBottom]="marginBottom.value" [borderRadius]="borderRadius.value">
-    <div class="padding-1">
-        <h3 class="padding-b-1">A Custom Modal!</h3>
-        Modal Size: <select #changeSize="ngModel" ngModel="small">
+ <!-- [modalWidth]="changeSize.value" [marginVertical]="marginVertical.value"  [borderRadius]="borderRadius.value" -->
+<mds-modal id="custom-modal-2" [model]="mdsModalModel2Config">
+    <div class="modal-body p-1">
+        <h3 class="p-y-b1">A Custom Modal!</h3>
+        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
+        <select [(ngModel)]="mdsModalModel2Config.configs.modalWidth">
             <option>small</option>
             <option>medium</option>
             <option>large</option>
             <option>fullscreen</option>
         </select>
-        <p><code class="command">[modalWidth]="{{changeSize.value}}"</code></p>
-        
-        Margin Top: <input type="number" step="20" #marginTop="ngModel" [ngModel]="changeSize.value === 'fullscreen' ? 0 :100" [disabled]="changeSize.value === 'fullscreen'"/>
-        <p><code class="command">[marginTop]="{{marginTop.value}}"</code></p>
-        Margin Bottom: <input type="number" step="20" #marginBottom="ngModel" [ngModel]="changeSize.value === 'fullscreen' ? 0 :100" [disabled]="changeSize.value === 'fullscreen'"/>
-        <p><code class="command">[marginBottom]="{{marginBottom.value}}"</code>
-            <small *ngIf="changeSize.value === 'fullscreen'"><br/><i>Margin top & bottom will disabling if modal size set as fullscreen</i></small></p>
-        
-        Border radius: <input type="number" step="2" #borderRadius="ngModel" ngModel="7"/>
-        <p><code class="command">[borderRadius]="{{borderRadius.value}}"</code></p>
+        @if (mdsModalModel2Config.configs.modalWidth !== 'fullscreen') {
+            <input type="checkbox" [(ngModel)]="mdsModalModel2Config.configs.scrollInTheModal"> Scrollable inside Modal<br/>
+            <input type="number" [(ngModel)]="mdsModalModel2Config.configs.marginVertical" max="100"/>
+        }
+        <input type="number" [(ngModel)]="mdsModalModel2Config.configs.borderRadius" max="40"/>
+
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nec dui sit amet sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean massa augue, varius nec velit et, fermentum eleifend purus. Integer porta eros et risus mattis ultricies. Phasellus enim neque, finibus sed tempor at, pretium nec nulla. Pellentesque eget gravida lorem. Cras non volutpat urna. Phasellus nec quam mattis, euismod turpis ac, pulvinar enim. Proin lacinia felis nulla, ut convallis felis lacinia eget. Duis sed consectetur dui, eu dictum elit. Donec ut suscipit diam. Vestibulum nec ex a arcu rutrum vulputate ut eu lacus. Curabitur sem sapien, vestibulum non tincidunt semper, ullamcorper a ante. Morbi tempor sem nec facilisis efficitur. Nam vel quam malesuada, dignissim leo id, eleifend tortor. Etiam in rutrum elit.</p>
-        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
         <p>Cras lacinia accumsan vulputate. In elementum felis at dolor condimentum, ut commodo lacus iaculis. Fusce efficitur, dolor eu egestas sagittis, enim risus scelerisque lectus, eget tempus lacus lectus eget nisi. In feugiat felis eget congue ullamcorper. Maecenas vitae tellus commodo, dignissim erat nec, consectetur lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vel augue urna. Mauris malesuada rutrum dui ac convallis. Duis eget pretium leo. Nam auctor vehicula sagittis. Donec ultricies, dui et convallis tristique, dui turpis ullamcorper mauris, nec tristique dui augue at leo. Phasellus vehicula, nibh non scelerisque mattis, nisl elit pulvinar urna, sit amet venenatis elit magna ac nunc. Sed aliquam sagittis sem, vitae dignissim nulla mattis id.</p>
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
         <p>Cras lacinia accumsan vulputate. In elementum felis at dolor condimentum, ut commodo lacus iaculis. Fusce efficitur, dolor eu egestas sagittis, enim risus scelerisque lectus, eget tempus lacus lectus eget nisi. In feugiat felis eget congue ullamcorper. Maecenas vitae tellus commodo, dignissim erat nec, consectetur lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vel augue urna. Mauris malesuada rutrum dui ac convallis. Duis eget pretium leo. Nam auctor vehicula sagittis. Donec ultricies, dui et convallis tristique, dui turpis ullamcorper mauris, nec tristique dui augue at leo. Phasellus vehicula, nibh non scelerisque mattis, nisl elit pulvinar urna, sit amet venenatis elit magna ac nunc. Sed aliquam sagittis sem, vitae dignissim nulla mattis id.</p>
@@ -49,9 +52,10 @@
 </mds-modal>
 
 <!-- Modal with long content -->
-<mds-modal id="custom-modal-3" [modalWidth]="'large'">
-    <div class="padding-2">
-        <h3 class="margin-b-1">A Tall Custom Modal!</h3>
+ <!-- [modalWidth]="'large'" -->
+<mds-modal id="custom-modal-3">
+    <div class="modal-body p-2">
+        <h3 class="m-y-b-1">A Tall Custom Modal!</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nec dui sit amet sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean massa augue, varius nec velit et, fermentum eleifend purus. Integer porta eros et risus mattis ultricies. Phasellus enim neque, finibus sed tempor at, pretium nec nulla. Pellentesque eget gravida lorem. Cras non volutpat urna. Phasellus nec quam mattis, euismod turpis ac, pulvinar enim. Proin lacinia felis nulla, ut convallis felis lacinia eget. Duis sed consectetur dui, eu dictum elit. Donec ut suscipit diam. Vestibulum nec ex a arcu rutrum vulputate ut eu lacus. Curabitur sem sapien, vestibulum non tincidunt semper, ullamcorper a ante. Morbi tempor sem nec facilisis efficitur. Nam vel quam malesuada, dignissim leo id, eleifend tortor. Etiam in rutrum elit.</p>
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
         <p>Cras lacinia accumsan vulputate. In elementum felis at dolor condimentum, ut commodo lacus iaculis. Fusce efficitur, dolor eu egestas sagittis, enim risus scelerisque lectus, eget tempus lacus lectus eget nisi. In feugiat felis eget congue ullamcorper. Maecenas vitae tellus commodo, dignissim erat nec, consectetur lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vel augue urna. Mauris malesuada rutrum dui ac convallis. Duis eget pretium leo. Nam auctor vehicula sagittis. Donec ultricies, dui et convallis tristique, dui turpis ullamcorper mauris, nec tristique dui augue at leo. Phasellus vehicula, nibh non scelerisque mattis, nisl elit pulvinar urna, sit amet venenatis elit magna ac nunc. Sed aliquam sagittis sem, vitae dignissim nulla mattis id.</p>
@@ -59,19 +63,22 @@
 </mds-modal>
 
 <!-- Hide close button & disable closing via backdrop  -->
-<mds-modal id="custom-modal-4" [hideCloseButton]="true" [disableCloseBackdrop]="true">
-    <div class="padding-2">
-        <h3 class="padding-b-1">Hide Close Button Modal & disable closing via backdrop!</h3>
-        <p>Close button on top corner is hidding if use <code class="command">[hideCloseButton]="true"</code></p>
-        <p>Try click backdrop, now is unclosable if use <code class="command">[disableCloseBackdrop]="true"</code></p>
-        <button (click)="closeModal('custom-modal-4');">The Custom Close Button</button>
+<mds-modal id="custom-modal-4" [model]="mdsModalModel4Config">
+    <div class="modal-body p-2">
+        <h3 class="p-y-b1">Hide Close Button Modal & disable closing via backdrop!</h3>
+        <p>Close button on top corner is hidding if use <code class="command">hideCloseButton: true</code></p>
+        <p>Try click backdrop, now is unclosable if use <code class="command">disableCloseBackdrop: true</code></p>
+        <button class="btn-swatch-b" (click)="closeModal('custom-modal-4');">The Custom Close Button</button>
     </div>
 </mds-modal>
 
 <!-- Modal with header & footer -->
-<mds-modal id="custom-modal-5" [modalWidth]="'large'" [marginTop]="50" [marginBottom]="50">
-    <div class="padding-1" style="box-shadow: rgb(129 129 129 / 7%) 0 5px 20px;border-bottom: rgb(129 129 129 / 20%) solid 1px;"><h3 class="txt-transculant">A Tall Custom Modal!</h3></div>
-    <div class="padding-1 padding-b-0" style="overflow-y: scroll; flex-grow: 1;">
+ <!-- [scrollInTheModal]="true" [modalWidth]="'medium'" [marginVertical]="80" -->
+<mds-modal id="custom-modal-5" >
+    <div class="modal-header p-1">
+        <h4 class="txt-transculant">A Tall Custom Modal!</h4>
+    </div>
+    <div class="modal-body p-1 p-y-b-0">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nec dui sit amet sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean massa augue, varius nec velit et, fermentum eleifend purus. Integer porta eros et risus mattis ultricies. Phasellus enim neque, finibus sed tempor at, pretium nec nulla. Pellentesque eget gravida lorem. Cras non volutpat urna. Phasellus nec quam mattis, euismod turpis ac, pulvinar enim. Proin lacinia felis nulla, ut convallis felis lacinia eget. Duis sed consectetur dui, eu dictum elit. Donec ut suscipit diam. Vestibulum nec ex a arcu rutrum vulputate ut eu lacus. Curabitur sem sapien, vestibulum non tincidunt semper, ullamcorper a ante. Morbi tempor sem nec facilisis efficitur. Nam vel quam malesuada, dignissim leo id, eleifend tortor. Etiam in rutrum elit.</p>
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nec dui sit amet sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean massa augue, varius nec velit et, fermentum eleifend purus. Integer porta eros et risus mattis ultricies. Phasellus enim neque, finibus sed tempor at, pretium nec nulla. Pellentesque eget gravida lorem. Cras non volutpat urna. Phasellus nec quam mattis, euismod turpis ac, pulvinar enim. Proin lacinia felis nulla, ut convallis felis lacinia eget. Duis sed consectetur dui, eu dictum elit. Donec ut suscipit diam. Vestibulum nec ex a arcu rutrum vulputate ut eu lacus. Curabitur sem sapien, vestibulum non tincidunt semper, ullamcorper a ante. Morbi tempor sem nec facilisis efficitur. Nam vel quam malesuada, dignissim leo id, eleifend tortor. Etiam in rutrum elit.</p>
@@ -79,17 +86,16 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nec dui sit amet sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean massa augue, varius nec velit et, fermentum eleifend purus. Integer porta eros et risus mattis ultricies. Phasellus enim neque, finibus sed tempor at, pretium nec nulla. Pellentesque eget gravida lorem. Cras non volutpat urna. Phasellus nec quam mattis, euismod turpis ac, pulvinar enim. Proin lacinia felis nulla, ut convallis felis lacinia eget. Duis sed consectetur dui, eu dictum elit. Donec ut suscipit diam. Vestibulum nec ex a arcu rutrum vulputate ut eu lacus. Curabitur sem sapien, vestibulum non tincidunt semper, ullamcorper a ante. Morbi tempor sem nec facilisis efficitur. Nam vel quam malesuada, dignissim leo id, eleifend tortor. Etiam in rutrum elit.</p>
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
     </div>
-    <div class="padding-1" style="box-shadow: rgb(129 129 129 / 7%) 0px -5px 20px;border-top: rgb(129 129 129 / 20%) solid 1px;">Footer</div>
+    <div class="modal-footer">Footer</div>
 </mds-modal>
 
 
 <!-- Modal with header & footer fullscreen -->
-<mds-modal id="custom-modal-6" [modalWidth]="'fullscreen'" [hideCloseButton]="true">
-    <div class="fullfill-horizontal flex-vertical fullfill-vertical" style="flex-wrap: nowrap;">
-        <div class="padding-1" style="box-shadow: rgb(129 129 129 / 7%) 0 5px 20px;border-bottom: rgb(129 129 129 / 20%) solid 1px;">
-            <h3 class="txt-transculant">A Tall Custom Modal!</h3>
+<mds-modal id="custom-modal-6" [model]="mdsModalModel6Config">
+        <div class="modal-header p-1">
+            <h4 class="txt-transculant">A Tall Custom Modal!</h4>
         </div>
-        <div class="padding-1 padding-b-0 scroll-vertical">
+        <div class="modal-body p-1 p-y-b-0">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nec dui sit amet sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean massa augue, varius nec velit et, fermentum eleifend purus. Integer porta eros et risus mattis ultricies. Phasellus enim neque, finibus sed tempor at, pretium nec nulla. Pellentesque eget gravida lorem. Cras non volutpat urna. Phasellus nec quam mattis, euismod turpis ac, pulvinar enim. Proin lacinia felis nulla, ut convallis felis lacinia eget. Duis sed consectetur dui, eu dictum elit. Donec ut suscipit diam. Vestibulum nec ex a arcu rutrum vulputate ut eu lacus. Curabitur sem sapien, vestibulum non tincidunt semper, ullamcorper a ante. Morbi tempor sem nec facilisis efficitur. Nam vel quam malesuada, dignissim leo id, eleifend tortor. Etiam in rutrum elit.</p>
             <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nec dui sit amet sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean massa augue, varius nec velit et, fermentum eleifend purus. Integer porta eros et risus mattis ultricies. Phasellus enim neque, finibus sed tempor at, pretium nec nulla. Pellentesque eget gravida lorem. Cras non volutpat urna. Phasellus nec quam mattis, euismod turpis ac, pulvinar enim. Proin lacinia felis nulla, ut convallis felis lacinia eget. Duis sed consectetur dui, eu dictum elit. Donec ut suscipit diam. Vestibulum nec ex a arcu rutrum vulputate ut eu lacus. Curabitur sem sapien, vestibulum non tincidunt semper, ullamcorper a ante. Morbi tempor sem nec facilisis efficitur. Nam vel quam malesuada, dignissim leo id, eleifend tortor. Etiam in rutrum elit.</p>
@@ -101,10 +107,9 @@
             <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique nec dui sit amet sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean massa augue, varius nec velit et, fermentum eleifend purus. Integer porta eros et risus mattis ultricies. Phasellus enim neque, finibus sed tempor at, pretium nec nulla. Pellentesque eget gravida lorem. Cras non volutpat urna. Phasellus nec quam mattis, euismod turpis ac, pulvinar enim. Proin lacinia felis nulla, ut convallis felis lacinia eget. Duis sed consectetur dui, eu dictum elit. Donec ut suscipit diam. Vestibulum nec ex a arcu rutrum vulputate ut eu lacus. Curabitur sem sapien, vestibulum non tincidunt semper, ullamcorper a ante. Morbi tempor sem nec facilisis efficitur. Nam vel quam malesuada, dignissim leo id, eleifend tortor. Etiam in rutrum elit.</p>
         </div>
-        <div class="fullfill-horizontal flex-horizontal justify-between padding-1" style="box-shadow: rgb(129 129 129 / 7%) 0px -5px 20px;border-top: rgb(129 129 129 / 20%) solid 1px;">
+        <div class="modal-footer x-100 flex-x justify-between">
             <button class="btn-swatch-reset" (click)="openModal('custom-modal-6');">Cancel</button>
             <button class="btn-swatch-a" (click)="openModal('custom-modal-6')">Save</button>
         </div>
-    </div>
 </mds-modal>
 

@@ -1,31 +1,47 @@
 <h1>Checkboxes Components</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis.</p>
+<p>Filtering checkbox list will generated base on sample data, get from property key on Object list.</p>
 <hr/>
 
 
-<h2 class="margin-b-1">Preview & Generate Component Configuration</h2>
+<h2 class="m-y-b-1">Preview & Generate Component Configuration</h2>
 <div class="mds-grid">
     <div class="g-m-30">
         <h3>Preview:</h3>
-        <!-- Medes Toggle Component -->
-        <mds-filter-checkbox
-            [filterData]="sampledata"
-            [filterBy]="peropKey"
-            [filterSelected]="selected"
-            [titlegroup]="label"
-            [reset]="resetElement"
-            [hideCounter]="isHideCounter"
-        ></mds-filter-checkbox>
+        <!-- Filter Checkboxes Component -->
+        <mds-filter-checkbox id="by-category" [data]="sampledata" [model]="mdsFilterModel"></mds-filter-checkbox>
+        <small><i>Output Value: {{mdsFilterModel.data.filterSelected|json}}</i></small>
     </div>
     <div class="g-m-70">
         <h3>Conifguration:</h3>
-        <div>
-            <input type="text" placeholder="Property key on data" [ngClass]="{'invalid': peropKey.length === 0}" [(ngModel)]="peropKey"/>
-            <small class="txt-lighter margin-l-1">Type others property on array. ex type: brand, color, gender etc</small>
-            <br/>
-            <input type="text" placeholder="Default: Filter by (titlegroup)" [(ngModel)]="label"/>
-            <input type="text" placeholder="html element (reset)" [(ngModel)]="resetElement"/>
-            <button (click)="isHideCounter=!isHideCounter">Show/Hide Counter</button>
+        <div class="x-100 flex-y">
+            <div class="x-100 flex-x flex-nowarp">
+                <div class="x-100 m-x-r-1">
+                    <label class="required txt-darker">Property</label>
+                    <input type="text" class="x-100" placeholder="Property key on data" [ngClass]="{'invalid': mdsFilterModel.configs.checkBox['by-category'].property.length === 0}" [ngModel]="mdsFilterModel.configs.checkBox['by-category'].property" (ngModelChange)="updateProp($event)"/>
+                    @if (mdsFilterModel.configs.checkBox['by-category'].property.length === 0) {
+                        <small class="txt-negative">
+                            <i>This field is required</i>
+                        </small><br/>
+                    }
+                    <small class="txt-lighter">Type property on array. ex type: brand, color, gender etc</small>
+                </div>
+                <div class="x-100">
+                    <label class="txt-darker">Label</label>
+                    <input type="text" class="x-100" placeholder="Default: Filter by" [(ngModel)]="mdsFilterModel.configs.checkBox['by-category'].label"/>
+                </div>
+            </div>
+        </div>
+        <div class="x-100 flex-x flex-nowarp">
+            <div class="x-100 m-x-r-1">
+                <label class="txt-darker">Reset Html Element</label>
+                <input type="text" class="x-100" placeholder="html element" [(ngModel)]="mdsFilterModel.configs.checkBox['by-category'].resetElement"/>
+            </div>
+            <div class="x-100">
+                <label class="txt-darker">Show Hide Counter</label>
+                <button class="btn-swatch-a x-100" (click)="mdsFilterModel.configs.checkBox['by-category'].hideCounter = !mdsFilterModel.configs.checkBox['by-category'].hideCounter">
+                    {{mdsFilterModel.configs.checkBox['by-category'].hideCounter ? 'Show' :' Hide'}} Counter
+                </button>
+            </div>
         </div>
     </div>
 </div>
@@ -33,44 +49,79 @@
 
 <h3>Code</h3>
 <div class="mds-grid">
-    <div class="g-l-30">
-        <b>Module</b>
-        <mds-hightlight-prism [code]="importModuleCode" language="javascript"></mds-hightlight-prism>
-    </div>
-    <div class="g-l-40">
+    <div class="g-l-50">
         <b>Component</b>
         <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
     </div>
-    <div class="g-l-30">
+    <div class="g-l-50">
         <b>HTML</b>
         <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
-    
     </div>
 </div>
+<p><i>Variable <b>sampledata</b> values is <a href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts">constant/proucts.ts</a>.</i></p>
+<br/>
 
 <b>Properties</b>
 <table class="table-properties mds-table table-swatch-a">
-    <!--<span class=\'new-beadge margin-l-1\'>New</span>-->
+    <!--<span class=\'new-beadge m-x-l-1\'>New</span>-->
     <tr>
-        <th>Attribute</th><th>Data Type</th><th>Default</th><th>Description</th><th style="width: 20%">Support Version</th>
+        <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
-    <tr *ngFor="let item of [
-        {attribute: 'filterData', type: 'Array<any>', default: '∞', description: 'Sample data for create multiple filter checkbox', version: 'medes-ui@1.13.0 > Latest version'},
-        {attribute: 'filterBy', type: 'string', default: '∞', description: 'Newer version only support string value, value is property/key', version: 'medes-ui@1.14.3 > Latest version'},
-        {attribute: 'filterSelected', type: 'Object', default: '∞', description: 'List of selected filter', version: 'medes-ui@1.13.0 > Latest version'},
-        {attribute: 'titlegroup?', type: 'string', default: 'Filter by', description: 'Prefix of label text of group', version: 'medes-ui@1.13.0 > Latest version'},
-        {attribute: 'reset?', type: 'string', default: '✕', description: 'Content of reset group filter, html readeable.', version: 'medes-ui@1.13.0 > Latest version'},
-        {attribute: 'hideCounter?', type: 'boolean', default: 'false', description: 'Show/hide counter item. Or delete the attribute by default will showing', version: 'medes-ui@1.13.0 > Latest version'}
-    ]">
-        <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
-        <td mds-th-title="Data Type">{{item.type}}</td>
-        <td mds-th-title="Default">{{item.default}}</td>
-        <td mds-th-title="Description">{{item.description}}</td>
-        <td mds-th-title="Support Version" [innerHTML]="item.version"></td>
-    </tr>
+    @for (item of tableContent; track $index) {
+        <tr>
+            <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
+            <td mds-th-title="Data Type">
+                @if (item.type === 'MdsFilterModel') {
+                    <a (click)="openModal('my-modal-1')">{{item.type}}</a>
+                } @else {
+                    {{item.type}}
+                }
+            </td>
+            <td mds-th-title="Default">{{item.default}}</td>
+            <td mds-th-title="Description">{{item.description}}</td>
+            <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+        </tr>
+    }
 </table>
+<small>
+<a href="javascript:void(0)" (click)="showDeprecated = !showDeprecated">{{!showDeprecated ? 'Show' : 'Hide'}} deprecated</a>
+</small>
+@if (showDeprecated) {
+    <table class="table-properties mds-table">
+        <!--<span class=\'new-beadge m-x-l-1\'>New</span>-->
+        <tr>
+            <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
+        </tr>
+        @for (item of tableContentDeprecated; track $index) {
+            <tr>
+                <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
+                <td mds-th-title="Data Type">
+                    @if (item.type === 'model') {
+                        <strike>{{item.type}}</strike>
+                    } @else {
+                        {{item.type}}
+                    }
+                </td>
+                <td mds-th-title="Default">{{item.default}}</td>
+                <td mds-th-title="Description">{{item.description}}</td>
+                <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+            </tr>
+        }
+    </table>
+}
+<br/><br/>
+
 <small>
     <b>Notes:</b>
     <br/><i>? = Is optional value, if no value will use default value.</i>
     <br/><i>∞ = No default value, put anything base on type</i>
 </small>
+
+
+<mds-modal id="my-modal-1">
+    <div class="modal-body p-1">
+        <h3 class="p-y-b1">Interface Detail</h3>
+        <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
+        <button class="btn-swatch-a" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
+    </div>
+</mds-modal>

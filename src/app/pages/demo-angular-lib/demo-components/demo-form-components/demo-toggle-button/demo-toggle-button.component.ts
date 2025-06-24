@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { constructComponentCode, constructImportModuleCode } from 'src/app/shared/utils/code-preview-generator';
-import { htmlCode, interfaceCode } from './toggle-preview-code';
-import { MdsHightlightPrismModule, MdsModalService, MdsModalModule, MdsFormModule, MdsFormModel, MdsToggleType }
+import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
+import { MdsHightlightPrismModule, MdsModalService, MdsModalModule, MdsFormModule, MdsFormModel }
 /*-public-mode-*/ from 'medes-ui';
 //*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsFormModelCode } from '../demo-filter-data-model-code';
 
 
 @Component({
@@ -22,16 +22,15 @@ export class DemoToggleButtonComponent {
   mdsFormModel: MdsFormModel;
 
   // Code Viewer
-  importModuleCode: string;
+  showFullInterfaceCode = false;
   componentCode: string;
-  htmlCode: string;
   interfaceCode: string;
 
   // Properties Detail
   tableContent = [
     {attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: 'medes-ui@1.15.3 > Latest version'},
-    {attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: 'medes-ui@1.15.3 > Latest version'},
-    {attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.15.3 > Latest version'}
+    {attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.15.3 > Latest version'},
+    {attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: 'medes-ui@1.15.3 > Latest version'}
   ]
 
   constructor(public mdsModalService: MdsModalService) {
@@ -41,40 +40,49 @@ export class DemoToggleButtonComponent {
     this.mdsFormModel = {
       configs: {
         mdsToggle: {
-          type: MdsToggleType.CLASIC,
+          type: 'clasic',
           color: 'swatch-a',
           // isDisabled: true
         }
       }
     }
-    this.importModuleCode = constructImportModuleCode('MdsFormModule');
     this.componentCode = this.reGenerateCode();
-    this.htmlCode = htmlCode;
-    this.interfaceCode = interfaceCode;
+    this.interfaceCode = MdsFormModelCode.geModel('mdsToggle');
+  }
+
+  openModal(id: string): void {
+    this.mdsModalService.trigger(id);
+  }
+    
+  expandCollapseModel(): void {
+    if (this.showFullInterfaceCode) {
+      this.interfaceCode = MdsFormModelCode.geModel('mdsToggle');
+      this.showFullInterfaceCode = false;
+    } else {
+      this.interfaceCode = MdsFormModelCode.geModel('all');
+      this.showFullInterfaceCode = true;
+    }
   }
 
   reGenerateCode(): string {
-    const importMdsUi = 'MdsFormModel, MdsToggleType';
+    const importMdsUi = 'MdsFormModule, MdsFormModel';
+    const imports = 'MdsFormModule';
     const valuesComponent = `// value
   isActive: boolean = true;
   // model
   mdsFormModel: MdsFormModel = {
     configs: {
       mdsToggle: {
-        type: ${this.getInterfaceType(this.mdsFormModel.configs.mdsToggle.type)}${this.mdsFormModel.configs.mdsToggle.color ? `,\n        color: '${this.mdsFormModel.configs.mdsToggle.color}'`: ''}${this.mdsFormModel.configs.mdsToggle.isDisabled ? `,\n        isDisabled: ${this.mdsFormModel.configs.mdsToggle.isDisabled}`: ''}
+        type: '${this.mdsFormModel.configs.mdsToggle.type}'${this.mdsFormModel.configs.mdsToggle.color ? `,\n        color: '${this.mdsFormModel.configs.mdsToggle.color}'`: ''}${this.mdsFormModel.configs.mdsToggle.isDisabled ? `,\n        isDisabled: ${this.mdsFormModel.configs.mdsToggle.isDisabled}`: ''}
       }
     }
   }`
-    return constructComponentCode(importMdsUi, valuesComponent)
+    return constructComponentCode(importMdsUi, imports, '', valuesComponent)
   }
 
-  getInterfaceType(value: string): string {
-    if (value === 'modern') return 'MdsToggleType.MODERN';
-    else if (value === 'clasic') return 'MdsToggleType.CLASIC';
-  }
-  
-  openModal(id: string): void {
-    this.mdsModalService.trigger(id);
-  }
+htmlCode = `
+<!-- Medes Toggle Component -->
+<mds-toggle-button [(value)]="isActive" [model]="mdsFormModel"></mds-toggle-button>
+<p>Value: {{isActive}}</p>`;
 
 }

@@ -1,3 +1,17 @@
+### 1.17.1 (Release - 250624)
+- Refactor - Angular Components input. Minimalize using multiple Input and use single object oriented and parse to child component
+- Refactor - Input model for Modal Component
+- Refactor - Input model for Filter Components
+- Refactor - Input model for Page Navigation Manager Components
+- Refactor - reduce usage of *ngIf and use @if
+- Refactor - reduce usage of *ngFor and use @for
+- Refactor - reduce usage of ng-container
+- Refactor Stling - Refactor layot util styling, Current existing still exist will removed on next minor version update
+- Enhancement - Modal Component Styling now having scrollable insde or full height 
+- Enhancement - Filter Color Swatch Components now resetable
+- Enhancement - Page Navigation component color now aplicable with available color on color scheme
+- Change PageNavigationConfigInterface to PageNavigationModel
+- Update documentation
 ### 1.17.1 (Release - 250613)
 - Republish, fix publish error 1.17.0
 ### 1.17.0 (Release - 250613)
