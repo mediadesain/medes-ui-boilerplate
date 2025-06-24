@@ -34,7 +34,7 @@
         </div>
         <div>
             <input type="number" placeholder="70" ngModel #newOption="ngModel" />
-            <button (click)="pageNavConfig.configs.pageCounter.options.push(newOption.value); componentCode = this.reGenerateCode()">Add option</button>
+            <button class="btn-swatch-a" (click)="newOption.value && pageNavConfig.configs.pageCounter.options.push(newOption.value); componentCode = this.reGenerateCode()">Add option</button>
         </div>
         <div>
             @for (option of pageNavConfig.configs.pageCounter.options; track option; let i = $index) {

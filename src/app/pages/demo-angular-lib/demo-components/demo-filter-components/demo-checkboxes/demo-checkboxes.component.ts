@@ -5,8 +5,8 @@ import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/pr
 import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 import { MdsFilterCheckboxComponent, MdsFilterModel, MdsHightlightPrismModule, MdsModalModule, MdsModalService }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-checkboxes',

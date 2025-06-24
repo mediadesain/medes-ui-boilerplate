@@ -3,8 +3,8 @@ import { AfterContentChecked, AfterViewInit, ChangeDetectorRef, Component, Eleme
 import { FormsModule } from '@angular/forms';
 
  import { MdsFormModel, MdsFormModule }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-dev-testing',

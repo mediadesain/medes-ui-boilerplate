@@ -6,8 +6,8 @@ import { constructComponentCode } from 'src/app/shared/utils/code-preview-genera
 import { htmlCode, htmlCode2, interfaceCode } from './modal-component-preview-code';
 import { FormsModule } from '@angular/forms';
 import { MdsHightlightPrismModule, MdsModalModel, MdsModalModule, MdsModalService }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 
 @Component({

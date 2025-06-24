@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 import { MdsFilterModel, MdsFilterSwatchComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 
 @Component({

@@ -3,8 +3,8 @@ import { AfterContentChecked, ChangeDetectorRef, Component, OnInit } from '@angu
 import { FormsModule } from '@angular/forms';
 import { MdsModalModel } from 'projects/medes-ui/src/lib/angular/components/mds-modal/mds-modal.model';
 import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-mode-*/ from 'medes-ui';
+//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
 
 @Component({
   selector: 'mds-demo-modal-child',

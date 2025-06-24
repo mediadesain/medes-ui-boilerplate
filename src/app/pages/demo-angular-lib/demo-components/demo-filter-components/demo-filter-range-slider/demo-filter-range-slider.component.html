@@ -13,13 +13,7 @@
     <div class="g-m-70">
         <h3>Conifguration:</h3>
         <div>
-            <!-- <input type="text" placeholder="Property key on data" [(ngModel)]="peropKey"/>
-            <small class="txt-lighter m-x-l-1">Type others property on array. ex type: brand, color, gender etc</small>
-            <br/>
-            <input type="text" placeholder="Default: Color (titlegroup)" [(ngModel)]="label"/>
-            <input type="number" placeholder="Default: 30 (swatchSize)" [(ngModel)]="totalSize"/>
-            <input type="number" placeholder="Default: 25 (swatchRadius)" [(ngModel)]="totalRadius"/> -->
-            <button (click)="isDisabled=!isDisabled">Enable/Disable Slider</button>
+            <button class="btn-swatch-a" (click)="isDisabled=!isDisabled">{{isDisabled ? 'Enable' : 'Disable'}} Slider</button>
         </div>
     </div>
 </div>
