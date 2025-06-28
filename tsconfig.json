@@ -4,8 +4,6 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    // "allowJs": true,
-    // "jsx": "react",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
@@ -24,7 +22,8 @@
       "es2018",
       "dom"
     ],
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "jsx": "react-jsx"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false

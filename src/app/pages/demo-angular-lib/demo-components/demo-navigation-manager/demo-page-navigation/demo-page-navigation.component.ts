@@ -6,8 +6,8 @@ import { htmlCode } from './page-navigation-preview-code';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { PageNavigationManagerModelCode } from '../demo-page-navigation-manager-model-code';
 import { MdsHightlightPrismModule, MdsPageManagerModule, MdsModalService, MdsModalModule, PageNavigationManagerModel }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+//*-public-mode-*/ from 'medes-ui-angular';
+/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
 
 
 @Component({

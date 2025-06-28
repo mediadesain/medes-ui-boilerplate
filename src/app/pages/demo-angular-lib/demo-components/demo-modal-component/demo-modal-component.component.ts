@@ -5,9 +5,12 @@ import { DemoModalChildComponent } from './demo-modal-child/demo-modal-child.com
 import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 import { htmlCode, htmlCode2, interfaceCode } from './modal-component-preview-code';
 import { FormsModule } from '@angular/forms';
-import { MdsHightlightPrismModule, MdsModalModel, MdsModalModule, MdsModalService }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsModalModel }
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
+//*-public-mode-*/ from 'medes-ui-angular';
+/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
 
 
 @Component({

@@ -1,22 +1,40 @@
 import { CommonModule } from '@angular/common';
 import { AfterContentChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactWrapperComponent } from 'src/app/shared/components/react-wrapper/react-wrapper.component';
 
- import { MdsFormModel, MdsFormModule }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsFormModel }
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsFormModule }
+//*-public-mode-*/ from 'medes-ui-angular';
+/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
   selector: 'mds-dev-testing',
   templateUrl: './dev-testing.component.html',
   styleUrls: ['./dev-testing.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, MdsFormModule]
+  imports: [CommonModule, FormsModule, MdsFormModule, ReactWrapperComponent]
 })
 
 export class DevTestingComponent implements AfterViewInit, AfterContentChecked, OnDestroy{
   @ViewChild('listenBox') listenBox: ElementRef<HTMLElement>;
   isActive = true;
+  // sampleProp = { value: 'Angular', message: 'Try mix angular x react' }
+  sampleProp = {
+    id: 'test-modal-1',
+    model: {
+      configs: {
+        modalWidth: 'medium',
+        scrollInTheModal: false,
+        marginVertical: 50,
+        borderRadius: 3,
+        hideCloseButton: false,
+        disableCloseBackdrop: false
+      }
+    },
+  }
 
   testValue = 23750000.64646;
   mdsFormModel: MdsFormModel = {

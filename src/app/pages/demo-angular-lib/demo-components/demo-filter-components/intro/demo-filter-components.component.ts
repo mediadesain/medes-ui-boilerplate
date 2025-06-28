@@ -2,9 +2,12 @@ import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsHightlightPrismModule, MdsFilterModule, MdsFilterModel }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsFilterModel }
+//*-public-mode-*/ from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsHightlightPrismModule, MdsFilterModule }
+//*-public-mode-*/ from 'medes-ui-angular';
+/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
   selector: 'mds-demo-filter-components',

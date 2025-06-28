@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MdsHightlightPrismModule }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+//*-public-mode-*/ from 'medes-ui-angular';
+/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
   selector: 'mds-demo-safeurl-pipe',

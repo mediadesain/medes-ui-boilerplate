@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { PageNavigationManagerModelCode } from '../demo-page-navigation-manager-model-code';
-import { MdsHightlightPrismModule, MdsModalModule,  MdsModalService,  MdsPageManagerModule, PageNavigationManagerModel }
-/*-public-mode-*/ from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsHightlightPrismModule, MdsModalModule, MdsModalService, MdsPageManagerModule, PageNavigationManagerModel }
+//*-public-mode-*/ from 'medes-ui-angular';
+/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
   selector: 'mds-demo-page-counter',

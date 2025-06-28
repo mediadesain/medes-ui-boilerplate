@@ -157,6 +157,80 @@
           }
         }
       }
+    },
+    "medes-ui-angular": {
+      "projectType": "library",
+      "root": "projects/medes-ui-angular",
+      "sourceRoot": "projects/medes-ui-angular/src",
+      "prefix": "mds",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/medes-ui-angular/tsconfig.lib.json",
+            "project": "projects/medes-ui-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/medes-ui-angular/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/medes-ui-angular/src/test.ts",
+            "tsConfig": "projects/medes-ui-angular/tsconfig.spec.json",
+            "karmaConfig": "projects/medes-ui-angular/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/medes-ui-angular/**/*.ts",
+              "projects/medes-ui-angular/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "medes-ui-react": {
+      "projectType": "library",
+      "root": "projects/medes-ui-react",
+      "sourceRoot": "projects/medes-ui-react/src",
+      "prefix": "mds",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/medes-ui-react/tsconfig.lib.json",
+            "project": "projects/medes-ui-react/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/medes-ui-react/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/medes-ui-react/src/test.ts",
+            "tsConfig": "projects/medes-ui-react/tsconfig.spec.json",
+            "karmaConfig": "projects/medes-ui-react/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/medes-ui-react/**/*.ts",
+              "projects/medes-ui-react/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

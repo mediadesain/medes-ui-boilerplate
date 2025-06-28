@@ -2,9 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
-import { MdsFilterModel, MdsFilterResetComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService}
-/*-public-mode-*/  from 'medes-ui';
-//*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsFilterModel }
+//*-public-mode-*/  from 'medes-ui';
+/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+import { MdsFilterResetComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService}
+//*-public-mode-*/  from 'medes-ui-angular';
+/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
   selector: 'mds-demo-reset-all',
