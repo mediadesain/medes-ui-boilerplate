@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MdsHightlightPrismModule }
-//*-public-mode-*/ from 'medes-ui-angular';
-/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
+/*-public-*/ from '@mediadesain/angular';
+//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
   selector: 'mds-demo-prismjs-highlight',
@@ -21,9 +21,9 @@ export class DemoPrismjsHighlightComponent {
   ];
 
   tableContent = [
-    {attribute: 'code', value: 'string', default: '', description: 'Code to hightlight', version: 'medes-ui@1.13.0 > Latest version'},
-    {attribute: 'language', value: 'Spesific string, options are:<br/><i>\'html\' | \'markup\' | \'javascript\' | \'typescript\' | \'java\' | \'css\' | \'sass\' | \'scss\' | \'ruby\' | \'swift\' | \'sql\' | \'python\'</i> ', default: '', description: 'Language type to show as prevew code',version: 'medes-ui@1.13.0 > Latest version'},
-    {attribute: 'heightHighlight?', value: 'number', default: '∞', description: 'Maximal height', version: 'medes-ui@1.14.1 > Latest version'}
+    {docType: 'angular', attribute: 'code', value: 'string', default: '', description: 'Code to hightlight', version: 'medes-ui@1.13.0 > Latest version'},
+    {docType: 'angular', attribute: 'language', value: 'Spesific string, options are:<br/><i>\'html\' | \'markup\' | \'javascript\' | \'typescript\' | \'java\' | \'css\' | \'sass\' | \'scss\' | \'ruby\' | \'swift\' | \'sql\' | \'python\'</i> ', default: '', description: 'Language type to show as prevew code',version: 'medes-ui@1.13.0 > Latest version'},
+    {docType: 'angular', attribute: 'heightHighlight?', value: 'number', default: '∞', description: 'Maximal height', version: 'medes-ui@1.14.1 > Latest version'}
   ];
 
   importModuleCode = `

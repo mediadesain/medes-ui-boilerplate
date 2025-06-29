@@ -16,11 +16,11 @@
             <div class="x-100 flex-x flex-nowarp">
                 <div class="x-100 m-x-r-1">
                     <label class="txt-darker">Class Names</label>
-                    <input type="text" placeholder="ex type: txt-negative" [(ngModel)]="myClass" (ngModelChange)="componentCode = this.reGenerateCode()"/>
+                    <input type="text" placeholder="ex type: txt-negative" [(ngModel)]="myClass" (ngModelChange)="this.reGenerateCode()"/>
                 </div>
                 <div class="x-100 m-x-r-1">
                     <label class="txt-darker">Total Decimal</label>
-                    <select class="x-100" [(ngModel)]="mdsFormModel.configs.mdsInputNumber.totalDecimal" (ngModelChange)="componentCode = this.reGenerateCode()">
+                    <select class="x-100" [(ngModel)]="mdsFormModel.configs.mdsInputNumber.totalDecimal" (ngModelChange)="this.reGenerateCode()">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="x-100">
                     <label>Enable/Disable</label>
-                    <button class="btn-swatch-a x-100" (click)="mdsFormModel.configs.mdsInputNumber.isDisabled = !mdsFormModel.configs.mdsInputNumber.isDisabled; componentCode = this.reGenerateCode()">
+                    <button class="btn-swatch-a x-100" (click)="mdsFormModel.configs.mdsInputNumber.isDisabled = !mdsFormModel.configs.mdsInputNumber.isDisabled; this.reGenerateCode()">
                         {{ mdsFormModel.configs.mdsInputNumber.isDisabled ? 'Enable' : 'Disable' }}
                     </button>
                 </div>
@@ -44,11 +44,11 @@
 <h3>Code Generate:</h3>
 <div class="mds-grid">
     <div class="g-l-50">
-        <b>Component</b>
+        <b>mds-app.component.ts</b>
         <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
     </div>
     <div class="g-l-50">
-        <b>HTML</b>
+        <b>mds-app.component.html</b>
         <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
     </div>
 </div>
@@ -84,8 +84,8 @@
 
 <mds-modal id="my-modal-1">
     <div class="modal-body p-1">
-        <h3 class="p-y-b1">Interface Detail</h3>
+        <h3 class="p-y-b-1">Interface Detail</h3>
         <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
-        <button class="btn-swatch-a" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
+        <button class="btn-swatch-a m-y-b-1" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
     </div>
 </mds-modal>

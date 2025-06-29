@@ -8,9 +8,14 @@ import { Component } from '@angular/core';
 export class HowToInstallComponent {
   importCss = `
 /*-- MedesUI --*/
-@import \'../node_modules/medes-ui/assets/scss/medes-ui.scss\';
-@import \'../node_modules/medes-ui/assets/scss/ui-colorscheme.scss\';
-// Add your own custom color scheme - https://doc.mediadesain.com/introduction/color-scheme`;
+@import \'../node_modules/@mediadesain/core/assets/css/medes-ui.css\';
+@import \'../node_modules/@mediadesain/core/assets/css/ui-colorscheme.css\';
+/* Add your own custom color scheme - https://doc.mediadesain.com/introduction/color-scheme */`
+  importScss = `
+/*-- MedesUI --*/
+@import \'../node_modules/@mediadesain/core/assets/scss/medes-ui.scss\';
+@import \'../node_modules/@mediadesain/core/assets/scss/ui-colorscheme.scss\';
+/* Add your own custom color scheme - https://doc.mediadesain.com/introduction/color-scheme */`
 
   // constructor() { }
 

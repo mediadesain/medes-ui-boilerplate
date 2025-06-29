@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
+import { LibraryTypeService } from 'src/app/shared/library-type.service';
 import { MdsFilterModel }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-*/ from '@mediadesain/core';
+//*-private-*/ from 'projects/medes-ui/src/public-api';
 import { MdsFilterRangeSliderComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService }
-//*-public-mode-*/ from 'medes-ui-angular';
-/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
+/*-public-*/ from '@mediadesain/angular';
+//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
   selector: 'mds-demo-filter-range-slider',
@@ -30,20 +31,20 @@ export class DemoFilterRangeSliderComponent {
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: 'medes-ui@1.18.0 > Latest version'},
-    {attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0 > Latest version'},
-    {attribute: 'disabled?', type: 'boolean', default: 'false', description: 'For disabling filter range slider', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'}
+    {docType: 'angular', attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: 'medes-ui@1.18.0 > Latest version'},
+    {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0 > Latest version'},
+    {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'For disabling filter range slider', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'}
   ]
   tableContentDeprecated = [
-    {attribute: 'start', type: 'number', default: '∞', description: 'Starting point of range selection. If selected start range less than min value will be set as min value', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
-      {attribute: 'end', type: 'number', default: '∞', description: 'End point of range selection. If selected end range more than max value will be set as max value', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
-      {attribute: 'min?', type: 'number', default: '0', description: 'Range Minimal', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
-      {attribute: 'max?', type: 'number', default: '1000', description: 'Range Miximal', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
-      {attribute: 'label?', type: 'string', default: '\'Filter by Range\'', description: 'Filter by range title', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
-      {attribute: 'reset?', type: 'string', default: '✕', description: 'Content of reset group filter, html readeable.', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'}
+    {docType: 'angular', attribute: 'start', type: 'number', default: '∞', description: 'Starting point of range selection. If selected start range less than min value will be set as min value', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
+      {docType: 'angular', attribute: 'end', type: 'number', default: '∞', description: 'End point of range selection. If selected end range more than max value will be set as max value', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
+      {docType: 'angular', attribute: 'min?', type: 'number', default: '0', description: 'Range Minimal', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
+      {docType: 'angular', attribute: 'max?', type: 'number', default: '1000', description: 'Range Miximal', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
+      {docType: 'angular', attribute: 'label?', type: 'string', default: '\'Filter by Range\'', description: 'Filter by range title', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
+      {docType: 'angular', attribute: 'reset?', type: 'string', default: '✕', description: 'Content of reset group filter, html readeable.', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'}
   ];
 
-  constructor(public mdsModalService: MdsModalService){
+  constructor(public mdsModalService: MdsModalService, public libraryTypeService: LibraryTypeService){
     // model
     this.mdsFilterModel = {
       configs: {
@@ -57,7 +58,7 @@ export class DemoFilterRangeSliderComponent {
       }
     }
     this.isDisabled = false;
-    this.componentCode = this.reGenerateCode();
+    this.reGenerateCode(); 
     this.interfaceCode = MdsFilterModelCode.geModel('rangeSlider');
   }
 
@@ -65,8 +66,9 @@ export class DemoFilterRangeSliderComponent {
     this.mdsModalService.trigger(id);
   }
 
-  reGenerateCode(): string {
-      const importMdsUi = 'MdsFilterModule, MdsFilterModel';
+  reGenerateCode(): void {
+      const importMdsCore = 'MdsFilterModel';
+      const importMdsAngular = 'MdsFilterModule';
       const imports = 'MdsFilterModule';
       const valuesComponent = `// data
     sampledata: ProductDataModel[] = SampleProductsData.data;
@@ -82,7 +84,7 @@ export class DemoFilterRangeSliderComponent {
         }
       }
     }`
-      return constructComponentCode(importMdsUi, imports, '', valuesComponent)
+      this.componentCode = constructComponentCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
     }
 
   expandCollapseModel(): void {

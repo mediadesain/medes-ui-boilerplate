@@ -17,7 +17,7 @@
 <!-- Modal with data binding changes -->
 <mds-modal id="custom-modal-1">
     <div class="modal-body p-1">
-        <h3 class="p-y-b1">Modal with databinding changes</h3>
+        <h3 class="p-y-b-1">Modal with databinding changes</h3>
         <p>Home page text:</p>
         <div class="x-100 flex-x">
             <textarea type="text" [(ngModel)]="bodyText" style="width: 100%; height: 70px;"></textarea>
@@ -28,7 +28,7 @@
 <!-- Modal size configuration -->
 <mds-modal id="custom-modal-2" [model]="mdsModalModel2Config">
     <div class="modal-body p-1">
-        <h3 class="p-y-b1">A Custom Modal!</h3>
+        <h3 class="p-y-b-1">A Custom Modal!</h3>
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
         <select [(ngModel)]="mdsModalModel2Config.configs.modalWidth">
             <option>small</option>
@@ -62,7 +62,7 @@
 <!-- Hide close button & disable closing via backdrop  -->
 <mds-modal id="custom-modal-4" [model]="mdsModalModel4Config">
     <div class="modal-body p-2">
-        <h3 class="p-y-b1">Hide Close Button Modal & disable closing via backdrop!</h3>
+        <h3 class="p-y-b-1">Hide Close Button Modal & disable closing via backdrop!</h3>
         <p>Close button on top corner is hidding if use <code class="command">hideCloseButton: true</code></p>
         <p>Try click backdrop, now is unclosable if use <code class="command">disableCloseBackdrop: true</code></p>
         <button class="btn-swatch-b" (click)="closeModal('custom-modal-4');">The Custom Close Button</button>

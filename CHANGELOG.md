@@ -1,4 +1,4 @@
-### 1.17.1 (Release - 250624)
+### 1.18.0 (Release - 250624)
 - Refactor - Angular Components input. Minimalize using multiple Input and use single object oriented and parse to child component
 - Refactor - Input model for Modal Component
 - Refactor - Input model for Filter Components

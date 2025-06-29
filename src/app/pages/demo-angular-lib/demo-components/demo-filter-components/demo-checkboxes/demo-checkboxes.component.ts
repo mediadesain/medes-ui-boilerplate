@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
+import { LibraryTypeService } from 'src/app/shared/library-type.service';
 import { MdsFilterModel }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-*/ from '@mediadesain/core';
+//*-private-*/ from 'projects/medes-ui/src/public-api';
 import { MdsFilterCheckboxComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService }
-//*-public-mode-*/ from 'medes-ui-angular';
-/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
+/*-public-*/ from '@mediadesain/angular';
+//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
   selector: 'mds-demo-checkboxes',
@@ -33,21 +34,21 @@ export class DemoCheckboxesComponent {
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: 'medes-ui@1.18.0 > Latest version'},
-    {attribute: 'data', type: 'Array<any>', default: '∞', description: 'Sample data for create multiple filter checkbox', version: 'medes-ui@1.18.0 > Latest version'},
-    {attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0 > Latest version'}
+    {docType: 'angular', attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: 'medes-ui@1.18.0 > Latest version'},
+    {docType: 'angular', attribute: 'data', type: 'Array<any>', default: '∞', description: 'Sample data for create multiple filter checkbox', version: 'medes-ui@1.18.0 > Latest version'},
+    {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0 > Latest version'}
   ]
   tableContentDeprecated = [
-    {attribute: 'filterData', type: 'Array<any>', default: '∞', description: 'Sample data for create multiple filter checkbox. On newer renamed to data', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
-    {attribute: 'filterBy', type: 'string', default: '∞', description: 'Newer version only support string value, value is property/key', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
-    {attribute: 'filterSelected', type: 'Object', default: '∞', description: 'List of selected filter', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
-    {attribute: 'titlegroup?', type: 'string', default: 'Filter by', description: 'Prefix of label text of group', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
-    {attribute: 'reset?', type: 'string', default: '✕', description: 'Content of reset group filter, html readeable.', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
-    {attribute: 'hideCounter?', type: 'boolean', default: 'false', description: 'Show/hide counter item. Or delete the attribute by default will showing', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'}
+    {docType: 'angular', attribute: 'filterData', type: 'Array<any>', default: '∞', description: 'Sample data for create multiple filter checkbox. On newer renamed to data', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'filterBy', type: 'string', default: '∞', description: 'Newer version only support string value, value is property/key', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'filterSelected', type: 'Object', default: '∞', description: 'List of selected filter', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'titlegroup?', type: 'string', default: 'Filter by', description: 'Prefix of label text of group', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'reset?', type: 'string', default: '✕', description: 'Content of reset group filter, html readeable.', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'hideCounter?', type: 'boolean', default: 'false', description: 'Show/hide counter item. Or delete the attribute by default will showing', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'}
   ];
 
 
-  constructor(public mdsModalService: MdsModalService){
+  constructor(public mdsModalService: MdsModalService, public libraryTypeService: LibraryTypeService){
     // Sample Data
     this.sampledata = SampleProductsData.data;
     // Filter Model
@@ -61,7 +62,7 @@ export class DemoCheckboxesComponent {
         }
       }
     }
-    this.componentCode = this.reGenerateCode();
+    this.reGenerateCode(); 
     this.interfaceCode = MdsFilterModelCode.geModel('checkBox');
   }
 
@@ -79,8 +80,9 @@ export class DemoCheckboxesComponent {
     }
   }
   
-  reGenerateCode(): string {
-    const importMdsUi = 'MdsFilterModule, MdsFilterModel';
+  reGenerateCode(): void {
+    const importMdsCore = 'MdsFilterModel';
+    const importMdsAngular = 'MdsFilterModule';
     const imports = 'MdsFilterModule';
     const valuesComponent = `// data
   sampledata: ProductDataModel[] = SampleProductsData.data;
@@ -95,7 +97,7 @@ export class DemoCheckboxesComponent {
       }
     }
   }`
-    return constructComponentCode(importMdsUi, imports, '', valuesComponent)
+    this.componentCode = constructComponentCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
   }
 
   updateProp(prop: string): void {

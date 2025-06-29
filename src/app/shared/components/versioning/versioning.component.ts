@@ -5,4 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './versioning.component.html',
   styleUrls: ['./versioning.component.scss']
 })
-export class VersioningComponent {}
+export class VersioningComponent {
+  showVesion2 = false;
+  showVesion1 = true;
+}

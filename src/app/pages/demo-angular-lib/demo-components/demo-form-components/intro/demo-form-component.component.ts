@@ -1,9 +1,10 @@
 import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { LibraryTypeService } from 'src/app/shared/library-type.service';
 import { MdsHightlightPrismModule, MdsFormModule }
-//*-public-mode-*/ from 'medes-ui-angular';
-/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
+/*-public-*/ from '@mediadesain/angular';
+//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
   selector: 'mds-demo-form-component',
@@ -15,13 +16,16 @@ import { MdsHightlightPrismModule, MdsFormModule }
 export class DemoFormComponent implements AfterContentChecked {
   isActive: boolean;
   price: number;
-  constructor(private cdr: ChangeDetectorRef){
+  constructor(private cdr: ChangeDetectorRef, public libraryTypeService: LibraryTypeService){
     this.isActive = true;
     this.price = 1549999.999
   }
 pageNavigationComponent = `
 <!-- Medes Toggle Component -->
 <mds-toggle-button [(value)]="isActive"></mds-toggle-button>`;
+jsxPageNavigationComponent = `
+{/* Medes Toggle Component */}
+<MdsToggleButtonComponent value={isActive} valueChange={(value: boolean) => setIsActive(value)}></MdsToggleButtonComponent>`;
 pageCounterComponent = `
 <div class="flex-vertical">
     <div class="flex-vertical margin-b-1">

@@ -24,7 +24,7 @@
             <div class="x-100 flex-x flex-nowarp">
                 <div class="x-100 m-x-r-1">
                     <label class="txt-darker">Type</label>
-                    <select class="x-100" [(ngModel)]="pageNavModel.configs.pageNavigation.type" (ngModelChange)="componentCode = this.reGenerateCode()">
+                    <select class="x-100" [(ngModel)]="pageNavModel.configs.pageNavigation.type" (ngModelChange)="this.reGenerateCode()">
                         <option>numbering</option>
                         <option>standard</option>
                     </select>
@@ -32,7 +32,7 @@
                 @if (pageNavModel.configs.pageNavigation.type === 'numbering') {
                     <div class="x-100 m-x-r-1">
                         <label class="txt-darker">Color Sheme</label>
-                        <select class="x-100" [(ngModel)]="pageNavModel.configs.pageNavigation.color" (ngModelChange)="componentCode = this.reGenerateCode()">
+                        <select class="x-100" [(ngModel)]="pageNavModel.configs.pageNavigation.color" (ngModelChange)="this.reGenerateCode()">
                             <option>swatch-a</option>
                             <option>swatch-b</option>
                             <option>swatch-c</option>
@@ -51,11 +51,11 @@
 <h2>Code</h2>
 <div class="mds-grid">
     <div class="g-l-50">
-        <b>Component</b>
+        <b>mds-app.component.ts</b>
         <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
     </div>
     <div class="g-l-50">
-        <b>HTML</b>
+        <b>mds-app.component.html</b>
         <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
     </div>
 </div>
@@ -83,33 +83,34 @@
         </tr>
     }
 </table>
-<small>
-<a href="javascript:void(0)" (click)="showDeprecated = !showDeprecated">{{!showDeprecated ? 'Show' : 'Hide'}} deprecated</a>
-</small>
-@if (showDeprecated) {
-    <table class="table-properties mds-table">
-        <!--<span class=\'new-beadge m-x-l-1\'>New</span>-->
-        <tr>
-            <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
-        </tr>
-        @for (item of tableContentDeprecated; track $index) {
+
+@if (tableContentDeprecated.length > 0) {
+    <small><a href="javascript:void(0)" (click)="showDeprecated = !showDeprecated">{{!showDeprecated ? 'Show' : 'Hide'}} deprecated</a></small>
+    @if (showDeprecated) {
+        <table class="table-properties mds-table">
+            <!--<span class=\'new-beadge m-x-l-1\'>New</span>-->
             <tr>
-                <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
-                <td mds-th-title="Data Type">
-                    @if (item.type === 'PageNavigationModel') {
-                        <strike>{{item.type}}</strike>
-                    } @else {
-                        {{item.type}}
-                    }
-                </td>
-                <td mds-th-title="Default">{{item.default}}</td>
-                <td mds-th-title="Description">{{item.description}}</td>
-                <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+                <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
             </tr>
-        }
-    </table>
+            @for (item of tableContentDeprecated; track $index) {
+                <tr>
+                    <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
+                    <td mds-th-title="Data Type">
+                        @if (item.type === 'PageNavigationModel') {
+                            <strike>{{item.type}}</strike>
+                        } @else {
+                            {{item.type}}
+                        }
+                    </td>
+                    <td mds-th-title="Default">{{item.default}}</td>
+                    <td mds-th-title="Description">{{item.description}}</td>
+                    <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+                </tr>
+            }
+        </table>
+    }
+    <br/><br/>
 }
-<br/><br/>
 
 <small>
     <b>Notes:</b>
@@ -119,10 +120,10 @@
 
 <mds-modal id="my-modal-1">
     <div class="modal-body p-1">
-        <h3 class="p-y-b1">Interface Detail</h3>
+        <h3 class="p-y-b-1">Interface Detail</h3>
         <div class="x-100">
             <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
-            <button class="btn-swatch-a" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
+            <button class="btn-swatch-a m-y-b-1" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
         </div>
     </div>
 </mds-modal>

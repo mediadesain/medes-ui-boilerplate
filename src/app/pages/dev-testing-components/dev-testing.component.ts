@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { ReactWrapperComponent } from 'src/app/shared/components/react-wrapper/react-wrapper.component';
 
 import { MdsFormModel }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+//*-public-*/ from '@mediadesain/core';
+/*-private-*/ from 'projects/medes-ui/src/public-api';
 import { MdsFormModule }
-//*-public-mode-*/ from 'medes-ui-angular';
-/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
+//*-public-*/ from '@mediadesain/angular';
+/*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
   selector: 'mds-dev-testing',

@@ -90,14 +90,24 @@
 </div>
 
 
-<h3>Code Generate:</h3>
+<div class="flex-x justify-between">
+    <h3>Code Generate: </h3>
+    <h3 class="lib-type">
+        <span [ngClass]="libraryTypeService.selected === 'angular' ? 'txt-swatch-a' : 'txt-lighter'" style="margin-right: 7px;">
+            <i (click)="libraryTypeService.setType('angular')" class="fab fa-angular"></i>
+        </span>
+        <span [ngClass]="libraryTypeService.selected === 'react' ? 'txt-swatch-a' : 'txt-lighter'">
+            <i (click)="libraryTypeService.setType('react')" class="fab fa-react"></i>
+        </span>
+    </h3>
+</div>
 <div class="mds-grid">
     <div class="g-m-50">
-        <b>Component</b>
+        <b>mds-app.component.ts</b>
         <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
     </div>
     <div class="g-m-50">
-        <b>HTML</b>
+        <b>mds-app.component.html</b>
         <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
     </div>
 </div>
@@ -125,27 +135,29 @@
         </tr>
     }
 </table>
-<small>
-<a href="javascript:void(0)" (click)="showDeprecated = !showDeprecated">{{!showDeprecated ? 'Show' : 'Hide'}} deprecated</a>
-</small>
-@if (showDeprecated) {
-    <table class="table-properties mds-table">
-        <!--<span class=\'new-beadge m-x-l-1\'>New</span>-->
-        <tr>
-            <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
-        </tr>
-        @for (item of tableContentDeprecated; track $index) {
+
+@if (tableContentDeprecated.length > 0) {
+    <small><a href="javascript:void(0)" (click)="showDeprecated = !showDeprecated">{{!showDeprecated ? 'Show' : 'Hide'}} deprecated</a></small>
+    @if (showDeprecated) {
+        <table class="table-properties mds-table">
+            <!--<span class=\'new-beadge m-x-l-1\'>New</span>-->
             <tr>
-                <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
-                <td mds-th-title="Data Type" [innerHTML]="item.type"></td>
-                <td mds-th-title="Default">{{item.default}}</td>
-                <td mds-th-title="Description">{{item.description}}</td>
-                <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+                <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
             </tr>
-        }
-    </table>
+            @for (item of tableContentDeprecated; track $index) {
+                <tr>
+                    <td mds-th-title="Attribute" class="deprecated" [innerHTML]="item.attribute"></td>
+                    <td mds-th-title="Data Type" [innerHTML]="item.type"></td>
+                    <td mds-th-title="Default">{{item.default}}</td>
+                    <td mds-th-title="Description">{{item.description}}</td>
+                    <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+                </tr>
+            }
+        </table>
+    }
+    <br/><br/>
 }
-<br/><br/>
+
 
 <small>
     <b>Notes:</b>
@@ -155,7 +167,7 @@
 
 <mds-modal id="my-modal-1">
     <div class="modal-body p-1">
-        <h3 class="p-y-b1">Interface Detail</h3>
+        <h3 class="p-y-b-1">Interface Detail</h3>
         <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
     </div>
 </mds-modal>

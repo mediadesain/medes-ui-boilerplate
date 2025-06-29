@@ -5,12 +5,13 @@ import { DemoModalChildComponent } from './demo-modal-child/demo-modal-child.com
 import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 import { htmlCode, htmlCode2, interfaceCode } from './modal-component-preview-code';
 import { FormsModule } from '@angular/forms';
+import { LibraryTypeService } from 'src/app/shared/library-type.service';
 import { MdsModalModel }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-*/ from '@mediadesain/core';
+//*-private-*/ from 'projects/medes-ui/src/public-api';
 import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
-//*-public-mode-*/ from 'medes-ui-angular';
-/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
+/*-public-*/ from '@mediadesain/angular';
+//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 
 @Component({
@@ -42,19 +43,19 @@ export class DemoModalComponent {
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {attribute: 'id', type: 'string', default: '∞', description: 'id modal is required for identify which modal to trigger', version: 'medes-ui@1.18.0 > Latest version'},
-    {attribute: 'model?', type: 'MdsModalModel', default: '∞', description: 'Modal configuratuin', version: 'medes-ui@1.18.0 > Latest version'}
+    {docType: 'angular', attribute: 'id', type: 'string', default: '∞', description: 'id modal is required for identify which modal to trigger', version: 'medes-ui@1.18.0 > Latest version'},
+    {docType: 'angular', attribute: 'model?', type: 'MdsModalModel', default: '∞', description: 'Modal configuratuin', version: 'medes-ui@1.18.0 > Latest version'}
   ];
   tableContentDeprecated = [
-    {attribute: 'modalWidth?', type: 'string of option: <i>\'small\' | \'medium\' | \'large\' | \'fullscreen\'</i> or number', default: '\'medium\'', description: 'Width of modal by default is medium (700px) but posible with custom width. If set as \'fullscreen\' wil set height & width fullscreen', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
-    {attribute: 'marginTop?', type: 'number', default: '44', description: 'Padding top modal', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
-    {attribute: 'marginBottom?', type: 'number', default: '44', description: 'Padding bottom modal', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
-    {attribute: 'borderRadius?', type: 'number', default: '5', description: 'Border radius size', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
-    {attribute: 'hideCloseButton?', type: 'boolean', default: 'false', description: 'Visibility of close button', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
-    {attribute: 'disableCloseBackdrop?', type: 'boolean', default: 'false', description: 'Disable closing modal if clicking backdrop', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'modalWidth?', type: 'string of option: <i>\'small\' | \'medium\' | \'large\' | \'fullscreen\'</i> or number', default: '\'medium\'', description: 'Width of modal by default is medium (700px) but posible with custom width. If set as \'fullscreen\' wil set height & width fullscreen', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'marginTop?', type: 'number', default: '44', description: 'Padding top modal', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'marginBottom?', type: 'number', default: '44', description: 'Padding bottom modal', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'borderRadius?', type: 'number', default: '5', description: 'Border radius size', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'hideCloseButton?', type: 'boolean', default: 'false', description: 'Visibility of close button', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'disableCloseBackdrop?', type: 'boolean', default: 'false', description: 'Disable closing modal if clicking backdrop', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
   ];
 
-  constructor(public mdsModalService: MdsModalService) {
+  constructor(public mdsModalService: MdsModalService, public libraryTypeService: LibraryTypeService) {
     this.reGenerateCode();
   }
 
@@ -63,7 +64,8 @@ export class DemoModalComponent {
   }
 
   reGenerateCode(): void {
-    const importMdsUi = 'MdsModalModule, MdsModalModel, MdsModalService';
+    const importMdsCore = 'MdsModalModel';
+    const importMdsAngular = 'MdsModalModule, MdsModalService';
     const imports = 'MdsModalModule';
     const valuesComponent = `// model
   mdsModalModelConfig: MdsModalModel = {
@@ -82,7 +84,7 @@ export class DemoModalComponent {
   openModal(id: string): void {
     this.mdsModalService.trigger(id);
   }`
-    this.componentCode = constructComponentCode(importMdsUi, imports, '', valuesComponent);
+    this.componentCode = constructComponentCode(importMdsCore, importMdsAngular, imports, '', valuesComponent);
     this.htmlCode = this.showHeaderFooter ? htmlCode : htmlCode2;
     this.interfaceCode = interfaceCode;
   }

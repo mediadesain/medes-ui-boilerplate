@@ -17,14 +17,14 @@
             <div class="x-100 flex-x flex-nowarp">
                 <div class="x-100 m-x-r-1">
                     <label class="txt-darker">Type</label>
-                    <select class="x-100" [(ngModel)]="mdsFormModel.configs.mdsToggle.type" (ngModelChange)="componentCode = this.reGenerateCode()">
+                    <select class="x-100" [(ngModel)]="mdsFormModel.configs.mdsToggle.type" (ngModelChange)="this.reGenerateCode()">
                         <option>clasic</option>
                         <option>modern</option>
                     </select>
                 </div>
                 <div class="x-100 m-x-r-1">
                     <label class="txt-darker">Color Sheme</label>
-                    <select class="x-100" [(ngModel)]="mdsFormModel.configs.mdsToggle.color" (ngModelChange)="componentCode = this.reGenerateCode()">
+                    <select class="x-100" [(ngModel)]="mdsFormModel.configs.mdsToggle.color" (ngModelChange)="this.reGenerateCode()">
                         <option value="">Default</option>
                         <option>swatch-a</option>
                         <option>swatch-b</option>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="x-100">
                     <label>Enable/Disable</label>
-                    <button class="btn-swatch-a x-100" (click)="mdsFormModel?.configs.mdsToggle.isDisabled = !mdsFormModel.configs.mdsToggle.isDisabled; componentCode = this.reGenerateCode()">
+                    <button class="btn-swatch-a x-100" (click)="mdsFormModel?.configs.mdsToggle.isDisabled = !mdsFormModel.configs.mdsToggle.isDisabled; this.reGenerateCode()">
                         {{mdsFormModel?.configs.mdsToggle.isDisabled ? 'Enable' : 'Disable'}}
                     </button>
                 </div>
@@ -42,16 +42,34 @@
     </div>
 </div>
 
-<h3>Code Generate:</h3>
+<div class="flex-x justify-between">
+    <h3>Code Generate: </h3>
+    <h3 class="lib-type">
+        <span [ngClass]="libraryTypeService.selected === 'angular' ? 'txt-swatch-a' : 'txt-lighter'" style="margin-right: 7px;">
+            <i (click)="libraryTypeService.setType('angular')" class="fab fa-angular"></i>
+        </span>
+        <span [ngClass]="libraryTypeService.selected === 'react' ? 'txt-swatch-a' : 'txt-lighter'">
+            <i (click)="libraryTypeService.setType('react')" class="fab fa-react"></i>
+        </span>
+    </h3>
+</div>
+
 <div class="mds-grid">
-    <div class="g-l-50">
-        <b>Component</b>
-        <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
-    </div>
-    <div class="g-l-50">
-        <b>HTML</b>
-        <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
-    </div>
+    @if (libraryTypeService.selected === 'angular') {
+        <div class="g-l-50">
+            <b>mds-app.component.ts</b>
+            <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
+        </div>
+        <div class="g-l-50">
+            <b>mds-app.component.html</b>
+            <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
+        </div>
+    } @else {
+        <div class="g-l-12">
+            <b>mds-app.tsx</b>
+            <mds-hightlight-prism [code]="jsxComponentCode" language="tsx"></mds-hightlight-prism>
+        </div>
+    }
 </div>
 
 <b>Properties</b>
@@ -61,19 +79,21 @@
         <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
     @for (item of tableContent; track $index) {
-        <tr>
-            <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
-            <td mds-th-title="Data Type">
-                @if (item.type === 'MdsFormModel') {
-                    <a (click)="openModal('my-modal-1')">{{item.type}}</a>
-                } @else {
-                    {{item.type}}
-                }
-            </td>
-            <td mds-th-title="Default">{{item.default}}</td>
-            <td mds-th-title="Description">{{item.description}}</td>
-            <td mds-th-title="Support version" [innerHtml]="item.version"></td>
-        </tr>
+        @if (libraryTypeService.selected === item.docType) {
+            <tr>
+                <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
+                <td mds-th-title="Data Type">
+                    @if (item.type === 'MdsFormModel') {
+                        <a (click)="openModal('my-modal-1')">{{item.type}}</a>
+                    } @else {
+                        {{item.type}}
+                    }
+                </td>
+                <td mds-th-title="Default">{{item.default}}</td>
+                <td mds-th-title="Description">{{item.description}}</td>
+                <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+            </tr>
+        }
     }
 </table>
 <small>
@@ -84,8 +104,8 @@
 
 <mds-modal id="my-modal-1">
     <div class="modal-body p-1">
-        <h3 class="p-y-b1">Interface Detail</h3>
+        <h3 class="p-y-b-1">Interface Detail</h3>
         <mds-hightlight-prism [code]="interfaceCode" language="javascript"></mds-hightlight-prism>
-        <button class="btn-swatch-a" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
+        <button class="btn-swatch-a m-y-b-1" (click)="expandCollapseModel()">{{!showFullInterfaceCode ? 'Show Full' : 'Minimum Config'}}</button>
     </div>
 </mds-modal>

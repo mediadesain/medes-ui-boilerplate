@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
+import { LibraryTypeService } from 'src/app/shared/library-type.service';
 import { MdsFilterModel }
-//*-public-mode-*/  from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-*/  from '@mediadesain/core';
+//*-private-*/ from 'projects/medes-ui/src/public-api';
 import { MdsFilterResetComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService}
-//*-public-mode-*/  from 'medes-ui-angular';
-/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
+/*-public-*/  from '@mediadesain/angular';
+//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
   selector: 'mds-demo-reset-all',
@@ -28,22 +29,22 @@ export class DemoResetAllComponent {
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0  > Latest version'},
-    {attribute: 'customClass?', type: 'string', default: '∞', description: 'Classes list for component itself', version: 'medes-ui@1.18.0  > Latest version'}
+    {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0  > Latest version'},
+    {docType: 'angular', attribute: 'customClass?', type: 'string', default: '∞', description: 'Classes list for component itself', version: 'medes-ui@1.18.0  > Latest version'}
   ]
   tableContentDeprecated = [
-    {attribute: 'filterSelected?', type: 'SelectedFilterInterface', default: '∞', description: 'Filter data selected', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
-    {attribute: 'filterRangeSelected?', type: 'SelectedFilterSliderInterface', default: '∞', description: 'Filter range data selected', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
-    {attribute: 'class?', type: 'String', default: '∞', description: 'Classes list for button', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
-    {attribute: 'content?', type: 'String', default: `'Reset Filter'`, description: 'Label content for reset button', version: 'medes-ui@1.14.1 > medes-ui@1.17.1'}
+    {docType: 'angular', attribute: 'filterSelected?', type: 'SelectedFilterInterface', default: '∞', description: 'Filter data selected', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'filterRangeSelected?', type: 'SelectedFilterSliderInterface', default: '∞', description: 'Filter range data selected', version: 'medes-ui@1.14.3 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'class?', type: 'String', default: '∞', description: 'Classes list for button', version: 'medes-ui@1.13.0 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'content?', type: 'String', default: `'Reset Filter'`, description: 'Label content for reset button', version: 'medes-ui@1.14.1 > medes-ui@1.17.1'}
   ];
   
-  constructor(public mdsModalService: MdsModalService) {
+  constructor(public mdsModalService: MdsModalService, public libraryTypeService: LibraryTypeService) {
     this.mdsFilterModel = {
       configs: {}
     }
 
-    this.componentCode = this.reGenerateCode();
+    this.reGenerateCode(); 
     this.interfaceCode = MdsFilterModelCode.geModel('resetFilter');
   }
   
@@ -61,8 +62,9 @@ export class DemoResetAllComponent {
     }
   }
 
-  reGenerateCode(): string {
-    const importMdsUi = 'MdsFilterModule, MdsFilterModel';
+  reGenerateCode(): void {
+    const importMdsCore = 'MdsFilterModel';
+    const importMdsAngular = 'MdsFilterModule';
     const imports = 'MdsFilterModule';
     const valuesComponent = `// data
   sampledata: ProductDataModel[] = SampleProductsData.data;
@@ -77,7 +79,7 @@ export class DemoResetAllComponent {
       }
     }
   }`
-    return constructComponentCode(importMdsUi, imports, '', valuesComponent)
+    this.componentCode = constructComponentCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
   }
   
 htmlCode = `

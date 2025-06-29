@@ -2,38 +2,69 @@
 <p>Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
 <hr/>
 
-
-<b>Supported Version:</b>
-<p class="m-y-b-0">^x.x.x <i>(Major.Minor.Patch)</i></p>
-<ul class="m-y-t-0">
-    <li>Major version is current version of MedesUI</li>
-    <li>Minor version is angular version used for this library</li>
-    <li>Patch version is related new update feature & bug fix</li>
-</ul>
-<table class="mds-table table-swatch-a">
-    <tr>
-        <th>Version</th><th>Status</th><th>Released</th><th>End LTS</th>
-    </tr>
-    <!--{ version: '^1.13.6', status: 'LTS', released: '2024-09-30', endReleased: '2024-12-31' }, -->
-    @for (item of [
-        { version: '^1.18.0', status: 'Active', released: '2025-06-24', endReleased: '-' },
-        { version: '^1.17.1', status: 'LTS', released: '2025-06-13', endReleased: '2025-09-30' },
-        { version: '^1.16.0', status: 'LTS', released: '2025-06-12', endReleased: '2025-09-30' },
-        { version: '^1.15.3', status: 'LTS', released: '2025-06-10', endReleased: '2025-06-30' },
-        { version: '^1.14.3', status: 'Deprecated', released: '2023-12-05', endReleased: '2024-12-31' }
-    ]; track $index) {
+<b>Version 2 </b> <i>(next release)</i> - <a href="javascript:void(0)" (click)="showVesion2 = !showVesion2">{{!showVesion2 ? 'Show' : 'Hide'}}</a>
+@if (showVesion2) {
+    <p class="m-y-b-0">^2.x.x <i>(Major.Minor.Patch)</i></p>
+    <ul class="m-y-t-0">
+        <li>Major version is current version of MedesUI</li>
+        <li>Minor version is new feature update, no more following angular version. Start version 2 having possibility support angular, react & other stacks.</li>
+        <li>Patch version is related small changes & bug fix</li>
+    </ul>
+    <table class="mds-table table-swatch-a">
         <tr>
-            <td mds-th-title="Version" [innerHTML]="item.version"></td>
-            <td mds-th-title="Status" [innerHTML]="item.status"></td>
-            <td mds-th-title="Released" [innerHTML]="item.released"></td>
-            <td mds-th-title="End LTS" [innerHTML]="item.endReleased"></td>
+            <th>Version</th><th>Status</th><th>Released</th><th>End LTS</th>
         </tr>
-    }
-</table>
-<small>medes-ui v.0.0.1 to v.0.0.3 are no longger supported</small>
+        <!--{ version: '^1.13.6', status: 'LTS', released: '2024-09-30', endReleased: '2024-12-31' }, -->
+        @for (item of [
+            { version: '^2.0.0', status: 'next', released: '2025-07-XX', endReleased: '-' },
+        ]; track $index) {
+            <tr>
+                <td mds-th-title="Version" [innerHTML]="item.version"></td>
+                <td mds-th-title="Status" [innerHTML]="item.status"></td>
+                <td mds-th-title="Released" [innerHTML]="item.released"></td>
+                <td mds-th-title="End LTS" [innerHTML]="item.endReleased"></td>
+            </tr>
+        }
+    </table>
+}
+<hr/>
+
+<b>Version 1 </b> <small><i>(v.1.13.0 - v.1.18.0)</i></small> - <a href="javascript:void(0)" (click)="showVesion1 = !showVesion1">{{!showVesion1 ? 'Show' : 'Hide'}}</a>
+@if (showVesion1) {
+    <p class="m-y-b-0">^1.x.x <i>(Major.Minor.Patch)</i></p>
+    <ul class="m-y-t-0">
+        <li>Major version is current version of MedesUI</li>
+        <li>Minor version is angular version used for this library</li>
+        <li>Patch version is related new update feature & bug fix</li>
+    </ul>
+    <table class="mds-table table-swatch-a">
+        <tr>
+            <th>Version</th><th>Status</th><th>Released</th><th>End LTS</th>
+        </tr>
+        <!--{ version: '^1.13.6', status: 'LTS', released: '2024-09-30', endReleased: '2024-12-31' }, -->
+        @for (item of [
+            { version: '^1.18.0', status: 'Active', released: '2025-06-24', endReleased: '2025-09-30' },
+            { version: '^1.17.1', status: 'LTS', released: '2025-06-13', endReleased: '2025-09-30' },
+            { version: '^1.16.0', status: 'LTS', released: '2025-06-12', endReleased: '2025-09-30' },
+            { version: '^1.15.3', status: 'LTS', released: '2025-06-10', endReleased: '2025-06-30' },
+            { version: '^1.14.3', status: 'Deprecated', released: '2023-12-05', endReleased: '2024-12-31' },
+            { version: '^1.13.4', status: 'Deprecated', released: '2023-11-14', endReleased: '2024-12-31' }
+        ]; track $index) {
+            <tr>
+                <td mds-th-title="Version" [innerHTML]="item.version"></td>
+                <td mds-th-title="Status" [innerHTML]="item.status"></td>
+                <td mds-th-title="Released" [innerHTML]="item.released"></td>
+                <td mds-th-title="End LTS" [innerHTML]="item.endReleased"></td>
+            </tr>
+        }
+    </table>
+}
+<hr/>
+
+<b>Version 0 </b> <small><i>(v.0.0.1 - v.0.0.3 were removed)</i></small>
 <hr/>
 
 <div>
     <b>Need older version document?</b>
-    <p>For older documentation clone this repository, <a href="https://github.com/mediadesain/medes-ui-boilerplate">https://github.com/mediadesain/medes-ui-boilerplate</a> on <i>release/v.1.x.x</i> branch. For branch <i>development/feature-name</i> only accessable by medes team only.</p>
+    <p>For older documentation clone this repository, <a href="https://github.com/mediadesain/medes-ui-boilerplate">https://github.com/mediadesain/medes-ui-boilerplate</a> on <i>released/v.1.x.x</i> branch. For branch <i>development/feature-name</i> only accessable by medes team only.</p>
 </div>

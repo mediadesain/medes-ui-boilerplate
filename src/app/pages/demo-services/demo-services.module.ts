@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { IntroductionRoutingModule } from './demo-services-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MdsHightlightPrismModule }
-//*-public-mode-*/ from 'medes-ui-angular';
-/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
+//*-public-*/ from '@mediadesain/angular';
+/*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @NgModule({
   declarations: [],

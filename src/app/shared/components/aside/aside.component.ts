@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LibraryTypeService } from 'src/app/shared/library-type.service';
 
 @Component({
   selector: 'mds-aside',
@@ -8,8 +9,9 @@ import { Component } from '@angular/core';
 export class AsideComponent {
   isCollapsedVersion: boolean;
   menu: ThreeMenuModel[];
+  menuLib: ThreeMenuModel[];
   
-  constructor() {
+  constructor(public libraryTypeService: LibraryTypeService) {
     this.isCollapsedVersion = true;
     this.menu = [
       {
@@ -44,9 +46,11 @@ export class AsideComponent {
           {text: 'Date', url: '/utils/date'},
           {text: 'Color', url: '/utils/color'}
         ]
-      },
+      }
+    ];
+    this.menuLib = [
       {
-        text: 'Angular Components & Utils',
+        text: 'Components & Libraries',
         urls: [
           {
             text: 'Modal',

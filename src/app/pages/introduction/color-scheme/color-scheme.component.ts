@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MdsColorUtils }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/lib/utils/mds-color-utils';
+//*-public-*/ from '@mediadesain/core';
+/*-private-*/ from 'projects/medes-ui/src/lib/utils/mds-color-utils';
 
 @Component({
   selector: 'mds-color-scheme',

@@ -3,12 +3,13 @@ import { Component } from '@angular/core';
 import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
 import { FormsModule } from '@angular/forms';
 import { MdsFormModelCode } from '../demo-filter-data-model-code';
+import { LibraryTypeService } from 'src/app/shared/library-type.service';
 import { MdsFormModel }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-*/ from '@mediadesain/core';
+//*-private-*/ from 'projects/medes-ui/src/public-api';
 import { MdsHightlightPrismModule, MdsModalService, MdsModalModule, MdsFormModule }
-//*-public-mode-*/ from 'medes-ui-angular';
-/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
+/*-public-*/ from '@mediadesain/angular';
+//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 
 @Component({
@@ -34,14 +35,14 @@ export class DemoInputNumberComponent {
 
   // Properties Detail
   tableContent = [
-    {attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: 'medes-ui@1.15.3 > Latest version'},
-    {attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.15.3 > Latest version'},
-    {attribute: 'customClass?', type: 'string', default: '∞', description: 'Put classes to for styling component', version: 'medes-ui@1.15.3 > Latest version'},
-    {attribute: 'placeholder?', type: 'string', default: '0', description: 'Placeholder for field itself', version: 'medes-ui@1.15.3 > Latest version'},
-    {attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: 'medes-ui@1.15.3 > Latest version'}
+    {docType: 'angular', attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: 'medes-ui@1.15.3 > Latest version'},
+    {docType: 'angular', attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.15.3 > Latest version'},
+    {docType: 'angular', attribute: 'customClass?', type: 'string', default: '∞', description: 'Put classes to for styling component', version: 'medes-ui@1.15.3 > Latest version'},
+    {docType: 'angular', attribute: 'placeholder?', type: 'string', default: '0', description: 'Placeholder for field itself', version: 'medes-ui@1.15.3 > Latest version'},
+    {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: 'medes-ui@1.15.3 > Latest version'}
   ]
 
-  constructor(public mdsModalService: MdsModalService) {
+  constructor(public mdsModalService: MdsModalService, public libraryTypeService: LibraryTypeService) {
     this.price = 23750000.64646;
     this.myClass = '';
     this.mdsFormModel = {
@@ -52,7 +53,7 @@ export class DemoInputNumberComponent {
         }
       }
     }
-    this.componentCode = this.reGenerateCode();
+    this.reGenerateCode(); 
     this.interfaceCode = MdsFormModelCode.geModel('mdsInputNumber');
   }
 
@@ -70,8 +71,9 @@ export class DemoInputNumberComponent {
     this.mdsModalService.trigger(id);
   }
 
-  reGenerateCode(): string {
-    const importMdsUi = 'MdsFormModule, MdsFormModel';
+  reGenerateCode(): void {
+    const importMdsCore = 'MdsFormModel';
+    const importMdsAngular = 'MdsFormModule';
     const imports = 'MdsFormModule';
     const valuesComponent = `// value
   isActive: boolean = true;
@@ -85,7 +87,7 @@ export class DemoInputNumberComponent {
       }
     }
   }`
-    return constructComponentCode(importMdsUi, imports, '', valuesComponent)
+    this.componentCode = constructComponentCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
   }
 
   htmlCode = `

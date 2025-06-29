@@ -1,7 +1,8 @@
-export function constructComponentCode(importMdsUi: string, imports?: string, providers?: string, valuesComponent?: string): string {
+export function constructComponentCode(importMdsCore: string, importMdsAngular: string, imports?: string, providers?: string, valuesComponent?: string): string {
 return `
 import { Component } from '@angular/core';
-import { ${importMdsUi} } from 'medes-ui';
+import { ${importMdsCore} } from '@mediadesain/core';
+import { ${importMdsAngular} } from '@mediadesain/angular';
 
 @Component({
   selector: 'mds-app',

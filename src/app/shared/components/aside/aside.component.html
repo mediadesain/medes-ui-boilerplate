@@ -1,6 +1,6 @@
 @for (group of menu; track group; let i = $index) {
     <div class="list-group">
-        <b (click)="showHide(group)">{{group.text}}</b> @if (i === 0) { <small> - (v.1.18.0)</small> }
+        <b (click)="showHide(group)">{{group.text}}</b> @if (i === 0) { <small> - (v.2.0.0-beta.1)</small> }
         <ul [style.display]="group.isCollapsed ? 'none' : 'block'">
             <!--[routerLinkActiveOptions]="{exact: true}"-->
             @for (link of group.urls; track $index) {
@@ -24,15 +24,73 @@
         </ul>
     </div>
 }
+
+@for (group of menuLib; track group; let i = $index) {
+    <div class="list-group">
+        <div class="flex-x align-middle justify-between">
+            <b (click)="showHide(group)">{{group.text}}</b>
+            <div class="lib-type" style="font-size: 15px;">
+                <span [ngClass]="libraryTypeService.selected === 'angular' ? 'txt-swatch-a' : 'txt-lighter'" style="margin-right: 7px;">
+                    <i (click)="libraryTypeService.setType('angular')" class="fab fa-angular"></i>
+                </span>
+                <span [ngClass]="libraryTypeService.selected === 'react' ? 'txt-swatch-a' : 'txt-lighter'">
+                    <i (click)="libraryTypeService.setType('react')" class="fab fa-react"></i>
+                </span>
+            </div>
+        </div>
+        <ul [style.display]="group.isCollapsed ? 'none' : 'block'">
+            <!--[routerLinkActiveOptions]="{exact: true}"-->
+            @for (link of group.urls; track $index) {
+                @if (link.text !== 'Pipes') {
+                    <li (click)="resetScroll()">
+                        <a routerLinkActive="active" [routerLink]="link.url" [innerHTML]="link.text"></a>
+                        @if (link.isNew) { <span class="new-beadge" style="position: absolute;">New</span> }
+                        @if (link.urls) {
+                            @if (link.urls) {
+                                <ul class="child">
+                                    @for (childlink of link.urls; track childlink) {
+                                        <li>
+                                            <a routerLinkActive="active" [routerLink]="childlink.url" [routerLinkActiveOptions]="{ exact: false }" [innerHTML]="childlink.text"></a>
+                                            @if (childlink.isNew) { <span class="new-beadge" style="position: absolute;">New</span> }
+                                        </li>
+                                    }
+                                </ul> 
+                            }
+                        }
+                    </li>
+                }
+                @if (link.text === 'Pipes' && libraryTypeService.selected === 'angular') {
+                    <li (click)="resetScroll()">
+                        <a routerLinkActive="active" [routerLink]="link.url" [innerHTML]="link.text"></a>
+                        @if (link.isNew) { <span class="new-beadge" style="position: absolute;">New</span> }
+                        @if (link.urls) {
+                            @if (link.urls) {
+                                <ul class="child">
+                                    @for (childlink of link.urls; track childlink) {
+                                        <li>
+                                            <a routerLinkActive="active" [routerLink]="childlink.url" [routerLinkActiveOptions]="{ exact: false }" [innerHTML]="childlink.text"></a>
+                                            @if (childlink.isNew) { <span class="new-beadge" style="position: absolute;">New</span> }
+                                        </li>
+                                    }
+                                </ul> 
+                            }
+                        }
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+}
+
 <div class="list-group">
     <b (click)="isCollapsedVersion = !isCollapsedVersion">Supported Version</b>
     @if (isCollapsedVersion) {
         <small>
             <ul>
                 <li><a style="color: var(--swatch-a);" routerLink="/versioning">Versioning & Realeses</a></li>
-                <li><a style="color: var(--swatch-a);" target="_blank" href="https://www.npmjs.com/package/medes-ui"><i class="fas fa-external-link-alt"></i> v.1.18.0 <i>(Latest Release)</i></a></li>
+                <li><a style="color: var(--swatch-a);" target="_blank" href="https://www.npmjs.com/package/medes-ui"><i class="fas fa-external-link-alt"></i> v.2.0.0 <i>(Latest Release)</i></a></li>
+                <li><a style="color: var(--swatch-a);" target="_blank" href="https://www.npmjs.com/package/medes-ui"><i class="fas fa-external-link-alt"></i> v.1.18.0 <i>(LTS)</i></a></li>
                 <li><a style="color: var(--swatch-a);" target="_blank" href="https://www.npmjs.com/package/medes-ui/v/1.17.1"><i class="fas fa-external-link-alt"></i> v.1.17.1 <i>(LTS)</i></a></li>
-                <li><a style="color: var(--swatch-a);" target="_blank" href="https://www.npmjs.com/package/medes-ui/v/1.16.0"><i class="fas fa-external-link-alt"></i> v.1.16.0 <i>(LTS)</i></a></li>
                 <li><a style="color: var(--swatch-a);" target="_blank" href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md"><i class="fas fa-external-link-alt"></i> Changelog</a></li>
                 <!-- <li><a style="color: var(--swatch-a);" target="_blank" href="https://github.com/mediadesain/medes-ui-boilerplate/tree/main/dist/medes-ui"><i class="fas fa-external-link-alt"></i> v0.0.4-beta.x <i>(Beta)</i></a></li> -->
             </ul>

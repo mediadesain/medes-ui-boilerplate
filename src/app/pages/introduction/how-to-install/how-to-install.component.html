@@ -4,15 +4,26 @@
 <h3>Follow these step to install MedesUI Library on your project.</h3>
 <ol>
     <li>Make sure <a href="https://nodejs.org/" target="_blank">node.js</a> installed on your computer.</li>
-    <li>Select or cd project want to instal the library. Run on terminal/cmd <code class="command">npm install medes-ui</code>.</li>
+    <li>Select or cd project want to instal the library. Run on terminal/cmd <code class="command">npm install &#64;mediadesain/core</code>.</li>
     <li>Import all of medes-ui stylesheets by following these steps:
         <ul>
-            <li>Import <i>medes-ui.scss</i> & <i>ui-colorscheme.scss</i> stylesheet on main <i>styles.scss</i>.
+            <li>Import <i>medes-ui.css</i> or <i>medes-ui.scss</i> and also <i>ui-colorscheme.css</i> or <i>ui-colorscheme.scss</i> stylesheet on main global styling.<br/>
+                CSS
                 <mds-hightlight-prism [code]="importCss" language="scss"></mds-hightlight-prism>
+                SCSS
+                <mds-hightlight-prism [code]="importScss" language="scss"></mds-hightlight-prism>
             </li>
         </ul>
         <blockquote class="info m-y-1">
             <i>Documentation for creating your own color scheme <a routerLink="/introduction/color-scheme">click here</a>.</i>
         </blockquote>
     </li>
+    <li>Medes Styling Element & Utils Helper script are ready to use.</li>
+</ol>
+
+<hr/>
+<h3>Install MedesUI Libraries to your Project</h3>
+<ol>
+    <li>If will using Angular library like component, service, pipe. Install with running on terminal/cmd <code class="command">npm install &#64;mediadesain/angular</code>.</li>
+    <li>If will use Ract libraries like component & others. Install with running on terminal/cmd <code class="command">npm install &#64;mediadesain/react</code>.</li>
 </ol>

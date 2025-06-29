@@ -5,7 +5,9 @@
 
 ## Next Version
 More detail about the changes writen on [changelog](https://github.com/mediadesain/medes-ui-boilerplate/blob/main/CHANGELOG.md).
-### 1.19.x (Release - 250xxx)
-- MedesUI having some helper, serivce & utils and angular library. Angular libary will be split to another module
-- Will Upgrade to Angular 19
-- Will having react component module 
+### 2.0.x (Release - 250xxx)
+- MedesUI having some helper scripts, serivces & utils and angular library. Angular libary will be split to another module.
+- Update Major Changes to version 2 and create as new package name is `@mediadesain/core`.
+- Script helper, service, utils & Styling move to @mediadesain/angular `npm i @mediadesain/core`.
+- Angular library Created, package name @mediadesain/angular to install run `npm i @mediadesain/angular`.
+- React library Created, package name @mediadesain/react to install run `npm i @mediadesain/react`.

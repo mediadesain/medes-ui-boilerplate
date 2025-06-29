@@ -5,8 +5,9 @@ import { constructComponentCode } from 'src/app/shared/utils/code-preview-genera
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { PageNavigationManagerModelCode } from '../demo-page-navigation-manager-model-code';
 import { MdsHightlightPrismModule, MdsModalModule, MdsModalService, MdsPageManagerModule, PageNavigationManagerModel }
-//*-public-mode-*/ from 'medes-ui-angular';
-/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
+/*-public-*/ from '@mediadesain/angular';
+//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
+import { LibraryTypeService } from 'src/app/shared/library-type.service';
 
 @Component({
   selector: 'mds-demo-page-counter',
@@ -37,17 +38,17 @@ export class DemoPageCounterComponent implements AfterContentChecked {
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0 > Latest version'},
-    {attribute: 'customClass?',type: 'string', default: '∞', description: 'Put your custom class styling', version: 'medes-ui@1.15.1 > Latest version'},
-    {attribute: 'customStyle?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: 'medes-ui@1.15.1 > Latest version'}
+    {docType: 'angular', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0 > Latest version'},
+    {docType: 'angular', attribute: 'customClass?',type: 'string', default: '∞', description: 'Put your custom class styling', version: 'medes-ui@1.15.1 > Latest version'},
+    {docType: 'angular', attribute: 'customStyle?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: 'medes-ui@1.15.1 > Latest version'}
   ];
   tableContentDeprecated = [
-    {attribute: 'pageNavConfig',type: 'PageNavigationModel', default: '∞', description: 'Configuration of Page Navigation Component, on newer version has been moved to main model', version: 'medes-ui@1.15.1 > medes-ui@1.17.1'},
-    {attribute: 'pageCountConfig',type: 'Array<number>', default: '∞', description: 'Removed, on newer version has been merge to model > page counter configuration options', version: 'medes-ui@1.15.1 > medes-ui@1.17.1'}
+    {docType: 'angular', attribute: 'pageNavConfig',type: 'PageNavigationModel', default: '∞', description: 'Configuration of Page Navigation Component, on newer version has been moved to main model', version: 'medes-ui@1.15.1 > medes-ui@1.17.1'},
+    {docType: 'angular', attribute: 'pageCountConfig',type: 'Array<number>', default: '∞', description: 'Removed, on newer version has been merge to model > page counter configuration options', version: 'medes-ui@1.15.1 > medes-ui@1.17.1'}
   ];
 
-  constructor(public mdsModalService: MdsModalService, private cdr: ChangeDetectorRef) {
-    this.componentCode = this.reGenerateCode();
+  constructor(public mdsModalService: MdsModalService, public libraryTypeService: LibraryTypeService, private cdr: ChangeDetectorRef) {
+    this.reGenerateCode(); 
     this.interfaceCode = PageNavigationManagerModelCode.geModel('pageCounter');
   }
     
@@ -68,8 +69,9 @@ export class DemoPageCounterComponent implements AfterContentChecked {
     this.cdr.detectChanges();
   }
   
-  reGenerateCode(): string {
-    const importMdsUi = 'MdsPageManagerModule, PageNavigationModel';
+  reGenerateCode(): void {
+    const importMdsCore = 'PageNavigationModel';
+    const importMdsAngular = 'MdsPageManagerModule';
     const imports = 'MdsPageManagerModule';
     const valuesComponent = `// model
   pageNavConfig: PageNavigationManagerModel = {
@@ -81,14 +83,14 @@ export class DemoPageCounterComponent implements AfterContentChecked {
       }
     }
   }`
-    return constructComponentCode(importMdsUi, imports, '', valuesComponent)
+    this.componentCode = constructComponentCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
   }
 
   updateTotal($event: number): void {
     const newConfig = Object.assign({}, this.pageNavConfig);
     newConfig.configs.itemToShow = $event;
     this.pageNavConfig = newConfig;
-    this.componentCode = this.reGenerateCode();
+    this.reGenerateCode(); 
   }
 
 htmlCode = `

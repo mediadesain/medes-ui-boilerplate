@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsFilterModel }
-//*-public-mode-*/ from 'medes-ui';
-/*-dev-mode-*/ from 'projects/medes-ui/src/public-api';
+/*-public-*/ from '@mediadesain/core';
+//*-private-*/ from 'projects/medes-ui/src/public-api';
 import { MdsHightlightPrismModule, MdsFilterModule }
-//*-public-mode-*/ from 'medes-ui-angular';
-/*-dev-mode-*/ from 'projects/medes-ui-angular/src/public-api';
+/*-public-*/ from '@mediadesain/angular';
+//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
   selector: 'mds-demo-filter-components',

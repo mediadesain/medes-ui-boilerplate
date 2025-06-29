@@ -7,7 +7,17 @@
 <p>Put sample data & configuration to component.</p>
 <hr/>
 
-<h2 class="m-y-b-1">Overview of Medes Form Components</h2>
+<div class="flex-x justify-between align-middle m-y-b-1">
+    <h2>Overview of Medes Form Components</h2>
+    <h3 class="lib-type">
+        <span [ngClass]="libraryTypeService.selected === 'angular' ? 'txt-swatch-a' : 'txt-lighter'" style="margin-right: 7px;">
+            <i (click)="libraryTypeService.setType('angular')" class="fab fa-angular"></i>
+        </span>
+        <span [ngClass]="libraryTypeService.selected === 'react' ? 'txt-swatch-a' : 'txt-lighter'">
+            <i (click)="libraryTypeService.setType('react')" class="fab fa-react"></i>
+        </span>
+    </h3>
+</div>
 
 <p>Sample all of Form components:</p>
 
@@ -17,7 +27,13 @@
         <!-- Medes Toggle Component -->
         <mds-toggle-button [(value)]="isActive"></mds-toggle-button>
     </div>
-    <div class="g-l-70"><mds-hightlight-prism [code]="pageNavigationComponent" language="html"></mds-hightlight-prism></div>
+    <div class="g-l-70">
+        @if (libraryTypeService.selected === 'angular') {
+            <mds-hightlight-prism [code]="pageNavigationComponent" language="html"></mds-hightlight-prism>
+        } @else {
+            <mds-hightlight-prism [code]="jsxPageNavigationComponent" language="tsx"></mds-hightlight-prism>
+        }
+    </div>
     <div class="g-l-12"><small><a routerLink="/angular-lib/form-components/toggle">More Info</a></small></div>
 </div>
 <hr/>
