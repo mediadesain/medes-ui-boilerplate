@@ -1,13 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
+import { constructAngularCode } from 'src/app/shared/utils/code-preview-generator';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { PageNavigationManagerModelCode } from '../demo-page-navigation-manager-model-code';
-import { MdsHightlightPrismModule, MdsModalModule, MdsModalService, MdsPageManagerModule, PageNavigationManagerModel }
+import { LibraryTypeService } from 'src/app/shared/library-type.service';
+import { PageNavigationManagerModel }
+/*-public-*/ from '@mediadesain/core';
+//*-private-*/ from 'projects/medes-ui/src/public-api';
+import { MdsHightlightPrismModule, MdsModalModule, MdsModalService, MdsPageManagerModule }
 /*-public-*/ from '@mediadesain/angular';
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
-import { LibraryTypeService } from 'src/app/shared/library-type.service';
 
 @Component({
   selector: 'mds-demo-page-counter',
@@ -38,14 +41,11 @@ export class DemoPageCounterComponent implements AfterContentChecked {
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {docType: 'angular', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0 > Latest version'},
-    {docType: 'angular', attribute: 'customClass?',type: 'string', default: '∞', description: 'Put your custom class styling', version: 'medes-ui@1.15.1 > Latest version'},
-    {docType: 'angular', attribute: 'customStyle?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: 'medes-ui@1.15.1 > Latest version'}
+    {docType: 'angular', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration of the component itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'customClass?',type: 'string', default: '∞', description: 'Put your custom class styling', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'customStyle?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: '@mediadesain/angular@2.0.0 > Latest version'}
   ];
-  tableContentDeprecated = [
-    {docType: 'angular', attribute: 'pageNavConfig',type: 'PageNavigationModel', default: '∞', description: 'Configuration of Page Navigation Component, on newer version has been moved to main model', version: 'medes-ui@1.15.1 > medes-ui@1.17.1'},
-    {docType: 'angular', attribute: 'pageCountConfig',type: 'Array<number>', default: '∞', description: 'Removed, on newer version has been merge to model > page counter configuration options', version: 'medes-ui@1.15.1 > medes-ui@1.17.1'}
-  ];
+  tableContentDeprecated = [];
 
   constructor(public mdsModalService: MdsModalService, public libraryTypeService: LibraryTypeService, private cdr: ChangeDetectorRef) {
     this.reGenerateCode(); 
@@ -83,7 +83,7 @@ export class DemoPageCounterComponent implements AfterContentChecked {
       }
     }
   }`
-    this.componentCode = constructComponentCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
+    this.componentCode = constructAngularCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
   }
 
   updateTotal($event: number): void {

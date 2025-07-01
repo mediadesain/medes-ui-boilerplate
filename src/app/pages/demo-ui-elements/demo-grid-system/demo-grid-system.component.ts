@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsHightlightPrismModule }
-//*-public-*/ from '@mediadesain/angular';
-/*-private-*/ from 'projects/medes-ui-angular/src/public-api';
+/*-public-*/ from '@mediadesain/angular';
+//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
   selector: 'mds-demo-grid-system',

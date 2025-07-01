@@ -19,7 +19,7 @@ const routes: Routes = [
     path: 'utils', loadChildren: () => import('./pages/demo-utils/demo-utils.module').then(m => m.DemoUtilsModule)
   },
   {
-    path: 'angular-lib',
+    path: 'libraries',
     loadChildren: () => import('./pages/demo-angular-lib/demo-angular-lib.module').then(m => m.DemoAngularLibModule)
   },
   {

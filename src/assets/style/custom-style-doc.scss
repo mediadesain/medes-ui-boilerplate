@@ -1,5 +1,5 @@
-//*-public-*/ @import "../../../node_modules/@mediadesain/core/assets/scss/layouts/documentation";
-/*-private-*/ @import "../../../projects/medes-ui/assets/scss/layouts/documentation";
+ @import "../../../node_modules/@mediadesain/core/assets/scss/layouts/documentation";
+//*-private-*/ @import "../../../projects/medes-ui/assets/scss/layouts/documentation";
 navbar .logo, mds-navbar .logo { background-image: url('../images//medes-ui.png'); }
 @media (prefers-color-scheme: dark) {
     mds-navbar .logo { background-image: url('../images/medes-ui-dark.png'); }

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
+import { constructAngularCode } from 'src/app/shared/utils/code-preview-generator';
 import { FormsModule } from '@angular/forms';
 import { MdsFormModelCode } from '../demo-filter-data-model-code';
 import { LibraryTypeService } from 'src/app/shared/library-type.service';
@@ -35,12 +35,12 @@ export class DemoInputNumberComponent {
 
   // Properties Detail
   tableContent = [
-    {docType: 'angular', attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: 'medes-ui@1.15.3 > Latest version'},
-    {docType: 'angular', attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.15.3 > Latest version'},
-    {docType: 'angular', attribute: 'customClass?', type: 'string', default: '∞', description: 'Put classes to for styling component', version: 'medes-ui@1.15.3 > Latest version'},
-    {docType: 'angular', attribute: 'placeholder?', type: 'string', default: '0', description: 'Placeholder for field itself', version: 'medes-ui@1.15.3 > Latest version'},
-    {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: 'medes-ui@1.15.3 > Latest version'}
-  ]
+    {docType: 'angular', attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration of the component itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'customClass?', type: 'string', default: '∞', description: 'Put classes to for styling component', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'placeholder?', type: 'string', default: '0', description: 'Placeholder for field itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: '@mediadesain/angular@2.0.0 > Latest version'}
+  ];
 
   constructor(public mdsModalService: MdsModalService, public libraryTypeService: LibraryTypeService) {
     this.price = 23750000.64646;
@@ -82,12 +82,12 @@ export class DemoInputNumberComponent {
   // model
   mdsFormModel: MdsFormModel = {
     configs: {
-      mdsToggle: {
+      mdsInputNumber: {
         ${this.mdsFormModel.configs.mdsInputNumber.totalDecimal ? `totalDecimal: ${this.mdsFormModel.configs.mdsInputNumber.totalDecimal}` : ''}${this.mdsFormModel.configs.mdsInputNumber.isDisabled ? `,\n        isDisabled: ${this.mdsFormModel.configs.mdsInputNumber.isDisabled}`:''} 
       }
     }
   }`
-    this.componentCode = constructComponentCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
+    this.componentCode = constructAngularCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
   }
 
   htmlCode = `

@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { AfterContentChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsFilterModel, MdsNumberUtils }
+import { MdsFilterModel, MdsNumberUtils, PageNavigationManagerModel }
 /*-public-*/ from '@mediadesain/core';
 //*-private-*/ from 'projects/medes-ui/src/public-api';
-import { MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsPageManagerModule, PageNavigationManagerModel }
+import { MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsPageManagerModule }
 /*-public-*/ from '@mediadesain/angular';
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 

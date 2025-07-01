@@ -6,8 +6,8 @@ import { ColorSchemeComponent } from './color-scheme/color-scheme.component';
 import { HowToInstallComponent } from './how-to-install/how-to-install.component';
 import { FormsModule } from '@angular/forms';
 import { MdsHightlightPrismModule }
-//*-public-*/ from '@mediadesain/angular';
-/*-private-*/ from 'projects/medes-ui-angular/src/public-api';
+/*-public-*/ from '@mediadesain/angular';
+//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @NgModule({
   declarations: [

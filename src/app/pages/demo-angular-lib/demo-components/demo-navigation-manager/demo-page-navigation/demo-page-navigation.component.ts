@@ -1,12 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core';
-import { constructComponentCode } from 'src/app/shared/utils/code-preview-generator';
+import { constructAngularCode } from 'src/app/shared/utils/code-preview-generator';
 import { htmlCode } from './page-navigation-preview-code';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { PageNavigationManagerModelCode } from '../demo-page-navigation-manager-model-code';
 import { LibraryTypeService } from 'src/app/shared/library-type.service';
-import { MdsHightlightPrismModule, MdsPageManagerModule, MdsModalService, MdsModalModule, PageNavigationManagerModel }
+import { PageNavigationManagerModel }
+/*-public-*/ from '@mediadesain/core';
+//*-private-*/ from 'projects/medes-ui/src/public-api';
+import { MdsHightlightPrismModule, MdsPageManagerModule, MdsModalService, MdsModalModule }
 /*-public-*/ from '@mediadesain/angular';
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
@@ -42,12 +45,10 @@ export class DemoPageNavigationComponent implements AfterContentChecked {
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {docType: 'angular', attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: 'medes-ui@1.18.0 > Latest version'},
-    {docType: 'angular', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration of the component itself', version: 'medes-ui@1.18.0 > Latest version'}
+    {docType: 'angular', attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration of the component itself', version: '@mediadesain/angular@2.0.0 > Latest version'}
   ];
-  tableContentDeprecated = [
-    {docType: 'angular', attribute: 'pageNavConfig',type: 'PageNavigationModel', default: '∞', description: 'Configuration of Page Navigation Component, on newer version has been replaced with model', version: 'medes-ui@1.15.1 > medes-ui@1.17.1'}
-  ]
+  tableContentDeprecated = [];
 
   constructor(public mdsModalService: MdsModalService, public libraryTypeService: LibraryTypeService, private cdr: ChangeDetectorRef) {
     this.reGenerateCode(); 
@@ -90,7 +91,7 @@ export class DemoPageNavigationComponent implements AfterContentChecked {
       }
     }
   }`
-    this.componentCode = constructComponentCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
+    this.componentCode = constructAngularCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
   }
   
   getInterfaceType(value: string): string {

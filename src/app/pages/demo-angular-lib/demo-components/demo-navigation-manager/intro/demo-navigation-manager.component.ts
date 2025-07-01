@@ -2,7 +2,10 @@ import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SampleProductsData } from 'src/app/shared/constant/products';
-import { MdsHightlightPrismModule, MdsPageManagerModule, PageNavigationManagerModel }
+import { PageNavigationManagerModel }
+/*-public-*/ from '@mediadesain/core';
+//*-private-*/ from 'projects/medes-ui/src/public-api';
+import { MdsHightlightPrismModule, MdsPageManagerModule }
 /*-public-*/ from '@mediadesain/angular';
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 

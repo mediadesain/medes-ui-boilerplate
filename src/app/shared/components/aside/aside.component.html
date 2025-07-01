@@ -1,6 +1,6 @@
 @for (group of menu; track group; let i = $index) {
     <div class="list-group">
-        <b (click)="showHide(group)">{{group.text}}</b> @if (i === 0) { <small> - (v.2.0.0-beta.1)</small> }
+        <b (click)="showHide(group)">{{group.text}}</b> @if (i === 0) { <small> - (v.2.0.0-beta.3)</small> }
         <ul [style.display]="group.isCollapsed ? 'none' : 'block'">
             <!--[routerLinkActiveOptions]="{exact: true}"-->
             @for (link of group.urls; track $index) {

@@ -47,16 +47,33 @@
 </div>
 
 
-<h3>Code</h3>
+<div class="flex-x justify-between">
+    <h3>Code Generate:</h3>
+    <h3 class="lib-type">
+        <span [ngClass]="libraryTypeService.selected === 'angular' ? 'txt-swatch-a' : 'txt-lighter'" style="margin-right: 7px;">
+            <i (click)="libraryTypeService.setType('angular')" class="fab fa-angular"></i>
+        </span>
+        <span [ngClass]="libraryTypeService.selected === 'react' ? 'txt-swatch-a' : 'txt-lighter'">
+            <i (click)="libraryTypeService.setType('react')" class="fab fa-react"></i>
+        </span>
+    </h3>
+</div>
+
 <div class="mds-grid">
-    <div class="g-l-50">
-        <b>mds-app.component.ts</b>
-        <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
-    </div>
-    <div class="g-l-50">
-        <b>mds-app.component.html</b>
-        <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
-    </div>
+    @if (libraryTypeService.selected === 'angular') {
+        <div class="g-l-50">
+            <b>mds-app.component.ts</b>
+            <mds-hightlight-prism [code]="componentCode" language="javascript"></mds-hightlight-prism>
+        </div>
+        <div class="g-l-50">
+            <b>mds-app.component.html</b>
+            <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
+        </div>
+    } @else {
+        <div class="g-l-100">
+            <blockquote class="info m-y-1">Component not available yet, will Available Soon</blockquote>
+        </div>
+    }
 </div>
 <p><i>Variable <b>sampledata</b> values is <a href="https://github.com/mediadesain/medes-ui-boilerplate/blob/main/src/app/shared/constant/products.ts">constant/proucts.ts</a>.</i></p>
 <br/>
@@ -68,19 +85,21 @@
         <th style="width: 10%">Attribute</th><th style="width: 20%">Data Type</th><th style="width: 10%">Default</th><th style="width: 30%">Description</th><th style="width: 20%">Support Version</th>
     </tr>
     @for (item of tableContent; track $index) {
-        <tr>
-            <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
-            <td mds-th-title="Data Type">
-                @if (item.type === 'MdsFilterModel') {
-                    <a (click)="openModal('my-modal-1')">{{item.type}}</a>
-                } @else {
-                    {{item.type}}
-                }
-            </td>
-            <td mds-th-title="Default">{{item.default}}</td>
-            <td mds-th-title="Description">{{item.description}}</td>
-            <td mds-th-title="Support version" [innerHtml]="item.version"></td>
-        </tr>
+        @if (libraryTypeService.selected === item.docType) {
+            <tr>
+                <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
+                <td mds-th-title="Data Type">
+                    @if (item.type === 'MdsFilterModel') {
+                        <a (click)="openModal('my-modal-1')">{{item.type}}</a>
+                    } @else {
+                        {{item.type}}
+                    }
+                </td>
+                <td mds-th-title="Default">{{item.default}}</td>
+                <td mds-th-title="Description">{{item.description}}</td>
+                <td mds-th-title="Support version" [innerHtml]="item.version"></td>
+            </tr>
+        }
     }
 </table>
 

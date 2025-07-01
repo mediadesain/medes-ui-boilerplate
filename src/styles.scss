@@ -1,8 +1,8 @@
 /*-- MedesUI --*/
-//*-public-*/ @import "../node_modules/@mediadesain/core/assets/scss/medes-ui";
-//*-public-*/ @import "../node_modules/@mediadesain/core/assets/scss/ui-colorscheme";
-/*-private-*/ @import "../projects/medes-ui/assets/scss/medes-ui";
-/*-private-*/ @import "../projects/medes-ui/assets/scss/ui-colorscheme";
+ @import "../node_modules/@mediadesain/core/assets/scss/medes-ui";
+ @import "../node_modules/@mediadesain/core/assets/scss/ui-colorscheme";
+//*-private-*/ @import "../projects/medes-ui/assets/scss/medes-ui";
+//*-private-*/ @import "../projects/medes-ui/assets/scss/ui-colorscheme";
 
 /*-- Custom Scheme --*/
 // Add your own custom color scheme - https://doc.mediadesain.com/introduction/color-scheme

@@ -54,49 +54,49 @@ export class AsideComponent {
         urls: [
           {
             text: 'Modal',
-            url: 'angular-lib/modal-component',
+            url: 'libraries/modal-component',
             isNew: true
           },
           {
-            text: 'Form Components', url: 'angular-lib/form-components/intro',
+            text: 'Form Components', url: 'libraries/form-components/intro',
             urls: [
-              {text: 'Toggle', url: 'angular-lib/form-components/toggle'},
-              {text: 'Number', url: 'angular-lib/form-components/input-number'}
+              {text: 'Toggle', url: 'libraries/form-components/toggle'},
+              {text: 'Number', url: 'libraries/form-components/input-number'}
             ]
           },
           {
-            text: 'Filter Components', url: 'angular-lib/filter-components/intro',
+            text: 'Filter Components', url: 'libraries/filter-components/intro',
             urls: [
-              {text: 'Checkboxes Filter', url: 'angular-lib/filter-components/checkboxes', isNew: true},
-              {text: 'Swatch Filter', url: 'angular-lib/filter-components/swatch', isNew: true},
-              {text: 'Range Slider', url: 'angular-lib/filter-components/range-slider', isNew: true},
-              {text: 'Reset Filter', url: 'angular-lib/filter-components/reset', isNew: true}
+              {text: 'Checkboxes Filter', url: 'libraries/filter-components/checkboxes', isNew: true},
+              {text: 'Swatch Filter', url: 'libraries/filter-components/swatch', isNew: true},
+              {text: 'Range Slider', url: 'libraries/filter-components/range-slider', isNew: true},
+              {text: 'Reset Filter', url: 'libraries/filter-components/reset', isNew: true}
             ]
           },
           {
-            text: 'Page Manager Components', url: 'angular-lib/navigation-manager/intro',
+            text: 'Page Manager Components', url: 'libraries/navigation-manager/intro',
             urls: [
-              {text: 'Page Navigation', url: 'angular-lib/navigation-manager/page-navigation', isNew: true},
-              {text: 'Page Counter', url: 'angular-lib/navigation-manager/page-counter', isNew: true}
+              {text: 'Page Navigation', url: 'libraries/navigation-manager/page-navigation', isNew: true},
+              {text: 'Page Counter', url: 'libraries/navigation-manager/page-counter', isNew: true}
             ]
           },
           {
             text: 'Other Components',
             // url: '/ui-boilerplate/grid-system',
             urls: [
-              {text: 'PrismJs Highlight', url: 'angular-lib/prismjs-highlight'}
+              {text: 'PrismJs Highlight', url: 'libraries/prismjs-highlight'}
             ]
           },
           {
             text: 'Pipes',
             urls: [
-              {text: 'Filter', url: 'angular-lib/pipes/filter'},
-              {text: 'Filter by Range', url: 'angular-lib/pipes/filter-range'},
-              {text: 'Search', url: 'angular-lib/pipes/search'},
-              {text: 'Safe Url', url: 'angular-lib/pipes/safeurl'}
+              {text: 'Filter', url: 'libraries/pipes/filter'},
+              {text: 'Filter by Range', url: 'libraries/pipes/filter-range'},
+              {text: 'Search', url: 'libraries/pipes/search'},
+              {text: 'Safe Url', url: 'libraries/pipes/safeurl'}
             ]
           },
-          {text: '<i class="fas fa-external-link-alt"></i> Demo', url: 'angular-lib/demo'}
+          {text: '<i class="fas fa-external-link-alt"></i> Demo', url: 'libraries/demo'}
         ]
       }
     ];

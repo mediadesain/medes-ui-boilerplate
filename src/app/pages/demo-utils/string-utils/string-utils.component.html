@@ -16,12 +16,14 @@
     </tr>
     <!-- Table Content -->
     @for (item of tableContent; track $index) {
-        <tr>
-            @for (row of tableHeader; track $index) {
-                <td [attr.mds-th-title]="row.title" [innerHTML]="item[row.prop]"></td>
-            }
-        </tr>
-     }
+        @if (libraryTypeService.selected === item.docType) {
+            <tr>
+                @for (row of tableHeader; track $index) {
+                    <td [attr.mds-th-title]="row.title" [innerHTML]="item[row.prop]"></td>
+                }
+            </tr>
+        }
+    }
 </table>
 
 <small>
