@@ -5,7 +5,7 @@ import { DemoModalChildComponent } from './demo-modal-child/demo-modal-child.com
 import { constructAngularCode, constructReactCode } from 'src/app/shared/utils/code-preview-generator';
 import { htmlCode, htmlCode2, interfaceCode } from './modal-component-preview-code';
 import { FormsModule } from '@angular/forms';
-import { LibraryTypeService } from 'src/app/shared/library-type.service';
+import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsModalModel }
 /*-public-*/ from '@mediadesain/core';
 //*-private-*/ from 'projects/medes-ui/src/public-api';
@@ -50,14 +50,7 @@ export class DemoModalComponent {
     {docType: 'react', attribute: 'ref', type: 'useRef<MdsModalRefs>(null)', default: 'null', description: 'Modal configuratuin', version: '@mediadesain/react@2.0.0 > Latest version'},
     {docType: 'react', attribute: 'model?', type: 'MdsModalModel', default: '∞', description: 'Modal configuratuin', version: '@mediadesain/react@2.0.0 > Latest version'}
   ];
-  tableContentDeprecated = [
-    {docType: 'angular', attribute: 'modalWidth?', type: 'string of option: <i>\'small\' | \'medium\' | \'large\' | \'fullscreen\'</i> or number', default: '\'medium\'', description: 'Width of modal by default is medium (700px) but posible with custom width. If set as \'fullscreen\' wil set height & width fullscreen', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
-    {docType: 'angular', attribute: 'marginTop?', type: 'number', default: '44', description: 'Padding top modal', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
-    {docType: 'angular', attribute: 'marginBottom?', type: 'number', default: '44', description: 'Padding bottom modal', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
-    {docType: 'angular', attribute: 'borderRadius?', type: 'number', default: '5', description: 'Border radius size', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
-    {docType: 'angular', attribute: 'hideCloseButton?', type: 'boolean', default: 'false', description: 'Visibility of close button', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
-    {docType: 'angular', attribute: 'disableCloseBackdrop?', type: 'boolean', default: 'false', description: 'Disable closing modal if clicking backdrop', version: 'medes-ui@1.14.0 > medes-ui@1.17.1'},
-  ];
+  tableContentDeprecated = [];
 
   constructor(public mdsModalService: MdsModalService, public libraryTypeService: LibraryTypeService) {
     this.reGenerateCode();
@@ -93,9 +86,9 @@ export class DemoModalComponent {
 
     // React Code
     const importMdsCoreReact = 'MdsModalModel';
-    const importMdsReact = 'MdsModal';
+    const importMdsReact = 'MdsModal, MdsModalRefs';
     const valuesReactComponent = `// model
-  mdsModelProp: MdsModalModel = {
+  const mdsModelProp: MdsModalModel = {
     configs: {
       modalWidth: '${this.mdsModalModelConfig.configs.modalWidth}',
       scrollInTheModal: ${this.mdsModalModelConfig.configs.scrollInTheModal},

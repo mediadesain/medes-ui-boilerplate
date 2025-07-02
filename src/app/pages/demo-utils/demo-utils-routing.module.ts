@@ -9,12 +9,12 @@ import { ColorUtilsComponent } from './color-utils/color-utils.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'string', pathMatch: 'full' },
-  { path: 'string', component: StringUtilsComponent },
-  { path: 'number', component: NumberUtilsComponent },
-  { path: 'object', component: ObjectUtilsComponent },
-  { path: 'array', component: ArrayUtilsComponent },
-  { path: 'date', component: DateUtilsComponent },
-  { path: 'color', component: ColorUtilsComponent }
+  { path: 'string', component: StringUtilsComponent, data: {title: 'MedesUI - String Utils'} },
+  { path: 'number', component: NumberUtilsComponent, data: {title: 'MedesUI - Number Utils'} },
+  { path: 'object', component: ObjectUtilsComponent, data: {title: 'MedesUI - Object Utils'} },
+  { path: 'array', component: ArrayUtilsComponent, data: {title: 'MedesUI - Array Utils'} },
+  { path: 'date', component: DateUtilsComponent, data: {title: 'MedesUI - Date Utils'} },
+  { path: 'color', component: ColorUtilsComponent, data: {title: 'MedesUI - Color Utils'} }
 ];
 
 @NgModule({

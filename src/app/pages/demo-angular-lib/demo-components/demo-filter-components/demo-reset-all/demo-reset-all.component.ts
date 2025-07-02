@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 import { constructAngularCode } from 'src/app/shared/utils/code-preview-generator';
-import { LibraryTypeService } from 'src/app/shared/library-type.service';
+import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsFilterModel }
 /*-public-*/ from '@mediadesain/core';
 //*-private-*/ from 'projects/medes-ui/src/public-api';
@@ -24,12 +24,13 @@ export class DemoResetAllComponent {
   // Code Viewer
   showFullInterfaceCode: boolean;
   componentCode: string;
+  jsxComponentCode: string;
   interfaceCode: string;
 
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration of the component itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
     {docType: 'angular', attribute: 'customClass?', type: 'string', default: '∞', description: 'Classes list for component itself', version: '@mediadesain/angular@2.0.0 > Latest version'}
   ]
   tableContentDeprecated = [];

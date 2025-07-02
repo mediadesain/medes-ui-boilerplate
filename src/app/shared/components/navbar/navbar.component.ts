@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { ThemeService } from '../../services/theme.service';
 @Component({
   selector: 'mds-navbar',
   templateUrl: './navbar.component.html',
@@ -9,7 +10,7 @@ import { filter } from 'rxjs/operators';
 export class NavbarComponent {
   isActive = true;
   constructor(
-    private router: Router
+    private router: Router, public themeService: ThemeService
   ) {
     this.router.events.pipe(
       filter( e => e instanceof NavigationEnd)

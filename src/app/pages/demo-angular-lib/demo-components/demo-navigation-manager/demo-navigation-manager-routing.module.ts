@@ -6,9 +6,9 @@ import { DemoPageCounterComponent } from './demo-page-counter/demo-page-counter.
 
 const routes: Routes = [
   { path: '', redirectTo: 'intro', pathMatch: 'full'  },
-  { path: 'intro', component: DemoNavigationManagerComponent },
-  { path: 'page-navigation', component: DemoPageNavigationComponent },
-  { path: 'page-counter', component: DemoPageCounterComponent },
+  { path: 'intro', component: DemoNavigationManagerComponent, data: {title: 'MedesUI - Navigation Manager'} },
+  { path: 'page-navigation', component: DemoPageNavigationComponent, data: {title: 'MedesUI - Demo Page Navigation'} },
+  { path: 'page-counter', component: DemoPageCounterComponent, data: {title: 'MedesUI - Demo Page Counter'} },
 ];
 
 @NgModule({

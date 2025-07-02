@@ -7,8 +7,8 @@ import { IntroductionComponent } from './introduction.component';
 const routes: Routes = [
   { path: '', redirectTo: 'info', pathMatch: 'full' },
   { path: 'info', component: IntroductionComponent },
-  { path: 'how-to-install', component: HowToInstallComponent },
-  { path: 'color-scheme', component: ColorSchemeComponent }
+  { path: 'how-to-install', component: HowToInstallComponent, data: {title: 'MedesUI - Introduction'} },
+  { path: 'color-scheme', component: ColorSchemeComponent, data: {title: 'MedesUI - Color Scheme'} }
 ];
 
 @NgModule({

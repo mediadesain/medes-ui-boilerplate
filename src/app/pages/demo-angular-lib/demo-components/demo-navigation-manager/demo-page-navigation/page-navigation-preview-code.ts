@@ -1,5 +1,5 @@
 export const htmlCode = `
-<!-- Medes Page Navigation Component -->
+<!-- Demo Medes Page Navigation Component -->
 <mds-page-navigation [data]="data" [model]="pageNavConfig"></mds-page-navigation>`;
 
 

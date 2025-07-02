@@ -2,5 +2,6 @@
     <a (click)="toggleAside();isActive=!isActive"><i [class]="isActive ? 'fas fa-bars' : 'fas fa-times'"></i></a>
 </div>
 <!-- <img src="../../../assets/images/medes-ui.png" /> -->
+<!-- <a href="https://github.com/mediadesain/medes-ui-boilerplate"><i class="fab fa-github"></i></a> -->
 <div class="logo"></div>
-<a href="https://github.com/mediadesain/medes-ui-boilerplate"><i class="fab fa-github"></i></a>
+<a href="javascript:void(0)"><i (click)="themeService.toggleTheme()" class="fa-regular" [ngClass]="themeService._darkMode.value ? 'fa-sun' : 'fa-moon'"></i></a>

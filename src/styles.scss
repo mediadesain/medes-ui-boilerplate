@@ -1,6 +1,6 @@
 /*-- MedesUI --*/
- @import "../node_modules/@mediadesain/core/assets/scss/medes-ui";
- @import "../node_modules/@mediadesain/core/assets/scss/ui-colorscheme";
+/*-public-*/ @import "../node_modules/@mediadesain/core/assets/scss/medes-ui";
+/*-public-*/ @import "../node_modules/@mediadesain/core/assets/scss/ui-colorscheme";
 //*-private-*/ @import "../projects/medes-ui/assets/scss/medes-ui";
 //*-private-*/ @import "../projects/medes-ui/assets/scss/ui-colorscheme";
 
@@ -10,10 +10,21 @@
 
 /*-- PrismJs --*/
 @import "../node_modules/prismjs/themes/prism.min.css";
-@media (prefers-color-scheme: dark) {
-    @import "../node_modules/prismjs/themes/prism-okaidia.min";
+pre[class*=language-] {
+    transition: 0.7s ease-in-out;
+    // span {transition: 1.7s ease-in-out;}
     .token.operator {background-color: unset}
-    code.language-javascript, code.language-tsx {color: #2df49f;}
+}
+@media (prefers-color-scheme: dark) {
+    /*:root {} - if manual mode theming dont have togle light/dark*/
+    body.dark-mode {
+        @import "../node_modules/prismjs/themes/prism-okaidia.min";
+        pre[class*=language-] {
+            font-size: small;
+            padding: 0 1em;
+        }
+        code.language-javascript, code.language-tsx {color: #2df49f;}
+    }
 }
 
 

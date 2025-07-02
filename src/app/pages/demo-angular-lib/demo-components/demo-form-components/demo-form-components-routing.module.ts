@@ -5,10 +5,10 @@ import { DemoToggleButtonComponent } from './demo-toggle-button/demo-toggle-butt
 import { DemoInputNumberComponent } from './demo-input-number/demo-input-number.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'intro', pathMatch: 'full'  },
-  { path: 'intro', component: DemoFormComponent },
-  { path: 'toggle', component: DemoToggleButtonComponent },
-  { path: 'input-number', component: DemoInputNumberComponent },
+  { path: '', redirectTo: 'intro', pathMatch: 'full' },
+  { path: 'intro', component: DemoFormComponent, data: {title: 'MedesUI - Form Components'} },
+  { path: 'toggle', component: DemoToggleButtonComponent, data: {title: 'MedesUI - Demo Toggle'} },
+  { path: 'input-number', component: DemoInputNumberComponent, data: {title: 'MedesUI - Demo Input Number'} },
 ];
 
 @NgModule({

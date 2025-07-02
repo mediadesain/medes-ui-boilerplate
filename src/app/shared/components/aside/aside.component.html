@@ -1,6 +1,6 @@
 @for (group of menu; track group; let i = $index) {
     <div class="list-group">
-        <b (click)="showHide(group)">{{group.text}}</b> @if (i === 0) { <small> - (v.2.0.0-beta.3)</small> }
+        <b (click)="showHide(group)">{{group.text}}</b> @if (i === 0) { <small> - (v.2.0.0-beta.4)</small> }
         <ul [style.display]="group.isCollapsed ? 'none' : 'block'">
             <!--[routerLinkActiveOptions]="{exact: true}"-->
             @for (link of group.urls; track $index) {
@@ -30,10 +30,10 @@
         <div class="flex-x align-middle justify-between">
             <b (click)="showHide(group)">{{group.text}}</b>
             <div class="lib-type" style="font-size: 15px;">
-                <span [ngClass]="libraryTypeService.selected === 'angular' ? 'txt-swatch-a' : 'txt-lighter'" style="margin-right: 7px;">
+                <span [style.color]="libraryTypeService.selected === 'angular' ? '#dd0031' : 'var(--body-txt-lighter)'" style="margin-right: 5px;">
                     <i (click)="libraryTypeService.setType('angular')" class="fab fa-angular"></i>
                 </span>
-                <span [ngClass]="libraryTypeService.selected === 'react' ? 'txt-swatch-a' : 'txt-lighter'">
+                <span [style.color]="libraryTypeService.selected === 'react' ? '#62dafb' : 'var(--body-txt-lighter)'">
                     <i (click)="libraryTypeService.setType('react')" class="fab fa-react"></i>
                 </span>
             </div>

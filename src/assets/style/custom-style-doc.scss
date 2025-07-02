@@ -1,34 +1,22 @@
- @import "../../../node_modules/@mediadesain/core/assets/scss/layouts/documentation";
+/*-public-*/ @import "../../../node_modules/@mediadesain/core/assets/scss/layouts/documentation";
 //*-private-*/ @import "../../../projects/medes-ui/assets/scss/layouts/documentation";
 navbar .logo, mds-navbar .logo { background-image: url('../images//medes-ui.png'); }
 @media (prefers-color-scheme: dark) {
-    mds-navbar .logo { background-image: url('../images/medes-ui-dark.png'); }
+    /*:root {} - if manual mode theming dont have togle light/dark*/
+    body.dark-mode {
+        mds-navbar .logo { background-image: url('../images/medes-ui-dark.png'); }
+    }
 }
 
 .lib-type span {cursor: pointer;}
 
 /* -- Table Properties */
-.table-properties a {
-    cursor: pointer;
-}
+.table-properties a {cursor: pointer;}
 
-.table-properties td.deprecated {
-    color: var(--body-txt-lighter);
-    text-decoration: line-through;
-}
-.table-properties td:nth-child(1) b {
-    font-family: monospace;
-    font-size: small;
-}
-.table-properties td:nth-child(2) {
-    font-family: monospace;
-    font-size: small;
-}
-.table-properties td:nth-child(5) {
-    font-size: 12px;
-}
+.table-properties td.deprecated {color: var(--body-txt-lighter); text-decoration: line-through;}
+.table-properties td:nth-child(1) b {font-family: monospace; font-size: small;}
+.table-properties td:nth-child(2) {font-family: monospace; font-size: small;}
+.table-properties td:nth-child(5) {font-size: 12px;}
 @media (max-width: 747px) {
-    .mds-table td:before {
-        font-family: "Open Sans", sans-serif;
-    }
+    .mds-table td:before {font-family: "Open Sans", sans-serif;}
 }

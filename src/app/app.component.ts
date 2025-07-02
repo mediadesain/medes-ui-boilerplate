@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { DyamicTitlebarService } from './shared/services/dynamic-titlebar.service';
 
 @Component({
   selector: 'mds-root',
@@ -12,7 +13,8 @@ export class AppComponent {
 
   constructor(
     public router: Router,
-    public location: Location
+    public location: Location,
+    dyamicTitlebarService: DyamicTitlebarService
   ){
     // Listen active Routing
     this.router.events.pipe(

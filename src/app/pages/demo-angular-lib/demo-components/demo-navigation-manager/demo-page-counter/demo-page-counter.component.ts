@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { AfterContentChecked, ChangeDetectorRef, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { constructAngularCode } from 'src/app/shared/utils/code-preview-generator';
+import { constructAngularCode, constructReactCode } from 'src/app/shared/utils/code-preview-generator';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { PageNavigationManagerModelCode } from '../demo-page-navigation-manager-model-code';
-import { LibraryTypeService } from 'src/app/shared/library-type.service';
+import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { PageNavigationManagerModel }
 /*-public-*/ from '@mediadesain/core';
 //*-private-*/ from 'projects/medes-ui/src/public-api';
@@ -36,14 +36,17 @@ export class DemoPageCounterComponent implements AfterContentChecked {
   // Code Viewer
   showFullInterfaceCode: boolean;
   componentCode: string;
+  jsxComponentCode: string;
   interfaceCode: string;
 
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {docType: 'angular', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration of the component itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
     {docType: 'angular', attribute: 'customClass?',type: 'string', default: '∞', description: 'Put your custom class styling', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'customStyle?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: '@mediadesain/angular@2.0.0 > Latest version'}
+    {docType: 'angular', attribute: 'customStyle?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration parameter', version: '@mediadesain/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'modelChange',type: '(value: PageNavigationManagerModel) => void', default: '∞', description: 'Get update custom configuration & data output', version: '@mediadesain/react@2.0.0 > Latest version'}
   ];
   tableContentDeprecated = [];
 
@@ -70,6 +73,7 @@ export class DemoPageCounterComponent implements AfterContentChecked {
   }
   
   reGenerateCode(): void {
+    // Angular Code
     const importMdsCore = 'PageNavigationModel';
     const importMdsAngular = 'MdsPageManagerModule';
     const imports = 'MdsPageManagerModule';
@@ -83,7 +87,29 @@ export class DemoPageCounterComponent implements AfterContentChecked {
       }
     }
   }`
-    this.componentCode = constructAngularCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
+    this.componentCode = constructAngularCode(importMdsCore, importMdsAngular, imports, '', valuesComponent);
+
+    // React Code
+        const importMdsCoreReact = 'PageNavigationManagerModel';
+        const importMdsReact = 'MdsPageCounter';
+        const valuesReactComponent = `// model
+  const [pageNavModel, setPageNavModel] = React.useState<PageNavigationManagerModel>({
+  configs: {
+    itemToShow: ${this.pageNavConfig.configs.itemToShow},
+    // pageCounter Configuration
+    pageCounter: {
+      options: [${this.pageNavConfig.configs.pageCounter.options}]
+    }
+  }
+  });
+        
+  return (
+    <>
+      {/*-- Demo Medes Page Counter Component -- */}
+      <MdsPageCounter model={pageNavModel} modelChange={ (value) => setPageNavModel(value) }></MdsPageCounter>
+    </>
+  );`;
+  this.jsxComponentCode = constructReactCode(importMdsCoreReact, importMdsReact, valuesReactComponent);
   }
 
   updateTotal($event: number): void {

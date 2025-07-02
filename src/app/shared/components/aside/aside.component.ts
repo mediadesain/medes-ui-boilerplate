@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LibraryTypeService } from 'src/app/shared/library-type.service';
+import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 
 @Component({
   selector: 'mds-aside',

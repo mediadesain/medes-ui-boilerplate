@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { constructAngularCode } from 'src/app/shared/utils/code-preview-generator';
 import { FormsModule } from '@angular/forms';
 import { MdsFormModelCode } from '../demo-filter-data-model-code';
-import { LibraryTypeService } from 'src/app/shared/library-type.service';
+import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsFormModel }
 /*-public-*/ from '@mediadesain/core';
 //*-private-*/ from 'projects/medes-ui/src/public-api';
@@ -31,12 +31,13 @@ export class DemoInputNumberComponent {
   // Code Viewer
   showFullInterfaceCode = false;
   componentCode: string;
+  jsxComponentCode: string;
   interfaceCode: string;
 
   // Properties Detail
   tableContent = [
     {docType: 'angular', attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration of the component itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
     {docType: 'angular', attribute: 'customClass?', type: 'string', default: '∞', description: 'Put classes to for styling component', version: '@mediadesain/angular@2.0.0 > Latest version'},
     {docType: 'angular', attribute: 'placeholder?', type: 'string', default: '0', description: 'Placeholder for field itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
     {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: '@mediadesain/angular@2.0.0 > Latest version'}

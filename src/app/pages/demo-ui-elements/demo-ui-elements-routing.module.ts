@@ -7,10 +7,10 @@ import { DemoLayoutUtilsComponent } from './demo-layout-utils/demo-layout-utils.
 
 const routes: Routes = [
   { path: '', redirectTo: 'basic-elements', pathMatch: 'full'  },
-  { path: 'basic-elements', component: DemoBasicElementsComponent },
-  { path: 'layout-utils', component: DemoLayoutUtilsComponent },
-  { path: 'grid-system', component: DemoGridSystemComponent },
-  { path: 'loader', component: DemoLoaderComponent }
+  { path: 'basic-elements', component: DemoBasicElementsComponent, data: {title: 'MedesUI - Basic Elements'} },
+  { path: 'layout-utils', component: DemoLayoutUtilsComponent, data: {title: 'MedesUI - Layout Utils'} },
+  { path: 'grid-system', component: DemoGridSystemComponent, data: {title: 'MedesUI - Grid System'} },
+  { path: 'loader', component: DemoLoaderComponent, data: {title: 'MedesUI - Loader'} }
 ];
 
 @NgModule({

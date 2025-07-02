@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 import { constructAngularCode } from 'src/app/shared/utils/code-preview-generator';
-import { LibraryTypeService } from 'src/app/shared/library-type.service';
+import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsFilterModel }
 /*-public-*/ from '@mediadesain/core';
 //*-private-*/ from 'projects/medes-ui/src/public-api';
@@ -26,13 +26,14 @@ export class DemoFilterRangeSliderComponent {
   // Code Viewer
   showFullInterfaceCode = false;
   componentCode: string;
+  jsxComponentCode: string;
   interfaceCode: string;
 
   // Properties Detail
   showDeprecated = false;
   tableContent = [
     {docType: 'angular', attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration of the component itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
     {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'For disabling filter range slider', version: '@mediadesain/angular@2.0.0 > Latest version'}
   ]
   tableContentDeprecated = [];

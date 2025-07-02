@@ -30,7 +30,7 @@
                     </select>
                 </div>
                 <div class="x-100">
-                    <label>Enable/Disable</label>
+                    <label class="txt-darker">Enable/Disable</label>
                     <button class="btn-swatch-a x-100" (click)="mdsFormModel.configs.mdsInputNumber.isDisabled = !mdsFormModel.configs.mdsInputNumber.isDisabled; this.reGenerateCode()">
                         {{ mdsFormModel.configs.mdsInputNumber.isDisabled ? 'Enable' : 'Disable' }}
                     </button>
@@ -44,10 +44,10 @@
 <div class="flex-x justify-between">
     <h3>Code Generate:</h3>
     <h3 class="lib-type">
-        <span [ngClass]="libraryTypeService.selected === 'angular' ? 'txt-swatch-a' : 'txt-lighter'" style="margin-right: 7px;">
+        <span [style.color]="libraryTypeService.selected === 'angular' ? '#dd0031' : 'var(--body-txt-lighter)'" style="margin-right: 7px;">
             <i (click)="libraryTypeService.setType('angular')" class="fab fa-angular"></i>
         </span>
-        <span [ngClass]="libraryTypeService.selected === 'react' ? 'txt-swatch-a' : 'txt-lighter'">
+        <span [style.color]="libraryTypeService.selected === 'react' ? '#62dafb' : 'var(--body-txt-lighter)'">
             <i (click)="libraryTypeService.setType('react')" class="fab fa-react"></i>
         </span>
     </h3>

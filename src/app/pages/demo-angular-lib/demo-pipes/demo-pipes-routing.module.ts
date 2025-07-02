@@ -7,10 +7,10 @@ import { DemoFilterRangePipeComponent } from './demo-filter-range-pipe/demo-filt
 
 const routes: Routes = [
   { path: '', redirectTo: 'filter', pathMatch: 'full'  },
-  { path: 'filter', component: DemoFilterPipeComponent },
-  { path: 'filter-range', component: DemoFilterRangePipeComponent },
-  { path: 'search', component: DemoSearchPipeComponent },
-  { path: 'safeurl', component: DemoSafeurlPipeComponent },
+  { path: 'filter', component: DemoFilterPipeComponent, data: {title: 'MedesUI - Filter Pipe'} },
+  { path: 'filter-range', component: DemoFilterRangePipeComponent, data: {title: 'MedesUI - Filter RangePipe'} },
+  { path: 'search', component: DemoSearchPipeComponent, data: {title: 'MedesUI - Search Pipe'} },
+  { path: 'safeurl', component: DemoSafeurlPipeComponent, data: {title: 'MedesUI - SafeUrl Pipe'} },
   
 ];
 

@@ -4,7 +4,7 @@ import { DemoAlertComponent } from './demo-alert/demo-alert.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'alert', pathMatch: 'full' },
-  { path: 'alert', component: DemoAlertComponent }
+  { path: 'alert', component: DemoAlertComponent, data: {title: 'MedesUI - Alert Service'} }
 ];
 
 @NgModule({

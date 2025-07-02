@@ -36,7 +36,8 @@ export class ColorSchemeComponent {
 
 /*-- Dark Mode --*/
 @media (prefers-color-scheme: dark) {
-  :root {
+  /*:root {} - if manual mode theming dont have togle light/dark*/
+  body.dark-mode {
     /*-- swatch-c --*/
     --swatch-c-transculant: rgba(233,138,53,0.3);
     --swatch-c-lighter: #ffa853;

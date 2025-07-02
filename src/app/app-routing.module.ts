@@ -6,7 +6,7 @@ import { DevTestingComponent } from './pages/dev-testing-components/dev-testing.
 const routes: Routes = [
   {
     path: 'introduction',
-    loadChildren: () => import('./pages/introduction/introduction.module').then(m => m.IntroductionModule),
+    loadChildren: () => import('./pages/introduction/introduction.module').then(m => m.IntroductionModule)
   }, {
     path: 'ui-elements',
     loadChildren: () => import('./pages/demo-ui-elements/demo-ui-elements.module').then(m => m.DemoUiElementsModule)
@@ -24,11 +24,14 @@ const routes: Routes = [
   },
   {
     path: 'versioning',
-    component: VersioningComponent
+    component: VersioningComponent,
+    data: {title: 'MedesUI - Versions'}
+    
   },
   {
     path: 'dev',
-    component: DevTestingComponent
+    component: DevTestingComponent,
+    data: {title: 'MedesUI - Introduction'}
   },
   {
     path: '**', redirectTo: 'introduction/how-to-install'
