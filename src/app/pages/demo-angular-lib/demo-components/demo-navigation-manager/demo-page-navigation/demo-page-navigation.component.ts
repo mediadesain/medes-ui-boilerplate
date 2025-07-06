@@ -47,10 +47,10 @@ export class DemoPageNavigationComponent implements AfterContentChecked {
   showDeprecated = false;
   tableContent = [
     {docType: 'angular', attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
     {docType: 'react', attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: '@mediadesain/react@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom configuration parameter', version: '@mediadesain/react@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'modelChange',type: '(value: PageNavigationManagerModel) => void', default: '∞', description: 'Get update custom configuration & data output', version: '@mediadesain/react@2.0.0 > Latest version'}
+    {docType: 'react', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'modelChange',type: '(value: PageNavigationManagerModel) => void', default: '∞', description: 'Get update model configuration & data output', version: '@mediadesain/react@2.0.0 > Latest version'}
   ];
   tableContentDeprecated = [];
 

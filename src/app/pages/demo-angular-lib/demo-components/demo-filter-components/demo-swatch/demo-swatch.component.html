@@ -16,7 +16,7 @@
         <div class="x-100 flex-x flex-nowarp">
             <div class="x-100 m-x-r-1">
                 <label class="required txt-darker">Property</label>
-                <input class="x-100" type="text" placeholder="Property key on data" [ngClass]="{'invalid': mdsFilterModel.configs.swatchBox.color.property.length === 0}" [ngModel]="mdsFilterModel.configs.swatchBox['color'].property" (ngModelChange)="updateProp($event)"/>
+                <input class="x-100" type="text" placeholder="Property key on data" [ngClass]="{'invalid': mdsFilterModel.configs.swatchBox.color.property.length === 0}" [ngModel]="mdsFilterModel.configs.swatchBox['color'].property" (ngModelChange)="updateProp($event); reGenerateCode()"/>
                 @if (mdsFilterModel.configs.swatchBox.color.property.length === 0) {
                     <small class="txt-negative">
                         <i>This field is required</i>
@@ -26,21 +26,21 @@
             </div>
             <div class="x-100">
                 <label class="txt-darker">Label</label>
-                <input class="x-100" type="text" placeholder="Default: Color" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.label"/>
+                <input class="x-100" type="text" placeholder="Default: Color" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.label" (ngModelChange)="reGenerateCode()"/>
             </div>
         </div>
         <div class="x-100 flex-x flex-nowarp">
             <div class="x-100 m-x-r-1">
                 <label class="txt-darker">Size</label>
-                <input class="x-100" type="number" placeholder="Default: 30" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.swatchSize"/>
+                <input class="x-100" type="number" placeholder="Default: 30" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.swatchSize" (ngModelChange)="reGenerateCode()"/>
             </div>
             <div class="x-100 m-x-r-1">
                 <label class="txt-darker">Border Radius</label>
-                <input class="x-100" type="number" placeholder="Default: 25" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.swatchRadius"/>
+                <input class="x-100" type="number" placeholder="Default: 25" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.swatchRadius" (ngModelChange)="reGenerateCode()"/>
             </div>
             <div class="x-100">
                 <label class="txt-darker">Reset Html Element</label>
-                <input class="x-100" type="text" placeholder="html element" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.resetElement"/>
+                <input class="x-100" type="text" placeholder="html element" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.resetElement" (ngModelChange)="reGenerateCode()"/>
             </div>
         </div>
     </div>
@@ -71,7 +71,8 @@
         </div>
     } @else {
         <div class="g-l-100">
-            <blockquote class="info m-y-1">Component not available yet, will Available Soon</blockquote>
+            <b>mds-app.tsx</b>
+            <mds-hightlight-prism [code]="jsxComponentCode" language="tsx"></mds-hightlight-prism>
         </div>
     }
 </div>

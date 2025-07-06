@@ -263,7 +263,7 @@ export class SampleProductsData {
           brand: 'nike',
           category: 'shoes',
           color: 'blue sky',
-          gender: 'unisex man',
+          gender: 'unisex,men',
           id: '62122871a03b2f7db5183760',
           picture: 'https://picsum.photos/400?image=377',
           price: 1276.999,

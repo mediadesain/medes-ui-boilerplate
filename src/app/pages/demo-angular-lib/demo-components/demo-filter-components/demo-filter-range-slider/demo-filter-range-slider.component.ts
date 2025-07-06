@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MdsFilterModelCode } from '../demo-filter-data-model-code';
-import { constructAngularCode } from 'src/app/shared/utils/code-preview-generator';
+import { constructAngularCode, constructReactCode } from 'src/app/shared/utils/code-preview-generator';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsFilterModel }
 /*-public-*/ from '@mediadesain/core';
@@ -33,8 +33,11 @@ export class DemoFilterRangeSliderComponent {
   showDeprecated = false;
   tableContent = [
     {docType: 'angular', attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'For disabling filter range slider', version: '@mediadesain/angular@2.0.0 > Latest version'}
+    {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'For disabling filter range slider', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: '@mediadesain/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'modelChange', type: '(value: MdsFilterModel) => void', default: '∞', description: 'Get update model configuration & data output', version: '@mediadesain/react@2.0.0 > Latest version'}
   ]
   tableContentDeprecated = [];
 
@@ -61,25 +64,49 @@ export class DemoFilterRangeSliderComponent {
   }
 
   reGenerateCode(): void {
-      const importMdsCore = 'MdsFilterModel';
-      const importMdsAngular = 'MdsFilterModule';
-      const imports = 'MdsFilterModule';
-      const valuesComponent = `// data
-    sampledata: ProductDataModel[] = SampleProductsData.data;
-    // model
-    mdsFilterModel: MdsFilterModel = {
-      configs: {
-        rangeSlider: {
-          price: {
-            label: 'Filter by Price',
-            min: 0,
-            max: 2500,
-          }
+    // Angular Code
+    const importMdsCore = 'MdsFilterModel';
+    const importMdsAngular = 'MdsFilterModule';
+    const imports = 'MdsFilterModule';
+    const valuesComponent = `// model
+  mdsFilterModel: MdsFilterModel = {
+    configs: {
+      rangeSlider: {
+        price: {
+          label: 'Filter by Price',
+          min: 0,
+          max: 2500,
         }
       }
-    }`
-      this.componentCode = constructAngularCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
     }
+  }`
+    this.componentCode = constructAngularCode(importMdsCore, importMdsAngular, imports, '', valuesComponent);
+
+    // React Code
+    const importMdsCoreReact = 'MdsFilterModel';
+    const importMdsReact = 'MdsFilterCheckbox';
+    const valuesReactComponent = `// data
+  const [mdsFilterModel, setMdsFilterModel] = React.useState<MdsFilterModel>({
+    configs: {
+      rangeSlider: {
+        price: {
+          label: 'Filter by Price',
+          min: 0,
+          max: 2500,
+        }
+      }
+    }
+  })
+    
+  return (
+    <>
+      {/*-- Filter Range Slider Component --*/}
+      <MdsFilterRangeSlider id="price" model={mdsFilterModel} modelChange={ (model) => setMdsFilterModel(model)}></MdsFilterRangeSlider>
+      <small><i>Output: {{mdsFilterModel.data.filterRange.start}} - {{mdsFilterModel.data.filterRange.end}}</i></small>
+    </>
+  );`;
+    this.jsxComponentCode = constructReactCode(importMdsCoreReact, importMdsReact, valuesReactComponent);
+  }
 
   expandCollapseModel(): void {
     if (this.showFullInterfaceCode) {

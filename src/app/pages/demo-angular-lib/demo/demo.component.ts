@@ -34,7 +34,7 @@ export class DemoComponent implements OnInit, AfterContentChecked {
         checkBox: {
           gender : {
             property: 'gender',
-            label: 'Filter by Brand',
+            label: 'Filter by Gender',
             // resetElement: 'reset',
             // hideCounter: true
           },

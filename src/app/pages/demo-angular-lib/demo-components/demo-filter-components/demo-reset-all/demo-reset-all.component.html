@@ -9,8 +9,24 @@
         <mds-filter-reset customClass="btn-swatch-a" [(model)]="mdsFilterModel">Reset All</mds-filter-reset>
     </div>
     <div class="g-l-70">
-        <b>mds-app.component.html</b>
-        <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
+        <div class="flex-x justify-between">
+            <h3>Code Generate:</h3>
+            <h3 class="lib-type">
+                <span [style.color]="libraryTypeService.selected === 'angular' ? '#dd0031' : 'var(--body-txt-lighter)'" style="margin-right: 7px;">
+                    <i (click)="libraryTypeService.setType('angular')" class="fab fa-angular"></i>
+                </span>
+                <span [style.color]="libraryTypeService.selected === 'react' ? '#62dafb' : 'var(--body-txt-lighter)'">
+                    <i (click)="libraryTypeService.setType('react')" class="fab fa-react"></i>
+                </span>
+            </h3>
+        </div>
+        @if (libraryTypeService.selected === 'angular') {
+            <b>mds-app.component.html</b>
+            <mds-hightlight-prism [code]="htmlCode" language="html"></mds-hightlight-prism>
+        } @else {
+            <b>mds-app.tsx</b>
+            <mds-hightlight-prism [code]="jsxComponentCode" language="tsx"></mds-hightlight-prism>
+        }
     </div>
 </div>
 
@@ -25,7 +41,7 @@
             <tr>
                 <td mds-th-title="Attribute" [innerHTML]="item.attribute"></td>
                 <td mds-th-title="Data Type">
-                    @if (item.type === 'MdsFormModel') {
+                    @if (item.type === 'MdsFilterModel') {
                         <a (click)="openModal('my-modal-1')">{{item.type}}</a>
                     } @else {
                         {{item.type}}

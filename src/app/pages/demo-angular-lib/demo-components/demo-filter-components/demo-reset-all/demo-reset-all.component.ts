@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MdsFilterModelCode } from '../demo-filter-data-model-code';
-import { constructAngularCode } from 'src/app/shared/utils/code-preview-generator';
+import { constructAngularCode, constructReactCode } from 'src/app/shared/utils/code-preview-generator';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsFilterModel }
 /*-public-*/ from '@mediadesain/core';
@@ -31,7 +31,10 @@ export class DemoResetAllComponent {
   showDeprecated = false;
   tableContent = [
     {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'customClass?', type: 'string', default: '∞', description: 'Classes list for component itself', version: '@mediadesain/angular@2.0.0 > Latest version'}
+    {docType: 'angular', attribute: 'customClass?', type: 'string', default: '∞', description: 'Classes list for component itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration parameter', version: '@mediadesain/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'modelChange', type: '(value: MdsFilterModel) => void', default: '∞', description: 'Get update model configuration & data output', version: '@mediadesain/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'customClass?', type: 'string', default: '∞', description: 'Classes list for component itself', version: '@mediadesain/react@2.0.0 > Latest version'}
   ]
   tableContentDeprecated = [];
   
@@ -59,6 +62,7 @@ export class DemoResetAllComponent {
   }
 
   reGenerateCode(): void {
+    // Angular Code
     const importMdsCore = 'MdsFilterModel';
     const importMdsAngular = 'MdsFilterModule';
     const imports = 'MdsFilterModule';
@@ -75,7 +79,26 @@ export class DemoResetAllComponent {
       }
     }
   }`
-    this.componentCode = constructAngularCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
+    this.componentCode = constructAngularCode(importMdsCore, importMdsAngular, imports, '', valuesComponent);
+
+    // React Code
+    const importMdsCoreReact = 'MdsFilterModel';
+    const importMdsReact = 'MdsFilterCheckbox';
+    const valuesReactComponent = `// data
+  const [mdsFilterModel, setMdsFilterModel] = React.useState<MdsFilterModel>()
+    
+  return (
+    <>
+      {/*-- XXX Component --*/}
+      <comp></comp>
+    </>
+  );`;
+    // this.jsxComponentCode = constructReactCode(importMdsCoreReact, importMdsReact, valuesReactComponent);
+    this.jsxComponentCode = `
+{/*-- Reset Filter Component --*/}
+<MdsFilterReset customClass='btn-swatch-a x-100' model={mdsFilterModel} modelChange={ (model) => setMdsFilterModel(model)}>
+    <>Reset All</>
+</MdsFilterReset>`;
   }
   
 htmlCode = `

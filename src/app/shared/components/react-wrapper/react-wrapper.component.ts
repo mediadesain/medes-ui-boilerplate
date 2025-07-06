@@ -2,7 +2,8 @@ import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } fro
 import { createRoot, Root } from 'react-dom/client';
 import { CommonModule } from '@angular/common';
 import * as React from 'react';
-import {MyReactComponent } from 'projects/medes-ui-react/src/public-api';
+import { MyReactComponent } from 'dist/@mediadesain/react';
+// import {MyReactComponent } from 'projects/medes-ui-react/src/public-api';
 // import { MyReactComponent } from '@mediadesain/react';
 
 

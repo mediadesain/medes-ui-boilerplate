@@ -37,7 +37,7 @@ export class DemoInputNumberComponent {
   // Properties Detail
   tableContent = [
     {docType: 'angular', attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
     {docType: 'angular', attribute: 'customClass?', type: 'string', default: '∞', description: 'Put classes to for styling component', version: '@mediadesain/angular@2.0.0 > Latest version'},
     {docType: 'angular', attribute: 'placeholder?', type: 'string', default: '0', description: 'Placeholder for field itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
     {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: '@mediadesain/angular@2.0.0 > Latest version'}

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsFilterModelCode } from '../demo-filter-data-model-code';
-import { constructAngularCode } from 'src/app/shared/utils/code-preview-generator';
+import { constructAngularCode, constructReactCode } from 'src/app/shared/utils/code-preview-generator';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsFilterModel }
 /*-public-*/ from '@mediadesain/core';
@@ -36,7 +36,11 @@ export class DemoSwatchComponent {
   tableContent = [
     {docType: 'angular', attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: '@mediadesain/angular@2.0.0 > Latest version'},
     {docType: 'angular', attribute: 'data', type: 'Array<any>', default: '∞', description: 'Sample data for create multiple filter checkbox', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'}
+    {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: '@mediadesain/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'data', type: 'Array<any>', default: '∞', description: 'Sample data for create multiple filter checkbox', version: '@mediadesain/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'modelChange', type: '(value: MdsFilterModel) => void', default: '∞', description: 'Get update model configuration & data output', version: '@mediadesain/react@2.0.0 > Latest version'}
   ]
   tableContentDeprecated = [];
 
@@ -59,7 +63,8 @@ export class DemoSwatchComponent {
               'gold': '#b6ab66'
             },
             swatchSize: 30,
-            swatchRadius: 5
+            swatchRadius: 5,
+            resetElement: '✕'
           }
         }
       }
@@ -84,6 +89,7 @@ export class DemoSwatchComponent {
   }
 
   reGenerateCode(): void {
+    // Angular Code
     const importMdsCore = 'MdsFilterModel';
     const importMdsAngular = 'MdsFilterModule';
     const imports = 'MdsFilterModule';
@@ -94,8 +100,8 @@ export class DemoSwatchComponent {
     configs: {
       swatchBox: {
         color: { // Filter component id
-          property: 'color', // property on ProductDataModel Object
-          label: 'Filter by Color',
+          property: '${this.mdsFilterModel.configs.swatchBox.color.property}', // property on ProductDataModel Object
+          label: '${this.mdsFilterModel.configs.swatchBox.color.label}',
           colorMap: {
             'blue-sky': '#66ccdd',
             'maroon': '#bb6a66',
@@ -104,13 +110,50 @@ export class DemoSwatchComponent {
             'purple': '#6a66bb',
             'gold': '#b6ab66'
           },
-          swatchSize: 30,
-          swatchRadius: 5
+          swatchSize: ${this.mdsFilterModel.configs.swatchBox.color.swatchSize},
+          swatchRadius: ${this.mdsFilterModel.configs.swatchBox.color.swatchRadius},
+          resetElement: '${this.mdsFilterModel.configs.swatchBox.color.resetElement}'
         }
       }
     }
   }`
-    this.componentCode = constructAngularCode(importMdsCore, importMdsAngular, imports, '', valuesComponent)
+    this.componentCode = constructAngularCode(importMdsCore, importMdsAngular, imports, '', valuesComponent);
+
+    // React Code
+    const importMdsCoreReact = 'MdsFilterModel';
+    const importMdsReact = 'MdsFilterCheckbox';
+    const valuesReactComponent = `// data
+  sampledata: ProductDataModel[] = SampleProductsData.data;
+  // model
+  const [mdsFilterModel, setMdsFilterModel] = React.useState<MdsFilterModel>({
+    configs: {
+      swatchBox: {
+        color: { // Filter component id
+          property: '${this.mdsFilterModel.configs.swatchBox.color.property}', // property on ProductDataModel Object
+          label: '${this.mdsFilterModel.configs.swatchBox.color.label}',
+          colorMap: {
+            'blue-sky': '#66ccdd',
+            'maroon': '#bb6a66',
+            'brown': '#6b6a6b',
+            'black': '#000000',
+            'purple': '#6a66bb',
+            'gold': '#b6ab66'
+          },
+          swatchSize: ${this.mdsFilterModel.configs.swatchBox.color.swatchSize},
+          swatchRadius: ${this.mdsFilterModel.configs.swatchBox.color.swatchRadius},
+          resetElement: '${this.mdsFilterModel.configs.swatchBox.color.resetElement}'
+        }
+      }
+    }
+  })
+    
+  return (
+    <>
+      {/*-- Filter Swatch Component --*/}
+      <MdsFilterSwatch id="color" data={sampledata} model={mdsFilterModel} modelChange={ (model) => setMdsFilterModel(model)}></MdsFilterSwatch>
+    </>
+  );`;
+    this.jsxComponentCode = constructReactCode(importMdsCoreReact, importMdsReact, valuesReactComponent);
   }
 
   updateProp(prop: string): void {
