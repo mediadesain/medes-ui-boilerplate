@@ -27,7 +27,7 @@ export class ColorUtilsComponent {
   ];
 
   import = `
-import { MdsColorUtils } from 'medes-ui';`;
+import { MdsColorUtils } from '@mediadesain/core';`;
   demo = `
 MdsColorUtils.rgbToHex([139, 197, 63]); //output #8bc53f
 MdsColorUtils.hexToRgba('#8bc53f'); //output rgba(139,197,63,1)

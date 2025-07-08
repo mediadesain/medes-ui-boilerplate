@@ -2,7 +2,7 @@
 //*-private-*/ @import "../../../projects/medes-ui/assets/scss/layouts/documentation";
 navbar .logo, mds-navbar .logo { background-image: url('../images//medes-ui.png'); }
 @media (prefers-color-scheme: dark) {
-    /*:root {} - if manual mode theming dont have togle light/dark*/
+    /*:root {} - Use :root {} if automatic thaming base on system instead body.dark-mode {}*/
     body.dark-mode {
         mds-navbar .logo { background-image: url('../images/medes-ui-dark.png'); }
     }

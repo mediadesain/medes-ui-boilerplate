@@ -5,11 +5,11 @@ export const htmlCode = `
 <!-- Medes Modal Component -->
 <mds-modal id="demo-modal-1" [model]="mdsModalModelConfig">
     <!-- Header -->
-    <div class="modal-header padding-1">
+    <div class="modal-header p-1">
         <h4 class="txt-transculant">A Tall Custom Modal!</h4>
     </div>
     <!-- Body -->
-    <div class="modal-body padding-1 padding-b-0">
+    <div class="modal-body p-1 p-y-b-0">
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
         <div style="max-width: 700px; margin: 0 auto;">
             <img src="https://www.mediadesain.com/assets/images/elements/office.jpg"/>
@@ -31,7 +31,7 @@ export const htmlCode2 = `
 <!-- Medes Modal Component -->
 <mds-modal id="demo-modal-1" [model]="mdsModalModelConfig">
     <!-- Body -->
-    <div class="modal-body padding-1 padding-b-0">
+    <div class="modal-body p-1 p-y-b-0">
         <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce et dolor quis sem porta feugiat ut sed neque. Sed sit amet eros sem. In malesuada eleifend erat, nec pulvinar elit dictum in. Donec eget erat eu erat ornare rutrum. Curabitur et varius neque. Nulla ultricies vel ligula pretium semper.</p>
         <div style="max-width: 700px; margin: 0 auto;">
             <img src="https://www.mediadesain.com/assets/images/elements/office.jpg"/>

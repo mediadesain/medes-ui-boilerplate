@@ -30,7 +30,7 @@ export class ArrayUtilsComponent {
     {attribute: 'groupValues( <b>Array</b>, <b>string</b> )', 'value':'<ul><li>Array</li><li>string</li></ul>', 'default': '<ul><li>∞</li><li>∞</li></ul>', description: '<ul><li>Sample data list</li><li>String of Key/prop to make it as key</li></ul>', version: '@mediadesain/core@2.0.0 > Latest version'},
     {attribute: 'arrayTolistObject( <b>Array</b>, <b>string</b> )', 'value':'<ul><li>Array</li><li>string</li></ul>', 'default': '<ul><li>∞</li><li>∞</li></ul>', description: '<ul><li>Sample data list</li><li>String of Key/prop to make it as Object Key</li></ul>', version: '@mediadesain/core@2.0.0 > Latest version'},
     {
-        attribute: 'exportToCsv( <b>Array</b>, <b>string?</b> ) <span class=\'new-beadge margin-l-1\'>New</span>',
+        attribute: 'exportToCsv( <b>Array</b>, <b>string?</b> ) <span class=\'new-beadge m-x-l-1\'>New</span>',
         'value': '<ul><li>Array&lt;Array&lt;string&gt;&gt;</li><li>string</li></ul>',
         'default': '<ul><li>∞</li><li>\'download\'</li></ul>',
         description: '<ul><li>Put which Arrat to convert CSV file, sample already on code below</li><li>Put filename, this part is optional if no value will use default value download.csv</li></ul>',

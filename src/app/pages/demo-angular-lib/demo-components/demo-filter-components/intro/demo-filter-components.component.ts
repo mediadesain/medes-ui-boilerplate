@@ -1,4 +1,4 @@
-import { JsonPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
@@ -8,17 +8,20 @@ import { MdsFilterModel }
 import { MdsHightlightPrismModule, MdsFilterModule }
 /*-public-*/ from '@mediadesain/angular';
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
+import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 
 @Component({
   selector: 'mds-demo-filter-components',
   templateUrl: './demo-filter-components.component.html',
   styleUrls: ['./demo-filter-components.component.scss'],
   standalone: true,
-  imports: [RouterModule, JsonPipe, MdsHightlightPrismModule, MdsFilterModule]
+  imports: [CommonModule, RouterModule, MdsHightlightPrismModule, MdsFilterModule]
 })
 export class DemoFilterComponentsComponent implements OnInit {
   sampledata: ProductDataModel[];
   mdsFilterModel: MdsFilterModel;
+
+  constructor(public libraryTypeService: LibraryTypeService){}
 
 checkboxComponent = `
 <!-- Filter Checkboxes Component -->
@@ -35,6 +38,24 @@ rangeSliderComponent = `
 resetComponent = `
 <!-- Reset Filter Component -->
 <mds-filter-reset customClass="btn-swatch-a" [(model)]="mdsFilterModel">Reset All</mds-filter-reset>`;
+
+checkboxComponentRc = `
+{/*-- Filter Checkboxes Component */}
+<MdsFilterCheckbox id="by-category" data={sampledata} model={mdsFilterModel} modelChange={ (model) => setMdsFilterModel(model)}></MdsFilterCheckbox>`;
+
+swatchComponentRc = `
+{/*-- Filter Swatch Component */}
+<MdsFilterSwatch id="color" data={sampledata} model={mdsFilterModel} modelChange={ (model) => setMdsFilterModel(model)}></MdsFilterSwatch>`;
+
+rangeSliderComponentRc = `
+{/*-- Demo Filter Range Slider Component */}
+<MdsFilterRangeSlider id="price" model={mdsFilterModel} modelChange={ (model) => setMdsFilterModel(model)}></MdsFilterRangeSlider>`;
+
+resetComponentRc = `
+{/*-- Reset Filter Component */}
+<MdsFilterReset customClass='btn-swatch-a x-100' model={mdsFilterModel} modelChange={ (model) => setMdsFilterModel(model)}>
+  <>Reset All</>
+</MdsFilterReset>`;
 
   ngOnInit(): void {
     // Sample Data

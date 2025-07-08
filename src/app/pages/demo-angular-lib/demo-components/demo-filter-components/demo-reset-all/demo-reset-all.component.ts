@@ -81,23 +81,23 @@ export class DemoResetAllComponent {
   }`
     this.componentCode = constructAngularCode(importMdsCore, importMdsAngular, imports, '', valuesComponent);
 
-    // React Code
-    const importMdsCoreReact = 'MdsFilterModel';
-    const importMdsReact = 'MdsFilterCheckbox';
-    const valuesReactComponent = `// data
-  const [mdsFilterModel, setMdsFilterModel] = React.useState<MdsFilterModel>()
+  //   // React Code
+  //   const importMdsCoreReact = 'MdsFilterModel';
+  //   const importMdsReact = 'MdsFilterCheckbox';
+  //   const valuesReactComponent = `// data
+  // const [mdsFilterModel, setMdsFilterModel] = React.useState<MdsFilterModel>()
     
-  return (
-    <>
-      {/*-- XXX Component --*/}
-      <comp></comp>
-    </>
-  );`;
+  // return (
+  //   <>
+  //     {/*-- XXX Component --*/}
+  //     <comp></comp>
+  //   </>
+  // );`;
     // this.jsxComponentCode = constructReactCode(importMdsCoreReact, importMdsReact, valuesReactComponent);
     this.jsxComponentCode = `
 {/*-- Reset Filter Component --*/}
 <MdsFilterReset customClass='btn-swatch-a x-100' model={mdsFilterModel} modelChange={ (model) => setMdsFilterModel(model)}>
-    <>Reset All</>
+  <>Reset All</>
 </MdsFilterReset>`;
   }
   

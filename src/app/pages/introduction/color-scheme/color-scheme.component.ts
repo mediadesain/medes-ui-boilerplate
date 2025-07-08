@@ -31,12 +31,12 @@ export class ColorSchemeComponent {
     --swatch-c: #e98a35;
     --swatch-c-darker: #cb6c17;
     --swatch-c-contrast: #ffffff;
-    // add more here
+    /*-- add more here --*/
 }
 
 /*-- Dark Mode --*/
 @media (prefers-color-scheme: dark) {
-  /*:root {} - if manual mode theming dont have togle light/dark*/
+  /*:root {} - Use :root {} if automatic thaming base on system instead body.dark-mode {}*/
   body.dark-mode {
     /*-- swatch-c --*/
     --swatch-c-transculant: rgba(233,138,53,0.3);
@@ -44,7 +44,7 @@ export class ColorSchemeComponent {
     --swatch-c: #e98a35;
     --swatch-c-darker: #cb6c17;
     --swatch-c-contrast: #ffffff;
-    // add more here
+    /*-- add more here --*/
   }
 }
 
@@ -58,7 +58,7 @@ export class ColorSchemeComponent {
 .table-swatch-c tr th:hover {background: var(--swatch-c-darker); cursor: default;}
 .numbering.swatch-c.active {color: var(--swatch-c-contrast); background: var(--swatch-c);}
 .numbering.swatch-c:hover {color: var(--swatch-c-contrast); background: var(--swatch-c);}
-// add more here`
+/*-- add more here --*/`
   // constructor() { }
 
 

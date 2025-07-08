@@ -1,8 +1,16 @@
 <h1>Medes Form Components</h1>
 <p>Addtional form field & advance form. There are 2 categoires:</p>
 <ul>
-    <li>Toggle Component <i><small>&lt;mds-toggle-button ... &gt;&lt;/mds-toggle-button&gt;</small></i></li>
-    <li>Input Number Component <i><small>&lt;mds-input-number ... &gt;&lt;/mds-input-number&gt;</small></i></li>
+    <li>Toggle Component
+        <i><small>&lt;{{libraryTypeService.selected === 'angular' ? 'mds-toggle-button' : 'MdsToggleButton'}} ... &gt;&lt;/{{libraryTypeService.selected === 'angular' ? 'mds-toggle-button' : 'MdsToggleButton'}}&gt;</small></i>
+    </li>
+    <li>Input Number Component
+        @if (libraryTypeService.selected === 'angular') {
+            <i><small>&lt;mds-input-number ... &gt;&lt;/mds-input-number&gt;</small></i>
+        } @else {
+            <i><small>Not available yet</small></i>
+        }
+    </li>
 </ul>
 <p>Put sample data & configuration to component.</p>
 <hr/>
@@ -52,7 +60,13 @@
             </div>
         </div>
     </div>
-    <div class="g-l-70"><mds-hightlight-prism [code]="pageCounterComponent" language="html"></mds-hightlight-prism></div>
+    <div class="g-l-70">
+        @if (libraryTypeService.selected === 'angular') {
+            <mds-hightlight-prism [code]="pageCounterComponent" language="html"></mds-hightlight-prism>
+        } @else {
+            <blockquote class="info m-y-1">Component not available yet, will Available Soon</blockquote>
+        }
+    </div>
     <div class="g-l-12"><small><a routerLink="/libraries/form-components/input-number">More Info</a></small></div>
 </div>
 <hr/>

@@ -27,11 +27,11 @@ jsxPageNavigationComponent = `
 {/* Medes Toggle Component */}
 <MdsToggleButtonComponent value={isActive} valueChange={(value: boolean) => setIsActive(value)}></MdsToggleButtonComponent>`;
 pageCounterComponent = `
-<div class="flex-vertical">
-    <div class="flex-vertical margin-b-1">
+<div class="flex-y">
+    <div class="flex-y m-y-b-1">
         <label>Data Binding: </label>{{price}}
     </div>
-    <div class="flex-vertical">
+    <div class="flex-y">
         <!-- Medes Input Component -->
         <label>Component </label>
         <mds-input-number [(value)]="price"></mds-input-number>

@@ -1,12 +1,12 @@
 <!-- Navbar -->
-<mds-navbar class="x-100 flex-x align-center justify-between" (window:online)="location.back()" (window:offline)="router.navigateByUrl('/introduction/how-to-install')"></mds-navbar>
+<mds-navbar class="x-100 flex-x align-middle justify-between" (window:online)="location.back()" (window:offline)="router.navigateByUrl('/introduction/how-to-install')"></mds-navbar>
 <content class="x-100 y-100 flex-x justify-between flex-nowarp no-scroll">
   <!-- Navside Menu -->
-  <mds-aside class="scroll-vertical"></mds-aside>
+  <mds-aside class="scroll-y"></mds-aside>
   <!-- Content -->
   <article>
-    <div id="article" class="y-100 x-100 flex-y scroll-vertical">
-      <main class="y-100 x-100 flex-y flex-nowarp">
+    <div id="article" class="y-100 x-100 scroll-y">
+      <main class="y-100 x-100">
           <router-outlet></router-outlet>
           <mds-footer></mds-footer>
       </main>

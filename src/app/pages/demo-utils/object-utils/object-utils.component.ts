@@ -28,7 +28,7 @@ export class ObjectUtilsComponent {
       version: '@mediadesain/core@2.0.0 > Latest version'
     },
     {
-      attribute: 'isEqual( <b>Object</b>, <b>Object</b> ) <span class=\'new-beadge margin-l-1\'>New</span>',
+      attribute: 'isEqual( <b>Object</b>, <b>Object</b> ) <span class=\'new-beadge m-x-l-1\'>New</span>',
       'value': '<ul><li>Object</li><li>Object</li></ul>',
       'default': '<ul><li>∞</li><li>∞</li></ul>',
       description: 'Put 2 Objects which are to compare',

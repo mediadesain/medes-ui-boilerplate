@@ -11,7 +11,7 @@
 
 /*-- Dark Mode --*/
 @media (prefers-color-scheme: dark) {
-  /*:root {} - if manual mode theming dont have togle light/dark*/
+  /*:root {} - Use :root {} if automatic thaming base on system instead body.dark-mode {}*/
   body.dark-mode {
     /*-- swatch-c --*/
     --swatch-c-transculant: rgba(233,138,53,0.3);

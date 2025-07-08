@@ -58,26 +58,26 @@ export class AsideComponent {
             isNew: true
           },
           {
-            text: 'Form Components', url: 'libraries/form-components/intro',
+            text: 'Form Components', url: 'libraries/form-components/intro', isNew: true,
             urls: [
               {text: 'Toggle', url: 'libraries/form-components/toggle'},
               {text: 'Number', url: 'libraries/form-components/input-number'}
             ]
           },
           {
-            text: 'Filter Components', url: 'libraries/filter-components/intro',
+            text: 'Filter Components', url: 'libraries/filter-components/intro', isNew: true,
             urls: [
-              {text: 'Checkboxes Filter', url: 'libraries/filter-components/checkboxes', isNew: true},
-              {text: 'Swatch Filter', url: 'libraries/filter-components/swatch', isNew: true},
-              {text: 'Range Slider', url: 'libraries/filter-components/range-slider', isNew: true},
-              {text: 'Reset Filter', url: 'libraries/filter-components/reset', isNew: true}
+              {text: 'Checkboxes Filter', url: 'libraries/filter-components/checkboxes'},
+              {text: 'Swatch Filter', url: 'libraries/filter-components/swatch'},
+              {text: 'Range Slider', url: 'libraries/filter-components/range-slider'},
+              {text: 'Reset Filter', url: 'libraries/filter-components/reset'}//, isNew: true}
             ]
           },
           {
-            text: 'Page Manager Components', url: 'libraries/navigation-manager/intro',
+            text: 'Page Manager Components', url: 'libraries/navigation-manager/intro', isNew: true,
             urls: [
-              {text: 'Page Navigation', url: 'libraries/navigation-manager/page-navigation', isNew: true},
-              {text: 'Page Counter', url: 'libraries/navigation-manager/page-counter', isNew: true}
+              {text: 'Page Navigation', url: 'libraries/navigation-manager/page-navigation'},
+              {text: 'Page Counter', url: 'libraries/navigation-manager/page-counter'}
             ]
           },
           {
