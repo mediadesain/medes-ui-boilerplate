@@ -8,7 +8,6 @@ import { ${importMdsAngular} } from '@mediadesain/angular';
   selector: 'mds-app',
   templateUrl: './mds-app.component.html',
   styleUrls: ['./mds-app.component.scss'],
-  standalone: true,
   imports: [${imports}]${providers ? `,
   providers: [${providers}]`: ''}
 })

@@ -13,11 +13,10 @@ import { MdsHightlightPrismModule, MdsModalService, MdsModalModule, MdsFormModul
 
 
 @Component({
-  selector: 'mds-demo-input-number',
-  templateUrl: './demo-input-number.component.html',
-  styleUrls: ['./demo-input-number.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsFormModule]
+    selector: 'mds-demo-input-number',
+    templateUrl: './demo-input-number.component.html',
+    styleUrls: ['./demo-input-number.component.scss'],
+    imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsFormModule]
 })
 export class DemoInputNumberComponent {
   

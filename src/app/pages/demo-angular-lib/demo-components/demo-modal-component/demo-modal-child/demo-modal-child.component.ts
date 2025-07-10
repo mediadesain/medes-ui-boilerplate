@@ -9,11 +9,10 @@ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-modal-child',
-  templateUrl: './demo-modal-child.component.html',
-  styleUrls: ['./demo-modal-child.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule]
+    selector: 'mds-demo-modal-child',
+    templateUrl: './demo-modal-child.component.html',
+    styleUrls: ['./demo-modal-child.component.scss'],
+    imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule]
 })
 export class DemoModalChildComponent implements OnInit, AfterContentChecked {
   bodyText: string;

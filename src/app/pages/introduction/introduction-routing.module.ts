@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ColorSchemeComponent } from './color-scheme/color-scheme.component';
-import { HowToInstallComponent } from './how-to-install/how-to-install.component';
-import { IntroductionComponent } from './introduction.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'info', pathMatch: 'full' },
-  { path: 'info', component: IntroductionComponent },
-  { path: 'how-to-install', component: HowToInstallComponent, data: {title: 'MedesUI - Introduction'} },
-  { path: 'color-scheme', component: ColorSchemeComponent, data: {title: 'MedesUI - Color Scheme'} }
+  { path: 'how-to-install', redirectTo: 'info', pathMatch: 'full' },
+  {
+    path: 'how-to-install',
+    loadComponent: () => import('./how-to-install/how-to-install.component').then(c => c.HowToInstallComponent),
+    data: {title: 'MedesUI - Introduction'}
+  },
+  {
+    path: 'color-scheme',
+    loadComponent: () => import('./color-scheme/color-scheme.component').then(c => c.ColorSchemeComponent),
+    data: {title: 'MedesUI - Color Scheme'} }
 ];
 
 @NgModule({

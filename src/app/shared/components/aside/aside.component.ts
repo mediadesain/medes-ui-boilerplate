@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 
 @Component({
-  selector: 'mds-aside',
-  templateUrl: './aside.component.html',
-  styleUrls: ['./aside.component.scss']
+    selector: 'mds-aside',
+    templateUrl: './aside.component.html',
+    styleUrls: ['./aside.component.scss'],
+    standalone: false
 })
 export class AsideComponent {
   isCollapsedVersion: boolean;

@@ -13,11 +13,10 @@ import { MdsFilterSwatchComponent, MdsHightlightPrismModule, MdsModalModule, Mds
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-swatch',
-  templateUrl: './demo-swatch.component.html',
-  styleUrls: ['./demo-swatch.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsFilterSwatchComponent]
+    selector: 'mds-demo-swatch',
+    templateUrl: './demo-swatch.component.html',
+    styleUrls: ['./demo-swatch.component.scss'],
+    imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsFilterSwatchComponent]
 })
 export class DemoSwatchComponent {
   // data

@@ -15,11 +15,10 @@ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
 
 
 @Component({
-  selector: 'mds-demo-modal',
-  templateUrl: './demo-modal-component.component.html',
-  styleUrls: ['./demo-modal-component.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, MdsHightlightPrismModule, MdsModalModule, DemoModalChildComponent]
+    selector: 'mds-demo-modal',
+    templateUrl: './demo-modal-component.component.html',
+    styleUrls: ['./demo-modal-component.component.scss'],
+    imports: [CommonModule, FormsModule, RouterModule, MdsHightlightPrismModule, MdsModalModule, DemoModalChildComponent]
 })
 
 export class DemoModalComponent {

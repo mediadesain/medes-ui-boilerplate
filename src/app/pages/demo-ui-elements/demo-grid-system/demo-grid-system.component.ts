@@ -7,11 +7,10 @@ import { MdsHightlightPrismModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-grid-system',
-  templateUrl: './demo-grid-system.component.html',
-  styleUrls: ['./demo-grid-system.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, SlicePipe, MdsHightlightPrismModule]
+    selector: 'mds-demo-grid-system',
+    templateUrl: './demo-grid-system.component.html',
+    styleUrls: ['./demo-grid-system.component.scss'],
+    imports: [CommonModule, FormsModule, SlicePipe, MdsHightlightPrismModule]
 })
 export class DemoGridSystemComponent implements OnInit {
   sampledata: {

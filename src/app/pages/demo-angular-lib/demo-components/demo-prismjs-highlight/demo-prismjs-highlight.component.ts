@@ -5,11 +5,10 @@ import { MdsHightlightPrismModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-prismjs-highlight',
-  templateUrl: './demo-prismjs-highlight.component.html',
-  styleUrls: ['./demo-prismjs-highlight.component.scss'],
-  standalone: true,
-  imports: [CommonModule, MdsHightlightPrismModule]
+    selector: 'mds-demo-prismjs-highlight',
+    templateUrl: './demo-prismjs-highlight.component.html',
+    styleUrls: ['./demo-prismjs-highlight.component.scss'],
+    imports: [CommonModule, MdsHightlightPrismModule]
 })
 export class DemoPrismjsHighlightComponent {
   tableHeader = [

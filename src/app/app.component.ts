@@ -5,9 +5,11 @@ import { filter } from 'rxjs/operators';
 import { DyamicTitlebarService } from './shared/services/dynamic-titlebar.service';
 
 @Component({
-  selector: 'mds-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'mds-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: false,
+    providers: [DyamicTitlebarService]
 })
 export class AppComponent {
 

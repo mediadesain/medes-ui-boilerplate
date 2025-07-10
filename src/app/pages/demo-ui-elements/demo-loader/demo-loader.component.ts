@@ -5,11 +5,10 @@ import { MdsHightlightPrismModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-loader',
-  templateUrl: './demo-loader.component.html',
-  styleUrls: ['./demo-loader.component.scss'],
-  standalone: true,
-  imports: [MdsHightlightPrismModule, FormsModule]
+    selector: 'mds-demo-loader',
+    templateUrl: './demo-loader.component.html',
+    styleUrls: ['./demo-loader.component.scss'],
+    imports: [MdsHightlightPrismModule, FormsModule]
 })
 export class DemoLoaderComponent {
   isLoading = true;

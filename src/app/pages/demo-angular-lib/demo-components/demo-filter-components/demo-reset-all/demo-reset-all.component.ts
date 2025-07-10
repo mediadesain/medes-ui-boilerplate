@@ -11,12 +11,11 @@ import { MdsFilterResetComponent, MdsHightlightPrismModule, MdsModalModule, MdsM
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-reset-all',
-  templateUrl: './demo-reset-all.component.html',
-  styleUrls: ['./demo-reset-all.component.scss'],
-  standalone: true,
-  imports: [CommonModule, MdsHightlightPrismModule, MdsModalModule, MdsFilterResetComponent],
-  providers: [MdsModalService]
+    selector: 'mds-demo-reset-all',
+    templateUrl: './demo-reset-all.component.html',
+    styleUrls: ['./demo-reset-all.component.scss'],
+    imports: [CommonModule, MdsHightlightPrismModule, MdsModalModule, MdsFilterResetComponent],
+    providers: [MdsModalService]
 })
 export class DemoResetAllComponent {
   mdsFilterModel: MdsFilterModel;

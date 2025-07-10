@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DemoFormComponent } from './intro/demo-form-component.component';
-import { DemoToggleButtonComponent } from './demo-toggle-button/demo-toggle-button.component';
-import { DemoInputNumberComponent } from './demo-input-number/demo-input-number.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'intro', pathMatch: 'full' },
-  { path: 'intro', component: DemoFormComponent, data: {title: 'MedesUI - Form Components'} },
-  { path: 'toggle', component: DemoToggleButtonComponent, data: {title: 'MedesUI - Demo Toggle'} },
-  { path: 'input-number', component: DemoInputNumberComponent, data: {title: 'MedesUI - Demo Input Number'} },
+  { path: 'intro', loadComponent: () => import('./intro/demo-form-component.component').then(c => c.DemoFormComponent), data: {title: 'MedesUI - Form Components'} },
+  { path: 'toggle', loadComponent: () => import('./demo-toggle-button/demo-toggle-button.component').then(c => c.DemoToggleButtonComponent), data: {title: 'MedesUI - Demo Toggle'} },
+  { path: 'input-number', loadComponent: () => import('./demo-input-number/demo-input-number.component').then(c => c.DemoInputNumberComponent), data: {title: 'MedesUI - Demo Input Number'} },
 ];
 
 @NgModule({

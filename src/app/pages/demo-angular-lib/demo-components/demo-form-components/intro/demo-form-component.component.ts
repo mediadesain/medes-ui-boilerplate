@@ -7,11 +7,10 @@ import { MdsHightlightPrismModule, MdsFormModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-form-component',
-  templateUrl: './demo-form-component.component.html',
-  styleUrls: ['./demo-form-component.component.scss'],
-  standalone: true,
-  imports: [CommonModule, RouterModule, MdsHightlightPrismModule, MdsFormModule]
+    selector: 'mds-demo-form-component',
+    templateUrl: './demo-form-component.component.html',
+    styleUrls: ['./demo-form-component.component.scss'],
+    imports: [CommonModule, RouterModule, MdsHightlightPrismModule, MdsFormModule]
 })
 export class DemoFormComponent implements AfterContentChecked {
   isActive: boolean;

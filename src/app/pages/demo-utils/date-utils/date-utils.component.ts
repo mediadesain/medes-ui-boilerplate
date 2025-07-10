@@ -8,11 +8,10 @@ import { MdsHightlightPrismModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-date-utils',
-  templateUrl: './date-utils.component.html',
-  styleUrls: ['./date-utils.component.scss'],
-  standalone: true,
-  imports: [CommonModule, MdsHightlightPrismModule]
+    selector: 'mds-date-utils',
+    templateUrl: './date-utils.component.html',
+    styleUrls: ['./date-utils.component.scss'],
+    imports: [CommonModule, MdsHightlightPrismModule]
 })
 export class DateUtilsComponent {
 import = `

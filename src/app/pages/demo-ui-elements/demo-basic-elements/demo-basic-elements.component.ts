@@ -6,11 +6,10 @@ import { MdsHightlightPrismModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-basic-elements',
-  templateUrl: './demo-basic-elements.component.html',
-  styleUrls: ['./demo-basic-elements.component.scss'],
-  standalone: true,
-  imports: [RouterModule, MdsHightlightPrismModule, CommonModule]
+    selector: 'mds-demo-basic-elements',
+    templateUrl: './demo-basic-elements.component.html',
+    styleUrls: ['./demo-basic-elements.component.scss'],
+    imports: [RouterModule, MdsHightlightPrismModule, CommonModule]
 })
 export class DemoBasicElementsComponent {
 samplehtml = `

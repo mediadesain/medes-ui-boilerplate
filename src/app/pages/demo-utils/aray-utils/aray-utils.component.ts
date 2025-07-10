@@ -8,11 +8,10 @@ import { MdsHightlightPrismModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-aray-utils',
-  templateUrl: './aray-utils.component.html',
-  styleUrls: ['./aray-utils.component.scss'],
-  standalone: true,
-  imports: [CommonModule, MdsHightlightPrismModule]
+    selector: 'mds-aray-utils',
+    templateUrl: './aray-utils.component.html',
+    styleUrls: ['./aray-utils.component.scss'],
+    imports: [CommonModule, MdsHightlightPrismModule]
 })
 export class ArrayUtilsComponent {
   tableHeader = [

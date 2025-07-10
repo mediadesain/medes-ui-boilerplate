@@ -6,11 +6,10 @@ import { MdsFilterPipe, MdsHightlightPrismModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-filter-pipe',
-  templateUrl: './demo-filter-pipe.component.html',
-  styleUrls: ['./demo-filter-pipe.component.scss'],
-  standalone: true,
-  imports: [MdsHightlightPrismModule, JsonPipe, MdsFilterPipe]
+    selector: 'mds-demo-filter-pipe',
+    templateUrl: './demo-filter-pipe.component.html',
+    styleUrls: ['./demo-filter-pipe.component.scss'],
+    imports: [MdsHightlightPrismModule, JsonPipe, MdsFilterPipe]
 })
 export class DemoFilterPipeComponent {
   item = [];

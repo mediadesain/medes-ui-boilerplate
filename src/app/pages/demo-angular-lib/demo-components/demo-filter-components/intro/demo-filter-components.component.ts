@@ -11,11 +11,10 @@ import { MdsHightlightPrismModule, MdsFilterModule }
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 
 @Component({
-  selector: 'mds-demo-filter-components',
-  templateUrl: './demo-filter-components.component.html',
-  styleUrls: ['./demo-filter-components.component.scss'],
-  standalone: true,
-  imports: [CommonModule, RouterModule, MdsHightlightPrismModule, MdsFilterModule]
+    selector: 'mds-demo-filter-components',
+    templateUrl: './demo-filter-components.component.html',
+    styleUrls: ['./demo-filter-components.component.scss'],
+    imports: [CommonModule, RouterModule, MdsHightlightPrismModule, MdsFilterModule]
 })
 export class DemoFilterComponentsComponent implements OnInit {
   sampledata: ProductDataModel[];

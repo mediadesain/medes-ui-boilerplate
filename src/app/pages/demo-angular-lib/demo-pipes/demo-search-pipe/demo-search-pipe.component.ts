@@ -6,11 +6,10 @@ import { MdsHightlightPrismModule, MdsSearchPipe }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-search-pipe',
-  templateUrl: './demo-search-pipe.component.html',
-  styleUrls: ['./demo-search-pipe.component.scss'],
-  standalone: true,
-  imports: [MdsHightlightPrismModule, JsonPipe, MdsSearchPipe]
+    selector: 'mds-demo-search-pipe',
+    templateUrl: './demo-search-pipe.component.html',
+    styleUrls: ['./demo-search-pipe.component.scss'],
+    imports: [MdsHightlightPrismModule, JsonPipe, MdsSearchPipe]
 })
 export class DemoSearchPipeComponent {
   item = [];

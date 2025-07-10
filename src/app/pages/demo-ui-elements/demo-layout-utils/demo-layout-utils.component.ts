@@ -6,11 +6,10 @@ import { MdsHightlightPrismModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-layout-utils',
-  templateUrl: './demo-layout-utils.component.html',
-  styleUrls: ['./demo-layout-utils.component.scss'],
-  standalone: true,
-  imports: [FormsModule, CommonModule, MdsHightlightPrismModule]
+    selector: 'mds-demo-layout-utils',
+    templateUrl: './demo-layout-utils.component.html',
+    styleUrls: ['./demo-layout-utils.component.scss'],
+    imports: [FormsModule, CommonModule, MdsHightlightPrismModule]
 })
 export class DemoLayoutUtilsComponent {
   paddingOptions = [

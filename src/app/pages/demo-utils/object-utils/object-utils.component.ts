@@ -5,11 +5,10 @@ import { MdsHightlightPrismModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-object-utils',
-  templateUrl: './object-utils.component.html',
-  styleUrls: ['./object-utils.component.scss'],
-  standalone: true,
-  imports: [CommonModule, MdsHightlightPrismModule]
+    selector: 'mds-object-utils',
+    templateUrl: './object-utils.component.html',
+    styleUrls: ['./object-utils.component.scss'],
+    imports: [CommonModule, MdsHightlightPrismModule]
 })
 export class ObjectUtilsComponent {
   tableHeader = [

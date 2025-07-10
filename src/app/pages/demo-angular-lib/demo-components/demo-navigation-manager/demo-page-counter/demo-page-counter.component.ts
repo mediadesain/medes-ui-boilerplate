@@ -13,11 +13,10 @@ import { MdsHightlightPrismModule, MdsModalModule, MdsModalService, MdsPageManag
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-page-counter',
-  templateUrl: './demo-page-counter.component.html',
-  styleUrls: ['./demo-page-counter.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsPageManagerModule]
+    selector: 'mds-demo-page-counter',
+    templateUrl: './demo-page-counter.component.html',
+    styleUrls: ['./demo-page-counter.component.scss'],
+    imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsPageManagerModule]
 })
 export class DemoPageCounterComponent implements AfterContentChecked {
   // data

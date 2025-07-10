@@ -6,11 +6,10 @@ import { MdsFilterRangePipe, MdsHightlightPrismModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-filter-range-pipe',
-  standalone: true,
-  imports: [CommonModule, MdsHightlightPrismModule, MdsFilterRangePipe],
-  templateUrl: './demo-filter-range-pipe.component.html',
-  styleUrls: ['./demo-filter-range-pipe.component.scss']
+    selector: 'mds-demo-filter-range-pipe',
+    templateUrl: './demo-filter-range-pipe.component.html',
+    styleUrls: ['./demo-filter-range-pipe.component.scss'],
+    imports: [CommonModule, MdsHightlightPrismModule, MdsFilterRangePipe]
 })
 export class DemoFilterRangePipeComponent {
   item: ProductDataModel[];

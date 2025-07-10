@@ -10,11 +10,10 @@ import { MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsPageManag
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsPageManagerModule]
+    selector: 'mds-demo',
+    templateUrl: './demo.component.html',
+    styleUrls: ['./demo.component.scss'],
+    imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsFilterModule, MdsPipesModule, MdsPageManagerModule]
 })
 export class DemoComponent implements OnInit, AfterContentChecked {
   data: ProductDataModel[];

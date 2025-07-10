@@ -9,10 +9,9 @@ import { MyReactComponent } from 'dist/@mediadesain/react';
 
 
 @Component({
-  selector: 'mds-react-wrapper',
-  template: '<div #reactContainer></div>{{props|json}}',
-  standalone: true, // If using standalone components
-  imports: [CommonModule]
+    selector: 'mds-react-wrapper',
+    template: '<div #reactContainer></div>{{props|json}}', // If using standalone components
+    imports: [CommonModule]
 })
 export class ReactWrapperComponent implements AfterViewInit, OnDestroy {
   @ViewChild('reactContainer', { static: true }) reactContainer!: ElementRef;

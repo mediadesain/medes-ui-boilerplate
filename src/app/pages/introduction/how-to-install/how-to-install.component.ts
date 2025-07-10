@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { MdsHightlightPrismModule } from '@mediadesain/angular';
 
 @Component({
-  selector: 'mds-how-to-install',
-  templateUrl: './how-to-install.component.html',
-  styleUrls: ['./how-to-install.component.scss']
+    selector: 'mds-how-to-install',
+    templateUrl: './how-to-install.component.html',
+    styleUrls: ['./how-to-install.component.scss'],
+    imports: [MdsHightlightPrismModule]
 })
 export class HowToInstallComponent {
   importCss = `

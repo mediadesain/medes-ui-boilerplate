@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { VersioningComponent } from './shared/components/versioning/versioning.component';
 import { DevTestingComponent } from './pages/dev-testing-components/dev-testing.component';
 
 const routes: Routes = [
@@ -24,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'versioning',
-    component: VersioningComponent,
+    loadComponent: () => import('./shared/components/versioning/versioning.component').then(c => c.VersioningComponent),
     data: {title: 'MedesUI - Versions'}
     
   },

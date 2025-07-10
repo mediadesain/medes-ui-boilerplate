@@ -10,11 +10,10 @@ import { MdsHightlightPrismModule, MdsPageManagerModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-navigation-manager',
-  templateUrl: './demo-navigation-manager.component.html',
-  styleUrls: ['./demo-navigation-manager.component.scss'],
-  standalone: true,
-  imports: [CommonModule, RouterModule, MdsHightlightPrismModule, MdsPageManagerModule]
+    selector: 'mds-demo-navigation-manager',
+    templateUrl: './demo-navigation-manager.component.html',
+    styleUrls: ['./demo-navigation-manager.component.scss'],
+    imports: [CommonModule, RouterModule, MdsHightlightPrismModule, MdsPageManagerModule]
 })
 export class DemoNavigationManagerComponent implements AfterContentChecked {
 

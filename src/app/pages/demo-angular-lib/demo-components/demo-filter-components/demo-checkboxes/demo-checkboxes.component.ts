@@ -13,11 +13,10 @@ import { MdsFilterCheckboxComponent, MdsHightlightPrismModule, MdsModalModule, M
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-checkboxes',
-  templateUrl: './demo-checkboxes.component.html',
-  styleUrls: ['./demo-checkboxes.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsFilterCheckboxComponent]
+    selector: 'mds-demo-checkboxes',
+    templateUrl: './demo-checkboxes.component.html',
+    styleUrls: ['./demo-checkboxes.component.scss'],
+    imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsFilterCheckboxComponent]
 })
 
 export class DemoCheckboxesComponent {

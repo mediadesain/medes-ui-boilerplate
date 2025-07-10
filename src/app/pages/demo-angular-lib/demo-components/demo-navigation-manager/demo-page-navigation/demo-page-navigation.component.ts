@@ -15,11 +15,10 @@ import { MdsHightlightPrismModule, MdsPageManagerModule, MdsModalService, MdsMod
 
 
 @Component({
-  selector: 'mds-demo-page-navigation',
-  templateUrl: './demo-page-navigation.component.html',
-  styleUrls: ['./demo-page-navigation.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsPageManagerModule]
+    selector: 'mds-demo-page-navigation',
+    templateUrl: './demo-page-navigation.component.html',
+    styleUrls: ['./demo-page-navigation.component.scss'],
+    imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsPageManagerModule]
 })
 export class DemoPageNavigationComponent implements AfterContentChecked {
   // data

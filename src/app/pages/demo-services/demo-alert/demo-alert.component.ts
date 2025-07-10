@@ -9,11 +9,10 @@ import { MdsHightlightPrismModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-alert',
-  templateUrl: './demo-alert.component.html',
-  styleUrls: ['./demo-alert.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, MdsHightlightPrismModule]
+    selector: 'mds-demo-alert',
+    templateUrl: './demo-alert.component.html',
+    styleUrls: ['./demo-alert.component.scss'],
+    imports: [CommonModule, FormsModule, MdsHightlightPrismModule]
 })
 export class DemoAlertComponent {
   data: string;

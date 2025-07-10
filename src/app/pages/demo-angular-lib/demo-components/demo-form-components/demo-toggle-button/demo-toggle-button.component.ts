@@ -13,11 +13,10 @@ import { MdsHightlightPrismModule, MdsModalService, MdsModalModule, MdsFormModul
 
 
 @Component({
-  selector: 'mds-demo-toggle-button',
-  templateUrl: './demo-toggle-button.component.html',
-  styleUrls: ['./demo-toggle-button.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsFormModule]
+    selector: 'mds-demo-toggle-button',
+    templateUrl: './demo-toggle-button.component.html',
+    styleUrls: ['./demo-toggle-button.component.scss'],
+    imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsFormModule]
 })
 export class DemoToggleButtonComponent {
   // value

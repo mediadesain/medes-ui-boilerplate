@@ -12,11 +12,10 @@ import { MdsFilterRangeSliderComponent, MdsHightlightPrismModule, MdsModalModule
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-demo-filter-range-slider',
-  templateUrl: './demo-filter-range-slider.component.html',
-  styleUrls: ['./demo-filter-range-slider.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsFilterRangeSliderComponent]
+    selector: 'mds-demo-filter-range-slider',
+    templateUrl: './demo-filter-range-slider.component.html',
+    styleUrls: ['./demo-filter-range-slider.component.scss'],
+    imports: [CommonModule, FormsModule, MdsHightlightPrismModule, MdsModalModule, MdsFilterRangeSliderComponent]
 })
 export class DemoFilterRangeSliderComponent {
   // model

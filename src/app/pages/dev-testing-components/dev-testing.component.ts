@@ -11,11 +11,10 @@ import { MdsFormModule }
 //*-private-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
-  selector: 'mds-dev-testing',
-  templateUrl: './dev-testing.component.html',
-  styleUrls: ['./dev-testing.component.scss'],
-  standalone: true,
-  imports: [CommonModule, FormsModule, MdsFormModule, ReactWrapperComponent]
+    selector: 'mds-dev-testing',
+    templateUrl: './dev-testing.component.html',
+    styleUrls: ['./dev-testing.component.scss'],
+    imports: [CommonModule, FormsModule, MdsFormModule, ReactWrapperComponent]
 })
 
 export class DevTestingComponent implements AfterViewInit, AfterContentChecked, OnDestroy{
