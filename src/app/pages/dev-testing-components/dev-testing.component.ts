@@ -5,10 +5,10 @@ import { ReactWrapperComponent } from 'src/app/shared/components/react-wrapper/r
 
 import { MdsFormModel }
 /*-public-*/ from '@mediadesain/core';
-//*-private-*/ from 'projects/medes-ui/src/public-api';
+//*-public-*/ from 'projects/medes-ui/src/public-api';
 import { MdsFormModule }
 /*-public-*/ from '@mediadesain/angular';
-//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
+//*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
     selector: 'mds-dev-testing',

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MdsHightlightPrismModule }
 /*-public-*/ from '@mediadesain/angular';
-//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
+//*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
     selector: 'mds-demo-basic-elements',

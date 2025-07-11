@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsHightlightPrismModule }
 /*-public-*/ from '@mediadesain/angular';
-//*-private-*/ from 'projects/medes-ui-angular/src/public-api';
+//*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
     selector: 'mds-demo-grid-system',

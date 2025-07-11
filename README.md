@@ -15,3 +15,5 @@ More detail about the changes writen on [changelog](https://github.com/mediadesa
 - React library Created, package name @mediadesain/react. To install run `npm i @mediadesain/react`.
 - Documentation Enhancement: Add Light/Dark Mode Toggle
 - Documentation Enhancement: Switch Libraries Doc Type
+- Documentation Enhancement: Simplify with standalone component
+- Documentation Enhancement: Simplify routing system

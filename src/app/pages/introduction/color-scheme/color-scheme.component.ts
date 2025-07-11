@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MdsHightlightPrismModule } from '@mediadesain/angular';
 import { MdsColorUtils }
 /*-public-*/ from '@mediadesain/core';
-//*-private-*/ from 'projects/medes-ui/src/lib/utils/mds-color-utils';
+//*-public-*/ from 'projects/medes-ui/src/lib/utils/mds-color-utils';
 
 @Component({
     selector: 'mds-color-scheme',

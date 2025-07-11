@@ -1,3 +1,7 @@
+@if(!this.isDevMode){
+  <div class="x-100 dev-mode">Dev Mode</div>
+}
+
 <!-- Navbar -->
 <mds-navbar class="x-100 flex-x align-middle justify-between" (window:online)="location.back()" (window:offline)="router.navigateByUrl('/introduction/how-to-install')"></mds-navbar>
 <content class="x-100 y-100 flex-x justify-between flex-nowarp no-scroll">
@@ -7,7 +11,7 @@
   <article>
     <div id="article" class="y-100 x-100 scroll-y">
       <main class="y-100 x-100">
-          <router-outlet></router-outlet>
+          <router-outlet/>
           <mds-footer></mds-footer>
       </main>
     </div>

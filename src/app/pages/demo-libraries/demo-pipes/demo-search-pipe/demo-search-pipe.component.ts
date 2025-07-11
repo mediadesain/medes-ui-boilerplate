@@ -1,0 +1,24 @@
+import { JsonPipe } from '@angular/common';
+import { Component } from '@angular/core';
+import { SampleProductsData } from 'src/app/shared/constant/products';
+import { MdsHightlightPrismModule, MdsSearchPipe }
+/*-public-*/ from '@mediadesain/angular';
+//*-public-*/ from 'projects/medes-ui-angular/src/public-api';
+
+@Component({
+    selector: 'mds-demo-search-pipe',
+    templateUrl: './demo-search-pipe.component.html',
+    styleUrls: ['./demo-search-pipe.component.scss'],
+    imports: [MdsHightlightPrismModule, JsonPipe, MdsSearchPipe]
+})
+export class DemoSearchPipeComponent {
+  item = [];
+  params = {
+    propertyKey: 'name',
+    keyword: 'agnes'
+  }
+  constructor() {
+    this.item = SampleProductsData.data;
+  }
+  
+}
