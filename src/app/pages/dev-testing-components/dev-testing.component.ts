@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { ReactWrapperComponent } from 'src/app/shared/components/react-wrapper/react-wrapper.component';
 
 import { MdsFormModel }
-/*-public-*/ from '@mediadesain/core';
+/*-public-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/public-api';
 import { MdsFormModule }
-/*-public-*/ from '@mediadesain/angular';
+/*-public-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({

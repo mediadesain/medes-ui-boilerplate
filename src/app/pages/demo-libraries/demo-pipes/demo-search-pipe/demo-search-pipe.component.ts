@@ -2,7 +2,7 @@ import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsHightlightPrismModule, MdsSearchPipe }
-/*-public-*/ from '@mediadesain/angular';
+/*-public-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({

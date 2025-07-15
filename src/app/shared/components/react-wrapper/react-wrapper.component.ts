@@ -2,9 +2,9 @@ import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } fro
 import { createRoot, Root } from 'react-dom/client';
 import { CommonModule } from '@angular/common';
 import * as React from 'react';
-import { MyReactComponent } from 'dist/@mediadesain/react';
+// import { MyReactComponent } from 'dist/@medes-ui/react';
 // import {MyReactComponent } from 'projects/medes-ui-react/src/public-api';
-// import { MyReactComponent } from '@mediadesain/react';
+// import { MyReactComponent } from '@medes-ui/react';
 
 
 
@@ -29,6 +29,6 @@ export class ReactWrapperComponent implements AfterViewInit, OnDestroy {
   }
 
   private renderReactComponent() {
-    this.root.render(React.createElement(MyReactComponent, this.props));
+    // this.root.render(React.createElement(MyReactComponent, this.props));
   }
 }

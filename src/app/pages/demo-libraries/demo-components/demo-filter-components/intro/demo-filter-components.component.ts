@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ProductDataModel, SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsFilterModel }
-/*-public-*/ from '@mediadesain/core';
+/*-public-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/public-api';
 import { MdsHightlightPrismModule, MdsFilterModule }
-/*-public-*/ from '@mediadesain/angular';
+/*-public-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 

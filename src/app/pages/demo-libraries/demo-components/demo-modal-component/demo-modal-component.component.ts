@@ -7,10 +7,10 @@ import { htmlCode, htmlCode2, interfaceCode } from './modal-component-preview-co
 import { FormsModule } from '@angular/forms';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsModalModel }
-/*-public-*/ from '@mediadesain/core';
+/*-public-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/public-api';
 import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
-/*-public-*/ from '@mediadesain/angular';
+/*-public-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 
@@ -43,11 +43,11 @@ export class DemoModalComponent {
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {docType: 'angular', attribute: 'id', type: 'string', default: '∞', description: 'id modal is required for identify which modal to trigger', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'model?', type: 'MdsModalModel', default: '∞', description: 'Modal configuratuin', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'id', type: 'string', default: '∞', description: 'id modal is required for identify which modal to trigger', version: '@mediadesain/react@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'ref', type: 'useRef<MdsModalRefs>(null)', default: 'null', description: 'Modal configuratuin', version: '@mediadesain/react@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'model?', type: 'MdsModalModel', default: '∞', description: 'Modal configuratuin', version: '@mediadesain/react@2.0.0 > Latest version'}
+    {docType: 'angular', attribute: 'id', type: 'string', default: '∞', description: 'id modal is required for identify which modal to trigger', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'model?', type: 'MdsModalModel', default: '∞', description: 'Modal configuratuin', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'id', type: 'string', default: '∞', description: 'id modal is required for identify which modal to trigger', version: '@medes-ui/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'ref', type: 'useRef<MdsModalRefs>(null)', default: 'null', description: 'Modal configuratuin', version: '@medes-ui/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'model?', type: 'MdsModalModel', default: '∞', description: 'Modal configuratuin', version: '@medes-ui/react@2.0.0 > Latest version'}
   ];
   tableContentDeprecated = [];
 

@@ -7,10 +7,10 @@ import { SampleProductsData } from 'src/app/shared/constant/products';
 import { PageNavigationManagerModelCode } from '../demo-page-navigation-manager-model-code';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { PageNavigationManagerModel }
-/*-public-*/ from '@mediadesain/core';
+/*-public-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/public-api';
 import { MdsHightlightPrismModule, MdsPageManagerModule, MdsModalService, MdsModalModule }
-/*-public-*/ from '@mediadesain/angular';
+/*-public-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 
@@ -45,11 +45,11 @@ export class DemoPageNavigationComponent implements AfterContentChecked {
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {docType: 'angular', attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: '@mediadesain/react@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/react@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'modelChange',type: '(value: PageNavigationManagerModel) => void', default: '∞', description: 'Get update model configuration & data output', version: '@mediadesain/react@2.0.0 > Latest version'}
+    {docType: 'angular', attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom model configuration parameter', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'data', type: 'Array', default: '∞', description: 'Pharse data items which will be process for page navigation', version: '@medes-ui/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom model configuration parameter', version: '@medes-ui/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'modelChange',type: '(value: PageNavigationManagerModel) => void', default: '∞', description: 'Get update model configuration & data output', version: '@medes-ui/react@2.0.0 > Latest version'}
   ];
   tableContentDeprecated = [];
 

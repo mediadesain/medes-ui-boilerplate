@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MdsAlertConfig, MdsAlertService, MdsAlertType }
-/*-public-*/ from '@mediadesain/core';
+/*-public-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/public-api';
 import { MdsHightlightPrismModule }
-/*-public-*/ from '@mediadesain/angular';
+/*-public-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({

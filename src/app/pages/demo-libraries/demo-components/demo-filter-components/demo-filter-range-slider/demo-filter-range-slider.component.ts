@@ -5,10 +5,10 @@ import { MdsFilterModelCode } from '../demo-filter-data-model-code';
 import { constructAngularCode, constructReactCode } from 'src/app/shared/utils/code-preview-generator';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsFilterModel }
-/*-public-*/ from '@mediadesain/core';
+/*-public-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/public-api';
 import { MdsFilterRangeSliderComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService }
-/*-public-*/ from '@mediadesain/angular';
+/*-public-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
@@ -31,12 +31,12 @@ export class DemoFilterRangeSliderComponent {
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {docType: 'angular', attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'For disabling filter range slider', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: '@mediadesain/react@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/react@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'modelChange', type: '(value: MdsFilterModel) => void', default: '∞', description: 'Get update model configuration & data output', version: '@mediadesain/react@2.0.0 > Latest version'}
+    {docType: 'angular', attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom model configuration parameter', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'For disabling filter range slider', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'id', type: 'string', default: '∞', description: 'Id is required for identify which config will use', version: '@medes-ui/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'model', type: 'MdsFilterModel', default: '∞', description: 'Custom model configuration parameter', version: '@medes-ui/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'modelChange', type: '(value: MdsFilterModel) => void', default: '∞', description: 'Get update model configuration & data output', version: '@medes-ui/react@2.0.0 > Latest version'}
   ]
   tableContentDeprecated = [];
 

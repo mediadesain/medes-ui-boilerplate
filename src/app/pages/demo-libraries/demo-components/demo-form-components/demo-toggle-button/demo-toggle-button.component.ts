@@ -5,10 +5,10 @@ import { constructAngularCode, constructReactCode } from 'src/app/shared/utils/c
 import { MdsFormModelCode } from '../demo-filter-data-model-code';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsFormModel }
-/*-public-*/ from '@mediadesain/core';
+/*-public-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/public-api';
 import { MdsHightlightPrismModule, MdsModalService, MdsModalModule, MdsFormModule }
-/*-public-*/ from '@mediadesain/angular';
+/*-public-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 
@@ -32,13 +32,13 @@ export class DemoToggleButtonComponent {
 
   // Properties Detail
   tableContent = [
-    {docType: 'angular', attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'model?', type: 'MdsFormModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config on MdsFormModel', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: '@mediadesain/react@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'valueChange', type: '(value: boolean) => void', default: '∞', description: 'Upcoming Update value of component itself', version: '@mediadesain/react@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'model?', type: 'MdsFormModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/react@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config on MdsFormModel', version: '@mediadesain/react@2.0.0 > Latest version'}
+    {docType: 'angular', attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'model?', type: 'MdsFormModel', default: '∞', description: 'Custom model configuration parameter', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config on MdsFormModel', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: '@medes-ui/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'valueChange', type: '(value: boolean) => void', default: '∞', description: 'Upcoming Update value of component itself', version: '@medes-ui/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'model?', type: 'MdsFormModel', default: '∞', description: 'Custom model configuration parameter', version: '@medes-ui/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config on MdsFormModel', version: '@medes-ui/react@2.0.0 > Latest version'}
   ]
 
   libraryType: string;

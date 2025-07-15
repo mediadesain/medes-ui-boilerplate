@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MdsHightlightPrismModule }
-/*-public-*/ from '@mediadesain/angular';
+/*-public-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
@@ -20,13 +20,13 @@ export class ColorUtilsComponent {
   ];
 
   tableContent = [
-    {attribute: 'rgbToHex( <b>Array</b> )', 'value':'Array&lt;number&gt;', 'default': '∞', description: '<ul><li>Sample number of r, g, b.</li></ul>', version: '@mediadesain/core@2.0.0 > Latest version'},
-    {attribute: 'hexToRgba( <b>string</b>, <b>number?</b> )', 'value':'<ul><li>string</li><li>number</li></ul>', 'default': '<ul><li>∞</li><li>1</li></ul>', description: '<ul><li>Sample hex color</li><li>Opacity range between 0 - 1</li></ul>', version: '@mediadesain/core@2.0.0 > Latest version'},
-    {attribute: 'addDarkLight( <b>string</b>, <b>number</b> )', 'value':'<ul><li>string</li><li>number</li></ul>', 'default': '<ul><li>∞</li><li>∞</li></ul>', description: '<ul><li>Sample string to Title Case</li><li>Add positif number for lighter or negative for brighter color</li></ul>', version: '@mediadesain/core@2.0.0 > Latest version'}
+    {attribute: 'rgbToHex( <b>Array</b> )', 'value':'Array&lt;number&gt;', 'default': '∞', description: '<ul><li>Sample number of r, g, b.</li></ul>', version: '@medes-ui/core@2.0.0 > Latest version'},
+    {attribute: 'hexToRgba( <b>string</b>, <b>number?</b> )', 'value':'<ul><li>string</li><li>number</li></ul>', 'default': '<ul><li>∞</li><li>1</li></ul>', description: '<ul><li>Sample hex color</li><li>Opacity range between 0 - 1</li></ul>', version: '@medes-ui/core@2.0.0 > Latest version'},
+    {attribute: 'addDarkLight( <b>string</b>, <b>number</b> )', 'value':'<ul><li>string</li><li>number</li></ul>', 'default': '<ul><li>∞</li><li>∞</li></ul>', description: '<ul><li>Sample string to Title Case</li><li>Add positif number for lighter or negative for brighter color</li></ul>', version: '@medes-ui/core@2.0.0 > Latest version'}
   ];
 
   import = `
-import { MdsColorUtils } from '@mediadesain/core';`;
+import { MdsColorUtils } from '@medes-ui/core';`;
   demo = `
 MdsColorUtils.rgbToHex([139, 197, 63]); //output #8bc53f
 MdsColorUtils.hexToRgba('#8bc53f'); //output rgba(139,197,63,1)

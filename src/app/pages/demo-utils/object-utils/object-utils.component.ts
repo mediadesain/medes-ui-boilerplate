@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MdsHightlightPrismModule }
-/*-public-*/ from '@mediadesain/angular';
+/*-public-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
@@ -24,19 +24,19 @@ export class ObjectUtilsComponent {
       attribute: 'removeKeysIfEmpty( <b>Object</b> )',
       'value': 'Object', 'default': '∞',
       description: 'Object prop/key will delete if there is no value <i>(undefined, null, empty string)</i>.',
-      version: '@mediadesain/core@2.0.0 > Latest version'
+      version: '@medes-ui/core@2.0.0 > Latest version'
     },
     {
       attribute: 'isEqual( <b>Object</b>, <b>Object</b> ) <span class=\'new-beadge m-x-l-1\'>New</span>',
       'value': '<ul><li>Object</li><li>Object</li></ul>',
       'default': '<ul><li>∞</li><li>∞</li></ul>',
       description: 'Put 2 Objects which are to compare',
-      version: '@mediadesain/core@2.0.0 > Latest version'
+      version: '@medes-ui/core@2.0.0 > Latest version'
     }
   ];
 
 import = `
-import { MdsObjectUtils } from '@mediadesain/core';`;
+import { MdsObjectUtils } from '@medes-ui/core';`;
 demo = `
 const object = {
   "firstname": "Jhon",

@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { MdsFormModelCode } from '../demo-filter-data-model-code';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsFormModel }
-/*-public-*/ from '@mediadesain/core';
+/*-public-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/public-api';
 import { MdsHightlightPrismModule, MdsModalService, MdsModalModule, MdsFormModule }
-/*-public-*/ from '@mediadesain/angular';
+/*-public-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 
@@ -35,11 +35,11 @@ export class DemoInputNumberComponent {
 
   // Properties Detail
   tableContent = [
-    {docType: 'angular', attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'customClass?', type: 'string', default: '∞', description: 'Put classes to for styling component', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'placeholder?', type: 'string', default: '0', description: 'Placeholder for field itself', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: '@mediadesain/angular@2.0.0 > Latest version'}
+    {docType: 'angular', attribute: 'value', type: 'boolean', default: '∞', description: 'Value of component itself', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'model?',type: 'MdsFormModel', default: '∞', description: 'Custom model configuration parameter', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'customClass?', type: 'string', default: '∞', description: 'Put classes to for styling component', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'placeholder?', type: 'string', default: '0', description: 'Placeholder for field itself', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'disabled?', type: 'boolean', default: 'false', description: 'Make it disabled. Or make it disabled by parsing custom config', version: '@medes-ui/angular@2.0.0 > Latest version'}
   ];
 
   constructor(public mdsModalService: MdsModalService, public libraryTypeService: LibraryTypeService) {

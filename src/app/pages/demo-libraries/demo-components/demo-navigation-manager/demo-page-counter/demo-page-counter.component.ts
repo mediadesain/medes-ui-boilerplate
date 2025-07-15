@@ -6,10 +6,10 @@ import { SampleProductsData } from 'src/app/shared/constant/products';
 import { PageNavigationManagerModelCode } from '../demo-page-navigation-manager-model-code';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { PageNavigationManagerModel }
-/*-public-*/ from '@mediadesain/core';
+/*-public-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/public-api';
 import { MdsHightlightPrismModule, MdsModalModule, MdsModalService, MdsPageManagerModule }
-/*-public-*/ from '@mediadesain/angular';
+/*-public-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({
@@ -41,11 +41,11 @@ export class DemoPageCounterComponent implements AfterContentChecked {
   // Properties Detail
   showDeprecated = false;
   tableContent = [
-    {docType: 'angular', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'customClass?',type: 'string', default: '∞', description: 'Put your custom class styling', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'angular', attribute: 'customStyle?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: '@mediadesain/angular@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom model configuration parameter', version: '@mediadesain/react@2.0.0 > Latest version'},
-    {docType: 'react', attribute: 'modelChange',type: '(value: PageNavigationManagerModel) => void', default: '∞', description: 'Get update model configuration & data output', version: '@mediadesain/react@2.0.0 > Latest version'}
+    {docType: 'angular', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom model configuration parameter', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'customClass?',type: 'string', default: '∞', description: 'Put your custom class styling', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'angular', attribute: 'customStyle?',type: 'string', default: '∞', description: 'Put your custom style directly on element', version: '@medes-ui/angular@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'model',type: 'PageNavigationManagerModel', default: '∞', description: 'Custom model configuration parameter', version: '@medes-ui/react@2.0.0 > Latest version'},
+    {docType: 'react', attribute: 'modelChange',type: '(value: PageNavigationManagerModel) => void', default: '∞', description: 'Get update model configuration & data output', version: '@medes-ui/react@2.0.0 > Latest version'}
   ];
   tableContentDeprecated = [];
 

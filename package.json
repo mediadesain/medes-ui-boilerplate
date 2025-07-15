@@ -1,6 +1,6 @@
 {
   "name": "medes-ui-boilerplate",
-  "version": "2.0.0-betabeta.9",
+  "version": "2.0.0-beta.11",
   "scripts": {
     "ng": "ng",
     "start": "ng lint medes-ui-boilerplate && ng serve medes-ui-boilerplate --port 4600",
@@ -13,11 +13,11 @@
     "build:lib-angular": "ng build medes-ui-angular --configuration production",
     "build:lib-react": "ng build medes-ui-react --configuration production && npm run update:lib-react",
     "publish:lib-beta": "npm run publish:lib-beta-core && npm run publish:lib-beta-angular && npm run publish:lib-beta-react",
-    "publish:lib-beta-core": "cd dist/@mediadesain/core && npm publish --tag beta",
-    "publish:lib-beta-angular": "cd dist/@mediadesain/angular && npm publish --tag beta",
-    "publish:lib-beta-react": "cd dist/@mediadesain/react && npm publish --tag beta",
-    "update:lib": "rm -rf node_modules/@mediadesain && cp -R dist/@mediadesain node_modules/",
-    "update:lib-react": "rm -rf /Volumes/Data/Project/Development/website/React/mds-app/node_modules/@mediadesain && cp -R dist/@mediadesain /Volumes/Data/Project/Development/website/React/mds-app/node_modules"
+    "publish:lib-beta-core": "cd dist/@medes-ui/core && npm publish --tag beta --access=public",
+    "publish:lib-beta-angular": "cd dist/@medes-ui/angular && npm publish --tag beta --access=public",
+    "publish:lib-beta-react": "cd dist/@medes-ui/react && npm publish --tag beta --access=public",
+    "update:lib": "rm -rf node_modules/@medes-ui && cp -R dist/@medes-ui node_modules/",
+    "update:lib-react": "rm -rf /Volumes/Data/Project/Development/website/React/mds-app/node_modules/@medes-ui && cp -R dist/medes-ui /Volumes/Data/Project/Development/website/React/mds-app/node_modules"
   },
   "private": true,
   "dependencies": {
@@ -32,10 +32,9 @@
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
-    "@mediadesain/core": "2.0.0-betabeta.9",
-    "@mediadesain/angular": "2.0.0-betabeta.9",
-    "@mediadesain/react": "2.0.0-betabeta.9",
-    "prismjs": "^1.29.0",
+    "@medes-ui/core": "2.0.0-beta.11",
+    "@medes-ui/angular": "2.0.0-beta.11",
+    "@medes-ui/react": "2.0.0-beta.11",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "rxjs": "~6.6.0",

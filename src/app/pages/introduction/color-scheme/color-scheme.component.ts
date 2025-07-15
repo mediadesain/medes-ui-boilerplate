@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MdsHightlightPrismModule } from '@mediadesain/angular';
+import { MdsHightlightPrismModule } from '@medes-ui/angular';
 import { MdsColorUtils }
-/*-public-*/ from '@mediadesain/core';
+/*-public-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/lib/utils/mds-color-utils';
 
 @Component({

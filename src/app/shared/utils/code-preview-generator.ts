@@ -1,8 +1,8 @@
 export function constructAngularCode(importMdsCore: string, importMdsAngular: string, imports?: string, providers?: string, valuesComponent?: string): string {
 return `
 import { Component } from '@angular/core';
-import { ${importMdsCore} } from '@mediadesain/core';
-import { ${importMdsAngular} } from '@mediadesain/angular';
+import { ${importMdsCore} } from '@medes-ui/core';
+import { ${importMdsAngular} } from '@medes-ui/angular';
 
 @Component({
   selector: 'mds-app',
@@ -19,8 +19,8 @@ export class MdsAppComponent {
 export function constructReactCode(importMdsCore: string, importMdsReact: string, valuesComponent?: string): string {
 return `
 import React from 'react';
-import { ${importMdsCore} } from '@mediadesain/core';
-import { ${importMdsReact} } from '@mediadesain/react';
+import { ${importMdsCore} } from '@medes-ui/core';
+import { ${importMdsReact} } from '@medes-ui/react';
 
 function MdsApp() {
   ${valuesComponent}
