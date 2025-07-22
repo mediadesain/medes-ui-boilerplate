@@ -8,6 +8,7 @@
     <ul class="m-y-t-0">
         <li>Major version is current version of MedesUI</li>
         <li>Minor version is new feature update, no more following angular version. Start version 2 having possibility support angular, react & other stacks.</li>
+        <li>Major version used on Angular is 19 & React 19</li>
         <li>Patch version is related small changes & bug fix</li>
     </ul>
     <table class="mds-table table-swatch-a">
@@ -16,7 +17,7 @@
         </tr>
         <!--{ version: '^1.13.6', status: 'LTS', released: '2024-09-30', endReleased: '2024-12-31' }, -->
         @for (item of [
-            { version: '^2.0.0', status: 'next', released: '2025-07-XX', endReleased: '-' },
+            { version: '^2.0.0', status: 'Active', released: '2025-07-22', endReleased: '-' },
         ]; track $index) {
             <tr>
                 <td mds-th-title="Version" [innerHTML]="item.version"></td>
@@ -43,7 +44,7 @@
         </tr>
         <!--{ version: '^1.13.6', status: 'LTS', released: '2024-09-30', endReleased: '2024-12-31' }, -->
         @for (item of [
-            { version: '^1.18.0', status: 'Active', released: '2025-06-24', endReleased: '2025-09-30' },
+            { version: '^1.18.0', status: 'LTS', released: '2025-06-24', endReleased: '2025-09-30' },
             { version: '^1.17.1', status: 'LTS', released: '2025-06-13', endReleased: '2025-09-30' },
             { version: '^1.16.0', status: 'LTS', released: '2025-06-12', endReleased: '2025-09-30' },
             { version: '^1.15.3', status: 'LTS', released: '2025-06-10', endReleased: '2025-06-30' },

@@ -1,6 +1,5 @@
-/*-public-*/ @import "../../../node_modules/@medes-ui/core/assets/scss/layouts/documentation";
-//*-public-*/ @import "../../../projects/medes-ui/assets/scss/layouts/documentation";
-navbar .logo, mds-navbar .logo { background-image: url('../images//medes-ui.png'); }
+/* -- Logo -- */
+navbar .logo, mds-navbar .logo { background-image: url('../images/medes-ui.png'); }
 @media (prefers-color-scheme: dark) {
     /*:root {} - Use :root {} if automatic thaming base on system instead body.dark-mode {}*/
     body.dark-mode {
@@ -10,9 +9,8 @@ navbar .logo, mds-navbar .logo { background-image: url('../images//medes-ui.png'
 
 .lib-type span {cursor: pointer;}
 
-/* -- Table Properties */
+/* -- Table Properties -- */
 .table-properties a {cursor: pointer;}
-
 .table-properties td.deprecated {color: var(--body-txt-lighter); text-decoration: line-through;}
 .table-properties td:nth-child(1) b {font-family: monospace; font-size: small;}
 .table-properties td:nth-child(2) {font-family: monospace; font-size: small;}

@@ -5,10 +5,10 @@ import { constructAngularCode, constructReactCode } from 'src/app/shared/utils/c
 import { MdsFormModelCode } from '../demo-filter-data-model-code';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsFormModel }
-/*-public-*/ from '@medes-ui/core';
+/*-private-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/public-api';
 import { MdsHightlightPrismModule, MdsModalService, MdsModalModule, MdsFormModule }
-/*-public-*/ from '@medes-ui/angular';
+/*-private-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 

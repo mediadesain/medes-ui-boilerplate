@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SampleProductsData } from 'src/app/shared/constant/products';
 import { MdsHightlightPrismModule }
-/*-public-*/ from '@medes-ui/angular';
+/*-private-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({

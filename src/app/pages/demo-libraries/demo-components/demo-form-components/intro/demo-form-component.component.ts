@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsHightlightPrismModule, MdsFormModule }
-/*-public-*/ from '@medes-ui/angular';
+/*-private-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({

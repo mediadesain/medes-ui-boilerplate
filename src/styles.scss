@@ -1,12 +1,12 @@
 /*-- MedesUI --*/
-/*-public-*/ @import "../node_modules/@medes-ui/core/assets/scss/medes-ui";
-/*-public-*/ @import "../node_modules/@medes-ui/core/assets/scss/ui-colorscheme";
-//*-public-*/ @import "../projects/medes-ui/assets/scss/medes-ui";
-//*-public-*/ @import "../projects/medes-ui/assets/scss/ui-colorscheme";
+/*-private-*/ @import "../node_modules/@medes-ui/core/assets/css/medes-ui.css";
+/*-private-*/ @import "../node_modules/@medes-ui/core/assets/css/ui-colorscheme.css";
+//*-public-*/ @import "../projects/medes-ui/assets/css/medes-ui.css";
+//*-public-*/ @import "../projects/medes-ui/assets/css/ui-colorscheme.css";
 
 /*-- Custom Scheme --*/
 // Add your own custom color scheme - https://doc.mediadesain.com/introduction/color-scheme
-@import "./assets/style/custom-scheme.scss"; // Custom color scheme
+@import "./assets/style/custom-scheme.css"; // Custom color scheme
 
 /*-- PrismJs --*/
 @import "../node_modules/prismjs/themes/prism.min.css";
@@ -16,17 +16,15 @@ pre[class*=language-] {
     .token.operator {background-color: unset}
 }
 @media (prefers-color-scheme: dark) {
-    /*:root {} - Use :root {} if automatic thaming base on system instead body.dark-mode {}*/
+    /*:root {} - Use :root {} if automatic thaming base on system instead body.dark-mode :root {}*/
     body.dark-mode {
         @import "../node_modules/prismjs/themes/prism-okaidia.min";
-        pre[class*=language-] {
-            font-size: small;
-            padding: 0 1em;
-        }
+        pre[class*=language-] {font-size: small; padding: 0 1em;}
         code.language-javascript, code.language-tsx {color: #2df49f;}
     }
 }
 
-
 /*-- Custom Style for Documentation--*/
-@import "./assets/style/custom-style-doc.scss";
+/*-private-*/ @import "../node_modules/@medes-ui/core/assets/css/layouts/documentation.css";
+///*-public-*/ @import "../projects/medes-ui/assets/css/layouts/documentation.css";
+@import "./assets/style/custom-style-doc.css";

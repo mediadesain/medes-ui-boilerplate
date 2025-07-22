@@ -6,8 +6,25 @@
 <p>Section <b>intro</b> goes here. <a href="">Lorem ipsum</a> dolor sit amet, <i>consectetur adipiscing</i> elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>
 <hr/>
 
+<h2>Header</h2>
+<h1>Header 1</h1>
+<h2>Header 2</h2>
+<h3>Header 3</h3>
+<h4>Header 4</h4>
+<h5>Header 5</h5>
+<hr/>
+
 <h2>Transculant Text</h2>
 <p class="txt-transculant">Sample transculant/elipsis text with <b>.txt-transculant</b> class. Section intro goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus condimentum nisl id vulputate. Praesent aliquet varius eros interdum suscipit. Donec eu purus sed nibh convallis bibendum quis vitae turpis. Duis vestibulum diam lorem, vitae dapibus nibh facilisis a. Fusce in malesuada odio.</p>  
+<hr/>
+
+<h2>Text Alignment</h2>
+<small>.txt-l</small>
+    <p class="txt-l">Align Left</p>
+    <small>.txt-c .txt-m-l</small>
+    <p class="txt-c txt-m-l">Align Left on Tablet and Center on Desktop</p>
+    <small>.txt-r .txt-s-c</small>
+    <p class="txt-r txt-s-c">Align Center on Mobile & Align Right Bigger Screen </p>
 <hr/>
 
 <h2>Background Colors</h2>
@@ -184,6 +201,34 @@
                 </select>
             </div>
         </div>
+        
+        <div class="flex-x x-100 justify-between m-y-b-1">
+            <div class="radio-group">
+                <div class="radio-item">
+                    <input type="radio" id="html" name="fav_language" value="HTML">
+                    <label for="html">HTML</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="css" name="fav_language" value="CSS">
+                    <label for="css">CSS</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                    <label for="javascript">JavaScript</label>
+                </div>
+            </div>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                    <label for="vehicle1"> I have a bike</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                    <label for="vehicle2"> I have a car</label>
+                </div>
+            </div>
+        </div>
+
         <div class="x-100 m-y-b-1">
             <label class="required txt-darker">Message</label>
             <textarea class="x-100" placeholder="Type your message here" name="comment" required></textarea>

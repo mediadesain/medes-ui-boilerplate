@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MdsHightlightPrismModule } from '@medes-ui/angular';
 import { MdsColorUtils }
-/*-public-*/ from '@medes-ui/core';
+/*-private-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/lib/utils/mds-color-utils';
 
 @Component({

@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MdsFilterModelCode } from '../demo-filter-data-model-code';
-import { constructAngularCode, constructReactCode } from 'src/app/shared/utils/code-preview-generator';
+import { constructAngularCode } from 'src/app/shared/utils/code-preview-generator';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsFilterModel }
-/*-public-*/ from '@medes-ui/core';
+/*-private-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/public-api';
 import { MdsFilterResetComponent, MdsHightlightPrismModule, MdsModalModule, MdsModalService}
-/*-public-*/ from '@medes-ui/angular';
+/*-private-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 @Component({

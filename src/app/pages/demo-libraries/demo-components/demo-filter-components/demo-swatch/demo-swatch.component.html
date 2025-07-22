@@ -34,14 +34,14 @@
                 <label class="txt-darker">Size</label>
                 <input class="x-100" type="number" placeholder="Default: 30" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.swatchSize" (ngModelChange)="reGenerateCode()"/>
             </div>
-            <div class="x-100 m-x-r-1">
+            <div class="x-100">
                 <label class="txt-darker">Border Radius</label>
                 <input class="x-100" type="number" placeholder="Default: 25" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.swatchRadius" (ngModelChange)="reGenerateCode()"/>
             </div>
-            <div class="x-100">
-                <label class="txt-darker">Reset Html Element</label>
-                <input class="x-100" type="text" placeholder="html element" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.resetElement" (ngModelChange)="reGenerateCode()"/>
-            </div>
+        </div>
+        <div class="x-100 m-y-t-1">
+            <label class="txt-darker">Reset Html Element</label>
+            <input class="x-100" type="text" placeholder="html element" [(ngModel)]="mdsFilterModel.configs.swatchBox.color.resetElement" (ngModelChange)="reGenerateCode()"/>
         </div>
     </div>
 </div>

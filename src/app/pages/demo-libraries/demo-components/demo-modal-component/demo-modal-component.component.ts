@@ -7,10 +7,10 @@ import { htmlCode, htmlCode2, interfaceCode } from './modal-component-preview-co
 import { FormsModule } from '@angular/forms';
 import { LibraryTypeService } from 'src/app/shared/services/library-type.service';
 import { MdsModalModel }
-/*-public-*/ from '@medes-ui/core';
+/*-private-*/ from '@medes-ui/core';
 //*-public-*/ from 'projects/medes-ui/src/public-api';
 import { MdsHightlightPrismModule, MdsModalModule, MdsModalService }
-/*-public-*/ from '@medes-ui/angular';
+/*-private-*/ from '@medes-ui/angular';
 //*-public-*/ from 'projects/medes-ui-angular/src/public-api';
 
 

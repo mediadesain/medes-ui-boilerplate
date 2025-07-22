@@ -16,7 +16,7 @@
             <div class="x-100 flex-x flex-nowarp">
                 <div class="x-100 m-x-r-1">
                     <label class="txt-darker">Class Names</label>
-                    <input type="text" placeholder="ex type: txt-negative" [(ngModel)]="myClass" (ngModelChange)="this.reGenerateCode()"/>
+                    <input class="x-100" type="text" placeholder="ex type: txt-negative" [(ngModel)]="myClass" (ngModelChange)="this.reGenerateCode()"/>
                 </div>
                 <div class="x-100 m-x-r-1">
                     <label class="txt-darker">Total Decimal</label>
@@ -29,15 +29,17 @@
                         <option>5</option>
                     </select>
                 </div>
-                <div class="x-100">
-                    <label class="txt-darker">Enable/Disable</label>
-                    <button class="btn-swatch-a x-100" (click)="mdsFormModel.configs.mdsInputNumber.isDisabled = !mdsFormModel.configs.mdsInputNumber.isDisabled; this.reGenerateCode()">
-                        {{ mdsFormModel.configs.mdsInputNumber.isDisabled ? 'Enable' : 'Disable' }}
-                    </button>
-                </div>
+            </div>
+            <div class="x-100 m-y-b-1">
+                <small class="txt-lighter"><i>Type any class is written on global parent style.scss</i></small>
+            </div>
+            <div class="x-100">
+                <label class="txt-darker">Enable/Disable</label>
+                <button class="btn-swatch-a x-100" (click)="mdsFormModel.configs.mdsInputNumber.isDisabled = !mdsFormModel.configs.mdsInputNumber.isDisabled; this.reGenerateCode()">
+                    {{ mdsFormModel.configs.mdsInputNumber.isDisabled ? 'Enable' : 'Disable' }}
+                </button>
             </div>
         </div>
-        <small><i>Type any class is written on global parent style.scss</i></small>
     </div>
 </div>
 

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
     styleUrls: ['./versioning.component.scss']
 })
 export class VersioningComponent {
-  showVesion2 = false;
-  showVesion1 = true;
+  showVesion2 = true;
+  showVesion1 = false;
 }

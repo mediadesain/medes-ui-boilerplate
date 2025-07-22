@@ -1,3 +1,15 @@
+### 2.0.0 (Release - 250722)
+- MedesUI having some helper scripts, serivces & utils and angular library. On current version Angular libary will be split to another module.
+- Update Major Changes to version 2 and create some new packages name are `@medes-ui/core`, `@medes-ui/angular`, `@medes-ui/react`.
+- Script model, types, helper, service, utils & styling on `@medes-ui@1.x.x.x` are copied to @medes-ui/angular. To install run `npm i @medes-ui/core`.
+- Update angular library to angular 19
+- Angular library Created, package name @medes-ui/angular. To install run `npm i @medes-ui/angular`.
+- Now Component React version added
+- React library Created, package name @medes-ui/react. To install run `npm i @medes-ui/react`.
+- Documentation Enhancement: Add Light/Dark Mode Toggle
+- Documentation Enhancement: Switch Libraries Doc Type
+- Documentation Enhancement: Simplify with standalone component
+- Documentation Enhancement: Simplify routing system
 ### 1.18.0 (Release - 250624)
 - Refactor - Angular Components input. Minimalize using multiple Input and use single object oriented and parse to child component
 - Refactor - Input model for Modal Component
